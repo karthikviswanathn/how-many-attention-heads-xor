@@ -6,3 +6,5 @@ import HeadComplexity.Decomposition
 import HeadComplexity.SkipConnection
 import HeadComplexity.OneHead
 import HeadComplexity.TwoHeads
+import HeadComplexity.BooleanFunctions
+import HeadComplexity.Generalized
