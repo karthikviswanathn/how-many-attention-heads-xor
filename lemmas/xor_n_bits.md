@@ -4,7 +4,7 @@ This note proves, carefully and without hidden steps, the following claim.
 
 ## Theorem
 
-In the one-layer attention-only model from [problem_statement.md](../problem_statement.md), the $n$-bit parity / XOR function
+For every $n \geq 1$, in the one-layer attention-only model from [../model.md](../model.md), the $n$-bit parity / XOR function
 
 $$\mathrm{XOR}_n(x_1, \ldots, x_n) = x_1 \oplus \cdots \oplus x_n$$
 
@@ -12,7 +12,7 @@ has exact head complexity
 
 $$H^{*}(\mathrm{XOR}_n) = n.$$
 
-The proof has two parts.
+The proof has three ingredients.
 
 1. Every $H$-head classifier in this model has threshold degree at most $H$.
 2. $n$-bit parity has threshold degree exactly $n$.
@@ -22,18 +22,15 @@ The lower bound and the upper bound then match.
 
 ## Model Reminder
 
-We work with inputs $x \in \{0,1\}^n$, encoded as the sequence
+We use the formal specification from [../model.md](../model.md). The facts needed in this note are:
 
-$$(x_1, \ldots, x_n, =).$$
+1. the input sequence is $(x_1, \ldots, x_n, =)$,
+2. there is one self-attention layer with $H$ heads,
+3. each head has maps $W_Q^{(h)}, W_K^{(h)}, W_V^{(h)}$ into $\mathbb{R}^{d_{\mathrm{head}}}$ and an output projection $W_O^{(h)}$ back into $\mathbb{R}^{d_{\mathrm{model}}}$,
+4. the final residual stream is read only at the query token,
+5. the final classifier is an affine threshold applied to that query-token residual.
 
-There is:
-
-1. one self-attention layer,
-2. $H$ parallel heads,
-3. no MLP,
-4. a linear readout from the residual stream at the query token.
-
-The query token embedding is constant across all inputs, so any constant contribution to the readout can be absorbed into the threshold.
+The input vector at the query token, denoted $u_=(x)$ in [../model.md](../model.md), is constant across all inputs, so any constant contribution from the skip connection can be absorbed into the threshold.
 
 ## What Threshold Degree Means
 
@@ -95,9 +92,9 @@ We will prove:
 
 > If a Boolean function is computable with $H$ heads in this model, then it has threshold degree at most $H$.
 
-Then we will use the classical fact that parity has threshold degree exactly $n$.
+Then we will combine this with the parity threshold-degree calculation proved below.
 
-### Lemma 1: On a finite domain, exact classification can be made strict
+### Lemma 1. On a finite domain, exact classification can be made strict
 
 Let $X$ be a finite set, and let $f : X \to \{0,1\}$ be nonconstant. Suppose a real-valued score function $S$ and threshold $\tau$ satisfy
 
@@ -132,11 +129,17 @@ Then:
 
 This is exactly the desired strict sign separation.
 
-### Lemma 2: The scalar contribution of one head is a ratio of affine functions
+### Lemma 2. The scalar contribution of one head is a ratio of affine functions
 
-Fix one attention head $h$ and a linear probe vector $w$ on the final residual space.
+Fix one attention head $h$, and let $w_{\mathrm{out}} \in \mathbb{R}^{d_{\mathrm{model}}}$ be the final readout vector from [../model.md](../model.md).
 
-Let $s_h(x)$ be the contribution of head $h$ to the final probe score on input $x \in \{0,1\}^n$.
+Let
+
+$$
+s_h(x) := \bigl\langle w_{\mathrm{out}},\, y^{(h)}(x) \bigr\rangle
+$$
+
+be the contribution of head $h$ to the final probe score on input $x \in \{0,1\}^n$.
 
 Then there exist affine functions $a_h, b_h : \mathbb{R}^n \to \mathbb{R}$ such that on the Boolean cube:
 
@@ -150,21 +153,36 @@ $$b_h(x) > 0 \quad \text{for every } x \in \{0,1\}^n.$$
 
 Fix the head $h$.
 
-For each input position $i$ and bit value $b \in \{0,1\}$, define:
+Because there is only one attention layer, the representation at input position $i$ is completely determined by the position $i$ and the local bit value $x_i \in \{0,1\}$. The query representation at the designated query token is constant across all inputs.
 
-$$\lambda_{i,b} := \exp(\text{logit of the query against position } i \text{ when } x_i = b).$$
+Therefore, for each input position $i$ and bit value $b \in \{0,1\}$, there are fixed real constants
 
-This is a positive real number depending only on the head, the position, and the local token value.
+$$
+\ell_{i,b} \in \mathbb{R}, \qquad \mu_{i,b} \in \mathbb{R}
+$$
 
-Also define:
+with the following meaning:
 
-$$\mu_{i,b} := \langle w, \text{value written by position } i \text{ when } x_i = b \rangle.$$
+1. when $x_i = b$, the unnormalized attention weight contributed by position $i$ is $\exp(\ell_{i,b})$,
+2. after composing the projected value written by head $h$ with the final linear probe $w_{\mathrm{out}}$, the corresponding scalar numerator term is $\exp(\ell_{i,b}) \mu_{i,b}$.
 
-This is again a fixed real number depending only on the head, the position, and the local token value.
+Indeed, if $u_{i,b}$ denotes the fixed model-space input vector at position $i$ carrying bit value $b$, then
 
-Finally, for the query position `=`, define constants
+$$
+\mu_{i,b} := \bigl\langle w_{\mathrm{out}},\, W_O^{(h)} W_V^{(h)} u_{i,b} \bigr\rangle.
+$$
 
-$$\lambda_{=} > 0, \qquad \mu_{=} \in \mathbb{R}.$$
+Likewise, the query position contributes fixed constants
+
+$$
+\ell_{=} \in \mathbb{R}, \qquad \mu_{=} \in \mathbb{R}.
+$$
+
+Set
+
+$$
+\lambda_{i,b} := \exp(\ell_{i,b}) > 0, \qquad \lambda_{=} := \exp(\ell_{=}) > 0.
+$$
 
 Now write the head's scalar score as
 
@@ -192,7 +210,7 @@ Then $s_h(x) = a_h(x) / b_h(x)$ on the Boolean cube.
 
 Also, every term in $D_h(x)$ is strictly positive, so $b_h(x) > 0$ for every Boolean input.
 
-### Lemma 3: Any $H$-head classifier has threshold degree at most $H$
+### Lemma 3. Any $H$-head classifier has threshold degree at most $H$
 
 Let $f : \{0,1\}^n \to \{0,1\}$ be computed by an $H$-head model in the one-layer architecture.
 
@@ -207,6 +225,8 @@ In other words, $f$ has threshold degree at most $H$.
 #### Proof
 
 If $f$ is constant, then its threshold degree is $0$, so there is nothing to prove. We therefore assume $f$ is nonconstant.
+
+Because the final readout is linear, the total scalar score decomposes as a constant term coming from the fixed query residual plus a sum of scalar contributions from the $H$ heads.
 
 Let the raw readout score be
 
@@ -264,7 +284,7 @@ Because $B(x) > 0$, $P$ has exactly the same sign pattern as $S$.
 
 So $P$ sign-represents the Boolean function $f$ on $\{0,1\}^n$.
 
-### Lemma 4: $n$-bit parity has threshold degree at least $n$
+### Lemma 4. $n$-bit parity has threshold degree at least $n$
 
 Let $\mathrm{PARITY}_n(x)$ be $1$ when $\sum_i x_i$ is odd and $0$ when it is even.
 
@@ -340,6 +360,28 @@ This contradicts the earlier inequality $\mathbb{E}[\pi(z) \, Q(z)] > 0$.
 
 So no degree-$(<n)$ polynomial sign-represents parity.
 
+### Consequence. The threshold degree of parity is exactly $n$
+
+Define
+
+$$
+P_{\mathrm{par}}(x) := -\prod_{i=1}^{n} (1 - 2x_i).
+$$
+
+This is a polynomial of degree $n$. On the Boolean cube, each factor $1 - 2x_i$ equals $+1$ when $x_i = 0$ and $-1$ when $x_i = 1$, so
+
+$$
+P_{\mathrm{par}}(x) = -(-1)^{x_1 + \cdots + x_n}.
+$$
+
+Therefore $P_{\mathrm{par}}(x)$ is positive exactly on odd-parity inputs and negative exactly on even-parity inputs. So parity has threshold degree at most $n$.
+
+Combined with Lemma 4, this gives
+
+$$
+\deg_{\pm}(\mathrm{PARITY}_n) = n.
+$$
+
 ### Lower-bound conclusion
 
 If $\mathrm{XOR}_n$ were computable with fewer than $n$ heads, then by Lemma 3 it would have threshold degree less than $n$, contradicting Lemma 4.
@@ -354,7 +396,13 @@ We now construct an explicit $n$-head network computing parity.
 
 ### Shared ambient space and embeddings
 
-Work in dimension $d = n + 2$.
+Take
+
+$$
+d_{\mathrm{model}} = d_{\mathrm{head}} = n + 2.
+$$
+
+Work in $\mathbb{R}^{n+2}$.
 
 Choose an orthonormal basis
 
@@ -379,14 +427,15 @@ For head $j$, define linear maps as follows.
 1. $W_Q^{(j)}$ sends $q$ to $q$ and annihilates the orthogonal complement of $q$.
 2. $W_K^{(j)}$ sends $u$ to $(\log \alpha_j) \, q$ and annihilates $q, e_1, \ldots, e_n$.
 3. $W_V^{(j)}$ sends $u$ to $e_j$ and annihilates $q, e_1, \ldots, e_n$.
+4. $W_O^{(j)}$ is the identity on $\mathbb{R}^{n+2}$.
 
 These maps are linear, so they define a valid attention head.
 
-### Lemma 5: The output of head $j$ depends only on Hamming weight
+### Lemma 5. The output of head $j$ depends only on Hamming weight
 
 Let $k = x_1 + \cdots + x_n$ be the Hamming weight of the input.
 
-Then head $j$ outputs
+Then the projected output of head $j$ is
 
 $$y_j(x) = g_j(k) \, e_j$$
 
@@ -425,7 +474,7 @@ $$y_j(x) = \frac{k \, \alpha_j}{(n - k) + k \, \alpha_j + 1} \, e_j = \frac{k \,
 
 This proves the formula.
 
-### Lemma 6: The functions $1, g_1, \ldots, g_n$ are linearly independent on $\{0, \ldots, n\}$
+### Lemma 6. The functions $1, g_1, \ldots, g_n$ are linearly independent on $\{0, \ldots, n\}$
 
 Consider the $n + 1$ real-valued functions on the set $\{0, \ldots, n\}$
 
@@ -461,17 +510,19 @@ Now consider the rational function
 
 $$R(t) := \sum_{j=1}^{n} \frac{d_j}{t + r_j}.$$
 
-Multiply by the common denominator:
+Multiply by the common denominator to get
 
-$$N(t) := R(t) \prod_{j=1}^{n} (t + r_j).$$
+$$
+N(t) := R(t) \prod_{j=1}^{n} (t + r_j) = \sum_{j=1}^{n} d_j \prod_{m \neq j} (t + r_m).
+$$
 
-Because $R$ is a sum of simple fractions, $N(t)$ is a polynomial of degree at most $n - 1$.
+This is a polynomial of degree at most $n - 1$.
 
 But $R(k) = 0$ for $k = 1, \ldots, n$, so $N(k) = 0$ for those $n$ distinct values.
 
-A polynomial of degree at most $n - 1$ with $n$ distinct roots must be the zero polynomial. Therefore $N(t) \equiv 0$, and hence $R(t) \equiv 0$.
+A polynomial of degree at most $n - 1$ with $n$ distinct roots must be the zero polynomial. Therefore $N(t) \equiv 0$.
 
-Now fix $j$. Multiply $R(t)$ by $(t + r_j)$ and set $t = -r_j$. This gives
+Now fix $j$ and evaluate the zero polynomial $N$ at $t = -r_j$. Every term vanishes except the $j$-th one, so
 
 $$d_j \prod_{m \neq j} (r_m - r_j) = 0.$$
 
@@ -481,7 +532,7 @@ So every $d_j = 0$, hence every $c_j = 0$.
 
 Therefore $1, g_1, \ldots, g_n$ are linearly independent.
 
-### Corollary 7: $1, g_1, \ldots, g_n$ form a basis of all functions on $\{0, \ldots, n\}$
+### Corollary 7. $1, g_1, \ldots, g_n$ form a basis of all functions on $\{0, \ldots, n\}$
 
 The set $\{0, \ldots, n\}$ has exactly $n + 1$ points, so the vector space of real-valued functions on this set has dimension $n + 1$.
 
@@ -489,7 +540,7 @@ By Lemma 6 we already have $n + 1$ linearly independent functions.
 
 Therefore $1, g_1, \ldots, g_n$ form a basis.
 
-### Lemma 8: $n$ heads can realize parity exactly
+### Lemma 8. $n$ heads can realize parity exactly
 
 Define a target sign pattern on Hamming weights by
 

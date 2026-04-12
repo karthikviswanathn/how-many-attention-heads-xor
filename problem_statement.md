@@ -8,7 +8,7 @@ $$f : \{0,1\}^n \to \{0,1\}$$
 
 in a **single-layer attention-only transformer** with a **linear readout** from a designated query token.
 
-The motivating example is that, in the 2-bit setting, a single head can linearly realize functions such as `AND` and `OR`, but cannot realize `XOR`, while two heads suffice. This suggests that the number of heads may define a meaningful complexity measure for Boolean functions.
+The motivating example is that, in the 2-bit setting, a single head can linearly realize functions such as $\mathrm{AND}$ and $\mathrm{OR}$, but cannot realize $\mathrm{XOR}$, while two heads suffice. This suggests that the number of heads may define a meaningful complexity measure for Boolean functions.
 
 ## Model
 
@@ -26,7 +26,9 @@ A Boolean function $f$ is said to be **computable with $H$ heads** if there exis
 
 Define
 
-$$H^{*}(f) \;:=\; \min {\, H : f \text{ is computable with } H \text{ heads in the above model} \,\\}.$$
+$$
+H^{*}(f) \;:=\; \min \left\{\, H : f \text{ is computable with } H \text{ heads in the above model} \,\right\}.
+$$
 
 Our central problem is to understand $H^{*}(f)$ as a function of $f$.
 
@@ -42,8 +44,8 @@ Our central problem is to understand $H^{*}(f)$ as a function of $f$.
    - circuit depth / threshold-circuit complexity,
    - Fourier or spectral complexity measures?
 5. **Natural families.** What is $H^{*}(f)$ for standard functions such as:
-   - `AND`, `OR`,
-   - parity / `XOR`,
+   - $\mathrm{AND}$, $\mathrm{OR}$,
+   - parity / $\mathrm{XOR}$,
    - majority,
    - exact-count / symmetric functions,
    - address / indexing functions,
