@@ -3,15 +3,20 @@ from __future__ import annotations
 from dataclasses import asdict, replace
 from typing import Callable
 
+import numpy as np
+
 from .attention_model import AttentionModel
 from .config import SearchConfig, TrainingConfig
-from .ltf import is_constant, is_linear_threshold
 from .symmetry import representative_truth_tables
 from .truth_tables import all_inputs, truth_table_array_to_bitstring
 
 
 def _default_dimension(n_bits: int, heads: int) -> int:
     return max(4, n_bits + heads + 2)
+
+
+def _is_constant(truth_table: np.ndarray) -> bool:
+    return bool(np.all(truth_table == truth_table[0]))
 
 
 def _search_experimental_head_count(
@@ -21,7 +26,7 @@ def _search_experimental_head_count(
     training: TrainingConfig,
 ):
     attempted_heads = []
-    for heads in range(2, max_heads + 1):
+    for heads in range(1, max_heads + 1):
         attempted_heads.append(heads)
         d_model = training.d_model or _default_dimension(inputs.shape[1], heads)
         d_head = training.d_head or d_model
@@ -80,18 +85,11 @@ def estimate_h_star(
     inputs,
     config: SearchConfig,
 ):
-    if is_constant(truth_table):
+    if _is_constant(truth_table):
         return {
             "status": "exact",
             "estimated_h_star": 0,
             "method": "constant",
-        }
-
-    if is_linear_threshold(inputs, truth_table):
-        return {
-            "status": "exact",
-            "estimated_h_star": 1,
-            "method": "linear-threshold-feasibility",
         }
 
     base_result = _search_experimental_head_count(
@@ -128,7 +126,7 @@ def estimate_h_star(
         }
         return refined_result
 
-    if base_result["estimated_h_star"] >= 3:
+    if base_result["estimated_h_star"] >= 2:
         refined_result = _search_experimental_head_count(
             truth_table=truth_table,
             inputs=inputs,
