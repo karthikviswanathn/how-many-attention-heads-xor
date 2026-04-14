@@ -8,6 +8,8 @@ We want a step-by-step route to the first core question in [problem_statement.md
 
 This file is the statement ledger. It records the current lemma statements, how they fit together, and where each proof lives under `lemmas/`.
 
+For nearby literature and context, see [literature_survey.md](literature_survey.md).
+
 ## Current Status
 
 The current notes do **not** yet give an exact characterization of $H^{*}(f)$ for all Boolean functions.
@@ -16,6 +18,7 @@ What they *do* give is:
 
 - a structural one-head lower bound via checkerboard restrictions,
 - a one-head upper bound for symmetric threshold functions,
+- a general constructive upper bound via positive weighted sums,
 - exact answers for some standard families, including parity,
 - a clean separation between threshold-like behavior and checkerboard-like behavior.
 
@@ -146,6 +149,57 @@ $$
 
 **Proof.** [lemmas/xor_n_bits.md](lemmas/xor_n_bits.md)
 
+### Lemma 9. Weighted-sum interpolation upper bound
+
+Suppose there exist positive real numbers
+
+$$
+\lambda_1, \ldots, \lambda_n > 0
+$$
+
+and a function
+
+$$
+F : \operatorname{Im}(t) \to \{0,1\},
+$$
+
+where
+
+$$
+t(x) = \sum_{i=1}^{n} \lambda_i x_i,
+$$
+
+such that
+
+$$
+f(x) = F(t(x)).
+$$
+
+Let
+
+$$
+M := |\operatorname{Im}(t)|.
+$$
+
+Then
+
+$$
+H^{*}(f) \leq M - 1.
+$$
+
+In particular:
+
+- every symmetric Boolean function satisfies $H^{*}(f) \leq n$,
+- every Boolean function satisfies $H^{*}(f) \leq 2^n - 1$.
+
+> **Candidate invariant.** The proof defines a positive weighted-sum image complexity $M_{+}(f)$ and shows
+>
+> $$
+> H^{*}(f) \leq M_{+}(f) - 1.
+> $$
+
+**Proof.** [lemmas/04_weighted_sum_upper_bound.md](lemmas/04_weighted_sum_upper_bound.md)
+
 ## Dependency Order
 
 The current dependency structure is:
@@ -158,13 +212,15 @@ The current dependency structure is:
 6. Lemma 6 converts head complexity into a threshold-degree upper bound.
 7. Lemma 7 computes the threshold degree of parity exactly.
 8. Lemma 8 combines Lemmas 6 and 7 with an explicit $n$-head construction for parity.
+9. Lemma 9 gives a broader constructive upper-bound route by interpolating over the image of a positive weighted sum.
 
 ## What This Currently Says About The First Core Question
 
-The current evidence suggests that one-head complexity is governed by a geometric restriction on 2-coordinate slices, while upper bounds come from constructive embeddings of Hamming weight. For parity, the exact answer is captured by threshold degree.
+The current evidence suggests that one-head complexity is governed by a geometric restriction on 2-coordinate slices, while upper bounds come from constructive embeddings of low-cardinality positive weighted sums. For parity, the exact answer is captured by threshold degree.
 
 That is not yet a full invariant. It is only a partial answer:
 
 - checkerboard structure certifies $H^{*}(f) \geq 2$,
-- symmetric threshold structure certifies $H^{*}(f) = 1$.
+- symmetric threshold structure certifies $H^{*}(f) = 1$,
+- positive weighted-sum image structure certifies $H^{*}(f) \leq M_{+}(f) - 1$,
 - for parity, threshold degree gives the exact value $H^{*}(\mathrm{XOR}_n) = n$.
