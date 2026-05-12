@@ -1,4 +1,5 @@
 import HeadComplexity.Decomposition
+import HeadComplexity.Generalized
 import HeadComplexity.SegmentCrossing
 import HeadComplexity.SkipConnection
 
@@ -77,38 +78,29 @@ lemma midpoint_in_offdiag_segment :
 
 end Head
 
-/-- The real-inner-product map `inner w : Vec d → ℝ` packaged as a
-linear functional, so we can plug it into `segment_cross_not_separable`. -/
-noncomputable def innerLeftLin {d : ℕ} (w : Vec d) : Vec d →ₗ[ℝ] ℝ where
-  toFun v := ⟪w, v⟫_ℝ
-  map_add' x y := inner_add_right w x y
-  map_smul' c x := by
-    simp [inner_smul_right, smul_eq_mul]
-
-@[simp] lemma innerLeftLin_apply {d : ℕ} (w v : Vec d) :
-    innerLeftLin w v = ⟪w, v⟫_ℝ := rfl
-
 /-- **Theorem 1 (attention update form).** No single attention head can
 compute XOR: for every `H`, the bare attention update `z_=` is not linearly
 separable into XOR classes. -/
 theorem one_head_cannot_xor_attnUpdate {d : ℕ} (H : Head d) :
     ¬ computesXor H.attnUpdate := by
-  rintro ⟨w, τ, hw⟩
-  -- Diagonal inputs (XOR = false): `⟨w, z⟩ ≤ τ`.
-  have h00 : ⟪w, H.attnUpdate (false, false)⟫_ℝ ≤ τ := by
-    by_contra h
-    exact (Bool.false_ne_true) ((hw (false, false)).mp (lt_of_not_ge h))
-  have h11 : ⟪w, H.attnUpdate (true, true)⟫_ℝ ≤ τ := by
-    by_contra h
-    exact (Bool.false_ne_true) ((hw (true, true)).mp (lt_of_not_ge h))
-  -- Off-diagonal inputs (XOR = true): `⟨w, z⟩ > τ`.
-  have h01 : τ < ⟪w, H.attnUpdate (false, true)⟫_ℝ :=
-    (hw (false, true)).mpr rfl
-  have h10 : τ < ⟪w, H.attnUpdate (true, false)⟫_ℝ :=
-    (hw (true, false)).mpr rfl
-  -- Apply the segment-crossing obstruction.
-  exact segment_cross_not_separable (innerLeftLin w) h00 h11 h01 h10
-    H.midpoint_in_diag_segment H.midpoint_in_offdiag_segment
+  intro hxor
+  let f : (Fin 2 → Bool) → Bool := fun bits => xor (bits 0) (bits 1)
+  have hcomp : computableWithHeadsN 2 1 f := by
+    refine ⟨d, fun _ => H.toNHead, ?_⟩
+    rcases hxor with ⟨w, τ, hw⟩
+    refine ⟨w, τ, ?_⟩
+    intro bits
+    simpa [f, nHeadFamilyAttnUpdate] using hw (bits 0, bits 1)
+  have h00 : f (NHead.restrictBits (fun _ => false) 0 1 (false, false)) = false := by
+    simp [f, NHead.restrictBits]
+  have h11 : f (NHead.restrictBits (fun _ => false) 0 1 (true, true)) = false := by
+    simp [f, NHead.restrictBits]
+  have h01 : f (NHead.restrictBits (fun _ => false) 0 1 (false, true)) = true := by
+    simp [f, NHead.restrictBits]
+  have h10 : f (NHead.restrictBits (fun _ => false) 0 1 (true, false)) = true := by
+    simp [f, NHead.restrictBits]
+  exact (parity_restriction_not_computable_with_one_head
+    f (fun _ => false) 0 1 (by decide) h00 h11 h01 h10) hcomp
 
 /-- **Theorem 1 (full residual form).** No single attention head can compute
 XOR even when reading the full residual stream `h_= = x_= + z_=`. The skip
