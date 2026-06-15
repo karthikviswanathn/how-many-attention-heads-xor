@@ -1,13 +1,14 @@
 # head-complexity
 
-## GitHub configuration
+Lean 4 formalization of the head-complexity results for one-layer attention. The
+definitions and theorems mirror the informal proofs in the top-level `lemmas/` writeups.
 
-To set up your new GitHub repository, follow these steps:
+Depends on [mathlib](https://github.com/leanprover-community/mathlib4) (`v4.29.0`, pinned
+in `lakefile.toml`). Build with:
 
-* Under your repository name, click **Settings**.
-* In the **Actions** section of the sidebar, click "General".
-* Check the box **Allow GitHub Actions to create and approve pull requests**.
-* Click the **Pages** section of the settings sidebar.
-* In the **Source** dropdown menu, select "GitHub Actions".
+```bash
+lake exe cache get   # fetch prebuilt mathlib (first time only)
+lake build
+```
 
-After following the steps above, you can remove this section from the README file.
+See the [repository README](../README.md) for the wider project context.
