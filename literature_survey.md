@@ -83,7 +83,7 @@ Source: [ECCC](https://eccc.weizmann.ac.il/report/2018/010/)
 Sherstov gives explicit constructive approximate polynomials for several Boolean families, including $k$-DNF and $k$-CNF, with degree
 
 $$
-O\negthinspace\left(n^{1-\frac{1}{k+1}}\right).
+O \left(n^{1-\frac{1}{k+1}}\right).
 $$
 
 **Why it matters here.** The main attraction is constructive form. If we want upper bounds rather than just existential comparisons, explicit approximants are much more usable than generic existence theorems. The limitation is that the paper is about approximation, whereas our model computes Boolean functions exactly.

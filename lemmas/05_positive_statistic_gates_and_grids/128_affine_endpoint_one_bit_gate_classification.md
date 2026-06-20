@@ -104,7 +104,7 @@ We next check the two feature-literal conjunctions that can occur in non-XOR gat
 $$
 r(z)\wedge E(y)=1
 \qquad\Longleftrightarrow\qquad
-S(y)+d\thinspace r(z)>2d-\frac12.
+S(y)+d  r(z)>2d-\frac12.
 $$
 
 Indeed, on true inputs the left side is $2d$, while on false inputs it is at most $2d-1$.

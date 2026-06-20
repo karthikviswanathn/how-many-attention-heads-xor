@@ -160,7 +160,7 @@ Finally, XNOR is the output complement of XOR, and output complement preserves h
 
 For every nonempty $S$,
 
-$$ H^{*}\negthinspace\left(z\oplus \mathrm{OR}_S(y)\right) = H^{*}\negthinspace\left(z\oplus \mathrm{AND}_S(y)\right) = 2, $$
+$$ H^{*} \left(z\oplus \mathrm{OR}_S(y)\right) = H^{*} \left(z\oplus \mathrm{AND}_S(y)\right) = 2, $$
 
 and the same holds for the corresponding XNOR functions.
 

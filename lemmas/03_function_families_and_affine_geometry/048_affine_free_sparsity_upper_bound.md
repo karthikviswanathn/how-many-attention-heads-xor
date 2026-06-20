@@ -13,7 +13,7 @@ define its affine-free support cost by
 $$
 \mathrm{afs}(P)
 :=
-\mathbf{1}\negthinspace\left[
+\mathbf{1} \left[
 \exists i,\ a_{\lbrace i\rbrace}\neq0
 \right]
 +
@@ -111,7 +111,7 @@ Let
 
 $$
 \ell:=
-\mathbf{1}\negthinspace\left[
+\mathbf{1} \left[
 \exists i,\ a_{\lbrace i\rbrace}\neq0
 \right].
 $$

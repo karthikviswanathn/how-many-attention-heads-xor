@@ -174,13 +174,13 @@ Then
 $$
 r(z)\wedge U(y)=1
 \qquad\Longleftrightarrow\qquad
-W(y)+C\thinspace r(z)>C+\theta.
+W(y)+C  r(z)>C+\theta.
 $$
 
 If $r(z)=1$ and $U(y)=1$, then $W(y)\geq w_+>\theta$, so the displayed inequality holds. If $r(z)=1$ and $U(y)=0$, then $W(y)\leq w_-<\theta$, so the displayed inequality fails. If $r(z)=0$, then
 
 $$
-W(y)+C\thinspace r(z)\leq W_{\max}<C+\theta,
+W(y)+C  r(z)\leq W_{\max}<C+\theta,
 $$
 
 so the displayed inequality also fails. Hence every literal conjunction $r\wedge U$ is an LTF. Its complement is also an LTF.

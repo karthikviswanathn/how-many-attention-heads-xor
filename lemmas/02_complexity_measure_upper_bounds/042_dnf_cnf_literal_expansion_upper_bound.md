@@ -137,7 +137,7 @@ Complement invariance from [028_restrictions_and_sign_rank.md](028_restrictions_
 If a DNF or CNF has $s$ terms or clauses and, after possibly applying the global bit flip, every term or clause contains at most $r$ literals of the less convenient sign, then
 
 $$
-H^{*}(f)\leq s\thinspace2^r.
+H^{*}(f)\leq s 2^r.
 $$
 
 For monotone DNF and CNF formulas, $r=0$, so this recovers the one-head-per-term bound

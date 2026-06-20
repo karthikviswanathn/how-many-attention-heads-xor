@@ -65,7 +65,7 @@ $$
 Then
 
 $$
-R_0(u):=P_0(u)-\sum_{h=1}^{d}\mu_hu\thinspace Q_h^{(0)}(u)
+R_0(u):=P_0(u)-\sum_{h=1}^{d}\mu_hu  Q_h^{(0)}(u)
 $$
 
 has degree at most $d-1$, because each $uQ_h^{(0)}$ has leading coefficient $1$. By the basis property, choose $a_1,\ldots,a_d$ such that

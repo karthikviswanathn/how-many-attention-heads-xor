@@ -25,7 +25,7 @@ Define
 $$
 \lambda(P_0,P_1)
 :=
-\mathbf{1}\negthinspace\left[
+\mathbf{1} \left[
 c_1\neq c_0
 \text{ or }
 \exists i,\ \alpha_{0,i}\neq0

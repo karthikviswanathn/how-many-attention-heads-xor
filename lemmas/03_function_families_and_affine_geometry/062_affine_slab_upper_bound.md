@@ -185,7 +185,7 @@ The affine level-set theorem [061_affine_level_set_upper_bound.md](061_affine_le
 Hamming-weight intervals satisfy
 
 $$
-H^{*}\negthinspace\left(\mathbf{1}[a\leq \lvert x\rvert\leq b]\right)\leq2.
+H^{*} \left(\mathbf{1}[a\leq \lvert x\rvert\leq b]\right)\leq2.
 $$
 
 This agrees with the exact symmetric sign-change theorem, since a single interval has at most two boundary crossings in the Hamming-weight sequence.

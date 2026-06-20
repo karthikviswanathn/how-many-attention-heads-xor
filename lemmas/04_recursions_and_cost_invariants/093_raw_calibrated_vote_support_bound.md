@@ -66,7 +66,7 @@ be the exact multilinear expansion of $T$. Define the exact affine-free support 
 $$
 \mathrm{eafs}(T)
 :=
-\mathbf{1}\negthinspace\left[
+\mathbf{1} \left[
 \exists i,\ a_{\lbrace i\rbrace}\neq0
 \right]
 +
@@ -182,7 +182,7 @@ For each $S\in\mathcal{M}$, Lemma 1 of [041_ptf_sparsity_upper_bound.md](../02_c
 
 Choose all these tolerances small enough that the sum of the uniform errors is at most the requested $\epsilon$. Adding the constant term $a_{\varnothing}$ proves
 
-$$ \rho(T)\leq \mathbf{1}\negthinspace\left[L\neq0\right] + \lvert\mathcal{M}\rvert = \mathrm{eafs}(T). $$
+$$ \rho(T)\leq \mathbf{1} \left[L\neq0\right] + \lvert\mathcal{M}\rvert = \mathrm{eafs}(T). $$
 
 Combining this with Lemma 1 proves the final displayed bound. $\blacksquare$
 

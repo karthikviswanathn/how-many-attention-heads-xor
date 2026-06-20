@@ -13,7 +13,7 @@ be a two-bit predicate, and let $P_p(a,b)$ be its multilinear polynomial on the 
 $$
 f_{p,F}(x,y)
 :=
-F\negthinspace\left(\sum_{i=1}^{m}p(x_i,y_i)\right),
+F \left(\sum_{i=1}^{m}p(x_i,y_i)\right),
 \qquad
 x,y\in\lbrace0,1\rbrace^m.
 $$
@@ -124,7 +124,7 @@ $$
 for every $k\in\lbrace0,\ldots,m\rbrace$. Therefore
 
 $$
-R\negthinspace\left(\sum_{i=1}^{m}p(x_i,y_i)\right)
+R \left(\sum_{i=1}^{m}p(x_i,y_i)\right)
 $$
 
 sign-represents $f_{p,F}$.

@@ -85,7 +85,7 @@ $$
 and positional embeddings
 
 $$
-p_i = (\log \lambda_i) \thinspace r \quad \text{for } 1 \leq i \leq n,
+p_i = (\log \lambda_i)   r \quad \text{for } 1 \leq i \leq n,
 \qquad
 p_= = 0.
 $$
@@ -95,8 +95,8 @@ Thus an input token at position $i$ is represented by
 $$
 u_i(x) =
 \begin{cases}
-(\log \lambda_i) \thinspace r & \text{if } x_i = 0, \\
-u + (\log \lambda_i) \thinspace r & \text{if } x_i = 1.
+(\log \lambda_i)   r & \text{if } x_i = 0, \\
+u + (\log \lambda_i)   r & \text{if } x_i = 1.
 \end{cases}
 $$
 
@@ -113,7 +113,7 @@ $$
 For each $j \in \lbrace1, \ldots, M-1\rbrace$, define linear maps as follows.
 
 1. $W_Q^{(j)}$ sends $q$ to $q$ and annihilates the orthogonal complement of $q$.
-2. $W_K^{(j)}$ sends $r$ to $q$, sends $u$ to $(\log \alpha_j) \thinspace q$, and annihilates $q, e_1, \ldots, e_{M-1}$.
+2. $W_K^{(j)}$ sends $r$ to $q$, sends $u$ to $(\log \alpha_j)   q$, and annihilates $q, e_1, \ldots, e_{M-1}$.
 3. $W_V^{(j)}$ sends $u$ to $e_j$ and annihilates $q, r, e_1, \ldots, e_{M-1}$.
 4. $W_O^{(j)}$ is the identity on $\mathbb{R}^{M+2}$.
 
@@ -124,7 +124,7 @@ These choices define a valid attention head in the model from [../model.md](../.
 For every input $x$,
 
 $$
-y^{(j)}(x) = g_j(t(x)) \thinspace e_j,
+y^{(j)}(x) = g_j(t(x))   e_j,
 $$
 
 where
@@ -135,10 +135,10 @@ $$
 
 **Proof.** Fix a position $i$.
 
-If $x_i = 0$, the embedded vector is $(\log \lambda_i) \thinspace r$. Therefore:
+If $x_i = 0$, the embedded vector is $(\log \lambda_i)   r$. Therefore:
 
 $$
-W_K^{(j)} u_i(x) = (\log \lambda_i) \thinspace q,
+W_K^{(j)} u_i(x) = (\log \lambda_i)   q,
 $$
 
 so the logit at that position is $\log \lambda_i$ and the unnormalized attention weight is $\lambda_i$. Also
@@ -147,7 +147,7 @@ $$
 W_V^{(j)} u_i(x) = 0.
 $$
 
-If $x_i = 1$, the embedded vector is $u + (\log \lambda_i) \thinspace r$. Therefore:
+If $x_i = 1$, the embedded vector is $u + (\log \lambda_i)   r$. Therefore:
 
 $$
 W_K^{(j)} u_i(x) = \bigl(\log \alpha_j + \log \lambda_i \bigr) q,
@@ -163,7 +163,7 @@ For the query token, the embedding is $q$. Since $W_K^{(j)} q = 0$ and $W_V^{(j)
 
 So the numerator vector of head $j$ is
 
-$$ \sum_{i : x_i = 1} \alpha_j \lambda_i \thinspace e_j = \alpha_j \left( \sum_{i=1}^{n} \lambda_i x_i \right) e_j = \alpha_j t(x) \thinspace e_j, $$
+$$ \sum_{i : x_i = 1} \alpha_j \lambda_i   e_j = \alpha_j \left( \sum_{i=1}^{n} \lambda_i x_i \right) e_j = \alpha_j t(x)   e_j, $$
 
 while the denominator is
 
@@ -177,7 +177,7 @@ $$
 
 Hence
 
-$$ y^{(j)}(x) = \frac{\alpha_j t(x)}{1 + \Lambda + (\alpha_j - 1) t(x)} \thinspace e_j = g_j(t(x)) \thinspace e_j. $$
+$$ y^{(j)}(x) = \frac{\alpha_j t(x)}{1 + \Lambda + (\alpha_j - 1) t(x)}   e_j = g_j(t(x))   e_j. $$
 
 This proves the formula. $\blacksquare$
 
@@ -335,8 +335,8 @@ M_{+}(f)
 \lvert \mathrm{Im}\left(\sum_{i=1}^{n} \lambda_i x_i\right) \rvert
 :
 \lambda_1, \ldots, \lambda_n > 0,
-\thickspace
-f(x) = F\negthinspace\left(\sum_{i=1}^{n} \lambda_i x_i\right)
+ 
+f(x) = F \left(\sum_{i=1}^{n} \lambda_i x_i\right)
 \text{ for some } F
 \right\rbrace.
 $$

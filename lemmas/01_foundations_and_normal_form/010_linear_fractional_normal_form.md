@@ -75,7 +75,7 @@ For each input position $i$, define
 $$
 \rho_{h,i}
 :=
-\exp\negthinspace\left(
+\exp \left(
 \left\langle q_h, W_K^{(h)}(e_0 + p_i) \right\rangle
 \right)
 > 0,
@@ -86,7 +86,7 @@ and
 $$
 \alpha_h
 :=
-\exp\negthinspace\left(
+\exp \left(
 \left\langle q_h, W_K^{(h)}(e_1 - e_0) \right\rangle
 \right)
 > 0.
@@ -131,7 +131,7 @@ For the query token itself, define
 $$
 \gamma_h
 :=
-\exp\negthinspace\left(
+\exp \left(
 \left\langle q_h, W_K^{(h)} u_= \right\rangle
 \right)
 > 0,
@@ -248,7 +248,7 @@ At the query token, the logit is $\log \gamma_h$, the unnormalized attention wei
 Therefore the projected output of head $h$ is exactly
 
 $$
-\phi_h(x) \thinspace o_h.
+\phi_h(x)   o_h.
 $$
 
 Choose the final readout vector

@@ -55,7 +55,7 @@ Finally define
 $$
 \eta_G(A)
 :=
-\mathbf{1}\negthinspace\left[
+\mathbf{1} \left[
 \delta_1+\mu_1 a\neq \delta_0+\mu_0 a
 \text{ or }
 \exists i,\ \mu_0\alpha_i\neq0

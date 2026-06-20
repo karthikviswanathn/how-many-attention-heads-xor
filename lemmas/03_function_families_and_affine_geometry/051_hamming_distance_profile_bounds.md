@@ -7,7 +7,7 @@ Let $F:\lbrace0,1,\ldots,m\rbrace\to\lbrace0,1\rbrace$ and define the Hamming-di
 $$
 g_F(x,y)
 :=
-F\negthinspace\left(\Delta(x,y)\right),
+F \left(\Delta(x,y)\right),
 \qquad
 x,y\in\lbrace0,1\rbrace^m,
 $$
@@ -63,7 +63,7 @@ $$
 
 and therefore
 
-$$ g_F(x,0) = F\negthinspace\left(\sum_{i=1}^{m}x_i\right). $$
+$$ g_F(x,0) = F \left(\sum_{i=1}^{m}x_i\right). $$
 
 This is the symmetric Boolean function with Hamming-weight label sequence
 

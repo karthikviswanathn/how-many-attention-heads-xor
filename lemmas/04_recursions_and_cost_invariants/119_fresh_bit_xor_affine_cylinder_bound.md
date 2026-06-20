@@ -41,7 +41,7 @@ and
 $$
 \eta_{\oplus}(A)
 :=
-\mathbf{1}\negthinspace\left[
+\mathbf{1} \left[
 a\neq0
 \text{ or }
 \exists i,\ \alpha_i\neq0
@@ -105,7 +105,7 @@ $$
 The affine indicator in Lemma 118 becomes
 
 $$
-\mathbf{1}\negthinspace\left[
+\mathbf{1} \left[
 -a\neq a
 \text{ or }
 \exists i,\ \alpha_i\neq0

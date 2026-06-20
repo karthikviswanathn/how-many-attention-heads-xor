@@ -29,7 +29,7 @@ and
 $$
 \eta_{\oplus}(A)
 :=
-\mathbf{1}\negthinspace\left[
+\mathbf{1} \left[
 a\neq0
 \text{ or }
 \exists i,\ \alpha_i\neq0

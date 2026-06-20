@@ -227,9 +227,9 @@ be an atom. Then $\phi(1-y)$ equals
 
 $$
 \frac{
-\eta+\sum_{i=1}^{n}\rho_i'\thinspace(\alpha')^{y_i}(m_i'+\delta' y_i)
+\eta+\sum_{i=1}^{n}\rho_i' (\alpha')^{y_i}(m_i'+\delta' y_i)
 }{
-\gamma+\sum_{i=1}^{n}\rho_i'\thinspace(\alpha')^{y_i}
+\gamma+\sum_{i=1}^{n}\rho_i' (\alpha')^{y_i}
 },
 $$
 

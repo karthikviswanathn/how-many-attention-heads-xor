@@ -123,7 +123,7 @@ $$
 \widetilde y^{(h)}(x)
 :=
 \sum_{j \in \lbrace1,\ldots,n,=\rbrace}
-\alpha_j^{(h)}(x)\thinspace v_j^{(h)}(x)
+\alpha_j^{(h)}(x)  v_j^{(h)}(x)
 \in \mathbb{R}^{d_{\mathrm{head}}}.
 $$
 

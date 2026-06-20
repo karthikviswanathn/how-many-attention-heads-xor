@@ -11,7 +11,7 @@ $$
 Then
 
 $$
-W(n) = \Omega\negthinspace\left(\frac{2^n}{n^2}\right).
+W(n) = \Omega \left(\frac{2^n}{n^2}\right).
 $$
 
 More quantitatively, for fixed $n$ and $H$, the number of $n$-bit Boolean functions computable with at most $H$ heads is at most
@@ -23,7 +23,7 @@ $$
 whenever $1 \leq H \leq 2^n$. Hence, if
 
 $$
-H = o\negthinspace\left(\frac{2^n}{n^2}\right),
+H = o \left(\frac{2^n}{n^2}\right),
 $$
 
 then the fraction of $n$-bit Boolean functions computable with at most $H$ heads tends to $0$ as $n \to \infty$.
@@ -143,7 +143,7 @@ $$
 Boolean functions on $\lbrace0,1\rbrace^n$. If
 
 $$
-H=o\negthinspace\left(\frac{2^n}{n^2}\right),
+H=o \left(\frac{2^n}{n^2}\right),
 $$
 
 then
@@ -163,7 +163,7 @@ is at most $2^{-\Omega(2^n)}$. Thus almost every $n$-bit Boolean function requir
 In particular, the worst-case quantity satisfies
 
 $$
-W(n)=\Omega\negthinspace\left(\frac{2^n}{n^2}\right).
+W(n)=\Omega \left(\frac{2^n}{n^2}\right).
 $$
 
 $\blacksquare$
@@ -173,7 +173,7 @@ $\blacksquare$
 The general worst-case head complexity is now bracketed as
 
 $$
-\Omega\negthinspace\left(\frac{2^n}{n^2}\right)
+\Omega \left(\frac{2^n}{n^2}\right)
 \leq
 W(n)
 \leq

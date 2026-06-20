@@ -155,7 +155,7 @@ recovering the symmetric sign-change theorem in that special case.
 Equality on two $m$-bit strings is also an affine level set after binary encoding:
 
 $$
-\mathrm{EQ}_m(x,y)=\mathbf{1}\negthinspace\left[\sum_{i=1}^{m}2^{i-1}x_i-\sum_{i=1}^{m}2^{i-1}y_i=0\right].
+\mathrm{EQ}_m(x,y)=\mathbf{1} \left[\sum_{i=1}^{m}2^{i-1}x_i-\sum_{i=1}^{m}2^{i-1}y_i=0\right].
 $$
 
 Thus this theorem gives another route to

@@ -13,7 +13,7 @@ $$
 and let $P(z,y)$ be a strict sign polynomial for a Boolean function $f(z,y)$ that can be written as a quadratic polynomial in the two quantities $t(y)$ and $z$, reduced using $z^2=z$:
 
 $$
-P(z,y)=p_0+p_1t(y)+p_2t(y)^2+q_0z+q_1z\thinspace t(y).
+P(z,y)=p_0+p_1t(y)+p_2t(y)^2+q_0z+q_1z  t(y).
 $$
 
 Then

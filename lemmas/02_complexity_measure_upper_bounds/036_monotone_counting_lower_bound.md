@@ -18,12 +18,12 @@ $$
 
 Then
 
-$$ W_{\mathrm{mon}}(n) = \Omega\negthinspace\left(\frac{B_n}{n^2}\right). $$
+$$ W_{\mathrm{mon}}(n) = \Omega \left(\frac{B_n}{n^2}\right). $$
 
 Combined with the monotone antichain upper bound [035_monotone_antichain_upper_bound.md](035_monotone_antichain_upper_bound.md), this gives
 
 $$
-\Omega\negthinspace\left(\frac{1}{n^2}\binom{n}{\lfloor n/2\rfloor}\right)
+\Omega \left(\frac{1}{n^2}\binom{n}{\lfloor n/2\rfloor}\right)
 \leq
 W_{\mathrm{mon}}(n)
 \leq
@@ -33,7 +33,7 @@ $$
 More quantitatively, if
 
 $$
-H=o\negthinspace\left(\frac{B_n}{n^2}\right),
+H=o \left(\frac{B_n}{n^2}\right),
 $$
 
 then the fraction of monotone $n$-bit Boolean functions with $H^{*}(f)\leq H$ tends to $0$.
@@ -101,7 +101,7 @@ $$
 If
 
 $$
-H=o\negthinspace\left(\frac{B_n}{n^2}\right),
+H=o \left(\frac{B_n}{n^2}\right),
 $$
 
 then
@@ -126,7 +126,7 @@ $$
 
 Thus
 
-$$ W_{\mathrm{mon}}(n) = \Omega\negthinspace\left(\frac{B_n}{n^2}\right). $$
+$$ W_{\mathrm{mon}}(n) = \Omega \left(\frac{B_n}{n^2}\right). $$
 
 The upper bound
 
@@ -141,11 +141,11 @@ is exactly the monotone antichain upper bound from [035_monotone_antichain_upper
 The monotone class has exponentially large worst-case head complexity:
 
 $$
-\Omega\negthinspace\left(\frac{2^n}{n^{5/2}}\right)
+\Omega \left(\frac{2^n}{n^{5/2}}\right)
 \leq
 W_{\mathrm{mon}}(n)
 \leq
-O\negthinspace\left(\frac{2^n}{\sqrt n}\right),
+O \left(\frac{2^n}{\sqrt n}\right),
 $$
 
 using the standard asymptotic size of the middle binomial coefficient.

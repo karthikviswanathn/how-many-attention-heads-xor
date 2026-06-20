@@ -63,7 +63,7 @@ where
 $$
 \eta(A_0,A_1)
 :=
-\mathbf{1}\negthinspace\left[
+\mathbf{1} \left[
 a_1\neq a_0
 \text{ or }
 \exists i,\ \alpha_{0,i}\neq0

@@ -36,7 +36,7 @@ A short sketch of the proof
 
 **In the single-head case**, we will show that the attention update results in a point $P$ that lies in the intersection of the line segments connecting same-class points[^tzw5rnf80qc], i.e.,
 
-$\qquad P \thickspace\in\thickspace [z_=(0,0),\thinspace z_=(1,1)] \thickspace\cap\thickspace [z_=(0,1),\thinspace z_=(1,0)].$
+$\qquad P  \in  [z_=(0,0),  z_=(1,1)]  \cap  [z_=(0,1),  z_=(1,0)].$
 
 This rules out linear separability: any separating hyperplane must place each class' segment entirely on one side, but two segments that intersect cannot be separated by a hyperplane.
 
@@ -59,7 +59,7 @@ $\qquad x_a=e_a+\text{pos}_a,\qquad x_b=e_b+\text{pos}_b,\qquad x_==e_{=}+\text{
 
 A single attention head is parameterized by the query, key and value matrices denoted as $W_Q, W_K, W_V \in \mathbb{R}^{d \times d}$ respectively. The `=` token attends to all three positions via softmax attention, resulting in the residual stream $h_=(a,b)$:
 
-$\qquad h_=(a,b)= x_=+\sum_{j=1}^3 \alpha_j(a,b)\thinspace W_Vx_j$
+$\qquad h_=(a,b)= x_=+\sum_{j=1}^3 \alpha_j(a,b)  W_Vx_j$
 
 where $\alpha_j(a,b)$ is the attention weight from the $j^{\text{th}}$ key to the `=` token given as:  
   
@@ -78,7 +78,7 @@ Since $x_=$ doesn't depend on the input bits at all, any probe can fold it into 
 
 Let $v_j := W_V x_j$ denote the value vector at position $j$. The attention update is then a convex combination of these value vectors, weighted by the attention probabilities $\lbrace p_a, p_b, p_=\rbrace$:
 
-$\qquad z_=(a,b) := p_a\thinspace v_a + p_b\thinspace v_b + p_=\thinspace v_=, \qquad p_a + p_b + p_= = 1,\quad p_j > 0.$
+$\qquad z_=(a,b) := p_a  v_a + p_b  v_b + p_=  v_=, \qquad p_a + p_b + p_= = 1,\quad p_j > 0.$
 
 The attention probabilities are the softmax of the raw attention logits $\sigma_a, \sigma_b, \sigma_=$, which measure how strongly the `=` token's query matches each key:
 
@@ -90,7 +90,7 @@ $\qquad p_j = \dfrac{\sigma_j}{\sigma_a + \sigma_b + \sigma_=}.$
 
 So we can equivalently write the attention update directly in terms of the $\sigma$'s:
 
-$\qquad z_=(a,b) = \dfrac{\sigma_a\thinspace v_a + \sigma_b\thinspace v_b + \sigma_=\thinspace v_=}{\sigma_a + \sigma_b + \sigma_=}.$
+$\qquad z_=(a,b) = \dfrac{\sigma_a  v_a + \sigma_b  v_b + \sigma_=  v_=}{\sigma_a + \sigma_b + \sigma_=}.$
 
 We now ask: can a hyperplane separate the four attention outputs $\lbrace z_=(a,b)\rbrace_{a,b \in \lbrace0,1\rbrace}$ into the XOR classes?  
   
@@ -102,7 +102,7 @@ It is worth noticing that XOR is the *first* interesting example here since a si
 
 Here is a simple way to see it. Take a head that attends to `1` tokens and writes a positive value when it reads one.[^porwa688oyc] Its output increases with the number of ones, so it produces a score that is monotone in $a+b$:
 
-$a+b=0 \thickspace\mapsto\thickspace \text{low},\qquad a+b=1 \thickspace\mapsto\thickspace\text{medium},\qquad a+b=2 \thickspace\mapsto\thickspace \text{high}.$
+$a+b=0  \mapsto  \text{low},\qquad a+b=1  \mapsto \text{medium},\qquad a+b=2  \mapsto  \text{high}.$
 
 Now thresholding does the rest:
 
@@ -149,17 +149,17 @@ Line segments connecting the same class intersect
 
 We now show that the positive-class segment always intersects the negative-class segment, ruling out linear separability.
 
-Recall from the definition $z_=(a,b)$, we get $N(a,b) = D(a,b)\thinspace z_=(a,b)$. Substituting this into the diagonal identity $\mathcal{N} = N(0,0) + N(1,1) = N(0,1) + N(1,0)$ gives  
+Recall from the definition $z_=(a,b)$, we get $N(a,b) = D(a,b)  z_=(a,b)$. Substituting this into the diagonal identity $\mathcal{N} = N(0,0) + N(1,1) = N(0,1) + N(1,0)$ gives  
   
-$\qquad \begin{aligned} \mathcal{N} = D(0,0)\thinspace z_=(0,0) + D(1,1)\thinspace z_=(1,1) \ = D(0,1)\thinspace z_=(0,1) + D(1,0)\thinspace z_=(1,0). \end{aligned}$  
+$\qquad \begin{aligned} \mathcal{N} = D(0,0)  z_=(0,0) + D(1,1)  z_=(1,1) \ = D(0,1)  z_=(0,1) + D(1,0)  z_=(1,0). \end{aligned}$  
   
 Dividing both expressions by $\mathcal{D} = D(0,0) + D(1,1) = D(0,1) + D(1, 0)$, we obtain
 
-$\qquad \begin{aligned} P &:= \dfrac{\mathcal{N}}{\mathcal{D}} \ &= \dfrac{D(0,0) \thinspace z_=(0,0) + D(1,1) \thinspace z_=(1,1)}{D(0,0) + D(1,1)} \ &= \dfrac{D(0,1) \thinspace z_=(0,1) + D(1,0) \thinspace z_=(1,0)}{D(0,1) + D(1, 0)}. \end{aligned}$
+$\qquad \begin{aligned} P &:= \dfrac{\mathcal{N}}{\mathcal{D}} \ &= \dfrac{D(0,0)   z_=(0,0) + D(1,1)   z_=(1,1)}{D(0,0) + D(1,1)} \ &= \dfrac{D(0,1)   z_=(0,1) + D(1,0)   z_=(1,0)}{D(0,1) + D(1, 0)}. \end{aligned}$
 
 Since every $D(a,b) > 0$, both sides are **convex combinations**: the left side is a point on the segment $[z_=(0,0), z_=(1,1)]$ and the right side is a point on $[z_=(0,1), z_=(1,0)]$. So point $P$ satisfies
 
-$\qquad P \thickspace\in\thickspace [z_=(0,0), z_=(1,1)] \thickspace\cap\thickspace [z_=(0,1), z_=(1,0)].$
+$\qquad P  \in  [z_=(0,0), z_=(1,1)]  \cap  [z_=(0,1), z_=(1,0)].$
 
 In words: the segment joining the two XOR-negative hidden states always crosses the segment joining the two XOR-positive hidden states.
 
@@ -176,7 +176,7 @@ $\qquad z_=(a,b)=y_=^{(0)}(a,b)+y_=^{(1)}(a,b),$
 
 where
 
-$\qquad y_=^{(r)}(a,b):=\sum_{j=1}^3 \alpha_j^{(r)}(a,b)\thinspace W_V^{(r)}x_j.$
+$\qquad y_=^{(r)}(a,b):=\sum_{j=1}^3 \alpha_j^{(r)}(a,b)  W_V^{(r)}x_j.$
 
 The idea is simple:
 
@@ -207,7 +207,7 @@ $\begin{array}{|l|l|l|} \hline \textbf{Input} & \textbf{Head 0} & \textbf{Head 1
 
 We can now compute the attention update from each head across all four inputs.
 
-$\begin{array}{|l|l|l|l|} \hline \textbf{Input} & \textbf{Head 0} & \textbf{Head 1} & \textbf{Head 0 + Head 1}\ \hline (0,0) & \dfrac{2e}{2e+1}\thinspace e_0 & 0 & \dfrac{2e}{2e+1}\thinspace e_0 \\[12pt] (0,1) & \dfrac{e}{e+2}\thinspace e_0 & \dfrac{e}{e+2}\thinspace e_1 & \dfrac{e}{e+2}(e_0+e_1) \\[12pt] (1,0) & \dfrac{e}{e+2}\thinspace e_0 & \dfrac{e}{e+2}\thinspace e_1 & \dfrac{e}{e+2}(e_0+e_1) \\[12pt] (1,1) & 0 & \dfrac{2e}{2e+1}\thinspace e_1 & \dfrac{2e}{2e+1}\thinspace e_1 \ \hline \end{array}$
+$\begin{array}{|l|l|l|l|} \hline \textbf{Input} & \textbf{Head 0} & \textbf{Head 1} & \textbf{Head 0 + Head 1}\ \hline (0,0) & \dfrac{2e}{2e+1}  e_0 & 0 & \dfrac{2e}{2e+1}  e_0 \\[12pt] (0,1) & \dfrac{e}{e+2}  e_0 & \dfrac{e}{e+2}  e_1 & \dfrac{e}{e+2}(e_0+e_1) \\[12pt] (1,0) & \dfrac{e}{e+2}  e_0 & \dfrac{e}{e+2}  e_1 & \dfrac{e}{e+2}(e_0+e_1) \\[12pt] (1,1) & 0 & \dfrac{2e}{2e+1}  e_1 & \dfrac{2e}{2e+1}  e_1 \ \hline \end{array}$
 
 The **same-bit inputs**  $(0,0)$ and $(1,1)$ each **activate only one head**, while the mixed inputs $(0,1)$ and $(1,0)$ activate both heads equally. The mixed inputs therefore have a strictly larger total activation, which a linear readout can exploit.
 

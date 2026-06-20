@@ -57,7 +57,7 @@ $$
 All coefficients of $s$ are positive. For a fixed raw assignment $a$, the values of $s(a,y)$ lie in the interval
 
 $$
-\left[B\mathrm{code}(a),\thickspace B\mathrm{code}(a)+\Lambda\right].
+\left[B\mathrm{code}(a),  B\mathrm{code}(a)+\Lambda\right].
 $$
 
 Since $B>\Lambda$, these intervals are disjoint and ordered by $\mathrm{code}(a)$. Therefore the ordered label sequence of $f$ along the statistic $s$ is obtained by concatenating the ordered label sequences of the slices $F_a(t(y))$ in increasing binary-code order.

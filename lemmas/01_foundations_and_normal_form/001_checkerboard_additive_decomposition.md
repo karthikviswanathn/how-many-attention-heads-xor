@@ -19,7 +19,7 @@ $$
 where
 
 $$
-N(a,b) := \sum_{t \in \lbrace1,\ldots,n,=\rbrace} \exp\bigl(\ell_t(a,b)\bigr)\thinspace \widehat v_t(a,b),
+N(a,b) := \sum_{t \in \lbrace1,\ldots,n,=\rbrace} \exp\bigl(\ell_t(a,b)\bigr)  \widehat v_t(a,b),
 $$
 
 $$
@@ -53,7 +53,7 @@ Each sequence position belongs to exactly one of three types:
 Since the attention numerator is a sum over positions of per-position terms
 
 $$
-\exp\bigl(\ell_t(a,b)\bigr)\thinspace \widehat v_t(a,b),
+\exp\bigl(\ell_t(a,b)\bigr)  \widehat v_t(a,b),
 $$
 
 and the denominator is the same sum without the projected value vectors, the dependence splits coordinatewise. Collecting the type-1 terms into $A(a)$ (respectively $\alpha(a)$), the type-2 terms into $B(b)$ (respectively $\beta(b)$), and the constant type-3 terms into $C$ (respectively $\gamma$) gives the stated decomposition. $\blacksquare$

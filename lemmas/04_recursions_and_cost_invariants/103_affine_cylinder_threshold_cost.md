@@ -33,7 +33,7 @@ define
 $$
 \lambda(A)
 :=
-\mathbf{1}\negthinspace\left[
+\mathbf{1} \left[
 \exists i,\ a_i\neq0
 \right].
 $$

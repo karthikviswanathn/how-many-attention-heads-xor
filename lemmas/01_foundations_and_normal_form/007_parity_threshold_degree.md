@@ -42,13 +42,13 @@ $$Q(z) < 0 \text{ whenever } \pi(z) = -1.$$
 
 Equivalently,
 
-$$\pi(z) \thinspace Q(z) > 0$$
+$$\pi(z)   Q(z) > 0$$
 
 for every $z \in \lbrace-1,1\rbrace^n$.
 
 Since the cube is finite, averaging gives
 
-$$\mathbb{E}[\pi(z) \thinspace Q(z)] > 0.$$
+$$\mathbb{E}[\pi(z)   Q(z)] > 0.$$
 
 We now show that this expectation must in fact be zero.
 
@@ -58,7 +58,7 @@ $$\chi_S(z) := \prod_{i \in S} z_i.$$
 
 Every real-valued function on $\lbrace-1,1\rbrace^n$ can be written uniquely as a linear combination of these characters. In particular, every polynomial of degree less than $n$, restricted to the cube, has an expansion
 
-$$Q(z) = \sum_{S \subsetneq [n]} c_S \thinspace \chi_S(z),$$
+$$Q(z) = \sum_{S \subsetneq [n]} c_S   \chi_S(z),$$
 
 where only subsets $S$ of size strictly less than $n$ occur.
 
@@ -70,23 +70,23 @@ $$\pi(z) = -\chi_{[n]}(z).$$
 
 Using orthogonality of the Walsh characters,
 
-$$\mathbb{E}[\chi_{[n]}(z) \thinspace \chi_S(z)] = 0$$
+$$\mathbb{E}[\chi_{[n]}(z)   \chi_S(z)] = 0$$
 
 for every proper subset $S \subsetneq [n]$.
 
 The reason is that
 
-$$\chi_{[n]}(z) \thinspace \chi_S(z) = \chi_{[n] \thinspace\triangle\thinspace S}(z),$$
+$$\chi_{[n]}(z)   \chi_S(z) = \chi_{[n]  \triangle  S}(z),$$
 
-and $[n] \thinspace\triangle\thinspace S$ is nonempty when $S \neq [n]$. The expectation of a nontrivial character over the uniform cube is zero, because if $T$ is nonempty then
+and $[n]  \triangle  S$ is nonempty when $S \neq [n]$. The expectation of a nontrivial character over the uniform cube is zero, because if $T$ is nonempty then
 
 $$\mathbb{E}[\chi_T(z)] = \prod_{i \in T} \mathbb{E}[z_i] = 0.$$
 
 Therefore
 
-$$\mathbb{E}[\pi(z) \thinspace Q(z)] = -\sum_{S \subsetneq [n]} c_S \thinspace \mathbb{E}[\chi_{[n]}(z) \thinspace \chi_S(z)] = 0.$$
+$$\mathbb{E}[\pi(z)   Q(z)] = -\sum_{S \subsetneq [n]} c_S   \mathbb{E}[\chi_{[n]}(z)   \chi_S(z)] = 0.$$
 
-This contradicts the earlier inequality $\mathbb{E}[\pi(z) \thinspace Q(z)] > 0$.
+This contradicts the earlier inequality $\mathbb{E}[\pi(z)   Q(z)] > 0$.
 
 So no degree-$(<n)$ polynomial sign-represents parity.
 

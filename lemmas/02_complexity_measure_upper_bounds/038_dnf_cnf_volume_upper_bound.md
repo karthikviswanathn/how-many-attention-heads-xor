@@ -19,7 +19,7 @@ $$
 In particular, if every term has width at least $w$, then
 
 $$
-H^{*}(f)\leq 2s\thinspace2^{n-w}.
+H^{*}(f)\leq 2s 2^{n-w}.
 $$
 
 The dual statement holds for CNFs. If $f$ has a CNF with consistent nonempty clauses $C_1,\ldots,C_s$, and $w_a$ is the width of $C_a$, then
@@ -69,7 +69,7 @@ If every $w_a\geq w$, then
 $$
 \sum_{a=1}^{s}2^{n-w_a}
 \leq
-s\thinspace2^{n-w},
+s 2^{n-w},
 $$
 
 which gives the advertised uniform-width bound.

@@ -67,7 +67,7 @@ $$
 
 and hence
 
-$$ h_F(x,0) = F\negthinspace\left(\sum_{i=1}^{m}x_i\right). $$
+$$ h_F(x,0) = F \left(\sum_{i=1}^{m}x_i\right). $$
 
 This is the symmetric Boolean function with Hamming-weight label sequence
 

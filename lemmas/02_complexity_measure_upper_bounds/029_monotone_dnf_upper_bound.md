@@ -61,7 +61,7 @@ and
 $$
 B_S(x)
 :=
-C+R\thinspace d_S(x)
+C+R  d_S(x)
 +\varepsilon\sum_{i\notin S}(1-x_i).
 $$
 
@@ -104,7 +104,7 @@ $$
 and
 
 $$
-B_S(x)\geq C+R\thinspace d_S(x),
+B_S(x)\geq C+R  d_S(x),
 $$
 
 so
@@ -112,7 +112,7 @@ so
 $$
 \phi_S(x)
 \geq
-\frac{\frac{1}{2}-d_S(x)}{C+R\thinspace d_S(x)}
+\frac{\frac{1}{2}-d_S(x)}{C+R  d_S(x)}
 >
 -\frac{1}{R}.
 $$

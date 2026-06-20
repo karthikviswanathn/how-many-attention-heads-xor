@@ -7,7 +7,7 @@ Let $F:\lbrace0,1,\ldots,m\rbrace\to\lbrace0,1\rbrace$ and define the intersecti
 $$
 f_F(x,y)
 :=
-F\negthinspace\left(\sum_{i=1}^{m}x_i y_i\right),
+F \left(\sum_{i=1}^{m}x_i y_i\right),
 \qquad
 x,y\in\lbrace0,1\rbrace^m.
 $$
@@ -44,7 +44,7 @@ $$
 
 On this subcube,
 
-$$ f_F(x,1) = F\negthinspace\left(\sum_{i=1}^{m}x_i\right). $$
+$$ f_F(x,1) = F \left(\sum_{i=1}^{m}x_i\right). $$
 
 This is the symmetric Boolean function on $m$ variables with Hamming-weight label sequence
 
@@ -136,7 +136,7 @@ Define
 $$
 \mathrm{INT}_m(x,y)
 :=
-\mathbf{1}\negthinspace\left[\sum_{i=1}^{m}x_i y_i\geq1\right],
+\mathbf{1} \left[\sum_{i=1}^{m}x_i y_i\geq1\right],
 $$
 
 and

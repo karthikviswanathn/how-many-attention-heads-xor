@@ -219,7 +219,7 @@ $$
 For
 
 $$
-T_{n,t}(x) = \mathbf{1}\negthinspace\left[\thinspace\lvert x\rvert \geq t\thinspace\right], \qquad 1 \leq t \leq n,
+T_{n,t}(x) = \mathbf{1} \left[ \lvert x\rvert \geq t \right], \qquad 1 \leq t \leq n,
 $$
 
 where $\lvert x\rvert$ is the Hamming weight of $x$, namely the number of coordinates of $x$ equal to $1$.
@@ -798,7 +798,7 @@ $$
 Then
 
 $$
-W(n) = \Omega\negthinspace\left(\frac{2^n}{n^2}\right).
+W(n) = \Omega \left(\frac{2^n}{n^2}\right).
 $$
 
 More quantitatively, for fixed $n$ and $H$, the number of $n$-bit Boolean functions computable with at most $H$ heads is at most
@@ -1105,7 +1105,7 @@ $$
 Then
 
 $$
-\Omega\negthinspace\left(\frac{1}{n^2}\binom{n}{\lfloor n/2\rfloor}\right)
+\Omega \left(\frac{1}{n^2}\binom{n}{\lfloor n/2\rfloor}\right)
 \leq
 W_{\mathrm{mon}}(n)
 \leq
@@ -1115,7 +1115,7 @@ $$
 More strongly, almost every monotone $n$-bit Boolean function requires
 
 $$
-\Omega\negthinspace\left(\frac{1}{n^2}\binom{n}{\lfloor n/2\rfloor}\right)
+\Omega \left(\frac{1}{n^2}\binom{n}{\lfloor n/2\rfloor}\right)
 $$
 
 heads, up to the absolute constant hidden by the Warren-counting argument.
@@ -1172,7 +1172,7 @@ $$
 In particular, if every term has width at least $w$, then
 
 $$
-H^{*}(f)\leq 2s\thinspace2^{n-w}.
+H^{*}(f)\leq 2s 2^{n-w}.
 $$
 
 The dual statement holds for CNFs with clause widths $w_a$:
@@ -1494,7 +1494,7 @@ Let $F:\lbrace0,1,\ldots,m\rbrace\to\lbrace0,1\rbrace$ and define
 $$
 f_F(x,y)
 :=
-F\negthinspace\left(\sum_{i=1}^{m}x_i y_i\right).
+F \left(\sum_{i=1}^{m}x_i y_i\right).
 $$
 
 Let $C(F)$ be the number of sign changes in
@@ -1646,7 +1646,7 @@ Let $p:\lbrace0,1\rbrace^2\to\lbrace0,1\rbrace$ be a two-bit predicate and defin
 $$
 f_{p,F}(x,y)
 :=
-F\negthinspace\left(\sum_{i=1}^{m}p(x_i,y_i)\right).
+F \left(\sum_{i=1}^{m}p(x_i,y_i)\right).
 $$
 
 Let $C(F)$ be the number of sign changes in
@@ -2428,7 +2428,7 @@ $$
 H^{*}(f)
 \leq
 1
-+\mathbf{1}[\mu_0\neq0]\thinspace q(P)
++\mathbf{1}[\mu_0\neq0]  q(P)
 +\mathbf{1}[\mu_1\neq\mu_0]\bigl(\ell(P)+q(P)\bigr).
 $$
 
@@ -3308,7 +3308,7 @@ where
 $$
 \eta(A_0,A_1)
 :=
-\mathbf{1}\negthinspace\left[
+\mathbf{1} \left[
 a_1\neq a_0
 \text{ or }
 \exists i,\ \alpha_{0,i}\neq0
@@ -3527,7 +3527,7 @@ where
 $$
 \eta_G(A)
 :=
-\mathbf{1}\negthinspace\left[
+\mathbf{1} \left[
 \delta_1+\mu_1 a\neq \delta_0+\mu_0 a
 \text{ or }
 \exists i,\ \mu_0\alpha_i\neq0
@@ -3561,7 +3561,7 @@ Define
 $$
 \eta_{\oplus}(A)
 :=
-\mathbf{1}\negthinspace\left[
+\mathbf{1} \left[
 a\neq0
 \text{ or }
 \exists i,\ \alpha_i\neq0
@@ -3792,7 +3792,7 @@ and define
 $$
 \eta_{\oplus}(A)
 :=
-\mathbf{1}\negthinspace\left[
+\mathbf{1} \left[
 a\neq0
 \text{ or }
 \exists i,\ \alpha_i\neq0
@@ -4165,7 +4165,7 @@ $$
 If $P(z,y)$ is a strict sign polynomial for $f(z,y)$ of the form
 
 $$
-P(z,y)=p_0+p_1t(y)+p_2t(y)^2+q_0z+q_1z\thinspace t(y),
+P(z,y)=p_0+p_1t(y)+p_2t(y)^2+q_0z+q_1z  t(y),
 $$
 
 then
@@ -5848,7 +5848,7 @@ More generally, the threshold-degree behavior of every one-bit gate $G(z,T(y))$ 
 
 The XOR amplifier iterates over parity blocks:
 
-$$ \deg_{\pm}\negthinspace\left(\left(\bigoplus_{j=1}^{k}z_j\right)\oplus T(y)\right) = k+\deg_{\pm}(T). $$
+$$ \deg_{\pm} \left(\left(\bigoplus_{j=1}^{k}z_j\right)\oplus T(y)\right) = k+\deg_{\pm}(T). $$
 
 Consequently, restrictions of this parity-block form certify
 
@@ -5956,7 +5956,7 @@ The certificates through $n=12$ meet that dimension threshold.
 
 On the lower-bound side, the counting lemma gives a worst-case exponential lower bound:
 
-$$ \max_{f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace} H^{*}(f) = \Omega\negthinspace\left(\frac{2^n}{n^2}\right). $$
+$$ \max_{f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace} H^{*}(f) = \Omega \left(\frac{2^n}{n^2}\right). $$
 
 Moreover, this is a typical-function statement: for some absolute constant $c>0$, all but a $2^{-\Omega(2^n)}$ fraction of $n$-bit Boolean functions have
 

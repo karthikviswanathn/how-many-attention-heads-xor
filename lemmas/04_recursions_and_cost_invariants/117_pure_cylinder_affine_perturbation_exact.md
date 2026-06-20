@@ -64,7 +64,7 @@ Every function that is neither constant nor a nonconstant LTF and has the form
 
 $$
 x\mapsto
-\mathbf{1}\negthinspace\left[
+\mathbf{1} \left[
 A(x)+c\prod_{i\in P}x_i>0
 \right]
 $$
@@ -75,7 +75,7 @@ The same is true for every function that is neither constant nor a nonconstant L
 
 $$
 x\mapsto
-\mathbf{1}\negthinspace\left[
+\mathbf{1} \left[
 A(x)+c\prod_{j\in N}(1-x_j)>0
 \right].
 $$

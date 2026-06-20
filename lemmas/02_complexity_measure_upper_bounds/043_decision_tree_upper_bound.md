@@ -143,7 +143,7 @@ for every nonconstant $f$ with $D(f)\geq1$.
 The leaf-profile bound can be sharper. If all accepting leaves have at most $r$ negative literals after choosing the original orientation, then
 
 $$
-H^{*}(f)\leq\lvert\mathcal{L}_1\rvert\thinspace2^r.
+H^{*}(f)\leq\lvert\mathcal{L}_1\rvert 2^r.
 $$
 
 The analogous statements hold for rejecting leaves and after the global bit flip.

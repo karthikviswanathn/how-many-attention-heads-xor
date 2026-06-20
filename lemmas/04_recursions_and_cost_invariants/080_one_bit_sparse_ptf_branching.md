@@ -53,7 +53,7 @@ $$
 H^{*}(f)
 \leq
 1
-+\mathbf{1}[\mu_0\neq0]\thinspace q(P)
++\mathbf{1}[\mu_0\neq0]  q(P)
 +\mathbf{1}[\mu_1\neq\mu_0]\bigl(\ell(P)+q(P)\bigr).
 $$
 
@@ -106,13 +106,13 @@ $$
 The nonlinear support of the base cofactor $Q_0$ contributes at most
 
 $$
-\mathbf{1}[\mu_0\neq0]\thinspace q(P).
+\mathbf{1}[\mu_0\neq0]  q(P).
 $$
 
 The changed linear coefficients contribute at most
 
 $$
-\mathbf{1}[\mu_1\neq\mu_0]\thinspace\ell(P),
+\mathbf{1}[\mu_1\neq\mu_0] \ell(P),
 $$
 
 because all nonzero linear coefficients of $Q_b$ are scalar multiples of the linear coefficients of $P$.
@@ -120,7 +120,7 @@ because all nonzero linear coefficients of $Q_b$ are scalar multiples of the lin
 The changed nonlinear coefficients contribute at most
 
 $$
-\mathbf{1}[\mu_1\neq\mu_0]\thinspace q(P),
+\mathbf{1}[\mu_1\neq\mu_0]  q(P),
 $$
 
 for the same reason. Therefore Lemma 78 gives
@@ -129,7 +129,7 @@ $$
 H^{*}(f)
 \leq
 1
-+\mathbf{1}[\mu_0\neq0]\thinspace q(P)
++\mathbf{1}[\mu_0\neq0]  q(P)
 +\mathbf{1}[\mu_1\neq\mu_0]\bigl(\ell(P)+q(P)\bigr).
 $$
 

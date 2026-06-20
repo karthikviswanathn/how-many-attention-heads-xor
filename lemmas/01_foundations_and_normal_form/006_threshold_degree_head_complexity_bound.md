@@ -70,7 +70,7 @@ Fix one attention head $h$, and let $w_{\mathrm{out}} \in \mathbb{R}^{d_{\mathrm
 Let
 
 $$
-s_h(x) := \bigl\langle w_{\mathrm{out}},\thinspace y^{(h)}(x) \bigr\rangle
+s_h(x) := \bigl\langle w_{\mathrm{out}},  y^{(h)}(x) \bigr\rangle
 $$
 
 be the contribution of head $h$ to the final probe score on input $x \in \lbrace0,1\rbrace^n$.
@@ -103,7 +103,7 @@ with the following meaning:
 Indeed, if $u_{i,b}$ denotes the fixed model-space input vector at position $i$ carrying bit value $b$, then
 
 $$
-\mu_{i,b} := \bigl\langle w_{\mathrm{out}},\thinspace W_O^{(h)} W_V^{(h)} u_{i,b} \bigr\rangle.
+\mu_{i,b} := \bigl\langle w_{\mathrm{out}},  W_O^{(h)} W_V^{(h)} u_{i,b} \bigr\rangle.
 $$
 
 Likewise, the query position contributes fixed constants
@@ -126,13 +126,13 @@ where
 
 $$D_h(x) = \lambda_{=} + \sum_{i=1}^{n} \lambda_{i,x_i},$$
 
-$$N_h(x) = \lambda_{=} \thinspace \mu_{=} + \sum_{i=1}^{n} \lambda_{i,x_i} \thinspace \mu_{i,x_i}.$$
+$$N_h(x) = \lambda_{=}   \mu_{=} + \sum_{i=1}^{n} \lambda_{i,x_i}   \mu_{i,x_i}.$$
 
 Because $x_i \in \lbrace0,1\rbrace$, each local term can be written as
 
 $$\lambda_{i,x_i} = \lambda_{i,0}(1 - x_i) + \lambda_{i,1} x_i,$$
 
-$$\lambda_{i,x_i} \thinspace \mu_{i,x_i} = (\lambda_{i,0} \thinspace \mu_{i,0})(1 - x_i) + (\lambda_{i,1} \thinspace \mu_{i,1}) x_i.$$
+$$\lambda_{i,x_i}   \mu_{i,x_i} = (\lambda_{i,0}   \mu_{i,0})(1 - x_i) + (\lambda_{i,1}   \mu_{i,1}) x_i.$$
 
 So both $D_h$ and $N_h$ are affine functions of the variables $x_1, \ldots, x_n$.
 
@@ -208,7 +208,7 @@ $$B(x) := \prod_{h=1}^{H} b_h(x).$$
 
 Since $B(x) > 0$ on the Boolean cube, the sign of $S(x)$ is the same as the sign of
 
-$$P(x) := B(x) \thinspace S(x) = c' \prod_{h=1}^{H} b_h(x) + \sum_{h=1}^{H} a_h(x) \prod_{g \neq h} b_g(x).$$
+$$P(x) := B(x)   S(x) = c' \prod_{h=1}^{H} b_h(x) + \sum_{h=1}^{H} a_h(x) \prod_{g \neq h} b_g(x).$$
 
 Each $a_h$ and $b_h$ is affine, so every summand has degree at most $H$.
 

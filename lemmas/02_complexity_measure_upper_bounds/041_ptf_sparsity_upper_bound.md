@@ -80,7 +80,7 @@ and
 
 $$
 B(x):=
-1+R\thinspace d_S(x)
+1+R  d_S(x)
 +\delta\sum_{i\notin S}(1-x_i).
 $$
 
@@ -102,7 +102,7 @@ $$
 \lvert \phi(x)\rvert
 \leq
 \frac{2\lvert a\rvert d_S(x)}
-{1+R\thinspace d_S(x)}
+{1+R  d_S(x)}
 \leq
 \frac{2\lvert a\rvert}{R}.
 $$
