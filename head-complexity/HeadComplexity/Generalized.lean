@@ -37,6 +37,9 @@ noncomputable def innerLeftLin {d : ℕ} (w : Vec d) : Vec d →ₗ[ℝ] ℝ whe
   map_smul' c x := by
     simp [inner_smul_right, smul_eq_mul]
 
+@[simp] lemma innerLeftLin_apply {d : ℕ} (w v : Vec d) :
+    innerLeftLin w v = ⟪w, v⟫_ℝ := rfl
+
 /-- Sequence positions for the `n`-bit generalized model: `some i` is an
     input-bit position and `none` is the dedicated query token. -/
 abbrev SeqPos (n : ℕ) := Option (Fin n)

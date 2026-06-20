@@ -80,6 +80,28 @@ lemma midpoint_in_offdiag_segment :
 
 end Head
 
+/-- Example of with a separate proof that no single attention head can
+compute XOR: for every `H`, the bare attention update `z_=` is not linearly
+separable into XOR classes. -/
+example {d : ℕ} (H : Head d) :
+     ¬ computesXor H.attnUpdate := by
+  rintro ⟨w, τ, hw⟩
+  -- Diagonal inputs (XOR = false): `⟨w, z⟩ ≤ τ`.
+  have h00 : ⟪w, H.attnUpdate (false, false)⟫_ℝ ≤ τ := by
+    by_contra h
+    exact (Bool.false_ne_true) ((hw (false, false)).mp (lt_of_not_ge h))
+  have h11 : ⟪w, H.attnUpdate (true, true)⟫_ℝ ≤ τ := by
+    by_contra h
+    exact (Bool.false_ne_true) ((hw (true, true)).mp (lt_of_not_ge h))
+  -- Off-diagonal inputs (XOR = true): `⟨w, z⟩ > τ`.
+  have h01 : τ < ⟪w, H.attnUpdate (false, true)⟫_ℝ :=
+    (hw (false, true)).mpr rfl
+  have h10 : τ < ⟪w, H.attnUpdate (true, false)⟫_ℝ :=
+    (hw (true, false)).mpr rfl
+  -- Apply the segment-crossing obstruction.
+  exact segment_cross_not_separable (innerLeftLin w) h00 h11 h01 h10
+    H.midpoint_in_diag_segment H.midpoint_in_offdiag_segment
+
 /-- **Theorem 1 (attention update form).** No single attention head can
 compute XOR: for every `H`, the bare attention update `z_=` is not linearly
 separable into XOR classes. -/
