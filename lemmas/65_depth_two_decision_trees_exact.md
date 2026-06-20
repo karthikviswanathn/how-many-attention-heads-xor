@@ -1,0 +1,91 @@
+# Depth-Two Decision Trees Are Exact
+
+## Statement
+
+Let
+
+$$
+f:\{0,1\}^n\to\{0,1\}
+$$
+
+be computed by a deterministic decision tree of depth at most $2$. Then
+
+$$
+H^{*}(f)\leq2.
+$$
+
+More precisely,
+
+$$
+H^{*}(f)
+=
+\begin{cases}
+0 & \text{if } f \text{ is constant},\\
+1 & \text{if } f \text{ is a nonconstant linear threshold function},\\
+2 & \text{otherwise}.
+\end{cases}
+$$
+
+> **Interpretation.** The first adaptive decision-tree case is fully controlled. A depth-two tree can be nonsymmetric and can mix different variables on different branches, but it still never needs more than two heads.
+
+## Proof
+
+If the tree has depth $0$, then $f$ is constant. Assume the depth is at most $2$.
+
+A depth-two decision tree queries at most one root variable and at most one additional variable on each branch. Hence $f$ depends on at most three variables. Let
+
+$$
+g:\{0,1\}^k\to\{0,1\},
+\qquad
+k\leq3,
+$$
+
+be the induced function on the essential variables. By junta reduction [33_junta_upper_bounds.md](33_junta_upper_bounds.md),
+
+$$
+H^{*}(f)=H^{*}(g).
+$$
+
+The accepting leaves of the decision tree give an exact DNF for $g$:
+
+$$
+g(x)
+=
+\sum_{\ell\in\mathcal{L}_1}
+\left(\prod_{i\in P_\ell}x_i\right)
+\left(\prod_{j\in N_\ell}(1-x_j)\right),
+$$
+
+where each root-to-leaf path fixes at most two variables. Thus this exact polynomial has degree at most $2$. Therefore
+
+$$
+g(x)=1
+\qquad\Longleftrightarrow\qquad
+g(x)-\frac{1}{2}>0
+$$
+
+is a quadratic sign representation.
+
+If $k<3$, add dummy variables. Dummy-variable invariance from [33_junta_upper_bounds.md](33_junta_upper_bounds.md) preserves $H^{*}$, and the quadratic sign representation remains quadratic. The three-bit quadratic upper-bound theorem [09_three_bit_quadratic_upper_bound.md](09_three_bit_quadratic_upper_bound.md) gives
+
+$$
+H^{*}(g)\leq2.
+$$
+
+Thus $H^{*}(f)\leq2$.
+
+The exact case split now follows from the zero-head and one-head characterization [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md). Constants have value $0$, nonconstant LTFs have value $1$, and nonconstant non-LTFs have value at least $2$. Together with the two-head upper bound, this proves the theorem. $\blacksquare$
+
+## Consequence
+
+Decision-tree depth two is a complete exact class:
+
+$$
+D(f)\leq2
+\qquad\Longrightarrow\qquad
+H^{*}(f)\in\{0,1,2\},
+$$
+
+with the value determined only by whether $f$ is constant, an LTF, or neither.
+
+This is a small but useful anchor for recursive upper-bound attempts: the first adaptive branching layer does not create any functions beyond the two-head regime.

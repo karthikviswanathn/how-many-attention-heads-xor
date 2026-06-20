@@ -116,7 +116,7 @@ These quantities exist because $X$ is finite and both classes are nonempty.
 
 From the hypothesis,
 
-$$m_{-} \le \tau < m_{+}.$$
+$$m_{-} \leq \tau < m_{+}.$$
 
 In particular $m_{-} < m_{+}$. Choose any $\tau'$ with
 
@@ -124,8 +124,8 @@ $$m_{-} < \tau' < m_{+}.$$
 
 Then:
 
-1. if $f(x) = 0$, then $S(x) \le m_{-} < \tau'$, so $S(x) - \tau' < 0$;
-2. if $f(x) = 1$, then $S(x) \ge m_{+} > \tau'$, so $S(x) - \tau' > 0$.
+1. if $f(x) = 0$, then $S(x) \leq m_{-} < \tau'$, so $S(x) - \tau' < 0$;
+2. if $f(x) = 1$, then $S(x) \geq m_{+} > \tau'$, so $S(x) - \tau' > 0$.
 
 This is exactly the desired strict sign separation.
 
@@ -388,7 +388,7 @@ If $\mathrm{XOR}_n$ were computable with fewer than $n$ heads, then by Lemma 3 i
 
 Hence
 
-$$H^{*}(\mathrm{XOR}_n) \ge n.$$
+$$H^{*}(\mathrm{XOR}_n) \geq n.$$
 
 ## Part II: Upper Bound
 
@@ -570,7 +570,7 @@ satisfies
 
 $$S(x) = t_k,$$
 
-where $k = |x|$.
+where $k = \lvert x\rvert$.
 
 Therefore:
 
@@ -581,14 +581,14 @@ So thresholding at $0$ computes $\mathrm{XOR}_n$ exactly.
 
 Hence
 
-$$H^{*}(\mathrm{XOR}_n) \le n.$$
+$$H^{*}(\mathrm{XOR}_n) \leq n.$$
 
 ## Final Conclusion
 
 We proved:
 
-1. $H^{*}(\mathrm{XOR}_n) \ge n$ by threshold degree,
-2. $H^{*}(\mathrm{XOR}_n) \le n$ by explicit construction.
+1. $H^{*}(\mathrm{XOR}_n) \geq n$ by threshold degree,
+2. $H^{*}(\mathrm{XOR}_n) \leq n$ by explicit construction.
 
 Therefore
 

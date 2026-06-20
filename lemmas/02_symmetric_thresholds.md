@@ -5,10 +5,10 @@
 For $n \geq 1$ and $1 \leq t \leq n$, define the symmetric threshold function
 
 $$
-T_{n,t}(x) \;=\; \mathbf{1}\!\left[\,|x| \geq t\,\right]
+T_{n,t}(x) \;=\; \mathbf{1}\!\left[\,\lvert x\rvert \geq t\,\right]
 $$
 
-where $|x|$ is the Hamming weight.
+where $\lvert x\rvert$ is the Hamming weight.
 
 Then $T_{n,t}$ is computable with one head. Since $T_{n,t}$ is nonconstant for $1 \leq t \leq n$, it follows that
 
@@ -113,7 +113,7 @@ $$
 s(t-1) \;<\; \tau \;<\; s(t).
 $$
 
-Then $\langle w, z(x) \rangle > \tau$ holds exactly when $|x| \geq t$. So the head computes $T_{n,t}$.
+Then $\langle w, z(x) \rangle > \tau$ holds exactly when $\lvert x\rvert \geq t$. So the head computes $T_{n,t}$.
 
 ## Exact Complexity
 
