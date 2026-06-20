@@ -5,13 +5,13 @@
 Let
 
 $$
-f:\{0,1\}^n\to\{0,1\}
+f:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace
 $$
 
 and define
 
 $$
-s(f):=\min\{\lvert f^{-1}(1)\rvert,\lvert f^{-1}(0)\rvert\}.
+s(f):=\min\lbrace\lvert f^{-1}(1)\rvert,\lvert f^{-1}(0)\rvert\rbrace.
 $$
 
 If
@@ -48,7 +48,7 @@ $$
 \lvert f^{-1}(1)\rvert\leq2.
 $$
 
-If $f^{-1}(1)$ is empty, then $f$ is constant. If $f^{-1}(1)=\{p\}$, then the singleton indicator is a linear threshold function:
+If $f^{-1}(1)$ is empty, then $f$ is constant. If $f^{-1}(1)=\lbrace p\rbrace$, then the singleton indicator is a linear threshold function:
 
 $$
 \mathbf{1}[x=p]=1
@@ -61,12 +61,12 @@ Thus $H^{*}(f)\leq1$ in the singleton case.
 It remains to handle
 
 $$
-f^{-1}(1)=\{p,q\},
+f^{-1}(1)=\lbrace p,q\rbrace,
 \qquad
 p\neq q.
 $$
 
-If $n=1$, then $\{p,q\}=\{0,1\}$ and $f$ is constant. Assume $n\geq2$.
+If $n=1$, then $\lbrace p,q\rbrace=\lbrace0,1\rbrace$ and $f$ is constant. Assume $n\geq2$.
 
 Let
 
@@ -77,19 +77,19 @@ $$
 and consider the linear subspace
 
 $$
-U:=\{a\in\mathbb{R}^n:a\cdot v=0\}.
+U:=\lbrace a\in\mathbb{R}^n:a\cdot v=0\rbrace.
 $$
 
 For each cube point
 
 $$
-r\in\{0,1\}^n\setminus\{p,q\},
+r\in\lbrace0,1\rbrace^n\setminus\lbrace p,q\rbrace,
 $$
 
 the set
 
 $$
-H_r:=\{a\in U:a\cdot(r-p)=0\}
+H_r:=\lbrace a\in U:a\cdot(r-p)=0\rbrace
 $$
 
 is a proper hyperplane in $U$. Indeed, if $H_r=U$, then $r-p$ is orthogonal to all of $U$, so $r-p$ lies in the one-dimensional space spanned by $v$. Thus
@@ -98,7 +98,7 @@ $$
 r=p+\lambda(q-p)
 $$
 
-for some real $\lambda$. Looking coordinatewise on any coordinate where $p$ and $q$ differ, the Boolean condition $r_i\in\{0,1\}$ forces $\lambda\in\{0,1\}$. Then $r=p$ or $r=q$, a contradiction.
+for some real $\lambda$. Looking coordinatewise on any coordinate where $p$ and $q$ differ, the Boolean condition $r_i\in\lbrace0,1\rbrace$ forces $\lambda\in\lbrace0,1\rbrace$. Then $r=p$ or $r=q$, a contradiction.
 
 A finite union of proper hyperplanes cannot cover $U$. Choose
 

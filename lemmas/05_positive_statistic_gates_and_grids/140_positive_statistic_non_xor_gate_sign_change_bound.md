@@ -46,7 +46,7 @@ T(y)=1
 Q(t(y))>0.
 $$
 
-For $b\in\{0,1\}$, write
+For $b\in\lbrace0,1\rbrace$, write
 
 $$
 G_b(u):=G(b,u).

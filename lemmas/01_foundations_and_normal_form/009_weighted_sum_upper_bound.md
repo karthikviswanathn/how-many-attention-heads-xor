@@ -2,7 +2,7 @@
 
 ## Statement
 
-Let $f : \{0,1\}^n \to \{0,1\}$.
+Let $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$.
 
 Suppose there exist positive real numbers
 
@@ -13,7 +13,7 @@ $$
 and a function
 
 $$
-F : \operatorname{Im}(t) \to \{0,1\},
+F : \mathrm{Im}(t) \to \lbrace0,1\rbrace,
 $$
 
 where
@@ -28,12 +28,12 @@ $$
 f(x) = F(t(x))
 $$
 
-for every $x \in \{0,1\}^n$.
+for every $x \in \lbrace0,1\rbrace^n$.
 
 Let
 
 $$
-M := \lvert\operatorname{Im}(t)\rvert.
+M := \lvert\mathrm{Im}(t)\rvert.
 $$
 
 Then
@@ -60,7 +60,7 @@ $$
 0 = \tau_0 < \tau_1 < \cdots < \tau_{M-1}.
 $$
 
-We will build an explicit $(M-1)$-head network whose score depends only on $t(x)$, and whose head outputs form a basis of all real-valued functions on $\operatorname{Im}(t)$.
+We will build an explicit $(M-1)$-head network whose score depends only on $t(x)$, and whose head outputs form a basis of all real-valued functions on $\mathrm{Im}(t)$.
 
 ### Shared Ambient Space And Embeddings
 
@@ -85,7 +85,7 @@ $$
 and positional embeddings
 
 $$
-p_i = (\log \lambda_i) \, r \quad \text{for } 1 \leq i \leq n,
+p_i = (\log \lambda_i) \thinspace r \quad \text{for } 1 \leq i \leq n,
 \qquad
 p_= = 0.
 $$
@@ -95,14 +95,14 @@ Thus an input token at position $i$ is represented by
 $$
 u_i(x) =
 \begin{cases}
-(\log \lambda_i) \, r & \text{if } x_i = 0, \\
-u + (\log \lambda_i) \, r & \text{if } x_i = 1.
+(\log \lambda_i) \thinspace r & \text{if } x_i = 0, \\
+u + (\log \lambda_i) \thinspace r & \text{if } x_i = 1.
 \end{cases}
 $$
 
 The query token is represented by the constant vector $q$.
 
-### Head $j$
+### Head j
 
 Fix distinct real numbers
 
@@ -110,21 +110,21 @@ $$
 \alpha_1, \ldots, \alpha_{M-1} > 1.
 $$
 
-For each $j \in \{1, \ldots, M-1\}$, define linear maps as follows.
+For each $j \in \lbrace1, \ldots, M-1\rbrace$, define linear maps as follows.
 
 1. $W_Q^{(j)}$ sends $q$ to $q$ and annihilates the orthogonal complement of $q$.
-2. $W_K^{(j)}$ sends $r$ to $q$, sends $u$ to $(\log \alpha_j) \, q$, and annihilates $q, e_1, \ldots, e_{M-1}$.
+2. $W_K^{(j)}$ sends $r$ to $q$, sends $u$ to $(\log \alpha_j) \thinspace q$, and annihilates $q, e_1, \ldots, e_{M-1}$.
 3. $W_V^{(j)}$ sends $u$ to $e_j$ and annihilates $q, r, e_1, \ldots, e_{M-1}$.
 4. $W_O^{(j)}$ is the identity on $\mathbb{R}^{M+2}$.
 
 These choices define a valid attention head in the model from [../model.md](../../model.md).
 
-### Lemma 1. The output of head $j$ depends only on $t(x)$
+### Lemma 1. The output of head j depends only on t(x)
 
 For every input $x$,
 
 $$
-y^{(j)}(x) = g_j(t(x)) \, e_j,
+y^{(j)}(x) = g_j(t(x)) \thinspace e_j,
 $$
 
 where
@@ -135,10 +135,10 @@ $$
 
 **Proof.** Fix a position $i$.
 
-If $x_i = 0$, the embedded vector is $(\log \lambda_i) \, r$. Therefore:
+If $x_i = 0$, the embedded vector is $(\log \lambda_i) \thinspace r$. Therefore:
 
 $$
-W_K^{(j)} u_i(x) = (\log \lambda_i) \, q,
+W_K^{(j)} u_i(x) = (\log \lambda_i) \thinspace q,
 $$
 
 so the logit at that position is $\log \lambda_i$ and the unnormalized attention weight is $\lambda_i$. Also
@@ -147,7 +147,7 @@ $$
 W_V^{(j)} u_i(x) = 0.
 $$
 
-If $x_i = 1$, the embedded vector is $u + (\log \lambda_i) \, r$. Therefore:
+If $x_i = 1$, the embedded vector is $u + (\log \lambda_i) \thinspace r$. Therefore:
 
 $$
 W_K^{(j)} u_i(x) = \bigl(\log \alpha_j + \log \lambda_i \bigr) q,
@@ -164,11 +164,11 @@ For the query token, the embedding is $q$. Since $W_K^{(j)} q = 0$ and $W_V^{(j)
 So the numerator vector of head $j$ is
 
 $$
-\sum_{i : x_i = 1} \alpha_j \lambda_i \, e_j
+\sum_{i : x_i = 1} \alpha_j \lambda_i \thinspace e_j
 =
 \alpha_j \left( \sum_{i=1}^{n} \lambda_i x_i \right) e_j
 =
-\alpha_j t(x) \, e_j,
+\alpha_j t(x) \thinspace e_j,
 $$
 
 while the denominator is
@@ -186,14 +186,14 @@ Hence
 $$
 y^{(j)}(x)
 =
-\frac{\alpha_j t(x)}{1 + \Lambda + (\alpha_j - 1) t(x)} \, e_j
+\frac{\alpha_j t(x)}{1 + \Lambda + (\alpha_j - 1) t(x)} \thinspace e_j
 =
-g_j(t(x)) \, e_j.
+g_j(t(x)) \thinspace e_j.
 $$
 
 This proves the formula. $\blacksquare$
 
-### Lemma 2. The functions $1, g_1, \ldots, g_{M-1}$ are linearly independent on $\operatorname{Im}(t)$
+### Lemma 2. The functions 1, g₁, …, g_M-1 are linearly independent on Im(t)
 
 **Proof.** Suppose
 
@@ -201,11 +201,11 @@ $$
 c_0 + \sum_{j=1}^{M-1} c_j g_j(\tau) = 0
 $$
 
-for every $\tau \in \operatorname{Im}(t)$.
+for every $\tau \in \mathrm{Im}(t)$.
 
 Evaluating at $\tau_0 = 0$ gives $c_0 = 0$, because $g_j(0) = 0$ for every $j$.
 
-Now fix $m \in \{1, \ldots, M-1\}$. Since $\tau_m > 0$, we may divide by $\tau_m$ and obtain
+Now fix $m \in \lbrace1, \ldots, M-1\rbrace$. Since $\tau_m > 0$, we may divide by $\tau_m$ and obtain
 
 $$
 \sum_{j=1}^{M-1}
@@ -267,15 +267,15 @@ $$
 
 Because the $\alpha_j$ are distinct, the $r_j$ are distinct as well, so the product is nonzero. Therefore $d_j = 0$ for every $j$.
 
-Hence every $c_j = 0$, and the functions $1, g_1, \ldots, g_{M-1}$ are linearly independent on $\operatorname{Im}(t)$. $\blacksquare$
+Hence every $c_j = 0$, and the functions $1, g_1, \ldots, g_{M-1}$ are linearly independent on $\mathrm{Im}(t)$. $\blacksquare$
 
-### Corollary 3. The functions $1, g_1, \ldots, g_{M-1}$ form a basis of all real-valued functions on $\operatorname{Im}(t)$
+### Corollary 3. The functions 1, g₁, …, g_M-1 form a basis of all real-valued functions on Im(t)
 
-**Reason.** The set $\operatorname{Im}(t)$ has exactly $M$ points, so the vector space of real-valued functions on it has dimension $M$. By Lemma 2 we already have $M$ linearly independent functions on that set. $\blacksquare$
+**Reason.** The set $\mathrm{Im}(t)$ has exactly $M$ points, so the vector space of real-valued functions on it has dimension $M$. By Lemma 2 we already have $M$ linearly independent functions on that set. $\blacksquare$
 
-### Lemma 4. $M-1$ heads realize $f$ exactly
+### Lemma 4. M-1 heads realize f exactly
 
-**Proof.** Define a target sign pattern on $\operatorname{Im}(t)$ by
+**Proof.** Define a target sign pattern on $\mathrm{Im}(t)$ by
 
 $$
 \sigma(\tau)
@@ -298,7 +298,7 @@ $$
 \beta_0 + \sum_{j=1}^{M-1} \beta_j g_j(\tau) = \sigma(\tau)
 $$
 
-for every $\tau \in \operatorname{Im}(t)$.
+for every $\tau \in \mathrm{Im}(t)$.
 
 Choose the final readout vector
 
@@ -349,14 +349,14 @@ Define
 $$
 M_{+}(f)
 :=
-\min \left\{
-\lvert \operatorname{Im}\left(\sum_{i=1}^{n} \lambda_i x_i\right) \rvert
+\min \left\lbrace
+\lvert \mathrm{Im}\left(\sum_{i=1}^{n} \lambda_i x_i\right) \rvert
 :
 \lambda_1, \ldots, \lambda_n > 0,
-\;
-f(x) = F\!\left(\sum_{i=1}^{n} \lambda_i x_i\right)
+\thickspace
+f(x) = F\negthinspace\left(\sum_{i=1}^{n} \lambda_i x_i\right)
 \text{ for some } F
-\right\}.
+\right\rbrace.
 $$
 
 The theorem implies
@@ -369,7 +369,7 @@ This gives a candidate upper-bound invariant for the first core question in [../
 
 **Update.** The later note [013_positive_projection_sign_changes.md](013_positive_projection_sign_changes.md) sharpens this bound. For a fixed positive weighted sum $t$, the head count can be bounded by the number of label changes along the ordered image of $t$, not by the total number of nonzero image levels.
 
-### Corollary 5. Every symmetric Boolean function has head complexity at most $n$
+### Corollary 5. Every symmetric Boolean function has head complexity at most n
 
 If $f$ is symmetric, take
 
@@ -386,7 +386,7 @@ $$
 so
 
 $$
-\operatorname{Im}(t) = \{0,1,\ldots,n\}
+\mathrm{Im}(t) = \lbrace0,1,\ldots,n\rbrace
 $$
 
 and $M = n+1$. Therefore
@@ -409,10 +409,10 @@ $$
 t(x) = \sum_{i=1}^{n} 2^{i-1} x_i
 $$
 
-is injective on $\{0,1\}^n$, so
+is injective on $\lbrace0,1\rbrace^n$, so
 
 $$
-\lvert\operatorname{Im}(t)\rvert = 2^n.
+\lvert\mathrm{Im}(t)\rvert = 2^n.
 $$
 
 Therefore every Boolean function satisfies

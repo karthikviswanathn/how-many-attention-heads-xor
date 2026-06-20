@@ -22,7 +22,7 @@ $$
 \gamma>0,\qquad \rho_i>0,\qquad \alpha>0,
 $$
 
-then either $\alpha=1$ and $B$ is constant, or every variable coefficient of $B$ is nonzero and has sign $\operatorname{sgn}(\alpha-1)$.
+then either $\alpha=1$ and $B$ is constant, or every variable coefficient of $B$ is nonzero and has sign $\mathrm{sgn}(\alpha-1)$.
 
 Conversely, let $A(x)$ be any affine numerator.
 

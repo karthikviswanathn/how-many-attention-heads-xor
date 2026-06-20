@@ -8,7 +8,7 @@ $$
 L(x)=c+\sum_{i=1}^{n}a_i x_i
 $$
 
-be an affine function on $\{0,1\}^n$, and define the exact affine-level predicate
+be an affine function on $\lbrace0,1\rbrace^n$, and define the exact affine-level predicate
 
 $$
 E_L(x):=\mathbf{1}[L(x)=0].
@@ -41,7 +41,7 @@ If $E_L$ is constant, there is nothing to prove. Assume $E_L$ is nonconstant. Si
 $$
 \delta
 :=
-\min\{|L(x)|:L(x)\neq0\}.
+\min\lbrace|L(x)|:L(x)\neq0\rbrace.
 $$
 
 Then $\delta>0$. Set
@@ -167,7 +167,7 @@ recovering the symmetric sign-change theorem in that special case.
 Equality on two $m$-bit strings is also an affine level set after binary encoding:
 
 $$
-\mathrm{EQ}_m(x,y)=\mathbf{1}\!\left[\sum_{i=1}^{m}2^{i-1}x_i-\sum_{i=1}^{m}2^{i-1}y_i=0\right].
+\mathrm{EQ}_m(x,y)=\mathbf{1}\negthinspace\left[\sum_{i=1}^{m}2^{i-1}x_i-\sum_{i=1}^{m}2^{i-1}y_i=0\right].
 $$
 
 Thus this theorem gives another route to

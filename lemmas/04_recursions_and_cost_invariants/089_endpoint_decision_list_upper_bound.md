@@ -2,7 +2,7 @@
 
 ## Statement
 
-For a nonempty set $S\subseteq\{1,\ldots,n\}$ and positive weights $\lambda_i>0$, write
+For a nonempty set $S\subseteq\lbrace1,\ldots,n\rbrace$ and positive weights $\lambda_i>0$, write
 
 $$
 L_S(x):=\sum_{i\in S}\lambda_i x_i,
@@ -36,7 +36,7 @@ We use two ingredients.
 
 ### Lemma 1. Decision lists are strict weighted votes of their tests
 
-Let $T_1,\ldots,T_L$ be arbitrary Boolean tests, let $b_1,\ldots,b_L\in\{0,1\}$ be branch labels, and let $b_{L+1}$ be the default label. The decision list returns $b_j$ at the first index $j$ with $T_j(x)=1$, and returns $b_{L+1}$ if no test fires.
+Let $T_1,\ldots,T_L$ be arbitrary Boolean tests, let $b_1,\ldots,b_L\in\lbrace0,1\rbrace$ be branch labels, and let $b_{L+1}$ be the default label. The decision list returns $b_j$ at the first index $j$ with $T_j(x)=1$, and returns $b_{L+1}$ if no test fires.
 
 We show that the decision-list output is a strict weighted vote over the indicators $T_1,\ldots,T_L$.
 

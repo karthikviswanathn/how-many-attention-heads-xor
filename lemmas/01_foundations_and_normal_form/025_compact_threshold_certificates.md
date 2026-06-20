@@ -5,13 +5,13 @@
 For every
 
 $$
-n \in \{3,\ldots,12\},
+n \in \lbrace3,\ldots,12\rbrace,
 $$
 
 every Boolean function
 
 $$
-f : \{0,1\}^n \to \{0,1\}
+f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace
 $$
 
 satisfies
@@ -30,7 +30,7 @@ $$
 H_n := \left\lceil \frac{2^n - 1}{n} \right\rceil.
 $$
 
-For $h \in \{1,\ldots,H_n\}$ and $i \in \{1,\ldots,n\}$, let $r_{h,i}$ be the least nonnegative residue of
+For $h \in \lbrace1,\ldots,H_n\rbrace$ and $i \in \lbrace1,\ldots,n\rbrace$, let $r_{h,i}$ be the least nonnegative residue of
 
 $$
 (h + 2)^{i + 1} + 13i
@@ -62,13 +62,13 @@ $$
 \prod_{j=1}^{H_n} B_j,
 $$
 
-for each $h \in \{1,\ldots,H_n - 1\}$, the $n$ products
+for each $h \in \lbrace1,\ldots,H_n - 1\rbrace$, the $n$ products
 
 $$
 M\prod_{j\neq h} B_j
 \qquad
 \text{for }
-M \in \{1,x_1,\ldots,x_{n-1}\},
+M \in \lbrace1,x_1,\ldots,x_{n-1}\rbrace,
 $$
 
 and for $h = H_n$, the $R_n$ products
@@ -77,10 +77,10 @@ $$
 M\prod_{j\neq H_n} B_j
 \qquad
 \text{for }
-M \in \{1,x_1,\ldots,x_{R_n-1}\}.
+M \in \lbrace1,x_1,\ldots,x_{R_n-1}\rbrace.
 $$
 
-Write their value vectors on $\{0,1\}^n$ in lexicographic input order. Computation modulo
+Write their value vectors on $\lbrace0,1\rbrace^n$ in lexicographic input order. Computation modulo
 
 $$
 p := 1000003
@@ -105,7 +105,7 @@ n & H_n & R_n & \det \pmod p \\
 \end{array}
 $$
 
-Each residue is nonzero modulo $p$. Hence each displayed determinant is nonzero over the integers, so the selected denominator-cleared products form a basis for all real-valued functions on $\{0,1\}^n$.
+Each residue is nonzero modulo $p$. Hence each displayed determinant is nonzero over the integers, so the selected denominator-cleared products form a basis for all real-valued functions on $\lbrace0,1\rbrace^n$.
 
 The determinant-span schema from [021_determinant_span_schema.md](021_determinant_span_schema.md) then gives
 
@@ -113,7 +113,7 @@ $$
 H^{*}(f) \leq H_n = \left\lceil \frac{2^n - 1}{n} \right\rceil
 $$
 
-for every Boolean $f : \{0,1\}^n \to \{0,1\}$ and every $n \in \{3,\ldots,12\}$. $\blacksquare$
+for every Boolean $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$ and every $n \in \lbrace3,\ldots,12\rbrace$. $\blacksquare$
 
 ## Consequence
 

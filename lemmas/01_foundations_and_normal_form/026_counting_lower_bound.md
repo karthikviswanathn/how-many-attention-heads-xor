@@ -5,13 +5,13 @@
 Let
 
 $$
-W(n) := \max_{f : \{0,1\}^n \to \{0,1\}} H^{*}(f).
+W(n) := \max_{f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace} H^{*}(f).
 $$
 
 Then
 
 $$
-W(n) = \Omega\!\left(\frac{2^n}{n^2}\right).
+W(n) = \Omega\negthinspace\left(\frac{2^n}{n^2}\right).
 $$
 
 More quantitatively, for fixed $n$ and $H$, the number of $n$-bit Boolean functions computable with at most $H$ heads is at most
@@ -23,7 +23,7 @@ $$
 whenever $1 \leq H \leq 2^n$. Hence, if
 
 $$
-H = o\!\left(\frac{2^n}{n^2}\right),
+H = o\negthinspace\left(\frac{2^n}{n^2}\right),
 $$
 
 then the fraction of $n$-bit Boolean functions computable with at most $H$ heads tends to $0$ as $n \to \infty$.
@@ -34,7 +34,7 @@ then the fraction of $n$-bit Boolean functions computable with at most $H$ heads
 
 We count sign patterns produced by the linear-fractional normal form.
 
-### Lemma 1. An $H$-head score is controlled by few polynomial inequalities
+### Lemma 1. An H-head score is controlled by few polynomial inequalities
 
 Every $H$-head score is a special case of
 
@@ -62,7 +62,7 @@ $$
 
 real parameters: one constant $c$, the affine numerator coefficients, and the affine denominator coefficients.
 
-For each cube point $x\in\{0,1\}^n$, clear denominators and define
+For each cube point $x\in\lbrace0,1\rbrace^n$, clear denominators and define
 
 $$
 P_x(\theta)
@@ -79,7 +79,7 @@ If the score computes a Boolean function using a non-strict negative side, pertu
 Thus every Boolean function computable with $H$ heads gives a strict sign pattern of the $2^n$ polynomials
 
 $$
-\{P_x : x\in\{0,1\}^n\}
+\lbrace P_x : x\in\lbrace0,1\rbrace^n\rbrace
 $$
 
 in $p$ real variables, each of degree at most $H+1$. $\blacksquare$
@@ -105,7 +105,7 @@ $$
 When $N\geq p$, Lemma 1 gives
 
 $$
-\#\{f : H^{*}(f)\leq H\}
+\lvert\lbrace f : H^{*}(f)\leq H\rbrace\rvert
 \leq
 \left(
 \frac{4e(H+1)2^n}{1+2H(n+1)}
@@ -118,12 +118,12 @@ $$
 H > \frac{2^n-1}{2(n+1)}.
 $$
 
-### Lemma 3. The number of $H$-head functions is small for small $H$
+### Lemma 3. The number of H-head functions is small for small H
 
 Assume first that $1\leq H\leq 2^n$ and $N\geq p$. Since $p=O(nH)$ and $d=H+1\leq 2^{n}+1$, the logarithm of the Warren factor is $O(n)$. Therefore
 
 $$
-\log_2 \#\{f : H^{*}(f)\leq H\}
+\log_2 \lvert\lbrace f : H^{*}(f)\leq H\rbrace\rvert
 \leq
 O(n^2H).
 $$
@@ -131,7 +131,7 @@ $$
 Equivalently,
 
 $$
-\#\{f : H^{*}(f)\leq H\}
+\lvert\lbrace f : H^{*}(f)\leq H\rbrace\rvert
 \leq
 2^{O(n^2H)}.
 $$
@@ -144,10 +144,10 @@ $$
 2^{2^n}
 $$
 
-Boolean functions on $\{0,1\}^n$. If
+Boolean functions on $\lbrace0,1\rbrace^n$. If
 
 $$
-H=o\!\left(\frac{2^n}{n^2}\right),
+H=o\negthinspace\left(\frac{2^n}{n^2}\right),
 $$
 
 then
@@ -171,7 +171,7 @@ is at most $2^{-\Omega(2^n)}$. Thus almost every $n$-bit Boolean function requir
 In particular, the worst-case quantity satisfies
 
 $$
-W(n)=\Omega\!\left(\frac{2^n}{n^2}\right).
+W(n)=\Omega\negthinspace\left(\frac{2^n}{n^2}\right).
 $$
 
 $\blacksquare$
@@ -181,7 +181,7 @@ $\blacksquare$
 The general worst-case head complexity is now bracketed as
 
 $$
-\Omega\!\left(\frac{2^n}{n^2}\right)
+\Omega\negthinspace\left(\frac{2^n}{n^2}\right)
 \leq
 W(n)
 \leq

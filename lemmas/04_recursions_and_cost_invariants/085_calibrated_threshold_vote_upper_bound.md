@@ -5,7 +5,7 @@
 Let
 
 $$
-T_1,\ldots,T_s:\{0,1\}^{n}\to\{0,1\}
+T_1,\ldots,T_s:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace
 $$
 
 be Boolean features, and let
@@ -27,7 +27,7 @@ Let the vote margin be
 $$
 \mu
 :=
-\min_{x\in\{0,1\}^{n}}
+\min_{x\in\lbrace0,1\rbrace^{n}}
 \left\lvert
 c_0+\sum_{j=1}^{s}c_jT_j(x)
 \right\rvert.
@@ -38,7 +38,7 @@ Assume $\mu>0$. Suppose that for each $j$ there is a one-head linear-fractional 
 $$
 \lvert \phi_j(x)-T_j(x)\rvert\leq\epsilon_j
 \qquad
-\text{for every }x\in\{0,1\}^{n},
+\text{for every }x\in\lbrace0,1\rbrace^{n},
 $$
 
 and

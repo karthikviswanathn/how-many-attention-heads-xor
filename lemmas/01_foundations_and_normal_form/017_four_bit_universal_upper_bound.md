@@ -5,7 +5,7 @@
 For every Boolean function
 
 $$
-f : \{0,1\}^4 \to \{0,1\},
+f : \lbrace0,1\rbrace^4 \to \lbrace0,1\rbrace,
 $$
 
 we have
@@ -33,14 +33,14 @@ c\prod_{j=1}^{4}B_j(x)
 A_h(x)\prod_{j\neq h}B_j(x)
 $$
 
-on $\{0,1\}^4$.
+on $\lbrace0,1\rbrace^4$.
 
-**Proof.** Work in the multilinear basis indexed by all subsets of $\{1,2,3,4\}$:
+**Proof.** Work in the multilinear basis indexed by all subsets of $\lbrace1,2,3,4\rbrace$:
 
 $$
 \prod_{i\in S}x_i,
 \qquad
-S\subseteq\{1,2,3,4\}.
+S\subseteq\lbrace1,2,3,4\rbrace.
 $$
 
 Define
@@ -66,7 +66,7 @@ $$
 M\prod_{j\neq 1}B_j
 \qquad
 \text{for }
-M\in\{1,x_1,x_2,x_3\},
+M\in\lbrace1,x_1,x_2,x_3\rbrace,
 $$
 
 the four products
@@ -75,7 +75,7 @@ $$
 M\prod_{j\neq 2}B_j
 \qquad
 \text{for }
-M\in\{1,x_1,x_2,x_3\},
+M\in\lbrace1,x_1,x_2,x_3\rbrace,
 $$
 
 the four products
@@ -84,7 +84,7 @@ $$
 M\prod_{j\neq 3}B_j
 \qquad
 \text{for }
-M\in\{1,x_1,x_2,x_3\},
+M\in\lbrace1,x_1,x_2,x_3\rbrace,
 $$
 
 and the three products
@@ -93,7 +93,7 @@ $$
 M\prod_{j\neq 4}B_j
 \qquad
 \text{for }
-M\in\{1,x_1,x_2\}.
+M\in\lbrace1,x_1,x_2\rbrace.
 $$
 
 Reduce all products using $x_i^2=x_i$ on the Boolean cube and write their coefficient vectors in the multilinear basis. The determinant of the resulting $16\times16$ coefficient matrix is
@@ -102,11 +102,11 @@ $$
 -191377524548329363449095194819952640000.
 $$
 
-Since this determinant is nonzero, these products form a basis for all real-valued functions on $\{0,1\}^4$, equivalently for all multilinear polynomials in four Boolean variables. Hence every multilinear $P$ has the displayed form. $\blacksquare$
+Since this determinant is nonzero, these products form a basis for all real-valued functions on $\lbrace0,1\rbrace^4$, equivalently for all multilinear polynomials in four Boolean variables. Hence every multilinear $P$ has the displayed form. $\blacksquare$
 
 ### Lemma 2. Four heads suffice for every four-bit function
 
-Let $f : \{0,1\}^4 \to \{0,1\}$. Interpolate the sign labels
+Let $f : \lbrace0,1\rbrace^4 \to \lbrace0,1\rbrace$. Interpolate the sign labels
 
 $$
 Q_f(x)
@@ -117,7 +117,7 @@ Q_f(x)
 \end{cases}
 $$
 
-by a multilinear polynomial $P$ on $\{0,1\}^4$.
+by a multilinear polynomial $P$ on $\lbrace0,1\rbrace^4$.
 
 Apply Lemma 1 to this $P$. Since each $B_h$ is positive on the cube, the score
 

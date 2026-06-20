@@ -8,15 +8,15 @@ $$
 L(x)=c+\sum_{i=1}^{n}a_i x_i
 $$
 
-be an affine function on $\{0,1\}^n$, and let
+be an affine function on $\lbrace0,1\rbrace^n$, and let
 
 $$
-\operatorname{supp}(L):=\{i:a_i\neq0\},
+\mathrm{supp}(L):=\lbrace i:a_i\neq0\rbrace,
 \qquad
-k:=\lvert\operatorname{supp}(L)\rvert.
+k:=\lvert\mathrm{supp}(L)\rvert.
 $$
 
-Let $G:\operatorname{Im}(L)\to\{0,1\}$, and define
+Let $G:\mathrm{Im}(L)\to\lbrace0,1\rbrace$, and define
 
 $$
 f(x):=G(L(x)).
@@ -56,7 +56,7 @@ Then:
    $$
    H^{*}(f)
    \leq
-   1+\sum_{r=2}^{\min\{C_L(G),k\}}\binom{k}{r}.
+   1+\sum_{r=2}^{\min\lbrace C_L(G),k\rbrace}\binom{k}{r}.
    $$
 
 > **Interpretation.** A function of one arbitrary affine statistic is controlled by the number of label changes along that statistic. The first three regimes are exact or exactly reduced to the one-head test; beyond that, the affine-free sparse-polynomial route gives an explicit support-size bound.
@@ -89,7 +89,7 @@ $$
 Q(t):=\sigma\prod_{j\in J}(t-\tau_j),
 $$
 
-where $\sigma\in\{-1,1\}$ is chosen so that
+where $\sigma\in\lbrace-1,1\rbrace$ is chosen so that
 
 $$
 Q(z_1)>0
@@ -117,10 +117,10 @@ Thus $Q(L(x))$ is a sign-representing polynomial for $f$ of degree at most $C$ i
 
 ### Lemma 2. General sparse upper bound
 
-Expand $Q(L(x))$ on the Boolean cube and reduce multilinearly using $x_i^2=x_i$. Only variables in $\operatorname{supp}(L)$ can appear, and the degree is at most
+Expand $Q(L(x))$ on the Boolean cube and reduce multilinearly using $x_i^2=x_i$. Only variables in $\mathrm{supp}(L)$ can appear, and the degree is at most
 
 $$
-d:=\min\{C,k\}.
+d:=\min\lbrace C,k\rbrace.
 $$
 
 Thus the number of possible nonlinear monomials is at most
@@ -141,7 +141,7 @@ This proves the displayed upper bound whenever $C\geq1$, and in particular for $
 
 ### Lemma 3. The small sign-change cases
 
-If $C=0$, then $G$ is constant on $\operatorname{Im}(L)$, so $f$ is constant and
+If $C=0$, then $G$ is constant on $\mathrm{Im}(L)$, so $f$ is constant and
 
 $$
 H^{*}(f)=0.
@@ -200,7 +200,7 @@ For a statistic using $k$ coordinates and $C$ sign changes, the nonconstant fall
 $$
 H^{*}(f)
 \leq
-1+\sum_{r=2}^{\min\{C,k\}}\binom{k}{r}.
+1+\sum_{r=2}^{\min\lbrace C,k\rbrace}\binom{k}{r}.
 $$
 
 The cases $C=1$ and $C=2$ are sharper:

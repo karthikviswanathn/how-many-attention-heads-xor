@@ -46,7 +46,7 @@ and set all positional embeddings to zero.
 
 So the query token always carries the constant vector $q$, every `0` token is the zero vector, and every `1` token is the vector $u$.
 
-### Head $j$
+### Head j
 
 Fix distinct parameters $\alpha_1, \ldots, \alpha_n$, all greater than $1$. For concreteness one may take
 
@@ -55,29 +55,29 @@ $$\alpha_j = 2^j.$$
 For head $j$, define linear maps as follows.
 
 1. $W_Q^{(j)}$ sends $q$ to $q$ and annihilates the orthogonal complement of $q$.
-2. $W_K^{(j)}$ sends $u$ to $(\log \alpha_j) \, q$ and annihilates $q, e_1, \ldots, e_n$.
+2. $W_K^{(j)}$ sends $u$ to $(\log \alpha_j) \thinspace q$ and annihilates $q, e_1, \ldots, e_n$.
 3. $W_V^{(j)}$ sends $u$ to $e_j$ and annihilates $q, e_1, \ldots, e_n$.
 4. $W_O^{(j)}$ is the identity on $\mathbb{R}^{n+2}$.
 
 These maps are linear, so they define a valid attention head.
 
-### Lemma 1. The output of head $j$ depends only on Hamming weight
+### Lemma 1. The output of head j depends only on Hamming weight
 
 Let $k = x_1 + \cdots + x_n$ be the Hamming weight of the input.
 
 Then the projected output of head $j$ is
 
-$$y_j(x) = g_j(k) \, e_j$$
+$$y_j(x) = g_j(k) \thinspace e_j$$
 
 where
 
-$$g_j(k) = \frac{k \, \alpha_j}{n + 1 + (\alpha_j - 1) \, k}.$$
+$$g_j(k) = \frac{k \thinspace \alpha_j}{n + 1 + (\alpha_j - 1) \thinspace k}.$$
 
 #### Proof
 
 We compute the logits first.
 
-1. If an input token is `1`, its embedding is $u$. So $W_K^{(j)} u = (\log \alpha_j) \, q$. The query vector is $q$, and $W_Q^{(j)} q = q$, so the raw logit is $\langle (\log \alpha_j) \, q, q \rangle = \log \alpha_j$.
+1. If an input token is `1`, its embedding is $u$. So $W_K^{(j)} u = (\log \alpha_j) \thinspace q$. The query vector is $q$, and $W_Q^{(j)} q = q$, so the raw logit is $\langle (\log \alpha_j) \thinspace q, q \rangle = \log \alpha_j$.
 2. If an input token is `0`, its embedding is $0$, so its key is $0$ and its logit is $0$.
 3. The query token itself has embedding $q$, but $W_K^{(j)} q = 0$, so its self-logit is also $0$.
 
@@ -95,20 +95,20 @@ Now compute the values.
 
 So if the input has Hamming weight $k$, then:
 
-1. the numerator vector is $k \, \alpha_j \, e_j$,
+1. the numerator vector is $k \thinspace \alpha_j \thinspace e_j$,
 2. the denominator scalar is $(n - k) \cdot 1 + k \cdot \alpha_j + 1$.
 
 Hence
 
-$$y_j(x) = \frac{k \, \alpha_j}{(n - k) + k \, \alpha_j + 1} \, e_j = \frac{k \, \alpha_j}{n + 1 + (\alpha_j - 1) \, k} \, e_j.$$
+$$y_j(x) = \frac{k \thinspace \alpha_j}{(n - k) + k \thinspace \alpha_j + 1} \thinspace e_j = \frac{k \thinspace \alpha_j}{n + 1 + (\alpha_j - 1) \thinspace k} \thinspace e_j.$$
 
 This proves the formula.
 
-### Lemma 2. The functions $1, g_1, \ldots, g_n$ are linearly independent on $\{0, \ldots, n\}$
+### Lemma 2. The functions 1, g₁, …, gₙ are linearly independent on {0, …, n}
 
-Consider the $n + 1$ real-valued functions on the set $\{0, \ldots, n\}$
+Consider the $n + 1$ real-valued functions on the set $\lbrace0, \ldots, n\rbrace$
 
-$$1, \; g_1, \; \ldots, \; g_n.$$
+$$1, \thickspace g_1, \thickspace \ldots, \thickspace g_n.$$
 
 These functions are linearly independent.
 
@@ -116,7 +116,7 @@ These functions are linearly independent.
 
 Assume
 
-$$c_0 + \sum_{j=1}^{n} c_j \, g_j(k) = 0$$
+$$c_0 + \sum_{j=1}^{n} c_j \thinspace g_j(k) = 0$$
 
 for every $k = 0, 1, \ldots, n$.
 
@@ -124,11 +124,11 @@ At $k = 0$, every $g_j(0) = 0$, so $c_0 = 0$.
 
 For $k = 1, \ldots, n$, divide by $k$ to obtain
 
-$$\sum_{j=1}^{n} \frac{c_j \, \alpha_j}{n + 1 + (\alpha_j - 1) \, k} = 0.$$
+$$\sum_{j=1}^{n} \frac{c_j \thinspace \alpha_j}{n + 1 + (\alpha_j - 1) \thinspace k} = 0.$$
 
 Define
 
-$$r_j := \frac{n + 1}{\alpha_j - 1}, \qquad d_j := \frac{c_j \, \alpha_j}{\alpha_j - 1}.$$
+$$r_j := \frac{n + 1}{\alpha_j - 1}, \qquad d_j := \frac{c_j \thinspace \alpha_j}{\alpha_j - 1}.$$
 
 Then the relation becomes
 
@@ -162,15 +162,15 @@ So every $d_j = 0$, hence every $c_j = 0$.
 
 Therefore $1, g_1, \ldots, g_n$ are linearly independent.
 
-### Corollary 3. $1, g_1, \ldots, g_n$ form a basis of all functions on $\{0, \ldots, n\}$
+### Corollary 3. 1, g₁, …, gₙ form a basis of all functions on {0, …, n}
 
-The set $\{0, \ldots, n\}$ has exactly $n + 1$ points, so the vector space of real-valued functions on this set has dimension $n + 1$.
+The set $\lbrace0, \ldots, n\rbrace$ has exactly $n + 1$ points, so the vector space of real-valued functions on this set has dimension $n + 1$.
 
 By Lemma 2 we already have $n + 1$ linearly independent functions.
 
 Therefore $1, g_1, \ldots, g_n$ form a basis.
 
-### Lemma 4. $n$ heads can realize parity exactly
+### Lemma 4. n heads can realize parity exactly
 
 Define a target sign pattern on Hamming weights by
 
@@ -178,19 +178,19 @@ $$t_k := +1 \text{ if } k \text{ is odd}, \qquad t_k := -1 \text{ if } k \text{ 
 
 By Corollary 3, there exist coefficients $\beta_0, \beta_1, \ldots, \beta_n$ such that
 
-$$\beta_0 + \sum_{j=1}^{n} \beta_j \, g_j(k) = t_k$$
+$$\beta_0 + \sum_{j=1}^{n} \beta_j \thinspace g_j(k) = t_k$$
 
 for every $k = 0, \ldots, n$.
 
 Now choose the final linear probe
 
-$$w := \sum_{j=1}^{n} \beta_j \, e_j.$$
+$$w := \sum_{j=1}^{n} \beta_j \thinspace e_j.$$
 
 Since $w$ is orthogonal to $q$, the constant query skip connection does not affect the probe score.
 
 By Lemma 1, on an input of Hamming weight $k$,
 
-$$\Bigl\langle w, \sum_{j=1}^{n} y_j(x) \Bigr\rangle = \sum_{j=1}^{n} \beta_j \, g_j(k).$$
+$$\Bigl\langle w, \sum_{j=1}^{n} y_j(x) \Bigr\rangle = \sum_{j=1}^{n} \beta_j \thinspace g_j(k).$$
 
 So the full affine score
 

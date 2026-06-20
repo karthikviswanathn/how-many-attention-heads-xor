@@ -2,7 +2,7 @@
 
 ## Statement
 
-Let $R:\{0,1\}^{k}\to\{0,1\}$ be a raw mask. Suppose there is a positive raw statistic
+Let $R:\lbrace0,1\rbrace^{k}\to\lbrace0,1\rbrace$ be a raw mask. Suppose there is a positive raw statistic
 
 $$
 s(z)=\sum_{j=1}^{k}\rho_jz_j,

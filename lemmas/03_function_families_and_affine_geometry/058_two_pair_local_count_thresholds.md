@@ -2,10 +2,10 @@
 
 ## Statement
 
-Let $p:\{0,1\}^2\to\{0,1\}$ be any two-bit predicate. For a profile
+Let $p:\lbrace0,1\rbrace^2\to\lbrace0,1\rbrace$ be any two-bit predicate. For a profile
 
 $$
-F:\{0,1,2\}\to\{0,1\},
+F:\lbrace0,1,2\rbrace\to\lbrace0,1\rbrace,
 $$
 
 define the two-pair local-count function
@@ -38,7 +38,7 @@ $$
 
 ## Proof
 
-There are only finitely many cases. The two-bit predicate $p$ has $16$ truth tables, and a profile on $\{0,1,2\}$ with one sign change has one of the four label sequences
+There are only finitely many cases. The two-bit predicate $p$ has $16$ truth tables, and a profile on $\lbrace0,1,2\rbrace$ with one sign change has one of the four label sequences
 
 $$
 001,\quad 011,\quad 100,\quad 110.

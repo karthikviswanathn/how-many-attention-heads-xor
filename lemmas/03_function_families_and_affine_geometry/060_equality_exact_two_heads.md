@@ -7,7 +7,7 @@ For $m\geq1$, let
 $$
 \mathrm{EQ}_m(x,y):=\mathbf{1}[x=y],
 \qquad
-x,y\in\{0,1\}^m.
+x,y\in\lbrace0,1\rbrace^m.
 $$
 
 Then

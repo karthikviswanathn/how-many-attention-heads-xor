@@ -4,7 +4,7 @@
 
 Let $s_{\mathrm{LTF}}(f)$ be the minimum number of linear threshold function indicators in a strict weighted vote for $f$.
 
-There is an infinite family of Boolean functions $F_n:\{0,1\}^{n}\to\{0,1\}$ such that
+There is an infinite family of Boolean functions $F_n:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace$ such that
 
 $$
 s_{\mathrm{LTF}}(F_n)\leq2
@@ -53,13 +53,13 @@ It also has a length-two LTF decision list. Test $T_n$ first. If $T_n(x)=0$, out
 Since $H^{*}(F_n)\geq c n$ while both auxiliary sizes are at most $2$, no constant $C$ can make either inequality
 
 $$
-H^{*}(f)\leq C\,s_{\mathrm{LTF}}(f)
+H^{*}(f)\leq C\thinspace s_{\mathrm{LTF}}(f)
 $$
 
 or
 
 $$
-H^{*}(f)\leq C\,L_{\mathrm{LTFDL}}(f)
+H^{*}(f)\leq C\thinspace L_{\mathrm{LTFDL}}(f)
 $$
 
 valid for all Boolean functions, where $L_{\mathrm{LTFDL}}(f)$ denotes LTF decision-list length. $\blacksquare$

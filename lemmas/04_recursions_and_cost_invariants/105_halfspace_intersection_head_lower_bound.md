@@ -5,7 +5,7 @@
 There are an absolute constant $c>0$ and an infinite family of pairs of linear threshold functions
 
 $$
-T_n,U_n:\{0,1\}^{n}\to\{0,1\}
+T_n,U_n:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace
 $$
 
 such that, for
@@ -27,7 +27,7 @@ $$
 Sherstov's optimal halfspace-intersection theorem [Optimal bounds for sign-representing the intersection of two halfspaces by polynomials](https://arxiv.org/abs/0910.4224) gives an absolute constant $c>0$ and an infinite family of pairs of halfspaces
 
 $$
-T_n,U_n:\{0,1\}^{n}\to\{0,1\}
+T_n,U_n:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace
 $$
 
 such that

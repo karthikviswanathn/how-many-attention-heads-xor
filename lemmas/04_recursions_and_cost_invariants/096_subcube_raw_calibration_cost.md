@@ -2,7 +2,7 @@
 
 ## Statement
 
-Let $(P,N)$ be a partial assignment, where $P,N\subseteq\{1,\ldots,n\}$ are disjoint. Define its subcube indicator
+Let $(P,N)$ be a partial assignment, where $P,N\subseteq\lbrace1,\ldots,n\rbrace$ are disjoint. Define its subcube indicator
 
 $$
 C_{P,N}(x)
@@ -22,7 +22,7 @@ Otherwise,
 $$
 \rho(C_{P,N})
 \leq
-\min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}.
+\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace.
 $$
 
 > **Interpretation.** A single cylinder test has low raw calibration cost when it fixes few coordinates of at least one sign. This is the raw-feature version of local certificate expansion.
@@ -70,19 +70,19 @@ Choose the cheaper expansion and let $\mathcal{M}$ be the set of its nonconstant
 $$
 \lvert\mathcal{M}\rvert
 \leq
-\min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}.
+\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace.
 $$
 
 The proof of [044_oriented_certificate_expansion_upper_bound.md](../02_complexity_measure_upper_bounds/044_oriented_certificate_expansion_upper_bound.md), using [041_ptf_sparsity_upper_bound.md](../02_complexity_measure_upper_bounds/041_ptf_sparsity_upper_bound.md) and bit-flip invariance from [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md), shows that every signed pure positive or signed pure negative monomial can be approximated uniformly to arbitrary accuracy by one head.
 
-Given $\epsilon>0$, approximate each term in $\mathcal{M}$ with uniform error at most $\epsilon/\max\{1,\lvert\mathcal{M}\rvert\}$, and keep the constant part exactly. The sum of these one-head atoms and the constant term approximates $C_{P,N}$ uniformly within $\epsilon$. Hence
+Given $\epsilon>0$, approximate each term in $\mathcal{M}$ with uniform error at most $\epsilon/\max\lbrace1,\lvert\mathcal{M}\rvert\rbrace$, and keep the constant part exactly. The sum of these one-head atoms and the constant term approximates $C_{P,N}$ uniformly within $\epsilon$. Hence
 
 $$
 \rho(C_{P,N})
 \leq
 \lvert\mathcal{M}\rvert
 \leq
-\min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}.
+\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace.
 $$
 
 $\blacksquare$
@@ -95,7 +95,7 @@ $$
 H^{*}(f)
 \leq
 \sum_{j:c_j\neq0}
-\min\{2^{\lvert P_j\rvert},2^{\lvert N_j\rvert}\}.
+\min\lbrace2^{\lvert P_j\rvert},2^{\lvert N_j\rvert}\rbrace.
 $$
 
 If a decision list tests subcube indicators, Lemma 94 gives the same summed local expansion cost over the tested cylinders. Thus the local certificate-expansion theorem can be reused inside arbitrary strict votes and decision lists, not only as a one-sided cover of a label class.

@@ -5,10 +5,10 @@
 Let
 
 $$
-f:\{0,1\}^{n}\to\{0,1\},
+f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace,
 $$
 
-and split off one coordinate, writing inputs as $(z,y)\in\{0,1\}\times\{0,1\}^{n-1}$. Let
+and split off one coordinate, writing inputs as $(z,y)\in\lbrace0,1\rbrace\times\lbrace0,1\rbrace^{n-1}$. Let
 
 $$
 f_0(y):=f(0,y),
@@ -22,10 +22,10 @@ $$
 P_b(y)
 =
 c_b+\sum_{i=1}^{n-1}\alpha_{b,i}y_i
-+\sum_{\substack{S\subseteq\{1,\ldots,n-1\}\\ \lvert S\rvert\geq2}}
++\sum_{\substack{S\subseteq\lbrace1,\ldots,n-1\rbrace\\ \lvert S\rvert\geq2}}
 a_{b,S}\prod_{i\in S}y_i
 \qquad
-(b\in\{0,1\}).
+(b\in\lbrace0,1\rbrace).
 $$
 
 Let
@@ -33,10 +33,10 @@ Let
 $$
 \mathcal{N}_b
 :=
-\left\{
-S\subseteq\{1,\ldots,n-1\}:
+\left\lbrace
+S\subseteq\lbrace1,\ldots,n-1\rbrace:
 \lvert S\rvert\geq2,\ a_{b,S}\neq0
-\right\},
+\right\rbrace,
 $$
 
 and let
@@ -44,10 +44,10 @@ and let
 $$
 \mathcal{L}_{\Delta}
 :=
-\left\{
-i\in\{1,\ldots,n-1\}:
+\left\lbrace
+i\in\lbrace1,\ldots,n-1\rbrace:
 \alpha_{1,i}\neq\alpha_{0,i}
-\right\}.
+\right\rbrace.
 $$
 
 Then
@@ -67,7 +67,7 @@ $$
 H^{*}(f)
 \leq
 1+(n-1)
-+2\sum_{r=2}^{\min\{d,n-1\}}\binom{n-1}{r}.
++2\sum_{r=2}^{\min\lbrace d,n-1\rbrace}\binom{n-1}{r}.
 $$
 
 In particular, if both cofactors are constants or linear threshold functions, then
@@ -135,7 +135,7 @@ $$
 Therefore
 
 $$
-\operatorname{afs}(P)
+\mathrm{afs}(P)
 \leq
 1
 +\lvert\mathcal{N}_0\rvert
@@ -159,9 +159,9 @@ For the threshold-degree corollary, choose degree-at-most-$d$ sign polynomials f
 $$
 \lvert\mathcal{N}_b\rvert
 \leq
-\sum_{r=2}^{\min\{d,n-1\}}\binom{n-1}{r}
+\sum_{r=2}^{\min\lbrace d,n-1\rbrace}\binom{n-1}{r}
 \qquad
-(b\in\{0,1\}),
+(b\in\lbrace0,1\rbrace),
 $$
 
 and
@@ -176,7 +176,7 @@ $$
 H^{*}(f)
 \leq
 1+(n-1)
-+2\sum_{r=2}^{\min\{d,n-1\}}\binom{n-1}{r}.
++2\sum_{r=2}^{\min\lbrace d,n-1\rbrace}\binom{n-1}{r}.
 $$
 
 If both cofactors are constants or linear threshold functions, take $d=1$. The sum is empty, so

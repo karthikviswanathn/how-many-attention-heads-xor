@@ -48,13 +48,13 @@ $$
 H^{*}(F_G)=2.
 $$
 
-4. If $G$ or $1-G$ is $r\wedge u$ for a raw literal $r\in\{z,1-z\}$, then
+4. If $G$ or $1-G$ is $r\wedge u$ for a raw literal $r\in\lbrace z,1-z\rbrace$, then
 
 $$
 H^{*}(F_G)=2.
 $$
 
-5. If $G$ or $1-G$ is $r\wedge(1-u)$ for a raw literal $r\in\{z,1-z\}$, then
+5. If $G$ or $1-G$ is $r\wedge(1-u)$ for a raw literal $r\in\lbrace z,1-z\rbrace$, then
 
 $$
 2\leq H^{*}(F_G)\leq3.

@@ -2,7 +2,7 @@
 
 ## Statement
 
-Let $k\geq1$, let $z\in\{0,1\}^{k}$ be raw bits, and let
+Let $k\geq1$, let $z\in\lbrace0,1\rbrace^{k}$ be raw bits, and let
 
 $$
 t(y)=\sum_{i=1}^{m}\lambda_i y_i,
@@ -10,7 +10,7 @@ t(y)=\sum_{i=1}^{m}\lambda_i y_i,
 \lambda_i>0.
 $$
 
-Suppose $P(z,y)$ is a strict sign polynomial for $f(z,y)$, and suppose that for each raw assignment $a\in\{0,1\}^{k}$ the slice
+Suppose $P(z,y)$ is a strict sign polynomial for $f(z,y)$, and suppose that for each raw assignment $a\in\lbrace0,1\rbrace^{k}$ the slice
 
 $$
 P(a,y)=p_a(t(y))
@@ -21,7 +21,7 @@ is a univariate polynomial in $t(y)$ of degree at most $d_a$. Choose positive ra
 $$
 H^{*}(f)
 \leq
-\sum_{a\in\{0,1\}^{k}}d_a+J_{\rho}(f).
+\sum_{a\in\lbrace0,1\rbrace^{k}}d_a+J_{\rho}(f).
 $$
 
 Consequently,
@@ -29,7 +29,7 @@ Consequently,
 $$
 H^{*}(f)
 \leq
-\sum_{a\in\{0,1\}^{k}}d_a
+\sum_{a\in\lbrace0,1\rbrace^{k}}d_a
 +
 \min_{\rho}J_{\rho}(f).
 $$

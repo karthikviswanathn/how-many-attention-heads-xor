@@ -26,7 +26,7 @@ e_0:=F(\tau_0),
 e_1:=F(\tau_{M-1})
 $$
 
-be the two endpoint labels. For a raw address $a\in\{0,1\}^{k}$, write
+be the two endpoint labels. For a raw address $a\in\lbrace0,1\rbrace^{k}$, write
 
 $$
 M_a(z):=\mathbf{1}[z=a].
@@ -66,7 +66,7 @@ $$
 
 Consequently, in either case, if $\deg_{\pm}(T)=C$, then the corresponding localized gate has exact head complexity $C$.
 
-More generally, if $R:\{0,1\}^{k}\to\{0,1\}$ is any raw mask with $r_1=\lvert R^{-1}(1)\rvert>0$ and $e_0=e_1=0$, then
+More generally, if $R:\lbrace0,1\rbrace^{k}\to\lbrace0,1\rbrace$ is any raw mask with $r_1=\lvert R^{-1}(1)\rvert>0$ and $e_0=e_1=0$, then
 
 $$
 d

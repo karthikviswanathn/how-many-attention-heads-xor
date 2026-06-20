@@ -5,7 +5,7 @@
 Let
 
 $$
-T_1,\ldots,T_s:\{0,1\}^n\to\{0,1\}
+T_1,\ldots,T_s:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace
 $$
 
 be Boolean features, and suppose
@@ -41,7 +41,7 @@ $$
 and hence
 
 $$
-\max\{\rho(T_1),\rho(T_2)\}
+\max\lbrace\rho(T_1),\rho(T_2)\rbrace
 \geq
 \frac{\deg_{\pm}(f)}{2}.
 $$
@@ -93,7 +93,7 @@ The maximum bound follows from
 $$
 \rho(T_1)+\rho(T_2)
 \leq
-2\max\{\rho(T_1),\rho(T_2)\}.
+2\max\lbrace\rho(T_1),\rho(T_2)\rbrace.
 $$
 
 $\blacksquare$

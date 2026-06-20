@@ -5,7 +5,7 @@
 Let
 
 $$
-T:\{0,1\}^n\to\{0,1\}
+T:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace
 $$
 
 be a Boolean feature. The raw calibration cost $\rho(T)$ has the following structural properties.
@@ -16,7 +16,7 @@ be a Boolean feature. The raw calibration cost $\rho(T)$ has the following struc
    \rho(1-T)=\rho(T).
    $$
 
-2. Coordinate permutations do not change raw cost. If $\pi$ is a permutation of $\{1,\ldots,n\}$ and
+2. Coordinate permutations do not change raw cost. If $\pi$ is a permutation of $\lbrace1,\ldots,n\rbrace$ and
 
    $$
    T^{\pi}(x_1,\ldots,x_n)
@@ -62,7 +62,7 @@ be a Boolean feature. The raw calibration cost $\rho(T)$ has the following struc
    \rho(R)\leq\rho(T).
    $$
 
-All equalities and inequalities are interpreted in $\mathbb{N}\cup\{\infty\}$.
+All equalities and inequalities are interpreted in $\mathbb{N}\cup\lbrace\infty\rbrace$.
 
 > **Interpretation.** Raw calibration cost has the same basic robustness properties needed for a reusable invariant: complements, relabelings, global bit-flips, dummy variables, and restrictions do not create artificial cost.
 
@@ -154,7 +154,7 @@ $$
 
 follows from the restriction inequality by fixing the dummy block $y$ to any value.
 
-For the upper bound, assume $\rho(T)=r<\infty$ and fix $\epsilon>0$. Choose an $r$-atom approximation to $T$ with error at most $\epsilon/2$. It remains to extend each atom from the $x$ variables to the larger $(x,y)$ cube while changing its value by at most $\epsilon/(2\max\{1,r\})$.
+For the upper bound, assume $\rho(T)=r<\infty$ and fix $\epsilon>0$. Choose an $r$-atom approximation to $T$ with error at most $\epsilon/2$. It remains to extend each atom from the $x$ variables to the larger $(x,y)$ cube while changing its value by at most $\epsilon/(2\max\lbrace1,r\rbrace)$.
 
 For a fixed atom $\phi(x)$, keep all original parameters on the $x$ coordinates. Add each dummy coordinate with a positive weight $\lambda$, arbitrary offset $m=0$, and the same atom parameter $\alpha$ and slope $\delta$. As $\lambda\to0^{+}$, the extended denominator and numerator converge uniformly on the finite $(x,y)$ cube to the original denominator and numerator. Since the original denominator is strictly positive on the finite $x$ cube, the extended atom converges uniformly to $\phi(x)$.
 

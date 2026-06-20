@@ -5,7 +5,7 @@
 Let
 
 $$
-f:\{0,1\}\times\{0,1\}^{m}\to\{0,1\},
+f:\lbrace0,1\rbrace\times\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace,
 $$
 
 and write its cofactors as
@@ -13,13 +13,13 @@ and write its cofactors as
 $$
 f_b(y):=f(b,y)
 \qquad
-(b\in\{0,1\}).
+(b\in\lbrace0,1\rbrace).
 $$
 
 Let
 
 $$
-r_b:=\operatorname{actc}(f_b).
+r_b:=\mathrm{actc}(f_b).
 $$
 
 Then
@@ -27,17 +27,17 @@ Then
 $$
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\operatorname{sactc}(f)
+\mathrm{sactc}(f)
 \leq
-1+m+2(r_0+r_1)+\min\{r_0,r_1\}.
+1+m+2(r_0+r_1)+\min\lbrace r_0,r_1\rbrace.
 $$
 
-Equivalently, for either choice of base cofactor $b\in\{0,1\}$,
+Equivalently, for either choice of base cofactor $b\in\lbrace0,1\rbrace$,
 
 $$
-\operatorname{sactc}(f)
+\mathrm{sactc}(f)
 \leq
 1+m+3r_b+2r_{1-b}.
 $$
@@ -79,11 +79,11 @@ Apply the cofactor interpolation lemma [111_affine_cylinder_cofactor_interpolati
 For every cylinder support $\gamma=(P,N)$,
 
 $$
-\kappa(P\cup\{z\},N)
+\kappa(P\cup\lbrace z\rbrace,N)
 =
-\min\{2^{\lvert P\rvert+1},2^{\lvert N\rvert}\}
+\min\lbrace2^{\lvert P\rvert+1},2^{\lvert N\rvert}\rbrace
 \leq
-2\min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}
+2\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace
 =
 2\kappa(P,N).
 $$
@@ -97,7 +97,7 @@ $$
 because every changed cylinder support lies in $\Gamma_0\cup\Gamma_1$. Therefore
 
 $$
-\operatorname{sactc}(f)
+\mathrm{sactc}(f)
 \leq
 1+m+C_0+2(C_0+C_1)
 =
@@ -139,15 +139,15 @@ $$
 The base cylinder contribution is now at most $C_1$. A lifted changed cylinder has the form
 
 $$
-(1-z)C_{P,N}(y)=C_{P,N\cup\{z\}}(z,y),
+(1-z)C_{P,N}(y)=C_{P,N\cup\lbrace z\rbrace}(z,y),
 $$
 
 and
 
 $$
-\kappa(P,N\cup\{z\})
+\kappa(P,N\cup\lbrace z\rbrace)
 =
-\min\{2^{\lvert P\rvert},2^{\lvert N\rvert+1}\}
+\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert+1}\rbrace
 \leq
 2\kappa(P,N).
 $$
@@ -155,7 +155,7 @@ $$
 Therefore the same argument gives
 
 $$
-\operatorname{sactc}(f)
+\mathrm{sactc}(f)
 \leq
 1+m+C_1+2(C_0+C_1)
 =
@@ -167,9 +167,9 @@ $$
 Taking the smaller of the two estimates gives
 
 $$
-\operatorname{sactc}(f)
+\mathrm{sactc}(f)
 \leq
-1+m+2(r_0+r_1)+\min\{r_0,r_1\}.
+1+m+2(r_0+r_1)+\min\lbrace r_0,r_1\rbrace.
 $$
 
 Finally, [112_split_affine_cylinder_cost.md](112_split_affine_cylinder_cost.md) gives
@@ -177,9 +177,9 @@ Finally, [112_split_affine_cylinder_cost.md](112_split_affine_cylinder_cost.md) 
 $$
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\operatorname{sactc}(f),
+\mathrm{sactc}(f),
 $$
 
 which completes the chain. $\blacksquare$
@@ -191,7 +191,7 @@ If both cofactors have bounded affine-cylinder cost, then $f$ has bounded head c
 $$
 H^{*}(f)
 \leq
-1+m+2(r_0+r_1)+\min\{r_0,r_1\}.
+1+m+2(r_0+r_1)+\min\lbrace r_0,r_1\rbrace.
 $$
 
 This is not intended to be tight for parity, where the exact recursion costs one head per fresh XOR bit. Its use is as a safe fallback when two cofactors have good affine-cylinder certificates but do not share enough structure for the sharper split interpolation lemmas to apply.

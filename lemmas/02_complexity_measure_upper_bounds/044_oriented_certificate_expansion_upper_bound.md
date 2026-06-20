@@ -2,12 +2,12 @@
 
 ## Statement
 
-Let $(P,N)$ be a partial assignment, where $P,N\subseteq\{1,\ldots,n\}$ are disjoint. Its cylinder is
+Let $(P,N)$ be a partial assignment, where $P,N\subseteq\lbrace1,\ldots,n\rbrace$ are disjoint. Its cylinder is
 
 $$
 [P,N]
 :=
-\{x\in\{0,1\}^n : x_i=1 \text{ for } i\in P,\ x_j=0 \text{ for } j\in N\}.
+\lbrace x\in\lbrace0,1\rbrace^n : x_i=1 \text{ for } i\in P,\ x_j=0 \text{ for } j\in N\rbrace.
 $$
 
 A family $\mathcal{C}_1$ of such partial assignments is a $1$-certificate cover for $f$ if
@@ -26,7 +26,7 @@ $$
 H^{*}(f)
 \leq
 \sum_{(P,N)\in\mathcal{C}_1}
-\min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}.
+\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace.
 $$
 
 The dual statement holds for a $0$-certificate cover $\mathcal{C}_0$:
@@ -35,7 +35,7 @@ $$
 H^{*}(f)
 \leq
 \sum_{(P,N)\in\mathcal{C}_0}
-\min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}.
+\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace.
 $$
 
 > **Interpretation.** A one-sided certificate cover is cheap when each certificate fixes few bits of at least one sign. The cheaper sign may be chosen separately for each certificate.
@@ -111,7 +111,7 @@ $$
 M
 :=
 \sum_{(P,N)\in\mathcal{C}_1}
-\min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}
+\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace
 $$
 
 pure positive or pure negative monomials, plus a constant. If $M=0$, then $f$ is constant $0$ and the bound is trivial. Otherwise, approximate each nonconstant pure monomial term by one head with uniform error less than $1/(4M)$. The total approximation error is then less than $1/4$ on the cube.
@@ -122,7 +122,7 @@ $$
 H^{*}(f)
 \leq
 \sum_{(P,N)\in\mathcal{C}_1}
-\min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}.
+\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace.
 $$
 
 If $\mathcal{C}_0$ is a $0$-certificate cover for $f$, then it is a $1$-certificate cover for $1-f$. Applying the first part to $1-f$ and using complement invariance from [028_restrictions_and_sign_rank.md](028_restrictions_and_sign_rank.md) proves the $0$-certificate bound. $\blacksquare$
@@ -134,13 +134,13 @@ The mixed-literal DNF/CNF literal-expansion theorem [042_dnf_cnf_literal_expansi
 $$
 H^{*}(f)
 \leq
-\sum_a\min\{2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\}.
+\sum_a\min\lbrace2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\rbrace.
 $$
 
 The decision-tree leaf-profile theorem [043_decision_tree_upper_bound.md](043_decision_tree_upper_bound.md) is strengthened similarly. If a decision tree has depth at most $d$, then every leaf satisfies
 
 $$
-\min\{\lvert P_\ell\rvert,\lvert N_\ell\rvert\}
+\min\lbrace\lvert P_\ell\rvert,\lvert N_\ell\rvert\rbrace
 \leq
 \left\lfloor\frac{d}{2}\right\rfloor.
 $$

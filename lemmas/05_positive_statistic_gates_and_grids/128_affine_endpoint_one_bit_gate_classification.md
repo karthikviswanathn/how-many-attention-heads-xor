@@ -8,7 +8,7 @@ $$
 L(y)=a+\sum_{i=1}^{m}\alpha_i y_i
 $$
 
-be a nonconstant affine statistic on $\{0,1\}^{m}$. Let $E$ be either endpoint predicate
+be a nonconstant affine statistic on $\lbrace0,1\rbrace^{m}$. Let $E$ be either endpoint predicate
 
 $$
 E_{\min}(y)=\mathbf{1}[L(y)=\ell_{\min}]
@@ -26,7 +26,7 @@ $$
 \ell_{\max}:=\max_y L(y).
 $$
 
-For any two-input Boolean gate $G:\{0,1\}^{2}\to\{0,1\}$, define
+For any two-input Boolean gate $G:\lbrace0,1\rbrace^{2}\to\lbrace0,1\rbrace$, define
 
 $$
 F(z,y):=G(z,E(y)).
@@ -50,17 +50,17 @@ $$
 First record the structure of affine endpoint predicates. If $E=E_{\min}$, set
 
 $$
-P:=\{i:\alpha_i<0\},
+P:=\lbrace i:\alpha_i<0\rbrace,
 \qquad
-N:=\{i:\alpha_i>0\}.
+N:=\lbrace i:\alpha_i>0\rbrace.
 $$
 
 If $E=E_{\max}$, set
 
 $$
-P:=\{i:\alpha_i>0\},
+P:=\lbrace i:\alpha_i>0\rbrace,
 \qquad
-N:=\{i:\alpha_i<0\}.
+N:=\lbrace i:\alpha_i<0\rbrace.
 $$
 
 Let
@@ -104,7 +104,7 @@ We next check the two feature-literal conjunctions that can occur in non-XOR gat
 $$
 r(z)\wedge E(y)=1
 \qquad\Longleftrightarrow\qquad
-S(y)+d\,r(z)>2d-\frac12.
+S(y)+d\thinspace r(z)>2d-\frac12.
 $$
 
 Indeed, on true inputs the left side is $2d$, while on false inputs it is at most $2d-1$.

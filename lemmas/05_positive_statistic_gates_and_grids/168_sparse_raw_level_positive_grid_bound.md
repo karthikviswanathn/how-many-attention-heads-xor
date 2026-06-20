@@ -5,7 +5,7 @@
 Use the positive grid setup of Theorem 165. Let
 
 $$
-A:=\{r\in\{0,\ldots,R-1\}:F(\nu_r,t(y))\text{ is nonconstant}\}
+A:=\lbrace r\in\lbrace0,\ldots,R-1\rbrace:F(\nu_r,t(y))\text{ is nonconstant}\rbrace
 $$
 
 be the active raw-level set. Then

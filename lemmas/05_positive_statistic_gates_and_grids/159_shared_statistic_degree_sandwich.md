@@ -5,14 +5,14 @@
 Use the setup of Theorem 158. Suppose that for each raw assignment $a$ there is a univariate polynomial $P_a(u)$ of degree at most $d_a$ such that
 
 $$
-\operatorname{sgn}(P_a(t(y)))=
+\mathrm{sgn}(P_a(t(y)))=
 \begin{cases}
 +1 & \text{if } f(a,y)=1,\\
 -1 & \text{if } f(a,y)=0
 \end{cases}
 $$
 
-for every $y\in\{0,1\}^{m}$. Let
+for every $y\in\lbrace0,1\rbrace^{m}$. Let
 
 $$
 \delta_a:=\deg_{\pm}\bigl(F_a(t(y))\bigr),

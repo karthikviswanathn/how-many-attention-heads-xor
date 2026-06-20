@@ -5,7 +5,7 @@
 Let $\mathcal{T}$ be a deterministic decision tree computing
 
 $$
-f:\{0,1\}^n\to\{0,1\}.
+f:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace.
 $$
 
 For a leaf $\ell$, let $P_\ell$ be the set of variables fixed to $1$ along the root-to-leaf path, and let $N_\ell$ be the set of variables fixed to $0$ along that path. Let $\mathcal{L}_1$ and $\mathcal{L}_0$ be the leaves labeled $1$ and $0$.
@@ -15,12 +15,12 @@ Then
 $$
 H^{*}(f)
 \leq
-\min\left\{
+\min\left\lbrace
 \sum_{\ell\in\mathcal{L}_1}2^{\lvert P_\ell\rvert},
 \sum_{\ell\in\mathcal{L}_1}2^{\lvert N_\ell\rvert},
 \sum_{\ell\in\mathcal{L}_0}2^{\lvert P_\ell\rvert},
 \sum_{\ell\in\mathcal{L}_0}2^{\lvert N_\ell\rvert}
-\right\}.
+\right\rbrace.
 $$
 
 In particular, if $\mathcal{T}$ has depth at most $d$, then
@@ -28,7 +28,7 @@ In particular, if $\mathcal{T}$ has depth at most $d$, then
 $$
 H^{*}(f)
 \leq
-2^d\min\{\lvert\mathcal{L}_0\rvert,\lvert\mathcal{L}_1\rvert\}.
+2^d\min\lbrace\lvert\mathcal{L}_0\rvert,\lvert\mathcal{L}_1\rvert\rbrace.
 $$
 
 If $f$ is nonconstant and has deterministic decision-tree depth $D(f)=d\geq1$, then
@@ -61,10 +61,10 @@ Applying the DNF literal-expansion upper bound [042_dnf_cnf_literal_expansion_up
 $$
 H^{*}(f)
 \leq
-\min\left\{
+\min\left\lbrace
 \sum_{\ell\in\mathcal{L}_1}2^{\lvert P_\ell\rvert},
 \sum_{\ell\in\mathcal{L}_1}2^{\lvert N_\ell\rvert}
-\right\}.
+\right\rbrace.
 $$
 
 Similarly, the rejecting leaves give
@@ -78,10 +78,10 @@ The same DNF bound applied to $1-f$ gives
 $$
 H^{*}(1-f)
 \leq
-\min\left\{
+\min\left\lbrace
 \sum_{\ell\in\mathcal{L}_0}2^{\lvert P_\ell\rvert},
 \sum_{\ell\in\mathcal{L}_0}2^{\lvert N_\ell\rvert}
-\right\}.
+\right\rbrace.
 $$
 
 Complement invariance from [028_restrictions_and_sign_rank.md](028_restrictions_and_sign_rank.md) gives $H^{*}(f)=H^{*}(1-f)$, so the four-term minimum follows.
@@ -106,18 +106,18 @@ $$
 2^d\lvert\mathcal{L}_b\rvert
 $$
 
-for $b\in\{0,1\}$, proving
+for $b\in\lbrace0,1\rbrace$, proving
 
 $$
 H^{*}(f)
 \leq
-2^d\min\{\lvert\mathcal{L}_0\rvert,\lvert\mathcal{L}_1\rvert\}.
+2^d\min\lbrace\lvert\mathcal{L}_0\rvert,\lvert\mathcal{L}_1\rvert\rbrace.
 $$
 
 Finally, a depth-$d$ binary decision tree has at most $2^d$ leaves. If $f$ is nonconstant, both labels occur, so
 
 $$
-\min\{\lvert\mathcal{L}_0\rvert,\lvert\mathcal{L}_1\rvert\}
+\min\lbrace\lvert\mathcal{L}_0\rvert,\lvert\mathcal{L}_1\rvert\rbrace
 \leq
 2^{d-1}.
 $$
@@ -143,7 +143,7 @@ for every nonconstant $f$ with $D(f)\geq1$.
 The leaf-profile bound can be sharper. If all accepting leaves have at most $r$ negative literals after choosing the original orientation, then
 
 $$
-H^{*}(f)\leq\lvert\mathcal{L}_1\rvert\,2^r.
+H^{*}(f)\leq\lvert\mathcal{L}_1\rvert\thinspace2^r.
 $$
 
 The analogous statements hold for rejecting leaves and after the global bit flip.

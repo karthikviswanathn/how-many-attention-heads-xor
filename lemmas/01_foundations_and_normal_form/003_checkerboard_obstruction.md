@@ -4,18 +4,18 @@
 
 Fix the one-layer attention-only model from [../../model.md](../../model.md), with a single head and a linear readout from the query token.
 
-Let $f : \{0,1\}^n \to \{0,1\}$. Suppose there exist distinct coordinates $i \neq j$ and a base assignment to all other coordinates such that, restricted to the two free bits $(a,b)$ in positions $i, j$, the function looks like
+Let $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$. Suppose there exist distinct coordinates $i \neq j$ and a base assignment to all other coordinates such that, restricted to the two free bits $(a,b)$ in positions $i, j$, the function looks like
 
 $$
 f(0,0) = c, \qquad f(1,1) = c, \qquad f(0,1) = 1 - c, \qquad f(1,0) = 1 - c
 $$
 
-for some $c \in \{0,1\}$.
+for some $c \in \lbrace0,1\rbrace$.
 
 Then $f$ cannot be computed with one head, so
 
 $$
-H^{*}(f) \;\geq\; 2.
+H^{*}(f) \thickspace\geq\thickspace 2.
 $$
 
 > **Equivalently.** Any function containing a 2-bit checkerboard restriction has head complexity at least $2$: one head cannot separate one diagonal of a restricted 2-cube from the other diagonal.
@@ -25,7 +25,7 @@ $$
 The usual 2-bit XOR truth table is exactly the special case $c = 0$:
 
 $$
-0, \; 1, \; 1, \; 0.
+0, \thickspace 1, \thickspace 1, \thickspace 0.
 $$
 
 So the single-head XOR impossibility is just the first instance of a more general obstruction: *one head cannot separate one diagonal of a 2-cube from the other diagonal*.
@@ -55,7 +55,7 @@ $$
 Since each $D(a,b)$ is strictly positive, both expressions are convex combinations:
 
 $$
-P \in \bigl[z(0,0),\, z(1,1)\bigr] \quad\text{and}\quad P \in \bigl[z(0,1),\, z(1,0)\bigr].
+P \in \bigl[z(0,0),\thinspace z(1,1)\bigr] \quad\text{and}\quad P \in \bigl[z(0,1),\thinspace z(1,0)\bigr].
 $$
 
 So the segment joining one diagonal intersects the segment joining the other diagonal.
@@ -75,7 +75,7 @@ Therefore no single head can realize a checkerboard restriction. $\blacksquare$
 Any function with such a restriction must satisfy
 
 $$
-H^{*}(f) \;\geq\; 2.
+H^{*}(f) \thickspace\geq\thickspace 2.
 $$
 
 This is the core lower-bound mechanism currently available in the softmax-attention model. The exact one-head characterization [011_one_head_characterization.md](011_one_head_characterization.md) strengthens it: $H^{*}(f) \leq 1$ holds if and only if $f$ is a linear threshold function, and a checkerboard restriction is not linearly separable.

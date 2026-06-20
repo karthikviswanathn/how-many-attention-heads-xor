@@ -2,7 +2,7 @@
 
 ## Statement
 
-Let $\mathsf{Mon}_n$ be the set of monotone Boolean functions on $\{0,1\}^n$, and define
+Let $\mathsf{Mon}_n$ be the set of monotone Boolean functions on $\lbrace0,1\rbrace^n$, and define
 
 $$
 W_{\mathrm{mon}}(n)
@@ -21,13 +21,13 @@ Then
 $$
 W_{\mathrm{mon}}(n)
 =
-\Omega\!\left(\frac{B_n}{n^2}\right).
+\Omega\negthinspace\left(\frac{B_n}{n^2}\right).
 $$
 
 Combined with the monotone antichain upper bound [035_monotone_antichain_upper_bound.md](035_monotone_antichain_upper_bound.md), this gives
 
 $$
-\Omega\!\left(\frac{1}{n^2}\binom{n}{\lfloor n/2\rfloor}\right)
+\Omega\negthinspace\left(\frac{1}{n^2}\binom{n}{\lfloor n/2\rfloor}\right)
 \leq
 W_{\mathrm{mon}}(n)
 \leq
@@ -37,7 +37,7 @@ $$
 More quantitatively, if
 
 $$
-H=o\!\left(\frac{B_n}{n^2}\right),
+H=o\negthinspace\left(\frac{B_n}{n^2}\right),
 $$
 
 then the fraction of monotone $n$-bit Boolean functions with $H^{*}(f)\leq H$ tends to $0$.
@@ -53,7 +53,7 @@ Let
 $$
 k:=\lfloor n/2\rfloor,
 \qquad
-\mathcal{L}_k:=\{S\subseteq\{1,\ldots,n\}:\lvert S\rvert=k\}.
+\mathcal{L}_k:=\lbrace S\subseteq\lbrace1,\ldots,n\rbrace:\lvert S\rvert=k\rbrace.
 $$
 
 For each family $\mathcal{A}\subseteq\mathcal{L}_k$, define a monotone Boolean function $f_{\mathcal{A}}$ by
@@ -111,7 +111,7 @@ $$
 If
 
 $$
-H=o\!\left(\frac{B_n}{n^2}\right),
+H=o\negthinspace\left(\frac{B_n}{n^2}\right),
 $$
 
 then
@@ -143,7 +143,7 @@ Thus
 $$
 W_{\mathrm{mon}}(n)
 =
-\Omega\!\left(\frac{B_n}{n^2}\right).
+\Omega\negthinspace\left(\frac{B_n}{n^2}\right).
 $$
 
 The upper bound
@@ -159,11 +159,11 @@ is exactly the monotone antichain upper bound from [035_monotone_antichain_upper
 The monotone class has exponentially large worst-case head complexity:
 
 $$
-\Omega\!\left(\frac{2^n}{n^{5/2}}\right)
+\Omega\negthinspace\left(\frac{2^n}{n^{5/2}}\right)
 \leq
 W_{\mathrm{mon}}(n)
 \leq
-O\!\left(\frac{2^n}{\sqrt n}\right),
+O\negthinspace\left(\frac{2^n}{\sqrt n}\right),
 $$
 
 using the standard asymptotic size of the middle binomial coefficient.

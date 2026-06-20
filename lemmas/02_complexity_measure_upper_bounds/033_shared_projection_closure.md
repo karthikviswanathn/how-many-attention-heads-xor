@@ -21,13 +21,13 @@ Suppose Boolean functions $f_1,\ldots,f_m$ all factor through this same statisti
 $$
 f_j(x)=F_j(t(x)),
 \qquad
-F_j:\operatorname{Im}(t)\to\{0,1\}.
+F_j:\mathrm{Im}(t)\to\lbrace0,1\rbrace.
 $$
 
 Let
 
 $$
-G:\{0,1\}^m\to\{0,1\}
+G:\lbrace0,1\rbrace^m\to\lbrace0,1\rbrace
 $$
 
 be any Boolean operation, and define
@@ -64,7 +64,7 @@ $$
 G_t(\tau):=G(F_1(\tau),\ldots,F_m(\tau))
 $$
 
-for $\tau\in\operatorname{Im}(t)$. Then
+for $\tau\in\mathrm{Im}(t)$. Then
 
 $$
 g(x)=G_t(t(x)),

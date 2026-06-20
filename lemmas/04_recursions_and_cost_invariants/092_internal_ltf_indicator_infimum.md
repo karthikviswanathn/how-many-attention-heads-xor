@@ -18,7 +18,7 @@ More explicitly,
 
 $$
 \inf_{\phi}
-\max_{x\in\{0,1\}^3}\lvert \phi(x)-T(x)\rvert
+\max_{x\in\lbrace0,1\rbrace^3}\lvert \phi(x)-T(x)\rvert
 =
 \frac{1}{4},
 $$
@@ -87,10 +87,10 @@ $$
 Thus the false-input errors are at most
 
 $$
-\max\left\{
+\max\left\lbrace
 \frac{1}{4},
 \frac{1}{4(1-\tau)}
-\right\}
+\right\rbrace
 =
 \frac{1}{4(1-\tau)}.
 $$

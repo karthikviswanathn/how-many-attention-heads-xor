@@ -12,12 +12,12 @@ We make that precise, prove what we can, and measure the rest empirically.
 
 Fix a **single-layer, attention-only transformer**: $n$ input bits plus one query token,
 one self-attention layer with $H$ parallel heads, no MLP, no layer norm, and a linear
-readout from the query token. A Boolean function $f : \{0,1\}^n \to \{0,1\}$ is
+readout from the query token. A Boolean function $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$ is
 *computable with $H$ heads* if some choice of embeddings, attention parameters, and
 readout reproduces $f$ on every input. Define
 
 $$
-H^{*}(f) \;:=\; \min\{\, H : f \text{ is computable with } H \text{ heads} \,\}.
+H^{*}(f) \thickspace:=\thickspace \min\lbrace\thinspace H : f \text{ is computable with } H \text{ heads} \thinspace\rbrace.
 $$
 
 The central problem: **understand $H^{*}(f)$** as a function of $f$. Prove lower and upper
@@ -40,10 +40,10 @@ dependency order between them, in [`lemmas.md`](lemmas.md).
   $\deg_{\pm}(f) \leq H^{*}(f)$.
 
 **Upper bounds (a function needs few heads).**
-- *Symmetric thresholds need one head.* Every $T_{n,t}(x) = \mathbf{1}[\,|x| \geq t\,]$ is
+- *Symmetric thresholds need one head.* Every $T_{n,t}(x) = \mathbf{1}[\thinspace|x| \geq t\thinspace]$ is
   computable with a single head, so $H^{*}(\mathrm{AND}_n) = H^{*}(\mathrm{OR}_n) =
   H^{*}(\mathrm{MAJORITY}_n) = 1$.
-- *Weighted-sum interpolation.* If $f(x) = F\!\left(\sum_i \lambda_i x_i\right)$ for
+- *Weighted-sum interpolation.* If $f(x) = F\negthinspace\left(\sum_i \lambda_i x_i\right)$ for
   positive weights $\lambda_i$ and the weighted sum takes $M$ distinct values, then
   $H^{*}(f) \leq M - 1$. Consequently every symmetric function needs at most $n$ heads and
   every Boolean function at most $2^n - 1$.

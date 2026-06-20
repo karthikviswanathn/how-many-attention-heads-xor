@@ -5,15 +5,15 @@
 Let
 
 $$
-f:\{0,1\}^{n}\to\{0,1\}.
+f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace.
 $$
 
-Fix a split coordinate and write inputs as $(z,y)\in\{0,1\}\times\{0,1\}^{n-1}$. Let
+Fix a split coordinate and write inputs as $(z,y)\in\lbrace0,1\rbrace\times\lbrace0,1\rbrace^{n-1}$. Let
 
 $$
 f_b(y):=f(b,y)
 \qquad
-(b\in\{0,1\}).
+(b\in\lbrace0,1\rbrace).
 $$
 
 Let $P_0$ and $P_1$ be strict sign representations of $f_0$ and $f_1$, written as
@@ -22,10 +22,10 @@ $$
 P_b(y)
 =
 c_b+\sum_{i=1}^{n-1}\alpha_{b,i}y_i
-+\sum_{\substack{S\subseteq\{1,\ldots,n-1\}\\ \lvert S\rvert\geq2}}
++\sum_{\substack{S\subseteq\lbrace1,\ldots,n-1\rbrace\\ \lvert S\rvert\geq2}}
 a_{b,S}\prod_{i\in S}y_i
 \qquad
-(b\in\{0,1\}).
+(b\in\lbrace0,1\rbrace).
 $$
 
 Define
@@ -33,7 +33,7 @@ Define
 $$
 \lambda(P_0,P_1)
 :=
-\mathbf{1}\!\left[
+\mathbf{1}\negthinspace\left[
 c_1\neq c_0
 \text{ or }
 \exists i,\ \alpha_{0,i}\neq0
@@ -45,17 +45,17 @@ and the three support sets
 $$
 \mathcal{N}_0
 :=
-\left\{
+\left\lbrace
 S:\lvert S\rvert\geq2,\ a_{0,S}\neq0
-\right\},
+\right\rbrace,
 $$
 
 $$
 \mathcal{L}_{\Delta}
 :=
-\left\{
+\left\lbrace
 i:\alpha_{1,i}\neq\alpha_{0,i}
-\right\},
+\right\rbrace,
 $$
 
 and
@@ -63,9 +63,9 @@ and
 $$
 \mathcal{N}_{\Delta}
 :=
-\left\{
+\left\lbrace
 S:\lvert S\rvert\geq2,\ a_{1,S}\neq a_{0,S}
-\right\}.
+\right\rbrace.
 $$
 
 Let
@@ -79,24 +79,24 @@ C(P_0,P_1)
 +\lvert\mathcal{N}_{\Delta}\rvert.
 $$
 
-For this split coordinate, let $\operatorname{scafs}_{\pm,j}(f)$ be the minimum of $C(P_0,P_1)$ over all strict sign representations of the two cofactors. Finally define
+For this split coordinate, let $\mathrm{scafs}_{\pm,j}(f)$ be the minimum of $C(P_0,P_1)$ over all strict sign representations of the two cofactors. Finally define
 
 $$
-\operatorname{scafs}_{\pm}(f)
+\mathrm{scafs}_{\pm}(f)
 :=
-\min_{1\leq j\leq n}\operatorname{scafs}_{\pm,j}(f).
+\min_{1\leq j\leq n}\mathrm{scafs}_{\pm,j}(f).
 $$
 
 Then
 
 $$
-H^{*}(f)\leq\operatorname{scafs}_{\pm}(f).
+H^{*}(f)\leq\mathrm{scafs}_{\pm}(f).
 $$
 
 If
 
 $$
-\operatorname{scafs}_{\pm}(f)\leq2,
+\mathrm{scafs}_{\pm}(f)\leq2,
 $$
 
 then
@@ -165,7 +165,7 @@ $$
 Therefore
 
 $$
-\operatorname{afs}(P)
+\mathrm{afs}(P)
 \leq
 C(P_0,P_1).
 $$
@@ -179,10 +179,10 @@ $$
 Minimizing over cofactor sign polynomials and split coordinates proves
 
 $$
-H^{*}(f)\leq\operatorname{scafs}_{\pm}(f).
+H^{*}(f)\leq\mathrm{scafs}_{\pm}(f).
 $$
 
-If $\operatorname{scafs}_{\pm}(f)\leq2$, then $H^{*}(f)\leq2$. The exact value is now forced by the zero-head and one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md): constants have value $0$, nonconstant LTFs have value $1$, and all remaining functions have value exactly $2$. $\blacksquare$
+If $\mathrm{scafs}_{\pm}(f)\leq2$, then $H^{*}(f)\leq2$. The exact value is now forced by the zero-head and one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md): constants have value $0$, nonconstant LTFs have value $1$, and all remaining functions have value exactly $2$. $\blacksquare$
 
 ## Consequences
 

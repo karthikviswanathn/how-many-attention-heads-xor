@@ -5,15 +5,15 @@
 Let
 
 $$
-f : \{0,1\}^n \to \{0,1\}.
+f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace.
 $$
 
 A partial assignment is a pair $(D,\xi)$ with
 
 $$
-D\subseteq\{1,\ldots,n\},
+D\subseteq\lbrace1,\ldots,n\rbrace,
 \qquad
-\xi\in\{0,1\}^{D}.
+\xi\in\lbrace0,1\rbrace^{D}.
 $$
 
 Its cylinder is
@@ -21,7 +21,7 @@ Its cylinder is
 $$
 [D,\xi]
 :=
-\{x\in\{0,1\}^n : x_i=\xi_i \text{ for every } i\in D\}.
+\lbrace x\in\lbrace0,1\rbrace^n : x_i=\xi_i \text{ for every } i\in D\rbrace.
 $$
 
 Its width is $\lvert D\rvert$, and its volume is
@@ -61,7 +61,7 @@ $$
 Thus, if
 
 $$
-\operatorname{certvol}_b(f)
+\mathrm{certvol}_b(f)
 :=
 \min_{\mathcal{C}_b}
 \sum_{(D,\xi)\in\mathcal{C}_b}2^{n-\lvert D\rvert}
@@ -72,7 +72,7 @@ where the minimum ranges over all $b$-certificate covers, then
 $$
 H^{*}(f)
 \leq
-2\min\{\operatorname{certvol}_0(f),\operatorname{certvol}_1(f)\}.
+2\min\lbrace\mathrm{certvol}_0(f),\mathrm{certvol}_1(f)\rbrace.
 $$
 
 > **Interpretation.** A small one-sided cover by large-width certificates gives a head upper bound. This packages sparse support and mixed-literal DNF/CNF volume into one invariant.
@@ -95,7 +95,7 @@ The sparse-support upper bound [037_sparse_support_upper_bound.md](037_sparse_su
 $$
 H^{*}(f)
 \leq
-2\min\{\lvert f^{-1}(1)\rvert,\lvert f^{-1}(0)\rvert\}
+2\min\lbrace\lvert f^{-1}(1)\rvert,\lvert f^{-1}(0)\rvert\rbrace
 \leq
 2\lvert f^{-1}(1)\rvert.
 $$

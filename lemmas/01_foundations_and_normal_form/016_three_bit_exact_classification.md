@@ -5,7 +5,7 @@
 For every Boolean function
 
 $$
-f : \{0,1\}^3 \to \{0,1\},
+f : \lbrace0,1\rbrace^3 \to \lbrace0,1\rbrace,
 $$
 
 we have
@@ -32,7 +32,7 @@ by Lemma 6 of [../lemmas.md](../../lemmas.md). It remains to match this lower bo
 
 ### Lemma 1. Three-bit cubic thresholds use at most three heads
 
-Let $f : \{0,1\}^3 \to \{0,1\}$. Suppose there is a multilinear polynomial $P$ of degree at most $3$ such that
+Let $f : \lbrace0,1\rbrace^3 \to \lbrace0,1\rbrace$. Suppose there is a multilinear polynomial $P$ of degree at most $3$ such that
 
 $$
 f(x)=1
@@ -40,7 +40,7 @@ f(x)=1
 P(x)>0
 $$
 
-for every $x\in\{0,1\}^3$. Then
+for every $x\in\lbrace0,1\rbrace^3$. Then
 
 $$
 H^{*}(f) \leq 3.
@@ -81,7 +81,7 @@ $$
 -5723136,
 $$
 
-so these eight products form a basis for all multilinear polynomials on $\{0,1\}^3$.
+so these eight products form a basis for all multilinear polynomials on $\lbrace0,1\rbrace^3$.
 
 Therefore, for every degree-at-most-$3$ polynomial $P$, there are affine functions $A_1,A_2,A_3$ with
 
@@ -123,7 +123,7 @@ $\blacksquare$
 
 ### Lemma 2. Every three-bit function has threshold degree at most three
 
-Every real-valued function on $\{0,1\}^3$ has a unique multilinear interpolation polynomial of degree at most $3$. In particular, for a Boolean function $f$, interpolate the values
+Every real-valued function on $\lbrace0,1\rbrace^3$ has a unique multilinear interpolation polynomial of degree at most $3$. In particular, for a Boolean function $f$, interpolate the values
 
 $$
 Q_f(x)
@@ -148,7 +148,7 @@ $$
 d := \deg_{\pm}(f).
 $$
 
-By Lemma 2, $d\in\{0,1,2,3\}$.
+By Lemma 2, $d\in\lbrace0,1,2,3\rbrace$.
 
 1. If $d=0$, then $f$ is constant. By Lemma 11,
 
@@ -174,7 +174,7 @@ By Lemma 2, $d\in\{0,1,2,3\}$.
    H^{*}(f) = 3 = d.
    $$
 
-Thus, for every $f : \{0,1\}^3 \to \{0,1\}$,
+Thus, for every $f : \lbrace0,1\rbrace^3 \to \lbrace0,1\rbrace$,
 
 $$
 H^{*}(f) = \deg_{\pm}(f).

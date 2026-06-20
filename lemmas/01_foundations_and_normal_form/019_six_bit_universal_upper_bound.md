@@ -5,7 +5,7 @@
 For every Boolean function
 
 $$
-f : \{0,1\}^6 \to \{0,1\},
+f : \lbrace0,1\rbrace^6 \to \lbrace0,1\rbrace,
 $$
 
 we have
@@ -45,14 +45,14 @@ c\prod_{j=1}^{11}B_j(x)
 A_h(x)\prod_{j\neq h}B_j(x)
 $$
 
-on $\{0,1\}^6$.
+on $\lbrace0,1\rbrace^6$.
 
-**Proof.** Work in the multilinear basis indexed by all subsets of $\{1,2,3,4,5,6\}$:
+**Proof.** Work in the multilinear basis indexed by all subsets of $\lbrace1,2,3,4,5,6\rbrace$:
 
 $$
 \prod_{i\in S}x_i,
 \qquad
-S\subseteq\{1,2,3,4,5,6\}.
+S\subseteq\lbrace1,2,3,4,5,6\rbrace.
 $$
 
 Define the eleven positive affine denominators by
@@ -89,13 +89,13 @@ $$
 \prod_{j=1}^{11}B_j,
 $$
 
-for each $h\in\{1,\ldots,10\}$, the six products
+for each $h\in\lbrace1,\ldots,10\rbrace$, the six products
 
 $$
 M\prod_{j\neq h}B_j
 \qquad
 \text{for }
-M\in\{1,x_1,x_2,x_3,x_4,x_5\},
+M\in\lbrace1,x_1,x_2,x_3,x_4,x_5\rbrace,
 $$
 
 and the three products
@@ -104,7 +104,7 @@ $$
 M\prod_{j\neq 11}B_j
 \qquad
 \text{for }
-M\in\{1,x_1,x_2\}.
+M\in\lbrace1,x_1,x_2\rbrace.
 $$
 
 Reduce these products using $x_i^2=x_i$ on the Boolean cube, and write their coefficient vectors in the $64$-element multilinear basis.
@@ -122,13 +122,13 @@ $$
 \pmod p,
 $$
 
-which is nonzero. Hence the determinant is nonzero over the integers, and the displayed products form a basis for all multilinear polynomials on $\{0,1\}^6$.
+which is nonzero. Hence the determinant is nonzero over the integers, and the displayed products form a basis for all multilinear polynomials on $\lbrace0,1\rbrace^6$.
 
 Therefore every multilinear $P$ has the displayed form. $\blacksquare$
 
 ### Lemma 2. Eleven heads suffice for every six-bit function
 
-Let $f : \{0,1\}^6 \to \{0,1\}$. Interpolate the sign labels
+Let $f : \lbrace0,1\rbrace^6 \to \lbrace0,1\rbrace$. Interpolate the sign labels
 
 $$
 Q_f(x)
@@ -139,7 +139,7 @@ Q_f(x)
 \end{cases}
 $$
 
-by a multilinear polynomial $P$ on $\{0,1\}^6$.
+by a multilinear polynomial $P$ on $\lbrace0,1\rbrace^6$.
 
 Apply Lemma 1 to this $P$. Since each $B_h$ is positive on the cube, the score
 

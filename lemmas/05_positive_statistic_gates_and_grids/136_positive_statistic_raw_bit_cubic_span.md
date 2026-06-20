@@ -65,7 +65,7 @@ Therefore there are affine functions
 $$
 A_h(z,u)=a_h+b_hu+c_hz,
 \qquad
-h\in\{1,2,3\},
+h\in\lbrace1,2,3\rbrace,
 $$
 
 such that

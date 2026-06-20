@@ -5,7 +5,7 @@
 Let
 
 $$
-T:\{0,1\}^{m}\to\{0,1\}
+T:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace
 $$
 
 have a strict affine-cylinder score
@@ -25,7 +25,7 @@ $$
 Define
 
 $$
-L(A):=\{i:\alpha_i\neq0\},
+L(A):=\lbrace i:\alpha_i\neq0\rbrace,
 $$
 
 and
@@ -33,7 +33,7 @@ and
 $$
 K(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P,N),
 \qquad
-K_z(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P\cup\{z\},N),
+K_z(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P\cup\lbrace z\rbrace,N),
 $$
 
 and
@@ -41,7 +41,7 @@ and
 $$
 \eta_{\oplus}(A)
 :=
-\mathbf{1}\!\left[
+\mathbf{1}\negthinspace\left[
 a\neq0
 \text{ or }
 \exists i,\ \alpha_i\neq0
@@ -55,9 +55,9 @@ $$
 \leq
 H^{*}(F)
 \leq
-\operatorname{actc}(F)
+\mathrm{actc}(F)
 \leq
-\operatorname{sactc}(F)
+\mathrm{sactc}(F)
 \leq
 \eta_{\oplus}(A)
 +
@@ -115,7 +115,7 @@ $$
 The affine indicator in Lemma 118 becomes
 
 $$
-\mathbf{1}\!\left[
+\mathbf{1}\negthinspace\left[
 -a\neq a
 \text{ or }
 \exists i,\ \alpha_i\neq0
@@ -127,9 +127,9 @@ which is exactly $\eta_{\oplus}(A)$. Since $\mu_0\neq0$ and $\mu_1\neq\mu_0$, Le
 $$
 H^{*}(F)
 \leq
-\operatorname{actc}(F)
+\mathrm{actc}(F)
 \leq
-\operatorname{sactc}(F)
+\mathrm{sactc}(F)
 \leq
 \eta_{\oplus}(A)
 +

@@ -5,7 +5,7 @@
 Let
 
 $$
-T:\{0,1\}^{m}\to\{0,1\}
+T:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace
 $$
 
 be nonconstant, and set
@@ -17,7 +17,7 @@ $$
 Let
 
 $$
-G:\{0,1\}^{2}\to\{0,1\}
+G:\lbrace0,1\rbrace^{2}\to\lbrace0,1\rbrace
 $$
 
 be any Boolean gate, and define
@@ -26,7 +26,7 @@ $$
 F(z,y):=G(z,T(y)).
 $$
 
-For $b\in\{0,1\}$, write
+For $b\in\lbrace0,1\rbrace$, write
 
 $$
 G_b(u):=G(b,u).
@@ -51,7 +51,7 @@ $$
 \deg_{\pm}(F)=d.
 $$
 
-3. If $\{G_0,G_1\}=\{u,1-u\}$, then
+3. If $\lbrace G_0,G_1\rbrace=\lbrace u,1-u\rbrace$, then
 
 $$
 \deg_{\pm}(F)=d+1.
@@ -94,7 +94,7 @@ $$
 Choose
 
 $$
-M>\max_{y\in\{0,1\}^{m}}\lvert P(y)\rvert.
+M>\max_{y\in\lbrace0,1\rbrace^{m}}\lvert P(y)\rvert.
 $$
 
 If $G_0$ is the constant $1$ function, define

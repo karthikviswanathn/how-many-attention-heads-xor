@@ -5,7 +5,7 @@
 Let
 
 $$
-f : \{0,1\}^n \to \{0,1\}.
+f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace.
 $$
 
 Suppose $f$ has a DNF with consistent nonempty terms $T_1,\ldots,T_s$, and let $w_a$ be the width of $T_a$, namely the number of literals in the term. Then
@@ -19,7 +19,7 @@ $$
 In particular, if every term has width at least $w$, then
 
 $$
-H^{*}(f)\leq 2s\,2^{n-w}.
+H^{*}(f)\leq 2s\thinspace2^{n-w}.
 $$
 
 The dual statement holds for CNFs. If $f$ has a CNF with consistent nonempty clauses $C_1,\ldots,C_s$, and $w_a$ is the width of $C_a$, then
@@ -57,7 +57,7 @@ The sparse-support upper bound [037_sparse_support_upper_bound.md](037_sparse_su
 $$
 H^{*}(f)
 \leq
-2\min\{\lvert f^{-1}(1)\rvert,\lvert f^{-1}(0)\rvert\}
+2\min\lbrace\lvert f^{-1}(1)\rvert,\lvert f^{-1}(0)\rvert\rbrace
 \leq
 2\lvert f^{-1}(1)\rvert.
 $$
@@ -75,7 +75,7 @@ If every $w_a\geq w$, then
 $$
 \sum_{a=1}^{s}2^{n-w_a}
 \leq
-s\,2^{n-w},
+s\thinspace2^{n-w},
 $$
 
 which gives the advertised uniform-width bound.

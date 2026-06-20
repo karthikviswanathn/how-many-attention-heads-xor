@@ -17,39 +17,39 @@ $$
 For a block order $\pi$, let $L_{\pi}^{\mathrm{Ham}}(F)$ be the sign-change count obtained by reading the Hamming-weight grid
 
 $$
-\{0,\ldots,n_1\}\times\cdots\times\{0,\ldots,n_b\}
+\lbrace0,\ldots,n_1\rbrace\times\cdots\times\lbrace0,\ldots,n_b\rbrace
 $$
 
 lexicographically in the block order $\pi$. Define
 
 $$
-\operatorname{mhc}(F):=\min_{\pi}L_{\pi}^{\mathrm{Ham}}(F).
+\mathrm{mhc}(F):=\min_{\pi}L_{\pi}^{\mathrm{Ham}}(F).
 $$
 
 Then
 
 $$
-H^{*}(f)\leq\operatorname{mhc}(F).
+H^{*}(f)\leq\mathrm{mhc}(F).
 $$
 
 If
 
 $$
-\deg_{\pm}(f)=\operatorname{mhc}(F),
+\deg_{\pm}(f)=\mathrm{mhc}(F),
 $$
 
 then
 
 $$
-H^{*}(f)=\deg_{\pm}(f)=\operatorname{mhc}(F).
+H^{*}(f)=\deg_{\pm}(f)=\mathrm{mhc}(F).
 $$
 
-For each block order $\pi$ and label $b\in\{0,1\}$, let $R_{b,\pi}$ be the number of contiguous runs of label $b$ in the corresponding lexicographic Hamming-grid sequence. Then
+For each block order $\pi$ and label $b\in\lbrace0,1\rbrace$, let $R_{b,\pi}$ be the number of contiguous runs of label $b$ in the corresponding lexicographic Hamming-grid sequence. Then
 
 $$
 H^{*}(f)
 \leq
-2\min_{\pi}\min\{R_{0,\pi},R_{1,\pi}\}.
+2\min_{\pi}\min\lbrace R_{0,\pi},R_{1,\pi}\rbrace.
 $$
 
 More sharply, if label $b$ has first and last membership indicators $\epsilon_{0,\pi}$ and $\epsilon_{1,\pi}$ in the order $\pi$, then
@@ -72,10 +72,10 @@ $$
 Taking the minimum over $\pi$ proves
 
 $$
-H^{*}(f)\leq\operatorname{mhc}(F).
+H^{*}(f)\leq\mathrm{mhc}(F).
 $$
 
-If $\deg_{\pm}(f)=\operatorname{mhc}(F)$, combine this with the threshold-degree lower bound
+If $\deg_{\pm}(f)=\mathrm{mhc}(F)$, combine this with the threshold-degree lower bound
 
 $$
 \deg_{\pm}(f)\leq H^{*}(f)
@@ -86,7 +86,7 @@ to get exactness.
 For the run bounds, apply the multigrid run bound [172_multigrid_run_bound.md](172_multigrid_run_bound.md) to each block order $\pi$. It gives
 
 $$
-H^{*}(f)\leq2\min\{R_{0,\pi},R_{1,\pi}\}
+H^{*}(f)\leq2\min\lbrace R_{0,\pi},R_{1,\pi}\rbrace
 $$
 
 and the sharper endpoint-adjusted bound for each label $b$. Minimizing over $\pi$ and $b$ gives the displayed inequalities. $\blacksquare$

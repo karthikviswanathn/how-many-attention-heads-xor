@@ -8,14 +8,14 @@ $$
 P(y)
 =
 c+\sum_{i=1}^{m}a_i y_i
-+\sum_{\substack{S\subseteq\{1,\ldots,m\}\\ \lvert S\rvert\geq2}}
++\sum_{\substack{S\subseteq\lbrace1,\ldots,m\rbrace\\ \lvert S\rvert\geq2}}
 a_S\prod_{i\in S}y_i
 $$
 
 strictly sign-represent a Boolean feature
 
 $$
-T:\{0,1\}^{m}\to\{0,1\},
+T:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace,
 \qquad
 T(y)=1
 \Longleftrightarrow
@@ -25,20 +25,20 @@ $$
 Let
 
 $$
-\ell(P):=\lvert\{i:a_i\neq0\}\rvert,
+\ell(P):=\lvert\lbrace i:a_i\neq0\rbrace\rvert,
 \qquad
 q(P):=
 \left\lvert
-\left\{
+\left\lbrace
 S:\lvert S\rvert\geq2,\ a_S\neq0
-\right\}
+\right\rbrace
 \right\rvert.
 $$
 
 Let
 
 $$
-G:\{0,1\}^2\to\{0,1\}
+G:\lbrace0,1\rbrace^2\to\lbrace0,1\rbrace
 $$
 
 be arbitrary, and define
@@ -47,7 +47,7 @@ $$
 f(z,y):=G(z,T(y)).
 $$
 
-For $b\in\{0,1\}$, define $\mu_b\in\{-1,0,1\}$ by:
+For $b\in\lbrace0,1\rbrace$, define $\mu_b\in\lbrace-1,0,1\rbrace$ by:
 
 - $\mu_b=1$ if $G(b,u)=u$ as a function of $u$,
 - $\mu_b=-1$ if $G(b,u)=1-u$ as a function of $u$,
@@ -59,7 +59,7 @@ $$
 H^{*}(f)
 \leq
 1
-+\mathbf{1}[\mu_0\neq0]\,q(P)
++\mathbf{1}[\mu_0\neq0]\thinspace q(P)
 +\mathbf{1}[\mu_1\neq\mu_0]\bigl(\ell(P)+q(P)\bigr).
 $$
 
@@ -90,7 +90,7 @@ Split on $z$. The two cofactors are
 $$
 f_b(y)=G(b,T(y))
 \qquad
-(b\in\{0,1\}).
+(b\in\lbrace0,1\rbrace).
 $$
 
 Each $f_b$ is one of $0$, $1$, $T$, or $1-T$. Choose strict sign polynomials $Q_b$ as follows. If $\mu_b=1$, set
@@ -120,13 +120,13 @@ $$
 The nonlinear support of the base cofactor $Q_0$ contributes at most
 
 $$
-\mathbf{1}[\mu_0\neq0]\,q(P).
+\mathbf{1}[\mu_0\neq0]\thinspace q(P).
 $$
 
 The changed linear coefficients contribute at most
 
 $$
-\mathbf{1}[\mu_1\neq\mu_0]\,\ell(P),
+\mathbf{1}[\mu_1\neq\mu_0]\thinspace\ell(P),
 $$
 
 because all nonzero linear coefficients of $Q_b$ are scalar multiples of the linear coefficients of $P$.
@@ -134,7 +134,7 @@ because all nonzero linear coefficients of $Q_b$ are scalar multiples of the lin
 The changed nonlinear coefficients contribute at most
 
 $$
-\mathbf{1}[\mu_1\neq\mu_0]\,q(P),
+\mathbf{1}[\mu_1\neq\mu_0]\thinspace q(P),
 $$
 
 for the same reason. Therefore Lemma 78 gives
@@ -143,7 +143,7 @@ $$
 H^{*}(f)
 \leq
 1
-+\mathbf{1}[\mu_0\neq0]\,q(P)
++\mathbf{1}[\mu_0\neq0]\thinspace q(P)
 +\mathbf{1}[\mu_1\neq\mu_0]\bigl(\ell(P)+q(P)\bigr).
 $$
 

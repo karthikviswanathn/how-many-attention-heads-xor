@@ -5,10 +5,10 @@
 Let
 
 $$
-f:\{0,1\}^{n}\to\{0,1\},
+f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace,
 $$
 
-and split off one coordinate, writing inputs as $(z,y)\in\{0,1\}\times\{0,1\}^{n-1}$. Let
+and split off one coordinate, writing inputs as $(z,y)\in\lbrace0,1\rbrace\times\lbrace0,1\rbrace^{n-1}$. Let
 
 $$
 f_0(y):=f(0,y),
@@ -23,7 +23,7 @@ L_b(y)
 =
 \beta_b+\sum_{i=1}^{n-1}\alpha_{b,i}y_i
 \qquad
-(b\in\{0,1\}),
+(b\in\lbrace0,1\rbrace),
 $$
 
 meaning
@@ -39,10 +39,10 @@ on the $(n-1)$-cube. Let
 $$
 \Delta(L_0,L_1)
 :=
-\left\{
-i\in\{1,\ldots,n-1\}:
+\left\lbrace
+i\in\lbrace1,\ldots,n-1\rbrace:
 \alpha_{0,i}\neq\alpha_{1,i}
-\right\},
+\right\rbrace,
 $$
 
 and set
@@ -66,7 +66,7 @@ $$
 If the affine sign representations can be chosen with $t=0$, then $f$ is constant or a nonconstant linear threshold function, so
 
 $$
-H^{*}(f)\in\{0,1\}.
+H^{*}(f)\in\lbrace0,1\rbrace.
 $$
 
 If they can be chosen with $t\leq1$, then
@@ -125,7 +125,7 @@ $$
 Therefore
 
 $$
-\operatorname{afs}(P)\leq1+t.
+\mathrm{afs}(P)\leq1+t.
 $$
 
 The affine-free sparsity theorem [048_affine_free_sparsity_upper_bound.md](../03_function_families_and_affine_geometry/048_affine_free_sparsity_upper_bound.md) gives
@@ -136,9 +136,9 @@ $$
 
 If both cofactors are constants or LTFs, affine sign representations exist and $t\leq n-1$, so $H^{*}(f)\leq n$.
 
-If $t=0$, then $P$ is affine in $(z,y)$. Hence $f$ is constant or a nonconstant LTF, giving $H^{*}(f)\in\{0,1\}$ by the one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md).
+If $t=0$, then $P$ is affine in $(z,y)$. Hence $f$ is constant or a nonconstant LTF, giving $H^{*}(f)\in\lbrace0,1\rbrace$ by the one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md).
 
-If $t\leq1$, then $\operatorname{afs}(P)\leq2$. The exact classification follows from the low affine-free support theorem [070_low_affine_free_support_exact.md](../03_function_families_and_affine_geometry/070_low_affine_free_support_exact.md). $\blacksquare$
+If $t\leq1$, then $\mathrm{afs}(P)\leq2$. The exact classification follows from the low affine-free support theorem [070_low_affine_free_support_exact.md](../03_function_families_and_affine_geometry/070_low_affine_free_support_exact.md). $\blacksquare$
 
 ## Consequences
 

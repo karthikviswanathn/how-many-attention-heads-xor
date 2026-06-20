@@ -2,10 +2,10 @@
 
 ## Statement
 
-Let $f : \{0,1\}^n \to \{0,1\}$ be symmetric. Thus there is a function
+Let $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$ be symmetric. Thus there is a function
 
 $$
-F : \{0,\ldots,n\} \to \{0,1\}
+F : \lbrace0,\ldots,n\rbrace \to \lbrace0,1\rbrace
 $$
 
 such that
@@ -35,9 +35,9 @@ $$
 C(F)
 :=
 \lvert
-\left\{
-t \in \{1,\ldots,n\} : \sigma_{t-1} \neq \sigma_t
-\right\}
+\left\lbrace
+t \in \lbrace1,\ldots,n\rbrace : \sigma_{t-1} \neq \sigma_t
+\right\rbrace
 \rvert.
 $$
 
@@ -64,7 +64,7 @@ $$
 **Proof.** Let
 
 $$
-T := \{t \in \{1,\ldots,n\} : \sigma_{t-1} \neq \sigma_t\}.
+T := \lbrace t \in \lbrace1,\ldots,n\rbrace : \sigma_{t-1} \neq \sigma_t\rbrace.
 $$
 
 First, we build a degree-$C(F)$ sign-representing polynomial. Define
@@ -84,9 +84,9 @@ $$
 Therefore the sign of $P(k)$ flips exactly when the target sign sequence flips. Hence
 
 $$
-\operatorname{sgn}(P(k)) = \sigma_k
+\mathrm{sgn}(P(k)) = \sigma_k
 \qquad
-\text{for every } k \in \{0,\ldots,n\}.
+\text{for every } k \in \lbrace0,\ldots,n\rbrace.
 $$
 
 So
@@ -134,9 +134,9 @@ which is a polynomial in $k$ of degree $m$.
 Thus there is a univariate polynomial $R(k)$ of degree at most $d$ such that
 
 $$
-\operatorname{sgn}(R(k)) = \sigma_k
+\mathrm{sgn}(R(k)) = \sigma_k
 \qquad
-\text{for every } k \in \{0,\ldots,n\}.
+\text{for every } k \in \lbrace0,\ldots,n\rbrace.
 $$
 
 Whenever $t \in T$, the values $R(t-1)$ and $R(t)$ have opposite signs. By the intermediate value theorem, $R$ has a real root in the interval $(t-1,t)$. These intervals are disjoint for distinct $t \in T$, so $R$ has at least $C(F)$ distinct real roots.
@@ -219,7 +219,7 @@ $$
 
 This is exactly $\psi_{r,d}(x)$. $\blacksquare$
 
-### Lemma 3. $C(F)$ heads realize the symmetric sign pattern
+### Lemma 3. C(F) heads realize the symmetric sign pattern
 
 If $C(F) = 0$, then $f$ is constant, so $H^{*}(f) = 0$.
 
@@ -228,7 +228,7 @@ Assume now that $C := C(F) \geq 1$.
 By Lemma 1, there is a degree-$C$ univariate polynomial $P(z)$ such that
 
 $$
-\operatorname{sgn}(P(k)) = \sigma_k
+\mathrm{sgn}(P(k)) = \sigma_k
 \qquad
 \text{for } k = 0,\ldots,n.
 $$
@@ -245,7 +245,7 @@ $$
 B(z) := \prod_{j=1}^{C} (z+r_j).
 $$
 
-Since $B(k) > 0$ for every $k \in \{0,\ldots,n\}$, the rational function
+Since $B(k) > 0$ for every $k \in \lbrace0,\ldots,n\rbrace$, the rational function
 
 $$
 S(z) := \frac{P(z)}{B(z)}

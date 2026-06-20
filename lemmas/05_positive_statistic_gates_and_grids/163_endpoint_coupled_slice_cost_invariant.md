@@ -2,14 +2,14 @@
 
 ## Statement
 
-For a fixed split of variables $(z,y)$ with $z\in\{0,1\}^{k}$, define the endpoint-coupled positive slice cost
+For a fixed split of variables $(z,y)$ with $z\in\lbrace0,1\rbrace^{k}$, define the endpoint-coupled positive slice cost
 
 $$
-\operatorname{eps}_{+}^{z\mid y}(f)
+\mathrm{eps}_{+}^{z\mid y}(f)
 :=
 \min_t
 \left(
-\sum_{a\in\{0,1\}^{k}} C_a(t)+B_{+}(p_t,q_t)
+\sum_{a\in\lbrace0,1\rbrace^{k}} C_a(t)+B_{+}(p_t,q_t)
 \right),
 $$
 
@@ -30,25 +30,25 @@ $$
 Then
 
 $$
-H^{*}(f)\leq \operatorname{eps}_{+}^{z\mid y}(f).
+H^{*}(f)\leq \mathrm{eps}_{+}^{z\mid y}(f).
 $$
 
 Moreover,
 
 $$
-\operatorname{eps}_{+}^{z\mid y}(f)
+\mathrm{eps}_{+}^{z\mid y}(f)
 \leq
-\operatorname{osc}_{+}^{z\mid y}(f),
+\mathrm{osc}_{+}^{z\mid y}(f),
 $$
 
-where $\operatorname{osc}_{+}^{z\mid y}$ is the optimized ordered-slice cost from Lemma 149.
+where $\mathrm{osc}_{+}^{z\mid y}$ is the optimized ordered-slice cost from Lemma 149.
 
 The cost is invariant under output complement:
 
 $$
-\operatorname{eps}_{+}^{z\mid y}(1-f)
+\mathrm{eps}_{+}^{z\mid y}(1-f)
 =
-\operatorname{eps}_{+}^{z\mid y}(f).
+\mathrm{eps}_{+}^{z\mid y}(f).
 $$
 
 It is also invariant under permutations of the raw coordinates and under permutations of the feature coordinates.
@@ -59,7 +59,7 @@ It is also invariant under permutations of the raw coordinates and under permuta
 
 The upper bound is Theorem 158, minimized over all shared positive-statistic certificates.
 
-For the comparison with $\operatorname{osc}_{+}^{z\mid y}$, fix a certificate $t$ and a positive raw order $\rho$. The ordered-slice boundary for this pair is
+For the comparison with $\mathrm{osc}_{+}^{z\mid y}$, fix a certificate $t$ and a positive raw order $\rho$. The ordered-slice boundary for this pair is
 
 $$
 J_{t,\rho}(f)=B_{\rho}(p_t,q_t).
@@ -82,9 +82,9 @@ $$
 Minimizing the left side over $t$ and the right side over $t,\rho$ gives
 
 $$
-\operatorname{eps}_{+}^{z\mid y}(f)
+\mathrm{eps}_{+}^{z\mid y}(f)
 \leq
-\operatorname{osc}_{+}^{z\mid y}(f).
+\mathrm{osc}_{+}^{z\mid y}(f).
 $$
 
 For output complement, the same certificates $t$ are feasible. Replacing each slice $F_{a,t}$ by $1-F_{a,t}$ preserves the within-slice sign-change counts. The endpoint functions become $1-p_t$ and $1-q_t$. For any raw order,
@@ -107,4 +107,4 @@ Raw coordinate permutations simply relabel the raw assignments and transport pos
 
 ## Consequence
 
-Theorem 162 can be restated as: if $\deg_{\pm}(f)=\operatorname{eps}_{+}^{z\mid y}(f)$ for some split, then $H^{*}(f)$ is exactly this endpoint-coupled slice cost.
+Theorem 162 can be restated as: if $\deg_{\pm}(f)=\mathrm{eps}_{+}^{z\mid y}(f)$ for some split, then $H^{*}(f)$ is exactly this endpoint-coupled slice cost.

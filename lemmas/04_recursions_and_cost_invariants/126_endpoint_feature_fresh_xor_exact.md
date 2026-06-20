@@ -173,9 +173,9 @@ Finally, XNOR is the output complement of XOR, and output complement preserves h
 For every nonempty $S$,
 
 $$
-H^{*}\!\left(z\oplus \mathrm{OR}_S(y)\right)
+H^{*}\negthinspace\left(z\oplus \mathrm{OR}_S(y)\right)
 =
-H^{*}\!\left(z\oplus \mathrm{AND}_S(y)\right)
+H^{*}\negthinspace\left(z\oplus \mathrm{AND}_S(y)\right)
 =
 2,
 $$
@@ -185,7 +185,7 @@ and the same holds for the corresponding XNOR functions.
 This shows that the generic one-bit LTF branching bound
 
 $$
-H^{*}(z\oplus T)\leq1+\lvert\operatorname{supp}(T)\rvert
+H^{*}(z\oplus T)\leq1+\lvert\mathrm{supp}(T)\rvert
 $$
 
 can be very loose even for endpoint LTFs. The endpoint geometry collapses the fresh-XOR function to a two-head affine slab.

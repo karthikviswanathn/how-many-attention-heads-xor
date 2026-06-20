@@ -5,7 +5,7 @@
 Let
 
 $$
-T:\{0,1\}^{m}\to\{0,1\}
+T:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace
 $$
 
 have a strict affine-cylinder score
@@ -19,19 +19,19 @@ $$
 with distinct nonvacuous cylinder supports. Let $r(z)$ be either $z$ or $1-z$. Define
 
 $$
-L(A):=\{i:\alpha_i\neq0\}.
+L(A):=\lbrace i:\alpha_i\neq0\rbrace.
 $$
 
 If $r(z)=z$, set
 
 $$
-K_r(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P\cup\{z\},N),
+K_r(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P\cup\lbrace z\rbrace,N),
 $$
 
 and if $r(z)=1-z$, set
 
 $$
-K_r(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P,N\cup\{z\}).
+K_r(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P,N\cup\lbrace z\rbrace).
 $$
 
 Then
@@ -101,7 +101,7 @@ where $K_z(\Gamma)=K_r(\Gamma)$ for $r=z$.
 For $r(z)=1-z$, apply the same argument after replacing the split coordinate by its complementary literal. Equivalently, in the cofactor interpolation proof the lifted cylinders are
 
 $$
-(1-z)C_{P,N}(y)=C_{P,N\cup\{z\}}(z,y),
+(1-z)C_{P,N}(y)=C_{P,N\cup\lbrace z\rbrace}(z,y),
 $$
 
 which gives the cost $K_r(\Gamma)$ in this case. Thus

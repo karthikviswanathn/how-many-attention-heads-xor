@@ -16,7 +16,7 @@ $$
 S(y):=\mathbf{1}[\alpha\leq t(y)\leq\beta].
 $$
 
-Assume $S$ is an internal non-LTF slab along the ordered image of $t$: both $S^{-1}(1)$ and $S^{-1}(0)$ are nonempty, and the label sequence of $S$ along $\operatorname{Im}(t)$ has the form
+Assume $S$ is an internal non-LTF slab along the ordered image of $t$: both $S^{-1}(1)$ and $S^{-1}(0)$ are nonempty, and the label sequence of $S$ along $\mathrm{Im}(t)$ has the form
 
 $$
 0,\ldots,0,1,\ldots,1,0,\ldots,0

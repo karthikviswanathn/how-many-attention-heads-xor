@@ -2,7 +2,7 @@
 
 ## Statement
 
-For a partial assignment $(P,N)$ with disjoint $P,N\subseteq\{1,\ldots,n\}$, define the subcube indicator
+For a partial assignment $(P,N)$ with disjoint $P,N\subseteq\lbrace1,\ldots,n\rbrace$, define the subcube indicator
 
 $$
 C_{P,N}(x)
@@ -18,7 +18,7 @@ $$
 :=
 \begin{cases}
 0, & P=N=\varnothing, \\
-\min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}, & \text{otherwise}.
+\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace, & \text{otherwise}.
 \end{cases}
 $$
 
@@ -53,7 +53,7 @@ $$
 Indeed, the vacuous cylinder is the constant feature $1$ and costs $0$, while every nonvacuous cylinder costs at most
 
 $$
-\min\{2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\}.
+\min\lbrace2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\rbrace.
 $$
 
 Apply the raw-calibrated vote support bound [093_raw_calibrated_vote_support_bound.md](093_raw_calibrated_vote_support_bound.md) to the strict vote over the features $C_{P_a,N_a}$. It gives

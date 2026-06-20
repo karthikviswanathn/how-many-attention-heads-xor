@@ -5,7 +5,7 @@
 Let $n \geq 1$, and let
 
 $$
-f : \{0,1\}^n \to \{0,1\}.
+f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace.
 $$
 
 Then
@@ -28,20 +28,20 @@ $$
 
 ## Proof
 
-It is cleaner to work on the sign cube $\{-1,1\}^n$. Write
+It is cleaner to work on the sign cube $\lbrace-1,1\rbrace^n$. Write
 
 $$
 z_i := (-1)^{x_i}.
 $$
 
-Changing variables between $x_i\in\{0,1\}$ and $z_i\in\{-1,1\}$ is affine, so it preserves polynomial degree.
+Changing variables between $x_i\in\lbrace0,1\rbrace$ and $z_i\in\lbrace-1,1\rbrace$ is affine, so it preserves polynomial degree.
 
-Let $q : \{-1,1\}^n \to \{-1,1\}$ be the sign-valued version of $f$. Thus a polynomial $P$ sign-represents $f$ exactly when
+Let $q : \lbrace-1,1\rbrace^n \to \lbrace-1,1\rbrace$ be the sign-valued version of $f$. Thus a polynomial $P$ sign-represents $f$ exactly when
 
 $$
 q(z)P(z)>0
 \qquad
-\text{for every } z\in\{-1,1\}^n.
+\text{for every } z\in\lbrace-1,1\rbrace^n.
 $$
 
 Let
@@ -61,7 +61,7 @@ $$
 Conversely, suppose $q$ is not equal to $\chi$ or $-\chi$. Let
 
 $$
-\rho := \mathbb{E}_{z\in\{-1,1\}^n}\bigl[q(z)\chi(z)\bigr].
+\rho := \mathbb{E}_{z\in\lbrace-1,1\rbrace^n}\bigl[q(z)\chi(z)\bigr].
 $$
 
 Since $q(z)\chi(z)$ is sign-valued and is not constant, we have

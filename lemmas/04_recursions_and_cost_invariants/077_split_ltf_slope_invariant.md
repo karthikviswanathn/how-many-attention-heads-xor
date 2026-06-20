@@ -5,7 +5,7 @@
 Let
 
 $$
-f:\{0,1\}^{n}\to\{0,1\}.
+f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace.
 $$
 
 For a coordinate $j$, write the two cofactors as
@@ -13,10 +13,10 @@ For a coordinate $j$, write the two cofactors as
 $$
 f_{j,b}(y):=f(y_1,\ldots,y_{j-1},b,y_j,\ldots,y_{n-1})
 \qquad
-(b\in\{0,1\}),
+(b\in\lbrace0,1\rbrace),
 $$
 
-where $y\in\{0,1\}^{n-1}$. Say that $j$ is an LTF split if both $f_{j,0}$ and $f_{j,1}$ are constants or linear threshold functions.
+where $y\in\lbrace0,1\rbrace^{n-1}$. Say that $j$ is an LTF split if both $f_{j,0}$ and $f_{j,1}$ are constants or linear threshold functions.
 
 For an LTF split $j$, define $\sigma_j(f)$ to be the minimum, over all affine sign representations
 
@@ -25,17 +25,17 @@ L_b(y)
 =
 \beta_b+\sum_{i=1}^{n-1}\alpha_{b,i}y_i
 \qquad
-(b\in\{0,1\})
+(b\in\lbrace0,1\rbrace)
 $$
 
 of the two cofactors, of the slope-change count
 
 $$
 \left\lvert
-\left\{
-i\in\{1,\ldots,n-1\}:
+\left\lbrace
+i\in\lbrace1,\ldots,n-1\rbrace:
 \alpha_{0,i}\neq\alpha_{1,i}
-\right\}
+\right\rbrace
 \right\rvert.
 $$
 
@@ -64,7 +64,7 @@ $$
 If $\sigma_{\mathrm{split}}(f)=0$, then $f$ is constant or a nonconstant LTF, so
 
 $$
-H^{*}(f)\in\{0,1\}.
+H^{*}(f)\in\lbrace0,1\rbrace.
 $$
 
 If $\sigma_{\mathrm{split}}(f)\leq1$, then
@@ -95,7 +95,7 @@ $$
 
 Since a slope-change count is always at most $n-1$, every function with an LTF split satisfies $H^{*}(f)\leq n$.
 
-If $\sigma_{\mathrm{split}}(f)=0$, Lemma 76 says that $f$ is constant or a nonconstant LTF. The one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md) gives $H^{*}(f)\in\{0,1\}$.
+If $\sigma_{\mathrm{split}}(f)=0$, Lemma 76 says that $f$ is constant or a nonconstant LTF. The one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md) gives $H^{*}(f)\in\lbrace0,1\rbrace$.
 
 If $\sigma_{\mathrm{split}}(f)\leq1$, Lemma 76 gives $H^{*}(f)\leq2$. The exact value is then forced by the zero-head and one-head characterization from [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md): constants have value $0$, nonconstant LTFs have value $1$, and all remaining functions have value exactly $2$. $\blacksquare$
 

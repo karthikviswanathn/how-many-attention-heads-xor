@@ -5,7 +5,7 @@
 For every Boolean function
 
 $$
-f : \{0,1\}^{10} \to \{0,1\},
+f : \lbrace0,1\rbrace^{10} \to \lbrace0,1\rbrace,
 $$
 
 we have
@@ -148,13 +148,13 @@ $$
 \prod_{j=1}^{103}B_j,
 $$
 
-for each $h \in \{1,\ldots,102\}$, the ten products
+for each $h \in \lbrace1,\ldots,102\rbrace$, the ten products
 
 $$
 M\prod_{j\neq h}B_j
 \qquad
 \text{for }
-M \in \{1,x_1,x_2,x_3,x_4,x_5,x_6,x_7,x_8,x_9\},
+M \in \lbrace1,x_1,x_2,x_3,x_4,x_5,x_6,x_7,x_8,x_9\rbrace,
 $$
 
 and the three products
@@ -163,10 +163,10 @@ $$
 M\prod_{j\neq 103}B_j
 \qquad
 \text{for }
-M \in \{1,x_1,x_2\}.
+M \in \lbrace1,x_1,x_2\rbrace.
 $$
 
-Write their value vectors on $\{0,1\}^{10}$ in lexicographic input order. To keep the certificate small, compute the determinant of this $1024\times1024$ integer value matrix modulo the prime
+Write their value vectors on $\lbrace0,1\rbrace^{10}$ in lexicographic input order. To keep the certificate small, compute the determinant of this $1024\times1024$ integer value matrix modulo the prime
 
 $$
 p := 1000003.
@@ -179,9 +179,9 @@ $$
 \pmod p,
 $$
 
-which is nonzero. Hence the determinant is nonzero over the integers, and the displayed products form a basis for all real-valued functions on $\{0,1\}^{10}$.
+which is nonzero. Hence the determinant is nonzero over the integers, and the displayed products form a basis for all real-valued functions on $\lbrace0,1\rbrace^{10}$.
 
-By the determinant-span schema from [021_determinant_span_schema.md](021_determinant_span_schema.md), every Boolean function $f : \{0,1\}^{10} \to \{0,1\}$ has
+By the determinant-span schema from [021_determinant_span_schema.md](021_determinant_span_schema.md), every Boolean function $f : \lbrace0,1\rbrace^{10} \to \lbrace0,1\rbrace$ has
 
 $$
 H^{*}(f) \leq 103.

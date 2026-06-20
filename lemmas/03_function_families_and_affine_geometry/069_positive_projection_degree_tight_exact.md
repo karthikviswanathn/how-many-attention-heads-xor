@@ -5,7 +5,7 @@
 Let
 
 $$
-f:\{0,1\}^n\to\{0,1\}.
+f:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace.
 $$
 
 Let $C_{+}(f)$ be the minimum positive-projection sign-change count from [013_positive_projection_sign_changes.md](../01_foundations_and_normal_form/013_positive_projection_sign_changes.md). Then

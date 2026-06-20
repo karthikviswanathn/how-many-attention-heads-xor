@@ -10,7 +10,7 @@ t(y)=\sum_{i=1}^{m}\lambda_i y_i,
 \lambda_i>0,
 $$
 
-and let $F:\operatorname{Im}(t)\to\{0,1\}$. Define
+and let $F:\mathrm{Im}(t)\to\lbrace0,1\rbrace$. Define
 
 $$
 T(y):=F(t(y)).
@@ -22,7 +22,7 @@ $$
 0=\tau_0<\tau_1<\cdots<\tau_{M-1}.
 $$
 
-Let $G:\{0,1\}^{2}\to\{0,1\}$ be any two-input Boolean gate, and define
+Let $G:\lbrace0,1\rbrace^{2}\to\lbrace0,1\rbrace$ be any two-input Boolean gate, and define
 
 $$
 H_G(z,y):=G(z,T(y)).
@@ -81,7 +81,7 @@ $$
 \tau_0<\tau_1<\cdots<\tau_{M-1}<B+\tau_0<B+\tau_1<\cdots<B+\tau_{M-1}.
 $$
 
-Define $R:\operatorname{Im}(s)\to\{0,1\}$ by
+Define $R:\mathrm{Im}(s)\to\lbrace0,1\rbrace$ by
 
 $$
 R(\tau_j):=G(0,F(\tau_j)),
@@ -101,7 +101,7 @@ $$
 H^{*}(H_G)\leq C_{G,t}.
 $$
 
-If $C_{G,t}=0$, then $R$ is constant on $\operatorname{Im}(s)$, so $H_G$ is constant and $H^{*}(H_G)=0$.
+If $C_{G,t}=0$, then $R$ is constant on $\mathrm{Im}(s)$, so $H_G$ is constant and $H^{*}(H_G)=0$.
 
 If $C_{G,t}=1$, then the same theorem gives $H^{*}(H_G)\leq1$, and $H_G$ is nonconstant. The zero-head and one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md) gives
 
@@ -113,7 +113,7 @@ If $C_{G,t}=2$, then $H^{*}(H_G)\leq2$. If $H_G$ is a nonconstant LTF, the one-h
 
 ## Consequences
 
-Let $C$ be the sign-change count of $F$ along $\operatorname{Im}(t)$. For literal gates such as $z\wedge T$, $z\vee T$, and their complements, the concatenated sequence has at most $C+1$ sign changes. Therefore
+Let $C$ be the sign-change count of $F$ along $\mathrm{Im}(t)$. For literal gates such as $z\wedge T$, $z\vee T$, and their complements, the concatenated sequence has at most $C+1$ sign changes. Therefore
 
 $$
 H^{*}(z\wedge T)\leq C+1,

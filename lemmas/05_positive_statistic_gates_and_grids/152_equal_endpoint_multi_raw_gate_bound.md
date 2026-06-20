@@ -15,10 +15,10 @@ C_{+}(g_e)
 :=
 \min_{\rho}
 \left\lvert
-\left\{
-r\in\{0,\ldots,2^k-2\}:
+\left\lbrace
+r\in\lbrace0,\ldots,2^k-2\rbrace:
 g_e(a^{(r)})\neq g_e(a^{(r+1)})
-\right\}
+\right\rbrace
 \right\rvert
 $$
 
@@ -48,9 +48,9 @@ $$
 B_{\rho}(g_e,g_e)
 =
 \left\lvert
-\left\{
+\left\lbrace
 r:g_e(a^{(r)})\neq g_e(a^{(r+1)})
-\right\}
+\right\rbrace
 \right\rvert.
 $$
 

@@ -2,14 +2,14 @@
 
 ## Statement
 
-Let $F:\{0,1,\ldots,m\}\to\{0,1\}$ and define the directed-defect profile function
+Let $F:\lbrace0,1,\ldots,m\rbrace\to\lbrace0,1\rbrace$ and define the directed-defect profile function
 
 $$
 h_F(x,y)
 :=
 F(D(x,y)),
 \qquad
-x,y\in\{0,1\}^m,
+x,y\in\lbrace0,1\rbrace^m,
 $$
 
 where
@@ -70,7 +70,7 @@ and hence
 $$
 h_F(x,0)
 =
-F\!\left(\sum_{i=1}^{m}x_i\right).
+F\negthinspace\left(\sum_{i=1}^{m}x_i\right).
 $$
 
 This is the symmetric Boolean function with Hamming-weight label sequence
@@ -85,7 +85,7 @@ $$
 H^{*}(h_F)\geq C(F).
 $$
 
-### Lemma 2. A degree-$C(F)$ sign polynomial in the defect count
+### Lemma 2. A degree-C(F) sign polynomial in the defect count
 
 Define
 
@@ -100,7 +100,7 @@ $$
 and
 
 $$
-\mathcal{J}:=\{j\in\{0,\ldots,m-1\}:q_j\neq q_{j+1}\}.
+\mathcal{J}:=\lbrace j\in\lbrace0,\ldots,m-1\rbrace:q_j\neq q_{j+1}\rbrace.
 $$
 
 Let
@@ -116,7 +116,7 @@ $$
 q_kR(k)>0
 $$
 
-for every $k\in\{0,\ldots,m\}$. Thus
+for every $k\in\lbrace0,\ldots,m\rbrace$. Thus
 
 $$
 R(D(x,y))

@@ -5,7 +5,7 @@
 Let
 
 $$
-T:\{0,1\}^{m}\to\{0,1\}
+T:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace
 $$
 
 have a strict affine-cylinder score
@@ -19,7 +19,7 @@ $$
 where the cylinder supports in $\Gamma$ are distinct and nonvacuous. Let
 
 $$
-G:\{0,1\}^{2}\to\{0,1\}
+G:\lbrace0,1\rbrace^{2}\to\lbrace0,1\rbrace
 $$
 
 be any two-input Boolean gate, and define
@@ -28,7 +28,7 @@ $$
 F(z,y):=G(z,T(y)).
 $$
 
-For $b\in\{0,1\}$, define $\mu_b\in\{-1,0,1\}$ as follows:
+For $b\in\lbrace0,1\rbrace$, define $\mu_b\in\lbrace-1,0,1\rbrace$ as follows:
 
 - $\mu_b=1$ if $G(b,u)=u$ as a function of $u$,
 - $\mu_b=-1$ if $G(b,u)=1-u$ as a function of $u$,
@@ -39,7 +39,7 @@ When $\mu_b=0$, define $\delta_b=1$ if $G(b,u)$ is the constant $1$ function and
 Let
 
 $$
-L(A):=\{i:\alpha_i\neq0\},
+L(A):=\lbrace i:\alpha_i\neq0\rbrace,
 $$
 
 and
@@ -47,7 +47,7 @@ and
 $$
 K(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P,N),
 \qquad
-K_z(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P\cup\{z\},N).
+K_z(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P\cup\lbrace z\rbrace,N).
 $$
 
 Finally define
@@ -55,7 +55,7 @@ Finally define
 $$
 \eta_G(A)
 :=
-\mathbf{1}\!\left[
+\mathbf{1}\negthinspace\left[
 \delta_1+\mu_1 a\neq \delta_0+\mu_0 a
 \text{ or }
 \exists i,\ \mu_0\alpha_i\neq0
@@ -68,9 +68,9 @@ $$
 \begin{aligned}
 H^{*}(F)
 &\leq
-\operatorname{actc}(F)
+\mathrm{actc}(F)
 \leq
-\operatorname{sactc}(F) \\
+\mathrm{sactc}(F) \\
 &\leq
 \eta_G(A)
 +
@@ -174,7 +174,7 @@ $$
 Combining the affine indicator, changed slopes, base cylinders, and changed cylinders gives
 
 $$
-\operatorname{sactc}(F)
+\mathrm{sactc}(F)
 \leq
 \eta_G(A)
 +
@@ -189,14 +189,14 @@ The split affine-cylinder cost theorem also gives
 $$
 H^{*}(F)
 \leq
-\operatorname{actc}(F)
+\mathrm{actc}(F)
 \leq
-\operatorname{sactc}(F),
+\mathrm{sactc}(F),
 $$
 
 so the full displayed chain follows.
 
-If the right-hand side is at most $2$, then $\operatorname{sactc}(F)\leq2$. The exact case split follows from [112_split_affine_cylinder_cost.md](112_split_affine_cylinder_cost.md). $\blacksquare$
+If the right-hand side is at most $2$, then $\mathrm{sactc}(F)\leq2$. The exact case split follows from [112_split_affine_cylinder_cost.md](112_split_affine_cylinder_cost.md). $\blacksquare$
 
 ## Consequences
 

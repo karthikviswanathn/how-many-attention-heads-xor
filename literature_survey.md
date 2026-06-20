@@ -58,7 +58,7 @@ Nisan and Szegedy show that exact degree, approximate degree, and decision-tree 
 
 **Why it matters here.** This gives a map of the classical landscape. If head complexity eventually turns out to be controlled by degree-like quantities, then decision trees and related combinatorial measures automatically become relevant comparison points.
 
-### 7. Klivans and Servedio 2004. Learning DNF in Time $2^{\tilde O(n^{1/3})}$
+### 7. Klivans and Servedio 2004. Learning DNF in Time 2^Õ(n¹ᐟ³)
 
 Source: [journal page](https://www.sciencedirect.com/science/article/pii/S0022000003001363), [author page](https://www.cs.columbia.edu/~rocco/papers/stoc01.html)
 
@@ -83,7 +83,7 @@ Source: [ECCC](https://eccc.weizmann.ac.il/report/2018/010/)
 Sherstov gives explicit constructive approximate polynomials for several Boolean families, including $k$-DNF and $k$-CNF, with degree
 
 $$
-O\!\left(n^{1-\frac{1}{k+1}}\right).
+O\negthinspace\left(n^{1-\frac{1}{k+1}}\right).
 $$
 
 **Why it matters here.** The main attraction is constructive form. If we want upper bounds rather than just existential comparisons, explicit approximants are much more usable than generic existence theorems. The limitation is that the paper is about approximation, whereas our model computes Boolean functions exactly.
@@ -110,7 +110,7 @@ The literature currently points to four plausible upper-bound routes.
 This note records papers that are closest to the project question:
 
 $$
-f : \{0,1\}^n \to \{0,1\}
+f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace
 $$
 
 computed exactly by a one-layer attention-only model with a linear readout from a designated query token.
@@ -151,7 +151,7 @@ Source: [ACL Anthology](https://aclanthology.org/2020.tacl-1.11/)
 
 Hahn proves strong limitations for fixed-depth self-attention on formal languages. In particular, periodic finite-state languages and hierarchical structure are out of reach unless the number of heads or layers grows with input length.
 
-**Relevance.** This is strong evidence that parity-like behavior is genuinely constrained in shallow attention. But the paper studies asymptotic language recognition with input length growing, not exact computation on a fixed cube $\{0,1\}^n$.
+**Relevance.** This is strong evidence that parity-like behavior is genuinely constrained in shallow attention. But the paper studies asymptotic language recognition with input length growing, not exact computation on a fixed cube $\lbrace0,1\rbrace^n$.
 
 ### Bhattamishra et al. 2020. On the Computational Power of Transformers and Its Implications in Sequence Modeling
 

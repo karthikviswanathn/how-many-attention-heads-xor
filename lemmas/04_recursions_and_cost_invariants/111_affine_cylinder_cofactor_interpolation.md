@@ -5,7 +5,7 @@
 Let
 
 $$
-f:\{0,1\}\times\{0,1\}^{m}\to\{0,1\},
+f:\lbrace0,1\rbrace\times\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace,
 $$
 
 and write
@@ -13,7 +13,7 @@ and write
 $$
 f_b(y):=f(b,y)
 \qquad
-(b\in\{0,1\}).
+(b\in\lbrace0,1\rbrace).
 $$
 
 Suppose $f_b$ has a strict affine-cylinder score
@@ -47,7 +47,7 @@ Let
 $$
 \eta(A_0,A_1)
 :=
-\mathbf{1}\!\left[
+\mathbf{1}\negthinspace\left[
 a_1\neq a_0
 \text{ or }
 \exists i,\ \alpha_{0,i}\neq0
@@ -59,7 +59,7 @@ let
 $$
 \Delta_{\mathrm{lin}}
 :=
-\{i:\alpha_{1,i}\neq\alpha_{0,i}\},
+\lbrace i:\alpha_{1,i}\neq\alpha_{0,i}\rbrace,
 $$
 
 and let
@@ -67,13 +67,13 @@ and let
 $$
 \Delta_{\mathrm{cyl}}
 :=
-\{\gamma\in\Gamma_0\cup\Gamma_1:c_{1,\gamma}\neq c_{0,\gamma}\}.
+\lbrace\gamma\in\Gamma_0\cup\Gamma_1:c_{1,\gamma}\neq c_{0,\gamma}\rbrace.
 $$
 
 Then
 
 $$
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
 \eta(A_0,A_1)
 +
@@ -81,7 +81,7 @@ $$
 +
 \sum_{\gamma=(P,N)\in\Gamma_0}\kappa(P,N)
 +
-\sum_{\gamma=(P,N)\in\Delta_{\mathrm{cyl}}}\kappa(P\cup\{z\},N),
+\sum_{\gamma=(P,N)\in\Delta_{\mathrm{cyl}}}\kappa(P\cup\lbrace z\rbrace,N),
 $$
 
 where $z$ denotes the split coordinate.
@@ -122,10 +122,10 @@ $$
 \sum_{i\in\Delta_{\mathrm{lin}}}(\alpha_{1,i}-\alpha_{0,i})z y_i.
 $$
 
-Each product $zy_i$ is the cylinder $C_{\{z,i\},\varnothing}$, whose local cost is
+Each product $zy_i$ is the cylinder $C_{\lbrace z,i\rbrace,\varnothing}$, whose local cost is
 
 $$
-\kappa(\{z,i\},\varnothing)=1.
+\kappa(\lbrace z,i\rbrace,\varnothing)=1.
 $$
 
 The base cylinder terms contribute
@@ -149,19 +149,19 @@ $$
 Since $zC_{P,N}(y)$ is the cylinder
 
 $$
-C_{P\cup\{z\},N}(z,y),
+C_{P\cup\lbrace z\rbrace,N}(z,y),
 $$
 
 these changed-cylinder terms have total cost
 
 $$
-\sum_{\gamma=(P,N)\in\Delta_{\mathrm{cyl}}}\kappa(P\cup\{z\},N).
+\sum_{\gamma=(P,N)\in\Delta_{\mathrm{cyl}}}\kappa(P\cup\lbrace z\rbrace,N).
 $$
 
-Combining the affine part, changed affine slopes, base cylinders, and changed cylinders gives a strict affine-cylinder representation of $f$ with exactly the displayed cost. By the definition of $\operatorname{actc}$,
+Combining the affine part, changed affine slopes, base cylinders, and changed cylinders gives a strict affine-cylinder representation of $f$ with exactly the displayed cost. By the definition of $\mathrm{actc}$,
 
 $$
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
 \eta(A_0,A_1)
 +
@@ -169,7 +169,7 @@ $$
 +
 \sum_{\gamma=(P,N)\in\Gamma_0}\kappa(P,N)
 +
-\sum_{\gamma=(P,N)\in\Delta_{\mathrm{cyl}}}\kappa(P\cup\{z\},N).
+\sum_{\gamma=(P,N)\in\Delta_{\mathrm{cyl}}}\kappa(P\cup\lbrace z\rbrace,N).
 $$
 
 $\blacksquare$
@@ -178,4 +178,4 @@ $\blacksquare$
 
 This is the affine-cylinder analogue of the split affine-free support invariant. It is sharper than separately paying for two cofactor certificates when the two slices share many cylinder coefficients.
 
-If the two cofactor certificates use the same cylinder vote, then the interpolation only pays for that shared base cylinder vote plus the affine block. If there are no cylinder terms and the two affine parts differ only in their constants, then the full function has $\operatorname{actc}\leq1$. If the resulting function is nonconstant, it is an LTF by Lemma 109.
+If the two cofactor certificates use the same cylinder vote, then the interpolation only pays for that shared base cylinder vote plus the affine block. If there are no cylinder terms and the two affine parts differ only in their constants, then the full function has $\mathrm{actc}\leq1$. If the resulting function is nonconstant, it is an LTF by Lemma 109.

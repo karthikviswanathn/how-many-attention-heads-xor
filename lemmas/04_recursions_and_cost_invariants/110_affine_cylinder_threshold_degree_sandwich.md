@@ -9,9 +9,9 @@ $$
 \leq
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\min\{\operatorname{ctc}(f),\operatorname{afs}_{\pm}(f)\}.
+\min\lbrace\mathrm{ctc}(f),\mathrm{afs}_{\pm}(f)\rbrace.
 $$
 
 Consequently,
@@ -19,9 +19,9 @@ Consequently,
 $$
 \deg_{\pm}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\operatorname{ctc}(f),
+\mathrm{ctc}(f),
 $$
 
 and
@@ -29,9 +29,9 @@ and
 $$
 \deg_{\pm}(f)
 \leq
-\operatorname{afs}_{\pm}(f)
+\mathrm{afs}_{\pm}(f)
 \leq
-\operatorname{ptfsp}(f).
+\mathrm{ptfsp}(f).
 $$
 
 > **Interpretation.** The affine-cylinder invariant is now bracketed from both sides. It is an optimized upper-bound target, but it cannot be smaller than threshold degree.
@@ -47,21 +47,21 @@ $$
 The affine-cylinder threshold-cost lemma [103_affine_cylinder_threshold_cost.md](103_affine_cylinder_threshold_cost.md) gives
 
 $$
-H^{*}(f)\leq\operatorname{actc}(f)
+H^{*}(f)\leq\mathrm{actc}(f)
 $$
 
 and
 
 $$
-\operatorname{actc}(f)\leq\operatorname{ctc}(f).
+\mathrm{actc}(f)\leq\mathrm{ctc}(f).
 $$
 
 The affine-cylinder hierarchy lemma [104_affine_cylinder_cost_hierarchy.md](104_affine_cylinder_cost_hierarchy.md) gives
 
 $$
-\operatorname{actc}(f)\leq\operatorname{afs}_{\pm}(f)
+\mathrm{actc}(f)\leq\mathrm{afs}_{\pm}(f)
 \leq
-\operatorname{ptfsp}(f).
+\mathrm{ptfsp}(f).
 $$
 
 Combining these inequalities proves
@@ -71,9 +71,9 @@ $$
 \leq
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\min\{\operatorname{ctc}(f),\operatorname{afs}_{\pm}(f)\}.
+\min\lbrace\mathrm{ctc}(f),\mathrm{afs}_{\pm}(f)\rbrace.
 $$
 
 The two displayed consequences follow by deleting intermediate terms from the same chain. $\blacksquare$
@@ -83,7 +83,7 @@ The two displayed consequences follow by deleting intermediate terms from the sa
 For parity,
 
 $$
-\operatorname{actc}(\mathrm{XOR}_n)\geq n,
+\mathrm{actc}(\mathrm{XOR}_n)\geq n,
 $$
 
 because $\deg_{\pm}(\mathrm{XOR}_n)=n$.
@@ -91,7 +91,7 @@ because $\deg_{\pm}(\mathrm{XOR}_n)=n$.
 For the halfspace-intersection family $F_n=T_n\wedge U_n$ from [105_halfspace_intersection_head_lower_bound.md](105_halfspace_intersection_head_lower_bound.md),
 
 $$
-\operatorname{actc}(F_n)\geq c n.
+\mathrm{actc}(F_n)\geq c n.
 $$
 
-Thus $\operatorname{actc}$ correctly assigns large cost to the families that refute uncalibrated threshold-vote and LTF decision-list upper bounds.
+Thus $\mathrm{actc}$ correctly assigns large cost to the families that refute uncalibrated threshold-vote and LTF decision-list upper bounds.

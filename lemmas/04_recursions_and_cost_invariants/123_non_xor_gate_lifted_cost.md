@@ -5,13 +5,13 @@
 Let
 
 $$
-T:\{0,1\}^{m}\to\{0,1\}
+T:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace
 $$
 
 be any Boolean function, and let
 
 $$
-G:\{0,1\}^{2}\to\{0,1\}
+G:\lbrace0,1\rbrace^{2}\to\lbrace0,1\rbrace
 $$
 
 be a two-input Boolean gate that is neither XOR nor XNOR. Define
@@ -31,13 +31,13 @@ $$
 2. If $G$ depends only on its second input, then
 
 $$
-H^{*}(F)\leq\operatorname{actc}(T).
+H^{*}(F)\leq\mathrm{actc}(T).
 $$
 
 3. If $G$ genuinely depends on both inputs, then
 
 $$
-H^{*}(F)\leq1+\operatorname{lgactc}(T).
+H^{*}(F)\leq1+\mathrm{lgactc}(T).
 $$
 
 In particular, for every non-XOR and non-XNOR gate $G$,
@@ -45,7 +45,7 @@ In particular, for every non-XOR and non-XNOR gate $G$,
 $$
 H^{*}(G(z,T(y)))
 \leq
-1+\operatorname{actc}(T)+\operatorname{lgactc}(T),
+1+\mathrm{actc}(T)+\mathrm{lgactc}(T),
 $$
 
 and the sharper case split above should be used whenever the gate form is known.
@@ -59,7 +59,7 @@ If $G$ is constant, then $F$ is constant, so $H^{*}(F)=0$. If $G$ depends only o
 If $G$ depends only on its second input, then $F$ is either $T$ or $1-T$. The affine-cylinder upper bound [103_affine_cylinder_threshold_cost.md](103_affine_cylinder_threshold_cost.md) and complement invariance give
 
 $$
-H^{*}(F)\leq\operatorname{actc}(T).
+H^{*}(F)\leq\mathrm{actc}(T).
 $$
 
 Now suppose $G$ depends on both inputs and is neither XOR nor XNOR. Then, up to output complement and complementing the $T$ input, $G$ is one of
@@ -74,22 +74,22 @@ $$
 
 where $r(z)$ is either $z$ or $1-z$.
 
-Replacing $T$ by $1-T$ does not change $\operatorname{lgactc}(T)$, because negating a strict affine-cylinder score preserves the affine slopes and cylinder supports. Output complement does not change head complexity. Therefore the genuine two-input case follows from [122_lifted_literal_gating_cost.md](122_lifted_literal_gating_cost.md):
+Replacing $T$ by $1-T$ does not change $\mathrm{lgactc}(T)$, because negating a strict affine-cylinder score preserves the affine slopes and cylinder supports. Output complement does not change head complexity. Therefore the genuine two-input case follows from [122_lifted_literal_gating_cost.md](122_lifted_literal_gating_cost.md):
 
 $$
-H^{*}(F)\leq1+\operatorname{lgactc}(T).
+H^{*}(F)\leq1+\mathrm{lgactc}(T).
 $$
 
 The final uniform bound follows from the three cases, since each right-hand side is at most
 
 $$
-1+\operatorname{actc}(T)+\operatorname{lgactc}(T).
+1+\mathrm{actc}(T)+\mathrm{lgactc}(T).
 $$
 
 $\blacksquare$
 
 ## Consequences
 
-This separates the non-XOR gates into two regimes. If the gate ignores the fresh bit, the feature cost $\operatorname{actc}(T)$ is enough. If the gate genuinely uses both inputs, the cost is controlled by $\operatorname{lgactc}(T)$.
+This separates the non-XOR gates into two regimes. If the gate ignores the fresh bit, the feature cost $\mathrm{actc}(T)$ is enough. If the gate genuinely uses both inputs, the cost is controlled by $\mathrm{lgactc}(T)$.
 
 Thus the hard one-bit gates remain XOR and XNOR, where threshold degree increases and the lifted literal-gating cost is not the right target.

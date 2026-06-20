@@ -27,7 +27,7 @@ Let $L_{\pi}(F)$ be the sign-change count of $F$ when the product grid is read l
 Define
 
 $$
-\operatorname{mgc}_{+}^{\mathcal{P}}(f)
+\mathrm{mgc}_{+}^{\mathcal{P}}(f)
 :=
 \min L_{\pi}(F),
 $$
@@ -37,13 +37,13 @@ where the minimum ranges over all positive multigrid certificates over $\mathcal
 Then
 
 $$
-H^{*}(f)\leq\operatorname{mgc}_{+}^{\mathcal{P}}(f).
+H^{*}(f)\leq\mathrm{mgc}_{+}^{\mathcal{P}}(f).
 $$
 
 Also
 
 $$
-C_{+}(f)\leq\operatorname{mgc}_{+}^{\mathcal{P}}(f).
+C_{+}(f)\leq\mathrm{mgc}_{+}^{\mathcal{P}}(f).
 $$
 
 The invariant is unchanged by output complement and by coordinate permutations that preserve the partition up to relabeling of blocks.
@@ -51,13 +51,13 @@ The invariant is unchanged by output complement and by coordinate permutations t
 If
 
 $$
-\deg_{\pm}(f)=\operatorname{mgc}_{+}^{\mathcal{P}}(f),
+\deg_{\pm}(f)=\mathrm{mgc}_{+}^{\mathcal{P}}(f),
 $$
 
 then
 
 $$
-H^{*}(f)=\deg_{\pm}(f)=\operatorname{mgc}_{+}^{\mathcal{P}}(f).
+H^{*}(f)=\deg_{\pm}(f)=\mathrm{mgc}_{+}^{\mathcal{P}}(f).
 $$
 
 > **Interpretation.** The multigrid cost is a partition-level positive-projection invariant. It captures the best lexicographic traversal of a product of positive-statistic images.
@@ -73,7 +73,7 @@ $$
 Minimizing proves
 
 $$
-H^{*}(f)\leq\operatorname{mgc}_{+}^{\mathcal{P}}(f).
+H^{*}(f)\leq\mathrm{mgc}_{+}^{\mathcal{P}}(f).
 $$
 
 The proof of Theorem 170 constructs one positive statistic on all variables whose ordered label sequence is exactly the chosen lexicographic grid traversal. Hence, for every certificate and order,
@@ -85,7 +85,7 @@ $$
 Taking the minimum gives
 
 $$
-C_{+}(f)\leq\operatorname{mgc}_{+}^{\mathcal{P}}(f).
+C_{+}(f)\leq\mathrm{mgc}_{+}^{\mathcal{P}}(f).
 $$
 
 For output complement, keep the same positive statistics and block order, and replace $F$ by $1-F$. This preserves the sign-change count $L_{\pi}(F)$. Therefore the minimum is unchanged.
@@ -95,17 +95,17 @@ For coordinate permutations preserving the partition up to relabeling, transport
 Finally, if threshold degree equals the multigrid cost, then
 
 $$
-\operatorname{mgc}_{+}^{\mathcal{P}}(f)
+\mathrm{mgc}_{+}^{\mathcal{P}}(f)
 =
 \deg_{\pm}(f)
 \leq
 H^{*}(f)
 \leq
-\operatorname{mgc}_{+}^{\mathcal{P}}(f),
+\mathrm{mgc}_{+}^{\mathcal{P}}(f),
 $$
 
 so all three quantities are equal. $\blacksquare$
 
 ## Consequence
 
-The positive-grid cost $\operatorname{pgc}_{+}^{z\mid y}$ is the two-block special case where the block order is optimized over the two possible orders.
+The positive-grid cost $\mathrm{pgc}_{+}^{z\mid y}$ is the two-block special case where the block order is optimized over the two possible orders.

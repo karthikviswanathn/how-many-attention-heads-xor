@@ -5,7 +5,7 @@
 Let
 
 $$
-f:\{0,1\}^n\to\{0,1\}.
+f:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace.
 $$
 
 Suppose $f$ has a DNF with consistent nonempty terms
@@ -34,12 +34,12 @@ If $f$ is nonconstant, then
 $$
 H^{*}(f)
 \leq
-\min\left\{
+\min\left\lbrace
 2\sum_{a=1}^{s}2^{v-w_a},
-\sum_{a=1}^{s}\min\{2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\},
+\sum_{a=1}^{s}\min\lbrace2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\rbrace,
 2^v-1,
-1+\sum_{r=2}^{\min\{w,v\}}\binom{v}{r}
-\right\}.
+1+\sum_{r=2}^{\min\lbrace w,v\rbrace}\binom{v}{r}
+\right\rbrace.
 $$
 
 The dual statement holds for CNFs with consistent nonempty clauses
@@ -63,7 +63,7 @@ If $f$ is constant, then $H^{*}(f)=0$.
 We prove the DNF statement first. Let $V$ be the set of variables appearing in the DNF, so $\lvert V\rvert=v$. The function $f$ is a $v$-junta. Let
 
 $$
-g:\{0,1\}^{V}\to\{0,1\}
+g:\lbrace0,1\rbrace^{V}\to\lbrace0,1\rbrace
 $$
 
 be the induced function. By junta reduction [039_junta_upper_bounds.md](../02_complexity_measure_upper_bounds/039_junta_upper_bounds.md),
@@ -105,7 +105,7 @@ The terms form a $1$-certificate cover of $g$. The local certificate-expansion t
 $$
 H^{*}(g)
 \leq
-\sum_{a=1}^{s}\min\{2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\}.
+\sum_{a=1}^{s}\min\lbrace2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\rbrace.
 $$
 
 ### Lemma 3. Junta interpolation
@@ -131,7 +131,7 @@ $$
 strictly sign-represents $g$. After multilinear expansion, it uses only variables in $V$ and has degree at most
 
 $$
-\min\{w,v\}.
+\min\lbrace w,v\rbrace.
 $$
 
 Since $g$ is nonconstant, the affine-free sparsity theorem [048_affine_free_sparsity_upper_bound.md](048_affine_free_sparsity_upper_bound.md) gives
@@ -139,7 +139,7 @@ Since $g$ is nonconstant, the affine-free sparsity theorem [048_affine_free_spar
 $$
 H^{*}(g)
 \leq
-1+\sum_{r=2}^{\min\{w,v\}}\binom{v}{r}.
+1+\sum_{r=2}^{\min\lbrace w,v\rbrace}\binom{v}{r}.
 $$
 
 Combining Lemmas 1 through 4 and using $H^{*}(f)=H^{*}(g)$ proves the DNF bound.
@@ -166,7 +166,7 @@ Q(x)
 \left(\prod_{j\in N_a}x_j\right)
 $$
 
-strictly sign-represents the CNF and has degree at most $\min\{w,v\}$. This gives the same four bounds for CNFs. $\blacksquare$
+strictly sign-represents the CNF and has degree at most $\min\lbrace w,v\rbrace$. This gives the same four bounds for CNFs. $\blacksquare$
 
 ## Consequences
 
@@ -175,7 +175,7 @@ If the formula has width at most $w$ and uses $v$ variables, then every nonconst
 $$
 H^{*}(f)
 \leq
-1+\sum_{r=2}^{\min\{w,v\}}\binom{v}{r}.
+1+\sum_{r=2}^{\min\lbrace w,v\rbrace}\binom{v}{r}.
 $$
 
 For fixed width $w$, this is polynomial in the number of variables used by the formula. It is independent of the number of terms, unlike the volume and local-expansion bounds.

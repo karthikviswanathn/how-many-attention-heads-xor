@@ -5,7 +5,7 @@
 For every Boolean function
 
 $$
-f : \{0,1\}^7 \to \{0,1\},
+f : \lbrace0,1\rbrace^7 \to \lbrace0,1\rbrace,
 $$
 
 we have
@@ -45,9 +45,9 @@ c\prod_{j=1}^{19}B_j(x)
 A_h(x)\prod_{j\neq h}B_j(x)
 $$
 
-on $\{0,1\}^7$.
+on $\lbrace0,1\rbrace^7$.
 
-**Proof.** Work in the vector space of real-valued functions on $\{0,1\}^7$. We write value vectors in lexicographic input order. This is equivalent to working with multilinear polynomials on the Boolean cube.
+**Proof.** Work in the vector space of real-valued functions on $\lbrace0,1\rbrace^7$. We write value vectors in lexicographic input order. This is equivalent to working with multilinear polynomials on the Boolean cube.
 
 Define the nineteen positive affine denominators by
 
@@ -91,13 +91,13 @@ $$
 \prod_{j=1}^{19}B_j,
 $$
 
-for each $h \in \{1,\ldots,18\}$, the seven products
+for each $h \in \lbrace1,\ldots,18\rbrace$, the seven products
 
 $$
 M\prod_{j\neq h}B_j
 \qquad
 \text{for }
-M \in \{1,x_1,x_2,x_3,x_4,x_5,x_6\},
+M \in \lbrace1,x_1,x_2,x_3,x_4,x_5,x_6\rbrace,
 $$
 
 and the single product
@@ -106,7 +106,7 @@ $$
 \prod_{j\neq 19}B_j.
 $$
 
-Write their value vectors on $\{0,1\}^7$ in lexicographic input order. The determinant of this $128\times128$ integer value matrix is nonzero. To keep the certificate small, compute it modulo the prime
+Write their value vectors on $\lbrace0,1\rbrace^7$ in lexicographic input order. The determinant of this $128\times128$ integer value matrix is nonzero. To keep the certificate small, compute it modulo the prime
 
 $$
 p := 1000003.
@@ -119,13 +119,13 @@ $$
 \pmod p,
 $$
 
-which is nonzero. Hence the determinant is nonzero over the integers, and the displayed products form a basis for all real-valued functions on $\{0,1\}^7$.
+which is nonzero. Hence the determinant is nonzero over the integers, and the displayed products form a basis for all real-valued functions on $\lbrace0,1\rbrace^7$.
 
 Therefore every multilinear $P$ has the displayed form. $\blacksquare$
 
 ### Lemma 2. Nineteen heads suffice for every seven-bit function
 
-Let $f : \{0,1\}^7 \to \{0,1\}$. Interpolate the sign labels
+Let $f : \lbrace0,1\rbrace^7 \to \lbrace0,1\rbrace$. Interpolate the sign labels
 
 $$
 Q_f(x)
@@ -136,7 +136,7 @@ Q_f(x)
 \end{cases}
 $$
 
-by a multilinear polynomial $P$ on $\{0,1\}^7$.
+by a multilinear polynomial $P$ on $\lbrace0,1\rbrace^7$.
 
 Apply Lemma 1 to this $P$. Since each $B_h$ is positive on the cube, the score
 
@@ -193,4 +193,4 @@ $$
 \frac{B_h(x)}{B_h(x)} = 1.
 $$
 
-Thus their span has dimension at most $1 + 7H$. Since all real-valued functions on $\{0,1\}^7$ form a $128$-dimensional space, this full-span method requires $1 + 7H \geq 128$, hence $H \geq 19$.
+Thus their span has dimension at most $1 + 7H$. Since all real-valued functions on $\lbrace0,1\rbrace^7$ form a $128$-dimensional space, this full-span method requires $1 + 7H \geq 128$, hence $H \geq 19$.

@@ -2,7 +2,7 @@
 
 ## Statement
 
-For a nonempty set $S\subseteq\{1,\ldots,n\}$ and positive weights $\lambda_i>0$, define
+For a nonempty set $S\subseteq\lbrace1,\ldots,n\rbrace$ and positive weights $\lambda_i>0$, define
 
 $$
 L_S(x):=\sum_{i\in S}\lambda_i x_i,
@@ -35,7 +35,7 @@ with positive vote margin
 $$
 \mu
 :=
-\min_{x\in\{0,1\}^{n}}
+\min_{x\in\lbrace0,1\rbrace^{n}}
 \left\lvert
 c_0+\sum_{j=1}^{s}c_jT_j(x)
 \right\rvert

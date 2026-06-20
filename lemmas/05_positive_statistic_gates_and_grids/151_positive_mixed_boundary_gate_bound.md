@@ -5,7 +5,7 @@
 For raw functions
 
 $$
-p,q:\{0,1\}^{k}\to\{0,1\},
+p,q:\lbrace0,1\rbrace^{k}\to\lbrace0,1\rbrace,
 $$
 
 and positive raw weights $\rho_1,\ldots,\rho_k$ with distinct subset sums, order the raw assignments as
@@ -20,10 +20,10 @@ $$
 B_{\rho}(p,q)
 :=
 \left\lvert
-\left\{
-r\in\{0,\ldots,2^k-2\}:
+\left\lbrace
+r\in\lbrace0,\ldots,2^k-2\rbrace:
 p(a^{(r)})\neq q(a^{(r+1)})
-\right\}
+\right\rbrace
 \right\rvert,
 $$
 
@@ -60,7 +60,7 @@ $$
 For a Boolean gate
 
 $$
-G:\{0,1\}^{k}\times\{0,1\}\to\{0,1\},
+G:\lbrace0,1\rbrace^{k}\times\lbrace0,1\rbrace\to\lbrace0,1\rbrace,
 $$
 
 write
@@ -68,13 +68,13 @@ write
 $$
 g_e(a):=G(a,e)
 \qquad
-\text{for }e\in\{0,1\},
+\text{for }e\in\lbrace0,1\rbrace,
 $$
 
 and let
 
 $$
-N_G:=\left\lvert\{a:g_0(a)\neq g_1(a)\}\right\rvert.
+N_G:=\left\lvert\lbrace a:g_0(a)\neq g_1(a)\rbrace\right\rvert.
 $$
 
 Then

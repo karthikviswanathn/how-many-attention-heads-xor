@@ -2,7 +2,7 @@
 
 ## Statement
 
-For disjoint $P,N\subseteq\{1,\ldots,n\}$, write
+For disjoint $P,N\subseteq\lbrace1,\ldots,n\rbrace$, write
 
 $$
 C_{P,N}(x)
@@ -18,14 +18,14 @@ $$
 :=
 \begin{cases}
 0, & P=N=\varnothing, \\
-\min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}, & \text{otherwise}.
+\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace, & \text{otherwise}.
 \end{cases}
 $$
 
 Let $\mathcal{C}_1$ be a $1$-certificate cover for $f$ by partial assignments $(P,N)$. Then
 
 $$
-\operatorname{ctc}(f)
+\mathrm{ctc}(f)
 \leq
 \sum_{(P,N)\in\mathcal{C}_1}\kappa(P,N).
 $$
@@ -33,7 +33,7 @@ $$
 The same bound holds for any $0$-certificate cover $\mathcal{C}_0$:
 
 $$
-\operatorname{ctc}(f)
+\mathrm{ctc}(f)
 \leq
 \sum_{(P,N)\in\mathcal{C}_0}\kappa(P,N).
 $$
@@ -47,7 +47,7 @@ $$
 then
 
 $$
-\operatorname{ctc}(f)
+\mathrm{ctc}(f)
 \leq
 \sum_{a=1}^{s}\kappa(P_a,N_a).
 $$
@@ -68,7 +68,7 @@ $$
 then
 
 $$
-\operatorname{ctc}(f)
+\mathrm{ctc}(f)
 \leq
 \sum_{a=1}^{s}\kappa(P_a,N_a).
 $$
@@ -76,15 +76,15 @@ $$
 If $f$ is computed by a deterministic decision tree $\mathcal{T}$ with accepting leaves $\mathcal{L}_1$ and rejecting leaves $\mathcal{L}_0$, then
 
 $$
-\operatorname{ctc}(f)
+\mathrm{ctc}(f)
 \leq
-\min\left\{
+\min\left\lbrace
 \sum_{\ell\in\mathcal{L}_1}\kappa(P_\ell,N_\ell),
 \sum_{\ell\in\mathcal{L}_0}\kappa(P_\ell,N_\ell)
-\right\}.
+\right\rbrace.
 $$
 
-> **Interpretation.** The optimized cylinder-threshold invariant packages the local certificate-expansion theorem. Any local certificate cover, DNF, CNF, or decision-tree leaf cover is one feasible point in the $\operatorname{ctc}$ minimization.
+> **Interpretation.** The optimized cylinder-threshold invariant packages the local certificate-expansion theorem. Any local certificate cover, DNF, CNF, or decision-tree leaf cover is one feasible point in the $\mathrm{ctc}$ minimization.
 
 ## Proof
 
@@ -108,10 +108,10 @@ $$
 S_1(x)\geq\frac{1}{2}>0.
 $$
 
-Thus $S_1$ is a strict cylinder-threshold representation of $f$. By the definition of $\operatorname{ctc}$,
+Thus $S_1$ is a strict cylinder-threshold representation of $f$. By the definition of $\mathrm{ctc}$,
 
 $$
-\operatorname{ctc}(f)
+\mathrm{ctc}(f)
 \leq
 \sum_{(P,N)\in\mathcal{C}_1}\kappa(P,N).
 $$
@@ -151,9 +151,9 @@ For a decision tree, the accepting leaves form a $1$-certificate cover and the r
 Combining this lemma with the head upper bound
 
 $$
-H^{*}(f)\leq\operatorname{ctc}(f)
+H^{*}(f)\leq\mathrm{ctc}(f)
 $$
 
 from [099_cylinder_threshold_cost_invariant.md](099_cylinder_threshold_cost_invariant.md) recovers the local certificate-expansion theorem [044_oriented_certificate_expansion_upper_bound.md](../02_complexity_measure_upper_bounds/044_oriented_certificate_expansion_upper_bound.md), with $\kappa$ replacing the harmless vacuous-cylinder cost by $0$.
 
-Thus $\operatorname{ctc}$ is a genuine extension of the local certificate route: it includes one-sided covers, but can also exploit overlapping signed cylinder votes that are not covers.
+Thus $\mathrm{ctc}$ is a genuine extension of the local certificate route: it includes one-sided covers, but can also exploit overlapping signed cylinder votes that are not covers.

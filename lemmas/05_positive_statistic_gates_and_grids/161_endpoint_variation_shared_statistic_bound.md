@@ -25,13 +25,13 @@ Then
 $$
 H^{*}(f)
 \leq
-\sum_a C_a+\min\{C_{+}(p),C_{+}(q)\}+D(p,q),
+\sum_a C_a+\min\lbrace C_{+}(p),C_{+}(q)\rbrace+D(p,q),
 $$
 
 where
 
 $$
-D(p,q):=\left\lvert\{a:p(a)\neq q(a)\}\right\rvert.
+D(p,q):=\left\lvert\lbrace a:p(a)\neq q(a)\rbrace\right\rvert.
 $$
 
 Moreover, suppose $p$ has a positive raw order in which its true set has $q_p$ intervals and endpoint labels $\epsilon^p_0,\epsilon^p_1$. Define
@@ -49,7 +49,7 @@ Define $K_q$ analogously if $q$ has such a run certificate. If both certificates
 $$
 H^{*}(f)
 \leq
-\sum_a C_a+\min\{K_p,K_q\}+D(p,q).
+\sum_a C_a+\min\lbrace K_p,K_q\rbrace+D(p,q).
 $$
 
 > **Interpretation.** The endpoint coupling can be bounded by ordinary raw endpoint variation plus the number of slices whose two endpoints disagree. Few-run endpoint functions give a concrete version of the bound.
@@ -69,7 +69,7 @@ The mixed boundary inequality [153_mixed_boundary_inequality.md](153_mixed_bound
 $$
 B_{+}(p,q)
 \leq
-\min\{C_{+}(p),C_{+}(q)\}+D(p,q).
+\min\lbrace C_{+}(p),C_{+}(q)\rbrace+D(p,q).
 $$
 
 Substituting proves the first bound.
@@ -85,7 +85,7 @@ $$
 Thus
 
 $$
-\min\{C_{+}(p),C_{+}(q)\}\leq\min\{K_p,K_q\}.
+\min\lbrace C_{+}(p),C_{+}(q)\rbrace\leq\min\lbrace K_p,K_q\rbrace.
 $$
 
 Substitute this into the first bound. $\blacksquare$

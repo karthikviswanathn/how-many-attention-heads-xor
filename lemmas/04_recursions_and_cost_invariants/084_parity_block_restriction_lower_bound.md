@@ -5,7 +5,7 @@
 Let
 
 $$
-f:\{0,1\}^{n}\to\{0,1\}.
+f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace.
 $$
 
 Suppose a restriction of $f$ leaves two disjoint sets of free variables $Z$ and $Y$, with

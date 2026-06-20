@@ -5,10 +5,10 @@
 Let
 
 $$
-f:\{0,1\}^{n}\to\{0,1\},
+f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace,
 $$
 
-and split off one coordinate, writing inputs as $(z,y)\in\{0,1\}\times\{0,1\}^{n-1}$. Let
+and split off one coordinate, writing inputs as $(z,y)\in\lbrace0,1\rbrace\times\lbrace0,1\rbrace^{n-1}$. Let
 
 $$
 f_0(y):=f(0,y),
@@ -21,7 +21,7 @@ Suppose $P_0$ and $P_1$ strictly sign-represent $f_0$ and $f_1$. Let $\mathcal{A
 $$
 m_b:=\lvert\mathcal{A}_b\rvert
 \qquad
-(b\in\{0,1\}).
+(b\in\lbrace0,1\rbrace).
 $$
 
 Then
@@ -47,8 +47,8 @@ Consequently, in terms of polynomial-threshold sparsity,
 $$
 H^{*}(f)
 \leq
-2\operatorname{ptfsp}(f_0)
-+\operatorname{ptfsp}(f_1)
+2\mathrm{ptfsp}(f_0)
++\mathrm{ptfsp}(f_1)
 +1.
 $$
 
@@ -63,7 +63,7 @@ For nonconstant $f$, this gives the affine-free head bound
 $$
 H^{*}(f)
 \leq
-1+\sum_{r=2}^{\min\{d+1,n\}}\binom{n}{r}.
+1+\sum_{r=2}^{\min\lbrace d+1,n\rbrace}\binom{n}{r}.
 $$
 
 > **Interpretation.** A clean one-head Shannon recursion remains open, but sparse sign polynomials do satisfy an explicit one-sided cofactor recursion. This gives a recursive route for structured functions whose cofactors have sparse sign representations.
@@ -77,7 +77,7 @@ P_b(y)
 =
 c_b+\sum_{S\in\mathcal{A}_b}a_{b,S}\prod_{i\in S}y_i
 \qquad
-(b\in\{0,1\})
+(b\in\lbrace0,1\rbrace)
 $$
 
 strictly sign-represent $f_b$. Define
@@ -135,7 +135,7 @@ $$
 m_0+m_1,
 $$
 
-the displayed coarser bound follows. Minimizing over sparse sign representations of the two cofactors and using the coarser support bound proves the $\operatorname{ptfsp}$ corollary.
+the displayed coarser bound follows. Minimizing over sparse sign representations of the two cofactors and using the coarser support bound proves the $\mathrm{ptfsp}$ corollary.
 
 Finally, if $P_0$ and $P_1$ have degree at most $d$, then
 
@@ -154,7 +154,7 @@ If $f$ is nonconstant, the affine-free sparsity corollary [048_affine_free_spars
 $$
 H^{*}(f)
 \leq
-1+\sum_{r=2}^{\min\{d+1,n\}}\binom{n}{r}.
+1+\sum_{r=2}^{\min\lbrace d+1,n\rbrace}\binom{n}{r}.
 $$
 
 $\blacksquare$
@@ -166,7 +166,7 @@ This theorem gives a provable recursive replacement for the currently open one-h
 $$
 H^{*}(f)
 \stackrel{?}{\leq}
-\max\{H^{*}(f_0),H^{*}(f_1)\}+1.
+\max\lbrace H^{*}(f_0),H^{*}(f_1)\rbrace+1.
 $$
 
 The open recursion would compose head representations directly. The proved recursion composes sparse sign polynomials instead, then routes them through the sparse-PTF upper bound.

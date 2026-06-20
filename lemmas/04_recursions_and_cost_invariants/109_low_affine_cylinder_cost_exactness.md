@@ -5,7 +5,7 @@
 If
 
 $$
-\operatorname{actc}(f)\leq2,
+\mathrm{actc}(f)\leq2,
 $$
 
 then
@@ -20,7 +20,7 @@ H^{*}(f)
 \end{cases}
 $$
 
-In particular, every nonconstant non-LTF with $\operatorname{actc}(f)\leq2$ is exactly two-head.
+In particular, every nonconstant non-LTF with $\mathrm{actc}(f)\leq2$ is exactly two-head.
 
 > **Interpretation.** Once the affine-cylinder certificate reaches two heads, the only remaining question is the universal zero-head and one-head split.
 
@@ -29,7 +29,7 @@ In particular, every nonconstant non-LTF with $\operatorname{actc}(f)\leq2$ is e
 Lemma 103 gives
 
 $$
-H^{*}(f)\leq\operatorname{actc}(f).
+H^{*}(f)\leq\mathrm{actc}(f).
 $$
 
 Thus the hypothesis implies
@@ -53,9 +53,9 @@ This upgrades any low-cost affine-cylinder representation into an exact head cou
 Since
 
 $$
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\min\{\operatorname{ctc}(f),\operatorname{afs}_{\pm}(f)\},
+\min\lbrace\mathrm{ctc}(f),\mathrm{afs}_{\pm}(f)\rbrace,
 $$
 
-the same exactness conclusion applies whenever either $\operatorname{ctc}(f)\leq2$ or $\operatorname{afs}_{\pm}(f)\leq2$.
+the same exactness conclusion applies whenever either $\mathrm{ctc}(f)\leq2$ or $\mathrm{afs}_{\pm}(f)\leq2$.

@@ -13,36 +13,36 @@ $$
 define
 
 $$
-L(A):=\{i:\alpha_i\neq0\},
+L(A):=\lbrace i:\alpha_i\neq0\rbrace,
 $$
 
 and
 
 $$
-K_{+}(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P\cup\{z\},N),
+K_{+}(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P\cup\lbrace z\rbrace,N),
 \qquad
-K_{-}(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P,N\cup\{z\}).
+K_{-}(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P,N\cup\lbrace z\rbrace).
 $$
 
 Define the lifted literal-gating cost of a Boolean function $T$ by
 
 $$
-\operatorname{lgactc}(T)
+\mathrm{lgactc}(T)
 :=
 \min_S
 \left(
-\lvert L(A)\rvert+\min\{K_{+}(\Gamma),K_{-}(\Gamma)\}
+\lvert L(A)\rvert+\min\lbrace K_{+}(\Gamma),K_{-}(\Gamma)\rbrace
 \right),
 $$
 
 where the minimum ranges over all strict affine-cylinder scores $S$ for $T$.
 
-Then for either literal $r(z)\in\{z,1-z\}$,
+Then for either literal $r(z)\in\lbrace z,1-z\rbrace$,
 
 $$
 H^{*}(r(z)\wedge T(y))
 \leq
-1+\operatorname{lgactc}(T),
+1+\mathrm{lgactc}(T),
 $$
 
 and
@@ -50,18 +50,18 @@ and
 $$
 H^{*}(r(z)\vee T(y))
 \leq
-1+\operatorname{lgactc}(T).
+1+\mathrm{lgactc}(T).
 $$
 
 Moreover,
 
 $$
-\operatorname{lgactc}(T)
+\mathrm{lgactc}(T)
 \leq
-m+2\operatorname{actc}(T).
+m+2\mathrm{actc}(T).
 $$
 
-If $\operatorname{lgactc}(T)\leq1$, then every literal-gated function here that is neither constant nor a nonconstant LTF is exactly two-head.
+If $\mathrm{lgactc}(T)\leq1$, then every literal-gated function here that is neither constant nor a nonconstant LTF is exactly two-head.
 
 > **Interpretation.** Literal gating has its own optimized cost: the number of affine slopes plus the cheaper way to lift the cylinder correction through the fresh literal.
 
@@ -74,14 +74,14 @@ If the cheaper lift is not the literal appearing in the desired gate, apply the 
 $$
 H^{*}(r\wedge T)
 \leq
-1+\lvert L(A)\rvert+\min\{K_{+}(\Gamma),K_{-}(\Gamma)\}.
+1+\lvert L(A)\rvert+\min\lbrace K_{+}(\Gamma),K_{-}(\Gamma)\rbrace.
 $$
 
 The same argument applies to $r\vee T$, or equivalently uses the disjunction bound in Lemma 121 and the same fresh-coordinate bit flip.
 
 Minimizing over all strict affine-cylinder scores for $T$ proves the two displayed literal-gating bounds.
 
-For the comparison with $\operatorname{actc}$, choose a strict affine-cylinder score $S$ for $T$ of optimal affine-cylinder cost. Let
+For the comparison with $\mathrm{actc}$, choose a strict affine-cylinder score $S$ for $T$ of optimal affine-cylinder cost. Let
 
 $$
 K(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P,N).
@@ -90,47 +90,47 @@ $$
 Then
 
 $$
-K(\Gamma)\leq\operatorname{actc}(T).
+K(\Gamma)\leq\mathrm{actc}(T).
 $$
 
 Also, $\lvert L(A)\rvert\leq m$, and for every cylinder support
 
 $$
-\kappa(P\cup\{z\},N)\leq2\kappa(P,N),
+\kappa(P\cup\lbrace z\rbrace,N)\leq2\kappa(P,N),
 \qquad
-\kappa(P,N\cup\{z\})\leq2\kappa(P,N).
+\kappa(P,N\cup\lbrace z\rbrace)\leq2\kappa(P,N).
 $$
 
 Therefore
 
 $$
-\min\{K_{+}(\Gamma),K_{-}(\Gamma)\}
+\min\lbrace K_{+}(\Gamma),K_{-}(\Gamma)\rbrace
 \leq
 2K(\Gamma)
 \leq
-2\operatorname{actc}(T).
+2\mathrm{actc}(T).
 $$
 
 Thus
 
 $$
-\operatorname{lgactc}(T)
+\mathrm{lgactc}(T)
 \leq
-m+2\operatorname{actc}(T).
+m+2\mathrm{actc}(T).
 $$
 
-Finally, if $\operatorname{lgactc}(T)\leq1$, then each literal-gated function above has head complexity at most $2$. The exact constant, nonconstant LTF, or two-head split follows from the zero-head and one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md). $\blacksquare$
+Finally, if $\mathrm{lgactc}(T)\leq1$, then each literal-gated function above has head complexity at most $2$. The exact constant, nonconstant LTF, or two-head split follows from the zero-head and one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md). $\blacksquare$
 
 ## Consequences
 
-This cost is useful when $\operatorname{actc}(T)$ is small but the ordinary head representation of $T$ is not the right object to gate. The gate only needs lifted cylinder corrections and changed affine slopes.
+This cost is useful when $\mathrm{actc}(T)$ is small but the ordinary head representation of $T$ is not the right object to gate. The gate only needs lifted cylinder corrections and changed affine slopes.
 
 The inequality
 
 $$
-\operatorname{lgactc}(T)
+\mathrm{lgactc}(T)
 \leq
-m+2\operatorname{actc}(T)
+m+2\mathrm{actc}(T)
 $$
 
 is intentionally coarse. In applications, the optimized lifted cost can be much smaller than the right-hand side, especially when one literal orientation keeps every cylinder locally cheap.

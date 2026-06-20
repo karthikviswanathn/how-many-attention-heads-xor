@@ -2,7 +2,7 @@
 
 ## Statement
 
-Let $k\geq1$, let $z\in\{0,1\}^{k}$ be raw bits, and let
+Let $k\geq1$, let $z\in\lbrace0,1\rbrace^{k}$ be raw bits, and let
 
 $$
 T(y)=F(t(y)),
@@ -21,7 +21,7 @@ $$
 and let $C$ be the sign-change count of $F$ along this ordered image. Let
 
 $$
-G:\{0,1\}^{k}\times\{0,1\}\to\{0,1\}
+G:\lbrace0,1\rbrace^{k}\times\lbrace0,1\rbrace\to\lbrace0,1\rbrace
 $$
 
 be any Boolean gate, and define
@@ -39,7 +39,7 @@ $$
 Let
 
 $$
-N_G:=\left\lvert\{a:G_a\text{ is }u\text{ or }1-u\}\right\rvert.
+N_G:=\left\lvert\lbrace a:G_a\text{ is }u\text{ or }1-u\rbrace\right\rvert.
 $$
 
 Let $J_{\rho,G}$ be the number of boundary jumps between consecutive raw slices:
@@ -48,12 +48,12 @@ $$
 J_{\rho,G}
 :=
 \left\lvert
-\left\{
-q\in\{0,\ldots,2^k-2\}:
+\left\lbrace
+q\in\lbrace0,\ldots,2^k-2\rbrace:
 G_{a^{(q)}}(F(\tau_{M-1}))
 \neq
 G_{a^{(q+1)}}(F(\tau_0))
-\right\}
+\right\rbrace
 \right\rvert.
 $$
 

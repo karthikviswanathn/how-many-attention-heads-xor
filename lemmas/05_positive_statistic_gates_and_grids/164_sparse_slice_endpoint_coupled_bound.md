@@ -5,7 +5,7 @@
 Let $f(z,y)$ have a shared positive-statistic certificate as in Theorem 158. Let
 
 $$
-A:=\{a\in\{0,1\}^{k}:F_a(t(y))\text{ is nonconstant}\}
+A:=\lbrace a\in\lbrace0,1\rbrace^{k}:F_a(t(y))\text{ is nonconstant}\rbrace
 $$
 
 be the active raw-slice set. Let $C_a$ be the sign-change count of slice $a$, and define the endpoint raw functions $p,q$ as in Theorem 158. Then

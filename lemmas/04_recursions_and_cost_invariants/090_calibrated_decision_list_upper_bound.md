@@ -2,13 +2,13 @@
 
 ## Statement
 
-Let $T_1,\ldots,T_L:\{0,1\}^{n}\to\{0,1\}$ be Boolean tests, and let $f$ be computed by a decision list with tests $T_1,\ldots,T_L$, branch labels
+Let $T_1,\ldots,T_L:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace$ be Boolean tests, and let $f$ be computed by a decision list with tests $T_1,\ldots,T_L$, branch labels
 
 $$
-b_1,\ldots,b_L\in\{0,1\},
+b_1,\ldots,b_L\in\lbrace0,1\rbrace,
 $$
 
-and default label $b_{L+1}\in\{0,1\}$.
+and default label $b_{L+1}\in\lbrace0,1\rbrace$.
 
 There are coefficients $c_0,c_1,\ldots,c_L$ and a margin $\mu>0$ such that
 
@@ -56,7 +56,7 @@ $$
 
 ## Proof
 
-For $j\in\{1,\ldots,L+1\}$, let $F_j$ be the suffix decision-list function beginning at test $j$, with $F_{L+1}\equiv b_{L+1}$.
+For $j\in\lbrace1,\ldots,L+1\rbrace$, let $F_j$ be the suffix decision-list function beginning at test $j$, with $F_{L+1}\equiv b_{L+1}$.
 
 We first build a strict weighted vote for each suffix. Start with
 

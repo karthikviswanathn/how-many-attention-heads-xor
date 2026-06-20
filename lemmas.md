@@ -97,16 +97,16 @@ What they *do* give is:
 - a subcube-threshold vote upper bound for strict real votes over cylinder indicators,
 - an optimized cylinder-threshold cost invariant upper-bounding $H^{*}$,
 - structural invariances and restriction monotonicity for the cylinder-threshold cost,
-- a subsumption theorem showing $\operatorname{ctc}$ recovers local certificate, formula, and decision-tree bounds,
-- a comparison theorem placing $\operatorname{ctc}$ below polynomial-threshold sparsity,
+- a subsumption theorem showing $\mathrm{ctc}$ recovers local certificate, formula, and decision-tree bounds,
+- a comparison theorem placing $\mathrm{ctc}$ below polynomial-threshold sparsity,
 - an affine-cylinder threshold cost invariant that allows one dense affine component,
-- a hierarchy theorem placing the affine-cylinder cost below both $\operatorname{ctc}$ and affine-free sparsity,
+- a hierarchy theorem placing the affine-cylinder cost below both $\mathrm{ctc}$ and affine-free sparsity,
 - an explicit linear head lower-bound family from intersections of two halfspaces,
 - a formal separation between $H^{*}$ and constant threshold-vote or LTF decision-list size,
 - a linear worst-case lower bound for raw calibration cost among LTF indicators,
 - structural invariances and restriction monotonicity for the affine-cylinder cost,
 - exact $0$, $1$, or $2$ classification for functions with affine-cylinder cost at most two,
-- a threshold-degree sandwich for $\operatorname{actc}$ and the surrounding sparsity costs,
+- a threshold-degree sandwich for $\mathrm{actc}$ and the surrounding sparsity costs,
 - an affine-cylinder cofactor interpolation rule that pays only for changed affine slopes and changed cylinder coefficients,
 - an optimized lifted literal-gating cost for non-XOR one-bit gates,
 - a sharp case split for every non-XOR and non-XNOR gate over a fresh bit,
@@ -204,7 +204,7 @@ $$
 
 ### Lemma 3. Checkerboard obstruction for one head
 
-If $f : \{0,1\}^n \to \{0,1\}$ has a 2-bit checkerboard restriction, then
+If $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$ has a 2-bit checkerboard restriction, then
 
 $$
 H^{*}(f) \geq 2.
@@ -219,7 +219,7 @@ $$
 For
 
 $$
-T_{n,t}(x) = \mathbf{1}\!\left[\,\lvert x\rvert \geq t\,\right], \qquad 1 \leq t \leq n,
+T_{n,t}(x) = \mathbf{1}\negthinspace\left[\thinspace\lvert x\rvert \geq t\thinspace\right], \qquad 1 \leq t \leq n,
 $$
 
 where $\lvert x\rvert$ is the Hamming weight of $x$, namely the number of coordinates of $x$ equal to $1$.
@@ -271,7 +271,7 @@ Here $\deg_{\pm}(f)$ denotes the threshold degree of $f$, namely the minimum deg
 
 **Proof.** [lemmas/01_foundations_and_normal_form/006_threshold_degree_head_complexity_bound.md](lemmas/01_foundations_and_normal_form/006_threshold_degree_head_complexity_bound.md)
 
-### Lemma 7. Parity has threshold degree exactly $n$
+### Lemma 7. Parity has threshold degree exactly n
 
 For
 
@@ -310,7 +310,7 @@ $$
 and a function
 
 $$
-F : \operatorname{Im}(t) \to \{0,1\},
+F : \mathrm{Im}(t) \to \lbrace0,1\rbrace,
 $$
 
 where
@@ -328,7 +328,7 @@ $$
 Let
 
 $$
-M := \lvert\operatorname{Im}(t)\rvert.
+M := \lvert\mathrm{Im}(t)\rvert.
 $$
 
 Then
@@ -410,7 +410,7 @@ This strictly strengthens the checkerboard obstruction as a one-head lower bound
 
 ### Lemma 12. Exact symmetric sign-change characterization
 
-Let $f : \{0,1\}^n \to \{0,1\}$ be symmetric, so
+Let $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$ be symmetric, so
 
 $$
 f(x) = F(\lvert x\rvert)
@@ -419,7 +419,7 @@ $$
 for some
 
 $$
-F : \{0,\ldots,n\} \to \{0,1\}.
+F : \lbrace0,\ldots,n\rbrace \to \lbrace0,1\rbrace.
 $$
 
 Define
@@ -433,7 +433,7 @@ $$
 \end{cases}
 $$
 
-and let $C(F)$ be the number of indices $t \in \{1,\ldots,n\}$ with
+and let $C(F)$ be the number of indices $t \in \lbrace1,\ldots,n\rbrace$ with
 
 $$
 \sigma_{t-1} \neq \sigma_t.
@@ -537,7 +537,7 @@ which rules out one head via the linear-threshold characterization. The upper bo
 
 ### Lemma 15. Three-bit quadratic thresholds use at most two heads
 
-Let $f : \{0,1\}^3 \to \{0,1\}$. Suppose there is a multilinear polynomial $P$ of degree at most $2$ such that
+Let $f : \lbrace0,1\rbrace^3 \to \lbrace0,1\rbrace$. Suppose there is a multilinear polynomial $P$ of degree at most $2$ such that
 
 $$
 f(x)=1
@@ -545,7 +545,7 @@ f(x)=1
 P(x)>0
 $$
 
-for every $x\in\{0,1\}^3$. Then
+for every $x\in\lbrace0,1\rbrace^3$. Then
 
 $$
 H^{*}(f) \leq 2.
@@ -572,7 +572,7 @@ $$
 For every Boolean function
 
 $$
-f : \{0,1\}^3 \to \{0,1\},
+f : \lbrace0,1\rbrace^3 \to \lbrace0,1\rbrace,
 $$
 
 we have
@@ -596,7 +596,7 @@ $$
 For every Boolean function
 
 $$
-f : \{0,1\}^4 \to \{0,1\},
+f : \lbrace0,1\rbrace^4 \to \lbrace0,1\rbrace,
 $$
 
 we have
@@ -614,7 +614,7 @@ $$
 For every Boolean function
 
 $$
-f : \{0,1\}^5 \to \{0,1\},
+f : \lbrace0,1\rbrace^5 \to \lbrace0,1\rbrace,
 $$
 
 we have
@@ -632,7 +632,7 @@ $$
 For every Boolean function
 
 $$
-f : \{0,1\}^6 \to \{0,1\},
+f : \lbrace0,1\rbrace^6 \to \lbrace0,1\rbrace,
 $$
 
 we have
@@ -650,7 +650,7 @@ $$
 For every Boolean function
 
 $$
-f : \{0,1\}^7 \to \{0,1\},
+f : \lbrace0,1\rbrace^7 \to \lbrace0,1\rbrace,
 $$
 
 we have
@@ -671,7 +671,7 @@ $$
 B_1,\ldots,B_H
 $$
 
-on $\{0,1\}^n$ such that some $2^n$ functions chosen from
+on $\lbrace0,1\rbrace^n$ such that some $2^n$ functions chosen from
 
 $$
 \prod_{j=1}^{H}B_j,
@@ -679,15 +679,15 @@ $$
 M\prod_{j\neq h}B_j
 \quad
 \text{for }
-h \in \{1,\ldots,H\},
+h \in \lbrace1,\ldots,H\rbrace,
 \quad
-M \in \{1,x_1,\ldots,x_n\},
+M \in \lbrace1,x_1,\ldots,x_n\rbrace,
 $$
 
-have linearly independent value vectors on $\{0,1\}^n$. Then every Boolean function
+have linearly independent value vectors on $\lbrace0,1\rbrace^n$. Then every Boolean function
 
 $$
-f : \{0,1\}^n \to \{0,1\}
+f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace
 $$
 
 satisfies
@@ -711,7 +711,7 @@ $$
 For every Boolean function
 
 $$
-f : \{0,1\}^8 \to \{0,1\},
+f : \lbrace0,1\rbrace^8 \to \lbrace0,1\rbrace,
 $$
 
 we have
@@ -729,7 +729,7 @@ $$
 For every Boolean function
 
 $$
-f : \{0,1\}^9 \to \{0,1\},
+f : \lbrace0,1\rbrace^9 \to \lbrace0,1\rbrace,
 $$
 
 we have
@@ -747,7 +747,7 @@ $$
 For every Boolean function
 
 $$
-f : \{0,1\}^{10} \to \{0,1\},
+f : \lbrace0,1\rbrace^{10} \to \lbrace0,1\rbrace,
 $$
 
 we have
@@ -765,13 +765,13 @@ $$
 For every
 
 $$
-n \in \{3,\ldots,12\},
+n \in \lbrace3,\ldots,12\rbrace,
 $$
 
 and every Boolean function
 
 $$
-f : \{0,1\}^n \to \{0,1\},
+f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace,
 $$
 
 we have
@@ -800,13 +800,13 @@ $$
 Let
 
 $$
-W(n) := \max_{f : \{0,1\}^n \to \{0,1\}} H^{*}(f).
+W(n) := \max_{f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace} H^{*}(f).
 $$
 
 Then
 
 $$
-W(n) = \Omega\!\left(\frac{2^n}{n^2}\right).
+W(n) = \Omega\negthinspace\left(\frac{2^n}{n^2}\right).
 $$
 
 More quantitatively, for fixed $n$ and $H$, the number of $n$-bit Boolean functions computable with at most $H$ heads is at most
@@ -834,7 +834,7 @@ is at most $2^{-\Omega(2^n)}$.
 For every $n \geq 1$ and every Boolean function
 
 $$
-f : \{0,1\}^n \to \{0,1\},
+f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace,
 $$
 
 we have
@@ -854,7 +854,7 @@ if and only if $f$ is parity or the complement of parity.
 If $g$ is obtained from
 
 $$
-f : \{0,1\}^n \to \{0,1\}
+f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace
 $$
 
 by fixing some input coordinates, then
@@ -877,20 +877,20 @@ $$
 
 Consequently, if $f$ is a $k$-junta, then $H^{*}(f)$ is exactly the head complexity of the induced function on its essential $k$ variables.
 
-For a partition $I\sqcup J=\{1,\ldots,n\}$, let $\operatorname{srank}_{I,J}(f)$ be the sign-rank of the corresponding communication matrix of $f$. Then
+For a partition $I\sqcup J=\lbrace1,\ldots,n\rbrace$, let $\mathrm{srank}_{I,J}(f)$ be the sign-rank of the corresponding communication matrix of $f$. Then
 
 $$
 H^{*}(f)
 \geq
-\min\left\{
+\min\left\lbrace
 H :
-\operatorname{srank}_{I,J}(f)
+\mathrm{srank}_{I,J}(f)
 \leq
 \sum_{r=0}^{H}
 \sum_{i=0}^{r}
 \binom{\lvert I\rvert}{i}
 \binom{\lvert J\rvert}{r-i}
-\right\}.
+\right\rbrace.
 $$
 
 > **Interpretation.** Restrictions let known exact hard functions certify larger functions. Dummy variables do not change the answer, so exact small-junta classifications automatically lift. Sign-rank gives a constructive lower-bound route that can use communication-complexity witnesses, not only threshold degree.
@@ -913,16 +913,16 @@ $$
 H^{*}(f)\leq s.
 $$
 
-Equivalently, if $\operatorname{mDNF}(f)$ is the minimum number of nonempty terms in a monotone DNF for $f$, with $\operatorname{mDNF}(0)=\operatorname{mDNF}(1)=0$, then every monotone Boolean function satisfies
+Equivalently, if $\mathrm{mDNF}(f)$ is the minimum number of nonempty terms in a monotone DNF for $f$, with $\mathrm{mDNF}(0)=\mathrm{mDNF}(1)=0$, then every monotone Boolean function satisfies
 
 $$
-H^{*}(f)\leq\operatorname{mDNF}(f).
+H^{*}(f)\leq\mathrm{mDNF}(f).
 $$
 
 The dual bound also holds for monotone CNF:
 
 $$
-H^{*}(f)\leq\operatorname{mCNF}(f).
+H^{*}(f)\leq\mathrm{mCNF}(f).
 $$
 
 Therefore
@@ -930,7 +930,7 @@ Therefore
 $$
 H^{*}(f)
 \leq
-\min\{\operatorname{mDNF}(f),\operatorname{mCNF}(f)\}.
+\min\lbrace\mathrm{mDNF}(f),\mathrm{mCNF}(f)\rbrace.
 $$
 
 > **Interpretation.** A head can be tuned so a conjunction contributes a fixed positive margin when satisfied and only a tiny negative amount otherwise. Summing one such atom per DNF term computes the monotone OR of the terms. Complement and global bit-flip symmetry give the dual CNF bound.
@@ -953,7 +953,7 @@ $$
 M\prod_{j\neq h}B_j
 $$
 
-with $M\in\{1,x_1,\ldots,x_n\}$ span all multilinear polynomials of degree at most $d$ on $\{0,1\}^n$. Then every Boolean function with
+with $M\in\lbrace1,x_1,\ldots,x_n\rbrace$ span all multilinear polynomials of degree at most $d$ on $\lbrace0,1\rbrace^n$. Then every Boolean function with
 
 $$
 \deg_{\pm}(f)\leq d
@@ -977,7 +977,7 @@ $$
 
 ### Lemma 31. Fourier tail threshold-degree criterion
 
-Let $q : \{-1,1\}^n \to \{-1,1\}$ be the sign-valued version of $f$, with Fourier expansion
+Let $q : \lbrace-1,1\rbrace^n \to \lbrace-1,1\rbrace$ be the sign-valued version of $f$, with Fourier expansion
 
 $$
 q(z)
@@ -985,7 +985,7 @@ q(z)
 \sum_{S\subseteq[n]}\widehat q(S)\chi_S(z).
 $$
 
-For $d\in\{0,\ldots,n\}$, define
+For $d\in\lbrace0,\ldots,n\rbrace$, define
 
 $$
 T_{>d}(z)
@@ -1036,7 +1036,7 @@ t(x)=\sum_{i=1}^{n}\lambda_i x_i,
 \lambda_i>0.
 $$
 
-For any Boolean operation $G:\{0,1\}^m\to\{0,1\}$, define
+For any Boolean operation $G:\lbrace0,1\rbrace^m\to\lbrace0,1\rbrace$, define
 
 $$
 g(x):=G(f_1(x),\ldots,f_m(x)).
@@ -1088,12 +1088,12 @@ $$
 
 ### Lemma 35. Monotone antichain upper bound
 
-Let $f : \{0,1\}^n \to \{0,1\}$ be monotone. Let $\mathcal{M}_1(f)$ be the family of minimal true sets, and let $\mathcal{M}_0(f)$ be the family of maximal false sets. Then
+Let $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$ be monotone. Let $\mathcal{M}_1(f)$ be the family of minimal true sets, and let $\mathcal{M}_0(f)$ be the family of maximal false sets. Then
 
 $$
 H^{*}(f)
 \leq
-\min\{\lvert\mathcal{M}_1(f)\rvert,\lvert\mathcal{M}_0(f)\rvert\}.
+\min\lbrace\lvert\mathcal{M}_1(f)\rvert,\lvert\mathcal{M}_0(f)\rvert\rbrace.
 $$
 
 Since both boundary families are antichains,
@@ -1110,7 +1110,7 @@ $$
 
 ### Lemma 36. Monotone counting lower bound
 
-Let $\mathsf{Mon}_n$ be the set of monotone Boolean functions on $\{0,1\}^n$, and define
+Let $\mathsf{Mon}_n$ be the set of monotone Boolean functions on $\lbrace0,1\rbrace^n$, and define
 
 $$
 W_{\mathrm{mon}}(n)
@@ -1121,7 +1121,7 @@ $$
 Then
 
 $$
-\Omega\!\left(\frac{1}{n^2}\binom{n}{\lfloor n/2\rfloor}\right)
+\Omega\negthinspace\left(\frac{1}{n^2}\binom{n}{\lfloor n/2\rfloor}\right)
 \leq
 W_{\mathrm{mon}}(n)
 \leq
@@ -1131,7 +1131,7 @@ $$
 More strongly, almost every monotone $n$-bit Boolean function requires
 
 $$
-\Omega\!\left(\frac{1}{n^2}\binom{n}{\lfloor n/2\rfloor}\right)
+\Omega\negthinspace\left(\frac{1}{n^2}\binom{n}{\lfloor n/2\rfloor}\right)
 $$
 
 heads, up to the absolute constant hidden by the Warren-counting argument.
@@ -1145,7 +1145,7 @@ heads, up to the absolute constant hidden by the Warren-counting argument.
 For
 
 $$
-f : \{0,1\}^n \to \{0,1\},
+f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace,
 $$
 
 define
@@ -1153,10 +1153,10 @@ define
 $$
 s(f)
 :=
-\min\{
+\min\lbrace
 \lvert f^{-1}(1)\rvert,
 \lvert f^{-1}(0)\rvert
-\}.
+\rbrace.
 $$
 
 Then
@@ -1188,7 +1188,7 @@ $$
 In particular, if every term has width at least $w$, then
 
 $$
-H^{*}(f)\leq 2s\,2^{n-w}.
+H^{*}(f)\leq 2s\thinspace2^{n-w}.
 $$
 
 The dual statement holds for CNFs with clause widths $w_a$:
@@ -1250,12 +1250,12 @@ H^{*}(f)
 2\sum_{(D,\xi)\in\mathcal{C}_0}2^{n-\lvert D\rvert}.
 $$
 
-Equivalently, if $\operatorname{certvol}_b(f)$ is the minimum weighted cylinder volume of a $b$-certificate cover, then
+Equivalently, if $\mathrm{certvol}_b(f)$ is the minimum weighted cylinder volume of a $b$-certificate cover, then
 
 $$
 H^{*}(f)
 \leq
-2\min\{\operatorname{certvol}_0(f),\operatorname{certvol}_1(f)\}.
+2\min\lbrace\mathrm{certvol}_0(f),\mathrm{certvol}_1(f)\rbrace.
 $$
 
 > **Interpretation.** Sparse support, DNF volume, and CNF volume are all instances of one-sided certificate covers.
@@ -1264,10 +1264,10 @@ $$
 
 ### Lemma 41. Polynomial-threshold sparsity upper bound
 
-Let $\operatorname{ptfsp}(f)$ be the minimum number of nonconstant monomials appearing with nonzero coefficient in a real polynomial that sign-represents $f$ on the Boolean cube. Then
+Let $\mathrm{ptfsp}(f)$ be the minimum number of nonconstant monomials appearing with nonzero coefficient in a real polynomial that sign-represents $f$ on the Boolean cube. Then
 
 $$
-H^{*}(f)\leq\operatorname{ptfsp}(f).
+H^{*}(f)\leq\mathrm{ptfsp}(f).
 $$
 
 Consequently, if $\deg_{\pm}(f)\leq d$, then
@@ -1297,10 +1297,10 @@ with consistent nonempty terms,
 $$
 H^{*}(f)
 \leq
-\min\left\{
+\min\left\lbrace
 \sum_{a=1}^{s}2^{\lvert P_a\rvert},
 \sum_{a=1}^{s}2^{\lvert N_a\rvert}
-\right\}.
+\right\rbrace.
 $$
 
 The same bound holds for a mixed-literal CNF with clause positive-literal sets $P_a$ and negative-literal sets $N_a$.
@@ -1316,12 +1316,12 @@ Let $\mathcal{T}$ be a deterministic decision tree computing $f$. For a leaf $\e
 $$
 H^{*}(f)
 \leq
-\min\left\{
+\min\left\lbrace
 \sum_{\ell\in\mathcal{L}_1}2^{\lvert P_\ell\rvert},
 \sum_{\ell\in\mathcal{L}_1}2^{\lvert N_\ell\rvert},
 \sum_{\ell\in\mathcal{L}_0}2^{\lvert P_\ell\rvert},
 \sum_{\ell\in\mathcal{L}_0}2^{\lvert N_\ell\rvert}
-\right\}.
+\right\rbrace.
 $$
 
 In particular, if $f$ is nonconstant and has deterministic decision-tree depth $D(f)=d\geq1$, then
@@ -1342,7 +1342,7 @@ $$
 H^{*}(f)
 \leq
 \sum_{(P,N)\in\mathcal{C}_1}
-\min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}.
+\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace.
 $$
 
 The same bound holds for a $0$-certificate cover $\mathcal{C}_0$:
@@ -1351,7 +1351,7 @@ $$
 H^{*}(f)
 \leq
 \sum_{(P,N)\in\mathcal{C}_0}
-\min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}.
+\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace.
 $$
 
 > **Interpretation.** One-sided certificate covers are cheap when each certificate fixes few bits of at least one sign. The cheaper sign may be chosen separately for each certificate.
@@ -1368,7 +1368,7 @@ for every nonconstant $f$.
 
 ### Lemma 45. Fourier support-cost upper bound
 
-Let $q:\{0,1\}^n\to\{-1,1\}$ be the sign-valued version of $f$. Suppose
+Let $q:\lbrace0,1\rbrace^n\to\lbrace-1,1\rbrace$ be the sign-valued version of $f$. Suppose
 
 $$
 R(x)=\sum_{S\in\mathcal{A}}c_S\chi_S(x),
@@ -1385,7 +1385,7 @@ H^{*}(f)
 \left(2^{\lvert S\rvert}-1\right).
 $$
 
-In particular, if $\mathcal{A}\subseteq\{S:\lvert S\rvert\leq d\}$ and $\lvert\mathcal{A}\rvert=m$, then
+In particular, if $\mathcal{A}\subseteq\lbrace S:\lvert S\rvert\leq d\rbrace$ and $\lvert\mathcal{A}\rvert=m$, then
 
 $$
 H^{*}(f)\leq m(2^d-1).
@@ -1399,7 +1399,7 @@ If a Fourier truncation over $\mathcal{A}$ approximates $q$ uniformly within $1$
 
 ### Lemma 46. Affine parity exact complexity
 
-Let $S\subseteq\{1,\ldots,n\}$ and $b\in\{0,1\}$. Define
+Let $S\subseteq\lbrace1,\ldots,n\rbrace$ and $b\in\lbrace0,1\rbrace$. Define
 
 $$
 f_{S,b}(x)
@@ -1451,10 +1451,10 @@ $$
 
 ### Lemma 48. Affine-free polynomial-threshold sparsity upper bound
 
-Let $\operatorname{afs}_{\pm}(f)$ be the minimum, over all sign-representing multilinear polynomials $P$, of the number of degree at least two monomials in $P$, plus one extra unit if the linear part of $P$ is nonzero. Then
+Let $\mathrm{afs}_{\pm}(f)$ be the minimum, over all sign-representing multilinear polynomials $P$, of the number of degree at least two monomials in $P$, plus one extra unit if the linear part of $P$ is nonzero. Then
 
 $$
-H^{*}(f)\leq\operatorname{afs}_{\pm}(f).
+H^{*}(f)\leq\mathrm{afs}_{\pm}(f).
 $$
 
 Consequently, if $f$ is nonconstant and $\deg_{\pm}(f)\leq d$, then
@@ -1484,7 +1484,7 @@ $$
 :=
 \mathbf{1}[x=y],
 \qquad
-x,y\in\{0,1\}^m.
+x,y\in\lbrace0,1\rbrace^m.
 $$
 
 Then
@@ -1505,12 +1505,12 @@ $$
 
 ### Lemma 50. Intersection-profile bounds
 
-Let $F:\{0,1,\ldots,m\}\to\{0,1\}$ and define
+Let $F:\lbrace0,1,\ldots,m\rbrace\to\lbrace0,1\rbrace$ and define
 
 $$
 f_F(x,y)
 :=
-F\!\left(\sum_{i=1}^{m}x_i y_i\right).
+F\negthinspace\left(\sum_{i=1}^{m}x_i y_i\right).
 $$
 
 Let $C(F)$ be the number of sign changes in
@@ -1549,7 +1549,7 @@ $$
 
 ### Lemma 51. Hamming-distance profile bounds
 
-Let $F:\{0,1,\ldots,m\}\to\{0,1\}$ and define
+Let $F:\lbrace0,1,\ldots,m\rbrace\to\lbrace0,1\rbrace$ and define
 
 $$
 g_F(x,y)
@@ -1606,7 +1606,7 @@ $$
 
 ### Lemma 52. Directed-defect profile bounds
 
-Let $F:\{0,1,\ldots,m\}\to\{0,1\}$ and define
+Let $F:\lbrace0,1,\ldots,m\rbrace\to\lbrace0,1\rbrace$ and define
 
 $$
 h_F(x,y)
@@ -1662,12 +1662,12 @@ $$
 
 ### Lemma 53. Local-pattern count profile schema
 
-Let $p:\{0,1\}^2\to\{0,1\}$ be a two-bit predicate and define
+Let $p:\lbrace0,1\rbrace^2\to\lbrace0,1\rbrace$ be a two-bit predicate and define
 
 $$
 f_{p,F}(x,y)
 :=
-F\!\left(\sum_{i=1}^{m}p(x_i,y_i)\right).
+F\negthinspace\left(\sum_{i=1}^{m}p(x_i,y_i)\right).
 $$
 
 Let $C(F)$ be the number of sign changes in
@@ -1715,7 +1715,7 @@ where each $T_j$ is a linear threshold function.
 For every three-bit Boolean function
 
 $$
-f:\{0,1\}^3\to\{0,1\},
+f:\lbrace0,1\rbrace^3\to\lbrace0,1\rbrace,
 $$
 
 we have
@@ -1748,7 +1748,7 @@ Let $s_{\mathrm{LTF}}(f)$ be the minimum number of linear threshold functions in
 $$
 \mathrm{EQ}_m(x,y)=\mathbf{1}[x=y],
 \qquad
-x,y\in\{0,1\}^m,
+x,y\in\lbrace0,1\rbrace^m,
 $$
 
 we have
@@ -1807,7 +1807,7 @@ $$
 
 ### Lemma 58. Two-pair local-count thresholds use at most two heads
 
-Let $p:\{0,1\}^2\to\{0,1\}$ be any two-bit predicate and let $F:\{0,1,2\}\to\{0,1\}$ have exactly one sign change. Define
+Let $p:\lbrace0,1\rbrace^2\to\lbrace0,1\rbrace$ be any two-bit predicate and let $F:\lbrace0,1,2\rbrace\to\lbrace0,1\rbrace$ have exactly one sign change. Define
 
 $$
 f_{p,F}(x_1,x_2,y_1,y_2)
@@ -1886,7 +1886,7 @@ $$
 L(x)=c+\sum_{i=1}^{n}a_i x_i
 $$
 
-be an affine function on $\{0,1\}^n$, and define
+be an affine function on $\lbrace0,1\rbrace^n$, and define
 
 $$
 E_L(x):=\mathbf{1}[L(x)=0].
@@ -1922,7 +1922,7 @@ $$
 L(x)=c+\sum_{i=1}^{n}a_i x_i
 $$
 
-be an affine function on $\{0,1\}^n$, and let $\alpha\leq\beta$. Define
+be an affine function on $\lbrace0,1\rbrace^n$, and let $\alpha\leq\beta$. Define
 
 $$
 S_{L,\alpha,\beta}(x)
@@ -1954,7 +1954,7 @@ $$
 
 ### Lemma 63. Affine statistic sign-change upper bound
 
-Let $L$ be affine on $\{0,1\}^n$, let $G:\operatorname{Im}(L)\to\{0,1\}$, and define
+Let $L$ be affine on $\lbrace0,1\rbrace^n$, let $G:\mathrm{Im}(L)\to\lbrace0,1\rbrace$, and define
 
 $$
 f(x):=G(L(x)).
@@ -1975,7 +1975,7 @@ Then:
    $$
    H^{*}(f)
    \leq
-   1+\sum_{r=2}^{\min\{C_L(G),k\}}\binom{k}{r}.
+   1+\sum_{r=2}^{\min\lbrace C_L(G),k\rbrace}\binom{k}{r}.
    $$
 
 > **Interpretation.** Positive-projection sign changes give the sharper $C$-head bound when the statistic has positive weights. This lemma is the orientation-free fallback for a single affine statistic with mixed signs.
@@ -1987,7 +1987,7 @@ Then:
 Let
 
 $$
-s(f):=\min\{\lvert f^{-1}(1)\rvert,\lvert f^{-1}(0)\rvert\}.
+s(f):=\min\lbrace\lvert f^{-1}(1)\rvert,\lvert f^{-1}(0)\rvert\rbrace.
 $$
 
 If
@@ -2020,16 +2020,16 @@ $$
 
 ### Lemma 65. Affine hull clean supports use at most two heads
 
-Let $A\subseteq\{0,1\}^n$ be nonempty and affine hull clean, meaning
+Let $A\subseteq\lbrace0,1\rbrace^n$ be nonempty and affine hull clean, meaning
 
 $$
-\operatorname{aff}(A)\cap\{0,1\}^n=A.
+\mathrm{aff}(A)\cap\lbrace0,1\rbrace^n=A.
 $$
 
 Suppose $A$ is a label class of $f$ and
 
 $$
-\operatorname{aff}(A)\neq\mathbb{R}^n.
+\mathrm{aff}(A)\neq\mathbb{R}^n.
 $$
 
 Then
@@ -2061,7 +2061,7 @@ Let $t$ be an injective positive weighted sum on the Boolean cube, and let $R_t^
 $$
 H^{*}(f)
 \leq
-2\min\{R_t^0(f),R_t^1(f)\}.
+2\min\lbrace R_t^0(f),R_t^1(f)\rbrace.
 $$
 
 Consequently, if
@@ -2069,7 +2069,7 @@ Consequently, if
 $$
 R_{+}(f)
 :=
-\min_t\min\{R_t^0(f),R_t^1(f)\},
+\min_t\min\lbrace R_t^0(f),R_t^1(f)\rbrace,
 $$
 
 where the minimum ranges over injective positive weighted sums, then
@@ -2090,10 +2090,10 @@ $$
 H^{*}(f)\geq h+1
 $$
 
-only if some partition $I\sqcup J=\{1,\ldots,n\}$ satisfies
+only if some partition $I\sqcup J=\lbrace1,\ldots,n\rbrace$ satisfies
 
 $$
-2^{\min\{\lvert I\rvert,\lvert J\rvert\}}
+2^{\min\lbrace\lvert I\rvert,\lvert J\rvert\rbrace}
 >
 \sum_{r=0}^{h}\binom{n}{r}.
 $$
@@ -2183,7 +2183,7 @@ Finally, if $C_{+}(f)\leq2$, then $H^{*}(f)$ has the exact constant, nonconstant
 If
 
 $$
-\operatorname{afs}_{\pm}(f)\leq2,
+\mathrm{afs}_{\pm}(f)\leq2,
 $$
 
 then
@@ -2241,10 +2241,10 @@ Let $\mathcal{T}$ be a deterministic decision tree computing $f$. Let $d$ be its
 $$
 \Lambda(\mathcal{T})
 :=
-\min\left\{
-\sum_{\ell\in\mathcal{L}_1}\min\{2^{\lvert P_\ell\rvert},2^{\lvert N_\ell\rvert}\},
-\sum_{\ell\in\mathcal{L}_0}\min\{2^{\lvert P_\ell\rvert},2^{\lvert N_\ell\rvert}\}
-\right\}.
+\min\left\lbrace
+\sum_{\ell\in\mathcal{L}_1}\min\lbrace2^{\lvert P_\ell\rvert},2^{\lvert N_\ell\rvert}\rbrace,
+\sum_{\ell\in\mathcal{L}_0}\min\lbrace2^{\lvert P_\ell\rvert},2^{\lvert N_\ell\rvert}\rbrace
+\right\rbrace.
 $$
 
 If $f$ is nonconstant, then
@@ -2252,11 +2252,11 @@ If $f$ is nonconstant, then
 $$
 H^{*}(f)
 \leq
-\min\left\{
+\min\left\lbrace
 \Lambda(\mathcal{T}),
 2^v-1,
-1+\sum_{r=2}^{\min\{d,v\}}\binom{v}{r}
-\right\}.
+1+\sum_{r=2}^{\min\lbrace d,v\rbrace}\binom{v}{r}
+\right\rbrace.
 $$
 
 > **Interpretation.** Decision trees give three complementary upper-bound certificates: local leaf expansion, junta reduction to the queried variables, and a low-degree sign polynomial from bounded path length.
@@ -2270,12 +2270,12 @@ Suppose $f$ has a DNF or CNF using $v$ distinct variables, with consistent nonem
 $$
 H^{*}(f)
 \leq
-\min\left\{
+\min\left\lbrace
 2\sum_a2^{v-w_a},
-\sum_a\min\{2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\},
+\sum_a\min\lbrace2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\rbrace,
 2^v-1,
-1+\sum_{r=2}^{\min\{w,v\}}\binom{v}{r}
-\right\}.
+1+\sum_{r=2}^{\min\lbrace w,v\rbrace}\binom{v}{r}
+\right\rbrace.
 $$
 
 > **Interpretation.** Mixed-literal formulas have a four-way upper-bound menu: support volume inside the used-variable cube, local literal expansion, junta interpolation, and a width-degree sparse-polynomial bound.
@@ -2284,7 +2284,7 @@ $$
 
 ### Lemma 74. Cofactor sparse-polynomial recursion
 
-Write inputs as $(z,y)\in\{0,1\}\times\{0,1\}^{n-1}$, and let
+Write inputs as $(z,y)\in\lbrace0,1\rbrace\times\lbrace0,1\rbrace^{n-1}$, and let
 
 $$
 f_0(y):=f(0,y),
@@ -2297,7 +2297,7 @@ Suppose $P_0$ and $P_1$ strictly sign-represent $f_0$ and $f_1$. Let $\mathcal{A
 $$
 m_b:=\lvert\mathcal{A}_b\rvert
 \qquad
-(b\in\{0,1\}).
+(b\in\lbrace0,1\rbrace).
 $$
 
 Then
@@ -2323,8 +2323,8 @@ Consequently,
 $$
 H^{*}(f)
 \leq
-2\operatorname{ptfsp}(f_0)
-+\operatorname{ptfsp}(f_1)
+2\mathrm{ptfsp}(f_0)
++\mathrm{ptfsp}(f_1)
 +1.
 $$
 
@@ -2339,7 +2339,7 @@ For nonconstant $f$, this gives
 $$
 H^{*}(f)
 \leq
-1+\sum_{r=2}^{\min\{d+1,n\}}\binom{n}{r}.
+1+\sum_{r=2}^{\min\lbrace d+1,n\rbrace}\binom{n}{r}.
 $$
 
 > **Interpretation.** A direct one-head Shannon recursion is still open, but sparse sign polynomials compose cleanly across cofactors.
@@ -2348,7 +2348,7 @@ $$
 
 ### Lemma 75. Affine-free cofactor recursion
 
-Write inputs as $(z,y)\in\{0,1\}\times\{0,1\}^{n-1}$, and let
+Write inputs as $(z,y)\in\lbrace0,1\rbrace\times\lbrace0,1\rbrace^{n-1}$, and let
 
 $$
 f_0(y):=f(0,y),
@@ -2373,7 +2373,7 @@ $$
 H^{*}(f)
 \leq
 1+(n-1)
-+2\sum_{r=2}^{\min\{d,n-1\}}\binom{n-1}{r}.
++2\sum_{r=2}^{\min\lbrace d,n-1\rbrace}\binom{n-1}{r}.
 $$
 
 In particular, if both cofactors are constants or linear threshold functions, then
@@ -2390,14 +2390,14 @@ If the two affine cofactor separators can be chosen so their linear coefficient 
 
 ### Lemma 76. LTF cofactor slope distance
 
-Write inputs as $(z,y)\in\{0,1\}\times\{0,1\}^{n-1}$, and let $f_0(y)=f(0,y)$ and $f_1(y)=f(1,y)$. Suppose $f_0$ and $f_1$ have affine sign representations
+Write inputs as $(z,y)\in\lbrace0,1\rbrace\times\lbrace0,1\rbrace^{n-1}$, and let $f_0(y)=f(0,y)$ and $f_1(y)=f(1,y)$. Suppose $f_0$ and $f_1$ have affine sign representations
 
 $$
 L_b(y)
 =
 \beta_b+\sum_{i=1}^{n-1}\alpha_{b,i}y_i
 \qquad
-(b\in\{0,1\}).
+(b\in\lbrace0,1\rbrace).
 $$
 
 Let
@@ -2405,7 +2405,7 @@ Let
 $$
 \Delta(L_0,L_1)
 :=
-\{i:\alpha_{0,i}\neq\alpha_{1,i}\},
+\lbrace i:\alpha_{0,i}\neq\alpha_{1,i}\rbrace,
 \qquad
 t:=\lvert\Delta(L_0,L_1)\rvert.
 $$
@@ -2468,15 +2468,15 @@ where:
 - $\mathcal{L}_{\Delta}$ is the set of changed linear coefficients,
 - $\mathcal{N}_{\Delta}$ is the set of changed degree at least two coefficients.
 
-Let $\operatorname{scafs}_{\pm}(f)$ be the minimum of $C(P_0,P_1)$ over all split coordinates and all strict cofactor sign representations. Then
+Let $\mathrm{scafs}_{\pm}(f)$ be the minimum of $C(P_0,P_1)$ over all split coordinates and all strict cofactor sign representations. Then
 
 $$
 H^{*}(f)
 \leq
-\operatorname{scafs}_{\pm}(f).
+\mathrm{scafs}_{\pm}(f).
 $$
 
-If $\operatorname{scafs}_{\pm}(f)\leq2$, then $H^{*}(f)$ has the exact constant, nonconstant LTF, or otherwise two-head split.
+If $\mathrm{scafs}_{\pm}(f)\leq2$, then $H^{*}(f)$ has the exact constant, nonconstant LTF, or otherwise two-head split.
 
 > **Interpretation.** This is the cofactor invariant that pays for what is shared in one base slice and for what changes across the split. It can be much smaller than the union-support cofactor bound.
 
@@ -2493,7 +2493,7 @@ $$
 strictly sign-represent an LTF feature $T(y)$, with $\alpha_i\neq0$ for $i\in S$. For any Boolean gate
 
 $$
-G:\{0,1\}^2\to\{0,1\},
+G:\lbrace0,1\rbrace^2\to\lbrace0,1\rbrace,
 $$
 
 define
@@ -2519,29 +2519,29 @@ If $\lvert S\rvert\leq1$, then $H^{*}(f)$ has the exact constant, nonconstant LT
 Let $P(y)$ strictly sign-represent a Boolean feature $T(y)$, and let:
 
 $$
-\ell(P):=\lvert\{i:a_i\neq0\}\rvert,
+\ell(P):=\lvert\lbrace i:a_i\neq0\rbrace\rvert,
 \qquad
 q(P):=
 \left\lvert
-\left\{
+\left\lbrace
 S:\lvert S\rvert\geq2,\ a_S\neq0
-\right\}
+\right\rbrace
 \right\rvert.
 $$
 
-For any Boolean gate $G:\{0,1\}^2\to\{0,1\}$, define
+For any Boolean gate $G:\lbrace0,1\rbrace^2\to\lbrace0,1\rbrace$, define
 
 $$
 f(z,y):=G(z,T(y)).
 $$
 
-For $b\in\{0,1\}$, let $\mu_b=1$ if $G(b,u)=u$, let $\mu_b=-1$ if $G(b,u)=1-u$, and let $\mu_b=0$ if $G(b,u)$ is constant. Then
+For $b\in\lbrace0,1\rbrace$, let $\mu_b=1$ if $G(b,u)=u$, let $\mu_b=-1$ if $G(b,u)=1-u$, and let $\mu_b=0$ if $G(b,u)$ is constant. Then
 
 $$
 H^{*}(f)
 \leq
 1
-+\mathbf{1}[\mu_0\neq0]\,q(P)
++\mathbf{1}[\mu_0\neq0]\thinspace q(P)
 +\mathbf{1}[\mu_1\neq\mu_0]\bigl(\ell(P)+q(P)\bigr).
 $$
 
@@ -2562,7 +2562,7 @@ If the refined displayed bound is at most $2$, then $H^{*}(f)$ has the exact con
 Let
 
 $$
-f:\{0,1\}^{m}\to\{0,1\},
+f:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace,
 $$
 
 and define
@@ -2599,13 +2599,13 @@ $$
 
 ### Lemma 82. One-bit gate threshold-degree trichotomy
 
-Let $T:\{0,1\}^{m}\to\{0,1\}$ be nonconstant, set $d:=\deg_{\pm}(T)$, and define
+Let $T:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace$ be nonconstant, set $d:=\deg_{\pm}(T)$, and define
 
 $$
 F(z,y):=G(z,T(y))
 $$
 
-for an arbitrary gate $G:\{0,1\}^{2}\to\{0,1\}$. For $b\in\{0,1\}$, write $G_b(u):=G(b,u)$.
+for an arbitrary gate $G:\lbrace0,1\rbrace^{2}\to\lbrace0,1\rbrace$. For $b\in\lbrace0,1\rbrace$, write $G_b(u):=G(b,u)$.
 
 If $G_0$ and $G_1$ are both constant, then
 
@@ -2624,7 +2624,7 @@ $$
 \deg_{\pm}(F)=d.
 $$
 
-If $\{G_0,G_1\}=\{u,1-u\}$, then
+If $\lbrace G_0,G_1\rbrace=\lbrace u,1-u\rbrace$, then
 
 $$
 \deg_{\pm}(F)=d+1.
@@ -2668,7 +2668,7 @@ $$
 
 ### Lemma 84. Parity-block restriction lower bound
 
-Let $f:\{0,1\}^{n}\to\{0,1\}$. Suppose a restriction of $f$ leaves two disjoint sets of free variables $Z$ and $Y$, with $\lvert Z\rvert=k$, and on that restricted subcube has the form
+Let $f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace$. Suppose a restriction of $f$ leaves two disjoint sets of free variables $Z$ and $Y$, with $\lvert Z\rvert=k$, and on that restricted subcube has the form
 
 $$
 f_{\rho}(z,y)
@@ -2696,7 +2696,7 @@ The same conclusion holds for the complement of the displayed parity-block form.
 
 ### Lemma 85. Calibrated threshold-vote upper bound
 
-Let $T_1,\ldots,T_s:\{0,1\}^{n}\to\{0,1\}$ be Boolean features, and define
+Let $T_1,\ldots,T_s:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace$ be Boolean features, and define
 
 $$
 f(x)=1
@@ -2709,7 +2709,7 @@ Let
 $$
 \mu
 :=
-\min_{x\in\{0,1\}^{n}}
+\min_{x\in\lbrace0,1\rbrace^{n}}
 \left\lvert
 c_0+\sum_{j=1}^{s}c_jT_j(x)
 \right\rvert
@@ -2743,7 +2743,7 @@ $$
 
 ### Lemma 86. Endpoint affine-threshold vote upper bound
 
-For a nonempty set $S\subseteq\{1,\ldots,n\}$ and positive weights $\lambda_i>0$, define
+For a nonempty set $S\subseteq\lbrace1,\ldots,n\rbrace$ and positive weights $\lambda_i>0$, define
 
 $$
 L_S(x):=\sum_{i\in S}\lambda_i x_i,
@@ -2783,10 +2783,10 @@ $$
 
 ### Lemma 87. One-bit non-XOR gate recursion
 
-Let $T : \{0,1\}^{m}\to\{0,1\}$ be any Boolean function, and let
+Let $T : \lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace$ be any Boolean function, and let
 
 $$
-G : \{0,1\}^{2}\to\{0,1\}
+G : \lbrace0,1\rbrace^{2}\to\lbrace0,1\rbrace
 $$
 
 be a two-input Boolean gate that is neither XOR nor XNOR. Define
@@ -2902,7 +2902,7 @@ $$
 Thus $T$ is a monotone LTF. However, every one-head atom $\phi$ satisfies
 
 $$
-\max_{x\in\{0,1\}^3}\lvert \phi(x)-T(x)\rvert
+\max_{x\in\lbrace0,1\rbrace^3}\lvert \phi(x)-T(x)\rvert
 \geq
 \frac{1}{4}.
 $$
@@ -2923,7 +2923,7 @@ the best uniform approximation error by a single one-head atom has infimum exact
 
 $$
 \inf_{\phi}
-\max_{x\in\{0,1\}^3}\lvert \phi(x)-T(x)\rvert
+\max_{x\in\lbrace0,1\rbrace^3}\lvert \phi(x)-T(x)\rvert
 =
 \frac{1}{4}.
 $$
@@ -2950,10 +2950,10 @@ H^{*}(f)
 \sum_{j:c_j\neq0}\rho(T_j).
 $$
 
-Moreover, if $\operatorname{eafs}(T)$ is the exact affine-free support cost of the unique multilinear expansion of $T$, then
+Moreover, if $\mathrm{eafs}(T)$ is the exact affine-free support cost of the unique multilinear expansion of $T$, then
 
 $$
-\rho(T)\leq\operatorname{eafs}(T).
+\rho(T)\leq\mathrm{eafs}(T).
 $$
 
 Consequently,
@@ -2961,7 +2961,7 @@ Consequently,
 $$
 H^{*}(f)
 \leq
-\sum_{j:c_j\neq0}\operatorname{eafs}(T_j).
+\sum_{j:c_j\neq0}\mathrm{eafs}(T_j).
 $$
 
 > **Interpretation.** Calibrated votes can spend more than one atom on a feature. Exact multilinear sparsity gives a concrete fallback raw-calibration cost.
@@ -2983,7 +2983,7 @@ In particular,
 $$
 H^{*}(f)
 \leq
-\sum_{j=1}^{L}\operatorname{eafs}(T_j).
+\sum_{j=1}^{L}\mathrm{eafs}(T_j).
 $$
 
 > **Interpretation.** Arbitrary-test decision lists can be upper-bounded by raw calibration cost per test. The one-head-per-test theorem is the special case $\rho(T_j)\leq1$ for every tested feature.
@@ -3013,7 +3013,7 @@ In particular, if $f=T_1\wedge T_2$, then
 $$
 \rho(T_1)+\rho(T_2)\geq\deg_{\pm}(f),
 \qquad
-\max\{\rho(T_1),\rho(T_2)\}\geq\frac{\deg_{\pm}(f)}{2}.
+\max\lbrace\rho(T_1),\rho(T_2)\rbrace\geq\frac{\deg_{\pm}(f)}{2}.
 $$
 
 > **Interpretation.** Threshold-degree lower bounds for a strict vote force high raw calibration cost in at least one inner feature.
@@ -3036,7 +3036,7 @@ If $P=N=\varnothing$, then $\rho(C_{P,N})=0$. Otherwise,
 $$
 \rho(C_{P,N})
 \leq
-\min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}.
+\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace.
 $$
 
 Consequently, strict weighted votes and decision lists over subcube indicators inherit the same summed local expansion cost through Lemmas 93 and 94.
@@ -3075,7 +3075,7 @@ $$
 :=
 \begin{cases}
 0, & P=N=\varnothing, \\
-\min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}, & \text{otherwise}.
+\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace, & \text{otherwise}.
 \end{cases}
 $$
 
@@ -3101,7 +3101,7 @@ $$
 
 ### Lemma 99. Cylinder-threshold cost invariant
 
-Let $\operatorname{ctc}(f)$ be the minimum, over all strict real threshold representations of $f$ by subcube indicators $C_{P_a,N_a}$, of
+Let $\mathrm{ctc}(f)$ be the minimum, over all strict real threshold representations of $f$ by subcube indicators $C_{P_a,N_a}$, of
 
 $$
 \sum_{a:c_a\neq0}\kappa(P_a,N_a),
@@ -3112,16 +3112,16 @@ where $\kappa(P,N)=0$ for the vacuous cylinder and otherwise
 $$
 \kappa(P,N)
 =
-\min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}.
+\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace.
 $$
 
 Then
 
 $$
-H^{*}(f)\leq\operatorname{ctc}(f).
+H^{*}(f)\leq\mathrm{ctc}(f).
 $$
 
-Moreover, $\operatorname{ctc}(f)<\infty$ for every Boolean function.
+Moreover, $\mathrm{ctc}(f)<\infty$ for every Boolean function.
 
 > **Interpretation.** The best strict threshold vote over cylinders is itself a head upper-bound invariant. This optimizes the local cylinder cost directly rather than first choosing a normal form such as DNF, CNF, or a certificate cover.
 
@@ -3129,10 +3129,10 @@ Moreover, $\operatorname{ctc}(f)<\infty$ for every Boolean function.
 
 ### Lemma 100. Cylinder-threshold cost invariances
 
-The cylinder-threshold cost $\operatorname{ctc}(f)$ is invariant under output complement, coordinate permutation, global bit-flip, and dummy-variable extension. It is monotone under restrictions: if $g$ is a restriction of $f$, then
+The cylinder-threshold cost $\mathrm{ctc}(f)$ is invariant under output complement, coordinate permutation, global bit-flip, and dummy-variable extension. It is monotone under restrictions: if $g$ is a restriction of $f$, then
 
 $$
-\operatorname{ctc}(g)\leq\operatorname{ctc}(f).
+\mathrm{ctc}(g)\leq\mathrm{ctc}(f).
 $$
 
 > **Interpretation.** The optimized cylinder-threshold upper-bound invariant can be searched on canonical representatives, and lower-bound attempts may use hard restrictions.
@@ -3144,7 +3144,7 @@ $$
 If $\mathcal{C}_1$ is a $1$-certificate cover for $f$ by partial assignments $(P,N)$, then
 
 $$
-\operatorname{ctc}(f)
+\mathrm{ctc}(f)
 \leq
 \sum_{(P,N)\in\mathcal{C}_1}\kappa(P,N).
 $$
@@ -3152,7 +3152,7 @@ $$
 The same bound holds for any $0$-certificate cover. Consequently, any DNF or CNF with local literal sets $(P_a,N_a)$ satisfies
 
 $$
-\operatorname{ctc}(f)
+\mathrm{ctc}(f)
 \leq
 \sum_a\kappa(P_a,N_a),
 $$
@@ -3160,30 +3160,30 @@ $$
 and any deterministic decision tree satisfies
 
 $$
-\operatorname{ctc}(f)
+\mathrm{ctc}(f)
 \leq
-\min\left\{
+\min\left\lbrace
 \sum_{\ell\in\mathcal{L}_1}\kappa(P_\ell,N_\ell),
 \sum_{\ell\in\mathcal{L}_0}\kappa(P_\ell,N_\ell)
-\right\}.
+\right\rbrace.
 $$
 
-> **Interpretation.** The $\operatorname{ctc}$ invariant strictly packages the local certificate-expansion route. One-sided covers and formula normal forms are feasible cylinder-threshold representations, but $\operatorname{ctc}$ can also optimize over signed overlapping cylinder votes.
+> **Interpretation.** The $\mathrm{ctc}$ invariant strictly packages the local certificate-expansion route. One-sided covers and formula normal forms are feasible cylinder-threshold representations, but $\mathrm{ctc}$ can also optimize over signed overlapping cylinder votes.
 
 **Proof.** [lemmas/04_recursions_and_cost_invariants/101_cylinder_threshold_cost_subsumes_local_certificates.md](lemmas/04_recursions_and_cost_invariants/101_cylinder_threshold_cost_subsumes_local_certificates.md)
 
 ### Lemma 102. Cylinder-threshold cost and PTF sparsity
 
-Let $\operatorname{ptfsp}(f)$ be the least number of nonconstant monomials in a real multilinear polynomial that sign-represents $f$. Then
+Let $\mathrm{ptfsp}(f)$ be the least number of nonconstant monomials in a real multilinear polynomial that sign-represents $f$. Then
 
 $$
-\operatorname{ctc}(f)\leq\operatorname{ptfsp}(f).
+\mathrm{ctc}(f)\leq\mathrm{ptfsp}(f).
 $$
 
 Consequently, if $\deg_{\pm}(f)\leq d$, then
 
 $$
-\operatorname{ctc}(f)
+\mathrm{ctc}(f)
 \leq
 \sum_{r=1}^{d}\binom{n}{r}.
 $$
@@ -3193,9 +3193,9 @@ Thus
 $$
 H^{*}(f)
 \leq
-\operatorname{ctc}(f)
+\mathrm{ctc}(f)
 \leq
-\operatorname{ptfsp}(f).
+\mathrm{ptfsp}(f).
 $$
 
 > **Interpretation.** Sparse polynomial thresholds are a special case of cylinder-threshold representations: each positive monomial is a cylinder with local cost $1$.
@@ -3204,7 +3204,7 @@ $$
 
 ### Lemma 103. Affine-cylinder threshold cost
 
-Let $\operatorname{actc}(f)$ be the minimum, over all strict representations
+Let $\mathrm{actc}(f)$ be the minimum, over all strict representations
 
 $$
 f(x)=1
@@ -3221,29 +3221,29 @@ $$
 where $A$ is affine, $\lambda(A)=1$ exactly when $A$ has a nonzero linear part, and $\kappa$ is the cylinder local cost from Lemma 99. Then
 
 $$
-H^{*}(f)\leq\operatorname{actc}(f).
+H^{*}(f)\leq\mathrm{actc}(f).
 $$
 
 Moreover,
 
 $$
-\operatorname{actc}(f)\leq\operatorname{ctc}(f).
+\mathrm{actc}(f)\leq\mathrm{ctc}(f).
 $$
 
-> **Interpretation.** The best signed cylinder vote may first pull out one dense affine component at cost one. This keeps the local-cylinder optimization but fixes the dense-linear weakness of ordinary $\operatorname{ctc}$.
+> **Interpretation.** The best signed cylinder vote may first pull out one dense affine component at cost one. This keeps the local-cylinder optimization but fixes the dense-linear weakness of ordinary $\mathrm{ctc}$.
 
 **Proof.** [lemmas/04_recursions_and_cost_invariants/103_affine_cylinder_threshold_cost.md](lemmas/04_recursions_and_cost_invariants/103_affine_cylinder_threshold_cost.md)
 
 ### Lemma 104. Affine-cylinder cost hierarchy
 
-Let $\operatorname{afs}_{\pm}(f)$ be affine-free polynomial-threshold sparsity. Then
+Let $\mathrm{afs}_{\pm}(f)$ be affine-free polynomial-threshold sparsity. Then
 
 $$
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\operatorname{afs}_{\pm}(f)
+\mathrm{afs}_{\pm}(f)
 \leq
-\operatorname{ptfsp}(f).
+\mathrm{ptfsp}(f).
 $$
 
 Together with Lemma 103,
@@ -3251,9 +3251,9 @@ Together with Lemma 103,
 $$
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\min\{\operatorname{ctc}(f),\operatorname{afs}_{\pm}(f)\}.
+\min\lbrace\mathrm{ctc}(f),\mathrm{afs}_{\pm}(f)\rbrace.
 $$
 
 Consequently, if $f$ is nonconstant and $\deg_{\pm}(f)\leq d$, then
@@ -3261,7 +3261,7 @@ Consequently, if $f$ is nonconstant and $\deg_{\pm}(f)\leq d$, then
 $$
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
 1+\sum_{r=2}^{d}\binom{n}{r}.
 $$
@@ -3275,7 +3275,7 @@ $$
 There are an absolute constant $c>0$ and an infinite family of pairs of linear threshold functions
 
 $$
-T_n,U_n:\{0,1\}^{n}\to\{0,1\}
+T_n,U_n:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace
 $$
 
 such that, for
@@ -3296,7 +3296,7 @@ $$
 
 ### Lemma 106. Threshold-vote and LTF decision-list separation
 
-Let $s_{\mathrm{LTF}}(f)$ be the minimum number of LTF indicators in a strict weighted vote for $f$. There is an infinite family $F_n:\{0,1\}^{n}\to\{0,1\}$ such that
+Let $s_{\mathrm{LTF}}(f)$ be the minimum number of LTF indicators in a strict weighted vote for $f$. There is an infinite family $F_n:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace$ such that
 
 $$
 s_{\mathrm{LTF}}(F_n)\leq2
@@ -3321,7 +3321,7 @@ For each $n$, define
 $$
 R_{\mathrm{LTF}}(n)
 :=
-\max\{\rho(T):T:\{0,1\}^{n}\to\{0,1\}\text{ is a nonconstant LTF}\}.
+\max\lbrace\rho(T):T:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace\text{ is a nonconstant LTF}\rbrace.
 $$
 
 There is an absolute constant $c>0$ and infinitely many $n$ such that
@@ -3346,13 +3346,13 @@ $$
 
 ### Lemma 108. Affine-cylinder threshold cost invariances
 
-The affine-cylinder threshold cost $\operatorname{actc}(f)$ is invariant under output complement, coordinate permutation, global bit-flip, and dummy-variable extension. It is monotone under restrictions: if $g$ is a restriction of $f$, then
+The affine-cylinder threshold cost $\mathrm{actc}(f)$ is invariant under output complement, coordinate permutation, global bit-flip, and dummy-variable extension. It is monotone under restrictions: if $g$ is a restriction of $f$, then
 
 $$
-\operatorname{actc}(g)\leq\operatorname{actc}(f).
+\mathrm{actc}(g)\leq\mathrm{actc}(f).
 $$
 
-> **Interpretation.** The stronger optimized upper-bound invariant keeps the same canonical-search behavior as $\operatorname{ctc}$.
+> **Interpretation.** The stronger optimized upper-bound invariant keeps the same canonical-search behavior as $\mathrm{ctc}$.
 
 **Proof.** [lemmas/04_recursions_and_cost_invariants/108_affine_cylinder_threshold_cost_invariances.md](lemmas/04_recursions_and_cost_invariants/108_affine_cylinder_threshold_cost_invariances.md)
 
@@ -3361,7 +3361,7 @@ $$
 If
 
 $$
-\operatorname{actc}(f)\leq2,
+\mathrm{actc}(f)\leq2,
 $$
 
 then
@@ -3389,9 +3389,9 @@ $$
 \leq
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\min\{\operatorname{ctc}(f),\operatorname{afs}_{\pm}(f)\}.
+\min\lbrace\mathrm{ctc}(f),\mathrm{afs}_{\pm}(f)\rbrace.
 $$
 
 Consequently,
@@ -3399,9 +3399,9 @@ Consequently,
 $$
 \deg_{\pm}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\operatorname{ctc}(f),
+\mathrm{ctc}(f),
 $$
 
 and
@@ -3409,9 +3409,9 @@ and
 $$
 \deg_{\pm}(f)
 \leq
-\operatorname{afs}_{\pm}(f)
+\mathrm{afs}_{\pm}(f)
 \leq
-\operatorname{ptfsp}(f).
+\mathrm{ptfsp}(f).
 $$
 
 > **Interpretation.** The optimized affine-cylinder invariant is now bracketed by a classical lower bound and two certificate upper bounds.
@@ -3429,7 +3429,7 @@ A_b(y)
 +
 \sum_{\gamma\in\Gamma_b}c_{b,\gamma}C_{\gamma}(y)
 \qquad
-(b\in\{0,1\}),
+(b\in\lbrace0,1\rbrace),
 $$
 
 with nonvacuous distinct cylinder supports. Write
@@ -3438,10 +3438,10 @@ $$
 A_b(y)=a_b+\sum_{i=1}^{m}\alpha_{b,i}y_i.
 $$
 
-Let $\Delta_{\mathrm{lin}}=\{i:\alpha_{1,i}\neq\alpha_{0,i}\}$ and $\Delta_{\mathrm{cyl}}=\{\gamma:c_{1,\gamma}\neq c_{0,\gamma}\}$ after missing cylinder coefficients are interpreted as $0$. Then
+Let $\Delta_{\mathrm{lin}}=\lbrace i:\alpha_{1,i}\neq\alpha_{0,i}\rbrace$ and $\Delta_{\mathrm{cyl}}=\lbrace\gamma:c_{1,\gamma}\neq c_{0,\gamma}\rbrace$ after missing cylinder coefficients are interpreted as $0$. Then
 
 $$
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
 \eta(A_0,A_1)
 +
@@ -3449,7 +3449,7 @@ $$
 +
 \sum_{\gamma=(P,N)\in\Gamma_0}\kappa(P,N)
 +
-\sum_{\gamma=(P,N)\in\Delta_{\mathrm{cyl}}}\kappa(P\cup\{z\},N),
+\sum_{\gamma=(P,N)\in\Delta_{\mathrm{cyl}}}\kappa(P\cup\lbrace z\rbrace,N),
 $$
 
 where
@@ -3457,29 +3457,29 @@ where
 $$
 \eta(A_0,A_1)
 :=
-\mathbf{1}\!\left[
+\mathbf{1}\negthinspace\left[
 a_1\neq a_0
 \text{ or }
 \exists i,\ \alpha_{0,i}\neq0
 \right].
 $$
 
-> **Interpretation.** Cofactor interpolation for $\operatorname{actc}$ pays for a base affine-cylinder certificate and only for the affine slopes and cylinder coefficients that change across the split.
+> **Interpretation.** Cofactor interpolation for $\mathrm{actc}$ pays for a base affine-cylinder certificate and only for the affine slopes and cylinder coefficients that change across the split.
 
 **Proof.** [lemmas/04_recursions_and_cost_invariants/111_affine_cylinder_cofactor_interpolation.md](lemmas/04_recursions_and_cost_invariants/111_affine_cylinder_cofactor_interpolation.md)
 
 ### Lemma 112. Split affine-cylinder cost
 
-Let $f:\{0,1\}^{n}\to\{0,1\}$ with $n\geq1$. For each split coordinate $j$, write the cofactors as $f_0,f_1$. Given strict affine-cylinder cofactor scores $S_0,S_1$, let $I(S_0,S_1)$ be the interpolation cost from Lemma 111. Define
+Let $f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace$ with $n\geq1$. For each split coordinate $j$, write the cofactors as $f_0,f_1$. Given strict affine-cylinder cofactor scores $S_0,S_1$, let $I(S_0,S_1)$ be the interpolation cost from Lemma 111. Define
 
 $$
-\operatorname{sactc}_{j}(f)
+\mathrm{sactc}_{j}(f)
 :=
 \min_{S_0,S_1} I(S_0,S_1),
 \qquad
-\operatorname{sactc}(f)
+\mathrm{sactc}(f)
 :=
-\min_{1\leq j\leq n}\operatorname{sactc}_{j}(f).
+\min_{1\leq j\leq n}\mathrm{sactc}_{j}(f).
 $$
 
 Then
@@ -3487,12 +3487,12 @@ Then
 $$
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\operatorname{sactc}(f).
+\mathrm{sactc}(f).
 $$
 
-If $\operatorname{sactc}(f)\leq2$, then $H^{*}(f)$ has the exact constant, nonconstant LTF, or two-head split.
+If $\mathrm{sactc}(f)\leq2$, then $H^{*}(f)$ has the exact constant, nonconstant LTF, or two-head split.
 
 > **Interpretation.** The split affine-cylinder cost packages cofactor interpolation as a recursive certificate invariant.
 
@@ -3513,7 +3513,7 @@ with the same cylinder correction $V(y)=\sum_{\gamma\in\Gamma}c_{\gamma}C_{\gamm
 $$
 K(V):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P,N),
 \qquad
-D(A_0,A_1):=\{i:\alpha_{1,i}\neq\alpha_{0,i}\}.
+D(A_0,A_1):=\lbrace i:\alpha_{1,i}\neq\alpha_{0,i}\rbrace.
 $$
 
 Then
@@ -3521,9 +3521,9 @@ Then
 $$
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\operatorname{sactc}(f)
+\mathrm{sactc}(f)
 \leq
 \eta(A_0,A_1)
 +
@@ -3540,19 +3540,19 @@ In particular, if the right-hand side is at most $2$, then $H^{*}(f)$ has the ex
 
 ### Lemma 114. Split affine-cylinder refines split affine-free support
 
-For every Boolean function $f:\{0,1\}^{n}\to\{0,1\}$ with $n\geq1$,
+For every Boolean function $f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace$ with $n\geq1$,
 
 $$
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\operatorname{sactc}(f)
+\mathrm{sactc}(f)
 \leq
-\operatorname{scafs}_{\pm}(f),
+\mathrm{scafs}_{\pm}(f),
 $$
 
-where $\operatorname{scafs}_{\pm}$ is the split affine-free support invariant from Lemma 78.
+where $\mathrm{scafs}_{\pm}$ is the split affine-free support invariant from Lemma 78.
 
 > **Interpretation.** The split affine-cylinder invariant keeps every split sparse-PTF certificate and can only improve it when mixed-literal cylinders are cheaper than their monomial expansions.
 
@@ -3563,7 +3563,7 @@ where $\operatorname{scafs}_{\pm}$ is the split affine-free support invariant fr
 For every Boolean function $f$,
 
 $$
-\operatorname{actc}(f)=0
+\mathrm{actc}(f)=0
 \qquad\Longleftrightarrow\qquad
 f \text{ is constant},
 $$
@@ -3571,12 +3571,12 @@ $$
 and
 
 $$
-\operatorname{actc}(f)=1
+\mathrm{actc}(f)=1
 \qquad\Longleftrightarrow\qquad
 f \text{ is a nonconstant LTF}.
 $$
 
-Equivalently, $\operatorname{actc}(f)\geq2$ exactly when $f$ is neither constant nor a nonconstant LTF.
+Equivalently, $\mathrm{actc}(f)\geq2$ exactly when $f$ is neither constant nor a nonconstant LTF.
 
 > **Interpretation.** The affine-cylinder cost has the same constant and one-head levels as $H^{*}$.
 
@@ -3584,10 +3584,10 @@ Equivalently, $\operatorname{actc}(f)\geq2$ exactly when $f$ is neither constant
 
 ### Lemma 116. Split affine-cylinder first levels are exact
 
-For every Boolean function $f:\{0,1\}^{n}\to\{0,1\}$ with $n\geq1$,
+For every Boolean function $f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace$ with $n\geq1$,
 
 $$
-\operatorname{sactc}(f)=0
+\mathrm{sactc}(f)=0
 \qquad\Longleftrightarrow\qquad
 f \text{ is constant},
 $$
@@ -3595,12 +3595,12 @@ $$
 and
 
 $$
-\operatorname{sactc}(f)=1
+\mathrm{sactc}(f)=1
 \qquad\Longleftrightarrow\qquad
 f \text{ is a nonconstant LTF}.
 $$
 
-Equivalently, $\operatorname{sactc}(f)\geq2$ exactly when $f$ is neither constant nor a nonconstant LTF.
+Equivalently, $\mathrm{sactc}(f)\geq2$ exactly when $f$ is neither constant nor a nonconstant LTF.
 
 > **Interpretation.** Optimizing over split affine-cylinder interpolations does not create any spurious zero-cost or one-cost functions.
 
@@ -3608,7 +3608,7 @@ Equivalently, $\operatorname{sactc}(f)\geq2$ exactly when $f$ is neither constan
 
 ### Lemma 117. Pure-cylinder affine perturbations are exact
 
-Let $P,N\subseteq\{1,\ldots,n\}$ be disjoint with either $P=\varnothing$ or $N=\varnothing$. Suppose
+Let $P,N\subseteq\lbrace1,\ldots,n\rbrace$ be disjoint with either $P=\varnothing$ or $N=\varnothing$. Suppose
 
 $$
 f(x)=1
@@ -3619,7 +3619,7 @@ $$
 strictly on the cube, where $A$ is affine. Then
 
 $$
-\operatorname{actc}(f)\leq2.
+\mathrm{actc}(f)\leq2.
 $$
 
 Consequently, $H^{*}(f)$ is exactly $0$, $1$, or $2$ according as $f$ is constant, a nonconstant LTF, or neither.
@@ -3630,7 +3630,7 @@ Consequently, $H^{*}(f)$ is exactly $0$, $1$, or $2$ according as $f$ is constan
 
 ### Lemma 118. One-bit affine-cylinder branching
 
-Let $T:\{0,1\}^{m}\to\{0,1\}$ have a strict affine-cylinder score
+Let $T:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace$ have a strict affine-cylinder score
 
 $$
 S(y)=A(y)+\sum_{\gamma\in\Gamma}c_{\gamma}C_{\gamma}(y),
@@ -3638,10 +3638,10 @@ S(y)=A(y)+\sum_{\gamma\in\Gamma}c_{\gamma}C_{\gamma}(y),
 A(y)=a+\sum_{i=1}^{m}\alpha_i y_i.
 $$
 
-Let $F(z,y)=G(z,T(y))$ for an arbitrary two-input Boolean gate $G$. For $b\in\{0,1\}$, let $\mu_b\in\{-1,0,1\}$ record whether the $b$th slice of $G$ is $u$, $1-u$, or constant as a function of $u$. Let $\delta_b$ be the strict constant score for the constant slice when $\mu_b=0$, and $0$ otherwise. Define
+Let $F(z,y)=G(z,T(y))$ for an arbitrary two-input Boolean gate $G$. For $b\in\lbrace0,1\rbrace$, let $\mu_b\in\lbrace-1,0,1\rbrace$ record whether the $b$th slice of $G$ is $u$, $1-u$, or constant as a function of $u$. Let $\delta_b$ be the strict constant score for the constant slice when $\mu_b=0$, and $0$ otherwise. Define
 
 $$
-L(A):=\{i:\alpha_i\neq0\},
+L(A):=\lbrace i:\alpha_i\neq0\rbrace,
 $$
 
 and
@@ -3649,7 +3649,7 @@ and
 $$
 K(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P,N),
 \qquad
-K_z(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P\cup\{z\},N).
+K_z(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P\cup\lbrace z\rbrace,N).
 $$
 
 Then
@@ -3658,9 +3658,9 @@ $$
 \begin{aligned}
 H^{*}(F)
 &\leq
-\operatorname{actc}(F)
+\mathrm{actc}(F)
 \leq
-\operatorname{sactc}(F) \\
+\mathrm{sactc}(F) \\
 &\leq
 \eta_G(A)
 +
@@ -3676,7 +3676,7 @@ where
 $$
 \eta_G(A)
 :=
-\mathbf{1}\!\left[
+\mathbf{1}\negthinspace\left[
 \delta_1+\mu_1 a\neq \delta_0+\mu_0 a
 \text{ or }
 \exists i,\ \mu_0\alpha_i\neq0
@@ -3691,7 +3691,7 @@ If this upper bound is at most $2$, then $H^{*}(F)$ has the exact constant, nonc
 
 ### Lemma 119. Fresh-bit XOR affine-cylinder bound
 
-Let $T:\{0,1\}^{m}\to\{0,1\}$ have a strict affine-cylinder score
+Let $T:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace$ have a strict affine-cylinder score
 
 $$
 S(y)=A(y)+\sum_{\gamma\in\Gamma}c_{\gamma}C_{\gamma}(y),
@@ -3710,7 +3710,7 @@ Define
 $$
 \eta_{\oplus}(A)
 :=
-\mathbf{1}\!\left[
+\mathbf{1}\negthinspace\left[
 a\neq0
 \text{ or }
 \exists i,\ \alpha_i\neq0
@@ -3720,13 +3720,13 @@ $$
 and let
 
 $$
-L(A):=\{i:\alpha_i\neq0\},
+L(A):=\lbrace i:\alpha_i\neq0\rbrace,
 $$
 
 $$
 K(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P,N),
 \qquad
-K_z(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P\cup\{z\},N).
+K_z(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P\cup\lbrace z\rbrace,N).
 $$
 
 Then
@@ -3736,9 +3736,9 @@ $$
 \leq
 H^{*}(F)
 \leq
-\operatorname{actc}(F)
+\mathrm{actc}(F)
 \leq
-\operatorname{sactc}(F)
+\mathrm{sactc}(F)
 \leq
 \eta_{\oplus}(A)
 +
@@ -3757,10 +3757,10 @@ The same bounds hold for XNOR. If the final upper bound equals $\deg_{\pm}(T)+1$
 
 ### Lemma 120. Affine-cylinder cofactor recursion
 
-Let $f:\{0,1\}\times\{0,1\}^{m}\to\{0,1\}$ have cofactors $f_0,f_1$, and let
+Let $f:\lbrace0,1\rbrace\times\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace$ have cofactors $f_0,f_1$, and let
 
 $$
-r_b:=\operatorname{actc}(f_b).
+r_b:=\mathrm{actc}(f_b).
 $$
 
 Then
@@ -3768,17 +3768,17 @@ Then
 $$
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\operatorname{sactc}(f)
+\mathrm{sactc}(f)
 \leq
-1+m+2(r_0+r_1)+\min\{r_0,r_1\}.
+1+m+2(r_0+r_1)+\min\lbrace r_0,r_1\rbrace.
 $$
 
 Equivalently, for either base cofactor $b$,
 
 $$
-\operatorname{sactc}(f)
+\mathrm{sactc}(f)
 \leq
 1+m+3r_b+2r_{1-b}.
 $$
@@ -3789,7 +3789,7 @@ $$
 
 ### Lemma 121. Literal-gated affine-cylinder features
 
-Let $T:\{0,1\}^{m}\to\{0,1\}$ have a strict affine-cylinder score
+Let $T:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace$ have a strict affine-cylinder score
 
 $$
 S(y)=A(y)+\sum_{\gamma\in\Gamma}c_{\gamma}C_{\gamma}(y),
@@ -3797,7 +3797,7 @@ S(y)=A(y)+\sum_{\gamma\in\Gamma}c_{\gamma}C_{\gamma}(y),
 A(y)=a+\sum_{i=1}^{m}\alpha_i y_i.
 $$
 
-Let $r(z)$ be either $z$ or $1-z$, and let $L(A)=\{i:\alpha_i\neq0\}$. Define $K_r(\Gamma)$ by lifting every cylinder through the literal $r$: if $r=z$, use $\kappa(P\cup\{z\},N)$, and if $r=1-z$, use $\kappa(P,N\cup\{z\})$.
+Let $r(z)$ be either $z$ or $1-z$, and let $L(A)=\lbrace i:\alpha_i\neq0\rbrace$. Define $K_r(\Gamma)$ by lifting every cylinder through the literal $r$: if $r=z$, use $\kappa(P\cup\lbrace z\rbrace,N)$, and if $r=1-z$, use $\kappa(P,N\cup\lbrace z\rbrace)$.
 
 Then
 
@@ -3831,31 +3831,31 @@ S(y)=A(y)+\sum_{\gamma\in\Gamma}c_{\gamma}C_{\gamma}(y),
 A(y)=a+\sum_{i=1}^{m}\alpha_i y_i,
 $$
 
-let $L(A)=\{i:\alpha_i\neq0\}$ and define
+let $L(A)=\lbrace i:\alpha_i\neq0\rbrace$ and define
 
 $$
-K_{+}(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P\cup\{z\},N),
+K_{+}(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P\cup\lbrace z\rbrace,N),
 \qquad
-K_{-}(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P,N\cup\{z\}).
+K_{-}(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P,N\cup\lbrace z\rbrace).
 $$
 
 Define
 
 $$
-\operatorname{lgactc}(T)
+\mathrm{lgactc}(T)
 :=
 \min_S
 \left(
-\lvert L(A)\rvert+\min\{K_{+}(\Gamma),K_{-}(\Gamma)\}
+\lvert L(A)\rvert+\min\lbrace K_{+}(\Gamma),K_{-}(\Gamma)\rbrace
 \right),
 $$
 
-where the minimum ranges over strict affine-cylinder scores for $T$. Then for either literal $r(z)\in\{z,1-z\}$,
+where the minimum ranges over strict affine-cylinder scores for $T$. Then for either literal $r(z)\in\lbrace z,1-z\rbrace$,
 
 $$
 H^{*}(r(z)\wedge T(y))
 \leq
-1+\operatorname{lgactc}(T),
+1+\mathrm{lgactc}(T),
 $$
 
 and
@@ -3863,18 +3863,18 @@ and
 $$
 H^{*}(r(z)\vee T(y))
 \leq
-1+\operatorname{lgactc}(T).
+1+\mathrm{lgactc}(T).
 $$
 
 Moreover,
 
 $$
-\operatorname{lgactc}(T)
+\mathrm{lgactc}(T)
 \leq
-m+2\operatorname{actc}(T).
+m+2\mathrm{actc}(T).
 $$
 
-If $\operatorname{lgactc}(T)\leq1$, then every literal-gated function here that is neither constant nor a nonconstant LTF is exactly two-head.
+If $\mathrm{lgactc}(T)\leq1$, then every literal-gated function here that is neither constant nor a nonconstant LTF is exactly two-head.
 
 > **Interpretation.** Literal gating is controlled by an optimized lifted cost: the affine slopes of the feature plus the cheaper lifted orientation of its cylinder correction.
 
@@ -3882,7 +3882,7 @@ If $\operatorname{lgactc}(T)\leq1$, then every literal-gated function here that 
 
 ### Lemma 123. Non-XOR gates through lifted cost
 
-Let $T:\{0,1\}^{m}\to\{0,1\}$ be any Boolean function, and let $G:\{0,1\}^{2}\to\{0,1\}$ be a two-input Boolean gate that is neither XOR nor XNOR. Define
+Let $T:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace$ be any Boolean function, and let $G:\lbrace0,1\rbrace^{2}\to\lbrace0,1\rbrace$ be a two-input Boolean gate that is neither XOR nor XNOR. Define
 
 $$
 F(z,y):=G(z,T(y)).
@@ -3892,14 +3892,14 @@ Then:
 
 1. If $G$ is constant or depends only on $z$, then $H^{*}(F)\leq1$.
 
-2. If $G$ depends only on its second input, then $H^{*}(F)\leq\operatorname{actc}(T)$.
+2. If $G$ depends only on its second input, then $H^{*}(F)\leq\mathrm{actc}(T)$.
 
 3. If $G$ genuinely depends on both inputs, then
 
 $$
 H^{*}(F)
 \leq
-1+\operatorname{lgactc}(T).
+1+\mathrm{lgactc}(T).
 $$
 
 In particular,
@@ -3907,12 +3907,12 @@ In particular,
 $$
 H^{*}(G(z,T(y)))
 \leq
-1+\operatorname{actc}(T)+\operatorname{lgactc}(T),
+1+\mathrm{actc}(T)+\mathrm{lgactc}(T),
 $$
 
 with the sharper case split above whenever the gate form is known.
 
-> **Interpretation.** Among non-XOR gates, the only real fresh-bit interaction cost is literal gating. It is governed by $\operatorname{lgactc}$, not by a full head representation of $T$.
+> **Interpretation.** Among non-XOR gates, the only real fresh-bit interaction cost is literal gating. It is governed by $\mathrm{lgactc}$, not by a full head representation of $T$.
 
 **Proof.** [lemmas/04_recursions_and_cost_invariants/123_non_xor_gate_lifted_cost.md](lemmas/04_recursions_and_cost_invariants/123_non_xor_gate_lifted_cost.md)
 
@@ -3926,14 +3926,14 @@ S(y)=A(y)+\sum_{\gamma\in\Gamma}c_{\gamma}C_{\gamma}(y),
 A(y)=a+\sum_{i=1}^{m}\alpha_i y_i,
 $$
 
-let $L(A)=\{i:\alpha_i\neq0\}$ and define
+let $L(A)=\lbrace i:\alpha_i\neq0\rbrace$ and define
 
 $$
 K_{0}(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P,N),
 \qquad
-K_{+}(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P\cup\{z\},N),
+K_{+}(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P\cup\lbrace z\rbrace,N),
 \qquad
-K_{-}(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P,N\cup\{z\}),
+K_{-}(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P,N\cup\lbrace z\rbrace),
 $$
 
 and define
@@ -3941,7 +3941,7 @@ and define
 $$
 \eta_{\oplus}(A)
 :=
-\mathbf{1}\!\left[
+\mathbf{1}\negthinspace\left[
 a\neq0
 \text{ or }
 \exists i,\ \alpha_i\neq0
@@ -3951,7 +3951,7 @@ $$
 Set
 
 $$
-\operatorname{xactc}(T)
+\mathrm{xactc}(T)
 :=
 \min_S
 \left(
@@ -3961,7 +3961,7 @@ $$
 +
 K_{0}(\Gamma)
 +
-\min\{K_{+}(\Gamma),K_{-}(\Gamma)\}
+\min\lbrace K_{+}(\Gamma),K_{-}(\Gamma)\rbrace
 \right),
 $$
 
@@ -3972,24 +3972,24 @@ $$
 \leq
 H^{*}(z\oplus T(y))
 \leq
-\operatorname{xactc}(T),
+\mathrm{xactc}(T),
 $$
 
 and the same bounds hold for XNOR. If
 
 $$
-\operatorname{xactc}(T)=\deg_{\pm}(T)+1,
+\mathrm{xactc}(T)=\deg_{\pm}(T)+1,
 $$
 
 then fresh-bit XOR and XNOR over $T$ have exact head complexity $\deg_{\pm}(T)+1$. Moreover,
 
 $$
-\operatorname{xactc}(T)
+\mathrm{xactc}(T)
 \leq
-1+m+3\operatorname{actc}(T).
+1+m+3\mathrm{actc}(T).
 $$
 
-> **Interpretation.** The exact fresh-bit XOR problem is now the equality problem $\operatorname{xactc}(T)=\deg_{\pm}(T)+1$.
+> **Interpretation.** The exact fresh-bit XOR problem is now the equality problem $\mathrm{xactc}(T)=\deg_{\pm}(T)+1$.
 
 **Proof.** [lemmas/04_recursions_and_cost_invariants/124_fresh_bit_xor_target_cost.md](lemmas/04_recursions_and_cost_invariants/124_fresh_bit_xor_target_cost.md)
 
@@ -3998,17 +3998,17 @@ $$
 Let
 
 $$
-T:\{0,1\}^{m}\to\{0,1\}.
+T:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace.
 $$
 
-The optimized one-bit costs $\operatorname{lgactc}(T)$ and $\operatorname{xactc}(T)$ have the following properties:
+The optimized one-bit costs $\mathrm{lgactc}(T)$ and $\mathrm{xactc}(T)$ have the following properties:
 
 1. Output complement does not change either cost:
 
 $$
-\operatorname{lgactc}(1-T)=\operatorname{lgactc}(T),
+\mathrm{lgactc}(1-T)=\mathrm{lgactc}(T),
 \qquad
-\operatorname{xactc}(1-T)=\operatorname{xactc}(T).
+\mathrm{xactc}(1-T)=\mathrm{xactc}(T).
 $$
 
 2. Coordinate permutations of the feature variables do not change either cost.
@@ -4018,9 +4018,9 @@ $$
 4. Restrictions of the feature variables cannot increase either cost:
 
 $$
-\operatorname{lgactc}(R)\leq\operatorname{lgactc}(T),
+\mathrm{lgactc}(R)\leq\mathrm{lgactc}(T),
 \qquad
-\operatorname{xactc}(R)\leq\operatorname{xactc}(T),
+\mathrm{xactc}(R)\leq\mathrm{xactc}(T),
 $$
 
 whenever $R$ is a restriction of $T$.
@@ -4087,7 +4087,7 @@ $$
 L(y)=a+\sum_{i=1}^{m}\alpha_i y_i
 $$
 
-be a nonconstant affine statistic on $\{0,1\}^{m}$. Let
+be a nonconstant affine statistic on $\lbrace0,1\rbrace^{m}$. Let
 
 $$
 \ell_{\min}:=\min_y L(y),
@@ -4135,7 +4135,7 @@ $$
 L(y)=a+\sum_{i=1}^{m}\alpha_i y_i
 $$
 
-be a nonconstant affine statistic on $\{0,1\}^{m}$, and let $E$ be either endpoint predicate $E_{\min}$ or $E_{\max}$. For any two-input Boolean gate $G:\{0,1\}^{2}\to\{0,1\}$, define
+be a nonconstant affine statistic on $\lbrace0,1\rbrace^{m}$, and let $E$ be either endpoint predicate $E_{\min}$ or $E_{\max}$. For any two-input Boolean gate $G:\lbrace0,1\rbrace^{2}\to\lbrace0,1\rbrace$, define
 
 $$
 F(z,y):=G(z,E(y)).
@@ -4161,10 +4161,10 @@ $$
 Let
 
 $$
-T:\{0,1\}^{m}\to\{0,1\}
+T:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace
 $$
 
-be a nonconstant LTF, and let $G:\{0,1\}^{2}\to\{0,1\}$ be any Boolean gate. Define
+be a nonconstant LTF, and let $G:\lbrace0,1\rbrace^{2}\to\lbrace0,1\rbrace$ be any Boolean gate. Define
 
 $$
 F(z,y):=G(z,T(y)).
@@ -4193,7 +4193,7 @@ $$
 L(y)=a+\sum_{i=1}^{m}\alpha_i y_i
 $$
 
-be an affine statistic on $\{0,1\}^{m}$, let $G:\operatorname{Im}(L)\to\{0,1\}$, and define $T(y):=G(L(y))$. Let $C$ be the number of sign changes of $G$ along the ordered image of $L$, and set
+be an affine statistic on $\lbrace0,1\rbrace^{m}$, let $G:\mathrm{Im}(L)\to\lbrace0,1\rbrace$, and define $T(y):=G(L(y))$. Let $C$ be the number of sign changes of $G$ along the ordered image of $L$, and set
 
 $$
 D_{\oplus}(C):=
@@ -4208,7 +4208,7 @@ If $C=0$, then fresh XOR and XNOR over $T$ have exact value $1$. If $C=1$, they 
 $$
 H^{*}(z\oplus T(y))
 \leq
-1+\sum_{r=2}^{\min\{D_{\oplus}(C),k+1\}}\binom{k+1}{r},
+1+\sum_{r=2}^{\min\lbrace D_{\oplus}(C),k+1\rbrace}\binom{k+1}{r},
 $$
 
 where $k$ is the number of nonzero variable coefficients of $L$, and the same upper bound holds for XNOR.
@@ -4227,7 +4227,7 @@ t(y)=\sum_{i=1}^{m}\lambda_i y_i,
 \lambda_i>0,
 $$
 
-let $G:\operatorname{Im}(t)\to\{0,1\}$, and define $T(y):=G(t(y))$. Let $C$ be the number of sign changes of $G$ along the ordered image of $t$, and set
+let $G:\mathrm{Im}(t)\to\lbrace0,1\rbrace$, and define $T(y):=G(t(y))$. Let $C$ be the number of sign changes of $G$ along the ordered image of $t$, and set
 
 $$
 D_{\oplus}(C):=
@@ -4300,7 +4300,7 @@ $$
 0,\ldots,0,1,\ldots,1,0,\ldots,0
 $$
 
-with all three displayed blocks nonempty. For either raw literal $r(z)\in\{z,1-z\}$,
+with all three displayed blocks nonempty. For either raw literal $r(z)\in\lbrace z,1-z\rbrace$,
 
 $$
 H^{*}(r(z)\wedge S(y))
@@ -4344,7 +4344,7 @@ $$
 If $P(z,y)$ is a strict sign polynomial for $f(z,y)$ of the form
 
 $$
-P(z,y)=p_0+p_1t(y)+p_2t(y)^2+q_0z+q_1z\,t(y),
+P(z,y)=p_0+p_1t(y)+p_2t(y)^2+q_0z+q_1z\thinspace t(y),
 $$
 
 then
@@ -4511,7 +4511,7 @@ $$
 
 ### Lemma 142. Symmetric-feature one-bit gate exactness
 
-Let $T:\{0,1\}^{m}\to\{0,1\}$ be a nonconstant symmetric Boolean function, and let $C$ be the number of sign changes in its Hamming-weight sequence. For any two-input Boolean gate $G$, define $H_G(z,y):=G(z,T(y))$. Then
+Let $T:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace$ be a nonconstant symmetric Boolean function, and let $C$ be the number of sign changes in its Hamming-weight sequence. For any two-input Boolean gate $G$, define $H_G(z,y):=G(z,T(y))$. Then
 
 $$
 H^{*}(H_G)=
@@ -4555,7 +4555,7 @@ $$
 
 ### Lemma 144. Positive-order one-bit gate sandwich
 
-Let $f:\{0,1\}^{m}\to\{0,1\}$, and let $C_{+}(f)$ be the optimized positive-projection sign-change count. For any two-input Boolean gate $G$, define $H_G(z,y):=G(z,f(y))$. Constants cost $0$, raw-bit literals cost $1$, and if $f$ is nonconstant, XOR and XNOR satisfy
+Let $f:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace$, and let $C_{+}(f)$ be the optimized positive-projection sign-change count. For any two-input Boolean gate $G$, define $H_G(z,y):=G(z,f(y))$. Constants cost $0$, raw-bit literals cost $1$, and if $f$ is nonconstant, XOR and XNOR satisfy
 
 $$
 \deg_{\pm}(f)+1
@@ -4581,7 +4581,7 @@ $$
 
 ### Lemma 145. Common positive-statistic multi-slice bound
 
-Let $k\geq0$, let $z\in\{0,1\}^{k}$ be raw bits, and let $t(y)=\sum_i\lambda_i y_i$ have positive coefficients. Suppose every raw-bit slice factors through $t$:
+Let $k\geq0$, let $z\in\lbrace0,1\rbrace^{k}$ be raw bits, and let $t(y)=\sum_i\lambda_i y_i$ have positive coefficients. Suppose every raw-bit slice factors through $t$:
 
 $$
 f(a,y)=F_a(t(y)).
@@ -4592,7 +4592,7 @@ Let $C_a$ be the sign-change count of $F_a$ along the ordered image of $t$. Then
 $$
 H^{*}(f)
 \leq
-\sum_{a\in\{0,1\}^{k}} C_a
+\sum_{a\in\lbrace0,1\rbrace^{k}} C_a
 +
 2^{k}-1.
 $$
@@ -4608,7 +4608,7 @@ Under the same setup as Lemma 145, suppose $P$ is a strict sign polynomial for $
 $$
 H^{*}(f)
 \leq
-\sum_{a\in\{0,1\}^{k}}d_a
+\sum_{a\in\lbrace0,1\rbrace^{k}}d_a
 +
 2^{k}-1.
 $$
@@ -4630,7 +4630,7 @@ Under the same shared-statistic setup as Lemma 145 with $k\geq1$, choose positiv
 $$
 H^{*}(f)
 \leq
-\sum_{a\in\{0,1\}^{k}}C_a+J_{\rho}.
+\sum_{a\in\lbrace0,1\rbrace^{k}}C_a+J_{\rho}.
 $$
 
 > **Interpretation.** The multi-slice construction pays only for boundary label changes that actually occur in the chosen raw-slice order.
@@ -4645,7 +4645,7 @@ $$
 H_G(z,y):=G(z,T(y))
 $$
 
-for a Boolean gate $G:\{0,1\}^{k}\times\{0,1\}\to\{0,1\}$. For a chosen positive raw-slice order, let $N_G$ be the number of raw assignments whose slice is $T$ or $1-T$, and let $J_{\rho,G}$ be the number of actual boundary jumps between consecutive raw slices. Then
+for a Boolean gate $G:\lbrace0,1\rbrace^{k}\times\lbrace0,1\rbrace\to\lbrace0,1\rbrace$. For a chosen positive raw-slice order, let $N_G$ be the number of raw assignments whose slice is $T$ or $1-T$, and let $J_{\rho,G}$ be the number of actual boundary jumps between consecutive raw slices. Then
 
 $$
 H^{*}(H_G)\leq N_GC+J_{\rho,G}.
@@ -4657,18 +4657,18 @@ $$
 
 ### Lemma 149. Optimized ordered positive-statistic slice cost
 
-For a split $f(z,y)$ with $k\geq1$ raw bits, define $\operatorname{osc}_{+}^{z\mid y}(f)$ by minimizing, over all common positive-statistic certificates $t(y)$ for the raw slices and all positive raw-slice orders $\rho$, the cost
+For a split $f(z,y)$ with $k\geq1$ raw bits, define $\mathrm{osc}_{+}^{z\mid y}(f)$ by minimizing, over all common positive-statistic certificates $t(y)$ for the raw slices and all positive raw-slice orders $\rho$, the cost
 
 $$
 \Omega_{t,\rho}(f)
 =
-\sum_{a\in\{0,1\}^{k}} C_a+J_{t,\rho}(f),
+\sum_{a\in\lbrace0,1\rbrace^{k}} C_a+J_{t,\rho}(f),
 $$
 
 where $C_a$ is the within-slice sign-change count and $J_{t,\rho}(f)$ is the actual boundary-jump count in the chosen raw order. Then
 
 $$
-H^{*}(f)\leq \operatorname{osc}_{+}^{z\mid y}(f).
+H^{*}(f)\leq \mathrm{osc}_{+}^{z\mid y}(f).
 $$
 
 > **Interpretation.** The ordered multi-slice construction becomes an optimized invariant once the common statistic and raw order are minimized.
@@ -4690,7 +4690,7 @@ for one positive statistic $t(y)$. For any positive raw order $\rho$,
 $$
 H^{*}(f)
 \leq
-\sum_{a\in\{0,1\}^{k}}d_a+J_{\rho}(f).
+\sum_{a\in\lbrace0,1\rbrace^{k}}d_a+J_{\rho}(f).
 $$
 
 In particular, if $P$ has total degree at most $d$ in $t(y),z_1,\ldots,z_k$, then
@@ -4707,7 +4707,7 @@ $$
 
 ### Lemma 151. Positive mixed boundary gate bound
 
-For raw functions $p,q:\{0,1\}^{k}\to\{0,1\}$, let $B_{+}(p,q)$ be the minimum, over positive raw orders, of the number of adjacent mixed transitions $p(a^{(r)})\neq q(a^{(r+1)})$.
+For raw functions $p,q:\lbrace0,1\rbrace^{k}\to\lbrace0,1\rbrace$, let $B_{+}(p,q)$ be the minimum, over positive raw orders, of the number of adjacent mixed transitions $p(a^{(r)})\neq q(a^{(r+1)})$.
 
 Let $T(y)=F(t(y))$ have sign-change count $C$, and let
 
@@ -4717,7 +4717,7 @@ e_{\min}=F(\tau_0),
 e_{\max}=F(\tau_{M-1}).
 $$
 
-For a gate $G:\{0,1\}^{k}\times\{0,1\}\to\{0,1\}$, put $g_e(a)=G(a,e)$ and $N_G=\lvert\{a:g_0(a)\neq g_1(a)\}\rvert$. Then
+For a gate $G:\lbrace0,1\rbrace^{k}\times\lbrace0,1\rbrace\to\lbrace0,1\rbrace$, put $g_e(a)=G(a,e)$ and $N_G=\lvert\lbrace a:g_0(a)\neq g_1(a)\rbrace\rvert$. Then
 
 $$
 H^{*}\bigl(G(z,T(y))\bigr)
@@ -4751,10 +4751,10 @@ $$
 
 ### Lemma 153. Mixed boundary inequality
 
-For raw functions $p,q:\{0,1\}^{k}\to\{0,1\}$, let
+For raw functions $p,q:\lbrace0,1\rbrace^{k}\to\lbrace0,1\rbrace$, let
 
 $$
-D(p,q):=\lvert\{a:p(a)\neq q(a)\}\rvert.
+D(p,q):=\lvert\lbrace a:p(a)\neq q(a)\rbrace\rvert.
 $$
 
 Then
@@ -4762,7 +4762,7 @@ Then
 $$
 B_{+}(p,q)
 \leq
-\min\{C_{+}(p),C_{+}(q)\}+D(p,q).
+\min\lbrace C_{+}(p),C_{+}(q)\rbrace+D(p,q).
 $$
 
 Consequently, if $F(\tau_0)\neq F(\tau_{M-1})$ in Lemma 151, then
@@ -4770,7 +4770,7 @@ Consequently, if $F(\tau_0)\neq F(\tau_{M-1})$ in Lemma 151, then
 $$
 H^{*}\bigl(G(z,T(y))\bigr)
 \leq
-N_GC+\min\{C_{+}(g_0),C_{+}(g_1)\}+N_G.
+N_GC+\min\lbrace C_{+}(g_0),C_{+}(g_1)\rbrace+N_G.
 $$
 
 > **Interpretation.** Opposite feature endpoints cost ordinary raw variation plus one unit for each raw slice where the gate depends on the feature.
@@ -4779,7 +4779,7 @@ $$
 
 ### Lemma 154. Raw-mask gate endpoint bounds
 
-Let $R:\{0,1\}^{k}\to\{0,1\}$ be a raw mask, let $T(y)=F(t(y))$ have sign-change count $C$, and put $e_0=F(\tau_0)$, $e_1=F(\tau_{M-1})$. Let
+Let $R:\lbrace0,1\rbrace^{k}\to\lbrace0,1\rbrace$ be a raw mask, let $T(y)=F(t(y))$ have sign-change count $C$, and put $e_0=F(\tau_0)$, $e_1=F(\tau_{M-1})$. Let
 
 $$
 r_1=\lvert R^{-1}(1)\rvert,
@@ -4827,14 +4827,14 @@ $$
 
 ### Theorem 155. Multi-raw gate sandwich and single-slice exactness
 
-Let $T(y)=F(t(y))$ be a nonconstant positive-statistic feature with sign-change count $C$, and let $G:\{0,1\}^{k}\times\{0,1\}\to\{0,1\}$. Put $H_G(z,y)=G(z,T(y))$, $g_e(a)=G(a,e)$, and $N_G=\lvert\{a:g_0(a)\neq g_1(a)\}\rvert$. Then
+Let $T(y)=F(t(y))$ be a nonconstant positive-statistic feature with sign-change count $C$, and let $G:\lbrace0,1\rbrace^{k}\times\lbrace0,1\rbrace\to\lbrace0,1\rbrace$. Put $H_G(z,y)=G(z,T(y))$, $g_e(a)=G(a,e)$, and $N_G=\lvert\lbrace a:g_0(a)\neq g_1(a)\rbrace\rvert$. Then
 
 $$
-\max\left\{
+\max\left\lbrace
 \mathbf{1}_{N_G>0}H^{*}(T),
 H^{*}(g_0),
 H^{*}(g_1)
-\right\}
+\right\rbrace
 \leq
 H^{*}(H_G)
 \leq
@@ -4933,7 +4933,7 @@ with analogous conjunction and disjunction bounds from the theorem file.
 
 ### Theorem 158. Shared-statistic slice sandwich
 
-Let $f(a,y)=F_a(t(y))$ for every raw assignment $a\in\{0,1\}^{k}$, where $t$ is one positive statistic. Let $C_a$ be the sign-change count of $F_a$ along the ordered image of $t$, and define endpoint raw functions
+Let $f(a,y)=F_a(t(y))$ for every raw assignment $a\in\lbrace0,1\rbrace^{k}$, where $t$ is one positive statistic. Let $C_a$ be the sign-change count of $F_a$ along the ordered image of $t$, and define endpoint raw functions
 
 $$
 q(a):=F_a(\tau_0),
@@ -4999,7 +4999,7 @@ If all endpoints are common, the $B_{+}(p,q)$ term vanishes.
 
 ### Theorem 160. Addressed common-endpoint direct sum
 
-Let $A\subseteq\{0,1\}^{k}$ be a set of raw addresses. For each $a\in A$, let
+Let $A\subseteq\lbrace0,1\rbrace^{k}$ be a set of raw addresses. For each $a\in A$, let
 
 $$
 T_a(y)=F_a(t(y))
@@ -5050,15 +5050,15 @@ Then
 $$
 H^{*}(f)
 \leq
-\sum_a C_a+\min\{C_{+}(p),C_{+}(q)\}+D(p,q),
+\sum_a C_a+\min\lbrace C_{+}(p),C_{+}(q)\rbrace+D(p,q),
 $$
 
-where $D(p,q)=\lvert\{a:p(a)\neq q(a)\}\rvert$. If $p$ and $q$ have few-run certificates in positive raw orders, with run costs $K_p$ and $K_q$, then
+where $D(p,q)=\lvert\lbrace a:p(a)\neq q(a)\rbrace\rvert$. If $p$ and $q$ have few-run certificates in positive raw orders, with run costs $K_p$ and $K_q$, then
 
 $$
 H^{*}(f)
 \leq
-\sum_a C_a+\min\{K_p,K_q\}+D(p,q).
+\sum_a C_a+\min\lbrace K_p,K_q\rbrace+D(p,q).
 $$
 
 > **Interpretation.** Endpoint coupling can be bounded by ordinary raw endpoint variation plus endpoint disagreement.
@@ -5089,7 +5089,7 @@ $$
 H^{*}(f)=\deg_{\pm}(f)=L_{\rho}(f).
 $$
 
-The same exactness criterion holds with $L_{\rho}(f)$ replaced by the optimized endpoint-coupled cost $\operatorname{eps}_{+}^{z\mid y}(f)$.
+The same exactness criterion holds with $L_{\rho}(f)$ replaced by the optimized endpoint-coupled cost $\mathrm{eps}_{+}^{z\mid y}(f)$.
 
 > **Interpretation.** Positive concatenation gives exact values whenever threshold degree meets the constructed sign-change cost.
 
@@ -5100,20 +5100,20 @@ The same exactness criterion holds with $L_{\rho}(f)$ replaced by the optimized 
 For a fixed split $(z,y)$, define
 
 $$
-\operatorname{eps}_{+}^{z\mid y}(f)
+\mathrm{eps}_{+}^{z\mid y}(f)
 :=
 \min_t
 \left(
-\sum_{a\in\{0,1\}^{k}} C_a(t)+B_{+}(p_t,q_t)
+\sum_{a\in\lbrace0,1\rbrace^{k}} C_a(t)+B_{+}(p_t,q_t)
 \right),
 $$
 
 where $t$ ranges over all common positive-statistic certificates for the raw slices. Then
 
 $$
-H^{*}(f)\leq \operatorname{eps}_{+}^{z\mid y}(f)
+H^{*}(f)\leq \mathrm{eps}_{+}^{z\mid y}(f)
 \leq
-\operatorname{osc}_{+}^{z\mid y}(f).
+\mathrm{osc}_{+}^{z\mid y}(f).
 $$
 
 The cost is invariant under output complement, raw-coordinate permutation, and feature-coordinate permutation.
@@ -5127,7 +5127,7 @@ The cost is invariant under output complement, raw-coordinate permutation, and f
 Let
 
 $$
-A:=\{a:F_a(t(y))\text{ is nonconstant}\}
+A:=\lbrace a:F_a(t(y))\text{ is nonconstant}\rbrace
 $$
 
 be the active raw-slice set for a shared positive-statistic certificate. Then
@@ -5251,7 +5251,7 @@ $$
 In the setup of Theorem 165, let
 
 $$
-A:=\{r:F(\nu_r,t(y))\text{ is nonconstant}\}
+A:=\lbrace r:F(\nu_r,t(y))\text{ is nonconstant}\rbrace
 $$
 
 be the active raw-level set. Then
@@ -5278,7 +5278,7 @@ If all raw-level slices have one common endpoint background, then $J_{\mathrm{gr
 
 ### Theorem 169. Positive grid cost invariant
 
-For a fixed split $(z,y)$, define $\operatorname{pgc}_{+}^{z\mid y}(f)$ by minimizing the positive-grid cost
+For a fixed split $(z,y)$, define $\mathrm{pgc}_{+}^{z\mid y}(f)$ by minimizing the positive-grid cost
 
 $$
 \sum_{r=0}^{R-1}C_r+J_{\mathrm{grid}}
@@ -5287,12 +5287,12 @@ $$
 over all certificates $f(z,y)=F(u(z),t(y))$ with positive statistics $u$ and $t$. Then
 
 $$
-H^{*}(f)\leq\operatorname{pgc}_{+}^{z\mid y}(f),
+H^{*}(f)\leq\mathrm{pgc}_{+}^{z\mid y}(f),
 \qquad
-C_{+}(f)\leq\operatorname{pgc}_{+}^{z\mid y}(f).
+C_{+}(f)\leq\mathrm{pgc}_{+}^{z\mid y}(f).
 $$
 
-The cost is invariant under output complement, raw-coordinate permutation, and feature-coordinate permutation. If $\deg_{\pm}(f)=\operatorname{pgc}_{+}^{z\mid y}(f)$, then $H^{*}(f)$ is exactly this value.
+The cost is invariant under output complement, raw-coordinate permutation, and feature-coordinate permutation. If $\deg_{\pm}(f)=\mathrm{pgc}_{+}^{z\mid y}(f)$, then $H^{*}(f)$ is exactly this value.
 
 > **Interpretation.** Positive-grid cost is an optimized split invariant that can be much smaller than raw-assignment slice cost.
 
@@ -5349,7 +5349,7 @@ The one-block symmetric fibers give restriction lower bounds, and equality holds
 In the setup of Theorem 170, let $R_b$ be the number of contiguous runs of label $b$ in the lexicographic grid sequence. Then
 
 $$
-H^{*}(f)\leq2\min\{R_0,R_1\}.
+H^{*}(f)\leq2\min\lbrace R_0,R_1\rbrace.
 $$
 
 More sharply, if label $b$ has first and last membership indicators $\epsilon_0,\epsilon_1$, then
@@ -5366,15 +5366,15 @@ If this sharper run count equals $\deg_{\pm}(f)$, the value is exact.
 
 ### Theorem 173. Positive multigrid cost invariant
 
-Fix a partition $\mathcal{P}$ of the input variables into blocks. Define $\operatorname{mgc}_{+}^{\mathcal{P}}(f)$ as the minimum lexicographic grid-path sign-change count over all positive multigrid certificates for $f$ over $\mathcal{P}$ and all block orders. Then
+Fix a partition $\mathcal{P}$ of the input variables into blocks. Define $\mathrm{mgc}_{+}^{\mathcal{P}}(f)$ as the minimum lexicographic grid-path sign-change count over all positive multigrid certificates for $f$ over $\mathcal{P}$ and all block orders. Then
 
 $$
-H^{*}(f)\leq\operatorname{mgc}_{+}^{\mathcal{P}}(f),
+H^{*}(f)\leq\mathrm{mgc}_{+}^{\mathcal{P}}(f),
 \qquad
-C_{+}(f)\leq\operatorname{mgc}_{+}^{\mathcal{P}}(f).
+C_{+}(f)\leq\mathrm{mgc}_{+}^{\mathcal{P}}(f).
 $$
 
-The invariant is unchanged by output complement and by coordinate permutations preserving the partition up to relabeling. If $\deg_{\pm}(f)=\operatorname{mgc}_{+}^{\mathcal{P}}(f)$, then $H^{*}(f)$ equals this value.
+The invariant is unchanged by output complement and by coordinate permutations preserving the partition up to relabeling. If $\deg_{\pm}(f)=\mathrm{mgc}_{+}^{\mathcal{P}}(f)$, then $H^{*}(f)$ equals this value.
 
 > **Interpretation.** Multigrid cost is the partition-level positive-projection invariant behind the lexicographic grid construction.
 
@@ -5388,18 +5388,18 @@ $$
 f(x)=F(\lvert x_{B_1}\rvert,\ldots,\lvert x_{B_b}\rvert),
 $$
 
-let $\operatorname{mhc}(F)$ be the minimum lexicographic Hamming-grid sign-change count over all block orders. Then
+let $\mathrm{mhc}(F)$ be the minimum lexicographic Hamming-grid sign-change count over all block orders. Then
 
 $$
-H^{*}(f)\leq\operatorname{mhc}(F).
+H^{*}(f)\leq\mathrm{mhc}(F).
 $$
 
-If $\deg_{\pm}(f)=\operatorname{mhc}(F)$, then $H^{*}(f)=\deg_{\pm}(f)=\operatorname{mhc}(F)$. If $R_{b,\pi}$ is the number of runs of label $b$ in the grid sequence for order $\pi$, then
+If $\deg_{\pm}(f)=\mathrm{mhc}(F)$, then $H^{*}(f)=\deg_{\pm}(f)=\mathrm{mhc}(F)$. If $R_{b,\pi}$ is the number of runs of label $b$ in the grid sequence for order $\pi$, then
 
 $$
 H^{*}(f)
 \leq
-2\min_{\pi}\min\{R_{0,\pi},R_{1,\pi}\},
+2\min_{\pi}\min\lbrace R_{0,\pi},R_{1,\pi}\rbrace,
 $$
 
 with the sharper endpoint-adjusted run bound from the theorem file.
@@ -5441,15 +5441,15 @@ If $\deg_{\pm}(f)=C_a(G)$, the value is exact. In the total Hamming-weight case 
 For the singleton partition
 
 $$
-\mathcal{P}_{\mathrm{sing}}=\{\{1\},\ldots,\{n\}\},
+\mathcal{P}_{\mathrm{sing}}=\lbrace\lbrace1\rbrace,\ldots,\lbrace n\rbrace\rbrace,
 $$
 
-let $f=\mathrm{XOR}_n$. Then, with $\operatorname{mhc}$ computed for the singleton Hamming profile of parity,
+let $f=\mathrm{XOR}_n$. Then, with $\mathrm{mhc}$ computed for the singleton Hamming profile of parity,
 
 $$
-\operatorname{mgc}_{+}^{\mathcal{P}_{\mathrm{sing}}}(\mathrm{XOR}_n)
+\mathrm{mgc}_{+}^{\mathcal{P}_{\mathrm{sing}}}(\mathrm{XOR}_n)
 =
-\operatorname{mhc}(\mathrm{XOR}_n)
+\mathrm{mhc}(\mathrm{XOR}_n)
 =
 L_n,
 $$
@@ -5577,11 +5577,11 @@ The current dependency structure is:
 97. Lemma 97 uses the one-head atom normal form from Lemma 10 and the restriction argument from Lemma 28.
 98. Lemma 98 combines the raw-calibrated vote support bound from Lemma 93 with the subcube raw calibration cost from Lemma 96.
 99. Lemma 99 optimizes Lemma 98 over all strict cylinder-threshold representations.
-100. Lemma 100 uses the cylinder transformations behind Lemma 99 to prove symmetry invariance, dummy-variable invariance, and restriction monotonicity for $\operatorname{ctc}$.
+100. Lemma 100 uses the cylinder transformations behind Lemma 99 to prove symmetry invariance, dummy-variable invariance, and restriction monotonicity for $\mathrm{ctc}$.
 101. Lemma 101 shows that the local certificate-cover construction from Lemma 44 is a feasible point in the cylinder-threshold cost invariant from Lemma 99.
-102. Lemma 102 observes that every positive monomial is a cylinder of $\operatorname{ctc}$ cost $1$, so sparse PTF representations are feasible cylinder-threshold representations.
+102. Lemma 102 observes that every positive monomial is a cylinder of $\mathrm{ctc}$ cost $1$, so sparse PTF representations are feasible cylinder-threshold representations.
 103. Lemma 103 combines affine approximation from Lemma 48 with the subcube raw calibration construction from Lemma 96.
-104. Lemma 104 compares Lemma 103 with affine-free sparsity from Lemma 48, polynomial-threshold sparsity from Lemma 102, and $\operatorname{ctc}$ from Lemma 99.
+104. Lemma 104 compares Lemma 103 with affine-free sparsity from Lemma 48, polynomial-threshold sparsity from Lemma 102, and $\mathrm{ctc}$ from Lemma 99.
 105. Lemma 105 combines Sherstov's optimal threshold-degree lower bound for intersections of two halfspaces with the threshold-degree lower bound from Lemma 6.
 106. Lemma 106 applies Lemma 105 to the trivial two-gate threshold vote and length-two LTF decision list for the conjunction of two LTFs.
 107. Lemma 107 combines the raw-calibrated vote upper bound from Lemma 93 with the halfspace-intersection lower-bound family from Lemma 105.
@@ -5597,7 +5597,7 @@ The current dependency structure is:
 117. Lemma 117 applies low affine-cylinder exactness from Lemma 109 to one pure-cylinder affine perturbation.
 118. Lemma 118 applies the split affine-cylinder interpolation invariant from Lemma 112 to the two cofactors of one-bit gates over an affine-cylinder feature.
 119. Lemma 119 specializes Lemma 118 to fresh-bit XOR and combines it with the fresh-bit XOR threshold-degree lower bound from Lemma 81.
-120. Lemma 120 combines the cofactor interpolation rule from Lemma 111 with optimal cofactor affine-cylinder costs and the elementary inequality $\kappa(P\cup\{z\},N)\leq2\kappa(P,N)$.
+120. Lemma 120 combines the cofactor interpolation rule from Lemma 111 with optimal cofactor affine-cylinder costs and the elementary inequality $\kappa(P\cup\lbrace z\rbrace,N)\leq2\kappa(P,N)$.
 121. Lemma 121 specializes one-bit affine-cylinder branching from Lemma 118 to literal conjunctions and uses complement duality for literal disjunctions.
 122. Lemma 122 optimizes Lemma 121 over affine-cylinder scores and the two lifted literal orientations, using global bit-flip invariance from Lemma 28.
 123. Lemma 123 classifies the non-XOR and non-XNOR two-input gates into degenerate, feature-only, and literal-gated cases, then applies Lemma 122.
@@ -5688,9 +5688,9 @@ $$
 \leq
 H^{*}(f)
 \leq
-\operatorname{afs}_{\pm}(f)
+\mathrm{afs}_{\pm}(f)
 \leq
-\operatorname{ptfsp}(f),
+\mathrm{ptfsp}(f),
 $$
 
 and therefore
@@ -5708,9 +5708,9 @@ for nonconstant $f$.
 The first nontrivial affine-free support regime is exact:
 
 $$
-\operatorname{afs}_{\pm}(f)\leq2
+\mathrm{afs}_{\pm}(f)\leq2
 \qquad\Longrightarrow\qquad
-H^{*}(f)\in\{0,1,2\},
+H^{*}(f)\in\lbrace0,1,2\rbrace,
 $$
 
 with the same constant, nonconstant LTF, or non-LTF split. In particular, any affine threshold perturbed by one nonlinear monomial is either still one-head or exactly two-head.
@@ -5758,7 +5758,7 @@ For arbitrary sparse cofactor sign polynomials, the stronger split affine-free s
 $$
 H^{*}(f)
 \leq
-\operatorname{scafs}_{\pm}(f).
+\mathrm{scafs}_{\pm}(f).
 $$
 
 It pays for the affine-free support of one base cofactor and for coefficients that change across the split, so shared nonlinear terms are not paid twice.
@@ -5813,7 +5813,7 @@ H^{*}(f)
 \sum_{j:c_j\neq0}\rho(T_j).
 $$
 
-The exact multilinear expansion of $T$ gives $\rho(T)\leq\operatorname{eafs}(T)$. For the internal LTF $x_1\wedge(x_2\vee x_3)$, this gives $\rho(T)\leq3$, while the one-atom obstruction gives $\rho(T)\neq1$.
+The exact multilinear expansion of $T$ gives $\rho(T)\leq\mathrm{eafs}(T)$. For the internal LTF $x_1\wedge(x_2\vee x_3)$, this gives $\rho(T)\leq3$, while the one-atom obstruction gives $\rho(T)\neq1$.
 
 Combining the same raw-cost theorem with the decision-list vote construction gives
 
@@ -5822,7 +5822,7 @@ H^{*}(f)
 \leq
 \sum_{j=1}^{L}\rho(T_j)
 \leq
-\sum_{j=1}^{L}\operatorname{eafs}(T_j)
+\sum_{j=1}^{L}\mathrm{eafs}(T_j)
 $$
 
 for every length-$L$ decision list with tests $T_j$. Thus LTF decision lists now have a concrete fallback through the exact multilinear expansions of the tests, even though a length-$L$ bound for arbitrary LTF tests remains open.
@@ -5854,7 +5854,7 @@ This also proves a direct worst-case lower bound for raw calibration of LTF indi
 $$
 R_{\mathrm{LTF}}(n)
 :=
-\max\{\rho(T):T:\{0,1\}^{n}\to\{0,1\}\text{ is a nonconstant LTF}\},
+\max\lbrace\rho(T):T:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace\text{ is a nonconstant LTF}\rbrace,
 $$
 
 then
@@ -5875,12 +5875,12 @@ $$
 
 Thus raw calibration cost is not controlled by head complexity alone, even inside the one-head class.
 
-The affine-cylinder invariant also has the expected structural behavior: it is invariant under output complement, coordinate permutation, global bit-flip, and dummy-variable extension, and it is monotone under restrictions. Consequently, searches for low $\operatorname{actc}$ can quotient by the same standard symmetries used for $H^{*}$ and $\operatorname{ctc}$.
+The affine-cylinder invariant also has the expected structural behavior: it is invariant under output complement, coordinate permutation, global bit-flip, and dummy-variable extension, and it is monotone under restrictions. Consequently, searches for low $\mathrm{actc}$ can quotient by the same standard symmetries used for $H^{*}$ and $\mathrm{ctc}$.
 
-At the first nontrivial level, $\operatorname{actc}$ gives exact head counts. If
+At the first nontrivial level, $\mathrm{actc}$ gives exact head counts. If
 
 $$
-\operatorname{actc}(f)\leq2,
+\mathrm{actc}(f)\leq2,
 $$
 
 then $H^{*}(f)$ is exactly $0$, $1$, or $2$ according as $f$ is constant, a nonconstant LTF, or neither. This packages the low affine-free support exactness result and gives the same conclusion to any function with a two-cost affine-cylinder certificate.
@@ -5892,26 +5892,26 @@ $$
 \leq
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\min\{\operatorname{ctc}(f),\operatorname{afs}_{\pm}(f)\}.
+\min\lbrace\mathrm{ctc}(f),\mathrm{afs}_{\pm}(f)\rbrace.
 $$
 
-Thus high-threshold-degree families force high $\operatorname{actc}$. In particular,
+Thus high-threshold-degree families force high $\mathrm{actc}$. In particular,
 
 $$
-\operatorname{actc}(\mathrm{XOR}_n)\geq n,
+\mathrm{actc}(\mathrm{XOR}_n)\geq n,
 $$
 
-and Sherstov's hard intersections of two halfspaces satisfy $\operatorname{actc}(F_n)\geq c n$.
+and Sherstov's hard intersections of two halfspaces satisfy $\mathrm{actc}(F_n)\geq c n$.
 
-There is also a cofactor interpolation rule for $\operatorname{actc}$. If two cofactors have affine-cylinder scores, one can glue them by
+There is also a cofactor interpolation rule for $\mathrm{actc}$. If two cofactors have affine-cylinder scores, one can glue them by
 
 $$
 S(z,y)=(1-z)S_0(y)+zS_1(y).
 $$
 
-The resulting cost pays for the base affine-cylinder certificate, for affine slopes that change across the split as cylinders $zy_i$, and for cylinder coefficients that change across the split as cylinders $zC_{P,N}$. Thus $\operatorname{actc}$ has a recursive search rule analogous to the split affine-free support invariant, but with mixed-literal cylinders replacing monomials.
+The resulting cost pays for the base affine-cylinder certificate, for affine slopes that change across the split as cylinders $zy_i$, and for cylinder coefficients that change across the split as cylinders $zC_{P,N}$. Thus $\mathrm{actc}$ has a recursive search rule analogous to the split affine-free support invariant, but with mixed-literal cylinders replacing monomials.
 
 Subcube indicators now have an explicit raw-cost certificate. For
 
@@ -5927,7 +5927,7 @@ Lemma 96 gives
 $$
 \rho(C_{P,N})
 \leq
-\min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}
+\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace
 $$
 
 unless the cylinder is vacuous, in which case the cost is $0$. Thus the local certificate-expansion theorem can be used as a per-feature raw calibration theorem inside votes and decision lists, not only as a one-sided cover of a label class.
@@ -5955,57 +5955,57 @@ $$
 where $\kappa(P,N)=0$ for the vacuous cylinder and otherwise equals
 
 $$
-\min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}.
+\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace.
 $$
 
 This extends local certificate expansion from one-sided covers to arbitrary strict real votes over partial-assignment cylinders.
 
-Optimizing this certificate gives the cylinder-threshold cost invariant $\operatorname{ctc}(f)$:
+Optimizing this certificate gives the cylinder-threshold cost invariant $\mathrm{ctc}(f)$:
 
 $$
-H^{*}(f)\leq\operatorname{ctc}(f).
+H^{*}(f)\leq\mathrm{ctc}(f).
 $$
 
 This invariant is finite for every Boolean function by the singleton-cylinder representation. It packages local certificate covers, signed overlapping cylinder votes, and any future low-cost cylinder-threshold normal form into one upper-bound target.
 
-The invariant $\operatorname{ctc}$ has the same basic structural behavior expected of a reusable Boolean-function cost. It is invariant under output complement, coordinate permutation, global bit-flip, and dummy-variable extension, and it is monotone under restrictions:
+The invariant $\mathrm{ctc}$ has the same basic structural behavior expected of a reusable Boolean-function cost. It is invariant under output complement, coordinate permutation, global bit-flip, and dummy-variable extension, and it is monotone under restrictions:
 
 $$
-\operatorname{ctc}(g)\leq\operatorname{ctc}(f)
+\mathrm{ctc}(g)\leq\mathrm{ctc}(f)
 $$
 
 whenever $g$ is a restriction of $f$. Thus upper-bound searches may quotient by the standard symmetries, while lower-bound attempts may pass to restrictions.
 
-The $\operatorname{ctc}$ invariant also subsumes the local certificate-expansion route. A one-sided certificate cover gives a feasible strict cylinder-threshold score, so
+The $\mathrm{ctc}$ invariant also subsumes the local certificate-expansion route. A one-sided certificate cover gives a feasible strict cylinder-threshold score, so
 
 $$
-\operatorname{ctc}(f)
+\mathrm{ctc}(f)
 \leq
 \sum_{(P,N)\in\mathcal{C}_b}\kappa(P,N)
 $$
 
-for $b\in\{0,1\}$. Thus the DNF/CNF local-expansion and decision-tree leaf-profile costs are upper bounds on $\operatorname{ctc}(f)$ before converting to heads.
+for $b\in\lbrace0,1\rbrace$. Thus the DNF/CNF local-expansion and decision-tree leaf-profile costs are upper bounds on $\mathrm{ctc}(f)$ before converting to heads.
 
-The ordinary sparse-PTF route also factors through $\operatorname{ctc}$. Every positive monomial $\prod_{i\in S}x_i$ is the cylinder $C_{S,\varnothing}$ with $\kappa(S,\varnothing)=1$, so
-
-$$
-H^{*}(f)
-\leq
-\operatorname{ctc}(f)
-\leq
-\operatorname{ptfsp}(f).
-$$
-
-Thus $\operatorname{ctc}$ is a common refinement of local cylinder covers and sparse monomial sign-polynomial certificates, although affine-free sparsity can still be sharper for dense affine threshold pieces.
-
-The dense-affine caveat is now captured by a stronger invariant. The affine-cylinder threshold cost $\operatorname{actc}(f)$ allows one arbitrary affine part at cost one when its linear part is nonzero, then pays the same local cylinder cost for the remaining strict signed cylinder vote:
+The ordinary sparse-PTF route also factors through $\mathrm{ctc}$. Every positive monomial $\prod_{i\in S}x_i$ is the cylinder $C_{S,\varnothing}$ with $\kappa(S,\varnothing)=1$, so
 
 $$
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{ctc}(f)
 \leq
-\operatorname{ctc}(f).
+\mathrm{ptfsp}(f).
+$$
+
+Thus $\mathrm{ctc}$ is a common refinement of local cylinder covers and sparse monomial sign-polynomial certificates, although affine-free sparsity can still be sharper for dense affine threshold pieces.
+
+The dense-affine caveat is now captured by a stronger invariant. The affine-cylinder threshold cost $\mathrm{actc}(f)$ allows one arbitrary affine part at cost one when its linear part is nonzero, then pays the same local cylinder cost for the remaining strict signed cylinder vote:
+
+$$
+H^{*}(f)
+\leq
+\mathrm{actc}(f)
+\leq
+\mathrm{ctc}(f).
 $$
 
 It also refines affine-free sparse sign-polynomial certificates:
@@ -6013,11 +6013,11 @@ It also refines affine-free sparse sign-polynomial certificates:
 $$
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\operatorname{afs}_{\pm}(f)
+\mathrm{afs}_{\pm}(f)
 \leq
-\operatorname{ptfsp}(f).
+\mathrm{ptfsp}(f).
 $$
 
 Hence the current best optimized upper-bound hierarchy is
@@ -6025,17 +6025,17 @@ Hence the current best optimized upper-bound hierarchy is
 $$
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\min\{\operatorname{ctc}(f),\operatorname{afs}_{\pm}(f)\}.
+\min\lbrace\mathrm{ctc}(f),\mathrm{afs}_{\pm}(f)\rbrace.
 $$
 
-For nonconstant functions with $\deg_{\pm}(f)\leq d$, this recovers the affine-free degree bound through $\operatorname{actc}$:
+For nonconstant functions with $\deg_{\pm}(f)\leq d$, this recovers the affine-free degree bound through $\mathrm{actc}$:
 
 $$
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
 1+\sum_{r=2}^{d}\binom{n}{r}.
 $$
@@ -6069,7 +6069,7 @@ More generally, the threshold-degree behavior of every one-bit gate $G(z,T(y))$ 
 The XOR amplifier iterates over parity blocks:
 
 $$
-\deg_{\pm}\!\left(\left(\bigoplus_{j=1}^{k}z_j\right)\oplus T(y)\right)
+\deg_{\pm}\negthinspace\left(\left(\bigoplus_{j=1}^{k}z_j\right)\oplus T(y)\right)
 =
 k+\deg_{\pm}(T).
 $$
@@ -6095,7 +6095,7 @@ This also solves the first adaptive decision-tree layer: if $D(f)\leq2$, then $f
 For four-bit functions, the current best universal bound is much sharper than the generic interpolation bound:
 
 $$
-f : \{0,1\}^4 \to \{0,1\}
+f : \lbrace0,1\rbrace^4 \to \lbrace0,1\rbrace
 \qquad \Longrightarrow \qquad
 H^{*}(f) \leq 4.
 $$
@@ -6103,7 +6103,7 @@ $$
 For five-bit functions, a larger determinant certificate gives
 
 $$
-f : \{0,1\}^5 \to \{0,1\}
+f : \lbrace0,1\rbrace^5 \to \lbrace0,1\rbrace
 \qquad \Longrightarrow \qquad
 H^{*}(f) \leq 7.
 $$
@@ -6111,7 +6111,7 @@ $$
 For six-bit functions, the current determinant certificate gives
 
 $$
-f : \{0,1\}^6 \to \{0,1\}
+f : \lbrace0,1\rbrace^6 \to \lbrace0,1\rbrace
 \qquad \Longrightarrow \qquad
 H^{*}(f) \leq 11.
 $$
@@ -6119,7 +6119,7 @@ $$
 For seven-bit functions, the current determinant certificate gives
 
 $$
-f : \{0,1\}^7 \to \{0,1\}
+f : \lbrace0,1\rbrace^7 \to \lbrace0,1\rbrace
 \qquad \Longrightarrow \qquad
 H^{*}(f) \leq 19.
 $$
@@ -6127,7 +6127,7 @@ $$
 For eight-bit functions, the current determinant certificate gives
 
 $$
-f : \{0,1\}^8 \to \{0,1\}
+f : \lbrace0,1\rbrace^8 \to \lbrace0,1\rbrace
 \qquad \Longrightarrow \qquad
 H^{*}(f) \leq 32.
 $$
@@ -6135,7 +6135,7 @@ $$
 For nine-bit functions, the current determinant certificate gives
 
 $$
-f : \{0,1\}^9 \to \{0,1\}
+f : \lbrace0,1\rbrace^9 \to \lbrace0,1\rbrace
 \qquad \Longrightarrow \qquad
 H^{*}(f) \leq 57.
 $$
@@ -6143,7 +6143,7 @@ $$
 For ten-bit functions, the current determinant certificate gives
 
 $$
-f : \{0,1\}^{10} \to \{0,1\}
+f : \lbrace0,1\rbrace^{10} \to \lbrace0,1\rbrace
 \qquad \Longrightarrow \qquad
 H^{*}(f) \leq 103.
 $$
@@ -6151,7 +6151,7 @@ $$
 The compact threshold certificate further gives
 
 $$
-f : \{0,1\}^{11} \to \{0,1\}
+f : \lbrace0,1\rbrace^{11} \to \lbrace0,1\rbrace
 \qquad \Longrightarrow \qquad
 H^{*}(f) \leq 187,
 $$
@@ -6159,7 +6159,7 @@ $$
 and
 
 $$
-f : \{0,1\}^{12} \to \{0,1\}
+f : \lbrace0,1\rbrace^{12} \to \lbrace0,1\rbrace
 \qquad \Longrightarrow \qquad
 H^{*}(f) \leq 342.
 $$
@@ -6181,9 +6181,9 @@ The certificates through $n=12$ meet that dimension threshold.
 On the lower-bound side, the counting lemma gives a worst-case exponential lower bound:
 
 $$
-\max_{f : \{0,1\}^n \to \{0,1\}} H^{*}(f)
+\max_{f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace} H^{*}(f)
 =
-\Omega\!\left(\frac{2^n}{n^2}\right).
+\Omega\negthinspace\left(\frac{2^n}{n^2}\right).
 $$
 
 Moreover, this is a typical-function statement: for some absolute constant $c>0$, all but a $2^{-\Omega(2^n)}$ fraction of $n$-bit Boolean functions have
@@ -6204,7 +6204,7 @@ Affine level sets are now uniformly controlled: every predicate of the form $\ma
 
 The same two-head mechanism controls affine slabs: every predicate $\mathbf{1}[\alpha\leq L(x)\leq\beta]$ has exact value $0$, $1$, or $2$ according as it is constant, a nonconstant LTF, or neither. This includes tolerance predicates around equality of binary encodings.
 
-For any function of one affine statistic $G(L(x))$, the ordered sign-change count of $G$ gives an orientation-free upper bound. Zero, one, and two changes are exactly handled by constants, LTFs, and affine slabs; three or more changes have the explicit bound $1+\sum_{r=2}^{\min\{C,k\}}\binom{k}{r}$, where $k$ is the support size of $L$.
+For any function of one affine statistic $G(L(x))$, the ordered sign-change count of $G$ gives an orientation-free upper bound. Zero, one, and two changes are exactly handled by constants, LTFs, and affine slabs; three or more changes have the explicit bound $1+\sum_{r=2}^{\min\lbrace C,k\rbrace}\binom{k}{r}$, where $k$ is the support size of $L$.
 
 Sparse-support structure is also sharper at the first nontrivial level: if the smaller label class has size at most two, then the exact value is $0$, $1$, or $2$ according as the function is constant, a nonconstant LTF, or neither.
 
@@ -6230,7 +6230,7 @@ That is not yet a full invariant. It is only a partial answer:
 - positive-projection sign-change count is exact whenever it equals threshold degree, and all functions with $C_{+}(f)\leq2$ have exact value $0$, $1$, or $2$ according as they are constant, nonconstant LTFs, or neither,
 - affine level-set predicates $\mathbf{1}[L(x)=0]$ have exact value $0$, $1$, or $2$ according as they are constant, nonconstant LTFs, or neither,
 - affine slab predicates $\mathbf{1}[\alpha\leq L(x)\leq\beta]$ have exact value $0$, $1$, or $2$ according as they are constant, nonconstant LTFs, or neither,
-- affine-statistic predicates $G(L(x))$ have an orientation-free sign-change upper bound $H^{*}\leq1+\sum_{r=2}^{\min\{C,k\}}\binom{k}{r}$ for $C\geq3$, with exact handling for $C\leq2$,
+- affine-statistic predicates $G(L(x))$ have an orientation-free sign-change upper bound $H^{*}\leq1+\sum_{r=2}^{\min\lbrace C,k\rbrace}\binom{k}{r}$ for $C\geq3$, with exact handling for $C\leq2$,
 - functions with minority support size at most two have exact value $0$, $1$, or $2$ according as they are constant, nonconstant LTFs, or neither,
 - affine-hull clean label classes with proper affine hull have exact value $0$, $1$, or $2$ according as the function is constant, a nonconstant LTF, or neither,
 - the standard three-pair endpoint families $\mathrm{INT}_3,\mathrm{DISJ}_3,\mathrm{SUB}_3,\mathrm{NCON}_3,\mathrm{NEQ}_3$ also have exact value $2$,
@@ -6250,13 +6250,13 @@ That is not yet a full invariant. It is only a partial answer:
 - Fourier-tail structure certifies $\deg_{\pm}(f)\leq d$, which can feed into degree-restricted span upper bounds,
 - Fourier support-cost structure certifies direct head upper bounds from sparse Walsh sign approximants,
 - bounded DNF/CNF width certifies $\deg_{\pm}(f)\leq w$, which can feed into degree-restricted span upper bounds,
-- polynomial-threshold sparsity certifies $H^{*}(f)\leq\operatorname{ptfsp}(f)$, and affine-free sparsity sharpens this to $H^{*}(f)\leq1+\sum_{r=2}^{d}\binom{n}{r}$ for nonconstant functions with $\deg_{\pm}(f)\leq d$,
+- polynomial-threshold sparsity certifies $H^{*}(f)\leq\mathrm{ptfsp}(f)$, and affine-free sparsity sharpens this to $H^{*}(f)\leq1+\sum_{r=2}^{d}\binom{n}{r}$ for nonconstant functions with $\deg_{\pm}(f)\leq d$,
 - cofactor sparse-polynomial recursion certifies $H^{*}(f)\leq m_0+\lvert\mathcal{A}_0\cup\mathcal{A}_1\rvert+1$ from sparse sign polynomials for the two cofactors,
 - affine-free cofactor recursion certifies $H^{*}(f)\leq n$ whenever some split has constant or LTF cofactors, and gives exact two-head control when the two affine cofactor separators differ in at most one slope,
 - LTF cofactor slope distance certifies $H^{*}(f)\leq1+t$ when $t$ affine slopes change across a split with LTF cofactors,
 - the split LTF slope invariant certifies $H^{*}(f)\leq1+\sigma_{\mathrm{split}}(f)$ after minimizing over split coordinates and affine separator choices,
-- the split affine-free support invariant certifies $H^{*}(f)\leq\operatorname{scafs}_{\pm}(f)$ by paying for one base cofactor and the coefficient changes across a split,
-- one-bit LTF branching certifies $H^{*}(G(z,T(y)))\leq1+\lvert\operatorname{supp}(L)\rvert$ for every Boolean gate $G$,
+- the split affine-free support invariant certifies $H^{*}(f)\leq\mathrm{scafs}_{\pm}(f)$ by paying for one base cofactor and the coefficient changes across a split,
+- one-bit LTF branching certifies $H^{*}(G(z,T(y)))\leq1+\lvert\mathrm{supp}(L)\rvert$ for every Boolean gate $G$,
 - one-bit sparse-PTF branching certifies $H^{*}(G(z,T(y)))\leq1+\ell(P)+2q(P)$, with sharper branch-dependent costs when one slice is constant,
 - one-bit non-XOR recursion certifies $H^{*}(G(z,T(y)))\leq H^{*}(T)+1$ for every inner feature $T$ whenever $G$ is neither XOR nor XNOR,
 - literal decision lists certify $H^{*}(f)\leq L_{\mathrm{litDL}}(f)$ by iterating the non-XOR recursion one tested literal at a time,
@@ -6264,25 +6264,25 @@ That is not yet a full invariant. It is only a partial answer:
 - calibrated decision lists certify $H^{*}(f)\leq L$ whenever their test indicators have one-head atom approximations accurate enough for the strict decision-list vote margin,
 - the internal LTF $x_1\wedge(x_2\vee x_3)$ cannot have its raw indicator approximated within error below $1/4$ by any one-head atom, even though it is itself one-head computable after thresholding,
 - this $1/4$ barrier is the exact infimum of the one-atom uniform approximation error for that internal LTF indicator,
-- raw-calibrated votes certify $H^{*}$ upper bounds by summing the raw atom approximation costs $\rho(T_j)$ of their inner features, with $\rho(T)\leq\operatorname{eafs}(T)$ as a concrete exact-polynomial fallback,
-- raw-calibrated decision lists certify $H^{*}(f)\leq\sum_j\rho(T_j)\leq\sum_j\operatorname{eafs}(T_j)$ for tests $T_j$,
+- raw-calibrated votes certify $H^{*}$ upper bounds by summing the raw atom approximation costs $\rho(T_j)$ of their inner features, with $\rho(T)\leq\mathrm{eafs}(T)$ as a concrete exact-polynomial fallback,
+- raw-calibrated decision lists certify $H^{*}(f)\leq\sum_j\rho(T_j)\leq\sum_j\mathrm{eafs}(T_j)$ for tests $T_j$,
 - threshold degree lower-bounds raw calibration cost in strict votes: $\deg_{\pm}(f)\leq\sum_j\rho(T_j)$,
-- subcube tests satisfy $\rho(C_{P,N})\leq\min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}$, with cost $0$ for the vacuous cylinder,
+- subcube tests satisfy $\rho(C_{P,N})\leq\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace$, with cost $0$ for the vacuous cylinder,
 - raw calibration cost is invariant under complements, coordinate permutations, global bit-flips, and dummy variables, and it is monotone under restrictions,
 - strict threshold votes over subcube indicators certify $H^{*}$ upper bounds by summing the local costs $\kappa(P,N)$,
-- the optimized cylinder-threshold cost $\operatorname{ctc}(f)$ is a finite direct upper-bound invariant for every Boolean function,
-- $\operatorname{ctc}$ is invariant under complements, coordinate permutations, global bit-flips, and dummy variables, and it is monotone under restrictions,
-- $\operatorname{ctc}$ subsumes one-sided local certificate covers, mixed-literal DNF/CNF local expansion, and decision-tree leaf-profile costs,
-- $\operatorname{ctc}(f)\leq\operatorname{ptfsp}(f)$, so sparse PTF upper bounds factor through the cylinder-threshold invariant,
-- affine-cylinder threshold cost certifies $H^{*}(f)\leq\operatorname{actc}(f)\leq\operatorname{ctc}(f)$ by allowing one dense affine component at cost one,
-- $\operatorname{actc}(f)\leq\operatorname{afs}_{\pm}(f)\leq\operatorname{ptfsp}(f)$, so affine-free sparse PTF bounds also factor through the affine-cylinder invariant,
+- the optimized cylinder-threshold cost $\mathrm{ctc}(f)$ is a finite direct upper-bound invariant for every Boolean function,
+- $\mathrm{ctc}$ is invariant under complements, coordinate permutations, global bit-flips, and dummy variables, and it is monotone under restrictions,
+- $\mathrm{ctc}$ subsumes one-sided local certificate covers, mixed-literal DNF/CNF local expansion, and decision-tree leaf-profile costs,
+- $\mathrm{ctc}(f)\leq\mathrm{ptfsp}(f)$, so sparse PTF upper bounds factor through the cylinder-threshold invariant,
+- affine-cylinder threshold cost certifies $H^{*}(f)\leq\mathrm{actc}(f)\leq\mathrm{ctc}(f)$ by allowing one dense affine component at cost one,
+- $\mathrm{actc}(f)\leq\mathrm{afs}_{\pm}(f)\leq\mathrm{ptfsp}(f)$, so affine-free sparse PTF bounds also factor through the affine-cylinder invariant,
 - intersections of two halfspaces can have $H^{*}(f)\geq c n$, by threshold-degree lower bounds,
 - threshold-vote size and LTF decision-list length can both be at most $2$ while $H^{*}$ grows linearly,
 - one-head computable LTFs can have raw calibration cost $\rho(T)\geq c n$,
-- $\operatorname{actc}$ is invariant under complements, coordinate permutations, global bit-flips, and dummy variables, and it is monotone under restrictions,
-- functions with $\operatorname{actc}(f)\leq2$ have exact value $0$, $1$, or $2$ according as they are constant, nonconstant LTFs, or neither,
-- threshold degree lower-bounds $\operatorname{actc}$, $\operatorname{ctc}$, $\operatorname{afs}_{\pm}$, and $\operatorname{ptfsp}$ through the head-complexity sandwich,
-- affine-cylinder cofactor interpolation certifies $\operatorname{actc}$ upper bounds by paying only for base cylinder supports and changed affine or cylinder coefficients across a split,
+- $\mathrm{actc}$ is invariant under complements, coordinate permutations, global bit-flips, and dummy variables, and it is monotone under restrictions,
+- functions with $\mathrm{actc}(f)\leq2$ have exact value $0$, $1$, or $2$ according as they are constant, nonconstant LTFs, or neither,
+- threshold degree lower-bounds $\mathrm{actc}$, $\mathrm{ctc}$, $\mathrm{afs}_{\pm}$, and $\mathrm{ptfsp}$ through the head-complexity sandwich,
+- affine-cylinder cofactor interpolation certifies $\mathrm{actc}$ upper bounds by paying only for base cylinder supports and changed affine or cylinder coefficients across a split,
 - fresh-bit XOR certifies $\deg_{\pm}(z\oplus f)=\deg_{\pm}(f)+1$ and hence $H^{*}(z\oplus f)\geq\deg_{\pm}(f)+1$,
 - one-bit gate threshold-degree trichotomy says XOR and XNOR are the only one-bit gates that raise threshold degree, while non-XOR gates using the feature preserve it,
 - parity-block XOR certifies $\deg_{\pm}((\bigoplus_{j=1}^{k}z_j)\oplus f)=k+\deg_{\pm}(f)$,
@@ -6291,18 +6291,18 @@ That is not yet a full invariant. It is only a partial answer:
 - endpoint affine-threshold votes certify $H^{*}\leq s$ for strict weighted votes over positive OR-type and AND-type features,
 - affine-free support cost at most two has exact value $0$, $1$, or $2$ according as the function is constant, a nonconstant LTF, or neither,
 - denominator-orientation structure characterizes which affine denominators a single head can realize directly,
-- monotone normal-form structure certifies $H^{*}(f)\leq\min\{\operatorname{mDNF}(f),\operatorname{mCNF}(f)\}$,
+- monotone normal-form structure certifies $H^{*}(f)\leq\min\lbrace\mathrm{mDNF}(f),\mathrm{mCNF}(f)\rbrace$,
 - monotone boundary structure certifies $H^{*}(f)\leq\binom{n}{\lfloor n/2\rfloor}$ for every monotone $f$,
 - monotone counting structure certifies that this monotone upper bound is polynomially sharp in the worst case and for almost all monotone functions,
-- sparse-support structure certifies $H^{*}(f)\leq2\min\{\lvert f^{-1}(1)\rvert,\lvert f^{-1}(0)\rvert\}$,
+- sparse-support structure certifies $H^{*}(f)\leq2\min\lbrace\lvert f^{-1}(1)\rvert,\lvert f^{-1}(0)\rvert\rbrace$,
 - mixed-literal formula volume certifies $H^{*}(f)\leq2\sum_a2^{n-w_a}$ for DNF or CNF widths $w_a$,
-- mixed-literal formula literal imbalance certifies $H^{*}(f)\leq\sum_a\min\{2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\}$ for DNF or CNF normal forms,
-- mixed-literal formulas also certify the hybrid used-variable bound $\min\{2\sum_a2^{v-w_a},\sum_a\min\{2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\},2^v-1,1+\sum_{r=2}^{\min\{w,v\}}\binom{v}{r}\}$,
+- mixed-literal formula literal imbalance certifies $H^{*}(f)\leq\sum_a\min\lbrace2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\rbrace$ for DNF or CNF normal forms,
+- mixed-literal formulas also certify the hybrid used-variable bound $\min\lbrace2\sum_a2^{v-w_a},\sum_a\min\lbrace2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\rbrace,2^v-1,1+\sum_{r=2}^{\min\lbrace w,v\rbrace}\binom{v}{r}\rbrace$,
 - decision-tree leaf profiles certify ambient-dimension-free upper bounds, in particular $H^{*}(f)\leq2^{D(f)+\lfloor D(f)/2\rfloor-1}$ for nonconstant $f$,
 - depth-two decision trees have exact value $0$, $1$, or $2$ according as the function is constant, a nonconstant LTF, or neither,
-- decision trees also certify the hybrid bound $H^{*}(f)\leq\min\{\Lambda(\mathcal{T}),2^v-1,1+\sum_{r=2}^{\min\{d,v\}}\binom{v}{r}\}$, where $d$ is tree depth and $v$ is the number of queried variables,
+- decision trees also certify the hybrid bound $H^{*}(f)\leq\min\lbrace\Lambda(\mathcal{T}),2^v-1,1+\sum_{r=2}^{\min\lbrace d,v\rbrace}\binom{v}{r}\rbrace$, where $d$ is tree depth and $v$ is the number of queried variables,
 - local certificate-expansion structure certifies $H^{*}(f)$ from one-sided certificate covers whose cylinders each fix few bits of at least one sign,
-- junta structure certifies ambient-dimension-free bounds depending only on $\operatorname{ess}(f)$,
+- junta structure certifies ambient-dimension-free bounds depending only on $\mathrm{ess}(f)$,
 - certificate-cover structure certifies upper bounds from one-sided weighted subcube covers,
 - three-bit quadratic threshold structure certifies $H^{*}(f) \leq 2$,
 - three-bit arbitrary threshold structure certifies $H^{*}(f) \leq 3$, closing the full $n=3$ classification,

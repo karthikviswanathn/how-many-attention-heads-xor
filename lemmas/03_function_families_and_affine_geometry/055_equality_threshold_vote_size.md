@@ -7,7 +7,7 @@ Let $s_{\mathrm{LTF}}(f)$ be the minimum threshold-vote size from [054_three_bit
 $$
 \mathrm{EQ}_m(x,y)=\mathbf{1}[x=y],
 \qquad
-x,y\in\{0,1\}^m,
+x,y\in\lbrace0,1\rbrace^m,
 $$
 
 we have, for every $m\geq1$,
@@ -36,7 +36,7 @@ G_{\mathrm{gt}}(x,y):=\mathbf{1}[T(x)-T(y)\geq1],
 G_{\mathrm{lt}}(x,y):=\mathbf{1}[T(y)-T(x)\geq1].
 $$
 
-Both are linear threshold functions in the $2m$ input bits. Since $T$ is injective on $\{0,1\}^m$,
+Both are linear threshold functions in the $2m$ input bits. Since $T$ is injective on $\lbrace0,1\rbrace^m$,
 
 $$
 x=y

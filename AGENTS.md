@@ -6,7 +6,7 @@ Conventions for writing lemma / writeup markdown in this repo so that it renders
 
 Use LaTeX math delimiters, not backticks.
 
-- **Inline math:** wrap in single dollar signs, e.g. `$f : \{0,1\}^n \to \{0,1\}$`.
+- **Inline math:** wrap in single dollar signs, e.g. `$f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$`.
 - **Display math:** wrap in double dollar signs on their own lines, with a blank line before and after.
 
   ```markdown
@@ -51,7 +51,7 @@ Use LaTeX math delimiters, not backticks.
 
 ## Statement
 
-Let $f : \{0,1\}^n \to \{0,1\}$. Suppose ...
+Let $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$. Suppose ...
 
 $$
 \text{main equation}

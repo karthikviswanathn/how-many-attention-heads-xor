@@ -5,18 +5,18 @@
 Let
 
 $$
-f:\{0,1\}^n\to\{0,1\}.
+f:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace.
 $$
 
-The cylinder-threshold cost $\operatorname{ctc}(f)$ has the following structural properties.
+The cylinder-threshold cost $\mathrm{ctc}(f)$ has the following structural properties.
 
 1. Output complement does not change the cost:
 
    $$
-   \operatorname{ctc}(1-f)=\operatorname{ctc}(f).
+   \mathrm{ctc}(1-f)=\mathrm{ctc}(f).
    $$
 
-2. Coordinate permutations do not change the cost. If $\pi$ is a permutation of $\{1,\ldots,n\}$ and
+2. Coordinate permutations do not change the cost. If $\pi$ is a permutation of $\lbrace1,\ldots,n\rbrace$ and
 
    $$
    f^{\pi}(x_1,\ldots,x_n)
@@ -27,7 +27,7 @@ The cylinder-threshold cost $\operatorname{ctc}(f)$ has the following structural
    then
 
    $$
-   \operatorname{ctc}(f^{\pi})=\operatorname{ctc}(f).
+   \mathrm{ctc}(f^{\pi})=\mathrm{ctc}(f).
    $$
 
 3. Global bit-flip does not change the cost. If
@@ -41,13 +41,13 @@ The cylinder-threshold cost $\operatorname{ctc}(f)$ has the following structural
    then
 
    $$
-   \operatorname{ctc}(f^{\mathrm{flip}})=\operatorname{ctc}(f).
+   \mathrm{ctc}(f^{\mathrm{flip}})=\mathrm{ctc}(f).
    $$
 
 4. Restrictions cannot increase the cost. If $g$ is obtained from $f$ by fixing some coordinates, then
 
    $$
-   \operatorname{ctc}(g)\leq\operatorname{ctc}(f).
+   \mathrm{ctc}(g)\leq\mathrm{ctc}(f).
    $$
 
 5. Adding dummy variables does not change the cost. If
@@ -59,10 +59,10 @@ The cylinder-threshold cost $\operatorname{ctc}(f)$ has the following structural
    then
 
    $$
-   \operatorname{ctc}(F)=\operatorname{ctc}(f).
+   \mathrm{ctc}(F)=\mathrm{ctc}(f).
    $$
 
-> **Interpretation.** The optimized cylinder-threshold upper-bound invariant is stable under the same basic symmetries as $H^{*}$. Restrictions can only make the invariant smaller, so hard restrictions are valid witnesses for lower-bound attempts on $\operatorname{ctc}$.
+> **Interpretation.** The optimized cylinder-threshold upper-bound invariant is stable under the same basic symmetries as $H^{*}$. Restrictions can only make the invariant smaller, so hard restrictions are valid witnesses for lower-bound attempts on $\mathrm{ctc}$.
 
 ## Proof
 
@@ -82,7 +82,7 @@ $$
 :=
 \begin{cases}
 0, & P=N=\varnothing, \\
-\min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}, & \text{otherwise}.
+\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace, & \text{otherwise}.
 \end{cases}
 $$
 
@@ -107,7 +107,7 @@ $$
 This uses the same cylinders and the same cost. Therefore
 
 $$
-\operatorname{ctc}(1-f)\leq\operatorname{ctc}(f).
+\mathrm{ctc}(1-f)\leq\mathrm{ctc}(f).
 $$
 
 Applying the same argument to $1-f$ proves equality.
@@ -117,7 +117,7 @@ Applying the same argument to $1-f$ proves equality.
 A coordinate permutation sends every cylinder indicator to another cylinder indicator with the same values of $\lvert P\rvert$ and $\lvert N\rvert$. Thus the cost of each term is unchanged. Precomposing an optimal representation with the permutation gives
 
 $$
-\operatorname{ctc}(f^{\pi})\leq\operatorname{ctc}(f),
+\mathrm{ctc}(f^{\pi})\leq\mathrm{ctc}(f),
 $$
 
 and applying the inverse permutation gives equality.
@@ -131,7 +131,7 @@ $$
 the same argument gives
 
 $$
-\operatorname{ctc}(f^{\mathrm{flip}})=\operatorname{ctc}(f).
+\mathrm{ctc}(f^{\mathrm{flip}})=\mathrm{ctc}(f).
 $$
 
 ### Lemma 3. Restrictions
@@ -170,9 +170,9 @@ $$
 \begin{aligned}
 \kappa(P\cap K,N\cap K)
 &=
-\min\{2^{\lvert P\cap K\rvert},2^{\lvert N\cap K\rvert}\} \\
+\min\lbrace2^{\lvert P\cap K\rvert},2^{\lvert N\cap K\rvert}\rbrace \\
 &\leq
-\min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}
+\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace
 =
 \kappa(P,N),
 \end{aligned}
@@ -183,7 +183,7 @@ with the last equality interpreted in the nonvacuous case. If the original cylin
 Thus the restricted score is a strict cylinder-threshold representation of $g$ with no larger total cost. Taking the minimum over representations of $f$ proves
 
 $$
-\operatorname{ctc}(g)\leq\operatorname{ctc}(f).
+\mathrm{ctc}(g)\leq\mathrm{ctc}(f).
 $$
 
 ### Lemma 4. Dummy variables
@@ -191,23 +191,23 @@ $$
 Let $F(x,y)=f(x)$. Any cylinder-threshold representation of $f$ extends to one for $F$ by using the same cylinders on the $x$ coordinates and imposing no constraints on the dummy coordinates. The cost is unchanged, so
 
 $$
-\operatorname{ctc}(F)\leq\operatorname{ctc}(f).
+\mathrm{ctc}(F)\leq\mathrm{ctc}(f).
 $$
 
 Conversely, fixing the dummy variables in $F$ recovers $f$. The restriction monotonicity from Lemma 3 gives
 
 $$
-\operatorname{ctc}(f)\leq\operatorname{ctc}(F).
+\mathrm{ctc}(f)\leq\mathrm{ctc}(F).
 $$
 
 Hence
 
 $$
-\operatorname{ctc}(F)=\operatorname{ctc}(f).
+\mathrm{ctc}(F)=\mathrm{ctc}(f).
 $$
 
 Combining Lemmas 1 through 4 proves all stated properties. $\blacksquare$
 
 ## Consequences
 
-The invariant $\operatorname{ctc}$ can be optimized on canonical representatives under coordinate relabeling, global bit-flip, and output complement. For lower-bound attempts on $\operatorname{ctc}$, hard restrictions are valid witnesses for the original function, because restrictions can only decrease $\operatorname{ctc}$.
+The invariant $\mathrm{ctc}$ can be optimized on canonical representatives under coordinate relabeling, global bit-flip, and output complement. For lower-bound attempts on $\mathrm{ctc}$, hard restrictions are valid witnesses for the original function, because restrictions can only decrease $\mathrm{ctc}$.

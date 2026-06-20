@@ -5,7 +5,7 @@
 For three pairs of input bits, define
 
 $$
-\mathrm{INT}_3(x,y):=\mathbf{1}\!\left[\sum_{i=1}^{3}x_i y_i\geq1\right],
+\mathrm{INT}_3(x,y):=\mathbf{1}\negthinspace\left[\sum_{i=1}^{3}x_i y_i\geq1\right],
 \qquad
 \mathrm{DISJ}_3:=1-\mathrm{INT}_3,
 $$

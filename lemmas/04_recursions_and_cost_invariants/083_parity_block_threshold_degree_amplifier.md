@@ -5,7 +5,7 @@
 Let
 
 $$
-T:\{0,1\}^{m}\to\{0,1\}
+T:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace
 $$
 
 be any Boolean function, and let
@@ -13,7 +13,7 @@ be any Boolean function, and let
 $$
 \pi_k(z):=\bigoplus_{j=1}^{k}z_j
 \qquad
-(z\in\{0,1\}^{k}).
+(z\in\lbrace0,1\rbrace^{k}).
 $$
 
 Define
@@ -45,7 +45,7 @@ In particular,
 $$
 H^{*}(\pi_k\oplus T)
 \leq
-2^{k}\bigl(\operatorname{ptfsp}(T)+1\bigr)-1.
+2^{k}\bigl(\mathrm{ptfsp}(T)+1\bigr)-1.
 $$
 
 > **Interpretation.** A parity block is an additive threshold-degree amplifier. The sparse-PTF upper bound is only a safe fallback, but the lower bound is exact and composable.

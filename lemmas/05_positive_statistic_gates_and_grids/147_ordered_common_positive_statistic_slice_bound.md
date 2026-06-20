@@ -2,7 +2,7 @@
 
 ## Statement
 
-Let $k\geq1$, let $z\in\{0,1\}^{k}$ be raw bits, and let
+Let $k\geq1$, let $z\in\lbrace0,1\rbrace^{k}$ be raw bits, and let
 
 $$
 t(y)=\sum_{i=1}^{m}\lambda_i y_i,
@@ -15,7 +15,7 @@ Suppose each raw-bit slice of $f(z,y)$ factors through $t$:
 $$
 f(a,y)=F_a(t(y))
 \qquad
-\text{for every }a\in\{0,1\}^{k}.
+\text{for every }a\in\lbrace0,1\rbrace^{k}.
 $$
 
 Write the image of $t$ as
@@ -44,10 +44,10 @@ $$
 J_{\rho}
 :=
 \left\lvert
-\left\{
-q\in\{0,\ldots,2^k-2\}:
+\left\lbrace
+q\in\lbrace0,\ldots,2^k-2\rbrace:
 F_{a^{(q)}}(\tau_{M-1})\neq F_{a^{(q+1)}}(\tau_0)
-\right\}
+\right\rbrace
 \right\rvert.
 $$
 
@@ -56,7 +56,7 @@ Then
 $$
 H^{*}(f)
 \leq
-\sum_{a\in\{0,1\}^{k}}C_a+J_{\rho}.
+\sum_{a\in\lbrace0,1\rbrace^{k}}C_a+J_{\rho}.
 $$
 
 > **Interpretation.** The multi-slice construction pays only for actual boundary label changes between consecutive raw slices, not for every boundary.

@@ -5,13 +5,13 @@
 Let
 
 $$
-T : \{0,1\}^{m}\to\{0,1\}
+T : \lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace
 $$
 
 be any Boolean function, and let
 
 $$
-G : \{0,1\}^{2}\to\{0,1\}
+G : \lbrace0,1\rbrace^{2}\to\lbrace0,1\rbrace
 $$
 
 be a two-input Boolean gate that is neither XOR nor XNOR. Define
@@ -60,7 +60,7 @@ $$
 
 By complement invariance [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md), the same head count also sign-represents $1-T$, using the score $-S$.
 
-Every two-input Boolean gate that is neither XOR nor XNOR is, up to constants, input literals, and output complement, either a conjunction of two literals or a disjunction of two literals. Constant gates and input-literal gates have head complexity at most $\max\{H,1\}\leq H+1$. Thus it is enough to handle
+Every two-input Boolean gate that is neither XOR nor XNOR is, up to constants, input literals, and output complement, either a conjunction of two literals or a disjunction of two literals. Constant gates and input-literal gates have head complexity at most $\max\lbrace H,1\rbrace\leq H+1$. Thus it is enough to handle
 
 $$
 r(z)\wedge U(y)

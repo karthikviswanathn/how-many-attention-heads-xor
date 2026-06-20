@@ -7,7 +7,7 @@ This file fixes the mathematical model used throughout the project.
 We study Boolean functions
 
 $$
-f : \{0,1\}^n \to \{0,1\}
+f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace
 $$
 
 computed by a one-layer attention-only architecture with a linear readout from a designated query token.
@@ -17,7 +17,7 @@ computed by a one-layer attention-only architecture with a linear readout from a
 For an input
 
 $$
-x = (x_1, \ldots, x_n) \in \{0,1\}^n,
+x = (x_1, \ldots, x_n) \in \lbrace0,1\rbrace^n,
 $$
 
 the model sees the sequence
@@ -60,7 +60,7 @@ Note that $u_=(x)$ is constant as a function of $x$.
 
 ## One Attention Head
 
-For each head $h \in \{1, \ldots, H\}$, choose matrices
+For each head $h \in \lbrace1, \ldots, H\rbrace$, choose matrices
 
 $$
 W_Q^{(h)}, W_K^{(h)}, W_V^{(h)} \in \mathbb{R}^{d_{\mathrm{head}} \times d_{\mathrm{model}}}.
@@ -83,7 +83,7 @@ $$
 For each position
 
 $$
-j \in \{1, \ldots, n, =\},
+j \in \lbrace1, \ldots, n, =\rbrace,
 $$
 
 define
@@ -114,7 +114,7 @@ $$
 \alpha_j^{(h)}(x)
 :=
 \frac{\exp\bigl(\ell_j^{(h)}(x)\bigr)}
-{\sum_{k \in \{1,\ldots,n,=\}} \exp\bigl(\ell_k^{(h)}(x)\bigr)}.
+{\sum_{k \in \lbrace1,\ldots,n,=\rbrace} \exp\bigl(\ell_k^{(h)}(x)\bigr)}.
 $$
 
 The unprojected output of head $h$ at the query position is
@@ -122,8 +122,8 @@ The unprojected output of head $h$ at the query position is
 $$
 \widetilde y^{(h)}(x)
 :=
-\sum_{j \in \{1,\ldots,n,=\}}
-\alpha_j^{(h)}(x)\, v_j^{(h)}(x)
+\sum_{j \in \lbrace1,\ldots,n,=\rbrace}
+\alpha_j^{(h)}(x)\thinspace v_j^{(h)}(x)
 \in \mathbb{R}^{d_{\mathrm{head}}}.
 $$
 
@@ -186,19 +186,19 @@ A Boolean function $f$ is **computable with $H$ heads** if there exist:
 - a model dimension $d_{\mathrm{model}}$,
 - a head dimension $d_{\mathrm{head}}$,
 - token and positional embeddings,
-- attention parameters $\{W_Q^{(h)}, W_K^{(h)}, W_V^{(h)}, W_O^{(h)}\}_{h=1}^{H}$,
+- attention parameters $\lbrace W_Q^{(h)}, W_K^{(h)}, W_V^{(h)}, W_O^{(h)}\rbrace_{h=1}^{H}$,
 - a readout vector $w$ and threshold $\tau$,
 
-such that the resulting classifier agrees with $f$ on every input in $\{0,1\}^n$.
+such that the resulting classifier agrees with $f$ on every input in $\lbrace0,1\rbrace^n$.
 
 We then define
 
 $$
 H^{*}(f)
 :=
-\min \left\{
+\min \left\lbrace
 H : f \text{ is computable with } H \text{ heads in the above model}
-\right\}.
+\right\rbrace.
 $$
 
 ## Masking Convention

@@ -5,36 +5,36 @@
 For a real multilinear polynomial
 
 $$
-P(x)=a_{\varnothing}+\sum_{\varnothing\neq S\subseteq\{1,\ldots,n\}}a_S\prod_{i\in S}x_i,
+P(x)=a_{\varnothing}+\sum_{\varnothing\neq S\subseteq\lbrace1,\ldots,n\rbrace}a_S\prod_{i\in S}x_i,
 $$
 
 define its affine-free support cost by
 
 $$
-\operatorname{afs}(P)
+\mathrm{afs}(P)
 :=
-\mathbf{1}\!\left[
-\exists i,\ a_{\{i\}}\neq0
+\mathbf{1}\negthinspace\left[
+\exists i,\ a_{\lbrace i\rbrace}\neq0
 \right]
 +
 \left\lvert
-\left\{
-S\subseteq\{1,\ldots,n\}:
+\left\lbrace
+S\subseteq\lbrace1,\ldots,n\rbrace:
 \lvert S\rvert\geq2,\ a_S\neq0
-\right\}
+\right\rbrace
 \right\rvert.
 $$
 
 Let
 
 $$
-\operatorname{afs}_{\pm}(f)
+\mathrm{afs}_{\pm}(f)
 $$
 
-be the minimum of $\operatorname{afs}(P)$ over all real multilinear polynomials $P$ that sign-represent $f$ on the Boolean cube. Then
+be the minimum of $\mathrm{afs}(P)$ over all real multilinear polynomials $P$ that sign-represent $f$ on the Boolean cube. Then
 
 $$
-H^{*}(f)\leq\operatorname{afs}_{\pm}(f).
+H^{*}(f)\leq\mathrm{afs}_{\pm}(f).
 $$
 
 Consequently, if $f$ is nonconstant and $\deg_{\pm}(f)\leq d$, then
@@ -63,7 +63,7 @@ $$
 \lvert\psi(x)-L(x)\rvert<\varepsilon
 $$
 
-for every $x\in\{0,1\}^n$.
+for every $x\in\lbrace0,1\rbrace^n$.
 
 **Proof.** Choose $\delta>0$ and define the positive affine denominator
 
@@ -100,7 +100,7 @@ $$
 where
 
 $$
-L(x):=\sum_{i=1}^{n}a_{\{i\}}x_i
+L(x):=\sum_{i=1}^{n}a_{\lbrace i\rbrace}x_i
 $$
 
 is the linear part, and
@@ -108,21 +108,21 @@ is the linear part, and
 $$
 \mathcal{M}
 :=
-\{S:\lvert S\rvert\geq2,\ a_S\neq0\}.
+\lbrace S:\lvert S\rvert\geq2,\ a_S\neq0\rbrace.
 $$
 
 Since $P$ has strict sign on the finite cube, define the margin
 
 $$
-\Delta:=\min_{x\in\{0,1\}^n}\lvert P(x)\rvert>0.
+\Delta:=\min_{x\in\lbrace0,1\rbrace^n}\lvert P(x)\rvert>0.
 $$
 
 Let
 
 $$
 \ell:=
-\mathbf{1}\!\left[
-\exists i,\ a_{\{i\}}\neq0
+\mathbf{1}\negthinspace\left[
+\exists i,\ a_{\lbrace i\rbrace}\neq0
 \right].
 $$
 
@@ -175,26 +175,26 @@ Therefore $\widetilde{P}$ has the same sign as $P$ everywhere on the cube. By th
 $$
 \ell+\lvert\mathcal{M}\rvert
 =
-\operatorname{afs}(P)
+\mathrm{afs}(P)
 $$
 
 heads. Hence
 
 $$
-H^{*}(f)\leq\operatorname{afs}(P).
+H^{*}(f)\leq\mathrm{afs}(P).
 $$
 
 Minimizing over all sign-representing $P$ proves
 
 $$
-H^{*}(f)\leq\operatorname{afs}_{\pm}(f).
+H^{*}(f)\leq\mathrm{afs}_{\pm}(f).
 $$
 
 ### Lemma 3. Threshold-degree corollary
 
 Assume $f$ is nonconstant and $\deg_{\pm}(f)\leq d$. Choose a degree-at-most-$d$ polynomial $P$ that sign-represents $f$.
 
-If all linear coefficients of $P$ vanish, then $\operatorname{afs}(P)$ is just the number of degree at least two monomials in $P$, and this is at most
+If all linear coefficients of $P$ vanish, then $\mathrm{afs}(P)$ is just the number of degree at least two monomials in $P$, and this is at most
 
 $$
 \sum_{r=2}^{d}\binom{n}{r}.
@@ -203,7 +203,7 @@ $$
 If some linear coefficient is nonzero, then all linear terms together cost one affine head, and the degree at least two terms cost at most the same displayed sum. Thus in all cases
 
 $$
-\operatorname{afs}(P)
+\mathrm{afs}(P)
 \leq
 1+\sum_{r=2}^{d}\binom{n}{r}.
 $$
@@ -219,9 +219,9 @@ $$
 \leq
 H^{*}(f)
 \leq
-\operatorname{afs}_{\pm}(f)
+\mathrm{afs}_{\pm}(f)
 \leq
-\operatorname{ptfsp}(f).
+\mathrm{ptfsp}(f).
 $$
 
 In particular, low threshold degree gives the improved uniform bound

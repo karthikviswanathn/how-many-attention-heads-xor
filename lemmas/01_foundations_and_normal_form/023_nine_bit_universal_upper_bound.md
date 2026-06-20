@@ -5,7 +5,7 @@
 For every Boolean function
 
 $$
-f : \{0,1\}^9 \to \{0,1\},
+f : \lbrace0,1\rbrace^9 \to \lbrace0,1\rbrace,
 $$
 
 we have
@@ -102,13 +102,13 @@ $$
 \prod_{j=1}^{57}B_j,
 $$
 
-for each $h \in \{1,\ldots,56\}$, the nine products
+for each $h \in \lbrace1,\ldots,56\rbrace$, the nine products
 
 $$
 M\prod_{j\neq h}B_j
 \qquad
 \text{for }
-M \in \{1,x_1,x_2,x_3,x_4,x_5,x_6,x_7,x_8\},
+M \in \lbrace1,x_1,x_2,x_3,x_4,x_5,x_6,x_7,x_8\rbrace,
 $$
 
 and the seven products
@@ -117,10 +117,10 @@ $$
 M\prod_{j\neq 57}B_j
 \qquad
 \text{for }
-M \in \{1,x_1,x_2,x_3,x_4,x_5,x_6\}.
+M \in \lbrace1,x_1,x_2,x_3,x_4,x_5,x_6\rbrace.
 $$
 
-Write their value vectors on $\{0,1\}^9$ in lexicographic input order. To keep the certificate small, compute the determinant of this $512\times512$ integer value matrix modulo the prime
+Write their value vectors on $\lbrace0,1\rbrace^9$ in lexicographic input order. To keep the certificate small, compute the determinant of this $512\times512$ integer value matrix modulo the prime
 
 $$
 p := 1000003.
@@ -133,9 +133,9 @@ $$
 \pmod p,
 $$
 
-which is nonzero. Hence the determinant is nonzero over the integers, and the displayed products form a basis for all real-valued functions on $\{0,1\}^9$.
+which is nonzero. Hence the determinant is nonzero over the integers, and the displayed products form a basis for all real-valued functions on $\lbrace0,1\rbrace^9$.
 
-By the determinant-span schema from [021_determinant_span_schema.md](021_determinant_span_schema.md), every Boolean function $f : \{0,1\}^9 \to \{0,1\}$ has
+By the determinant-span schema from [021_determinant_span_schema.md](021_determinant_span_schema.md), every Boolean function $f : \lbrace0,1\rbrace^9 \to \lbrace0,1\rbrace$ has
 
 $$
 H^{*}(f) \leq 57.

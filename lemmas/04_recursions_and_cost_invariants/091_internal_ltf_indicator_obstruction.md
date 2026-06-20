@@ -18,10 +18,10 @@ T(x)=1
 2x_1+x_2+x_3\geq3.
 $$
 
-Thus $T$ is a monotone linear threshold function. Nevertheless, for every one-head atom $\phi$ on $\{0,1\}^3$,
+Thus $T$ is a monotone linear threshold function. Nevertheless, for every one-head atom $\phi$ on $\lbrace0,1\rbrace^3$,
 
 $$
-\max_{x\in\{0,1\}^3}\lvert \phi(x)-T(x)\rvert
+\max_{x\in\lbrace0,1\rbrace^3}\lvert \phi(x)-T(x)\rvert
 \geq
 \frac{1}{4}.
 $$

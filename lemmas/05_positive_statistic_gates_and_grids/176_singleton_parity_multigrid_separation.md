@@ -5,7 +5,7 @@
 Let
 
 $$
-\mathcal{P}_{\mathrm{sing}}=\{\{1\},\ldots,\{n\}\}
+\mathcal{P}_{\mathrm{sing}}=\lbrace\lbrace1\rbrace,\ldots,\lbrace n\rbrace\rbrace
 $$
 
 be the singleton partition, and let $f=\mathrm{XOR}_n$. Define
@@ -26,12 +26,12 @@ L_n=
 \end{cases}
 $$
 
-Then, with $\operatorname{mhc}$ computed for the singleton Hamming profile of parity,
+Then, with $\mathrm{mhc}$ computed for the singleton Hamming profile of parity,
 
 $$
-\operatorname{mgc}_{+}^{\mathcal{P}_{\mathrm{sing}}}(\mathrm{XOR}_n)
+\mathrm{mgc}_{+}^{\mathcal{P}_{\mathrm{sing}}}(\mathrm{XOR}_n)
 =
-\operatorname{mhc}(\mathrm{XOR}_n)
+\mathrm{mhc}(\mathrm{XOR}_n)
 =
 L_n,
 $$
@@ -60,7 +60,7 @@ t_i(x_i)=\lambda_i x_i,
 \lambda_i>0.
 $$
 
-Its image is $\{0,\lambda_i\}$. Therefore every lexicographic product-grid traversal is just the usual binary odometer traversal for some coordinate order. The labels for $\mathrm{XOR}_n$ are the parity of the number of coordinates at their nonzero level. The positive weights $\lambda_i$ do not affect these labels.
+Its image is $\lbrace0,\lambda_i\rbrace$. Therefore every lexicographic product-grid traversal is just the usual binary odometer traversal for some coordinate order. The labels for $\mathrm{XOR}_n$ are the parity of the number of coordinates at their nonzero level. The positive weights $\lambda_i$ do not affect these labels.
 
 Fix any coordinate order and number its coordinates $1,\ldots,n$ from slowest to fastest. A transition of type $\ell$ is a transition where coordinate $\ell$ changes from $0$ to $1$, all faster coordinates reset from $1$ to $0$, and the slower coordinates are unchanged.
 
@@ -86,7 +86,7 @@ $$
 L_n
 $$
 
-lexicographic sign changes. This proves both the $\operatorname{mgc}_{+}^{\mathcal{P}_{\mathrm{sing}}}$ value and the singleton Hamming-profile value $\operatorname{mhc}$.
+lexicographic sign changes. This proves both the $\mathrm{mgc}_{+}^{\mathcal{P}_{\mathrm{sing}}}$ value and the singleton Hamming-profile value $\mathrm{mhc}$.
 
 The closed form follows by summing the corresponding geometric progression:
 

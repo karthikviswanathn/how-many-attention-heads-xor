@@ -64,7 +64,7 @@ $$
 Q(u):=\sigma\prod_j(u-\gamma_j),
 $$
 
-where the product ranges over the sign-change indices and the sign $\sigma\in\{1,-1\}$ is chosen so that $Q(\tau_0)>0$ exactly when $F(\tau_0)=1$. As $u$ moves through the ordered image of $t$, the sign of $Q$ flips exactly at the chosen sign-change gaps and nowhere else. Thus
+where the product ranges over the sign-change indices and the sign $\sigma\in\lbrace1,-1\rbrace$ is chosen so that $Q(\tau_0)>0$ exactly when $F(\tau_0)=1$. As $u$ moves through the ordered image of $t$, the sign of $Q$ flips exactly at the chosen sign-change gaps and nowhere else. Thus
 
 $$
 T(y)=1

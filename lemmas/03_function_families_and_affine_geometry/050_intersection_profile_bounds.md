@@ -2,14 +2,14 @@
 
 ## Statement
 
-Let $F:\{0,1,\ldots,m\}\to\{0,1\}$ and define the intersection-profile function
+Let $F:\lbrace0,1,\ldots,m\rbrace\to\lbrace0,1\rbrace$ and define the intersection-profile function
 
 $$
 f_F(x,y)
 :=
-F\!\left(\sum_{i=1}^{m}x_i y_i\right),
+F\negthinspace\left(\sum_{i=1}^{m}x_i y_i\right),
 \qquad
-x,y\in\{0,1\}^m.
+x,y\in\lbrace0,1\rbrace^m.
 $$
 
 Let $C(F)$ be the number of sign changes in the sequence
@@ -47,7 +47,7 @@ On this subcube,
 $$
 f_F(x,1)
 =
-F\!\left(\sum_{i=1}^{m}x_i\right).
+F\negthinspace\left(\sum_{i=1}^{m}x_i\right).
 $$
 
 This is the symmetric Boolean function on $m$ variables with Hamming-weight label sequence
@@ -62,7 +62,7 @@ $$
 H^{*}(f_F)\geq C(F).
 $$
 
-### Lemma 2. A degree-$C(F)$ sign polynomial in the intersection size
+### Lemma 2. A degree-C(F) sign polynomial in the intersection size
 
 Let
 
@@ -77,7 +77,7 @@ $$
 Let
 
 $$
-\mathcal{J}:=\{j\in\{0,\ldots,m-1\}:q_j\neq q_{j+1}\}.
+\mathcal{J}:=\lbrace j\in\lbrace0,\ldots,m-1\rbrace:q_j\neq q_{j+1}\rbrace.
 $$
 
 Then $\lvert\mathcal{J}\rvert=C(F)$. Define
@@ -87,13 +87,13 @@ R(t):=
 q_0\prod_{j\in\mathcal{J}}\left(j+\frac{1}{2}-t\right).
 $$
 
-For an integer $k\in\{0,\ldots,m\}$, the factor indexed by $j$ is positive when $k\leq j$ and negative when $k\geq j+1$. Hence the sign of $R(k)$ flips exactly once for every label change crossed before $k$. Therefore
+For an integer $k\in\lbrace0,\ldots,m\rbrace$, the factor indexed by $j$ is positive when $k\leq j$ and negative when $k\geq j+1$. Hence the sign of $R(k)$ flips exactly once for every label change crossed before $k$. Therefore
 
 $$
 q_k R(k)>0
 $$
 
-for every $k\in\{0,\ldots,m\}$, so $R$ sign-represents $F$ on the intersection-size levels and has degree $C(F)$.
+for every $k\in\lbrace0,\ldots,m\rbrace$, so $R$ sign-represents $F$ on the intersection-size levels and has degree $C(F)$.
 
 ### Lemma 3. Sparse expansion upper bound
 
@@ -144,7 +144,7 @@ Define
 $$
 \mathrm{INT}_m(x,y)
 :=
-\mathbf{1}\!\left[\sum_{i=1}^{m}x_i y_i\geq1\right],
+\mathbf{1}\negthinspace\left[\sum_{i=1}^{m}x_i y_i\geq1\right],
 $$
 
 and

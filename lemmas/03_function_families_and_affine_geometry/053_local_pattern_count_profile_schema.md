@@ -5,17 +5,17 @@
 Let
 
 $$
-p:\{0,1\}^2\to\{0,1\}
+p:\lbrace0,1\rbrace^2\to\lbrace0,1\rbrace
 $$
 
-be a two-bit predicate, and let $P_p(a,b)$ be its multilinear polynomial on the Boolean square. For $m\geq1$ and $F:\{0,1,\ldots,m\}\to\{0,1\}$, define
+be a two-bit predicate, and let $P_p(a,b)$ be its multilinear polynomial on the Boolean square. For $m\geq1$ and $F:\lbrace0,1,\ldots,m\rbrace\to\lbrace0,1\rbrace$, define
 
 $$
 f_{p,F}(x,y)
 :=
-F\!\left(\sum_{i=1}^{m}p(x_i,y_i)\right),
+F\negthinspace\left(\sum_{i=1}^{m}p(x_i,y_i)\right),
 \qquad
-x,y\in\{0,1\}^m.
+x,y\in\lbrace0,1\rbrace^m.
 $$
 
 Let $C(F)$ be the number of sign changes in
@@ -24,7 +24,7 @@ $$
 F(0),F(1),\ldots,F(m).
 $$
 
-For $0\leq C\leq m$, define the local expansion cost $\Lambda_{p,m}(C)$ as follows. For each $S\subseteq\{1,\ldots,m\}$, set
+For $0\leq C\leq m$, define the local expansion cost $\Lambda_{p,m}(C)$ as follows. For each $S\subseteq\lbrace1,\ldots,m\rbrace$, set
 
 $$
 P_{p,S}(x,y):=\prod_{i\in S}P_p(x_i,y_i).
@@ -90,7 +90,7 @@ $$
 H^{*}(f_{p,F})\geq C(F).
 $$
 
-### Lemma 2. A degree-$C(F)$ sign polynomial in the local count
+### Lemma 2. A degree-C(F) sign polynomial in the local count
 
 Define
 
@@ -105,7 +105,7 @@ $$
 and
 
 $$
-\mathcal{J}:=\{j\in\{0,\ldots,m-1\}:q_j\neq q_{j+1}\}.
+\mathcal{J}:=\lbrace j\in\lbrace0,\ldots,m-1\rbrace:q_j\neq q_{j+1}\rbrace.
 $$
 
 Let
@@ -121,10 +121,10 @@ $$
 q_kR(k)>0
 $$
 
-for every $k\in\{0,\ldots,m\}$. Therefore
+for every $k\in\lbrace0,\ldots,m\rbrace$. Therefore
 
 $$
-R\!\left(\sum_{i=1}^{m}p(x_i,y_i)\right)
+R\negthinspace\left(\sum_{i=1}^{m}p(x_i,y_i)\right)
 $$
 
 sign-represents $f_{p,F}$.

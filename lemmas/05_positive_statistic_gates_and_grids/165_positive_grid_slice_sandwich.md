@@ -2,7 +2,7 @@
 
 ## Statement
 
-Let $z\in\{0,1\}^{k}$ and $y\in\{0,1\}^{m}$. Let
+Let $z\in\lbrace0,1\rbrace^{k}$ and $y\in\lbrace0,1\rbrace^{m}$. Let
 
 $$
 u(z)=\sum_{j=1}^{k}\rho_j z_j,
@@ -48,10 +48,10 @@ $$
 J_{\mathrm{grid}}
 :=
 \left\lvert
-\left\{
-r\in\{0,\ldots,R-2\}:
+\left\lbrace
+r\in\lbrace0,\ldots,R-2\rbrace:
 F(\nu_r,\tau_{M-1})\neq F(\nu_{r+1},\tau_0)
-\right\}
+\right\rbrace
 \right\rvert.
 $$
 

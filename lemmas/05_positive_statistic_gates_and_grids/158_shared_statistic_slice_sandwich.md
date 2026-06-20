@@ -2,7 +2,7 @@
 
 ## Statement
 
-Let $k\geq1$, let $z\in\{0,1\}^{k}$ be raw bits, and let
+Let $k\geq1$, let $z\in\lbrace0,1\rbrace^{k}$ be raw bits, and let
 
 $$
 t(y)=\sum_{i=1}^{m}\lambda_i y_i,
@@ -21,7 +21,7 @@ Suppose every raw slice of $f(z,y)$ factors through $t$:
 $$
 f(a,y)=F_a(t(y))
 \qquad
-\text{for every }a\in\{0,1\}^{k}.
+\text{for every }a\in\lbrace0,1\rbrace^{k}.
 $$
 
 Let $C_a$ be the sign-change count of $F_a$ along $\tau_0,\ldots,\tau_{M-1}$. Define the endpoint raw functions
@@ -35,14 +35,14 @@ $$
 Then
 
 $$
-\max_{a\in\{0,1\}^{k}}H^{*}\bigl(F_a(t(y))\bigr)
+\max_{a\in\lbrace0,1\rbrace^{k}}H^{*}\bigl(F_a(t(y))\bigr)
 \leq
 H^{*}(f)
 \leq
-\sum_{a\in\{0,1\}^{k}}C_a+B_{+}(p,q).
+\sum_{a\in\lbrace0,1\rbrace^{k}}C_a+B_{+}(p,q).
 $$
 
-In particular, if there is a label $b\in\{0,1\}$ such that
+In particular, if there is a label $b\in\lbrace0,1\rbrace$ such that
 
 $$
 F_a(\tau_0)=F_a(\tau_{M-1})=b

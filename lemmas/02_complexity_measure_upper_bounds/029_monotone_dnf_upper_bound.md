@@ -5,7 +5,7 @@
 Let
 
 $$
-f : \{0,1\}^n \to \{0,1\}
+f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace
 $$
 
 be computed by a monotone DNF with $s$ nonempty terms:
@@ -48,7 +48,7 @@ $$
 
 ### Lemma 1. One head can make a conjunction large-positive and otherwise tiny-negative
 
-Fix a nonempty set $S\subseteq\{1,\ldots,n\}$ and let $k:=\lvert S\rvert$. Define the defect
+Fix a nonempty set $S\subseteq\lbrace1,\ldots,n\rbrace$ and let $k:=\lvert S\rvert$. Define the defect
 
 $$
 d_S(x):=k-\sum_{i\in S}x_i.
@@ -73,7 +73,7 @@ and
 $$
 B_S(x)
 :=
-C+R\,d_S(x)
+C+R\thinspace d_S(x)
 +\varepsilon\sum_{i\notin S}(1-x_i).
 $$
 
@@ -122,7 +122,7 @@ $$
 and
 
 $$
-B_S(x)\geq C+R\,d_S(x),
+B_S(x)\geq C+R\thinspace d_S(x),
 $$
 
 so
@@ -130,7 +130,7 @@ so
 $$
 \phi_S(x)
 \geq
-\frac{\frac{1}{2}-d_S(x)}{C+R\,d_S(x)}
+\frac{\frac{1}{2}-d_S(x)}{C+R\thinspace d_S(x)}
 >
 -\frac{1}{R}.
 $$
@@ -239,16 +239,16 @@ Therefore $H^{*}(f)\leq s$. $\blacksquare$
 
 ## Consequence
 
-Let $\operatorname{mDNF}(f)$ be the minimum number of nonempty terms in a monotone DNF for $f$, with $\operatorname{mDNF}(0)=\operatorname{mDNF}(1)=0$. Then every monotone Boolean function satisfies
+Let $\mathrm{mDNF}(f)$ be the minimum number of nonempty terms in a monotone DNF for $f$, with $\mathrm{mDNF}(0)=\mathrm{mDNF}(1)=0$. Then every monotone Boolean function satisfies
 
 $$
-H^{*}(f)\leq\operatorname{mDNF}(f).
+H^{*}(f)\leq\mathrm{mDNF}(f).
 $$
 
-Let $\operatorname{mCNF}(f)$ be the minimum number of nonempty clauses in a monotone CNF for $f$, with $\operatorname{mCNF}(0)=\operatorname{mCNF}(1)=0$. Then every monotone Boolean function also satisfies
+Let $\mathrm{mCNF}(f)$ be the minimum number of nonempty clauses in a monotone CNF for $f$, with $\mathrm{mCNF}(0)=\mathrm{mCNF}(1)=0$. Then every monotone Boolean function also satisfies
 
 $$
-H^{*}(f)\leq\operatorname{mCNF}(f).
+H^{*}(f)\leq\mathrm{mCNF}(f).
 $$
 
 Combining the two bounds,
@@ -256,7 +256,7 @@ Combining the two bounds,
 $$
 H^{*}(f)
 \leq
-\min\{\operatorname{mDNF}(f),\operatorname{mCNF}(f)\}.
+\min\lbrace\mathrm{mDNF}(f),\mathrm{mCNF}(f)\rbrace.
 $$
 
 This upper bound can be much smaller than the generic interpolation bound $2^n-1$ when $f$ has a compact monotone formula in either normal form.

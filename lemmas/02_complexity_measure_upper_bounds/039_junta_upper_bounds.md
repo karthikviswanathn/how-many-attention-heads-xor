@@ -5,7 +5,7 @@
 Let
 
 $$
-f : \{0,1\}^n \to \{0,1\}
+f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace
 $$
 
 be a $k$-junta. Let $f_{\mathrm{ess}}$ be the induced Boolean function on the essential variables of $f$. Then
@@ -96,12 +96,12 @@ Combining Lemmas 1 through 4 proves the statement. $\blacksquare$
 
 ## Consequence
 
-Let $\operatorname{ess}(f)$ be the number of essential variables of $f$. Then
+Let $\mathrm{ess}(f)$ be the number of essential variables of $f$. Then
 
 $$
 H^{*}(f)
 \leq
-2^{\operatorname{ess}(f)}-1.
+2^{\mathrm{ess}(f)}-1.
 $$
 
-For $\operatorname{ess}(f)\leq12$, the table in the statement gives the sharper finite-certificate bounds. This is independent of the ambient input length $n$.
+For $\mathrm{ess}(f)\leq12$, the table in the statement gives the sharper finite-certificate bounds. This is independent of the ambient input length $n$.

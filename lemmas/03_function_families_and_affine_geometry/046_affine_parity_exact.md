@@ -2,7 +2,7 @@
 
 ## Statement
 
-Let $S\subseteq\{1,\ldots,n\}$ and $b\in\{0,1\}$. Define
+Let $S\subseteq\lbrace1,\ldots,n\rbrace$ and $b\in\lbrace0,1\rbrace$. Define
 
 $$
 f_{S,b}(x)
@@ -63,7 +63,7 @@ Define the affine-parity restriction number
 $$
 \pi_{\oplus}(f)
 :=
-\max\{k : \text{some restriction of } f \text{ is affine parity on } k \text{ free variables}\}.
+\max\lbrace k : \text{some restriction of } f \text{ is affine parity on } k \text{ free variables}\rbrace.
 $$
 
 Then every Boolean function satisfies

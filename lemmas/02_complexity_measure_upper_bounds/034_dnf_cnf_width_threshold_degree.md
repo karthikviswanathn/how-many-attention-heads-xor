@@ -5,7 +5,7 @@
 Let
 
 $$
-f : \{0,1\}^n \to \{0,1\}.
+f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace.
 $$
 
 If $f$ has a DNF in which every term has width at most $w$, then
@@ -30,7 +30,7 @@ $$
 
 ## Proof
 
-### Lemma 1. Width-$w$ DNF has threshold degree at most $w$
+### Lemma 1. Width-w DNF has threshold degree at most w
 
 Write the DNF as
 
@@ -76,7 +76,7 @@ $$
 
 $\blacksquare$
 
-### Lemma 2. Width-$w$ CNF has threshold degree at most $w$
+### Lemma 2. Width-w CNF has threshold degree at most w
 
 Write the CNF as
 

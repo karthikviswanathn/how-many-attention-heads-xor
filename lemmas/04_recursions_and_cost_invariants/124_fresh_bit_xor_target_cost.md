@@ -13,15 +13,15 @@ $$
 define
 
 $$
-L(A):=\{i:\alpha_i\neq0\},
+L(A):=\lbrace i:\alpha_i\neq0\rbrace,
 $$
 
 $$
 K_{0}(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P,N),
 \qquad
-K_{+}(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P\cup\{z\},N),
+K_{+}(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P\cup\lbrace z\rbrace,N),
 \qquad
-K_{-}(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P,N\cup\{z\}),
+K_{-}(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P,N\cup\lbrace z\rbrace),
 $$
 
 and
@@ -29,7 +29,7 @@ and
 $$
 \eta_{\oplus}(A)
 :=
-\mathbf{1}\!\left[
+\mathbf{1}\negthinspace\left[
 a\neq0
 \text{ or }
 \exists i,\ \alpha_i\neq0
@@ -39,7 +39,7 @@ $$
 Define
 
 $$
-\operatorname{xactc}(T)
+\mathrm{xactc}(T)
 :=
 \min_S
 \left(
@@ -49,7 +49,7 @@ $$
 +
 K_{0}(\Gamma)
 +
-\min\{K_{+}(\Gamma),K_{-}(\Gamma)\}
+\min\lbrace K_{+}(\Gamma),K_{-}(\Gamma)\rbrace
 \right),
 $$
 
@@ -62,7 +62,7 @@ $$
 \leq
 H^{*}(z\oplus T(y))
 \leq
-\operatorname{xactc}(T),
+\mathrm{xactc}(T),
 $$
 
 and the same bounds hold for $1-(z\oplus T(y))$.
@@ -70,7 +70,7 @@ and the same bounds hold for $1-(z\oplus T(y))$.
 Consequently, if
 
 $$
-\operatorname{xactc}(T)=\deg_{\pm}(T)+1,
+\mathrm{xactc}(T)=\deg_{\pm}(T)+1,
 $$
 
 then fresh-bit XOR and XNOR over $T$ have exact head complexity $\deg_{\pm}(T)+1$.
@@ -78,9 +78,9 @@ then fresh-bit XOR and XNOR over $T$ have exact head complexity $\deg_{\pm}(T)+1
 Moreover,
 
 $$
-\operatorname{xactc}(T)
+\mathrm{xactc}(T)
 \leq
-1+m+3\operatorname{actc}(T).
+1+m+3\mathrm{actc}(T).
 $$
 
 > **Interpretation.** The XOR target cost is the optimized affine-cylinder quantity that must match threshold degree to solve the fresh-bit XOR recursion exactly for a feature.
@@ -103,7 +103,7 @@ K_{0}(\Gamma)
 K_{+}(\Gamma).
 $$
 
-Applying the same bound after flipping the fresh coordinate $z$ gives the same upper bound with $K_{-}(\Gamma)$ in place of $K_{+}(\Gamma)$, because $zC_{P,N}$ is replaced by $(1-z)C_{P,N}=C_{P,N\cup\{z\}}$. Fresh-coordinate bit-flip turns XOR into XNOR, and output complement preserves head complexity, so both orientations are valid for the XOR and XNOR pair.
+Applying the same bound after flipping the fresh coordinate $z$ gives the same upper bound with $K_{-}(\Gamma)$ in place of $K_{+}(\Gamma)$, because $zC_{P,N}$ is replaced by $(1-z)C_{P,N}=C_{P,N\cup\lbrace z\rbrace}$. Fresh-coordinate bit-flip turns XOR into XNOR, and output complement preserves head complexity, so both orientations are valid for the XOR and XNOR pair.
 
 Hence
 
@@ -118,7 +118,7 @@ H^{*}(z\oplus T)
 +
 K_{0}(\Gamma)
 +
-\min\{K_{+}(\Gamma),K_{-}(\Gamma)\}.
+\min\lbrace K_{+}(\Gamma),K_{-}(\Gamma)\rbrace.
 $$
 
 Minimizing the upper bound over $S$ gives
@@ -126,20 +126,20 @@ Minimizing the upper bound over $S$ gives
 $$
 H^{*}(z\oplus T)
 \leq
-\operatorname{xactc}(T).
+\mathrm{xactc}(T).
 $$
 
 The XNOR case follows by the same output-complement argument.
 
-If $\operatorname{xactc}(T)=\deg_{\pm}(T)+1$, the lower and upper bounds meet, proving exactness.
+If $\mathrm{xactc}(T)=\deg_{\pm}(T)+1$, the lower and upper bounds meet, proving exactness.
 
-For the comparison with $\operatorname{actc}$, choose a strict affine-cylinder score $S$ for $T$ of optimal affine-cylinder cost and write
+For the comparison with $\mathrm{actc}$, choose a strict affine-cylinder score $S$ for $T$ of optimal affine-cylinder cost and write
 
 $$
 K(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P,N).
 $$
 
-Then $K_{0}(\Gamma)=K(\Gamma)\leq\operatorname{actc}(T)$, while
+Then $K_{0}(\Gamma)=K(\Gamma)\leq\mathrm{actc}(T)$, while
 
 $$
 \eta_{\oplus}(A)\leq1,
@@ -150,7 +150,7 @@ $$
 and
 
 $$
-\min\{K_{+}(\Gamma),K_{-}(\Gamma)\}
+\min\lbrace K_{+}(\Gamma),K_{-}(\Gamma)\rbrace
 \leq
 2K(\Gamma).
 $$
@@ -158,9 +158,9 @@ $$
 Therefore
 
 $$
-\operatorname{xactc}(T)
+\mathrm{xactc}(T)
 \leq
-1+m+3\operatorname{actc}(T).
+1+m+3\mathrm{actc}(T).
 $$
 
 $\blacksquare$
@@ -172,7 +172,7 @@ The two optimized one-bit costs now split the non-XOR and XOR cases:
 $$
 H^{*}(r\wedge T),\ H^{*}(r\vee T)
 \leq
-1+\operatorname{lgactc}(T),
+1+\mathrm{lgactc}(T),
 $$
 
 while
@@ -182,11 +182,11 @@ $$
 \leq
 H^{*}(z\oplus T)
 \leq
-\operatorname{xactc}(T).
+\mathrm{xactc}(T).
 $$
 
 Thus the exact fresh-bit XOR problem becomes the concrete equality problem
 
 $$
-\operatorname{xactc}(T)=\deg_{\pm}(T)+1.
+\mathrm{xactc}(T)=\deg_{\pm}(T)+1.
 $$

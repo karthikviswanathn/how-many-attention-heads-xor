@@ -5,7 +5,7 @@
 Let
 
 $$
-f:\{0,1\}\times\{0,1\}^{m}\to\{0,1\},
+f:\lbrace0,1\rbrace\times\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace,
 $$
 
 and write its two cofactors as
@@ -13,7 +13,7 @@ and write its two cofactors as
 $$
 f_b(y):=f(b,y)
 \qquad
-(b\in\{0,1\}).
+(b\in\lbrace0,1\rbrace).
 $$
 
 Suppose both cofactors have strict affine-cylinder scores with the same cylinder correction:
@@ -39,7 +39,7 @@ $$
 and
 
 $$
-D(A_0,A_1):=\{i:\alpha_{1,i}\neq\alpha_{0,i}\}.
+D(A_0,A_1):=\lbrace i:\alpha_{1,i}\neq\alpha_{0,i}\rbrace.
 $$
 
 Then
@@ -47,9 +47,9 @@ Then
 $$
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\operatorname{sactc}(f)
+\mathrm{sactc}(f)
 \leq
 \eta(A_0,A_1)
 +
@@ -63,7 +63,7 @@ where
 $$
 \eta(A_0,A_1)
 :=
-\mathbf{1}\!\left[
+\mathbf{1}\negthinspace\left[
 a_1\neq a_0
 \text{ or }
 \exists i,\ \alpha_{0,i}\neq0
@@ -106,7 +106,7 @@ $$
 The interpolation bound therefore becomes
 
 $$
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
 \eta(A_0,A_1)
 +
@@ -115,10 +115,10 @@ $$
 \sum_{\gamma=(P,N)\in\Gamma}\kappa(P,N).
 $$
 
-By the definition of $\operatorname{sactc}(f)$ in [112_split_affine_cylinder_cost.md](112_split_affine_cylinder_cost.md), the same displayed certificate gives
+By the definition of $\mathrm{sactc}(f)$ in [112_split_affine_cylinder_cost.md](112_split_affine_cylinder_cost.md), the same displayed certificate gives
 
 $$
-\operatorname{sactc}(f)
+\mathrm{sactc}(f)
 \leq
 \eta(A_0,A_1)
 +
@@ -132,23 +132,23 @@ Lemma [112_split_affine_cylinder_cost.md](112_split_affine_cylinder_cost.md) giv
 $$
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\operatorname{sactc}(f),
+\mathrm{sactc}(f),
 $$
 
 so the full chain follows.
 
-If the right-hand side is at most $2$, then $\operatorname{sactc}(f)\leq2$. The low-cost exactness clause of [112_split_affine_cylinder_cost.md](112_split_affine_cylinder_cost.md) gives the displayed exact split. $\blacksquare$
+If the right-hand side is at most $2$, then $\mathrm{sactc}(f)\leq2$. The low-cost exactness clause of [112_split_affine_cylinder_cost.md](112_split_affine_cylinder_cost.md) gives the displayed exact split. $\blacksquare$
 
 ## Consequences
 
 If the two cofactors have the same affine slopes and share one local-cost-one cylinder correction, then
 
 $$
-\operatorname{sactc}(f)\leq2
+\mathrm{sactc}(f)\leq2
 $$
 
 whenever $\eta(A_0,A_1)\leq1$. Every nonconstant non-LTF in this class is exactly two-head.
 
-If the shared cylinder correction is absent and the two affine parts differ only by their constants, then $\operatorname{sactc}(f)\leq1$. Thus every nonconstant function in this subcase is an LTF, recovering the expected affine split behavior.
+If the shared cylinder correction is absent and the two affine parts differ only by their constants, then $\mathrm{sactc}(f)\leq1$. Thus every nonconstant function in this subcase is an LTF, recovering the expected affine split behavior.

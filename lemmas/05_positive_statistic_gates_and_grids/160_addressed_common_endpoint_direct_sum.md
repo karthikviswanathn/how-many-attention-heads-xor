@@ -2,7 +2,7 @@
 
 ## Statement
 
-Let $A\subseteq\{0,1\}^{k}$ be a set of raw addresses. Let
+Let $A\subseteq\lbrace0,1\rbrace^{k}$ be a set of raw addresses. Let
 
 $$
 t(y)=\sum_{i=1}^{m}\lambda_i y_i,
@@ -22,7 +22,7 @@ $$
 T_a(y)=F_a(t(y))
 $$
 
-be a positive-statistic feature with sign-change count $C_a$. Suppose there is a common background label $b\in\{0,1\}$ such that
+be a positive-statistic feature with sign-change count $C_a$. Suppose there is a common background label $b\in\lbrace0,1\rbrace$ such that
 
 $$
 F_a(\tau_0)=F_a(\tau_{M-1})=b
@@ -50,7 +50,7 @@ H^{*}(f_A)
 \sum_{a\in A}C_a.
 $$
 
-Consequently, if $A=\{a_0\}$ and $H^{*}(T_{a_0})=C_{a_0}$, then
+Consequently, if $A=\lbrace a_0\rbrace$ and $H^{*}(T_{a_0})=C_{a_0}$, then
 
 $$
 H^{*}(f_A)=C_{a_0}.
@@ -100,7 +100,7 @@ H^{*}(f_A)
 \sum_{a\in A}C_a.
 $$
 
-If $A=\{a_0\}$ and $H^{*}(T_{a_0})=C_{a_0}$, the two sides match.
+If $A=\lbrace a_0\rbrace$ and $H^{*}(T_{a_0})=C_{a_0}$, the two sides match.
 
 For the degree version, apply the shared-statistic degree sandwich [159_shared_statistic_degree_sandwich.md](159_shared_statistic_degree_sandwich.md). The constant background slices have degree $0$, so only the addresses in $A$ contribute to the upper bound, and the lower bound is the maximum threshold degree among the addressed slices. $\blacksquare$
 

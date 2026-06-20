@@ -5,13 +5,13 @@
 Let
 
 $$
-f:\{0,1\}^{m}\to\{0,1\},
+f:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace,
 $$
 
 and define
 
 $$
-g:\{0,1\}^{m+1}\to\{0,1\},
+g:\lbrace0,1\rbrace^{m+1}\to\lbrace0,1\rbrace,
 \qquad
 g(z,y):=z\oplus f(y).
 $$

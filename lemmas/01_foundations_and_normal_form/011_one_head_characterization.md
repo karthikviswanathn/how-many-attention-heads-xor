@@ -160,7 +160,7 @@ $$
 The new information is the exact identification of the first nontrivial level:
 
 $$
-\{f : H^{*}(f) \leq 1\}
+\lbrace f : H^{*}(f) \leq 1\rbrace
 =
-\{f : f \text{ is a linear threshold function}\}.
+\lbrace f : f \text{ is a linear threshold function}\rbrace.
 $$

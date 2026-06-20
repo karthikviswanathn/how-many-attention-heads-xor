@@ -10,7 +10,7 @@ $$
 B_1,\ldots,B_H
 $$
 
-on $\{0,1\}^n$ such that some $2^n$ functions chosen from
+on $\lbrace0,1\rbrace^n$ such that some $2^n$ functions chosen from
 
 $$
 \prod_{j=1}^{H}B_j,
@@ -18,15 +18,15 @@ $$
 M\prod_{j\neq h}B_j
 \quad
 \text{for }
-h \in \{1,\ldots,H\},
+h \in \lbrace1,\ldots,H\rbrace,
 \quad
-M \in \{1,x_1,\ldots,x_n\},
+M \in \lbrace1,x_1,\ldots,x_n\rbrace,
 $$
 
-have linearly independent value vectors on $\{0,1\}^n$. Then every Boolean function
+have linearly independent value vectors on $\lbrace0,1\rbrace^n$. Then every Boolean function
 
 $$
-f : \{0,1\}^n \to \{0,1\}
+f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace
 $$
 
 satisfies
@@ -37,9 +37,9 @@ $$
 
 ## Proof
 
-Let $V$ be the vector space of real-valued functions on $\{0,1\}^n$. Its dimension is $2^n$. By hypothesis, the selected $2^n$ denominator-cleared products form a basis of $V$.
+Let $V$ be the vector space of real-valued functions on $\lbrace0,1\rbrace^n$. Its dimension is $2^n$. By hypothesis, the selected $2^n$ denominator-cleared products form a basis of $V$.
 
-Let $f : \{0,1\}^n \to \{0,1\}$ and define the sign labels
+Let $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$ and define the sign labels
 
 $$
 Q_f(x)
@@ -112,7 +112,7 @@ $$
 1 + nH.
 $$
 
-Consequently, this full-span method cannot prove a universal bound for all functions on $\{0,1\}^n$ unless
+Consequently, this full-span method cannot prove a universal bound for all functions on $\lbrace0,1\rbrace^n$ unless
 
 $$
 1 + nH \geq 2^n,
@@ -124,4 +124,4 @@ $$
 H \geq \left\lceil \frac{2^n - 1}{n} \right\rceil.
 $$
 
-The known determinant certificates meet this dimension lower bound for $n \in \{3,\ldots,12\}$.
+The known determinant certificates meet this dimension lower bound for $n \in \lbrace3,\ldots,12\rbrace$.

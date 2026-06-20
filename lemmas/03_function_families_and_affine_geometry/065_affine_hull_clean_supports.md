@@ -5,21 +5,21 @@
 Let
 
 $$
-A\subseteq\{0,1\}^n
+A\subseteq\lbrace0,1\rbrace^n
 $$
 
-be nonempty. Write $\operatorname{aff}(A)$ for the affine hull of $A$ in $\mathbb{R}^n$.
+be nonempty. Write $\mathrm{aff}(A)$ for the affine hull of $A$ in $\mathbb{R}^n$.
 
 Call $A$ *affine hull clean* if
 
 $$
-\operatorname{aff}(A)\cap\{0,1\}^n=A.
+\mathrm{aff}(A)\cap\lbrace0,1\rbrace^n=A.
 $$
 
-Suppose $f:\{0,1\}^n\to\{0,1\}$ has a label class $A$ such that:
+Suppose $f:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace$ has a label class $A$ such that:
 
 1. $A$ is affine hull clean.
-2. $\operatorname{aff}(A)\neq\mathbb{R}^n$.
+2. $\mathrm{aff}(A)\neq\mathbb{R}^n$.
 
 Then
 
@@ -52,7 +52,7 @@ $$
 Let
 
 $$
-W:=\operatorname{aff}(A).
+W:=\mathrm{aff}(A).
 $$
 
 By assumption, $W$ is a proper affine subspace of $\mathbb{R}^n$. Let $\mathcal{L}_W$ be the real vector space of affine functions that vanish on $W$:
@@ -60,7 +60,7 @@ By assumption, $W$ is a proper affine subspace of $\mathbb{R}^n$. Let $\mathcal{
 $$
 \mathcal{L}_W
 :=
-\{L:\mathbb{R}^n\to\mathbb{R}\text{ affine}:L(w)=0\text{ for every }w\in W\}.
+\lbrace L:\mathbb{R}^n\to\mathbb{R}\text{ affine}:L(w)=0\text{ for every }w\in W\rbrace.
 $$
 
 Since $W$ is proper, $\mathcal{L}_W$ is nonzero.
@@ -68,7 +68,7 @@ Since $W$ is proper, $\mathcal{L}_W$ is nonzero.
 For each cube point
 
 $$
-r\in\{0,1\}^n\setminus A,
+r\in\lbrace0,1\rbrace^n\setminus A,
 $$
 
 the set
@@ -76,7 +76,7 @@ the set
 $$
 \mathcal{H}_r
 :=
-\{L\in\mathcal{L}_W:L(r)=0\}
+\lbrace L\in\mathcal{L}_W:L(r)=0\rbrace
 $$
 
 is a proper hyperplane in $\mathcal{L}_W$. Indeed, $A$ is affine hull clean, so $r\notin W$. Since $r\notin W$, there exists an affine function vanishing on $W$ but not on $r$, which means the evaluation map $L\mapsto L(r)$ is not identically zero on $\mathcal{L}_W$.
@@ -90,7 +90,7 @@ $$
 Then $L$ vanishes on $A$, because $A\subseteq W$, and $L$ is nonzero at every cube point outside $A$. Therefore
 
 $$
-A=\{x\in\{0,1\}^n:L(x)=0\}.
+A=\lbrace x\in\lbrace0,1\rbrace^n:L(x)=0\rbrace.
 $$
 
 Hence
@@ -115,6 +115,6 @@ $$
 p+\lambda(q-p),
 $$
 
-and any coordinate where $p$ and $q$ differ forces $\lambda\in\{0,1\}$.
+and any coordinate where $p$ and $q$ differ forces $\lambda\in\lbrace0,1\rbrace$.
 
 Thus every one-point or two-point label class is affine hull clean. More generally, any proper cube slice that is exactly the intersection of the cube with an affine subspace is a two-head predicate, unless it is already constant or one-head.

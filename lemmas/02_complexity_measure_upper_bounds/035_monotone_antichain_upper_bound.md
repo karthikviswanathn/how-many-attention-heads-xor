@@ -5,23 +5,23 @@
 Let
 
 $$
-f : \{0,1\}^n \to \{0,1\}
+f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace
 $$
 
-be monotone. For a set $S\subseteq\{1,\ldots,n\}$, write $1_S$ for its indicator vector.
+be monotone. For a set $S\subseteq\lbrace1,\ldots,n\rbrace$, write $1_S$ for its indicator vector.
 
 Define the minimal true sets
 
 $$
 \mathcal{M}_1(f)
 :=
-\left\{
+\left\lbrace
 S :
 f(1_S)=1
 \text{ and }
 f(1_T)=0
 \text{ for every } T\subsetneq S
-\right\},
+\right\rbrace,
 $$
 
 and the maximal false sets
@@ -29,13 +29,13 @@ and the maximal false sets
 $$
 \mathcal{M}_0(f)
 :=
-\left\{
+\left\lbrace
 S :
 f(1_S)=0
 \text{ and }
 f(1_T)=1
 \text{ for every } T\supsetneq S
-\right\}.
+\right\rbrace.
 $$
 
 Then
@@ -43,7 +43,7 @@ Then
 $$
 H^{*}(f)
 \leq
-\min\{\lvert\mathcal{M}_1(f)\rvert,\lvert\mathcal{M}_0(f)\rvert\}.
+\min\lbrace\lvert\mathcal{M}_1(f)\rvert,\lvert\mathcal{M}_0(f)\rvert\rbrace.
 $$
 
 Moreover, both $\mathcal{M}_1(f)$ and $\mathcal{M}_0(f)$ are antichains, so Sperner's bound gives
@@ -78,7 +78,7 @@ If the right-hand side is true, then $x_i=1$ for all $i\in S$ for some minimal t
 Conversely, suppose $f(x)=1$. Let
 
 $$
-X:=\{i:x_i=1\}.
+X:=\lbrace i:x_i=1\rbrace.
 $$
 
 Since $f(1_X)=1$ and the cube is finite, there is a subset $S\subseteq X$ minimal under inclusion with $f(1_S)=1$. Then $S\in\mathcal{M}_1(f)$, so the corresponding conjunction is true on $x$.
@@ -93,9 +93,9 @@ $$
 
 If $\mathcal{M}_0(f)=\varnothing$, then $f$ is constant $1$ by monotonicity, and $H^{*}(f)=0$.
 
-If $\{1,\ldots,n\}\in\mathcal{M}_0(f)$, then $f$ is constant $0$ by monotonicity, and $H^{*}(f)=0$.
+If $\lbrace1,\ldots,n\rbrace\in\mathcal{M}_0(f)$, then $f$ is constant $0$ by monotonicity, and $H^{*}(f)=0$.
 
-Otherwise, every set $\{1,\ldots,n\}\setminus S$ with $S\in\mathcal{M}_0(f)$ is nonempty. We claim
+Otherwise, every set $\lbrace1,\ldots,n\rbrace\setminus S$ with $S\in\mathcal{M}_0(f)$ is nonempty. We claim
 
 $$
 f(x)
@@ -107,12 +107,12 @@ $$
 If $f(x)=0$, set
 
 $$
-X:=\{i:x_i=1\}.
+X:=\lbrace i:x_i=1\rbrace.
 $$
 
 Since $f(1_X)=0$ and the cube is finite, there is a superset $S\supseteq X$ maximal under inclusion with $f(1_S)=0$. Then $S\in\mathcal{M}_0(f)$, and the clause $\bigvee_{i\notin S}x_i$ is false because $X\subseteq S$.
 
-Conversely, suppose the displayed CNF is false. Then for some $S\in\mathcal{M}_0(f)$, every coordinate outside $S$ has $x_i=0$. Equivalently, if $X=\{i:x_i=1\}$, then $X\subseteq S$. Since $f(1_S)=0$ and $1_X\leq1_S$, monotonicity gives $f(x)=0$.
+Conversely, suppose the displayed CNF is false. Then for some $S\in\mathcal{M}_0(f)$, every coordinate outside $S$ has $x_i=0$. Equivalently, if $X=\lbrace i:x_i=1\rbrace$, then $X\subseteq S$. Since $f(1_S)=0$ and $1_X\leq1_S$, monotonicity gives $f(x)=0$.
 
 Thus $f$ has a monotone CNF with $\lvert\mathcal{M}_0(f)\rvert$ nonempty clauses. The monotone CNF upper bound from [029_monotone_dnf_upper_bound.md](029_monotone_dnf_upper_bound.md) gives
 
@@ -125,7 +125,7 @@ Combining Lemmas 1 and 2 gives
 $$
 H^{*}(f)
 \leq
-\min\{\lvert\mathcal{M}_1(f)\rvert,\lvert\mathcal{M}_0(f)\rvert\}.
+\min\lbrace\lvert\mathcal{M}_1(f)\rvert,\lvert\mathcal{M}_0(f)\rvert\rbrace.
 $$
 
 ### Lemma 3. The boundary families are antichains
@@ -136,7 +136,7 @@ If $S,T\in\mathcal{M}_0(f)$ and $S\subsetneq T$, then $S$ is not maximal false, 
 
 ### Lemma 4. Sperner's bound
 
-Let $\mathcal{A}\subseteq2^{\{1,\ldots,n\}}$ be an antichain. A maximal chain in the subset lattice is determined by an ordering of the $n$ coordinates, so there are $n!$ maximal chains.
+Let $\mathcal{A}\subseteq2^{\lbrace1,\ldots,n\rbrace}$ be an antichain. A maximal chain in the subset lattice is determined by an ordering of the $n$ coordinates, so there are $n!$ maximal chains.
 
 A set $S$ of size $k$ lies in exactly
 
@@ -208,7 +208,7 @@ For monotone functions, the relevant upper-bound parameter is not the total numb
 $$
 H^{*}(f)
 \leq
-\min\{\lvert\mathcal{M}_1(f)\rvert,\lvert\mathcal{M}_0(f)\rvert\}
+\min\lbrace\lvert\mathcal{M}_1(f)\rvert,\lvert\mathcal{M}_0(f)\rvert\rbrace
 \leq
 \binom{n}{\lfloor n/2\rfloor}.
 $$

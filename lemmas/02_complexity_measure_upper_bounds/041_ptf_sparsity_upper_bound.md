@@ -2,16 +2,16 @@
 
 ## Statement
 
-For a nonempty set $S\subseteq\{1,\ldots,n\}$, write
+For a nonempty set $S\subseteq\lbrace1,\ldots,n\rbrace$, write
 
 $$
 q_S(x):=\prod_{i\in S}x_i.
 $$
 
-Let $\operatorname{ptfsp}(f)$ be the least number of nonconstant monomials appearing with nonzero coefficient in a real polynomial
+Let $\mathrm{ptfsp}(f)$ be the least number of nonconstant monomials appearing with nonzero coefficient in a real polynomial
 
 $$
-P(x)=a_{\varnothing}+\sum_{\varnothing\neq S\subseteq\{1,\ldots,n\}}a_S q_S(x)
+P(x)=a_{\varnothing}+\sum_{\varnothing\neq S\subseteq\lbrace1,\ldots,n\rbrace}a_S q_S(x)
 $$
 
 that sign-represents $f$, meaning
@@ -22,12 +22,12 @@ f(x)=1
 P(x)>0
 $$
 
-for every $x\in\{0,1\}^n$.
+for every $x\in\lbrace0,1\rbrace^n$.
 
 Then
 
 $$
-H^{*}(f)\leq\operatorname{ptfsp}(f).
+H^{*}(f)\leq\mathrm{ptfsp}(f).
 $$
 
 In particular, if $\deg_{\pm}(f)\leq d$, then
@@ -46,7 +46,7 @@ We first show that one head can approximate any nonconstant monomial with arbitr
 
 ### Lemma 1. One head approximates a signed monotone monomial
 
-Fix a nonempty set $S\subseteq\{1,\ldots,n\}$, a coefficient $a\in\mathbb{R}$, and a tolerance $\varepsilon>0$. There is a one-head atom $\phi_{S,a,\varepsilon}$ such that
+Fix a nonempty set $S\subseteq\lbrace1,\ldots,n\rbrace$, a coefficient $a\in\mathbb{R}$, and a tolerance $\varepsilon>0$. There is a one-head atom $\phi_{S,a,\varepsilon}$ such that
 
 $$
 \left\lvert
@@ -56,7 +56,7 @@ $$
 \varepsilon
 $$
 
-for every $x\in\{0,1\}^n$.
+for every $x\in\lbrace0,1\rbrace^n$.
 
 **Proof.** If $a=0$, take the zero numerator over any valid denominator. Assume $a\neq0$.
 
@@ -80,7 +80,7 @@ and
 
 $$
 B(x):=
-1+R\,d_S(x)
+1+R\thinspace d_S(x)
 +\delta\sum_{i\notin S}(1-x_i).
 $$
 
@@ -112,7 +112,7 @@ $$
 \lvert \phi(x)\rvert
 \leq
 \frac{2\lvert a\rvert d_S(x)}
-{1+R\,d_S(x)}
+{1+R\thinspace d_S(x)}
 \leq
 \frac{2\lvert a\rvert}{R}.
 $$
@@ -130,7 +130,7 @@ $$
 sign-represent $f$, where $\mathcal{M}$ is a family of nonempty sets and every $a_S\neq0$. Since the cube is finite and the signs are strict,
 
 $$
-\Delta:=\min_{x\in\{0,1\}^n}\lvert P(x)\rvert>0.
+\Delta:=\min_{x\in\lbrace0,1\rbrace^n}\lvert P(x)\rvert>0.
 $$
 
 If $\mathcal{M}=\varnothing$, then $P$ is constant-sign and $f$ is constant, so $H^{*}(f)=0$.
@@ -176,7 +176,7 @@ $$
 Minimizing over all sign-representing polynomials proves
 
 $$
-H^{*}(f)\leq\operatorname{ptfsp}(f).
+H^{*}(f)\leq\mathrm{ptfsp}(f).
 $$
 
 Finally, if $\deg_{\pm}(f)\leq d$, choose a degree-at-most-$d$ sign-representing polynomial. It has no more than
@@ -196,7 +196,7 @@ $$
 \leq
 H^{*}(f)
 \leq
-\operatorname{ptfsp}(f).
+\mathrm{ptfsp}(f).
 $$
 
 For functions with small threshold degree $d$, this gives the uniform upper bound

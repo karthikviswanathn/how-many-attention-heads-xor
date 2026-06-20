@@ -5,7 +5,7 @@
 Let
 
 $$
-f : \{0,1\}^n \to \{0,1\}
+f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace
 $$
 
 and define the minority support size
@@ -13,10 +13,10 @@ and define the minority support size
 $$
 s(f)
 :=
-\min\{
+\min\lbrace
 \lvert f^{-1}(1)\rvert,
 \lvert f^{-1}(0)\rvert
-\}.
+\rbrace.
 $$
 
 Then
@@ -51,7 +51,7 @@ $$
 t(x):=\sum_{i=1}^{n}2^{i-1}x_i.
 $$
 
-This statistic is injective on $\{0,1\}^n$, so $f$ factors through $t$.
+This statistic is injective on $\lbrace0,1\rbrace^n$, so $f$ factors through $t$.
 
 List the cube points in increasing order of $t$:
 
@@ -65,10 +65,10 @@ $$
 a_j:=f(x^{(j)}).
 $$
 
-Let $m:=s(f)$, and choose the minority label $\beta\in\{0,1\}$ so that
+Let $m:=s(f)$, and choose the minority label $\beta\in\lbrace0,1\rbrace$ so that
 
 $$
-\lvert\{j:a_j=\beta\}\rvert=m.
+\lvert\lbrace j:a_j=\beta\rbrace\rvert=m.
 $$
 
 The sign-change count of the sequence $a_0,\ldots,a_{2^n-1}$ is at most $2m$: each maximal contiguous block of minority labels contributes at most two boundary changes, one on entry and one on exit. The number of such blocks is at most $m$.
@@ -79,7 +79,7 @@ $$
 H^{*}(f)\leq C_t(f)\leq2m=2s(f).
 $$
 
-If $s(f)=1$, then either $f^{-1}(1)=\{a\}$ or $f^{-1}(0)=\{a\}$ for some point $a\in\{0,1\}^n$. The singleton indicator is a linear threshold function:
+If $s(f)=1$, then either $f^{-1}(1)=\lbrace a\rbrace$ or $f^{-1}(0)=\lbrace a\rbrace$ for some point $a\in\lbrace0,1\rbrace^n$. The singleton indicator is a linear threshold function:
 
 $$
 \mathbf{1}[x=a]=1
@@ -102,7 +102,7 @@ $$
 Then
 
 $$
-H^{*}(f)\leq2\min\{N_1(f),N_0(f)\}.
+H^{*}(f)\leq2\min\lbrace N_1(f),N_0(f)\rbrace.
 $$
 
 This improves the generic $2^n-1$ bound whenever the smaller label class has size below $2^{n-1}$. It is especially useful for rare-event predicates and complements of rare-event predicates, where no low-dimensional positive projection or monotone normal form is visible.
@@ -118,7 +118,7 @@ with exact value determined by the constant, LTF, and non-LTF split.
 The same sharpening applies to a larger geometric class. If a label class $A$ is exactly
 
 $$
-\operatorname{aff}(A)\cap\{0,1\}^n
+\mathrm{aff}(A)\cap\lbrace0,1\rbrace^n
 $$
 
-and $\operatorname{aff}(A)$ is proper, then [065_affine_hull_clean_supports.md](../03_function_families_and_affine_geometry/065_affine_hull_clean_supports.md) gives the same two-head upper bound and exact split.
+and $\mathrm{aff}(A)$ is proper, then [065_affine_hull_clean_supports.md](../03_function_families_and_affine_geometry/065_affine_hull_clean_supports.md) gives the same two-head upper bound and exact split.

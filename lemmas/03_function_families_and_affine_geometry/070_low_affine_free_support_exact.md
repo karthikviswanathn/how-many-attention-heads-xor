@@ -5,16 +5,16 @@
 Let
 
 $$
-f:\{0,1\}^n\to\{0,1\}.
+f:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace.
 $$
 
 Suppose
 
 $$
-\operatorname{afs}_{\pm}(f)\leq2,
+\mathrm{afs}_{\pm}(f)\leq2,
 $$
 
-where $\operatorname{afs}_{\pm}$ is the affine-free polynomial-threshold support cost from [048_affine_free_sparsity_upper_bound.md](048_affine_free_sparsity_upper_bound.md). Then
+where $\mathrm{afs}_{\pm}$ is the affine-free polynomial-threshold support cost from [048_affine_free_sparsity_upper_bound.md](048_affine_free_sparsity_upper_bound.md). Then
 
 $$
 H^{*}(f)\leq2.
@@ -49,7 +49,7 @@ where $A$ is affine. It also applies to sign polynomials with no affine part and
 The affine-free sparsity theorem [048_affine_free_sparsity_upper_bound.md](048_affine_free_sparsity_upper_bound.md) gives
 
 $$
-H^{*}(f)\leq\operatorname{afs}_{\pm}(f).
+H^{*}(f)\leq\mathrm{afs}_{\pm}(f).
 $$
 
 Hence the hypothesis implies

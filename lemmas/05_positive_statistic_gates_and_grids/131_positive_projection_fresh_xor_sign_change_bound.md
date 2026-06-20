@@ -10,7 +10,7 @@ t(y)=\sum_{i=1}^{m}\lambda_i y_i,
 \lambda_i>0,
 $$
 
-and let $G:\operatorname{Im}(t)\to\{0,1\}$. Define
+and let $G:\mathrm{Im}(t)\to\lbrace0,1\rbrace$. Define
 
 $$
 T(y):=G(t(y)).
@@ -88,7 +88,7 @@ $$
 \tau_0<\tau_1<\cdots<\tau_{M-1}<B+\tau_0<B+\tau_1<\cdots<B+\tau_{M-1}.
 $$
 
-Define $H:\operatorname{Im}(s)\to\{0,1\}$ by
+Define $H:\mathrm{Im}(s)\to\lbrace0,1\rbrace$ by
 
 $$
 H(\tau_j):=G(\tau_j),

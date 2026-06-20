@@ -4,7 +4,7 @@
 
 This note gives a two-head upper bound for every three-bit Boolean function with a quadratic sign representation.
 
-Let $f : \{0,1\}^3 \to \{0,1\}$. Suppose there is a multilinear polynomial $P$ of degree at most $2$ such that
+Let $f : \lbrace0,1\rbrace^3 \to \lbrace0,1\rbrace$. Suppose there is a multilinear polynomial $P$ of degree at most $2$ such that
 
 $$
 f(x)=1
@@ -12,7 +12,7 @@ f(x)=1
 P(x)>0
 $$
 
-for every $x \in \{0,1\}^3$. Then
+for every $x \in \lbrace0,1\rbrace^3$. Then
 
 $$
 H^{*}(f) \leq 2.
@@ -138,7 +138,7 @@ The following coefficient table records the products of $B_1,B_2$ with affine mo
 | $x_1B_2$ | $0$ | $2$ | $0$ | $0$ | $2$ | $4$ | $0$ |
 | $x_2B_2$ | $0$ | $0$ | $3$ | $0$ | $1$ | $0$ | $4$ |
 
-The $7 \times 7$ determinant of this table is $-24$, so these seven products form a basis for all multilinear polynomials of degree at most $2$ on $\{0,1\}^3$.
+The $7 \times 7$ determinant of this table is $-24$, so these seven products form a basis for all multilinear polynomials of degree at most $2$ on $\lbrace0,1\rbrace^3$.
 
 Therefore, for every such polynomial $P$, there are affine functions $A_1,A_2$ with
 
@@ -170,12 +170,12 @@ $$
 
 $\blacksquare$
 
-### Lemma 3. The function $00101001$ has exact head complexity $2$
+### Lemma 3. The function 00101001 has exact head complexity 2
 
 Let $g$ be the function with positive inputs
 
 $$
-\{010,100,111\}.
+\lbrace010,100,111\rbrace.
 $$
 
 Equivalently,
@@ -192,7 +192,7 @@ $$
 s(x):=x_1+x_2-x_3
 $$
 
-takes values in $\{-1,0,1,2\}$ on the cube, and $s(x)=1$ exactly at $010,100,111$.
+takes values in $\lbrace-1,0,1,2\rbrace$ on the cube, and $s(x)=1$ exactly at $010,100,111$.
 
 Now define
 
@@ -203,7 +203,7 @@ P(x)
 \left(\frac{3}{2}-s(x)\right).
 $$
 
-This polynomial is positive exactly when $s(x)=1$ and negative when $s(x)\in\{-1,0,2\}$. Its multilinear expansion is
+This polynomial is positive exactly when $s(x)=1$ and negative when $s(x)\in\lbrace-1,0,2\rbrace$. Its multilinear expansion is
 
 $$
 P(x)

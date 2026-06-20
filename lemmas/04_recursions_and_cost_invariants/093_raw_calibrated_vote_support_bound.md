@@ -5,7 +5,7 @@
 For a Boolean feature
 
 $$
-T:\{0,1\}^n\to\{0,1\},
+T:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace,
 $$
 
 define $\rho(T)$ to be the least nonnegative integer $r$ such that for every $\epsilon>0$ there are one-head atoms
@@ -70,21 +70,21 @@ $$
 be the exact multilinear expansion of $T$. Define the exact affine-free support cost
 
 $$
-\operatorname{eafs}(T)
+\mathrm{eafs}(T)
 :=
-\mathbf{1}\!\left[
-\exists i,\ a_{\{i\}}\neq0
+\mathbf{1}\negthinspace\left[
+\exists i,\ a_{\lbrace i\rbrace}\neq0
 \right]
 +
 \left\lvert
-\{S:\lvert S\rvert\geq2,\ a_S\neq0\}
+\lbrace S:\lvert S\rvert\geq2,\ a_S\neq0\rbrace
 \right\rvert.
 $$
 
 Then
 
 $$
-\rho(T)\leq\operatorname{eafs}(T).
+\rho(T)\leq\mathrm{eafs}(T).
 $$
 
 Consequently,
@@ -92,7 +92,7 @@ Consequently,
 $$
 H^{*}(f)
 \leq
-\sum_{j:c_j\neq0}\operatorname{eafs}(T_j).
+\sum_{j:c_j\neq0}\mathrm{eafs}(T_j).
 $$
 
 > **Interpretation.** The calibrated-vote theorem does not require every feature to be approximated by one atom. A feature may cost several raw atoms, and exact multilinear sparsity gives a concrete fallback cost.
@@ -188,7 +188,7 @@ $$
 where $L$ is the linear part and
 
 $$
-\mathcal{M}:=\{S:\lvert S\rvert\geq2,\ a_S\neq0\}.
+\mathcal{M}:=\lbrace S:\lvert S\rvert\geq2,\ a_S\neq0\rbrace.
 $$
 
 If $L$ is nonzero, Lemma 1 of [048_affine_free_sparsity_upper_bound.md](../03_function_families_and_affine_geometry/048_affine_free_sparsity_upper_bound.md) gives one atom approximating $L$ uniformly to any prescribed tolerance. If $L$ is zero, no affine atom is needed.
@@ -199,11 +199,11 @@ Choose all these tolerances small enough that the sum of the uniform errors is a
 
 $$
 \rho(T)\leq
-\mathbf{1}\!\left[L\neq0\right]
+\mathbf{1}\negthinspace\left[L\neq0\right]
 +
 \lvert\mathcal{M}\rvert
 =
-\operatorname{eafs}(T).
+\mathrm{eafs}(T).
 $$
 
 Combining this with Lemma 1 proves the final displayed bound. $\blacksquare$

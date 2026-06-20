@@ -7,7 +7,7 @@ For each $n$, define
 $$
 R_{\mathrm{LTF}}(n)
 :=
-\max\{\rho(T):T:\{0,1\}^{n}\to\{0,1\}\text{ is a nonconstant LTF}\}.
+\max\lbrace\rho(T):T:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace\text{ is a nonconstant LTF}\rbrace.
 $$
 
 There is an absolute constant $c>0$ and infinitely many $n$ such that
@@ -19,7 +19,7 @@ $$
 Consequently, there are nonconstant linear threshold functions
 
 $$
-V_n:\{0,1\}^{n}\to\{0,1\}
+V_n:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace
 $$
 
 with
@@ -39,7 +39,7 @@ $$
 Use the halfspace-intersection family from [105_halfspace_intersection_head_lower_bound.md](105_halfspace_intersection_head_lower_bound.md). Thus, for infinitely many $n$, there are LTFs
 
 $$
-T_n,U_n:\{0,1\}^{n}\to\{0,1\}
+T_n,U_n:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace
 $$
 
 such that

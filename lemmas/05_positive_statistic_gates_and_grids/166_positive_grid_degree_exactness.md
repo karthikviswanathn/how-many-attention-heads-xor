@@ -5,14 +5,14 @@
 Use the setup of Theorem 165. Suppose that for each raw level $\nu_r$ there is a univariate polynomial $P_r(v)$ of degree at most $d_r$ such that
 
 $$
-\operatorname{sgn}(P_r(t(y)))=
+\mathrm{sgn}(P_r(t(y)))=
 \begin{cases}
 +1 & \text{if } F(\nu_r,t(y))=1,\\
 -1 & \text{if } F(\nu_r,t(y))=0
 \end{cases}
 $$
 
-for every $y\in\{0,1\}^{m}$. Let
+for every $y\in\lbrace0,1\rbrace^{m}$. Let
 
 $$
 \delta_r:=\deg_{\pm}\bigl(F(\nu_r,t(y))\bigr).

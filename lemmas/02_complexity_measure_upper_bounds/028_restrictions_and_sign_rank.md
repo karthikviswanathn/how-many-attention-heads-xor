@@ -7,7 +7,7 @@ This note records reusable structural facts.
 First, $H^{*}$ is monotone under restrictions. If $g$ is obtained from
 
 $$
-f : \{0,1\}^n \to \{0,1\}
+f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace
 $$
 
 by fixing some input coordinates, then
@@ -36,7 +36,7 @@ $$
 
 Consequently, if $f$ is a $k$-junta, then $H^{*}(f)$ is exactly the head complexity of the induced function on its essential $k$ variables.
 
-Third, $H^{*}$ controls sign-rank under every input partition. Let $I\sqcup J=\{1,\ldots,n\}$, and write inputs as $(u,v)\in\{0,1\}^{I}\times\{0,1\}^{J}$. Let $\Sigma_f^{I,J}$ be the sign matrix
+Third, $H^{*}$ controls sign-rank under every input partition. Let $I\sqcup J=\lbrace1,\ldots,n\rbrace$, and write inputs as $(u,v)\in\lbrace0,1\rbrace^{I}\times\lbrace0,1\rbrace^{J}$. Let $\Sigma_f^{I,J}$ be the sign matrix
 
 $$
 \Sigma_f^{I,J}(u,v)
@@ -47,10 +47,10 @@ $$
 \end{cases}
 $$
 
-Let $\operatorname{srank}_{I,J}(f)$ be its sign-rank, namely the minimum rank of a real matrix with the same strict sign pattern as $\Sigma_f^{I,J}$. If $H=H^{*}(f)$, then
+Let $\mathrm{srank}_{I,J}(f)$ be its sign-rank, namely the minimum rank of a real matrix with the same strict sign pattern as $\Sigma_f^{I,J}$. If $H=H^{*}(f)$, then
 
 $$
-\operatorname{srank}_{I,J}(f)
+\mathrm{srank}_{I,J}(f)
 \leq
 \sum_{r=0}^{H}
 \sum_{i=0}^{r}
@@ -63,15 +63,15 @@ where binomial coefficients outside their natural range are interpreted as $0$. 
 $$
 H^{*}(f)
 \geq
-\min\left\{
+\min\left\lbrace
 H :
-\operatorname{srank}_{I,J}(f)
+\mathrm{srank}_{I,J}(f)
 \leq
 \sum_{r=0}^{H}
 \sum_{i=0}^{r}
 \binom{\lvert I\rvert}{i}
 \binom{\lvert J\rvert}{r-i}
-\right\}.
+\right\rbrace.
 $$
 
 By Vandermonde's identity, the double sum is also
@@ -86,7 +86,7 @@ $$
 
 ### Lemma 1. Restriction monotonicity
 
-Let $g$ be obtained from $f$ by fixing coordinates outside a set $K\subseteq\{1,\ldots,n\}$.
+Let $g$ be obtained from $f$ by fixing coordinates outside a set $K\subseteq\lbrace1,\ldots,n\rbrace$.
 
 Take an optimal $H^{*}(f)$-head linear-fractional representation of $f$:
 
@@ -129,13 +129,13 @@ If a restriction of $f$ is $k$-bit parity or its complement, then the restricted
 
 ### Lemma 2. Dummy variables do not change head complexity
 
-Let $f : \{0,1\}^k \to \{0,1\}$, and define
+Let $f : \lbrace0,1\rbrace^k \to \lbrace0,1\rbrace$, and define
 
 $$
 F(x,y):=f(x)
 $$
 
-on $\{0,1\}^{k+r}$. We prove
+on $\lbrace0,1\rbrace^{k+r}$. We prove
 
 $$
 H^{*}(F)=H^{*}(f).
@@ -164,7 +164,7 @@ $$
 Because the domain is finite and the inequalities are strict, there is a margin
 
 $$
-\Delta:=\min_{x\in\{0,1\}^k}\lvert S(x)\rvert>0.
+\Delta:=\min_{x\in\lbrace0,1\rbrace^k}\lvert S(x)\rvert>0.
 $$
 
 For each atom
@@ -239,9 +239,9 @@ be an atom. Then $\phi(1-y)$ equals
 
 $$
 \frac{
-\eta+\sum_{i=1}^{n}\rho_i'\,(\alpha')^{y_i}(m_i'+\delta' y_i)
+\eta+\sum_{i=1}^{n}\rho_i'\thinspace(\alpha')^{y_i}(m_i'+\delta' y_i)
 }{
-\gamma+\sum_{i=1}^{n}\rho_i'\,(\alpha')^{y_i}
+\gamma+\sum_{i=1}^{n}\rho_i'\thinspace(\alpha')^{y_i}
 },
 $$
 
@@ -306,7 +306,7 @@ $$
 has rank at most the number of monomials appearing in the displayed degree bound:
 
 $$
-\operatorname{rank}(M_P)
+\mathrm{rank}(M_P)
 \leq
 \sum_{r=0}^{H}
 \sum_{i=0}^{r}
@@ -317,9 +317,9 @@ $$
 Since $M_P$ has the same strict sign pattern as $\Sigma_f^{I,J}$, the definition of sign-rank gives
 
 $$
-\operatorname{srank}_{I,J}(f)
+\mathrm{srank}_{I,J}(f)
 \leq
-\operatorname{rank}(M_P)
+\mathrm{rank}(M_P)
 \leq
 \sum_{r=0}^{H}
 \sum_{i=0}^{r}
@@ -352,12 +352,12 @@ The sign-rank part gives a communication-complexity lower-bound route. For any p
 $$
 H^{*}(f)
 \geq
-\min\left\{
+\min\left\lbrace
 H :
-\operatorname{srank}_{I,J}(f)
+\mathrm{srank}_{I,J}(f)
 \leq
 \sum_{r=0}^{H}\binom{n}{r}
-\right\}.
+\right\rbrace.
 $$
 
 This is weaker than the counting lower bound for a random function, but it is constructive: a single explicit high-sign-rank partition matrix certifies a concrete lower bound for that function.

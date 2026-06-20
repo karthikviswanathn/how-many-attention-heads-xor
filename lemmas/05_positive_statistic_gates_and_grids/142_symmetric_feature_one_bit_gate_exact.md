@@ -5,7 +5,7 @@
 Let
 
 $$
-T:\{0,1\}^{m}\to\{0,1\}
+T:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace
 $$
 
 be a nonconstant symmetric Boolean function. Let $C$ be the number of sign changes in its Hamming-weight sequence
@@ -42,7 +42,7 @@ $$
 t(y)=\sum_{i=1}^{m}y_i.
 $$
 
-Then $T(y)=F(t(y))$ for a positive statistic $t$, and $C$ is exactly the sign-change count of $F$ on the ordered image $\{0,1,\ldots,m\}$.
+Then $T(y)=F(t(y))$ for a positive statistic $t$, and $C$ is exactly the sign-change count of $F$ on the ordered image $\lbrace0,1,\ldots,m\rbrace$.
 
 The symmetric exactness theorem [012_symmetric_sign_changes.md](../01_foundations_and_normal_form/012_symmetric_sign_changes.md) gives
 

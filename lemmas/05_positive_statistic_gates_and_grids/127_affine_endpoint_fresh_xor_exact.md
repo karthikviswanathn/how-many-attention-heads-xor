@@ -8,7 +8,7 @@ $$
 L(y)=a+\sum_{i=1}^{m}\alpha_i y_i
 $$
 
-be a nonconstant affine statistic on $\{0,1\}^{m}$. Let
+be a nonconstant affine statistic on $\lbrace0,1\rbrace^{m}$. Let
 
 $$
 \ell_{\min}:=\min_y L(y),
@@ -71,7 +71,7 @@ Since $L$ is nonconstant, $R$ has at least one positive value. Define
 $$
 R_{\max}:=\max_y R(y)>0,
 \qquad
-\delta:=\min\{R(y):R(y)>0\}>0.
+\delta:=\min\lbrace R(y):R(y)>0\rbrace>0.
 $$
 
 The endpoint predicate is a nonconstant LTF, because
@@ -154,4 +154,4 @@ Applying this to $E_{\min}$ and $E_{\max}$ proves the result. $\blacksquare$
 
 The positive endpoint theorem [126_endpoint_feature_fresh_xor_exact.md](../04_recursions_and_cost_invariants/126_endpoint_feature_fresh_xor_exact.md) is the special case where $L(y)=\sum_{i\in S}\lambda_i y_i$ with $\lambda_i>0$: the OR-type endpoint is the complement of $E_{\min}$, and the AND-type endpoint is $E_{\max}$.
 
-Thus every affine statistic has exact two-head fresh-XOR behavior at its two finite cube endpoints, even when the generic one-bit LTF branching and optimized $\operatorname{xactc}$ upper bounds are much larger.
+Thus every affine statistic has exact two-head fresh-XOR behavior at its two finite cube endpoints, even when the generic one-bit LTF branching and optimized $\mathrm{xactc}$ upper bounds are much larger.

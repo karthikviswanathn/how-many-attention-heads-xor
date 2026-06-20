@@ -5,7 +5,7 @@
 For every Boolean function
 
 $$
-f : \{0,1\}^8 \to \{0,1\},
+f : \lbrace0,1\rbrace^8 \to \lbrace0,1\rbrace,
 $$
 
 we have
@@ -77,13 +77,13 @@ $$
 \prod_{j=1}^{32}B_j,
 $$
 
-for each $h \in \{1,\ldots,31\}$, the eight products
+for each $h \in \lbrace1,\ldots,31\rbrace$, the eight products
 
 $$
 M\prod_{j\neq h}B_j
 \qquad
 \text{for }
-M \in \{1,x_1,x_2,x_3,x_4,x_5,x_6,x_7\},
+M \in \lbrace1,x_1,x_2,x_3,x_4,x_5,x_6,x_7\rbrace,
 $$
 
 and the seven products
@@ -92,10 +92,10 @@ $$
 M\prod_{j\neq 32}B_j
 \qquad
 \text{for }
-M \in \{1,x_1,x_2,x_3,x_4,x_5,x_6\}.
+M \in \lbrace1,x_1,x_2,x_3,x_4,x_5,x_6\rbrace.
 $$
 
-Write their value vectors on $\{0,1\}^8$ in lexicographic input order. To keep the certificate small, compute the determinant of this $256\times256$ integer value matrix modulo the prime
+Write their value vectors on $\lbrace0,1\rbrace^8$ in lexicographic input order. To keep the certificate small, compute the determinant of this $256\times256$ integer value matrix modulo the prime
 
 $$
 p := 1000003.
@@ -108,9 +108,9 @@ $$
 \pmod p,
 $$
 
-which is nonzero. Hence the determinant is nonzero over the integers, and the displayed products form a basis for all real-valued functions on $\{0,1\}^8$.
+which is nonzero. Hence the determinant is nonzero over the integers, and the displayed products form a basis for all real-valued functions on $\lbrace0,1\rbrace^8$.
 
-By the determinant-span schema from [021_determinant_span_schema.md](021_determinant_span_schema.md), every Boolean function $f : \{0,1\}^8 \to \{0,1\}$ has
+By the determinant-span schema from [021_determinant_span_schema.md](021_determinant_span_schema.md), every Boolean function $f : \lbrace0,1\rbrace^8 \to \lbrace0,1\rbrace$ has
 
 $$
 H^{*}(f) \leq 32.

@@ -5,7 +5,7 @@
 Let $f$ be computed by a decision list with tests
 
 $$
-T_1,\ldots,T_L:\{0,1\}^n\to\{0,1\}.
+T_1,\ldots,T_L:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace.
 $$
 
 Then
@@ -23,10 +23,10 @@ In particular,
 $$
 H^{*}(f)
 \leq
-\sum_{j=1}^{L}\operatorname{eafs}(T_j),
+\sum_{j=1}^{L}\mathrm{eafs}(T_j),
 $$
 
-where $\operatorname{eafs}(T_j)$ is the exact affine-free support cost of the unique multilinear expansion of $T_j$.
+where $\mathrm{eafs}(T_j)$ is the exact affine-free support cost of the unique multilinear expansion of $T_j$.
 
 > **Interpretation.** Decision lists do not require one raw atom per test. They require the raw calibration cost of each test. Endpoint and literal tests have cost at most one; internal threshold tests may cost more.
 
@@ -55,7 +55,7 @@ $$
 The same theorem also gives
 
 $$
-\rho(T_j)\leq\operatorname{eafs}(T_j)
+\rho(T_j)\leq\mathrm{eafs}(T_j)
 $$
 
 for every test $T_j$. Therefore
@@ -63,7 +63,7 @@ for every test $T_j$. Therefore
 $$
 H^{*}(f)
 \leq
-\sum_{j=1}^{L}\operatorname{eafs}(T_j).
+\sum_{j=1}^{L}\mathrm{eafs}(T_j).
 $$
 
 $\blacksquare$

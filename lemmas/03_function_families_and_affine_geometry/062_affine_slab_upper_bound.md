@@ -8,7 +8,7 @@ $$
 L(x)=c+\sum_{i=1}^{n}a_i x_i
 $$
 
-be an affine function on $\{0,1\}^n$, and let $\alpha\leq\beta$. Define the affine-slab predicate
+be an affine function on $\lbrace0,1\rbrace^n$, and let $\alpha\leq\beta$. Define the affine-slab predicate
 
 $$
 S_{L,\alpha,\beta}(x)
@@ -61,7 +61,7 @@ Because the Boolean cube is finite, define
 $$
 r_{\mathrm{in}}
 :=
-\max\{\lvert L(x)-c_*\rvert:S_{L,\alpha,\beta}(x)=1\}
+\max\lbrace\lvert L(x)-c_*\rvert:S_{L,\alpha,\beta}(x)=1\rbrace
 $$
 
 and
@@ -69,7 +69,7 @@ and
 $$
 r_{\mathrm{out}}
 :=
-\min\{\lvert L(x)-c_*\rvert:S_{L,\alpha,\beta}(x)=0\}.
+\min\lbrace\lvert L(x)-c_*\rvert:S_{L,\alpha,\beta}(x)=0\rbrace.
 $$
 
 Every true input has distance at most $R_*$ from $c_*$, and every false input has distance strictly larger than $R_*$. Therefore
@@ -197,7 +197,7 @@ The affine level-set theorem [061_affine_level_set_upper_bound.md](061_affine_le
 Hamming-weight intervals satisfy
 
 $$
-H^{*}\!\left(\mathbf{1}[a\leq \lvert x\rvert\leq b]\right)\leq2.
+H^{*}\negthinspace\left(\mathbf{1}[a\leq \lvert x\rvert\leq b]\right)\leq2.
 $$
 
 This agrees with the exact symmetric sign-change theorem, since a single interval has at most two boundary crossings in the Hamming-weight sequence.

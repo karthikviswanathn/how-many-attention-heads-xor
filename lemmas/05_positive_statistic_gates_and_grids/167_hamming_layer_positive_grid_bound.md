@@ -2,7 +2,7 @@
 
 ## Statement
 
-Let $z\in\{0,1\}^{k}$ and $y\in\{0,1\}^{m}$. Suppose
+Let $z\in\lbrace0,1\rbrace^{k}$ and $y\in\lbrace0,1\rbrace^{m}$. Suppose
 
 $$
 f(z,y)=F(\lvert z\rvert,t(y)),
@@ -12,7 +12,7 @@ t(y)=\sum_{i=1}^{m}\lambda_i y_i,
 \lambda_i>0.
 $$
 
-For each Hamming layer $r\in\{0,\ldots,k\}$, let $C_r$ be the sign-change count of
+For each Hamming layer $r\in\lbrace0,\ldots,k\rbrace$, let $C_r$ be the sign-change count of
 
 $$
 \tau\mapsto F(r,\tau)
@@ -24,10 +24,10 @@ $$
 J_{\mathrm{Ham}}
 :=
 \left\lvert
-\left\{
-r\in\{0,\ldots,k-1\}:
+\left\lbrace
+r\in\lbrace0,\ldots,k-1\rbrace:
 F(r,\tau_{M-1})\neq F(r+1,\tau_0)
-\right\}
+\right\rbrace
 \right\rvert.
 $$
 

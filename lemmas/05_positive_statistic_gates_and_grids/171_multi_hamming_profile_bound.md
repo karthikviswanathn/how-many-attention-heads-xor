@@ -19,7 +19,7 @@ $$
 Read the grid
 
 $$
-\{0,\ldots,n_1\}\times\cdots\times\{0,\ldots,n_b\}
+\lbrace0,\ldots,n_1\rbrace\times\cdots\times\lbrace0,\ldots,n_b\rbrace
 $$
 
 in lexicographic order, with the first block slowest and the last block fastest. Let $L_{\mathrm{Ham}}(F)$ be the number of sign changes of $F$ along this ordered grid path.
@@ -60,7 +60,7 @@ $$
 t_j(x^{(j)})=\lvert x^{(j)}\rvert.
 $$
 
-The image of $t_j$ is $\{0,\ldots,n_j\}$, so the multigrid lexicographic sign-change count is exactly $L_{\mathrm{Ham}}(F)$.
+The image of $t_j$ is $\lbrace0,\ldots,n_j\rbrace$, so the multigrid lexicographic sign-change count is exactly $L_{\mathrm{Ham}}(F)$.
 
 The one-block fiber lower bounds and the exactness statement are the corresponding conclusions of Theorem 170. $\blacksquare$
 

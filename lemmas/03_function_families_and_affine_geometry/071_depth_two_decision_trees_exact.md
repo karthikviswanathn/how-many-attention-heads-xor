@@ -5,7 +5,7 @@
 Let
 
 $$
-f:\{0,1\}^n\to\{0,1\}
+f:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace
 $$
 
 be computed by a deterministic decision tree of depth at most $2$. Then
@@ -35,7 +35,7 @@ If the tree has depth $0$, then $f$ is constant. Assume the depth is at most $2$
 A depth-two decision tree queries at most one root variable and at most one additional variable on each branch. Hence $f$ depends on at most three variables. Let
 
 $$
-g:\{0,1\}^k\to\{0,1\},
+g:\lbrace0,1\rbrace^k\to\lbrace0,1\rbrace,
 \qquad
 k\leq3,
 $$
@@ -83,7 +83,7 @@ Decision-tree depth two is a complete exact class:
 $$
 D(f)\leq2
 \qquad\Longrightarrow\qquad
-H^{*}(f)\in\{0,1,2\},
+H^{*}(f)\in\lbrace0,1,2\rbrace,
 $$
 
 with the value determined only by whether $f$ is constant, an LTF, or neither.

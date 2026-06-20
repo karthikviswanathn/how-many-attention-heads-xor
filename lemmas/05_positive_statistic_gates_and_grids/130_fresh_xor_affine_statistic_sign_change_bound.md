@@ -8,13 +8,13 @@ $$
 L(y)=a+\sum_{i=1}^{m}\alpha_i y_i
 $$
 
-be an affine statistic on $\{0,1\}^{m}$, and let
+be an affine statistic on $\lbrace0,1\rbrace^{m}$, and let
 
 $$
-k:=\lvert\{i:\alpha_i\neq0\}\rvert.
+k:=\lvert\lbrace i:\alpha_i\neq0\rbrace\rvert.
 $$
 
-Let $G:\operatorname{Im}(L)\to\{0,1\}$, and define
+Let $G:\mathrm{Im}(L)\to\lbrace0,1\rbrace$, and define
 
 $$
 T(y):=G(L(y)).
@@ -61,7 +61,7 @@ $$
 $$
 H^{*}(z\oplus T(y))
 \leq
-1+\sum_{r=2}^{\min\{D_{\oplus}(C),k+1\}}\binom{k+1}{r},
+1+\sum_{r=2}^{\min\lbrace D_{\oplus}(C),k+1\rbrace}\binom{k+1}{r},
 $$
 
 and the same upper bound holds for XNOR.
@@ -88,7 +88,7 @@ $$
 \lambda_1<\cdots<\lambda_M<B+\lambda_1<\cdots<B+\lambda_M.
 $$
 
-Define $H:\operatorname{Im}(M_B)\to\{0,1\}$ by
+Define $H:\mathrm{Im}(M_B)\to\lbrace0,1\rbrace$ by
 
 $$
 H(\lambda_i):=G(\lambda_i),
@@ -128,7 +128,7 @@ $$
 G(\lambda_M)=G(\lambda_1).
 $$
 
-Since each sign change flips the current label, this last equality holds exactly when $C$ is even. Hence the sign-change count of $H$ along $\operatorname{Im}(M_B)$ is $D_{\oplus}(C)$.
+Since each sign change flips the current label, this last equality holds exactly when $C$ is even. Hence the sign-change count of $H$ along $\mathrm{Im}(M_B)$ is $D_{\oplus}(C)$.
 
 The statistic $M_B$ uses at most $k+1$ variables. Applying the affine-statistic sign-change theorem [063_affine_statistic_sign_changes.md](../03_function_families_and_affine_geometry/063_affine_statistic_sign_changes.md) gives the following.
 
@@ -155,7 +155,7 @@ If $C\geq2$, then $D_{\oplus}(C)\geq3$, and the same affine-statistic theorem gi
 $$
 H^{*}(z\oplus T)
 \leq
-1+\sum_{r=2}^{\min\{D_{\oplus}(C),k+1\}}\binom{k+1}{r}.
+1+\sum_{r=2}^{\min\lbrace D_{\oplus}(C),k+1\rbrace}\binom{k+1}{r}.
 $$
 
 Finally, XNOR is the output complement of fresh XOR, and output complement preserves head complexity by [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md). This proves all claims. $\blacksquare$
@@ -173,7 +173,7 @@ and therefore
 $$
 H^{*}(z\oplus T)
 \leq
-1+\sum_{r=2}^{\min\{5,k+1\}}\binom{k+1}{r}.
+1+\sum_{r=2}^{\min\lbrace5,k+1\rbrace}\binom{k+1}{r}.
 $$
 
 This is the current orientation-free fallback for fresh XOR over affine slabs beyond the LTF case. The endpoint and one-threshold cases are sharper: they are exactly two-head by Lemmas 127 and 129.

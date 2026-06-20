@@ -2,7 +2,7 @@
 
 ## Statement
 
-If a Boolean function $f : \{0,1\}^n \to \{0,1\}$ is computable in the model from [../../model.md](../../model.md), then
+If a Boolean function $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$ is computable in the model from [../../model.md](../../model.md), then
 
 $$
 \deg_{\pm}(f) \leq H^{*}(f).
@@ -30,7 +30,7 @@ Let $f$ be computed by an $H$-head model, where $H = H^{*}(f)$. We produce a sig
 
 ### Lemma 1. On a finite domain, exact classification can be made strict
 
-Let $X$ be a finite set, and let $f : X \to \{0,1\}$ be nonconstant. Suppose a real-valued score function $S$ and threshold $\tau$ satisfy
+Let $X$ be a finite set, and let $f : X \to \lbrace0,1\rbrace$ be nonconstant. Suppose a real-valued score function $S$ and threshold $\tau$ satisfy
 
 $$S(x) > \tau \quad \text{iff} \quad f(x) = 1.$$
 
@@ -44,7 +44,7 @@ $$S(x) - \tau' < 0 \text{ when } f(x) = 0.$$
 
 Define
 
-$$m_{-} := \max \{ S(x) : f(x) = 0 \}, \qquad m_{+} := \min \{ S(x) : f(x) = 1 \}.$$
+$$m_{-} := \max \lbrace S(x) : f(x) = 0 \rbrace, \qquad m_{+} := \min \lbrace S(x) : f(x) = 1 \rbrace.$$
 
 These quantities exist because $X$ is finite and both classes are nonempty.
 
@@ -70,10 +70,10 @@ Fix one attention head $h$, and let $w_{\mathrm{out}} \in \mathbb{R}^{d_{\mathrm
 Let
 
 $$
-s_h(x) := \bigl\langle w_{\mathrm{out}},\, y^{(h)}(x) \bigr\rangle
+s_h(x) := \bigl\langle w_{\mathrm{out}},\thinspace y^{(h)}(x) \bigr\rangle
 $$
 
-be the contribution of head $h$ to the final probe score on input $x \in \{0,1\}^n$.
+be the contribution of head $h$ to the final probe score on input $x \in \lbrace0,1\rbrace^n$.
 
 Then there exist affine functions $a_h, b_h : \mathbb{R}^n \to \mathbb{R}$ such that on the Boolean cube:
 
@@ -81,15 +81,15 @@ $$s_h(x) = \frac{a_h(x)}{b_h(x)}$$
 
 and
 
-$$b_h(x) > 0 \quad \text{for every } x \in \{0,1\}^n.$$
+$$b_h(x) > 0 \quad \text{for every } x \in \lbrace0,1\rbrace^n.$$
 
 #### Proof
 
 Fix the head $h$.
 
-Because there is only one attention layer, the representation at input position $i$ is completely determined by the position $i$ and the local bit value $x_i \in \{0,1\}$. The query representation at the designated query token is constant across all inputs.
+Because there is only one attention layer, the representation at input position $i$ is completely determined by the position $i$ and the local bit value $x_i \in \lbrace0,1\rbrace$. The query representation at the designated query token is constant across all inputs.
 
-Therefore, for each input position $i$ and bit value $b \in \{0,1\}$, there are fixed real constants
+Therefore, for each input position $i$ and bit value $b \in \lbrace0,1\rbrace$, there are fixed real constants
 
 $$
 \ell_{i,b} \in \mathbb{R}, \qquad \mu_{i,b} \in \mathbb{R}
@@ -103,7 +103,7 @@ with the following meaning:
 Indeed, if $u_{i,b}$ denotes the fixed model-space input vector at position $i$ carrying bit value $b$, then
 
 $$
-\mu_{i,b} := \bigl\langle w_{\mathrm{out}},\, W_O^{(h)} W_V^{(h)} u_{i,b} \bigr\rangle.
+\mu_{i,b} := \bigl\langle w_{\mathrm{out}},\thinspace W_O^{(h)} W_V^{(h)} u_{i,b} \bigr\rangle.
 $$
 
 Likewise, the query position contributes fixed constants
@@ -126,13 +126,13 @@ where
 
 $$D_h(x) = \lambda_{=} + \sum_{i=1}^{n} \lambda_{i,x_i},$$
 
-$$N_h(x) = \lambda_{=} \, \mu_{=} + \sum_{i=1}^{n} \lambda_{i,x_i} \, \mu_{i,x_i}.$$
+$$N_h(x) = \lambda_{=} \thinspace \mu_{=} + \sum_{i=1}^{n} \lambda_{i,x_i} \thinspace \mu_{i,x_i}.$$
 
-Because $x_i \in \{0,1\}$, each local term can be written as
+Because $x_i \in \lbrace0,1\rbrace$, each local term can be written as
 
 $$\lambda_{i,x_i} = \lambda_{i,0}(1 - x_i) + \lambda_{i,1} x_i,$$
 
-$$\lambda_{i,x_i} \, \mu_{i,x_i} = (\lambda_{i,0} \, \mu_{i,0})(1 - x_i) + (\lambda_{i,1} \, \mu_{i,1}) x_i.$$
+$$\lambda_{i,x_i} \thinspace \mu_{i,x_i} = (\lambda_{i,0} \thinspace \mu_{i,0})(1 - x_i) + (\lambda_{i,1} \thinspace \mu_{i,1}) x_i.$$
 
 So both $D_h$ and $N_h$ are affine functions of the variables $x_1, \ldots, x_n$.
 
@@ -144,9 +144,9 @@ Then $s_h(x) = a_h(x) / b_h(x)$ on the Boolean cube.
 
 Also, every term in $D_h(x)$ is strictly positive, so $b_h(x) > 0$ for every Boolean input.
 
-### Lemma 3. Any $H$-head classifier has threshold degree at most $H$
+### Lemma 3. Any H-head classifier has threshold degree at most H
 
-Let $f : \{0,1\}^n \to \{0,1\}$ be computed by an $H$-head model in the one-layer architecture.
+Let $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$ be computed by an $H$-head model in the one-layer architecture.
 
 Then there exists a real polynomial $P(x_1, \ldots, x_n)$ of degree at most $H$ such that
 
@@ -208,7 +208,7 @@ $$B(x) := \prod_{h=1}^{H} b_h(x).$$
 
 Since $B(x) > 0$ on the Boolean cube, the sign of $S(x)$ is the same as the sign of
 
-$$P(x) := B(x) \, S(x) = c' \prod_{h=1}^{H} b_h(x) + \sum_{h=1}^{H} a_h(x) \prod_{g \neq h} b_g(x).$$
+$$P(x) := B(x) \thinspace S(x) = c' \prod_{h=1}^{H} b_h(x) + \sum_{h=1}^{H} a_h(x) \prod_{g \neq h} b_g(x).$$
 
 Each $a_h$ and $b_h$ is affine, so every summand has degree at most $H$.
 
@@ -216,7 +216,7 @@ Hence $P$ is a polynomial of degree at most $H$.
 
 Because $B(x) > 0$, $P$ has exactly the same sign pattern as $S$.
 
-So $P$ sign-represents the Boolean function $f$ on $\{0,1\}^n$.
+So $P$ sign-represents the Boolean function $f$ on $\lbrace0,1\rbrace^n$.
 
 ### Conclusion
 

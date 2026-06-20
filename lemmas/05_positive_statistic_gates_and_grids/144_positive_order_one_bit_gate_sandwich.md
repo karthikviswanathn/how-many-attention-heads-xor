@@ -2,7 +2,7 @@
 
 ## Statement
 
-Let $f:\{0,1\}^{m}\to\{0,1\}$, and let $C_{+}(f)$ be the optimized positive-projection sign-change count from [013_positive_projection_sign_changes.md](../01_foundations_and_normal_form/013_positive_projection_sign_changes.md). For a two-input gate $G$, define
+Let $f:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace$, and let $C_{+}(f)$ be the optimized positive-projection sign-change count from [013_positive_projection_sign_changes.md](../01_foundations_and_normal_form/013_positive_projection_sign_changes.md). For a two-input gate $G$, define
 
 $$
 H_G(z,y):=G(z,f(y)).

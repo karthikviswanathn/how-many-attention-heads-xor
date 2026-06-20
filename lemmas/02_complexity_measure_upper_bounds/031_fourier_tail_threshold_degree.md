@@ -2,7 +2,7 @@
 
 ## Statement
 
-Let $q : \{-1,1\}^n \to \{-1,1\}$ be the sign-valued version of a Boolean function $f$. Write its Fourier expansion as
+Let $q : \lbrace-1,1\rbrace^n \to \lbrace-1,1\rbrace$ be the sign-valued version of a Boolean function $f$. Write its Fourier expansion as
 
 $$
 q(z)
@@ -12,7 +12,7 @@ q(z)
 \chi_S(z):=\prod_{i\in S}z_i.
 $$
 
-Fix $d\in\{0,\ldots,n\}$. Define the high-degree Fourier tail
+Fix $d\in\lbrace0,\ldots,n\rbrace$. Define the high-degree Fourier tail
 
 $$
 T_{>d}(z)
@@ -62,7 +62,7 @@ q(z)-T_{>d}(z)
 \widehat q(S)\chi_S(z).
 $$
 
-This polynomial has degree at most $d$. For every $z\in\{-1,1\}^n$,
+This polynomial has degree at most $d$. For every $z\in\lbrace-1,1\rbrace^n$,
 
 $$
 \begin{aligned}
@@ -100,7 +100,7 @@ $\blacksquare$
 The top-threshold-degree theorem [027_top_threshold_degree.md](../01_foundations_and_normal_form/027_top_threshold_degree.md) is the case $d=n-1$. Then
 
 $$
-T_{>n-1}(z)=\widehat q([n])\,\chi_{[n]}(z).
+T_{>n-1}(z)=\widehat q([n])\thinspace\chi_{[n]}(z).
 $$
 
 If $q$ is not parity or anti-parity, then

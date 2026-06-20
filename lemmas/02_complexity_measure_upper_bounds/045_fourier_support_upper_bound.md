@@ -2,7 +2,7 @@
 
 ## Statement
 
-For $S\subseteq\{1,\ldots,n\}$, define the Walsh character
+For $S\subseteq\lbrace1,\ldots,n\rbrace$, define the Walsh character
 
 $$
 \chi_S(x):=(-1)^{\sum_{i\in S}x_i}
@@ -10,7 +10,7 @@ $$
 \prod_{i\in S}(1-2x_i).
 $$
 
-Let $q:\{0,1\}^n\to\{-1,1\}$ be the sign-valued version of $f$, with $q(x)=1$ on $f^{-1}(1)$ and $q(x)=-1$ on $f^{-1}(0)$.
+Let $q:\lbrace0,1\rbrace^n\to\lbrace-1,1\rbrace$ be the sign-valued version of $f$, with $q(x)=1$ on $f^{-1}(1)$ and $q(x)=-1$ on $f^{-1}(0)$.
 
 Suppose a Fourier-sparse polynomial
 
@@ -24,7 +24,7 @@ $$
 q(x)R(x)>0
 $$
 
-for every $x\in\{0,1\}^n$. Then
+for every $x\in\lbrace0,1\rbrace^n$. Then
 
 $$
 H^{*}(f)
@@ -33,7 +33,7 @@ H^{*}(f)
 \left(2^{\lvert S\rvert}-1\right).
 $$
 
-In particular, if $\mathcal{A}\subseteq\{S:\lvert S\rvert\leq d\}$ and $\lvert\mathcal{A}\rvert=m$, then
+In particular, if $\mathcal{A}\subseteq\lbrace S:\lvert S\rvert\leq d\rbrace$ and $\lvert\mathcal{A}\rvert=m$, then
 
 $$
 H^{*}(f)\leq m(2^d-1).
@@ -117,7 +117,7 @@ $$
 \lvert q(x)-R_{\mathcal{A}}(x)\rvert<1.
 $$
 
-Since $q(x)\in\{-1,1\}$, this implies $q(x)R_{\mathcal{A}}(x)>0$. Hence $R_{\mathcal{A}}$ sign-represents $f$, and the first part applies. $\blacksquare$
+Since $q(x)\in\lbrace-1,1\rbrace$, this implies $q(x)R_{\mathcal{A}}(x)>0$. Hence $R_{\mathcal{A}}$ sign-represents $f$, and the first part applies. $\blacksquare$
 
 ## Consequence
 

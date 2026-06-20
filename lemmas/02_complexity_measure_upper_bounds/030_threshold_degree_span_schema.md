@@ -4,7 +4,7 @@
 
 This note isolates the degree-restricted version of the determinant-span method.
 
-Let $V_{n,d}$ be the vector space of multilinear polynomials of degree at most $d$ on $\{0,1\}^n$. Its dimension is
+Let $V_{n,d}$ be the vector space of multilinear polynomials of degree at most $d$ on $\lbrace0,1\rbrace^n$. Its dimension is
 
 $$
 D(n,d):=\sum_{r=0}^{d}\binom{n}{r}.
@@ -16,7 +16,7 @@ $$
 B_1,\ldots,B_H
 $$
 
-on $\{0,1\}^n$, namely
+on $\lbrace0,1\rbrace^n$, namely
 
 $$
 B_h(x)=b_{h,0}+\sum_{i=1}^{n}b_{h,i}x_i,
@@ -34,15 +34,15 @@ $$
 M\prod_{j\neq h}B_j
 \quad
 \text{for }
-h\in\{1,\ldots,H\},
+h\in\lbrace1,\ldots,H\rbrace,
 \quad
-M\in\{1,x_1,\ldots,x_n\},
+M\in\lbrace1,x_1,\ldots,x_n\rbrace,
 $$
 
 span $V_{n,d}$ as a subspace of all functions on the Boolean cube, after reduction modulo $x_i^2=x_i$. Then every Boolean function
 
 $$
-f : \{0,1\}^n \to \{0,1\}
+f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace
 $$
 
 with
@@ -107,7 +107,7 @@ c\prod_{j=1}^{H}B_j(x)
 \sum_{h=1}^{H}A_h(x)\prod_{j\neq h}B_j(x)
 $$
 
-as functions on $\{0,1\}^n$.
+as functions on $\lbrace0,1\rbrace^n$.
 
 Since every $B_h$ is positive on the cube, the rational score
 

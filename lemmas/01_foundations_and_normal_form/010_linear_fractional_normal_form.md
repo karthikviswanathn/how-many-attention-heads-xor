@@ -28,7 +28,7 @@ $$
 }.
 $$
 
-Here $x_i \in \{0,1\}$, so $\alpha^{x_i}$ means $1$ when $x_i = 0$ and $\alpha$ when $x_i = 1$.
+Here $x_i \in \lbrace0,1\rbrace$, so $\alpha^{x_i}$ means $1$ when $x_i = 0$ and $\alpha$ when $x_i = 1$.
 
 Define $L_{\mathrm{frac}}(f)$ to be the least $H$ such that there exist one-head atoms
 
@@ -44,7 +44,7 @@ f(x) = 1
 c + \sum_{h=1}^{H} \phi_h(x) > 0
 $$
 
-for every $x \in \{0,1\}^n$. For $H = 0$, the sum is empty.
+for every $x \in \lbrace0,1\rbrace^n$. For $H = 0$, the sum is empty.
 
 Then
 
@@ -75,7 +75,7 @@ For each input position $i$, define
 $$
 \rho_{h,i}
 :=
-\exp\!\left(
+\exp\negthinspace\left(
 \left\langle q_h, W_K^{(h)}(e_0 + p_i) \right\rangle
 \right)
 > 0,
@@ -86,7 +86,7 @@ and
 $$
 \alpha_h
 :=
-\exp\!\left(
+\exp\negthinspace\left(
 \left\langle q_h, W_K^{(h)}(e_1 - e_0) \right\rangle
 \right)
 > 0.
@@ -131,7 +131,7 @@ For the query token itself, define
 $$
 \gamma_h
 :=
-\exp\!\left(
+\exp\negthinspace\left(
 \left\langle q_h, W_K^{(h)} u_= \right\rangle
 \right)
 > 0,
@@ -260,7 +260,7 @@ At the query token, the logit is $\log \gamma_h$, the unnormalized attention wei
 Therefore the projected output of head $h$ is exactly
 
 $$
-\phi_h(x) \, o_h.
+\phi_h(x) \thinspace o_h.
 $$
 
 Choose the final readout vector

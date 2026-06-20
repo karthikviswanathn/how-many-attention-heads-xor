@@ -26,7 +26,7 @@ e_0:=F(\tau_0),
 e_1:=F(\tau_{M-1}).
 $$
 
-Let $R:\{0,1\}^{k}\to\{0,1\}$ be a raw mask, and define
+Let $R:\lbrace0,1\rbrace^{k}\to\lbrace0,1\rbrace$ be a raw mask, and define
 
 $$
 r_1:=\left\lvert R^{-1}(1)\right\rvert,
@@ -119,7 +119,7 @@ $$
 If $e_0\neq e_1$, Lemma 153 gives
 
 $$
-H^{*}(A)\leq r_1C+\min\{C_{+}(0),C_{+}(R)\}+D(0,R).
+H^{*}(A)\leq r_1C+\min\lbrace C_{+}(0),C_{+}(R)\rbrace+D(0,R).
 $$
 
 Here $C_{+}(0)=0$ and $D(0,R)=r_1$, so
@@ -163,7 +163,7 @@ If $e_0\neq e_1$, Lemma 153 gives
 $$
 B_{+}(g_1,g_0)
 \leq
-\min\{C_{+}(R),C_{+}(1-R)\}+D(R,1-R).
+\min\lbrace C_{+}(R),C_{+}(1-R)\rbrace+D(R,1-R).
 $$
 
 Since

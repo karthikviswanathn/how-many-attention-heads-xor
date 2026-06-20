@@ -1,4 +1,4 @@
-# Provisional Three-Head Functions For $n=3$
+# Provisional Three-Head Functions For n=3
 
 This file records the current **provisional** 3-bit representatives that were assigned estimated head complexity
 

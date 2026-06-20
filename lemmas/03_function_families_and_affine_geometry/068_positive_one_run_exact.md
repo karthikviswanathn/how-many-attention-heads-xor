@@ -5,7 +5,7 @@
 Let
 
 $$
-f:\{0,1\}^n\to\{0,1\}.
+f:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace.
 $$
 
 Suppose there is an injective positive weighted sum

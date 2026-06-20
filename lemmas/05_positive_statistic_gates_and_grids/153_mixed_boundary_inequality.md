@@ -5,7 +5,7 @@
 For raw functions
 
 $$
-p,q:\{0,1\}^{k}\to\{0,1\},
+p,q:\lbrace0,1\rbrace^{k}\to\lbrace0,1\rbrace,
 $$
 
 let
@@ -13,7 +13,7 @@ let
 $$
 D(p,q):=
 \left\lvert
-\{a\in\{0,1\}^{k}:p(a)\neq q(a)\}
+\lbrace a\in\lbrace0,1\rbrace^{k}:p(a)\neq q(a)\rbrace
 \right\rvert.
 $$
 
@@ -22,7 +22,7 @@ Then
 $$
 B_{+}(p,q)
 \leq
-\min\{C_{+}(p),C_{+}(q)\}+D(p,q),
+\min\lbrace C_{+}(p),C_{+}(q)\rbrace+D(p,q),
 $$
 
 where $B_{+}$ is the optimized positive mixed boundary cost from Lemma 151 and $C_{+}$ is the optimized positive-order sign-change count of a raw function.
@@ -32,7 +32,7 @@ Consequently, in the setup of Lemma 151, if $F(\tau_0)\neq F(\tau_{M-1})$, then
 $$
 H^{*}\bigl(G(z,T(y))\bigr)
 \leq
-N_G C+\min\{C_{+}(g_0),C_{+}(g_1)\}+N_G.
+N_G C+\min\lbrace C_{+}(g_0),C_{+}(g_1)\rbrace+N_G.
 $$
 
 > **Interpretation.** A mixed endpoint boundary can be paid for by ordinary raw variation plus the number of raw assignments where the gate really depends on the feature bit.

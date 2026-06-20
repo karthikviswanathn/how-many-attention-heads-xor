@@ -2,7 +2,7 @@
 
 ## Statement
 
-Let $k\geq1$, let $z\in\{0,1\}^{k}$ be raw bits, and let $y\in\{0,1\}^{m}$ be the remaining variables. A common positive-statistic certificate for $f(z,y)$ is a positive statistic
+Let $k\geq1$, let $z\in\lbrace0,1\rbrace^{k}$ be raw bits, and let $y\in\lbrace0,1\rbrace^{m}$ be the remaining variables. A common positive-statistic certificate for $f(z,y)$ is a positive statistic
 
 $$
 t(y)=\sum_{i=1}^{m}\lambda_i y_i,
@@ -15,7 +15,7 @@ such that every raw slice factors through $t$:
 $$
 f(a,y)=F_a(t(y))
 \qquad
-\text{for every }a\in\{0,1\}^{k}.
+\text{for every }a\in\lbrace0,1\rbrace^{k}.
 $$
 
 Write the image of $t$ as
@@ -35,11 +35,11 @@ by increasing value of $\sum_j\rho_j a_j$. Define the ordered slice cost
 $$
 \Omega_{t,\rho}(f)
 :=
-\sum_{a\in\{0,1\}^{k}}
+\sum_{a\in\lbrace0,1\rbrace^{k}}
 \left\lvert
-\left\{
-r\in\{0,\ldots,M-2\}:F_a(\tau_r)\neq F_a(\tau_{r+1})
-\right\}
+\left\lbrace
+r\in\lbrace0,\ldots,M-2\rbrace:F_a(\tau_r)\neq F_a(\tau_{r+1})
+\right\rbrace
 \right\rvert
 +
 J_{t,\rho}(f),
@@ -51,17 +51,17 @@ $$
 J_{t,\rho}(f)
 :=
 \left\lvert
-\left\{
-q\in\{0,\ldots,2^k-2\}:
+\left\lbrace
+q\in\lbrace0,\ldots,2^k-2\rbrace:
 F_{a^{(q)}}(\tau_{M-1})\neq F_{a^{(q+1)}}(\tau_0)
-\right\}
+\right\rbrace
 \right\rvert.
 $$
 
 Let
 
 $$
-\operatorname{osc}_{+}^{z\mid y}(f)
+\mathrm{osc}_{+}^{z\mid y}(f)
 :=
 \min_{t,\rho}\Omega_{t,\rho}(f),
 $$
@@ -69,7 +69,7 @@ $$
 where the minimum ranges over all common positive-statistic certificates $t$ and all positive raw weights $\rho$ with distinct subset sums. Then
 
 $$
-H^{*}(f)\leq \operatorname{osc}_{+}^{z\mid y}(f).
+H^{*}(f)\leq \mathrm{osc}_{+}^{z\mid y}(f).
 $$
 
 > **Interpretation.** The ordered multi-slice construction is an optimized invariant: it charges within-slice positive-statistic variation plus only the boundary jumps forced by the chosen positive raw order.
@@ -85,10 +85,10 @@ $$
 Taking the minimum over all such pairs gives
 
 $$
-H^{*}(f)\leq \operatorname{osc}_{+}^{z\mid y}(f).
+H^{*}(f)\leq \mathrm{osc}_{+}^{z\mid y}(f).
 $$
 
-The minimum is over a nonempty family. Indeed, choosing positive weights for $t$ with distinct subset sums separates all points of $\{0,1\}^{m}$, so every raw slice factors through $t$ trivially. Positive raw weights with distinct subset sums exist by the same generic choice. $\blacksquare$
+The minimum is over a nonempty family. Indeed, choosing positive weights for $t$ with distinct subset sums separates all points of $\lbrace0,1\rbrace^{m}$, so every raw slice factors through $t$ trivially. Positive raw weights with distinct subset sums exist by the same generic choice. $\blacksquare$
 
 ## Consequence
 

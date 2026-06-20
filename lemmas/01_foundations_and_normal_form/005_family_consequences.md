@@ -2,20 +2,20 @@
 
 This note packages the lower bound from [003_checkerboard_obstruction.md](003_checkerboard_obstruction.md), the upper bound from [004_symmetric_thresholds.md](004_symmetric_thresholds.md), and the later exact symmetric characterization from [012_symmetric_sign_changes.md](012_symmetric_sign_changes.md), all in the formal model from [../model.md](../../model.md).
 
-We write $H^{*}(f)$ for the minimum number of heads needed to compute $f : \{0,1\}^n \to \{0,1\}$ in the one-layer attention model.
+We write $H^{*}(f)$ for the minimum number of heads needed to compute $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$ in the one-layer attention model.
 
 ## Theorem 1. Symmetric Thresholds Have Exact Head Complexity 1
 
 For $1 \leq t \leq n$,
 
 $$
-T_{n,t}(x) \;=\; \mathbf{1}\!\left[\,\lvert x\rvert \geq t\,\right]
+T_{n,t}(x) \thickspace=\thickspace \mathbf{1}\negthinspace\left[\thinspace\lvert x\rvert \geq t\thinspace\right]
 $$
 
 satisfies
 
 $$
-H^{*}(T_{n,t}) \;=\; 1.
+H^{*}(T_{n,t}) \thickspace=\thickspace 1.
 $$
 
 ### Special cases
@@ -26,12 +26,12 @@ $$
 
 The proof is exactly the one-head construction from the previous note, together with the trivial fact that zero heads only produce constant outputs.
 
-## Theorem 2. Parity Has Exact Head Complexity $n$
+## Theorem 2. Parity Has Exact Head Complexity n
 
 For $n \geq 2$, define
 
 $$
-\mathrm{PARITY}_n(x) \;=\; x_1 \oplus x_2 \oplus \cdots \oplus x_n.
+\mathrm{PARITY}_n(x) \thickspace=\thickspace x_1 \oplus x_2 \oplus \cdots \oplus x_n.
 $$
 
 Then the exact value is
@@ -45,13 +45,13 @@ The lower-bound proof below still gives the first nontrivial obstruction, namely
 **Checkerboard proof of the first lower bound.** Fix coordinates $i \neq j$, and fix every other coordinate to $0$. On the remaining two free bits $(a,b)$, the parity function becomes
 
 $$
-\mathrm{PARITY}_n(\ldots, a, \ldots, b, \ldots) \;=\; a \oplus b.
+\mathrm{PARITY}_n(\ldots, a, \ldots, b, \ldots) \thickspace=\thickspace a \oplus b.
 $$
 
 So the restricted truth table is
 
 $$
-0, \; 1, \; 1, \; 0,
+0, \thickspace 1, \thickspace 1, \thickspace 0,
 $$
 
 which is exactly the checkerboard pattern. By the checkerboard restriction lower bound, one head is impossible. Since parity is nonconstant, zero heads are also impossible. Hence $H^{*}(\mathrm{PARITY}_n) \geq 2$. $\blacksquare$
@@ -61,7 +61,7 @@ which is exactly the checkerboard pattern. By the checkerboard restriction lower
 For $0 \leq k \leq n$, define
 
 $$
-\mathrm{EXACT}_{n,k}(x) \;=\; \mathbf{1}\!\left[\,\lvert x\rvert = k\,\right].
+\mathrm{EXACT}_{n,k}(x) \thickspace=\thickspace \mathbf{1}\negthinspace\left[\thinspace\lvert x\rvert = k\thinspace\right].
 $$
 
 Then for every internal count $1 \leq k \leq n-1$,
@@ -84,7 +84,7 @@ Now evaluate $\mathrm{EXACT}_{n,k}$ on the two free bits:
 Thus the restriction is again
 
 $$
-0, \; 1, \; 1, \; 0.
+0, \thickspace 1, \thickspace 1, \thickspace 0.
 $$
 
 So one head is impossible by the checkerboard lower bound, and therefore $H^{*}(\mathrm{EXACT}_{n,k}) \geq 2$. $\blacksquare$

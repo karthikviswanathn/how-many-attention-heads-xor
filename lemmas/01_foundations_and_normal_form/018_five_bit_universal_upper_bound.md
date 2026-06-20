@@ -5,7 +5,7 @@
 For every Boolean function
 
 $$
-f : \{0,1\}^5 \to \{0,1\},
+f : \lbrace0,1\rbrace^5 \to \lbrace0,1\rbrace,
 $$
 
 we have
@@ -45,14 +45,14 @@ c\prod_{j=1}^{7}B_j(x)
 A_h(x)\prod_{j\neq h}B_j(x)
 $$
 
-on $\{0,1\}^5$.
+on $\lbrace0,1\rbrace^5$.
 
-**Proof.** Work in the multilinear basis indexed by all subsets of $\{1,2,3,4,5\}$:
+**Proof.** Work in the multilinear basis indexed by all subsets of $\lbrace1,2,3,4,5\rbrace$:
 
 $$
 \prod_{i\in S}x_i,
 \qquad
-S\subseteq\{1,2,3,4,5\}.
+S\subseteq\lbrace1,2,3,4,5\rbrace.
 $$
 
 Define the seven positive affine denominators by
@@ -85,13 +85,13 @@ $$
 \prod_{j=1}^{7}B_j,
 $$
 
-for each $h\in\{1,2,3,4,5,6\}$, the five products
+for each $h\in\lbrace1,2,3,4,5,6\rbrace$, the five products
 
 $$
 M\prod_{j\neq h}B_j
 \qquad
 \text{for }
-M\in\{1,x_1,x_2,x_3,x_4\},
+M\in\lbrace1,x_1,x_2,x_3,x_4\rbrace,
 $$
 
 and the single product
@@ -115,13 +115,13 @@ $$
 \pmod p,
 $$
 
-which is nonzero. Hence the determinant is nonzero over the integers, and the displayed products form a basis for all multilinear polynomials on $\{0,1\}^5$.
+which is nonzero. Hence the determinant is nonzero over the integers, and the displayed products form a basis for all multilinear polynomials on $\lbrace0,1\rbrace^5$.
 
 Therefore every multilinear $P$ has the displayed form. $\blacksquare$
 
 ### Lemma 2. Seven heads suffice for every five-bit function
 
-Let $f : \{0,1\}^5 \to \{0,1\}$. Interpolate the sign labels
+Let $f : \lbrace0,1\rbrace^5 \to \lbrace0,1\rbrace$. Interpolate the sign labels
 
 $$
 Q_f(x)
@@ -132,7 +132,7 @@ Q_f(x)
 \end{cases}
 $$
 
-by a multilinear polynomial $P$ on $\{0,1\}^5$.
+by a multilinear polynomial $P$ on $\lbrace0,1\rbrace^5$.
 
 Apply Lemma 1 to this $P$. Since each $B_h$ is positive on the cube, the score
 

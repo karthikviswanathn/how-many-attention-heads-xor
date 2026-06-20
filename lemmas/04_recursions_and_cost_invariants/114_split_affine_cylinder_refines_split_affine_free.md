@@ -5,7 +5,7 @@
 For every Boolean function
 
 $$
-f:\{0,1\}^{n}\to\{0,1\}
+f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace
 $$
 
 with $n\geq1$,
@@ -13,14 +13,14 @@ with $n\geq1$,
 $$
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\operatorname{sactc}(f)
+\mathrm{sactc}(f)
 \leq
-\operatorname{scafs}_{\pm}(f),
+\mathrm{scafs}_{\pm}(f),
 $$
 
-where $\operatorname{scafs}_{\pm}$ is the split affine-free support invariant from [078_split_affine_free_support_invariant.md](078_split_affine_free_support_invariant.md).
+where $\mathrm{scafs}_{\pm}$ is the split affine-free support invariant from [078_split_affine_free_support_invariant.md](078_split_affine_free_support_invariant.md).
 
 Consequently, every split affine-free support certificate is also a split affine-cylinder certificate of no larger cost.
 
@@ -31,7 +31,7 @@ Consequently, every split affine-free support certificate is also a split affine
 Fix a split coordinate and write inputs as
 
 $$
-(z,y)\in\{0,1\}\times\{0,1\}^{n-1}.
+(z,y)\in\lbrace0,1\rbrace\times\lbrace0,1\rbrace^{n-1}.
 $$
 
 Let $P_0,P_1$ be strict sign polynomials for the two cofactors, written as in [078_split_affine_free_support_invariant.md](078_split_affine_free_support_invariant.md):
@@ -41,7 +41,7 @@ P_b(y)
 =
 c_b+\sum_{i=1}^{n-1}\alpha_{b,i}y_i
 +
-\sum_{\substack{S\subseteq\{1,\ldots,n-1\}\\ \lvert S\rvert\geq2}}
+\sum_{\substack{S\subseteq\lbrace1,\ldots,n-1\rbrace\\ \lvert S\rvert\geq2}}
 a_{b,S}\prod_{i\in S}y_i.
 $$
 
@@ -66,13 +66,13 @@ $$
 If the coefficient of the nonlinear monomial changes across the split, the interpolation term is
 
 $$
-z\prod_{i\in S}y_i=C_{S\cup\{z\},\varnothing}(z,y),
+z\prod_{i\in S}y_i=C_{S\cup\lbrace z\rbrace,\varnothing}(z,y),
 $$
 
 and again
 
 $$
-\kappa(S\cup\{z\},\varnothing)=1.
+\kappa(S\cup\lbrace z\rbrace,\varnothing)=1.
 $$
 
 Therefore the affine-cylinder interpolation cost of these two scores is exactly the split affine-free support cost of the two polynomials:
@@ -92,17 +92,17 @@ $$
 Taking the minimum over $P_0,P_1$ for this split gives
 
 $$
-\operatorname{sactc}_{j}(f)
+\mathrm{sactc}_{j}(f)
 \leq
-\operatorname{scafs}_{\pm,j}(f).
+\mathrm{scafs}_{\pm,j}(f).
 $$
 
 Taking the minimum over split coordinates yields
 
 $$
-\operatorname{sactc}(f)
+\mathrm{sactc}(f)
 \leq
-\operatorname{scafs}_{\pm}(f).
+\mathrm{scafs}_{\pm}(f).
 $$
 
 The split affine-cylinder cost lemma [112_split_affine_cylinder_cost.md](112_split_affine_cylinder_cost.md) gives
@@ -110,9 +110,9 @@ The split affine-cylinder cost lemma [112_split_affine_cylinder_cost.md](112_spl
 $$
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\operatorname{sactc}(f).
+\mathrm{sactc}(f).
 $$
 
 Combining the two chains proves the theorem. $\blacksquare$
@@ -124,9 +124,9 @@ The old cofactor sparse-polynomial route now factors through the affine-cylinder
 $$
 H^{*}(f)
 \leq
-\operatorname{sactc}(f)
+\mathrm{sactc}(f)
 \leq
-\operatorname{scafs}_{\pm}(f).
+\mathrm{scafs}_{\pm}(f).
 $$
 
 Thus any improvement to local cylinder scoring immediately improves the recursive split search without losing any certificate already covered by split affine-free support.

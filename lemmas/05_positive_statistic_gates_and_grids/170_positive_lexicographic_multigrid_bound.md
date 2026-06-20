@@ -19,7 +19,7 @@ $$
 and write the image of $t_j$ as
 
 $$
-V_j=\{\nu^{(j)}_0<\nu^{(j)}_1<\cdots<\nu^{(j)}_{R_j-1}\}.
+V_j=\lbrace\nu^{(j)}_0<\nu^{(j)}_1<\cdots<\nu^{(j)}_{R_j-1}\rbrace.
 $$
 
 Assume

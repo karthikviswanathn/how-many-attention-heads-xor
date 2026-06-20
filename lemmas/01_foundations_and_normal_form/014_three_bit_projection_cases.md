@@ -34,7 +34,7 @@ The second bound is sharpened to an exact value in [015_three_bit_quadratic_uppe
 
 ### Lemma 1. A lattice-square obstruction to one head
 
-Let $a,b \in \{0,1\}^n$. Define
+Let $a,b \in \lbrace0,1\rbrace^n$. Define
 
 $$
 m := a \wedge b,
@@ -84,12 +84,12 @@ $$
 H^{*}(f) \geq 2.
 $$
 
-### Lemma 2. The function $00011000$ has exact head complexity $2$
+### Lemma 2. The function 00011000 has exact head complexity 2
 
 Let $f$ be the function with positive inputs
 
 $$
-\{011,100\}.
+\lbrace011,100\rbrace.
 $$
 
 For the lower bound, take
@@ -131,7 +131,7 @@ $$
 Its image is
 
 $$
-\{0,1,2,3,4\}.
+\lbrace0,1,2,3,4\rbrace.
 $$
 
 On these levels, $f$ has labels
@@ -154,12 +154,12 @@ $$
 
 $\blacksquare$
 
-### Lemma 3. The function $00101001$ has bounds $2 \leq H^{*} \leq 3$
+### Lemma 3. The function 00101001 has bounds 2 ≤ H^* ≤ 3
 
 Let $g$ be the function with positive inputs
 
 $$
-\{010,100,111\}.
+\lbrace010,100,111\rbrace.
 $$
 
 For the lower bound, take
@@ -201,7 +201,7 @@ $$
 Its image is
 
 $$
-\{0,1,2,3,4\}.
+\lbrace0,1,2,3,4\rbrace.
 $$
 
 The labels along these levels are

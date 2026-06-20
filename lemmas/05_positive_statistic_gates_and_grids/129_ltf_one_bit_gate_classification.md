@@ -5,10 +5,10 @@
 Let
 
 $$
-T:\{0,1\}^{m}\to\{0,1\}
+T:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace
 $$
 
-be a nonconstant LTF, and let $G:\{0,1\}^{2}\to\{0,1\}$ be any Boolean gate. Define
+be a nonconstant LTF, and let $G:\lbrace0,1\rbrace^{2}\to\lbrace0,1\rbrace$ be any Boolean gate. Define
 
 $$
 F(z,y):=G(z,T(y)).
@@ -46,9 +46,9 @@ $$
 Since $T$ is nonconstant, both label classes are nonempty. Set
 
 $$
-a_-:=\max\{A(y):T(y)=0\}<0,
+a_-:=\max\lbrace A(y):T(y)=0\rbrace<0,
 \qquad
-a_+:=\min\{A(y):T(y)=1\}>0,
+a_+:=\min\lbrace A(y):T(y)=1\rbrace>0,
 $$
 
 and also
@@ -150,9 +150,9 @@ $$
 with both signs attained. Let
 
 $$
-w_-:=\max\{W(y):U(y)=0\}<0,
+w_-:=\max\lbrace W(y):U(y)=0\rbrace<0,
 \qquad
-w_+:=\min\{W(y):U(y)=1\}>0,
+w_+:=\min\lbrace W(y):U(y)=1\rbrace>0,
 $$
 
 and set
@@ -174,13 +174,13 @@ Then
 $$
 r(z)\wedge U(y)=1
 \qquad\Longleftrightarrow\qquad
-W(y)+C\,r(z)>C+\theta.
+W(y)+C\thinspace r(z)>C+\theta.
 $$
 
 If $r(z)=1$ and $U(y)=1$, then $W(y)\geq w_+>\theta$, so the displayed inequality holds. If $r(z)=1$ and $U(y)=0$, then $W(y)\leq w_-<\theta$, so the displayed inequality fails. If $r(z)=0$, then
 
 $$
-W(y)+C\,r(z)\leq W_{\max}<C+\theta,
+W(y)+C\thinspace r(z)\leq W_{\max}<C+\theta,
 $$
 
 so the displayed inequality also fails. Hence every literal conjunction $r\wedge U$ is an LTF. Its complement is also an LTF.
@@ -224,7 +224,7 @@ $$
 Thus the generic one-bit LTF branching bound
 
 $$
-H^{*}(G(z,T))\leq1+\lvert\operatorname{supp}(T)\rvert
+H^{*}(G(z,T))\leq1+\lvert\mathrm{supp}(T)\rvert
 $$
 
 is sharp only in the one-bit feature case. For arbitrary-support LTF features, the exact gate cost is at most two and is one except for XOR and XNOR.

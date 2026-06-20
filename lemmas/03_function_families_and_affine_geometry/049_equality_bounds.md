@@ -9,7 +9,7 @@ $$
 :=
 \mathbf{1}[x=y],
 \qquad
-x,y\in\{0,1\}^m.
+x,y\in\lbrace0,1\rbrace^m.
 $$
 
 Then
@@ -112,7 +112,7 @@ $$
 \deg_{\pm}(\mathrm{EQ}_m)=2.
 $$
 
-### Lemma 3. Equality has an $m+1$ head upper bound
+### Lemma 3. Equality has an m+1 head upper bound
 
 The expansion from Lemma 1 has one nonzero affine part and exactly $m$ nonlinear monomials:
 

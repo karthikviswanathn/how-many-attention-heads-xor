@@ -5,18 +5,18 @@
 Let
 
 $$
-f:\{0,1\}^n\to\{0,1\}.
+f:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace.
 $$
 
-The affine-cylinder threshold cost $\operatorname{actc}(f)$ has the following structural properties.
+The affine-cylinder threshold cost $\mathrm{actc}(f)$ has the following structural properties.
 
 1. Output complement does not change the cost:
 
    $$
-   \operatorname{actc}(1-f)=\operatorname{actc}(f).
+   \mathrm{actc}(1-f)=\mathrm{actc}(f).
    $$
 
-2. Coordinate permutations do not change the cost. If $\pi$ is a permutation of $\{1,\ldots,n\}$ and
+2. Coordinate permutations do not change the cost. If $\pi$ is a permutation of $\lbrace1,\ldots,n\rbrace$ and
 
    $$
    f^{\pi}(x_1,\ldots,x_n)
@@ -27,7 +27,7 @@ The affine-cylinder threshold cost $\operatorname{actc}(f)$ has the following st
    then
 
    $$
-   \operatorname{actc}(f^{\pi})=\operatorname{actc}(f).
+   \mathrm{actc}(f^{\pi})=\mathrm{actc}(f).
    $$
 
 3. Global bit-flip does not change the cost. If
@@ -41,13 +41,13 @@ The affine-cylinder threshold cost $\operatorname{actc}(f)$ has the following st
    then
 
    $$
-   \operatorname{actc}(f^{\mathrm{flip}})=\operatorname{actc}(f).
+   \mathrm{actc}(f^{\mathrm{flip}})=\mathrm{actc}(f).
    $$
 
 4. Restrictions cannot increase the cost. If $g$ is obtained from $f$ by fixing some coordinates, then
 
    $$
-   \operatorname{actc}(g)\leq\operatorname{actc}(f).
+   \mathrm{actc}(g)\leq\mathrm{actc}(f).
    $$
 
 5. Adding dummy variables does not change the cost. If
@@ -59,10 +59,10 @@ The affine-cylinder threshold cost $\operatorname{actc}(f)$ has the following st
    then
 
    $$
-   \operatorname{actc}(F)=\operatorname{actc}(f).
+   \mathrm{actc}(F)=\mathrm{actc}(f).
    $$
 
-> **Interpretation.** The affine-cylinder invariant can be optimized on the same canonical representatives as $\operatorname{ctc}$, and hard restrictions remain valid witnesses for lower-bound attempts.
+> **Interpretation.** The affine-cylinder invariant can be optimized on the same canonical representatives as $\mathrm{ctc}$, and hard restrictions remain valid witnesses for lower-bound attempts.
 
 ## Proof
 
@@ -101,7 +101,7 @@ $$
 This changes the affine part from $A$ to $-A$, which has the same value of $\lambda$, and changes each cylinder coefficient from $c_a$ to $-c_a$ without changing its support or cost. Hence
 
 $$
-\operatorname{actc}(1-f)\leq\operatorname{actc}(f).
+\mathrm{actc}(1-f)\leq\mathrm{actc}(f).
 $$
 
 Applying the same argument to $1-f$ proves equality.
@@ -111,7 +111,7 @@ Applying the same argument to $1-f$ proves equality.
 Under a coordinate permutation, the affine form $A$ is relabeled. It has a nonzero linear part exactly when the original affine form does, so $\lambda(A)$ is unchanged. Each cylinder is relabeled to another cylinder with the same values of $\lvert P\rvert$ and $\lvert N\rvert$, so every $\kappa(P,N)$ is unchanged. Precomposing a representation with the permutation gives
 
 $$
-\operatorname{actc}(f^{\pi})\leq\operatorname{actc}(f),
+\mathrm{actc}(f^{\pi})\leq\mathrm{actc}(f),
 $$
 
 and applying the inverse permutation gives equality.
@@ -131,7 +131,7 @@ $$
 The same reversible argument gives
 
 $$
-\operatorname{actc}(f^{\mathrm{flip}})=\operatorname{actc}(f).
+\mathrm{actc}(f^{\mathrm{flip}})=\mathrm{actc}(f).
 $$
 
 ### Lemma 3. Restrictions
@@ -167,7 +167,7 @@ with both sides equal to $0$ when the relevant cylinder is vacuous.
 Thus the restricted score is a strict affine-cylinder representation of $g$ with no larger total cost. Taking the minimum over representations of $f$ proves
 
 $$
-\operatorname{actc}(g)\leq\operatorname{actc}(f).
+\mathrm{actc}(g)\leq\mathrm{actc}(f).
 $$
 
 ### Lemma 4. Dummy variables
@@ -175,23 +175,23 @@ $$
 Let $F(x,y)=f(x)$. Any affine-cylinder representation of $f$ extends to one for $F$ by using the same affine form on the $x$ coordinates, zero slopes on the dummy coordinates, and the same cylinders on the $x$ coordinates. The cost is unchanged, so
 
 $$
-\operatorname{actc}(F)\leq\operatorname{actc}(f).
+\mathrm{actc}(F)\leq\mathrm{actc}(f).
 $$
 
 Conversely, fixing the dummy variables in $F$ recovers $f$. Restriction monotonicity gives
 
 $$
-\operatorname{actc}(f)\leq\operatorname{actc}(F).
+\mathrm{actc}(f)\leq\mathrm{actc}(F).
 $$
 
 Therefore
 
 $$
-\operatorname{actc}(F)=\operatorname{actc}(f).
+\mathrm{actc}(F)=\mathrm{actc}(f).
 $$
 
 Combining Lemmas 1 through 4 proves all stated properties. $\blacksquare$
 
 ## Consequences
 
-The invariant $\operatorname{actc}$ is suitable for symmetry-reduced search. It can be minimized after quotienting by output complement, coordinate permutation, and global bit-flip, and any hard restriction of $f$ gives a lower-bound obstruction for $f$ itself.
+The invariant $\mathrm{actc}$ is suitable for symmetry-reduced search. It can be minimized after quotienting by output complement, coordinate permutation, and global bit-flip, and any hard restriction of $f$ gives a lower-bound obstruction for $f$ itself.

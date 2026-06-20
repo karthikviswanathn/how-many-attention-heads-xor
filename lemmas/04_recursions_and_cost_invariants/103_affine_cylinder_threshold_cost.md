@@ -2,7 +2,7 @@
 
 ## Statement
 
-For a partial assignment $(P,N)$ with disjoint $P,N\subseteq\{1,\ldots,n\}$, define
+For a partial assignment $(P,N)$ with disjoint $P,N\subseteq\lbrace1,\ldots,n\rbrace$, define
 
 $$
 C_{P,N}(x)
@@ -18,7 +18,7 @@ $$
 :=
 \begin{cases}
 0, & P=N=\varnothing, \\
-\min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}, & \text{otherwise}.
+\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace, & \text{otherwise}.
 \end{cases}
 $$
 
@@ -33,12 +33,12 @@ define
 $$
 \lambda(A)
 :=
-\mathbf{1}\!\left[
+\mathbf{1}\negthinspace\left[
 \exists i,\ a_i\neq0
 \right].
 $$
 
-Define the affine-cylinder threshold cost $\operatorname{actc}(f)$ to be the minimum of
+Define the affine-cylinder threshold cost $\mathrm{actc}(f)$ to be the minimum of
 
 $$
 \lambda(A)+\sum_{a:c_a\neq0}\kappa(P_a,N_a)
@@ -55,18 +55,18 @@ $$
 Then
 
 $$
-H^{*}(f)\leq\operatorname{actc}(f).
+H^{*}(f)\leq\mathrm{actc}(f).
 $$
 
 Moreover,
 
 $$
-\operatorname{actc}(f)\leq\operatorname{ctc}(f),
+\mathrm{actc}(f)\leq\mathrm{ctc}(f),
 $$
 
-so $\operatorname{actc}(f)$ is finite for every Boolean function.
+so $\mathrm{actc}(f)$ is finite for every Boolean function.
 
-> **Interpretation.** A strict cylinder-threshold representation should not pay separately for every linear monomial. The affine-cylinder cost keeps the signed cylinder-vote flexibility of $\operatorname{ctc}$ while letting one head approximate the whole affine part.
+> **Interpretation.** A strict cylinder-threshold representation should not pay separately for every linear monomial. The affine-cylinder cost keeps the signed cylinder-vote flexibility of $\mathrm{ctc}$ while letting one head approximate the whole affine part.
 
 ## Proof
 
@@ -88,7 +88,7 @@ Since $V$ is strict on the finite cube, its margin
 $$
 \Delta
 :=
-\min_{x\in\{0,1\}^n}\lvert V(x)\rvert
+\min_{x\in\lbrace0,1\rbrace^n}\lvert V(x)\rvert
 $$
 
 is positive.
@@ -98,7 +98,7 @@ Let
 $$
 \mathcal{J}
 :=
-\{a:c_a\neq0,\ \kappa(P_a,N_a)>0\}.
+\lbrace a:c_a\neq0,\ \kappa(P_a,N_a)>0\rbrace.
 $$
 
 Vacuous cylinders have $\kappa(P_a,N_a)=0$ and are constants, so they can be kept exactly in the final readout bias.
@@ -160,7 +160,7 @@ $$
 Taking the minimum over strict affine-cylinder representations proves
 
 $$
-H^{*}(f)\leq\operatorname{actc}(f).
+H^{*}(f)\leq\mathrm{actc}(f).
 $$
 
 Finally, every strict cylinder-threshold representation
@@ -174,13 +174,13 @@ $$
 is an affine-cylinder representation by taking $A(x)=c_0$. Since $\lambda(A)=0$ for a constant affine form, the same representation has the same cost. Minimizing gives
 
 $$
-\operatorname{actc}(f)\leq\operatorname{ctc}(f).
+\mathrm{actc}(f)\leq\mathrm{ctc}(f).
 $$
 
-The finiteness of $\operatorname{actc}(f)$ follows from the finiteness of $\operatorname{ctc}(f)$ in Lemma 99. $\blacksquare$
+The finiteness of $\mathrm{actc}(f)$ follows from the finiteness of $\mathrm{ctc}(f)$ in Lemma 99. $\blacksquare$
 
 ## Consequences
 
-The invariant $\operatorname{actc}$ is a strict optimization target between the linear-fractional normal form and older certificate classes. It inherits every feasible cylinder-threshold certificate, but it also treats dense affine thresholds as one-head primitives.
+The invariant $\mathrm{actc}$ is a strict optimization target between the linear-fractional normal form and older certificate classes. It inherits every feasible cylinder-threshold certificate, but it also treats dense affine thresholds as one-head primitives.
 
-In particular, a representation with many linear monomials and a few locally cheap cylinders can have small $\operatorname{actc}$ even when the same score has large ordinary cylinder cost or large ordinary monomial sparsity.
+In particular, a representation with many linear monomials and a few locally cheap cylinders can have small $\mathrm{actc}$ even when the same score has large ordinary cylinder cost or large ordinary monomial sparsity.

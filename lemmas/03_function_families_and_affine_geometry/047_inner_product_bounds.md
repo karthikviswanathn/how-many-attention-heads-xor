@@ -9,7 +9,7 @@ $$
 :=
 \bigoplus_{i=1}^{m}x_i y_i,
 \qquad
-x,y\in\{0,1\}^m.
+x,y\in\lbrace0,1\rbrace^m.
 $$
 
 Then
@@ -111,7 +111,7 @@ $$
 P(x,y)
 =
 -1+
-\sum_{\varnothing\neq U\subseteq\{1,\ldots,m\}}
+\sum_{\varnothing\neq U\subseteq\lbrace1,\ldots,m\rbrace}
 (-1)^{\lvert U\rvert+1}2^{\lvert U\rvert}
 \prod_{i\in U}x_i y_i.
 $$

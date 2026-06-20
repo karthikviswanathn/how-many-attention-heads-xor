@@ -2,7 +2,7 @@
 
 ## Statement
 
-For a partial assignment $(P,N)$ with disjoint $P,N\subseteq\{1,\ldots,n\}$, define
+For a partial assignment $(P,N)$ with disjoint $P,N\subseteq\lbrace1,\ldots,n\rbrace$, define
 
 $$
 C_{P,N}(x)
@@ -18,11 +18,11 @@ $$
 :=
 \begin{cases}
 0, & P=N=\varnothing, \\
-\min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}, & \text{otherwise}.
+\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace, & \text{otherwise}.
 \end{cases}
 $$
 
-Define the cylinder-threshold cost $\operatorname{ctc}(f)$ to be the minimum of
+Define the cylinder-threshold cost $\mathrm{ctc}(f)$ to be the minimum of
 
 $$
 \sum_{a:c_a\neq0}\kappa(P_a,N_a)
@@ -39,10 +39,10 @@ $$
 by subcube indicators. Then
 
 $$
-H^{*}(f)\leq\operatorname{ctc}(f).
+H^{*}(f)\leq\mathrm{ctc}(f).
 $$
 
-Moreover, $\operatorname{ctc}(f)$ is finite for every Boolean function.
+Moreover, $\mathrm{ctc}(f)$ is finite for every Boolean function.
 
 > **Interpretation.** Instead of choosing a DNF, CNF, certificate cover, or decision list first, one can optimize directly over strict real threshold votes of cylinders and pay the local orientation cost of the selected cylinders.
 
@@ -67,10 +67,10 @@ $$
 Taking the minimum over all strict cylinder-threshold representations proves
 
 $$
-H^{*}(f)\leq\operatorname{ctc}(f).
+H^{*}(f)\leq\mathrm{ctc}(f).
 $$
 
-It remains only to note that the minimum ranges over a nonempty finite set of cylinder supports. Repeated copies of the same cylinder can be merged by adding their coefficients, and cylinders with resulting coefficient $0$ can be deleted, without increasing the cost. Since there are only finitely many subcube indicators on $\{0,1\}^n$, there are only finitely many possible nonzero cylinder supports.
+It remains only to note that the minimum ranges over a nonempty finite set of cylinder supports. Repeated copies of the same cylinder can be merged by adding their coefficients, and cylinders with resulting coefficient $0$ can be deleted, without increasing the cost. Since there are only finitely many subcube indicators on $\lbrace0,1\rbrace^n$, there are only finitely many possible nonzero cylinder supports.
 
 If $f$ is constant, choose $s=0$ and an appropriate constant $c_0$, giving cost $0$.
 
@@ -85,24 +85,24 @@ $$
 where
 
 $$
-P(a):=\{i:a_i=1\},
+P(a):=\lbrace i:a_i=1\rbrace,
 \qquad
-N(a):=\{i:a_i=0\}.
+N(a):=\lbrace i:a_i=0\rbrace.
 $$
 
-This is strict on the Boolean cube and has finite cost. Hence $\operatorname{ctc}(f)<\infty$ for every $f$. $\blacksquare$
+This is strict on the Boolean cube and has finite cost. Hence $\mathrm{ctc}(f)<\infty$ for every $f$. $\blacksquare$
 
 ## Consequences
 
-Every one-sided local certificate-expansion bound is an instance of $\operatorname{ctc}(f)$: use coefficient $1$ on each covering cylinder and threshold $1/2$.
+Every one-sided local certificate-expansion bound is an instance of $\mathrm{ctc}(f)$: use coefficient $1$ on each covering cylinder and threshold $1/2$.
 
 The singleton representation gives the explicit fallback
 
 $$
-\operatorname{ctc}(f)
+\mathrm{ctc}(f)
 \leq
 \sum_{a\in f^{-1}(1)}
-\min\{2^{\lvert a\rvert},2^{n-\lvert a\rvert}\},
+\min\lbrace2^{\lvert a\rvert},2^{n-\lvert a\rvert}\rbrace,
 $$
 
 The same bound holds with $f^{-1}(0)$ in place of $f^{-1}(1)$ by using coefficient $-1$ on the zero-set singleton cylinders and threshold $1/2$. This fallback is not meant to dominate sparse support in general; its value is to expose when a strict cylinder vote has low local orientation cost even if it is not a one-sided cover in a standard normal form.

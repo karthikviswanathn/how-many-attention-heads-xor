@@ -2,14 +2,14 @@
 
 ## Statement
 
-Let $\operatorname{afs}_{\pm}(f)$ be the affine-free polynomial-threshold sparsity from [048_affine_free_sparsity_upper_bound.md](../03_function_families_and_affine_geometry/048_affine_free_sparsity_upper_bound.md), and let $\operatorname{ptfsp}(f)$ be ordinary polynomial-threshold sparsity. Then
+Let $\mathrm{afs}_{\pm}(f)$ be the affine-free polynomial-threshold sparsity from [048_affine_free_sparsity_upper_bound.md](../03_function_families_and_affine_geometry/048_affine_free_sparsity_upper_bound.md), and let $\mathrm{ptfsp}(f)$ be ordinary polynomial-threshold sparsity. Then
 
 $$
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\operatorname{afs}_{\pm}(f)
+\mathrm{afs}_{\pm}(f)
 \leq
-\operatorname{ptfsp}(f).
+\mathrm{ptfsp}(f).
 $$
 
 Combining with Lemma 103 gives
@@ -17,9 +17,9 @@ Combining with Lemma 103 gives
 $$
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\min\{\operatorname{ctc}(f),\operatorname{afs}_{\pm}(f)\}.
+\min\lbrace\mathrm{ctc}(f),\mathrm{afs}_{\pm}(f)\rbrace.
 $$
 
 Consequently, if $f$ is nonconstant and $\deg_{\pm}(f)\leq d$, then
@@ -27,7 +27,7 @@ Consequently, if $f$ is nonconstant and $\deg_{\pm}(f)\leq d$, then
 $$
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
 1+\sum_{r=2}^{d}\binom{n}{r}.
 $$
@@ -43,7 +43,7 @@ P(x)
 =
 a_{\varnothing}
 +
-\sum_{\varnothing\neq S\subseteq\{1,\ldots,n\}}a_S\prod_{i\in S}x_i
+\sum_{\varnothing\neq S\subseteq\lbrace1,\ldots,n\rbrace}a_S\prod_{i\in S}x_i
 $$
 
 be a strict sign-representing polynomial for $f$. Split it as
@@ -63,7 +63,7 @@ A(x)
 :=
 a_{\varnothing}
 +
-\sum_{i=1}^{n}a_{\{i\}}x_i
+\sum_{i=1}^{n}a_{\lbrace i\rbrace}x_i
 $$
 
 is the affine part and
@@ -71,7 +71,7 @@ is the affine part and
 $$
 \mathcal{M}
 :=
-\{S:\lvert S\rvert\geq2,\ a_S\neq0\}.
+\lbrace S:\lvert S\rvert\geq2,\ a_S\neq0\rbrace.
 $$
 
 For each $S\in\mathcal{M}$,
@@ -101,35 +101,35 @@ Its affine-cylinder cost is
 $$
 \lambda(A)+\lvert\mathcal{M}\rvert
 =
-\operatorname{afs}(P).
+\mathrm{afs}(P).
 $$
 
 Thus
 
 $$
-\operatorname{actc}(f)\leq\operatorname{afs}(P).
+\mathrm{actc}(f)\leq\mathrm{afs}(P).
 $$
 
 Minimizing over all strict sign-representing polynomials proves
 
 $$
-\operatorname{actc}(f)\leq\operatorname{afs}_{\pm}(f).
+\mathrm{actc}(f)\leq\mathrm{afs}_{\pm}(f).
 $$
 
-For every polynomial $P$, the affine-free support cost is at most the number of nonconstant monomials in $P$: all nonzero linear monomials together cost at most one, and all nonlinear monomials are counted exactly. Taking a polynomial that achieves $\operatorname{ptfsp}(f)$ gives
+For every polynomial $P$, the affine-free support cost is at most the number of nonconstant monomials in $P$: all nonzero linear monomials together cost at most one, and all nonlinear monomials are counted exactly. Taking a polynomial that achieves $\mathrm{ptfsp}(f)$ gives
 
 $$
-\operatorname{afs}_{\pm}(f)\leq\operatorname{ptfsp}(f).
+\mathrm{afs}_{\pm}(f)\leq\mathrm{ptfsp}(f).
 $$
 
 Lemma 103 gives
 
 $$
-H^{*}(f)\leq\operatorname{actc}(f)
+H^{*}(f)\leq\mathrm{actc}(f)
 \qquad
 \text{and}
 \qquad
-\operatorname{actc}(f)\leq\operatorname{ctc}(f).
+\mathrm{actc}(f)\leq\mathrm{ctc}(f).
 $$
 
 Combining these inequalities yields
@@ -137,9 +137,9 @@ Combining these inequalities yields
 $$
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\min\{\operatorname{ctc}(f),\operatorname{afs}_{\pm}(f)\}.
+\min\lbrace\mathrm{ctc}(f),\mathrm{afs}_{\pm}(f)\rbrace.
 $$
 
 Finally, if $f$ is nonconstant and $\deg_{\pm}(f)\leq d$, choose a degree-at-most-$d$ sign polynomial. Its affine-free support cost is at most
@@ -152,24 +152,24 @@ because all linear terms together cost one affine block and there are at most $\
 
 ## Consequences
 
-The ordinary sparse-PTF theorem and the affine-free sparse-PTF theorem both factor through $\operatorname{actc}$:
+The ordinary sparse-PTF theorem and the affine-free sparse-PTF theorem both factor through $\mathrm{actc}$:
 
 $$
 H^{*}(f)
 \leq
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\operatorname{afs}_{\pm}(f)
+\mathrm{afs}_{\pm}(f)
 \leq
-\operatorname{ptfsp}(f).
+\mathrm{ptfsp}(f).
 $$
 
 Together with Lemma 103,
 
 $$
-\operatorname{actc}(f)
+\mathrm{actc}(f)
 \leq
-\min\{\operatorname{ctc}(f),\operatorname{afs}_{\pm}(f)\}.
+\min\lbrace\mathrm{ctc}(f),\mathrm{afs}_{\pm}(f)\rbrace.
 $$
 
 Thus the next sharper upper-bound search can ask for a strict threshold of locally cheap cylinders after first extracting one dense affine component.

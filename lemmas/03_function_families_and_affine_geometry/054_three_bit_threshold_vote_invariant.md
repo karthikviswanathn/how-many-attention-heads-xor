@@ -2,10 +2,10 @@
 
 ## Statement
 
-For a Boolean function $f:\{0,1\}^n\to\{0,1\}$, define $s_{\mathrm{LTF}}(f)$ to be the least $s$ such that there are linear threshold functions
+For a Boolean function $f:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace$, define $s_{\mathrm{LTF}}(f)$ to be the least $s$ such that there are linear threshold functions
 
 $$
-T_1,\ldots,T_s:\{0,1\}^n\to\{0,1\}
+T_1,\ldots,T_s:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace
 $$
 
 and real coefficients $c_0,c_1,\ldots,c_s$ with
@@ -16,12 +16,12 @@ f(x)=1
 c_0+\sum_{j=1}^{s}c_jT_j(x)>0
 $$
 
-for every $x\in\{0,1\}^n$. For $s=0$, this means that $f$ is constant.
+for every $x\in\lbrace0,1\rbrace^n$. For $s=0$, this means that $f$ is constant.
 
 Then for every three-bit Boolean function
 
 $$
-f:\{0,1\}^3\to\{0,1\},
+f:\lbrace0,1\rbrace^3\to\lbrace0,1\rbrace,
 $$
 
 we have
@@ -56,7 +56,7 @@ First, it tests each three-bit truth table for strict affine separability by sol
 $$
 y_x\left(a_0+\sum_{i=1}^{3}a_ix_i\right)\geq1
 \qquad
-\text{for every }x\in\{0,1\}^3,
+\text{for every }x\in\lbrace0,1\rbrace^3,
 $$
 
 where $y_x=+1$ on true inputs and $y_x=-1$ on false inputs. This identifies the $104$ three-bit linear threshold truth tables, including the two constants.

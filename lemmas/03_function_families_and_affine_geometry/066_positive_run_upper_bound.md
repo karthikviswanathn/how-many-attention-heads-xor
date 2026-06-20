@@ -5,7 +5,7 @@
 Let
 
 $$
-f:\{0,1\}^n\to\{0,1\}.
+f:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace.
 $$
 
 Let
@@ -22,7 +22,7 @@ $$
 x^{(0)},x^{(1)},\ldots,x^{(2^n-1)}.
 $$
 
-For $b\in\{0,1\}$, let $R_t^b(f)$ be the number of maximal contiguous blocks of indices $j$ for which
+For $b\in\lbrace0,1\rbrace$, let $R_t^b(f)$ be the number of maximal contiguous blocks of indices $j$ for which
 
 $$
 f(x^{(j)})=b.
@@ -33,7 +33,7 @@ Then
 $$
 H^{*}(f)
 \leq
-2\min\{R_t^0(f),R_t^1(f)\}.
+2\min\lbrace R_t^0(f),R_t^1(f)\rbrace.
 $$
 
 Consequently, if
@@ -41,7 +41,7 @@ Consequently, if
 $$
 R_{+}(f)
 :=
-\min_t\min\{R_t^0(f),R_t^1(f)\},
+\min_t\min\lbrace R_t^0(f),R_t^1(f)\rbrace,
 $$
 
 where the minimum ranges over injective positive weighted sums $t$, then
@@ -77,7 +77,7 @@ $$
 Therefore
 
 $$
-C_t(f)\leq2\min\{R_t^0(f),R_t^1(f)\}.
+C_t(f)\leq2\min\lbrace R_t^0(f),R_t^1(f)\rbrace.
 $$
 
 The positive-projection sign-change theorem [013_positive_projection_sign_changes.md](../01_foundations_and_normal_form/013_positive_projection_sign_changes.md) gives
@@ -91,7 +91,7 @@ and hence
 $$
 H^{*}(f)
 \leq
-2\min\{R_t^0(f),R_t^1(f)\}.
+2\min\lbrace R_t^0(f),R_t^1(f)\rbrace.
 $$
 
 Optimizing over injective positive weighted sums $t$ proves the $R_{+}(f)$ bound. $\blacksquare$

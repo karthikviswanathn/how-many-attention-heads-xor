@@ -5,20 +5,20 @@
 Let
 
 $$
-T:\{0,1\}^{m}\to\{0,1\}.
+T:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace.
 $$
 
-The optimized one-bit costs $\operatorname{lgactc}(T)$ and $\operatorname{xactc}(T)$ have the following structural properties.
+The optimized one-bit costs $\mathrm{lgactc}(T)$ and $\mathrm{xactc}(T)$ have the following structural properties.
 
 1. Output complement does not change either cost:
 
    $$
-   \operatorname{lgactc}(1-T)=\operatorname{lgactc}(T),
+   \mathrm{lgactc}(1-T)=\mathrm{lgactc}(T),
    \qquad
-   \operatorname{xactc}(1-T)=\operatorname{xactc}(T).
+   \mathrm{xactc}(1-T)=\mathrm{xactc}(T).
    $$
 
-2. Coordinate permutations do not change either cost. If $\pi$ is a permutation of $\{1,\ldots,m\}$ and
+2. Coordinate permutations do not change either cost. If $\pi$ is a permutation of $\lbrace1,\ldots,m\rbrace$ and
 
    $$
    T^{\pi}(y_1,\ldots,y_m)
@@ -29,9 +29,9 @@ The optimized one-bit costs $\operatorname{lgactc}(T)$ and $\operatorname{xactc}
    then
 
    $$
-   \operatorname{lgactc}(T^{\pi})=\operatorname{lgactc}(T),
+   \mathrm{lgactc}(T^{\pi})=\mathrm{lgactc}(T),
    \qquad
-   \operatorname{xactc}(T^{\pi})=\operatorname{xactc}(T).
+   \mathrm{xactc}(T^{\pi})=\mathrm{xactc}(T).
    $$
 
 3. Global bit-flip on the feature variables does not change either cost. If
@@ -45,17 +45,17 @@ The optimized one-bit costs $\operatorname{lgactc}(T)$ and $\operatorname{xactc}
    then
 
    $$
-   \operatorname{lgactc}(T^{\mathrm{flip}})=\operatorname{lgactc}(T),
+   \mathrm{lgactc}(T^{\mathrm{flip}})=\mathrm{lgactc}(T),
    \qquad
-   \operatorname{xactc}(T^{\mathrm{flip}})=\operatorname{xactc}(T).
+   \mathrm{xactc}(T^{\mathrm{flip}})=\mathrm{xactc}(T).
    $$
 
 4. Restrictions cannot increase either cost. If $R$ is obtained from $T$ by fixing some feature coordinates, then
 
    $$
-   \operatorname{lgactc}(R)\leq\operatorname{lgactc}(T),
+   \mathrm{lgactc}(R)\leq\mathrm{lgactc}(T),
    \qquad
-   \operatorname{xactc}(R)\leq\operatorname{xactc}(T).
+   \mathrm{xactc}(R)\leq\mathrm{xactc}(T).
    $$
 
 5. Adding dummy feature variables does not change either cost. If
@@ -67,12 +67,12 @@ The optimized one-bit costs $\operatorname{lgactc}(T)$ and $\operatorname{xactc}
    then
 
    $$
-   \operatorname{lgactc}(U)=\operatorname{lgactc}(T),
+   \mathrm{lgactc}(U)=\mathrm{lgactc}(T),
    \qquad
-   \operatorname{xactc}(U)=\operatorname{xactc}(T).
+   \mathrm{xactc}(U)=\mathrm{xactc}(T).
    $$
 
-> **Interpretation.** The optimized literal-gating and fresh-XOR costs can be minimized on the same canonical feature representatives as $\operatorname{actc}$. Hard restrictions of the feature remain valid lower-bound witnesses for these optimized one-bit targets.
+> **Interpretation.** The optimized literal-gating and fresh-XOR costs can be minimized on the same canonical feature representatives as $\mathrm{actc}$. Hard restrictions of the feature remain valid lower-bound witnesses for these optimized one-bit targets.
 
 ## Proof
 
@@ -87,7 +87,7 @@ $$
 with
 
 $$
-L(A)=\{i:\alpha_i\neq0\}.
+L(A)=\lbrace i:\alpha_i\neq0\rbrace.
 $$
 
 For $\gamma=(P,N)$, write
@@ -95,9 +95,9 @@ For $\gamma=(P,N)$, write
 $$
 K_{0}(\gamma):=\kappa(P,N),
 \qquad
-K_{+}(\gamma):=\kappa(P\cup\{z\},N),
+K_{+}(\gamma):=\kappa(P\cup\lbrace z\rbrace,N),
 \qquad
-K_{-}(\gamma):=\kappa(P,N\cup\{z\}).
+K_{-}(\gamma):=\kappa(P,N\cup\lbrace z\rbrace).
 $$
 
 For a family $\Gamma$, use $K_{0}(\Gamma)$, $K_{+}(\Gamma)$, and $K_{-}(\Gamma)$ for the corresponding sums over $\gamma\in\Gamma$.
@@ -106,12 +106,12 @@ For a family $\Gamma$, use $K_{0}(\Gamma)$, $K_{+}(\Gamma)$, and $K_{-}(\Gamma)$
 
 If $S$ strictly represents $T$, then $-S$ strictly represents $1-T$. The affine part changes from $A$ to $-A$, so $L(A)$ and $\eta_{\oplus}(A)$ are unchanged. The cylinder supports are unchanged and only the coefficients change sign.
 
-Thus the $\operatorname{lgactc}$ and $\operatorname{xactc}$ costs of the displayed score are unchanged. This proves
+Thus the $\mathrm{lgactc}$ and $\mathrm{xactc}$ costs of the displayed score are unchanged. This proves
 
 $$
-\operatorname{lgactc}(1-T)\leq\operatorname{lgactc}(T),
+\mathrm{lgactc}(1-T)\leq\mathrm{lgactc}(T),
 \qquad
-\operatorname{xactc}(1-T)\leq\operatorname{xactc}(T).
+\mathrm{xactc}(1-T)\leq\mathrm{xactc}(T).
 $$
 
 Applying the same argument to $1-T$ proves equality.
@@ -139,24 +139,24 @@ so $\lvert L(A)\rvert$ and $\eta_{\oplus}(A)$ are unchanged. A cylinder $(P,N)$ 
 $$
 \kappa(N,P)=\kappa(P,N),
 \qquad
-\kappa(N\cup\{z\},P)=\kappa(P,N\cup\{z\}),
+\kappa(N\cup\lbrace z\rbrace,P)=\kappa(P,N\cup\lbrace z\rbrace),
 \qquad
-\kappa(N,P\cup\{z\})=\kappa(P\cup\{z\},N).
+\kappa(N,P\cup\lbrace z\rbrace)=\kappa(P\cup\lbrace z\rbrace,N).
 $$
 
 Thus global bit-flip swaps $K_{+}$ and $K_{-}$ for each cylinder. The quantity
 
 $$
-\min\{K_{+}(\Gamma),K_{-}(\Gamma)\}
+\min\lbrace K_{+}(\Gamma),K_{-}(\Gamma)\rbrace
 $$
 
-used by $\operatorname{lgactc}$ is unchanged, and the quantity
+used by $\mathrm{lgactc}$ is unchanged, and the quantity
 
 $$
-K_{0}(\Gamma)+\min\{K_{+}(\Gamma),K_{-}(\Gamma)\}
+K_{0}(\Gamma)+\min\lbrace K_{+}(\Gamma),K_{-}(\Gamma)\rbrace
 $$
 
-used by $\operatorname{xactc}$ is also unchanged. The transformation is reversible, so both optimized costs are invariant.
+used by $\mathrm{xactc}$ is also unchanged. The transformation is reversible, so both optimized costs are invariant.
 
 ### Lemma 4. Restrictions
 
@@ -191,29 +191,29 @@ $$
 and
 
 $$
-\kappa((P\cap J)\cup\{z\},N\cap J)
+\kappa((P\cap J)\cup\lbrace z\rbrace,N\cap J)
 \leq
-\kappa(P\cup\{z\},N),
+\kappa(P\cup\lbrace z\rbrace,N),
 $$
 
 and
 
 $$
-\kappa(P\cap J,(N\cap J)\cup\{z\})
+\kappa(P\cap J,(N\cap J)\cup\lbrace z\rbrace)
 \leq
-\kappa(P,N\cup\{z\}).
+\kappa(P,N\cup\lbrace z\rbrace).
 $$
 
-Therefore the restricted score gives a feasible strict affine-cylinder score for $R$ whose $\operatorname{lgactc}$ and $\operatorname{xactc}$ costs are no larger than those of the original score for $T$. Minimizing over scores for $T$ proves restriction monotonicity.
+Therefore the restricted score gives a feasible strict affine-cylinder score for $R$ whose $\mathrm{lgactc}$ and $\mathrm{xactc}$ costs are no larger than those of the original score for $T$. Minimizing over scores for $T$ proves restriction monotonicity.
 
 ### Lemma 5. Dummy feature variables
 
 Let $U(y,w)=T(y)$. Any strict affine-cylinder score for $T$ extends to one for $U$ by giving every dummy coordinate zero affine slope and by using the same cylinders on the $y$ coordinates. The two optimized costs are unchanged, so
 
 $$
-\operatorname{lgactc}(U)\leq\operatorname{lgactc}(T),
+\mathrm{lgactc}(U)\leq\mathrm{lgactc}(T),
 \qquad
-\operatorname{xactc}(U)\leq\operatorname{xactc}(T).
+\mathrm{xactc}(U)\leq\mathrm{xactc}(T).
 $$
 
 Conversely, restricting the dummy block of $U$ to any fixed value recovers $T$. Lemma 4 gives the reverse inequalities. Hence dummy feature variables do not change either optimized cost.
@@ -225,7 +225,7 @@ Combining Lemmas 1 through 5 proves the statement. $\blacksquare$
 The exactness target
 
 $$
-\operatorname{xactc}(T)=\deg_{\pm}(T)+1
+\mathrm{xactc}(T)=\deg_{\pm}(T)+1
 $$
 
 is stable under output complement, feature-coordinate relabeling, global feature bit-flip, and dummy feature extension. It is also restriction-monotone on the upper-bound side, so any feature restriction with large optimized one-bit cost is a valid obstruction to small optimized one-bit cost for the original feature.

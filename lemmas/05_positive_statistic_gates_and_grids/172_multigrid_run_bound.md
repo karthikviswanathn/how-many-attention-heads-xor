@@ -2,12 +2,12 @@
 
 ## Statement
 
-Use the setup of Theorem 170, and read the grid values of $F$ in the same lexicographic order. For a label $b\in\{0,1\}$, let $R_b$ be the number of contiguous runs of the label $b$ in this ordered grid sequence.
+Use the setup of Theorem 170, and read the grid values of $F$ in the same lexicographic order. For a label $b\in\lbrace0,1\rbrace$, let $R_b$ be the number of contiguous runs of the label $b$ in this ordered grid sequence.
 
 Then
 
 $$
-H^{*}(f)\leq 2\min\{R_0,R_1\}.
+H^{*}(f)\leq 2\min\lbrace R_0,R_1\rbrace.
 $$
 
 More sharply, if the chosen cheaper label $b$ has first and last sequence labels $\epsilon_0,\epsilon_1$ with respect to membership in the $b$-label set, then
@@ -39,7 +39,7 @@ $$
 Choosing the cheaper label gives
 
 $$
-H^{*}(f)\leq2\min\{R_0,R_1\}.
+H^{*}(f)\leq2\min\lbrace R_0,R_1\rbrace.
 $$
 
 If the sharper transition count equals $\deg_{\pm}(f)$, then the threshold-degree lower bound matches the upper bound, so the value is exact. $\blacksquare$

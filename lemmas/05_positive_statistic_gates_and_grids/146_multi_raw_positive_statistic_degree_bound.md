@@ -2,7 +2,7 @@
 
 ## Statement
 
-Let $k\geq0$, let $z\in\{0,1\}^{k}$ be raw bits, and let
+Let $k\geq0$, let $z\in\lbrace0,1\rbrace^{k}$ be raw bits, and let
 
 $$
 t(y)=\sum_{i=1}^{m}\lambda_i y_i,
@@ -10,7 +10,7 @@ t(y)=\sum_{i=1}^{m}\lambda_i y_i,
 \lambda_i>0.
 $$
 
-Suppose $P(z,y)$ is a strict sign polynomial for a Boolean function $f(z,y)$, and suppose that for each raw assignment $a\in\{0,1\}^{k}$, the slice
+Suppose $P(z,y)$ is a strict sign polynomial for a Boolean function $f(z,y)$, and suppose that for each raw assignment $a\in\lbrace0,1\rbrace^{k}$, the slice
 
 $$
 P_a(u):=P(a,y)\quad\text{with }u=t(y)
@@ -21,7 +21,7 @@ is a univariate polynomial in $u$ of degree at most $d_a$. Then
 $$
 H^{*}(f)
 \leq
-\sum_{a\in\{0,1\}^{k}} d_a
+\sum_{a\in\lbrace0,1\rbrace^{k}} d_a
 +
 2^{k}-1.
 $$
@@ -47,11 +47,11 @@ The common positive-statistic multi-slice bound [145_common_positive_statistic_m
 $$
 H^{*}(f)
 \leq
-\sum_{a\in\{0,1\}^{k}}C_a
+\sum_{a\in\lbrace0,1\rbrace^{k}}C_a
 +
 2^k-1
 \leq
-\sum_{a\in\{0,1\}^{k}}d_a
+\sum_{a\in\lbrace0,1\rbrace^{k}}d_a
 +
 2^k-1.
 $$
@@ -59,7 +59,7 @@ $$
 If $P$ has total degree at most $d$ in $t(y),z_1,\ldots,z_k$, then every raw slice has degree at most $d$, so
 
 $$
-\sum_{a\in\{0,1\}^{k}}d_a\leq2^k d.
+\sum_{a\in\lbrace0,1\rbrace^{k}}d_a\leq2^k d.
 $$
 
 This gives

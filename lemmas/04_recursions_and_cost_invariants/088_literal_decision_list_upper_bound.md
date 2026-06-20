@@ -11,16 +11,16 @@ $$
 literals
 
 $$
-\ell_j(x)\in\{x_{i_j},1-x_{i_j}\},
+\ell_j(x)\in\lbrace x_{i_j},1-x_{i_j}\rbrace,
 $$
 
 branch labels
 
 $$
-b_1,\ldots,b_L\in\{0,1\},
+b_1,\ldots,b_L\in\lbrace0,1\rbrace,
 $$
 
-and a default label $b_{L+1}\in\{0,1\}$. It computes the Boolean function $f$ that returns $b_j$ at the first index $j$ with $\ell_j(x)=1$, and returns $b_{L+1}$ if no literal fires.
+and a default label $b_{L+1}\in\lbrace0,1\rbrace$. It computes the Boolean function $f$ that returns $b_j$ at the first index $j$ with $\ell_j(x)=1$, and returns $b_{L+1}$ if no literal fires.
 
 Then
 
@@ -34,7 +34,7 @@ More generally, any ordinary literal decision list is equivalent to a read-once 
 
 ## Proof
 
-We first prove the read-once statement. For $j\in\{1,\ldots,L+1\}$, let $F_j$ be the suffix decision-list function beginning at test $j$, with $F_{L+1}\equiv b_{L+1}$. Thus $F_1=f$.
+We first prove the read-once statement. For $j\in\lbrace1,\ldots,L+1\rbrace$, let $F_j$ be the suffix decision-list function beginning at test $j$, with $F_{L+1}\equiv b_{L+1}$. Thus $F_1=f$.
 
 We prove by backward induction that
 

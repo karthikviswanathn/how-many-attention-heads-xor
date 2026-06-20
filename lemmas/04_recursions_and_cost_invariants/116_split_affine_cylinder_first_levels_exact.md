@@ -5,13 +5,13 @@
 Let
 
 $$
-f:\{0,1\}^{n}\to\{0,1\}
+f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace
 $$
 
 with $n\geq1$. Then
 
 $$
-\operatorname{sactc}(f)=0
+\mathrm{sactc}(f)=0
 \qquad\Longleftrightarrow\qquad
 f \text{ is constant},
 $$
@@ -19,7 +19,7 @@ $$
 and
 
 $$
-\operatorname{sactc}(f)=1
+\mathrm{sactc}(f)=1
 \qquad\Longleftrightarrow\qquad
 f \text{ is a nonconstant LTF}.
 $$
@@ -27,7 +27,7 @@ $$
 Equivalently,
 
 $$
-\operatorname{sactc}(f)\geq2
+\mathrm{sactc}(f)\geq2
 \qquad\Longleftrightarrow\qquad
 f \text{ is neither constant nor a nonconstant LTF}.
 $$
@@ -39,15 +39,15 @@ $$
 The split affine-cylinder cost theorem [112_split_affine_cylinder_cost.md](112_split_affine_cylinder_cost.md) gives
 
 $$
-\operatorname{actc}(f)\leq\operatorname{sactc}(f).
+\mathrm{actc}(f)\leq\mathrm{sactc}(f).
 $$
 
-If $\operatorname{sactc}(f)=0$, then $\operatorname{actc}(f)=0$, so $f$ is constant by [115_affine_cylinder_first_levels_exact.md](115_affine_cylinder_first_levels_exact.md).
+If $\mathrm{sactc}(f)=0$, then $\mathrm{actc}(f)=0$, so $f$ is constant by [115_affine_cylinder_first_levels_exact.md](115_affine_cylinder_first_levels_exact.md).
 
 Conversely, if $f$ is constant, choose the same constant strict score on both cofactors. The interpolation cost has no affine part, no changed slopes, and no cylinders. Therefore
 
 $$
-\operatorname{sactc}(f)=0.
+\mathrm{sactc}(f)=0.
 $$
 
 Now let $f$ be a nonconstant LTF. Choose a strict affine separator
@@ -79,36 +79,36 @@ $$
 Thus this split certificate has cost $1$, and
 
 $$
-\operatorname{sactc}(f)\leq1.
+\mathrm{sactc}(f)\leq1.
 $$
 
-The function is nonconstant, so the first part rules out $\operatorname{sactc}(f)=0$. Hence
+The function is nonconstant, so the first part rules out $\mathrm{sactc}(f)=0$. Hence
 
 $$
-\operatorname{sactc}(f)=1.
+\mathrm{sactc}(f)=1.
 $$
 
-Conversely, if $\operatorname{sactc}(f)=1$, then
+Conversely, if $\mathrm{sactc}(f)=1$, then
 
 $$
-\operatorname{actc}(f)\leq1.
+\mathrm{actc}(f)\leq1.
 $$
 
-By [115_affine_cylinder_first_levels_exact.md](115_affine_cylinder_first_levels_exact.md), $f$ is either constant or a nonconstant LTF. Since $\operatorname{sactc}(f)\neq0$, the first part rules out the constant case. Thus $f$ is a nonconstant LTF.
+By [115_affine_cylinder_first_levels_exact.md](115_affine_cylinder_first_levels_exact.md), $f$ is either constant or a nonconstant LTF. Since $\mathrm{sactc}(f)\neq0$, the first part rules out the constant case. Thus $f$ is a nonconstant LTF.
 
-The last equivalence follows by negating the characterization that $\operatorname{sactc}(f)\leq1$ exactly for constants and nonconstant LTFs. $\blacksquare$
+The last equivalence follows by negating the characterization that $\mathrm{sactc}(f)\leq1$ exactly for constants and nonconstant LTFs. $\blacksquare$
 
 ## Consequences
 
 For $n\geq1$, the split invariant has no artificial low-level slack:
 
 $$
-\operatorname{sactc}(f)
+\mathrm{sactc}(f)
 =
 H^{*}(f)
 \qquad
 \text{for }
-\operatorname{sactc}(f)\in\{0,1\}.
+\mathrm{sactc}(f)\in\lbrace0,1\rbrace.
 $$
 
 The first nontrivial split certificates are exactly the cost-$2$ certificates, and those are exact two-head certificates for non-LTFs by [112_split_affine_cylinder_cost.md](112_split_affine_cylinder_cost.md).

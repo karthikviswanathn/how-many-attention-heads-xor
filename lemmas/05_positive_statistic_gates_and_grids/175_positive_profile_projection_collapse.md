@@ -37,7 +37,7 @@ Define
 $$
 C_a(G)
 :=
-\lvert\{m\in\{1,\ldots,M-1\}:G(\tau_{m-1})\neq G(\tau_m)\}\rvert.
+\lvert\lbrace m\in\lbrace1,\ldots,M-1\rbrace:G(\tau_{m-1})\neq G(\tau_m)\rbrace\rvert.
 $$
 
 Then
@@ -71,7 +71,7 @@ and $N=n_1+\cdots+n_b$, then
 $$
 H^{*}(f)
 =
-\lvert\{k\in\{1,\ldots,N\}:G(k-1)\neq G(k)\}\rvert.
+\lvert\lbrace k\in\lbrace1,\ldots,N\rbrace:G(k-1)\neq G(k)\rbrace\rvert.
 $$
 
 > **Interpretation.** A multiblock Hamming profile can sometimes collapse to one positive projection. In that case the right cost is the sign-change count of the collapsed weighted sum, not the sign-change count along a full lexicographic grid traversal.
@@ -117,7 +117,7 @@ When all $a_j$ are $1$, the function is symmetric in all $N$ variables. The exac
 $$
 H^{*}(f)
 =
-\lvert\{k\in\{1,\ldots,N\}:G(k-1)\neq G(k)\}\rvert.
+\lvert\lbrace k\in\lbrace1,\ldots,N\rbrace:G(k-1)\neq G(k)\rbrace\rvert.
 $$
 
 This proves the final claim. $\blacksquare$

@@ -29,7 +29,7 @@ $$
 For a Boolean gate
 
 $$
-G:\{0,1\}^{k}\times\{0,1\}\to\{0,1\},
+G:\lbrace0,1\rbrace^{k}\times\lbrace0,1\rbrace\to\lbrace0,1\rbrace,
 $$
 
 define
@@ -43,23 +43,23 @@ and write
 $$
 g_e(a):=G(a,e)
 \qquad
-\text{for }e\in\{0,1\}.
+\text{for }e\in\lbrace0,1\rbrace.
 $$
 
 Let
 
 $$
-N_G:=\left\lvert\{a\in\{0,1\}^{k}:g_0(a)\neq g_1(a)\}\right\rvert.
+N_G:=\left\lvert\lbrace a\in\lbrace0,1\rbrace^{k}:g_0(a)\neq g_1(a)\rbrace\right\rvert.
 $$
 
 Then the following sandwich holds:
 
 $$
-\max\left\{
+\max\left\lbrace
 \mathbf{1}_{N_G>0}H^{*}(T),
 H^{*}(g_0),
 H^{*}(g_1)
-\right\}
+\right\rbrace
 \leq
 H^{*}(H_G)
 \leq
@@ -92,7 +92,7 @@ The upper bound is exactly the positive mixed boundary gate bound [151_positive_
 
 For the lower bounds, use restriction monotonicity from Lemma 28. Since $T$ is nonconstant, it attains both values $0$ and $1$ on the finite cube.
 
-Fix $e\in\{0,1\}$ and choose $y^{(e)}$ such that
+Fix $e\in\lbrace0,1\rbrace$ and choose $y^{(e)}$ such that
 
 $$
 T(y^{(e)})=e.

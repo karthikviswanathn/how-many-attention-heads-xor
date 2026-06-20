@@ -37,7 +37,7 @@ $$
 Let
 
 $$
-\operatorname{eps}_{+}^{z\mid y}(f)
+\mathrm{eps}_{+}^{z\mid y}(f)
 :=
 \min_t
 \left(
@@ -52,19 +52,19 @@ $$
 \leq
 H^{*}(f)
 \leq
-\operatorname{eps}_{+}^{z\mid y}(f).
+\mathrm{eps}_{+}^{z\mid y}(f).
 $$
 
 In particular, if
 
 $$
-\deg_{\pm}(f)=\operatorname{eps}_{+}^{z\mid y}(f),
+\deg_{\pm}(f)=\mathrm{eps}_{+}^{z\mid y}(f),
 $$
 
 then
 
 $$
-H^{*}(f)=\deg_{\pm}(f)=\operatorname{eps}_{+}^{z\mid y}(f).
+H^{*}(f)=\deg_{\pm}(f)=\mathrm{eps}_{+}^{z\mid y}(f).
 $$
 
 > **Interpretation.** Any positive concatenation upper bound becomes an exact theorem once threshold degree reaches the same value. The optimized endpoint-coupled cost gives a compact exactness target.
@@ -98,7 +98,7 @@ $$
 Taking the minimum over $t$ gives
 
 $$
-H^{*}(f)\leq\operatorname{eps}_{+}^{z\mid y}(f).
+H^{*}(f)\leq\mathrm{eps}_{+}^{z\mid y}(f).
 $$
 
 Combining this with the threshold-degree lower bound gives the displayed sandwich, and equality follows when the two sides match. $\blacksquare$

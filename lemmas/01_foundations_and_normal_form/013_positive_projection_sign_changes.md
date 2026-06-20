@@ -2,7 +2,7 @@
 
 ## Statement
 
-Let $f : \{0,1\}^n \to \{0,1\}$.
+Let $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$.
 
 Suppose there are positive weights
 
@@ -13,7 +13,7 @@ $$
 and a function
 
 $$
-F : \operatorname{Im}(t) \to \{0,1\},
+F : \mathrm{Im}(t) \to \lbrace0,1\rbrace,
 $$
 
 where
@@ -28,7 +28,7 @@ $$
 f(x) = F(t(x))
 $$
 
-for every $x \in \{0,1\}^n$.
+for every $x \in \lbrace0,1\rbrace^n$.
 
 Write the image of $t$ in increasing order as
 
@@ -55,9 +55,9 @@ $$
 C_t(F)
 :=
 \lvert
-\left\{
-m \in \{1,\ldots,M-1\} : \sigma_{m-1} \neq \sigma_m
-\right\}
+\left\lbrace
+m \in \lbrace1,\ldots,M-1\rbrace : \sigma_{m-1} \neq \sigma_m
+\right\rbrace
 \rvert.
 $$
 
@@ -93,7 +93,7 @@ is injective on the Boolean cube.
 
 ## Proof
 
-If $C_t(F) = 0$, then all labels on $\operatorname{Im}(t)$ are equal, so $f$ is constant and $H^{*}(f)=0$.
+If $C_t(F) = 0$, then all labels on $\mathrm{Im}(t)$ are equal, so $f$ is constant and $H^{*}(f)=0$.
 
 Assume
 
@@ -101,7 +101,7 @@ $$
 C := C_t(F) \geq 1.
 $$
 
-### Lemma 1. A shifted reciprocal of $t$ costs one head
+### Lemma 1. A shifted reciprocal of t costs one head
 
 Fix $r > 0$ and $d \in \mathbb{R}$. The scalar function
 
@@ -147,7 +147,7 @@ $$
 \eta = d, \qquad m_i = 0, \qquad \delta = 0.
 $$
 
-Since $x_i \in \{0,1\}$,
+Since $x_i \in \lbrace0,1\rbrace$,
 
 $$
 \alpha^{x_i} = 1 + (\alpha - 1)x_i.
@@ -177,12 +177,12 @@ $$
 
 $\blacksquare$
 
-### Lemma 2. $C$ heads realize the projected sign sequence
+### Lemma 2. C heads realize the projected sign sequence
 
 Let
 
 $$
-J := \{m \in \{1,\ldots,M-1\} : \sigma_{m-1} \neq \sigma_m\}.
+J := \lbrace m \in \lbrace1,\ldots,M-1\rbrace : \sigma_{m-1} \neq \sigma_m\rbrace.
 $$
 
 For every $m \in J$, choose a cut point
@@ -200,9 +200,9 @@ $$
 Then $P$ has degree $C$ and
 
 $$
-\operatorname{sgn}(P(\tau_m)) = \sigma_m
+\mathrm{sgn}(P(\tau_m)) = \sigma_m
 \qquad
-\text{for every } m \in \{0,\ldots,M-1\}.
+\text{for every } m \in \lbrace0,\ldots,M-1\rbrace.
 $$
 
 Now choose distinct positive numbers
@@ -223,7 +223,7 @@ $$
 S(z) := \frac{P(z)}{B(z)}
 $$
 
-has the same sign as $P$ on $\operatorname{Im}(t)$.
+has the same sign as $P$ on $\mathrm{Im}(t)$.
 
 Since $\deg P \leq C = \deg B$ and the roots $-r_j$ are distinct, the partial-fraction decomposition has the form
 
@@ -261,7 +261,7 @@ $$
 
 $\blacksquare$
 
-This proves the theorem. Since $C_t(F) \leq \lvert\operatorname{Im}(t)\rvert - 1$ for every positive projection $t$, minimizing over all such projections gives
+This proves the theorem. Since $C_t(F) \leq \lvert\mathrm{Im}(t)\rvert - 1$ for every positive projection $t$, minimizing over all such projections gives
 
 $$
 H^{*}(f) \leq C_{+}(f) \leq M_{+}(f) - 1.

@@ -5,10 +5,10 @@
 Let
 
 $$
-f:\{0,1\}^{n}\to\{0,1\}.
+f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace.
 $$
 
-Suppose there are disjoint sets $P,N\subseteq\{1,\ldots,n\}$ with either $P=\varnothing$ or $N=\varnothing$, an affine form
+Suppose there are disjoint sets $P,N\subseteq\lbrace1,\ldots,n\rbrace$ with either $P=\varnothing$ or $N=\varnothing$, an affine form
 
 $$
 A(x)=a_0+\sum_{i=1}^{n}a_i x_i,
@@ -25,7 +25,7 @@ $$
 strictly on the cube. Then
 
 $$
-\operatorname{actc}(f)\leq2.
+\mathrm{actc}(f)\leq2.
 $$
 
 Consequently,
@@ -61,7 +61,7 @@ $$
 Therefore
 
 $$
-\operatorname{actc}(f)\leq2.
+\mathrm{actc}(f)\leq2.
 $$
 
 The exact case distinction now follows from the low affine-cylinder exactness theorem [109_low_affine_cylinder_cost_exactness.md](109_low_affine_cylinder_cost_exactness.md). $\blacksquare$
@@ -72,7 +72,7 @@ Every function that is neither constant nor a nonconstant LTF and has the form
 
 $$
 x\mapsto
-\mathbf{1}\!\left[
+\mathbf{1}\negthinspace\left[
 A(x)+c\prod_{i\in P}x_i>0
 \right]
 $$
@@ -83,7 +83,7 @@ The same is true for every function that is neither constant nor a nonconstant L
 
 $$
 x\mapsto
-\mathbf{1}\!\left[
+\mathbf{1}\negthinspace\left[
 A(x)+c\prod_{j\in N}(1-x_j)>0
 \right].
 $$
