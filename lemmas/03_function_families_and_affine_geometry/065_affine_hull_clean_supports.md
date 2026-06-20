@@ -29,15 +29,7 @@ $$
 
 More precisely,
 
-$$
-H^{*}(f)
-=
-\begin{cases}
-0 & \text{if } f \text{ is constant},\\
-1 & \text{if } f \text{ is a nonconstant linear threshold function},\\
-2 & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** A label class is two-head easy whenever it is exactly the cube slice cut out by its own proper affine hull. The proof turns that affine hull into one affine level set, then invokes the affine level-set theorem.
 

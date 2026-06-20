@@ -16,15 +16,7 @@ $$
 
 More precisely,
 
-$$
-H^{*}(f)
-=
-\begin{cases}
-0 & \text{if } f \text{ is constant},\\
-1 & \text{if } f \text{ is a nonconstant linear threshold function},\\
-2 & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** The first adaptive decision-tree case is fully controlled. A depth-two tree can be nonsymmetric and can mix different variables on different branches, but it still never needs more than two heads.
 
@@ -48,13 +40,7 @@ $$
 
 The accepting leaves of the decision tree give an exact DNF for $g$:
 
-$$
-g(x)
-=
-\sum_{\ell\in\mathcal{L}_1}
-\left(\prod_{i\in P_\ell}x_i\right)
-\left(\prod_{j\in N_\ell}(1-x_j)\right),
-$$
+$$ g(x) = \sum_{\ell\in\mathcal{L}_1} \left(\prod_{i\in P_\ell}x_i\right) \left(\prod_{j\in N_\ell}(1-x_j)\right), $$
 
 where each root-to-leaf path fixes at most two variables. Thus this exact polynomial has degree at most $2$. Therefore
 

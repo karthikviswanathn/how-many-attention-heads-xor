@@ -18,15 +18,7 @@ $$
 
 Let $P_0$ and $P_1$ be strict sign representations of $f_0$ and $f_1$, written as
 
-$$
-P_b(y)
-=
-c_b+\sum_{i=1}^{n-1}\alpha_{b,i}y_i
-+\sum_{\substack{S\subseteq\lbrace1,\ldots,n-1\rbrace\\ \lvert S\rvert\geq2}}
-a_{b,S}\prod_{i\in S}y_i
-\qquad
-(b\in\lbrace0,1\rbrace).
-$$
+$$ P_b(y) = c_b+\sum_{i=1}^{n-1}\alpha_{b,i}y_i +\sum_{\substack{S\subseteq\lbrace1,\ldots,n-1\rbrace\\ \lvert S\rvert\geq2}} a_{b,S}\prod_{i\in S}y_i \qquad (b\in\lbrace0,1\rbrace). $$
 
 Define
 
@@ -101,15 +93,7 @@ $$
 
 then
 
-$$
-H^{*}(f)
-=
-\begin{cases}
-0 & \text{if } f \text{ is constant},\\
-1 & \text{if } f \text{ is a nonconstant linear threshold function},\\
-2 & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** The cofactor recursion only needs to pay for affine-free structure that is present in the base cofactor, plus coefficients that actually change across the split. Shared nonlinear cofactor terms are not paid twice.
 
@@ -119,11 +103,7 @@ Choose a coordinate $j$ and cofactor sign polynomials $P_0,P_1$. By coordinate p
 
 Define the interpolation polynomial
 
-$$
-P(z,y):=(1-z)P_0(y)+zP_1(y)
-=
-P_0(y)+z\bigl(P_1(y)-P_0(y)\bigr).
-$$
+$$ P(z,y):=(1-z)P_0(y)+zP_1(y) = P_0(y)+z\bigl(P_1(y)-P_0(y)\bigr). $$
 
 Then $P(0,y)=P_0(y)$ and $P(1,y)=P_1(y)$, so $P$ strictly sign-represents $f$.
 

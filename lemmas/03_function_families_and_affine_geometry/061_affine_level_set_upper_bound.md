@@ -22,15 +22,7 @@ $$
 
 More precisely,
 
-$$
-H^{*}(E_L)
-=
-\begin{cases}
-0 & \text{if } E_L \text{ is constant},\\
-1 & \text{if } E_L \text{ is a nonconstant linear threshold function},\\
-2 & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(E_L) = \begin{cases} 0 & \text{if } E_L \text{ is constant},\\ 1 & \text{if } E_L \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** Exact equality to any affine statistic is cheap. This subsumes internal exact-count predicates and equality of two binary-encoded strings.
 
@@ -46,11 +38,7 @@ $$
 
 Then $\delta>0$. Set
 
-$$
-M(x):=\frac{L(x)}{\delta}
-=
-c_0+\sum_{i=1}^{n}m_i x_i.
-$$
+$$ M(x):=\frac{L(x)}{\delta} = c_0+\sum_{i=1}^{n}m_i x_i. $$
 
 Choose positive numbers $q_0,q_1,\ldots,q_n$ so large that
 

@@ -32,13 +32,7 @@ $$
 
 Restrict $y_1=\cdots=y_m=1$. On this subcube,
 
-$$
-\mathrm{IP}_m(x,1)
-=
-\bigoplus_{i=1}^{m}x_i
-=
-\mathrm{XOR}_m(x).
-$$
+$$ \mathrm{IP}_m(x,1) = \bigoplus_{i=1}^{m}x_i = \mathrm{XOR}_m(x). $$
 
 By the affine-parity restriction theorem [046_affine_parity_exact.md](046_affine_parity_exact.md),
 
@@ -107,14 +101,7 @@ sign-represents $\mathrm{IP}_m$.
 
 Expanding,
 
-$$
-P(x,y)
-=
--1+
-\sum_{\varnothing\neq U\subseteq\lbrace1,\ldots,m\rbrace}
-(-1)^{\lvert U\rvert+1}2^{\lvert U\rvert}
-\prod_{i\in U}x_i y_i.
-$$
+$$ P(x,y) = -1+ \sum_{\varnothing\neq U\subseteq\lbrace1,\ldots,m\rbrace} (-1)^{\lvert U\rvert+1}2^{\lvert U\rvert} \prod_{i\in U}x_i y_i. $$
 
 This polynomial has exactly $2^m-1$ nonconstant monomials in the $2m$ Boolean variables. Applying the polynomial-threshold sparsity upper bound [041_ptf_sparsity_upper_bound.md](../02_complexity_measure_upper_bounds/041_ptf_sparsity_upper_bound.md) gives
 

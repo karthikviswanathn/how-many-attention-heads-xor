@@ -36,14 +36,7 @@ $$
 
 and a constant $c$ such that
 
-$$
-P(x)
-=
-c\prod_{j=1}^{19}B_j(x)
-+
-\sum_{h=1}^{19}
-A_h(x)\prod_{j\neq h}B_j(x)
-$$
+$$ P(x) = c\prod_{j=1}^{19}B_j(x) + \sum_{h=1}^{19} A_h(x)\prod_{j\neq h}B_j(x) $$
 
 on $\lbrace0,1\rbrace^7$.
 
@@ -127,14 +120,7 @@ Therefore every multilinear $P$ has the displayed form. $\blacksquare$
 
 Let $f : \lbrace0,1\rbrace^7 \to \lbrace0,1\rbrace$. Interpolate the sign labels
 
-$$
-Q_f(x)
-=
-\begin{cases}
-+1 & \text{if } f(x) = 1, \\
--1 & \text{if } f(x) = 0
-\end{cases}
-$$
+$$ Q_f(x) = \begin{cases} +1 & \text{if } f(x) = 1, \\ -1 & \text{if } f(x) = 0 \end{cases} $$
 
 by a multilinear polynomial $P$ on $\lbrace0,1\rbrace^7$.
 
@@ -148,11 +134,7 @@ $$
 
 has the same sign as $P(x)$, because
 
-$$
-S(x)
-=
-\frac{P(x)}{\prod_{j=1}^{19}B_j(x)}.
-$$
+$$ S(x) = \frac{P(x)}{\prod_{j=1}^{19}B_j(x)}. $$
 
 Each ratio $A_h(x)/B_h(x)$ is a one-head atom by Lemma 1 of [015_three_bit_quadratic_upper_bound.md](015_three_bit_quadratic_upper_bound.md). Therefore thresholding a constant plus nineteen one-head atoms computes $f$, and the exact normal form from [010_linear_fractional_normal_form.md](010_linear_fractional_normal_form.md) gives
 

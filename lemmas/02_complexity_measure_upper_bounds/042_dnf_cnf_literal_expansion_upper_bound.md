@@ -30,16 +30,7 @@ $$
 
 The same bound holds for a CNF
 
-$$
-f(x)
-=
-\bigwedge_{a=1}^{s}
-\left(
-\bigvee_{i\in P_a}x_i
-\vee
-\bigvee_{j\in N_a}(1-x_j)
-\right)
-$$
+$$ f(x) = \bigwedge_{a=1}^{s} \left( \bigvee_{i\in P_a}x_i \vee \bigvee_{j\in N_a}(1-x_j) \right) $$
 
 with consistent nonempty clauses.
 
@@ -122,30 +113,11 @@ Taking the smaller of the two bounds proves the DNF statement. $\blacksquare$
 
 Suppose
 
-$$
-f(x)
-=
-\bigwedge_{a=1}^{s}
-\left(
-\bigvee_{i\in P_a}x_i
-\vee
-\bigvee_{j\in N_a}(1-x_j)
-\right).
-$$
+$$ f(x) = \bigwedge_{a=1}^{s} \left( \bigvee_{i\in P_a}x_i \vee \bigvee_{j\in N_a}(1-x_j) \right). $$
 
 The complement is the DNF
 
-$$
-1-f(x)
-=
-\bigvee_{a=1}^{s}
-\left(
-\prod_{i\in P_a}(1-x_i)
-\right)
-\left(
-\prod_{j\in N_a}x_j
-\right),
-$$
+$$ 1-f(x) = \bigvee_{a=1}^{s} \left( \prod_{i\in P_a}(1-x_i) \right) \left( \prod_{j\in N_a}x_j \right), $$
 
 whose terms have positive-literal sets $N_a$ and negative-literal sets $P_a$. Lemma 1 gives
 

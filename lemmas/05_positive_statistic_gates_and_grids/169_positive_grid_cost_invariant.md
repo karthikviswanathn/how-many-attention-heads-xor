@@ -96,15 +96,7 @@ Raw-coordinate and feature-coordinate permutations transport positive statistics
 
 If $\deg_{\pm}(f)=\mathrm{pgc}_{+}^{z\mid y}(f)$, then the threshold-degree lower bound gives
 
-$$
-\mathrm{pgc}_{+}^{z\mid y}(f)
-=
-\deg_{\pm}(f)
-\leq
-H^{*}(f)
-\leq
-\mathrm{pgc}_{+}^{z\mid y}(f),
-$$
+$$ \mathrm{pgc}_{+}^{z\mid y}(f) = \deg_{\pm}(f) \leq H^{*}(f) \leq \mathrm{pgc}_{+}^{z\mid y}(f), $$
 
 so equality holds throughout. $\blacksquare$
 

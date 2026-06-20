@@ -86,13 +86,7 @@ $$
 
 If $x=y$, then $X=Y$, so $P=1$ and
 
-$$
-S(x,y)
-=
-\frac{1}{(1+2X)(1+3X)}
-\geq
-\frac{1}{(1+2N)(1+3N)}.
-$$
+$$ S(x,y) = \frac{1}{(1+2X)(1+3X)} \geq \frac{1}{(1+2N)(1+3N)}. $$
 
 If $x\neq y$, then $X\neq Y$, so $(X-Y)^2\geq1$ and hence
 

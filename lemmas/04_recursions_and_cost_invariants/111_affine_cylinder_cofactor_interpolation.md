@@ -18,13 +18,7 @@ $$
 
 Suppose $f_b$ has a strict affine-cylinder score
 
-$$
-S_b(y)
-=
-A_b(y)
-+
-\sum_{\gamma\in\Gamma_b}c_{b,\gamma}C_{\gamma}(y),
-$$
+$$ S_b(y) = A_b(y) + \sum_{\gamma\in\Gamma_b}c_{b,\gamma}C_{\gamma}(y), $$
 
 meaning
 
@@ -92,11 +86,7 @@ where $z$ denotes the split coordinate.
 
 Define the cofactor interpolation score
 
-$$
-S(z,y):=(1-z)S_0(y)+zS_1(y)
-=
-S_0(y)+z(S_1(y)-S_0(y)).
-$$
+$$ S(z,y):=(1-z)S_0(y)+zS_1(y) = S_0(y)+z(S_1(y)-S_0(y)). $$
 
 If $z=0$, then $S(z,y)=S_0(y)$, and if $z=1$, then $S(z,y)=S_1(y)$. Since both cofactor scores are strict on the cube,
 
@@ -108,11 +98,7 @@ $$
 
 We now rewrite $S$ as an affine-cylinder score. The affine part contributes
 
-$$
-A_0(y)+z(a_1-a_0)
-=
-a_0+\sum_{i=1}^{m}\alpha_{0,i}y_i+(a_1-a_0)z.
-$$
+$$ A_0(y)+z(a_1-a_0) = a_0+\sum_{i=1}^{m}\alpha_{0,i}y_i+(a_1-a_0)z. $$
 
 This affine form has nonzero linear part exactly when either $a_1\neq a_0$ or some $\alpha_{0,i}$ is nonzero. Hence it contributes $\eta(A_0,A_1)$ to the affine-cylinder cost.
 

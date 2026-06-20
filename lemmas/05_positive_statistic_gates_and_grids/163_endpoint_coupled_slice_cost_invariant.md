@@ -45,11 +45,7 @@ where $\mathrm{osc}_{+}^{z\mid y}$ is the optimized ordered-slice cost from Lemm
 
 The cost is invariant under output complement:
 
-$$
-\mathrm{eps}_{+}^{z\mid y}(1-f)
-=
-\mathrm{eps}_{+}^{z\mid y}(f).
-$$
+$$ \mathrm{eps}_{+}^{z\mid y}(1-f) = \mathrm{eps}_{+}^{z\mid y}(f). $$
 
 It is also invariant under permutations of the raw coordinates and under permutations of the feature coordinates.
 

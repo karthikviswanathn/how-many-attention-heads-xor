@@ -78,13 +78,6 @@ Taking the negation gives the final equivalence. $\blacksquare$
 
 The low-cost exactness theorem [109_low_affine_cylinder_cost_exactness.md](109_low_affine_cylinder_cost_exactness.md) starts with a sharp base:
 
-$$
-\mathrm{actc}(f)
-=
-H^{*}(f)
-\qquad
-\text{for }
-\mathrm{actc}(f)\in\lbrace0,1\rbrace.
-$$
+$$ \mathrm{actc}(f) = H^{*}(f) \qquad \text{for } \mathrm{actc}(f)\in\lbrace0,1\rbrace. $$
 
 Thus any affine-cylinder certificate for a function that is neither constant nor a nonconstant LTF must pay cost at least $2$, and cost $2$ is automatically an exact two-head certificate.

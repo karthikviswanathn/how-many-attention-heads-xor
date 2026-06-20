@@ -44,15 +44,7 @@ $$
 
 For every positive raw order $\rho$,
 
-$$
-B_{\rho}(g_e,g_e)
-=
-\left\lvert
-\left\lbrace
-r:g_e(a^{(r)})\neq g_e(a^{(r+1)})
-\right\rbrace
-\right\rvert.
-$$
+$$ B_{\rho}(g_e,g_e) = \left\lvert \left\lbrace r:g_e(a^{(r)})\neq g_e(a^{(r+1)}) \right\rbrace \right\rvert. $$
 
 Minimizing over $\rho$ gives
 

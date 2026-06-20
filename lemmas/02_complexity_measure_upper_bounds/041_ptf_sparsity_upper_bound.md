@@ -86,23 +86,13 @@ $$
 
 Equivalently,
 
-$$
-B(x)
-=
-1+Rk+\delta(n-k)
--R\sum_{i\in S}x_i
--\delta\sum_{i\notin S}x_i.
-$$
+$$ B(x) = 1+Rk+\delta(n-k) -R\sum_{i\in S}x_i -\delta\sum_{i\notin S}x_i. $$
 
 The denominator is positive on the cube, and all variable coefficients are strictly negative. By the denominator-orientation lemma [032_denominator_orientation.md](032_denominator_orientation.md), $\phi:=A/B$ is a one-head atom.
 
 If $q_S(x)=1$, then $d_S(x)=0$ and
 
-$$
-\phi(x)
-=
-\frac{a}{1+\delta\sum_{i\notin S}(1-x_i)}.
-$$
+$$ \phi(x) = \frac{a}{1+\delta\sum_{i\notin S}(1-x_i)}. $$
 
 Taking $\delta$ small enough makes this value uniformly within $\varepsilon$ of $a$ on all inputs with $q_S(x)=1$.
 

@@ -4,13 +4,7 @@
 
 Let
 
-$$
-P(y)
-=
-c+\sum_{i=1}^{m}a_i y_i
-+\sum_{\substack{S\subseteq\lbrace1,\ldots,m\rbrace\\ \lvert S\rvert\geq2}}
-a_S\prod_{i\in S}y_i
-$$
+$$ P(y) = c+\sum_{i=1}^{m}a_i y_i +\sum_{\substack{S\subseteq\lbrace1,\ldots,m\rbrace\\ \lvert S\rvert\geq2}} a_S\prod_{i\in S}y_i $$
 
 strictly sign-represent a Boolean feature
 
@@ -71,15 +65,7 @@ $$
 
 If the refined displayed upper bound is at most $2$, then
 
-$$
-H^{*}(f)
-=
-\begin{cases}
-0 & \text{if } f \text{ is constant},\\
-1 & \text{if } f \text{ is a nonconstant linear threshold function},\\
-2 & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** A one-bit gate applied to a sparse PTF feature is cheap when the feature has few linear variables and few nonlinear monomials. If the two $z$-slices are the same function of $T$, the change term vanishes.
 

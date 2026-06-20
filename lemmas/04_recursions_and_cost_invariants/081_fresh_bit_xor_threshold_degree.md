@@ -150,8 +150,4 @@ If a class satisfies $H^{*}(f)=\deg_{\pm}(f)$ and also admits a matching one-bit
 
 For parity, this recovers the inductive lower bound:
 
-$$
-\deg_{\pm}(\mathrm{XOR}_{m+1})
-=
-\deg_{\pm}(\mathrm{XOR}_{m})+1.
-$$
+$$ \deg_{\pm}(\mathrm{XOR}_{m+1}) = \deg_{\pm}(\mathrm{XOR}_{m})+1. $$

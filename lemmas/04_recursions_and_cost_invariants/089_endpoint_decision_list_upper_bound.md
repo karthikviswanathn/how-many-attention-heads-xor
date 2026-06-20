@@ -52,11 +52,7 @@ $$
 
 This constant has positive sign margin. Suppose by backward induction that the suffix beginning at $j+1$ is sign-represented by a linear score
 
-$$
-V_{j+1}
-=
-c_{j+1}+\sum_{k=j+1}^{L}a_kT_k
-$$
+$$ V_{j+1} = c_{j+1}+\sum_{k=j+1}^{L}a_kT_k $$
 
 with nonzero margin on the Boolean cube. Let
 

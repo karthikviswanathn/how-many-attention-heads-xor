@@ -44,11 +44,7 @@ $$
 
 On this subcube,
 
-$$
-f_F(x,1)
-=
-F\negthinspace\left(\sum_{i=1}^{m}x_i\right).
-$$
+$$ f_F(x,1) = F\negthinspace\left(\sum_{i=1}^{m}x_i\right). $$
 
 This is the symmetric Boolean function on $m$ variables with Hamming-weight label sequence
 
@@ -107,11 +103,7 @@ $$
 
 By Lemma 2, $R(s(x,y))$ sign-represents $f_F$. As a polynomial in the variables $z_1,\ldots,z_m$, it has degree at most $C(F)$. After multilinear reduction using $z_i^2=z_i$, it is a linear combination of monomials
 
-$$
-\prod_{i\in S}z_i
-=
-\prod_{i\in S}x_i y_i
-$$
+$$ \prod_{i\in S}z_i = \prod_{i\in S}x_i y_i $$
 
 with
 
@@ -155,12 +147,7 @@ $$
 
 For $m=1$,
 
-$$
-H^{*}(\mathrm{INT}_1)
-=
-H^{*}(\mathrm{DISJ}_1)
-=1,
-$$
+$$ H^{*}(\mathrm{INT}_1) = H^{*}(\mathrm{DISJ}_1) =1, $$
 
 because these are $\mathrm{AND}$ and $\mathrm{NAND}$ on two bits.
 
@@ -178,29 +165,15 @@ $$
 
 In particular,
 
-$$
-H^{*}(\mathrm{INT}_2)
-=
-H^{*}(\mathrm{DISJ}_2)
-=2.
-$$
+$$ H^{*}(\mathrm{INT}_2) = H^{*}(\mathrm{DISJ}_2) =2. $$
 
 The next endpoint is also exact by [059_three_pair_endpoint_exact.md](059_three_pair_endpoint_exact.md):
 
-$$
-H^{*}(\mathrm{INT}_3)
-=
-H^{*}(\mathrm{DISJ}_3)
-=2.
-$$
+$$ H^{*}(\mathrm{INT}_3) = H^{*}(\mathrm{DISJ}_3) =2. $$
 
 **Proof.** The upper bound $m$ is the theorem with one sign change. It also follows from the monotone DNF
 
-$$
-\mathrm{INT}_m(x,y)
-=
-\bigvee_{i=1}^{m}(x_i\wedge y_i)
-$$
+$$ \mathrm{INT}_m(x,y) = \bigvee_{i=1}^{m}(x_i\wedge y_i) $$
 
 and complement invariance for $\mathrm{DISJ}_m$.
 

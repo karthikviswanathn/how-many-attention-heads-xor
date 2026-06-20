@@ -151,25 +151,13 @@ $$
 
 Therefore the scalar contribution of head $h$ to the final readout is exactly
 
-$$
-\phi_h(x)
-=
-\frac{
-\eta_h + \sum_{i=1}^{n} \rho_{h,i} \alpha_h^{x_i}(m_{h,i} + \delta_h x_i)
-}{
-\gamma_h + \sum_{i=1}^{n} \rho_{h,i} \alpha_h^{x_i}
-}.
-$$
+$$ \phi_h(x) = \frac{ \eta_h + \sum_{i=1}^{n} \rho_{h,i} \alpha_h^{x_i}(m_{h,i} + \delta_h x_i) }{ \gamma_h + \sum_{i=1}^{n} \rho_{h,i} \alpha_h^{x_i} }. $$
 
 This is a one-head atom.
 
 The full affine score of the model is
 
-$$
-w^\top r(x) - \tau
-=
-c + \sum_{h=1}^{H} \phi_h(x),
-$$
+$$ w^\top r(x) - \tau = c + \sum_{h=1}^{H} \phi_h(x), $$
 
 where
 
@@ -277,11 +265,7 @@ $$
 
 The skip connection at the query token is orthogonal to every $o_h$, so it contributes nothing to $w^\top r(x)$. Hence
 
-$$
-w^\top r(x) - \tau
-=
-c + \sum_{h=1}^{H} \phi_h(x).
-$$
+$$ w^\top r(x) - \tau = c + \sum_{h=1}^{H} \phi_h(x). $$
 
 So the model computes exactly the Boolean function represented by the atoms.
 

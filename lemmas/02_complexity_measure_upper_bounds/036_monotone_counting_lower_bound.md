@@ -18,11 +18,7 @@ $$
 
 Then
 
-$$
-W_{\mathrm{mon}}(n)
-=
-\Omega\negthinspace\left(\frac{B_n}{n^2}\right).
-$$
+$$ W_{\mathrm{mon}}(n) = \Omega\negthinspace\left(\frac{B_n}{n^2}\right). $$
 
 Combined with the monotone antichain upper bound [035_monotone_antichain_upper_bound.md](035_monotone_antichain_upper_bound.md), this gives
 
@@ -84,13 +80,7 @@ because two $k$-element sets satisfy $S\subseteq T$ only when $S=T$.
 
 Therefore
 
-$$
-\lvert\mathsf{Mon}_n\rvert
-\geq
-2^{\lvert\mathcal{L}_k\rvert}
-=
-2^{B_n}.
-$$
+$$ \lvert\mathsf{Mon}_n\rvert \geq 2^{\lvert\mathcal{L}_k\rvert} = 2^{B_n}. $$
 
 ### Lemma 2. Few low-head functions are available
 
@@ -116,11 +106,7 @@ $$
 
 then
 
-$$
-2^{O(n^2H)}
-=
-2^{o(B_n)}.
-$$
+$$ 2^{O(n^2H)} = 2^{o(B_n)}. $$
 
 Dividing by the lower bound $\lvert\mathsf{Mon}_n\rvert\geq2^{B_n}$ from Lemma 1, the fraction of monotone functions with $H^{*}(f)\leq H$ is at most
 
@@ -140,11 +126,7 @@ $$
 
 Thus
 
-$$
-W_{\mathrm{mon}}(n)
-=
-\Omega\negthinspace\left(\frac{B_n}{n^2}\right).
-$$
+$$ W_{\mathrm{mon}}(n) = \Omega\negthinspace\left(\frac{B_n}{n^2}\right). $$
 
 The upper bound
 

@@ -90,13 +90,7 @@ $$
 
 Then $\rho_i>0$ and $\gamma>0$. Also,
 
-$$
-\gamma+\sum_i\rho_i\alpha^{x_i}
-=
-b_0+\sum_i b_i x_i
-=
-B(x).
-$$
+$$ \gamma+\sum_i\rho_i\alpha^{x_i} = b_0+\sum_i b_i x_i = B(x). $$
 
 Write
 
@@ -114,13 +108,7 @@ $$
 
 Then
 
-$$
-\eta+\sum_i\rho_i\alpha^{x_i}m_i
-=
-a_0+\sum_i a_i x_i
-=
-A(x).
-$$
+$$ \eta+\sum_i\rho_i\alpha^{x_i}m_i = a_0+\sum_i a_i x_i = A(x). $$
 
 Thus $A/B$ has the one-head atom form.
 
@@ -152,13 +140,7 @@ $$
 
 Then $\rho_i>0$, $\gamma>0$, and
 
-$$
-\gamma+\sum_i\rho_i\alpha^{x_i}
-=
-b_0-\sum_i d_i x_i
-=
-B(x).
-$$
+$$ \gamma+\sum_i\rho_i\alpha^{x_i} = b_0-\sum_i d_i x_i = B(x). $$
 
 Again write
 
@@ -180,11 +162,7 @@ $$
 
 Then
 
-$$
-\eta+\sum_i\rho_i\alpha^{x_i}m_i
-=
-A(x).
-$$
+$$ \eta+\sum_i\rho_i\alpha^{x_i}m_i = A(x). $$
 
 So $A/B$ is a one-head atom. $\blacksquare$
 

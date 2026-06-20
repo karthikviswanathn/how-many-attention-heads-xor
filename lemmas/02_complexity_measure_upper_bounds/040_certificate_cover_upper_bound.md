@@ -81,14 +81,7 @@ $$
 
 Let $\mathcal{C}_1$ be a $1$-certificate cover. Since the true set is covered by the cylinders,
 
-$$
-\lvert f^{-1}(1)\rvert
-\leq
-\sum_{(D,\xi)\in\mathcal{C}_1}
-\lvert[D,\xi]\rvert
-=
-\sum_{(D,\xi)\in\mathcal{C}_1}2^{n-\lvert D\rvert}.
-$$
+$$ \lvert f^{-1}(1)\rvert \leq \sum_{(D,\xi)\in\mathcal{C}_1} \lvert[D,\xi]\rvert = \sum_{(D,\xi)\in\mathcal{C}_1}2^{n-\lvert D\rvert}. $$
 
 The sparse-support upper bound [037_sparse_support_upper_bound.md](037_sparse_support_upper_bound.md) gives
 

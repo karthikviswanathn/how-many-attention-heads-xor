@@ -36,11 +36,7 @@ $$
 
 Moreover, if
 
-$$
-\deg_{\pm}(f)
-=
-\sum_{r=0}^{R-1}C_r+J_{\mathrm{grid}},
-$$
+$$ \deg_{\pm}(f) = \sum_{r=0}^{R-1}C_r+J_{\mathrm{grid}}, $$
 
 then
 

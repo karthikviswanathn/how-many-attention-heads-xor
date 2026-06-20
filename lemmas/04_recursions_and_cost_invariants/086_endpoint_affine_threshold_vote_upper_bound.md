@@ -93,15 +93,7 @@ $$
 
 If $U_S(x)=1$, then $L_S(x)\geq\lambda_{\min}$, and
 
-$$
-0
-\leq
-1-\phi_U(x)
-=
-\frac{\delta+\kappa\sum_{i\notin S}x_i}{B_U(x)}
-\leq
-\frac{\delta+\kappa n}{\lambda_{\min}}.
-$$
+$$ 0 \leq 1-\phi_U(x) = \frac{\delta+\kappa\sum_{i\notin S}x_i}{B_U(x)} \leq \frac{\delta+\kappa n}{\lambda_{\min}}. $$
 
 Taking $\delta$ and $\kappa$ small enough makes this uniformly smaller than any prescribed tolerance.
 
@@ -131,13 +123,7 @@ $$
 
 Equivalently,
 
-$$
-B_A(x)
-=
-\delta+\Lambda_S+\kappa(n-\lvert S\rvert)
--\sum_{i\in S}\lambda_i x_i
--\kappa\sum_{i\notin S}x_i.
-$$
+$$ B_A(x) = \delta+\Lambda_S+\kappa(n-\lvert S\rvert) -\sum_{i\in S}\lambda_i x_i -\kappa\sum_{i\notin S}x_i. $$
 
 This affine denominator has strictly negative coefficients for every variable and remains positive on the cube. By the denominator-orientation theorem,
 
@@ -149,11 +135,7 @@ is a one-head atom.
 
 If $A_S(x)=1$, then $D_S(x)=0$, so
 
-$$
-\phi_A(x)
-=
-\frac{\delta}{\delta+\kappa\sum_{i\notin S}(1-x_i)}.
-$$
+$$ \phi_A(x) = \frac{\delta}{\delta+\kappa\sum_{i\notin S}(1-x_i)}. $$
 
 Choosing $\kappa$ much smaller than $\delta$ makes this uniformly as close to $1$ as desired.
 

@@ -166,17 +166,7 @@ $$
 
 on the free variables. Its cost does not exceed the original cost. If $P\cap K=N\cap K=\varnothing$, the restricted cost is $0$. Otherwise,
 
-$$
-\begin{aligned}
-\kappa(P\cap K,N\cap K)
-&=
-\min\lbrace2^{\lvert P\cap K\rvert},2^{\lvert N\cap K\rvert}\rbrace \\
-&\leq
-\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace
-=
-\kappa(P,N),
-\end{aligned}
-$$
+$$ \begin{aligned} \kappa(P\cap K,N\cap K) &= \min\lbrace2^{\lvert P\cap K\rvert},2^{\lvert N\cap K\rvert}\rbrace \\ &\leq \min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace = \kappa(P,N), \end{aligned} $$
 
 with the last equality interpreted in the nonvacuous case. If the original cylinder is vacuous, both costs are $0$.
 

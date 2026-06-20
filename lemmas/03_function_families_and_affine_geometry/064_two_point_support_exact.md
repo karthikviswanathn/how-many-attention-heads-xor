@@ -28,15 +28,7 @@ $$
 
 More precisely,
 
-$$
-H^{*}(f)
-=
-\begin{cases}
-0 & \text{if } f \text{ is constant},\\
-1 & \text{if } f \text{ is a nonconstant linear threshold function},\\
-2 & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** The sparse-support upper bound gives $H^{*}(f)\leq2s(f)$. The first nontrivial sparse case is sharper: one or two exceptional points always cost at most two heads.
 

@@ -67,11 +67,7 @@ $$
 
 and hence
 
-$$
-h_F(x,0)
-=
-F\negthinspace\left(\sum_{i=1}^{m}x_i\right).
-$$
+$$ h_F(x,0) = F\negthinspace\left(\sum_{i=1}^{m}x_i\right). $$
 
 This is the symmetric Boolean function with Hamming-weight label sequence
 
@@ -170,13 +166,7 @@ $$
 
 Applying the affine-free polynomial-threshold sparsity upper bound [048_affine_free_sparsity_upper_bound.md](048_affine_free_sparsity_upper_bound.md) gives
 
-$$
-H^{*}(h_F)
-\leq
-1+m+\sum_{r=2}^{C(F)}2^r\binom{m}{r}
-=
-V_m(C(F)).
-$$
+$$ H^{*}(h_F) \leq 1+m+\sum_{r=2}^{C(F)}2^r\binom{m}{r} = V_m(C(F)). $$
 
 Together with Lemma 1 and the constant case, this proves the theorem. $\blacksquare$
 
@@ -208,12 +198,7 @@ $$
 
 For $m=1$,
 
-$$
-H^{*}(\mathrm{SUB}_1)
-=
-H^{*}(\mathrm{NCON}_1)
-=1.
-$$
+$$ H^{*}(\mathrm{SUB}_1) = H^{*}(\mathrm{NCON}_1) =1. $$
 
 For $m\geq2$,
 

@@ -114,11 +114,7 @@ $$
 
 Now use De Morgan duality for disjunction. For any literal $r$,
 
-$$
-r\vee T
-=
-1-\bigl((1-r)\wedge(1-T)\bigr).
-$$
+$$ r\vee T = 1-\bigl((1-r)\wedge(1-T)\bigr). $$
 
 The complement $1-T$ has strict score $-S$, with the same set $L(A)$ and the same cylinder supports and local costs. Complementing the output preserves head complexity by [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md). Applying the conjunction bound to $(1-r)\wedge(1-T)$ gives
 

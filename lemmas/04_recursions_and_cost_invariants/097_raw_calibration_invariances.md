@@ -94,19 +94,11 @@ Coordinate permutations give atoms by permuting the parameter triples attached t
 
 Global bit-flip also gives an atom. Indeed,
 
-$$
-\alpha^{1-x_i}
-=
-\alpha(\alpha^{-1})^{x_i},
-$$
+$$ \alpha^{1-x_i} = \alpha(\alpha^{-1})^{x_i}, $$
 
 and
 
-$$
-m_i+\delta(1-x_i)
-=
-(m_i+\delta)-\delta x_i.
-$$
+$$ m_i+\delta(1-x_i) = (m_i+\delta)-\delta x_i. $$
 
 Thus $\phi(1-x_1,\ldots,1-x_n)$ has the same atom form with parameter $\alpha^{-1}$, coordinate weights $\rho_i\alpha$, coordinate offsets $m_i+\delta$, and slope $-\delta$.
 

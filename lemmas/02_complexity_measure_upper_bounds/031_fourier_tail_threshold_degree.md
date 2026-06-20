@@ -4,13 +4,7 @@
 
 Let $q : \lbrace-1,1\rbrace^n \to \lbrace-1,1\rbrace$ be the sign-valued version of a Boolean function $f$. Write its Fourier expansion as
 
-$$
-q(z)
-=
-\sum_{S\subseteq[n]}\widehat q(S)\chi_S(z),
-\qquad
-\chi_S(z):=\prod_{i\in S}z_i.
-$$
+$$ q(z) = \sum_{S\subseteq[n]}\widehat q(S)\chi_S(z), \qquad \chi_S(z):=\prod_{i\in S}z_i. $$
 
 Fix $d\in\lbrace0,\ldots,n\rbrace$. Define the high-degree Fourier tail
 
@@ -53,14 +47,7 @@ $$
 
 Define the low-degree truncation
 
-$$
-P_{\leq d}(z)
-:=
-q(z)-T_{>d}(z)
-=
-\sum_{\substack{S\subseteq[n]\\ \lvert S\rvert\leq d}}
-\widehat q(S)\chi_S(z).
-$$
+$$ P_{\leq d}(z) := q(z)-T_{>d}(z) = \sum_{\substack{S\subseteq[n]\\ \lvert S\rvert\leq d}} \widehat q(S)\chi_S(z). $$
 
 This polynomial has degree at most $d$. For every $z\in\lbrace-1,1\rbrace^n$,
 

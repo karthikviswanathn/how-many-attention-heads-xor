@@ -163,13 +163,7 @@ For the query token, the embedding is $q$. Since $W_K^{(j)} q = 0$ and $W_V^{(j)
 
 So the numerator vector of head $j$ is
 
-$$
-\sum_{i : x_i = 1} \alpha_j \lambda_i \thinspace e_j
-=
-\alpha_j \left( \sum_{i=1}^{n} \lambda_i x_i \right) e_j
-=
-\alpha_j t(x) \thinspace e_j,
-$$
+$$ \sum_{i : x_i = 1} \alpha_j \lambda_i \thinspace e_j = \alpha_j \left( \sum_{i=1}^{n} \lambda_i x_i \right) e_j = \alpha_j t(x) \thinspace e_j, $$
 
 while the denominator is
 
@@ -183,13 +177,7 @@ $$
 
 Hence
 
-$$
-y^{(j)}(x)
-=
-\frac{\alpha_j t(x)}{1 + \Lambda + (\alpha_j - 1) t(x)} \thinspace e_j
-=
-g_j(t(x)) \thinspace e_j.
-$$
+$$ y^{(j)}(x) = \frac{\alpha_j t(x)}{1 + \Lambda + (\alpha_j - 1) t(x)} \thinspace e_j = g_j(t(x)) \thinspace e_j. $$
 
 This proves the formula. $\blacksquare$
 
@@ -237,13 +225,7 @@ $$
 
 Multiply by the common denominator to get
 
-$$
-N(s)
-:=
-R(s) \prod_{j=1}^{M-1} (s + r_j)
-=
-\sum_{j=1}^{M-1} d_j \prod_{\ell \neq j} (s + r_{\ell}).
-$$
+$$ N(s) := R(s) \prod_{j=1}^{M-1} (s + r_j) = \sum_{j=1}^{M-1} d_j \prod_{\ell \neq j} (s + r_{\ell}). $$
 
 This is a polynomial of degree at most $M - 2$.
 

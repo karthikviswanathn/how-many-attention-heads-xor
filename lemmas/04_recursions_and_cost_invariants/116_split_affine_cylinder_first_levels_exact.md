@@ -102,13 +102,6 @@ The last equivalence follows by negating the characterization that $\mathrm{sact
 
 For $n\geq1$, the split invariant has no artificial low-level slack:
 
-$$
-\mathrm{sactc}(f)
-=
-H^{*}(f)
-\qquad
-\text{for }
-\mathrm{sactc}(f)\in\lbrace0,1\rbrace.
-$$
+$$ \mathrm{sactc}(f) = H^{*}(f) \qquad \text{for } \mathrm{sactc}(f)\in\lbrace0,1\rbrace. $$
 
 The first nontrivial split certificates are exactly the cost-$2$ certificates, and those are exact two-head certificates for non-LTFs by [112_split_affine_cylinder_cost.md](112_split_affine_cylinder_cost.md).

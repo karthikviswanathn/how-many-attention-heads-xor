@@ -24,14 +24,7 @@ The proof is the four-bit analogue of [016_three_bit_exact_classification.md](01
 
 Let $P$ be any multilinear polynomial in four Boolean variables. Then there are positive affine functions $B_1,B_2,B_3,B_4$, affine functions $A_1,A_2,A_3,A_4$, and a constant $c$ such that
 
-$$
-P(x)
-=
-c\prod_{j=1}^{4}B_j(x)
-+
-\sum_{h=1}^{4}
-A_h(x)\prod_{j\neq h}B_j(x)
-$$
+$$ P(x) = c\prod_{j=1}^{4}B_j(x) + \sum_{h=1}^{4} A_h(x)\prod_{j\neq h}B_j(x) $$
 
 on $\lbrace0,1\rbrace^4$.
 
@@ -108,14 +101,7 @@ Since this determinant is nonzero, these products form a basis for all real-valu
 
 Let $f : \lbrace0,1\rbrace^4 \to \lbrace0,1\rbrace$. Interpolate the sign labels
 
-$$
-Q_f(x)
-=
-\begin{cases}
-+1 & \text{if } f(x)=1, \\
--1 & \text{if } f(x)=0.
-\end{cases}
-$$
+$$ Q_f(x) = \begin{cases} +1 & \text{if } f(x)=1, \\ -1 & \text{if } f(x)=0. \end{cases} $$
 
 by a multilinear polynomial $P$ on $\lbrace0,1\rbrace^4$.
 
@@ -129,11 +115,7 @@ $$
 
 has the same sign as $P(x)$, because
 
-$$
-S(x)
-=
-\frac{P(x)}{\prod_{j=1}^{4}B_j(x)}.
-$$
+$$ S(x) = \frac{P(x)}{\prod_{j=1}^{4}B_j(x)}. $$
 
 Each ratio $A_h(x)/B_h(x)$ is a one-head atom by Lemma 1 of [015_three_bit_quadratic_upper_bound.md](015_three_bit_quadratic_upper_bound.md). Therefore thresholding a constant plus four one-head atoms computes $f$, and the exact normal form from [010_linear_fractional_normal_form.md](010_linear_fractional_normal_form.md) gives
 

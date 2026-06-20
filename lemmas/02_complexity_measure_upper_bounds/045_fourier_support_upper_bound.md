@@ -4,11 +4,7 @@
 
 For $S\subseteq\lbrace1,\ldots,n\rbrace$, define the Walsh character
 
-$$
-\chi_S(x):=(-1)^{\sum_{i\in S}x_i}
-=
-\prod_{i\in S}(1-2x_i).
-$$
+$$ \chi_S(x):=(-1)^{\sum_{i\in S}x_i} = \prod_{i\in S}(1-2x_i). $$
 
 Let $q:\lbrace0,1\rbrace^n\to\lbrace-1,1\rbrace$ be the sign-valued version of $f$, with $q(x)=1$ on $f^{-1}(1)$ and $q(x)=-1$ on $f^{-1}(0)$.
 
@@ -56,15 +52,7 @@ then the same upper bound holds.
 
 For each $S$,
 
-$$
-\chi_S(x)
-=
-\prod_{i\in S}(1-2x_i)
-=
-\sum_{U\subseteq S}
-(-2)^{\lvert U\rvert}
-\prod_{i\in U}x_i.
-$$
+$$ \chi_S(x) = \prod_{i\in S}(1-2x_i) = \sum_{U\subseteq S} (-2)^{\lvert U\rvert} \prod_{i\in U}x_i. $$
 
 Thus every nonempty Fourier character $\chi_S$ expands into at most
 

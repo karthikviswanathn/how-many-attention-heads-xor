@@ -24,15 +24,7 @@ $$
 
 More precisely,
 
-$$
-H^{*}(S_{L,\alpha,\beta})
-=
-\begin{cases}
-0 & \text{if } S_{L,\alpha,\beta} \text{ is constant},\\
-1 & \text{if } S_{L,\alpha,\beta} \text{ is a nonconstant linear threshold function},\\
-2 & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(S_{L,\alpha,\beta}) = \begin{cases} 0 & \text{if } S_{L,\alpha,\beta} \text{ is constant},\\ 1 & \text{if } S_{L,\alpha,\beta} \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** A two-head score can carve out any finite Boolean-cube slice between two parallel affine hyperplanes. Exact affine level sets are the zero-width special case.
 
@@ -86,11 +78,7 @@ $$
 
 and define
 
-$$
-M(x):=\frac{L(x)-c_*}{r}
-=
-c_0+\sum_{i=1}^{n}m_i x_i.
-$$
+$$ M(x):=\frac{L(x)-c_*}{r} = c_0+\sum_{i=1}^{n}m_i x_i. $$
 
 Then
 

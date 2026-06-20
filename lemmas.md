@@ -354,15 +354,7 @@ In particular:
 
 Define a one-head atom to be a function of the form
 
-$$
-\phi(x)
-=
-\frac{
-\eta + \sum_{i=1}^{n} \rho_i \alpha^{x_i}(m_i + \delta x_i)
-}{
-\gamma + \sum_{i=1}^{n} \rho_i \alpha^{x_i}
-},
-$$
+$$ \phi(x) = \frac{ \eta + \sum_{i=1}^{n} \rho_i \alpha^{x_i}(m_i + \delta x_i) }{ \gamma + \sum_{i=1}^{n} \rho_i \alpha^{x_i} }, $$
 
 where
 
@@ -901,11 +893,7 @@ $$
 
 Let
 
-$$
-f(x)
-=
-\bigvee_{a=1}^{s}\bigwedge_{i\in S_a}x_i
-$$
+$$ f(x) = \bigvee_{a=1}^{s}\bigwedge_{i\in S_a}x_i $$
 
 be a monotone DNF with $s$ nonempty terms. Then
 
@@ -979,11 +967,7 @@ $$
 
 Let $q : \lbrace-1,1\rbrace^n \to \lbrace-1,1\rbrace$ be the sign-valued version of $f$, with Fourier expansion
 
-$$
-q(z)
-=
-\sum_{S\subseteq[n]}\widehat q(S)\chi_S(z).
-$$
+$$ q(z) = \sum_{S\subseteq[n]}\widehat q(S)\chi_S(z). $$
 
 For $d\in\lbrace0,\ldots,n\rbrace$, define
 
@@ -1641,12 +1625,7 @@ $$
 
 Consequently, if $\mathrm{SUB}_m(x,y)=\mathbf{1}[x_i\leq y_i\text{ for every }i]$ and $\mathrm{NCON}_m=1-\mathrm{SUB}_m$, then
 
-$$
-H^{*}(\mathrm{SUB}_1)
-=
-H^{*}(\mathrm{NCON}_1)
-=1,
-$$
+$$ H^{*}(\mathrm{SUB}_1) = H^{*}(\mathrm{NCON}_1) =1, $$
 
 and for $m\geq2$,
 
@@ -1726,16 +1705,7 @@ $$
 
 Equivalently:
 
-$$
-s_{\mathrm{LTF}}(f)
-=
-\begin{cases}
-0 & \text{if } f \text{ is constant},\\
-1 & \text{if } f \text{ is a nonconstant linear threshold function},\\
-3 & \text{if } f \text{ is parity or anti-parity},\\
-2 & \text{otherwise}.
-\end{cases}
-$$
+$$ s_{\mathrm{LTF}}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 3 & \text{if } f \text{ is parity or anti-parity},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** Threshold-vote size agrees exactly with $H^{*}$ on all three-bit functions, even though it is not a global invariant. The proof uses a finite enumeration showing that two threshold votes cover $254$ of the $256$ truth tables, missing only parity and anti-parity.
 
@@ -1823,15 +1793,7 @@ $$
 
 More precisely:
 
-$$
-H^{*}(f_{p,F})
-=
-\begin{cases}
-0 & \text{if } f_{p,F} \text{ is constant},\\
-1 & \text{if } f_{p,F} \text{ is a nonconstant linear threshold function},\\
-2 & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(f_{p,F}) = \begin{cases} 0 & \text{if } f_{p,F} \text{ is constant},\\ 1 & \text{if } f_{p,F} \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** Every threshold-like count of two identical local two-bit patterns is exactly classified. The finite certificate enumeration covers $64$ presentations, $30$ unique truth tables, and $12$ non-LTF two-atom certificates.
 
@@ -1841,20 +1803,7 @@ $$
 
 For three pairs of input bits,
 
-$$
-H^{*}(\mathrm{INT}_3)
-=
-H^{*}(\mathrm{DISJ}_3)
-=
-H^{*}(\mathrm{SUB}_3)
-=
-H^{*}(\mathrm{NCON}_3)
-=
-H^{*}(\mathrm{EQ}_3)
-=
-H^{*}(\mathrm{NEQ}_3)
-=2.
-$$
+$$ H^{*}(\mathrm{INT}_3) = H^{*}(\mathrm{DISJ}_3) = H^{*}(\mathrm{SUB}_3) = H^{*}(\mathrm{NCON}_3) = H^{*}(\mathrm{EQ}_3) = H^{*}(\mathrm{NEQ}_3) =2. $$
 
 > **Interpretation.** The standard one-change profile endpoints remain two-head functions at three pairs. The proof gives exact integer two-atom certificates for $\mathrm{INT}_3$, $\mathrm{SUB}_3$, and $\mathrm{EQ}_3$, then uses complement invariance.
 
@@ -1900,15 +1849,7 @@ $$
 
 More precisely,
 
-$$
-H^{*}(E_L)
-=
-\begin{cases}
-0 & \text{if } E_L \text{ is constant},\\
-1 & \text{if } E_L \text{ is a nonconstant linear threshold function},\\
-2 & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(E_L) = \begin{cases} 0 & \text{if } E_L \text{ is constant},\\ 1 & \text{if } E_L \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** Equality to any affine statistic is cheap. This includes internal exact-count predicates and equality of two binary-encoded strings.
 
@@ -1938,15 +1879,7 @@ $$
 
 More precisely,
 
-$$
-H^{*}(S_{L,\alpha,\beta})
-=
-\begin{cases}
-0 & \text{if } S_{L,\alpha,\beta} \text{ is constant},\\
-1 & \text{if } S_{L,\alpha,\beta} \text{ is a nonconstant linear threshold function},\\
-2 & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(S_{L,\alpha,\beta}) = \begin{cases} 0 & \text{if } S_{L,\alpha,\beta} \text{ is constant},\\ 1 & \text{if } S_{L,\alpha,\beta} \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** Any finite Boolean-cube slice between two parallel affine hyperplanes is a two-head predicate unless it collapses to a constant or one-head LTF. Affine level sets are the zero-width case.
 
@@ -2004,15 +1937,7 @@ $$
 
 More precisely,
 
-$$
-H^{*}(f)
-=
-\begin{cases}
-0 & \text{if } f \text{ is constant},\\
-1 & \text{if } f \text{ is a nonconstant linear threshold function},\\
-2 & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** The general sparse-support theorem gives $H^{*}(f)\leq2s(f)$. This lemma sharpens the first nontrivial sparse case: a one-point or two-point exceptional label class always costs at most two heads.
 
@@ -2040,15 +1965,7 @@ $$
 
 More precisely,
 
-$$
-H^{*}(f)
-=
-\begin{cases}
-0 & \text{if } f \text{ is constant},\\
-1 & \text{if } f \text{ is a nonconstant linear threshold function},\\
-2 & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** A label class is two-head easy whenever it is exactly the cube slice cut out by its own proper affine hull. This strictly generalizes the two-point support theorem.
 
@@ -2120,15 +2037,7 @@ $$
 
 More precisely,
 
-$$
-H^{*}(f)
-=
-\begin{cases}
-0 & \text{if } f \text{ is constant},\\
-1 & \text{if } f \text{ is a nonconstant linear threshold function},\\
-2 & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 In particular, if $R_{+}(f)=1$, then the same exact split holds.
 
@@ -2194,15 +2103,7 @@ $$
 
 More precisely,
 
-$$
-H^{*}(f)
-=
-\begin{cases}
-0 & \text{if } f \text{ is constant},\\
-1 & \text{if } f \text{ is a nonconstant linear threshold function},\\
-2 & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 In particular, this applies to every function sign-represented by an affine polynomial plus one nonlinear monomial.
 
@@ -2220,15 +2121,7 @@ $$
 
 More precisely,
 
-$$
-H^{*}(f)
-=
-\begin{cases}
-0 & \text{if } f \text{ is constant},\\
-1 & \text{if } f \text{ is a nonconstant linear threshold function},\\
-2 & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** The first adaptive decision-tree case is exact. A depth-two tree can mix different variables on different branches, but it still stays in the two-head regime.
 
@@ -2392,13 +2285,7 @@ If the two affine cofactor separators can be chosen so their linear coefficient 
 
 Write inputs as $(z,y)\in\lbrace0,1\rbrace\times\lbrace0,1\rbrace^{n-1}$, and let $f_0(y)=f(0,y)$ and $f_1(y)=f(1,y)$. Suppose $f_0$ and $f_1$ have affine sign representations
 
-$$
-L_b(y)
-=
-\beta_b+\sum_{i=1}^{n-1}\alpha_{b,i}y_i
-\qquad
-(b\in\lbrace0,1\rbrace).
-$$
+$$ L_b(y) = \beta_b+\sum_{i=1}^{n-1}\alpha_{b,i}y_i \qquad (b\in\lbrace0,1\rbrace). $$
 
 Let
 
@@ -2609,14 +2496,7 @@ for an arbitrary gate $G:\lbrace0,1\rbrace^{2}\to\lbrace0,1\rbrace$. For $b\in\l
 
 If $G_0$ and $G_1$ are both constant, then
 
-$$
-\deg_{\pm}(F)
-=
-\begin{cases}
-0 & \text{if } G_0=G_1,\\
-1 & \text{if } G_0\neq G_1.
-\end{cases}
-$$
+$$ \deg_{\pm}(F) = \begin{cases} 0 & \text{if } G_0=G_1,\\ 1 & \text{if } G_0\neq G_1. \end{cases} $$
 
 If at least one slice is nonconstant and the nonconstant slices, when there are two, are not opposite, then
 
@@ -2670,11 +2550,7 @@ $$
 
 Let $f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace$. Suppose a restriction of $f$ leaves two disjoint sets of free variables $Z$ and $Y$, with $\lvert Z\rvert=k$, and on that restricted subcube has the form
 
-$$
-f_{\rho}(z,y)
-=
-\left(\bigoplus_{j=1}^{k}z_j\right)\oplus T(y)
-$$
+$$ f_{\rho}(z,y) = \left(\bigoplus_{j=1}^{k}z_j\right)\oplus T(y) $$
 
 for some Boolean function $T$ on the $Y$ variables. Then
 
@@ -2921,12 +2797,7 @@ $$
 
 the best uniform approximation error by a single one-head atom has infimum exactly
 
-$$
-\inf_{\phi}
-\max_{x\in\lbrace0,1\rbrace^3}\lvert \phi(x)-T(x)\rvert
-=
-\frac{1}{4}.
-$$
+$$ \inf_{\phi} \max_{x\in\lbrace0,1\rbrace^3}\lvert \phi(x)-T(x)\rvert = \frac{1}{4}. $$
 
 > **Interpretation.** The $1/4$ obstruction in Lemma 91 is sharp. One-head atoms can approach this error, but cannot cross it.
 
@@ -3109,11 +2980,7 @@ $$
 
 where $\kappa(P,N)=0$ for the vacuous cylinder and otherwise
 
-$$
-\kappa(P,N)
-=
-\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace.
-$$
+$$ \kappa(P,N) = \min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace. $$
 
 Then
 
@@ -3366,15 +3233,7 @@ $$
 
 then
 
-$$
-H^{*}(f)
-=
-\begin{cases}
-0, & \text{if } f \text{ is constant},\\
-1, & \text{if } f \text{ is a nonconstant LTF},\\
-2, & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(f) = \begin{cases} 0, & \text{if } f \text{ is constant},\\ 1, & \text{if } f \text{ is a nonconstant LTF},\\ 2, & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** A two-head affine-cylinder certificate is automatically exact unless the function collapses to the universal zero-head or one-head classes.
 
@@ -3422,15 +3281,7 @@ $$
 
 Let $f(z,y)$ have cofactors $f_0$ and $f_1$. Suppose the cofactors have strict affine-cylinder scores
 
-$$
-S_b(y)
-=
-A_b(y)
-+
-\sum_{\gamma\in\Gamma_b}c_{b,\gamma}C_{\gamma}(y)
-\qquad
-(b\in\lbrace0,1\rbrace),
-$$
+$$ S_b(y) = A_b(y) + \sum_{\gamma\in\Gamma_b}c_{b,\gamma}C_{\gamma}(y) \qquad (b\in\lbrace0,1\rbrace), $$
 
 with nonvacuous distinct cylinder supports. Write
 
@@ -4057,23 +3908,11 @@ $$
 
 Then
 
-$$
-H^{*}(z\oplus O_L(y))
-=
-H^{*}(1-(z\oplus O_L(y)))
-=
-2,
-$$
+$$ H^{*}(z\oplus O_L(y)) = H^{*}(1-(z\oplus O_L(y))) = 2, $$
 
 and
 
-$$
-H^{*}(z\oplus A_L(y))
-=
-H^{*}(1-(z\oplus A_L(y)))
-=
-2.
-$$
+$$ H^{*}(z\oplus A_L(y)) = H^{*}(1-(z\oplus A_L(y))) = 2. $$
 
 > **Interpretation.** Positive endpoint OR-type and AND-type features have exact two-head fresh-bit XOR, even though the generic one-bit LTF branching bound grows with the support size.
 
@@ -4105,23 +3944,11 @@ $$
 
 Then
 
-$$
-H^{*}(z\oplus E_{\min}(y))
-=
-H^{*}(1-(z\oplus E_{\min}(y)))
-=
-2,
-$$
+$$ H^{*}(z\oplus E_{\min}(y)) = H^{*}(1-(z\oplus E_{\min}(y))) = 2, $$
 
 and
 
-$$
-H^{*}(z\oplus E_{\max}(y))
-=
-H^{*}(1-(z\oplus E_{\max}(y)))
-=
-2.
-$$
+$$ H^{*}(z\oplus E_{\max}(y)) = H^{*}(1-(z\oplus E_{\max}(y))) = 2. $$
 
 > **Interpretation.** Endpoint fresh-XOR exactness is an affine-image endpoint phenomenon, not a positive-coefficient artifact.
 
@@ -4302,13 +4129,7 @@ $$
 
 with all three displayed blocks nonempty. For either raw literal $r(z)\in\lbrace z,1-z\rbrace$,
 
-$$
-H^{*}(r(z)\wedge S(y))
-=
-H^{*}(1-(r(z)\wedge S(y)))
-=
-2.
-$$
+$$ H^{*}(r(z)\wedge S(y)) = H^{*}(1-(r(z)\wedge S(y))) = 2. $$
 
 > **Interpretation.** Literal-gating an internal positive slab through the slab itself is exactly two-head.
 
@@ -4369,13 +4190,7 @@ $$
 
 If $P(z,y)$ is a strict sign polynomial for $f(z,y)$ of the form
 
-$$
-P(z,y)
-=
-\sum_{r=0}^{3}a_rt(y)^r
-+
-z\sum_{r=0}^{2}b_rt(y)^r,
-$$
+$$ P(z,y) = \sum_{r=0}^{3}a_rt(y)^r + z\sum_{r=0}^{2}b_rt(y)^r, $$
 
 then
 
@@ -4417,13 +4232,7 @@ $$
 
 and suppose $P(z,y)$ is a strict sign polynomial for $f(z,y)$ of the form
 
-$$
-P(z,y)
-=
-\sum_{r=0}^{d}a_rt(y)^r
-+
-z\sum_{r=0}^{d-1}b_rt(y)^r.
-$$
+$$ P(z,y) = \sum_{r=0}^{d}a_rt(y)^r + z\sum_{r=0}^{d-1}b_rt(y)^r. $$
 
 Then
 
@@ -4659,11 +4468,7 @@ $$
 
 For a split $f(z,y)$ with $k\geq1$ raw bits, define $\mathrm{osc}_{+}^{z\mid y}(f)$ by minimizing, over all common positive-statistic certificates $t(y)$ for the raw slices and all positive raw-slice orders $\rho$, the cost
 
-$$
-\Omega_{t,\rho}(f)
-=
-\sum_{a\in\lbrace0,1\rbrace^{k}} C_a+J_{t,\rho}(f),
-$$
+$$ \Omega_{t,\rho}(f) = \sum_{a\in\lbrace0,1\rbrace^{k}} C_a+J_{t,\rho}(f), $$
 
 where $C_a$ is the within-slice sign-change count and $J_{t,\rho}(f)$ is the actual boundary-jump count in the chosen raw order. Then
 
@@ -5326,11 +5131,7 @@ $$
 
 If variables are split into blocks of sizes $n_1,\ldots,n_b$ and
 
-$$
-f(x^{(1)},\ldots,x^{(b)})
-=
-F(\lvert x^{(1)}\rvert,\ldots,\lvert x^{(b)}\rvert),
-$$
+$$ f(x^{(1)},\ldots,x^{(b)}) = F(\lvert x^{(1)}\rvert,\ldots,\lvert x^{(b)}\rvert), $$
 
 then reading the Hamming-weight grid lexicographically gives a sign-change count $L_{\mathrm{Ham}}(F)$ with
 
@@ -5446,13 +5247,7 @@ $$
 
 let $f=\mathrm{XOR}_n$. Then, with $\mathrm{mhc}$ computed for the singleton Hamming profile of parity,
 
-$$
-\mathrm{mgc}_{+}^{\mathcal{P}_{\mathrm{sing}}}(\mathrm{XOR}_n)
-=
-\mathrm{mhc}(\mathrm{XOR}_n)
-=
-L_n,
-$$
+$$ \mathrm{mgc}_{+}^{\mathcal{P}_{\mathrm{sing}}}(\mathrm{XOR}_n) = \mathrm{mhc}(\mathrm{XOR}_n) = L_n, $$
 
 where
 
@@ -5659,17 +5454,7 @@ The current dependency structure is:
 
 The current evidence now gives a precise first-level characterization: one head is exactly linear threshold power. The full problem can be reframed as understanding the minimum number of linear-fractional attention atoms needed before the final threshold:
 
-$$
-\deg_{\pm}(f)
-\leq
-H^{*}(f)
-=
-L_{\mathrm{frac}}(f)
-\leq
-C_{+}(f)
-\leq
-M_{+}(f) - 1.
-$$
+$$ \deg_{\pm}(f) \leq H^{*}(f) = L_{\mathrm{frac}}(f) \leq C_{+}(f) \leq M_{+}(f) - 1. $$
 
 Whenever the left and right sides of the first sandwich meet, the value is exact:
 
@@ -5915,12 +5700,7 @@ The resulting cost pays for the base affine-cylinder certificate, for affine slo
 
 Subcube indicators now have an explicit raw-cost certificate. For
 
-$$
-C_{P,N}(x)
-=
-\left(\prod_{i\in P}x_i\right)
-\left(\prod_{j\in N}(1-x_j)\right),
-$$
+$$ C_{P,N}(x) = \left(\prod_{i\in P}x_i\right) \left(\prod_{j\in N}(1-x_j)\right), $$
 
 Lemma 96 gives
 
@@ -6068,11 +5848,7 @@ More generally, the threshold-degree behavior of every one-bit gate $G(z,T(y))$ 
 
 The XOR amplifier iterates over parity blocks:
 
-$$
-\deg_{\pm}\negthinspace\left(\left(\bigoplus_{j=1}^{k}z_j\right)\oplus T(y)\right)
-=
-k+\deg_{\pm}(T).
-$$
+$$ \deg_{\pm}\negthinspace\left(\left(\bigoplus_{j=1}^{k}z_j\right)\oplus T(y)\right) = k+\deg_{\pm}(T). $$
 
 Consequently, restrictions of this parity-block form certify
 
@@ -6180,11 +5956,7 @@ The certificates through $n=12$ meet that dimension threshold.
 
 On the lower-bound side, the counting lemma gives a worst-case exponential lower bound:
 
-$$
-\max_{f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace} H^{*}(f)
-=
-\Omega\negthinspace\left(\frac{2^n}{n^2}\right).
-$$
+$$ \max_{f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace} H^{*}(f) = \Omega\negthinspace\left(\frac{2^n}{n^2}\right). $$
 
 Moreover, this is a typical-function statement: for some absolute constant $c>0$, all but a $2^{-\Omega(2^n)}$ fraction of $n$-bit Boolean functions have
 

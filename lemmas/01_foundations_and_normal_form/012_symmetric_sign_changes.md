@@ -201,21 +201,11 @@ $$
 
 If $k = \lvert x\rvert$, then
 
-$$
-\sum_{i=1}^{n} \alpha^{x_i}
-=
-n + (\alpha - 1)k.
-$$
+$$ \sum_{i=1}^{n} \alpha^{x_i} = n + (\alpha - 1)k. $$
 
 So the atom is
 
-$$
-\frac{(\alpha - 1)d}{\gamma + n + (\alpha - 1)k}
-=
-\frac{(\alpha - 1)d}{(\alpha - 1)(r+k)}
-=
-\frac{d}{k+r}.
-$$
+$$ \frac{(\alpha - 1)d}{\gamma + n + (\alpha - 1)k} = \frac{(\alpha - 1)d}{(\alpha - 1)(r+k)} = \frac{d}{k+r}. $$
 
 This is exactly $\psi_{r,d}(x)$. $\blacksquare$
 
@@ -255,11 +245,7 @@ has the same sign pattern as $P$ on the Hamming weights.
 
 Because $\deg P \leq C = \deg B$ and the $r_j$ are distinct, the partial-fraction decomposition has the form
 
-$$
-S(z)
-=
-c + \sum_{j=1}^{C} \frac{d_j}{z+r_j}
-$$
+$$ S(z) = c + \sum_{j=1}^{C} \frac{d_j}{z+r_j} $$
 
 for some real numbers
 
@@ -275,11 +261,7 @@ $$
 
 is realized by one attention head. Therefore, using $C$ heads and constant offset $c$, the final score can be made equal to
 
-$$
-c + \sum_{j=1}^{C} \frac{d_j}{\lvert x\rvert+r_j}
-=
-S(\lvert x\rvert).
-$$
+$$ c + \sum_{j=1}^{C} \frac{d_j}{\lvert x\rvert+r_j} = S(\lvert x\rvert). $$
 
 This score is positive exactly when $F(\lvert x\rvert) = 1$, and negative exactly when $F(\lvert x\rvert) = 0$. Hence
 

@@ -83,15 +83,7 @@ $$
 
 then
 
-$$
-H^{*}(f)
-=
-\begin{cases}
-0, & \text{if } f \text{ is constant},\\
-1, & \text{if } f \text{ is a nonconstant LTF},\\
-2, & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(f) = \begin{cases} 0, & \text{if } f \text{ is constant},\\ 1, & \text{if } f \text{ is a nonconstant LTF},\\ 2, & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** When two cofactors share the same signed cylinder correction, the split only pays for that shared correction and the affine changes between the slices.
 

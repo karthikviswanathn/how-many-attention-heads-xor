@@ -41,14 +41,7 @@ Let $V$ be the vector space of real-valued functions on $\lbrace0,1\rbrace^n$. I
 
 Let $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$ and define the sign labels
 
-$$
-Q_f(x)
-=
-\begin{cases}
-+1 & \text{if } f(x) = 1, \\
--1 & \text{if } f(x) = 0.
-\end{cases}
-$$
+$$ Q_f(x) = \begin{cases} +1 & \text{if } f(x) = 1, \\ -1 & \text{if } f(x) = 0. \end{cases} $$
 
 Since the selected products form a basis, $Q_f$ is a linear combination of them. By allowing zero coefficients on the unselected products, this gives affine functions
 
@@ -58,13 +51,7 @@ $$
 
 and a constant $c$ such that
 
-$$
-Q_f(x)
-=
-c\prod_{j=1}^{H}B_j(x)
-+
-\sum_{h=1}^{H}A_h(x)\prod_{j\neq h}B_j(x)
-$$
+$$ Q_f(x) = c\prod_{j=1}^{H}B_j(x) + \sum_{h=1}^{H}A_h(x)\prod_{j\neq h}B_j(x) $$
 
 on the whole cube.
 
@@ -78,11 +65,7 @@ $$
 
 has the same sign as $Q_f(x)$:
 
-$$
-S(x)
-=
-\frac{Q_f(x)}{\prod_{j=1}^{H}B_j(x)}.
-$$
+$$ S(x) = \frac{Q_f(x)}{\prod_{j=1}^{H}B_j(x)}. $$
 
 Each ratio $A_h(x)/B_h(x)$ is a one-head atom by Lemma 1 of [015_three_bit_quadratic_upper_bound.md](015_three_bit_quadratic_upper_bound.md). Therefore thresholding a constant plus $H$ one-head atoms computes $f$. The exact normal form from [010_linear_fractional_normal_form.md](010_linear_fractional_normal_form.md) gives
 

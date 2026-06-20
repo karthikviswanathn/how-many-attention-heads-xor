@@ -48,13 +48,7 @@ $$
 
 Choose strict affine-cylinder scores for $f_0$ and $f_1$ achieving costs $r_0$ and $r_1$:
 
-$$
-S_b(y)
-=
-A_b(y)
-+
-\sum_{\gamma\in\Gamma_b}c_{b,\gamma}C_{\gamma}(y),
-$$
+$$ S_b(y) = A_b(y) + \sum_{\gamma\in\Gamma_b}c_{b,\gamma}C_{\gamma}(y), $$
 
 where
 
@@ -78,15 +72,7 @@ Apply the cofactor interpolation lemma [111_affine_cylinder_cofactor_interpolati
 
 For every cylinder support $\gamma=(P,N)$,
 
-$$
-\kappa(P\cup\lbrace z\rbrace,N)
-=
-\min\lbrace2^{\lvert P\rvert+1},2^{\lvert N\rvert}\rbrace
-\leq
-2\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace
-=
-2\kappa(P,N).
-$$
+$$ \kappa(P\cup\lbrace z\rbrace,N) = \min\lbrace2^{\lvert P\rvert+1},2^{\lvert N\rvert}\rbrace \leq 2\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace = 2\kappa(P,N). $$
 
 Thus the base cylinder contribution is at most $C_0$, and the changed-cylinder contribution is at most
 
@@ -96,15 +82,7 @@ $$
 
 because every changed cylinder support lies in $\Gamma_0\cup\Gamma_1$. Therefore
 
-$$
-\mathrm{sactc}(f)
-\leq
-1+m+C_0+2(C_0+C_1)
-=
-1+m+3C_0+2C_1
-\leq
-1+m+3r_0+2r_1.
-$$
+$$ \mathrm{sactc}(f) \leq 1+m+C_0+2(C_0+C_1) = 1+m+3C_0+2C_1 \leq 1+m+3r_0+2r_1. $$
 
 This proves the displayed bound with base cofactor $0$.
 
@@ -124,11 +102,7 @@ The affine indicator is again at most $1$, and the changed affine slopes again c
 
 For the cylinder part, rewrite
 
-$$
-(1-z)V_0(y)+zV_1(y)
-=
-V_1(y)+(1-z)(V_0(y)-V_1(y)),
-$$
+$$ (1-z)V_0(y)+zV_1(y) = V_1(y)+(1-z)(V_0(y)-V_1(y)), $$
 
 where
 
@@ -144,25 +118,11 @@ $$
 
 and
 
-$$
-\kappa(P,N\cup\lbrace z\rbrace)
-=
-\min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert+1}\rbrace
-\leq
-2\kappa(P,N).
-$$
+$$ \kappa(P,N\cup\lbrace z\rbrace) = \min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert+1}\rbrace \leq 2\kappa(P,N). $$
 
 Therefore the same argument gives
 
-$$
-\mathrm{sactc}(f)
-\leq
-1+m+C_1+2(C_0+C_1)
-=
-1+m+2C_0+3C_1
-\leq
-1+m+2r_0+3r_1.
-$$
+$$ \mathrm{sactc}(f) \leq 1+m+C_1+2(C_0+C_1) = 1+m+2C_0+3C_1 \leq 1+m+2r_0+3r_1. $$
 
 Taking the smaller of the two estimates gives
 

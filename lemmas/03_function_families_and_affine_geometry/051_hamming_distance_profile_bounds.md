@@ -14,13 +14,7 @@ $$
 
 where
 
-$$
-\Delta(x,y)
-:=
-\sum_{i=1}^{m}(x_i\oplus y_i)
-=
-\sum_{i=1}^{m}(x_i+y_i-2x_i y_i).
-$$
+$$ \Delta(x,y) := \sum_{i=1}^{m}(x_i\oplus y_i) = \sum_{i=1}^{m}(x_i+y_i-2x_i y_i). $$
 
 Let $C(F)$ be the number of sign changes in the sequence
 
@@ -69,11 +63,7 @@ $$
 
 and therefore
 
-$$
-g_F(x,0)
-=
-F\negthinspace\left(\sum_{i=1}^{m}x_i\right).
-$$
+$$ g_F(x,0) = F\negthinspace\left(\sum_{i=1}^{m}x_i\right). $$
 
 This is the symmetric Boolean function with Hamming-weight label sequence
 
@@ -174,13 +164,7 @@ $$
 
 Applying the affine-free polynomial-threshold sparsity upper bound [048_affine_free_sparsity_upper_bound.md](048_affine_free_sparsity_upper_bound.md) gives
 
-$$
-H^{*}(g_F)
-\leq
-1+m+\sum_{r=2}^{C(F)}3^r\binom{m}{r}
-=
-U_m(C(F)).
-$$
+$$ H^{*}(g_F) \leq 1+m+\sum_{r=2}^{C(F)}3^r\binom{m}{r} = U_m(C(F)). $$
 
 Together with Lemma 1 and the constant case, this proves the theorem. $\blacksquare$
 

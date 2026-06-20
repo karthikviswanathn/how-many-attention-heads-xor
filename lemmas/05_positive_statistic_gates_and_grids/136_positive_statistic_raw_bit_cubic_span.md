@@ -12,13 +12,7 @@ $$
 
 and let $P(z,y)$ be a strict sign polynomial for a Boolean function $f(z,y)$ that can be written as a cubic polynomial in $t(y)$ and $z$, reduced using $z^2=z$:
 
-$$
-P(z,y)
-=
-\sum_{r=0}^{3}a_rt(y)^r
-+
-z\sum_{r=0}^{2}b_rt(y)^r.
-$$
+$$ P(z,y) = \sum_{r=0}^{3}a_rt(y)^r + z\sum_{r=0}^{2}b_rt(y)^r. $$
 
 Then
 
@@ -70,11 +64,7 @@ $$
 
 such that
 
-$$
-P
-=
-A_1B_2B_3+A_2B_1B_3+A_3B_1B_2
-$$
+$$ P = A_1B_2B_3+A_2B_1B_3+A_3B_1B_2 $$
 
 on the Boolean cube. Since each $B_h$ has positive constant term and positive coefficients on every variable appearing in $t$ and on $z$, the affine-over-positive-affine atom lemma [015_three_bit_quadratic_upper_bound.md](../01_foundations_and_normal_form/015_three_bit_quadratic_upper_bound.md) makes every ratio $A_h/B_h$ a one-head atom.
 

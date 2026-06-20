@@ -26,20 +26,7 @@ $$
 
 Then
 
-$$
-H^{*}(\mathrm{INT}_3)
-=
-H^{*}(\mathrm{DISJ}_3)
-=
-H^{*}(\mathrm{SUB}_3)
-=
-H^{*}(\mathrm{NCON}_3)
-=
-H^{*}(\mathrm{EQ}_3)
-=
-H^{*}(\mathrm{NEQ}_3)
-=2.
-$$
+$$ H^{*}(\mathrm{INT}_3) = H^{*}(\mathrm{DISJ}_3) = H^{*}(\mathrm{SUB}_3) = H^{*}(\mathrm{NCON}_3) = H^{*}(\mathrm{EQ}_3) = H^{*}(\mathrm{NEQ}_3) =2. $$
 
 > **Interpretation.** The standard one-change profile endpoints remain two-head functions at three pairs. This pushes the exact frontier one step beyond the finite two-pair local-count classification.
 
@@ -153,13 +140,6 @@ Combining these lower bounds with Lemma 1 proves all six exact values. $\blacksq
 
 The currently known equality endpoint values are
 
-$$
-H^{*}(\mathrm{EQ}_1)
-=
-H^{*}(\mathrm{EQ}_2)
-=
-H^{*}(\mathrm{EQ}_3)
-=2.
-$$
+$$ H^{*}(\mathrm{EQ}_1) = H^{*}(\mathrm{EQ}_2) = H^{*}(\mathrm{EQ}_3) =2. $$
 
 For intersection, disjointness, containment, and noncontainment, the exact value $2$ is now known at $m=2$ and $m=3$. The general $m$ case remains open in these notes.

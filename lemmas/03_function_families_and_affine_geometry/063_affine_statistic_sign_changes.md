@@ -42,14 +42,7 @@ Then:
 
 3. If $C_L(G)=2$, then
 
-   $$
-   H^{*}(f)
-   =
-   \begin{cases}
-   1 & \text{if } f \text{ is a nonconstant linear threshold function},\\
-   2 & \text{otherwise}.
-   \end{cases}
-   $$
+   $$ H^{*}(f) = \begin{cases} 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 4. If $C_L(G)\geq3$, then
 

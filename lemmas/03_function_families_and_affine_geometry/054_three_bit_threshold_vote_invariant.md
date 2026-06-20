@@ -32,16 +32,7 @@ $$
 
 More explicitly:
 
-$$
-s_{\mathrm{LTF}}(f)
-=
-\begin{cases}
-0 & \text{if } f \text{ is constant},\\
-1 & \text{if } f \text{ is a nonconstant linear threshold function},\\
-3 & \text{if } f \text{ is parity or anti-parity},\\
-2 & \text{otherwise}.
-\end{cases}
-$$
+$$ s_{\mathrm{LTF}}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 3 & \text{if } f \text{ is parity or anti-parity},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** Threshold-vote size agrees exactly with $H^{*}$ throughout the first nontrivial classified cube. This is a finite match, not a global characterization.
 
@@ -127,12 +118,7 @@ Flipping the final threshold sign gives anti-parity with the same number of vote
 
 Together with Lemma 1,
 
-$$
-s_{\mathrm{LTF}}(\mathrm{XOR}_3)
-=
-s_{\mathrm{LTF}}(1-\mathrm{XOR}_3)
-=3.
-$$
+$$ s_{\mathrm{LTF}}(\mathrm{XOR}_3) = s_{\mathrm{LTF}}(1-\mathrm{XOR}_3) =3. $$
 
 ### Conclusion
 

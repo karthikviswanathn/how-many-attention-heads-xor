@@ -83,15 +83,7 @@ $$
 
 If the right-hand side is at most $2$, then
 
-$$
-H^{*}(F)
-=
-\begin{cases}
-0, & \text{if } F \text{ is constant},\\
-1, & \text{if } F \text{ is a nonconstant LTF},\\
-2, & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(F) = \begin{cases} 0, & \text{if } F \text{ is constant},\\ 1, & \text{if } F \text{ is a nonconstant LTF},\\ 2, & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** One-bit branching over an affine-cylinder feature pays for the base cylinder correction only if the $z=0$ slice uses the feature, and pays changed affine slopes and changed cylinder coefficients only if the two slices use different signed copies of the feature.
 
@@ -107,13 +99,7 @@ If $\mu_b=1$, then $F_b=T$, and $S$ is a strict score for $F_b$. If $\mu_b=-1$, 
 
 Thus each cofactor has a strict affine-cylinder score
 
-$$
-S_b(y)
-=
-A_b(y)
-+
-\sum_{\gamma\in\Gamma_b}c_{b,\gamma}C_{\gamma}(y),
-$$
+$$ S_b(y) = A_b(y) + \sum_{\gamma\in\Gamma_b}c_{b,\gamma}C_{\gamma}(y), $$
 
 where
 

@@ -44,13 +44,7 @@ $$
 
 Since the true set of the DNF is contained in the union of the true sets of its terms,
 
-$$
-\lvert f^{-1}(1)\rvert
-\leq
-\sum_{a=1}^{s}\lvert T_a^{-1}(1)\rvert
-=
-\sum_{a=1}^{s}2^{n-w_a}.
-$$
+$$ \lvert f^{-1}(1)\rvert \leq \sum_{a=1}^{s}\lvert T_a^{-1}(1)\rvert = \sum_{a=1}^{s}2^{n-w_a}. $$
 
 The sparse-support upper bound [037_sparse_support_upper_bound.md](037_sparse_support_upper_bound.md) gives
 

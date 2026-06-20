@@ -227,11 +227,7 @@ has the same sign as $P$ on $\mathrm{Im}(t)$.
 
 Since $\deg P \leq C = \deg B$ and the roots $-r_j$ are distinct, the partial-fraction decomposition has the form
 
-$$
-S(z)
-=
-c + \sum_{j=1}^{C} \frac{d_j}{z+r_j}
-$$
+$$ S(z) = c + \sum_{j=1}^{C} \frac{d_j}{z+r_j} $$
 
 for some real coefficients
 
@@ -247,11 +243,7 @@ $$
 
 is a one-head atom. Therefore $C$ heads and constant offset $c$ realize the score
 
-$$
-c + \sum_{j=1}^{C} \frac{d_j}{t(x)+r_j}
-=
-S(t(x)).
-$$
+$$ c + \sum_{j=1}^{C} \frac{d_j}{t(x)+r_j} = S(t(x)). $$
 
 This score is positive exactly when $F(t(x)) = 1$, and negative exactly when $F(t(x)) = 0$. Hence
 

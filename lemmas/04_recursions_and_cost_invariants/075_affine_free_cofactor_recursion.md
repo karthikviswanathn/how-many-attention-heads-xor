@@ -18,15 +18,7 @@ $$
 
 Suppose $P_0$ and $P_1$ strictly sign-represent $f_0$ and $f_1$, and write
 
-$$
-P_b(y)
-=
-c_b+\sum_{i=1}^{n-1}\alpha_{b,i}y_i
-+\sum_{\substack{S\subseteq\lbrace1,\ldots,n-1\rbrace\\ \lvert S\rvert\geq2}}
-a_{b,S}\prod_{i\in S}y_i
-\qquad
-(b\in\lbrace0,1\rbrace).
-$$
+$$ P_b(y) = c_b+\sum_{i=1}^{n-1}\alpha_{b,i}y_i +\sum_{\substack{S\subseteq\lbrace1,\ldots,n-1\rbrace\\ \lvert S\rvert\geq2}} a_{b,S}\prod_{i\in S}y_i \qquad (b\in\lbrace0,1\rbrace). $$
 
 Let
 
@@ -98,11 +90,7 @@ As in the sparse cofactor recursion, $P$ strictly sign-represents $f$, because $
 
 Expanding,
 
-$$
-P(z,y)
-=
-P_0(y)+z\bigl(P_1(y)-P_0(y)\bigr).
-$$
+$$ P(z,y) = P_0(y)+z\bigl(P_1(y)-P_0(y)\bigr). $$
 
 The affine part of $P$ includes the constant term, the linear terms in $y$ from $P_0$, and the possible singleton term $z(c_1-c_0)$. All of these cost at most one affine head under the affine-free sparsity theorem [048_affine_free_sparsity_upper_bound.md](../03_function_families_and_affine_geometry/048_affine_free_sparsity_upper_bound.md).
 

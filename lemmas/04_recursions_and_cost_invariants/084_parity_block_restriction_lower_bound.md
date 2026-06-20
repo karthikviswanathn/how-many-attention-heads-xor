@@ -16,11 +16,7 @@ $$
 
 and on that restricted subcube has the form
 
-$$
-f_{\rho}(z,y)
-=
-\left(\bigoplus_{j=1}^{k}z_j\right)\oplus T(y)
-$$
+$$ f_{\rho}(z,y) = \left(\bigoplus_{j=1}^{k}z_j\right)\oplus T(y) $$
 
 for some Boolean function $T$ on the $Y$ variables. Then
 

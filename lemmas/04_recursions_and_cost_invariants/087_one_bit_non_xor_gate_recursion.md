@@ -44,11 +44,7 @@ If $T$ is constant, then $F$ is either constant or a one-bit function of $z$. He
 
 Let $H:=H^{*}(T)$. By the linear-fractional normal form [010_linear_fractional_normal_form.md](../01_foundations_and_normal_form/010_linear_fractional_normal_form.md), there is an $H$-atom score
 
-$$
-S(y)
-=
-c+\sum_{h=1}^{H}\phi_h(y)
-$$
+$$ S(y) = c+\sum_{h=1}^{H}\phi_h(y) $$
 
 such that
 

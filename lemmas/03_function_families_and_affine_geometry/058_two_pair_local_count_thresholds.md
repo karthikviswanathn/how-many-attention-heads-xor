@@ -24,15 +24,7 @@ $$
 
 More precisely:
 
-$$
-H^{*}(f_{p,F})
-=
-\begin{cases}
-0 & \text{if } f_{p,F} \text{ is constant},\\
-1 & \text{if } f_{p,F} \text{ is a nonconstant linear threshold function},\\
-2 & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(f_{p,F}) = \begin{cases} 0 & \text{if } f_{p,F} \text{ is constant},\\ 1 & \text{if } f_{p,F} \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** Every threshold-like count of two identical local patterns is settled exactly. This packages the two-pair endpoint cases for intersection, disjointness, equality, nonequality, containment, and noncontainment.
 
@@ -121,19 +113,6 @@ $\blacksquare$
 
 The first nontrivial endpoints of the main two-pair profile families are all exact:
 
-$$
-H^{*}(\mathrm{INT}_2)
-=
-H^{*}(\mathrm{DISJ}_2)
-=
-H^{*}(\mathrm{EQ}_2)
-=
-H^{*}(\mathrm{NEQ}_2)
-=
-H^{*}(\mathrm{SUB}_2)
-=
-H^{*}(\mathrm{NCON}_2)
-=2.
-$$
+$$ H^{*}(\mathrm{INT}_2) = H^{*}(\mathrm{DISJ}_2) = H^{*}(\mathrm{EQ}_2) = H^{*}(\mathrm{NEQ}_2) = H^{*}(\mathrm{SUB}_2) = H^{*}(\mathrm{NCON}_2) =2. $$
 
 This lemma does not cover alternating two-level profiles such as four-bit parity, where $F(0),F(1),F(2)$ has two sign changes. In that case the threshold-degree lower bound can force more than two heads.

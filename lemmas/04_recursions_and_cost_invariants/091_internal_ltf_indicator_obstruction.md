@@ -123,15 +123,7 @@ $$
 
 The affine identity on this square gives
 
-$$
-\widetilde A_{00}+\widetilde A_{11}
-=
-\widetilde A_{01}+\widetilde A_{10},
-\qquad
-\widetilde B_{00}+\widetilde B_{11}
-=
-\widetilde B_{01}+\widetilde B_{10}.
-$$
+$$ \widetilde A_{00}+\widetilde A_{11} = \widetilde A_{01}+\widetilde A_{10}, \qquad \widetilde B_{00}+\widetilde B_{11} = \widetilde B_{01}+\widetilde B_{10}. $$
 
 The point $(1,0,0)$ is false, while the other three points on the slice are true. Hence
 

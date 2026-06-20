@@ -54,16 +54,7 @@ $$
 
 If $f$ has a CNF
 
-$$
-f(x)
-=
-\bigwedge_{a=1}^{s}
-\left(
-\bigvee_{i\in P_a}x_i
-\vee
-\bigvee_{j\in N_a}(1-x_j)
-\right),
-$$
+$$ f(x) = \bigwedge_{a=1}^{s} \left( \bigvee_{i\in P_a}x_i \vee \bigvee_{j\in N_a}(1-x_j) \right), $$
 
 then
 
@@ -118,13 +109,7 @@ $$
 
 Now let $\mathcal{C}_0$ be a $0$-certificate cover. Use the score
 
-$$
-S_0(x)
-:=
-\frac{1}{2}
--
-\sum_{(P,N)\in\mathcal{C}_0}C_{P,N}(x).
-$$
+$$ S_0(x) := \frac{1}{2} - \sum_{(P,N)\in\mathcal{C}_0}C_{P,N}(x). $$
 
 If $f(x)=1$, then no zero-certificate cylinder contains $x$, so $S_0(x)=1/2>0$. If $f(x)=0$, then at least one zero-certificate cylinder contains $x$, so $S_0(x)\leq -1/2<0$. Hence $S_0$ is a strict cylinder-threshold representation of $f$, and the same cost bound follows.
 

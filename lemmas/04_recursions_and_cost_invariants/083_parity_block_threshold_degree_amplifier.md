@@ -82,13 +82,7 @@ $$
 
 Applying the fresh-bit XOR threshold-degree theorem [081_fresh_bit_xor_threshold_degree.md](081_fresh_bit_xor_threshold_degree.md) gives
 
-$$
-\deg_{\pm}(F)
-=
-\deg_{\pm}(T_{k-1})+1
-=
-\deg_{\pm}(T)+k.
-$$
+$$ \deg_{\pm}(F) = \deg_{\pm}(T_{k-1})+1 = \deg_{\pm}(T)+k. $$
 
 The head lower bound follows from the general threshold-degree lower bound [006_threshold_degree_head_complexity_bound.md](../01_foundations_and_normal_form/006_threshold_degree_head_complexity_bound.md).
 

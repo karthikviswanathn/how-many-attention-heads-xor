@@ -38,11 +38,7 @@ We count sign patterns produced by the linear-fractional normal form.
 
 Every $H$-head score is a special case of
 
-$$
-S(x)
-=
-c+\sum_{h=1}^{H}\frac{A_h(x)}{B_h(x)},
-$$
+$$ S(x) = c+\sum_{h=1}^{H}\frac{A_h(x)}{B_h(x)}, $$
 
 where
 
@@ -152,11 +148,7 @@ $$
 
 then
 
-$$
-2^{O(n^2H)}
-=
-2^{o(2^n)}
-$$
+$$ 2^{O(n^2H)} = 2^{o(2^n)} $$
 
 is a vanishing fraction of all Boolean functions. More explicitly, for some absolute constant $c>0$, the fraction of $n$-bit Boolean functions with
 

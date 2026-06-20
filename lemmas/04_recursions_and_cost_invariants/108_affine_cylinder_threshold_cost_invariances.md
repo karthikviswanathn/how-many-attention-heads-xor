@@ -138,11 +138,7 @@ $$
 
 Let $g$ be obtained by fixing coordinates outside a free set $K$ to values $\xi_i$. Start from a strict affine-cylinder representation of $f$ with score
 
-$$
-S(x)
-=
-A(x)+\sum_{a=1}^{s}c_aC_{P_a,N_a}(x).
-$$
+$$ S(x) = A(x)+\sum_{a=1}^{s}c_aC_{P_a,N_a}(x). $$
 
 Restrict $S$ to the subcube. The affine part restricts to an affine form $A_K$ on the free coordinates. Its nonconstant linear part is obtained by deleting some slopes of $A$, so
 

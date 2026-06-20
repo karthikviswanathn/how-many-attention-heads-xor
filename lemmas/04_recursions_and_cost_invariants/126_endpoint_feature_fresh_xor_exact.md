@@ -28,23 +28,11 @@ $$
 
 Then
 
-$$
-H^{*}(z\oplus O_L(y))
-=
-H^{*}(1-(z\oplus O_L(y)))
-=
-2,
-$$
+$$ H^{*}(z\oplus O_L(y)) = H^{*}(1-(z\oplus O_L(y))) = 2, $$
 
 and
 
-$$
-H^{*}(z\oplus A_L(y))
-=
-H^{*}(1-(z\oplus A_L(y)))
-=
-2.
-$$
+$$ H^{*}(z\oplus A_L(y)) = H^{*}(1-(z\oplus A_L(y))) = 2. $$
 
 > **Interpretation.** Fresh-bit XOR is hard in general, but it is exactly two heads for the positive OR-type and AND-type endpoint features used by the calibrated endpoint-vote theorem.
 
@@ -172,13 +160,7 @@ Finally, XNOR is the output complement of XOR, and output complement preserves h
 
 For every nonempty $S$,
 
-$$
-H^{*}\negthinspace\left(z\oplus \mathrm{OR}_S(y)\right)
-=
-H^{*}\negthinspace\left(z\oplus \mathrm{AND}_S(y)\right)
-=
-2,
-$$
+$$ H^{*}\negthinspace\left(z\oplus \mathrm{OR}_S(y)\right) = H^{*}\negthinspace\left(z\oplus \mathrm{AND}_S(y)\right) = 2, $$
 
 and the same holds for the corresponding XNOR functions.
 

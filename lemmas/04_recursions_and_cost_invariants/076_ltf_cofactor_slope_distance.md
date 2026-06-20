@@ -18,13 +18,7 @@ $$
 
 Suppose $f_0$ and $f_1$ have affine sign representations
 
-$$
-L_b(y)
-=
-\beta_b+\sum_{i=1}^{n-1}\alpha_{b,i}y_i
-\qquad
-(b\in\lbrace0,1\rbrace),
-$$
+$$ L_b(y) = \beta_b+\sum_{i=1}^{n-1}\alpha_{b,i}y_i \qquad (b\in\lbrace0,1\rbrace), $$
 
 meaning
 
@@ -71,15 +65,7 @@ $$
 
 If they can be chosen with $t\leq1$, then
 
-$$
-H^{*}(f)
-=
-\begin{cases}
-0 & \text{if } f \text{ is constant},\\
-1 & \text{if } f \text{ is a nonconstant linear threshold function},\\
-2 & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** When the two slices across one bit are LTFs, the cost is controlled by how many affine slopes change across the split. The constant term and all unchanged slopes are free inside one affine head; each changed slope creates one mixed monomial $zy_i$.
 

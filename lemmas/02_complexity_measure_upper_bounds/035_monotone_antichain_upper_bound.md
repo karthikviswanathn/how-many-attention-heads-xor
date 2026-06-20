@@ -66,12 +66,7 @@ If $\varnothing\in\mathcal{M}_1(f)$, then $f$ is constant $1$ by monotonicity, a
 
 Otherwise, every set in $\mathcal{M}_1(f)$ is nonempty. We claim
 
-$$
-f(x)
-=
-\bigvee_{S\in\mathcal{M}_1(f)}
-\bigwedge_{i\in S}x_i.
-$$
+$$ f(x) = \bigvee_{S\in\mathcal{M}_1(f)} \bigwedge_{i\in S}x_i. $$
 
 If the right-hand side is true, then $x_i=1$ for all $i\in S$ for some minimal true set $S$. Thus $1_S\leq x$ coordinatewise, so monotonicity gives $f(x)=1$.
 
@@ -97,12 +92,7 @@ If $\lbrace1,\ldots,n\rbrace\in\mathcal{M}_0(f)$, then $f$ is constant $0$ by mo
 
 Otherwise, every set $\lbrace1,\ldots,n\rbrace\setminus S$ with $S\in\mathcal{M}_0(f)$ is nonempty. We claim
 
-$$
-f(x)
-=
-\bigwedge_{S\in\mathcal{M}_0(f)}
-\bigvee_{i\notin S}x_i.
-$$
+$$ f(x) = \bigwedge_{S\in\mathcal{M}_0(f)} \bigvee_{i\notin S}x_i. $$
 
 If $f(x)=0$, set
 

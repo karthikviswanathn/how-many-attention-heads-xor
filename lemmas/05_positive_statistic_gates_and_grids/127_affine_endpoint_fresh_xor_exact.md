@@ -26,23 +26,11 @@ $$
 
 Then
 
-$$
-H^{*}(z\oplus E_{\min}(y))
-=
-H^{*}(1-(z\oplus E_{\min}(y)))
-=
-2,
-$$
+$$ H^{*}(z\oplus E_{\min}(y)) = H^{*}(1-(z\oplus E_{\min}(y))) = 2, $$
 
 and
 
-$$
-H^{*}(z\oplus E_{\max}(y))
-=
-H^{*}(1-(z\oplus E_{\max}(y)))
-=
-2.
-$$
+$$ H^{*}(z\oplus E_{\max}(y)) = H^{*}(1-(z\oplus E_{\max}(y))) = 2. $$
 
 Equivalently, if $E$ is either endpoint predicate, then both fresh-bit XOR and fresh-bit XNOR over $E$ have exact head complexity $2$.
 

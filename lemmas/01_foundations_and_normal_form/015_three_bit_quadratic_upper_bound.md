@@ -205,11 +205,7 @@ $$
 
 This polynomial is positive exactly when $s(x)=1$ and negative when $s(x)\in\lbrace-1,0,2\rbrace$. Its multilinear expansion is
 
-$$
-P(x)
-=
--2x_1x_2+2x_1x_3+2x_2x_3+x_1+x_2-3x_3-\frac{3}{4},
-$$
+$$ P(x) = -2x_1x_2+2x_1x_3+2x_2x_3+x_1+x_2-3x_3-\frac{3}{4}, $$
 
 so $P$ has degree at most $2$. Lemma 2 gives
 

@@ -26,13 +26,7 @@ with all three displayed blocks nonempty.
 
 Let $r(z)$ be either raw literal $z$ or $1-z$. Then
 
-$$
-H^{*}(r(z)\wedge S(y))
-=
-H^{*}(1-(r(z)\wedge S(y)))
-=
-2.
-$$
+$$ H^{*}(r(z)\wedge S(y)) = H^{*}(1-(r(z)\wedge S(y))) = 2. $$
 
 > **Interpretation.** Gating an internal positive slab by a raw literal keeps the function exactly two-head. The raw bit does not add a third head for this non-XOR gate.
 

@@ -99,13 +99,7 @@ $$
 
 and a constant $c$ such that
 
-$$
-P(x)
-=
-c\prod_{j=1}^{H}B_j(x)
-+
-\sum_{h=1}^{H}A_h(x)\prod_{j\neq h}B_j(x)
-$$
+$$ P(x) = c\prod_{j=1}^{H}B_j(x) + \sum_{h=1}^{H}A_h(x)\prod_{j\neq h}B_j(x) $$
 
 as functions on $\lbrace0,1\rbrace^n$.
 
@@ -119,11 +113,7 @@ $$
 
 has the same sign as $P(x)$:
 
-$$
-S(x)
-=
-\frac{P(x)}{\prod_{j=1}^{H}B_j(x)}.
-$$
+$$ S(x) = \frac{P(x)}{\prod_{j=1}^{H}B_j(x)}. $$
 
 Each ratio $A_h/B_h$ is a one-head atom by Lemma 1 of [015_three_bit_quadratic_upper_bound.md](../01_foundations_and_normal_form/015_three_bit_quadratic_upper_bound.md). Therefore the linear-fractional normal form from [010_linear_fractional_normal_form.md](../01_foundations_and_normal_form/010_linear_fractional_normal_form.md) gives
 

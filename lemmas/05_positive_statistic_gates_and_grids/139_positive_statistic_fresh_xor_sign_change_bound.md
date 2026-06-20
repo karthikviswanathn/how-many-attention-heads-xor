@@ -34,13 +34,7 @@ $$
 
 and the same bounds hold for XNOR. In particular, if $\deg_{\pm}(T)=C$, then
 
-$$
-H^{*}(z\oplus T(y))
-=
-H^{*}(1-(z\oplus T(y)))
-=
-C+1.
-$$
+$$ H^{*}(z\oplus T(y)) = H^{*}(1-(z\oplus T(y))) = C+1. $$
 
 > **Interpretation.** For positive-statistic features, fresh XOR costs at most one more than the original one-dimensional sign-change count, not the separated two-slice sign-change count.
 
@@ -88,13 +82,7 @@ $$
 
 The lower bound is the fresh-bit XOR threshold-degree theorem [081_fresh_bit_xor_threshold_degree.md](../04_recursions_and_cost_invariants/081_fresh_bit_xor_threshold_degree.md):
 
-$$
-H^{*}(z\oplus T(y))
-\geq
-\deg_{\pm}(z\oplus T(y))
-=
-\deg_{\pm}(T)+1.
-$$
+$$ H^{*}(z\oplus T(y)) \geq \deg_{\pm}(z\oplus T(y)) = \deg_{\pm}(T)+1. $$
 
 XNOR is the output complement of XOR, so complement invariance gives the same bounds and exactness statement. $\blacksquare$
 

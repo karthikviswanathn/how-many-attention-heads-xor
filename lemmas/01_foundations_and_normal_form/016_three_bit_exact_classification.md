@@ -85,13 +85,7 @@ so these eight products form a basis for all multilinear polynomials on $\lbrace
 
 Therefore, for every degree-at-most-$3$ polynomial $P$, there are affine functions $A_1,A_2,A_3$ with
 
-$$
-P(x)
-=
-A_1(x)B_2(x)B_3(x)
-+A_2(x)B_1(x)B_3(x)
-+A_3(x)B_1(x)B_2(x)
-$$
+$$ P(x) = A_1(x)B_2(x)B_3(x) +A_2(x)B_1(x)B_3(x) +A_3(x)B_1(x)B_2(x) $$
 
 on the Boolean cube. Since $B_1(x),B_2(x),B_3(x)>0$, the rational score
 
@@ -107,11 +101,7 @@ $$
 
 has the same sign as $P(x)$, because
 
-$$
-S(x)
-=
-\frac{P(x)}{B_1(x)B_2(x)B_3(x)}.
-$$
+$$ S(x) = \frac{P(x)}{B_1(x)B_2(x)B_3(x)}. $$
 
 Each summand $A_i(x)/B_i(x)$ is a one-head atom by Lemma 1 of [015_three_bit_quadratic_upper_bound.md](015_three_bit_quadratic_upper_bound.md). Hence thresholding the sum of three atoms computes $f$, so
 
@@ -125,14 +115,7 @@ $\blacksquare$
 
 Every real-valued function on $\lbrace0,1\rbrace^3$ has a unique multilinear interpolation polynomial of degree at most $3$. In particular, for a Boolean function $f$, interpolate the values
 
-$$
-Q_f(x)
-=
-\begin{cases}
-+1 & \text{if } f(x)=1, \\
--1 & \text{if } f(x)=0.
-\end{cases}
-$$
+$$ Q_f(x) = \begin{cases} +1 & \text{if } f(x)=1, \\ -1 & \text{if } f(x)=0. \end{cases} $$
 
 Then $Q_f$ sign-represents $f$, so
 

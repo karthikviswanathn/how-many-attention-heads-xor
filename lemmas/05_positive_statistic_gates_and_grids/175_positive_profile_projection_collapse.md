@@ -68,11 +68,7 @@ $$
 
 and $N=n_1+\cdots+n_b$, then
 
-$$
-H^{*}(f)
-=
-\lvert\lbrace k\in\lbrace1,\ldots,N\rbrace:G(k-1)\neq G(k)\rbrace\rvert.
-$$
+$$ H^{*}(f) = \lvert\lbrace k\in\lbrace1,\ldots,N\rbrace:G(k-1)\neq G(k)\rbrace\rvert. $$
 
 > **Interpretation.** A multiblock Hamming profile can sometimes collapse to one positive projection. In that case the right cost is the sign-change count of the collapsed weighted sum, not the sign-change count along a full lexicographic grid traversal.
 
@@ -80,11 +76,7 @@ $$
 
 Define the positive weighted sum on input variables
 
-$$
-t(x):=\sum_{j=1}^{b}a_j\lvert x_{B_j}\rvert
-=
-\sum_{j=1}^{b}\sum_{i\in B_j}a_jx_i.
-$$
+$$ t(x):=\sum_{j=1}^{b}a_j\lvert x_{B_j}\rvert = \sum_{j=1}^{b}\sum_{i\in B_j}a_jx_i. $$
 
 All coefficients of $t$ are positive. By the assumed factorization,
 
@@ -114,11 +106,7 @@ to get equality throughout.
 
 When all $a_j$ are $1$, the function is symmetric in all $N$ variables. The exact symmetric sign-change theorem [012_symmetric_sign_changes.md](../01_foundations_and_normal_form/012_symmetric_sign_changes.md) gives
 
-$$
-H^{*}(f)
-=
-\lvert\lbrace k\in\lbrace1,\ldots,N\rbrace:G(k-1)\neq G(k)\rbrace\rvert.
-$$
+$$ H^{*}(f) = \lvert\lbrace k\in\lbrace1,\ldots,N\rbrace:G(k-1)\neq G(k)\rbrace\rvert. $$
 
 This proves the final claim. $\blacksquare$
 

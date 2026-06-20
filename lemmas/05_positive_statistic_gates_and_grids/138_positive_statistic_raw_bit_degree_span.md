@@ -12,13 +12,7 @@ $$
 
 and let $P(z,y)$ be a strict sign polynomial for a Boolean function $f(z,y)$. Suppose $P$ has total degree at most $d$ in the two quantities $t(y)$ and $z$, reduced using $z^2=z$:
 
-$$
-P(z,y)
-=
-\sum_{r=0}^{d}a_rt(y)^r
-+
-z\sum_{r=0}^{d-1}b_rt(y)^r.
-$$
+$$ P(z,y) = \sum_{r=0}^{d}a_rt(y)^r + z\sum_{r=0}^{d-1}b_rt(y)^r. $$
 
 Then
 

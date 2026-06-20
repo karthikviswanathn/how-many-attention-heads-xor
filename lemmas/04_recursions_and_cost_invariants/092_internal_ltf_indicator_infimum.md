@@ -16,12 +16,7 @@ $$
 
 More explicitly,
 
-$$
-\inf_{\phi}
-\max_{x\in\lbrace0,1\rbrace^3}\lvert \phi(x)-T(x)\rvert
-=
-\frac{1}{4},
-$$
+$$ \inf_{\phi} \max_{x\in\lbrace0,1\rbrace^3}\lvert \phi(x)-T(x)\rvert = \frac{1}{4}, $$
 
 where $\phi$ ranges over one-head atoms.
 
@@ -86,14 +81,7 @@ $$
 
 Thus the false-input errors are at most
 
-$$
-\max\left\lbrace
-\frac{1}{4},
-\frac{1}{4(1-\tau)}
-\right\rbrace
-=
-\frac{1}{4(1-\tau)}.
-$$
+$$ \max\left\lbrace \frac{1}{4}, \frac{1}{4(1-\tau)} \right\rbrace = \frac{1}{4(1-\tau)}. $$
 
 On true inputs,
 
@@ -109,25 +97,11 @@ $$
 
 For the first two true inputs,
 
-$$
-\left\lvert
-\frac{3}{4(1-\tau)}-1
-\right\rvert
-=
-\frac{1-4\tau}{4(1-\tau)}
-\leq
-\frac{1}{4}.
-$$
+$$ \left\lvert \frac{3}{4(1-\tau)}-1 \right\rvert = \frac{1-4\tau}{4(1-\tau)} \leq \frac{1}{4}. $$
 
 For the last true input,
 
-$$
-\left\lvert
-\frac{5}{4(1-2\tau)}-1
-\right\rvert
-=
-\frac{1+8\tau}{4(1-2\tau)}.
-$$
+$$ \left\lvert \frac{5}{4(1-2\tau)}-1 \right\rvert = \frac{1+8\tau}{4(1-2\tau)}. $$
 
 Therefore
 

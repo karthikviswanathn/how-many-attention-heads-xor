@@ -32,13 +32,7 @@ $$
 
 Consider
 
-$$
-P(x,y)
-:=
-\frac{1}{2}
--
-\sum_{i=1}^{m}(x_i-y_i)^2.
-$$
+$$ P(x,y) := \frac{1}{2} - \sum_{i=1}^{m}(x_i-y_i)^2. $$
 
 If $x=y$, then every squared difference is $0$, so
 
@@ -60,17 +54,7 @@ $$
 
 so
 
-$$
-P(x,y)
-=
-\frac{1}{2}
--
-\sum_{i=1}^{m}x_i
--
-\sum_{i=1}^{m}y_i
-+
-2\sum_{i=1}^{m}x_i y_i.
-$$
+$$ P(x,y) = \frac{1}{2} - \sum_{i=1}^{m}x_i - \sum_{i=1}^{m}y_i + 2\sum_{i=1}^{m}x_i y_i. $$
 
 This is a degree-two multilinear polynomial. Therefore
 
@@ -88,11 +72,7 @@ $$
 
 On the remaining two variables,
 
-$$
-\mathrm{EQ}_m(x,y)
-=
-\mathrm{EQ}_1(x_1,y_1).
-$$
+$$ \mathrm{EQ}_m(x,y) = \mathrm{EQ}_1(x_1,y_1). $$
 
 The function $\mathrm{EQ}_1$ is the complement of $\mathrm{XOR}_2$. If a polynomial sign-represents $\mathrm{EQ}_1$, multiplying it by $-1$ sign-represents $\mathrm{XOR}_2$. Since parity on two bits has threshold degree $2$ by [007_parity_threshold_degree.md](../01_foundations_and_normal_form/007_parity_threshold_degree.md), we get
 

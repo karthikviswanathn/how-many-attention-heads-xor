@@ -20,13 +20,7 @@ where $y\in\lbrace0,1\rbrace^{n-1}$. Say that $j$ is an LTF split if both $f_{j,
 
 For an LTF split $j$, define $\sigma_j(f)$ to be the minimum, over all affine sign representations
 
-$$
-L_b(y)
-=
-\beta_b+\sum_{i=1}^{n-1}\alpha_{b,i}y_i
-\qquad
-(b\in\lbrace0,1\rbrace)
-$$
+$$ L_b(y) = \beta_b+\sum_{i=1}^{n-1}\alpha_{b,i}y_i \qquad (b\in\lbrace0,1\rbrace) $$
 
 of the two cofactors, of the slope-change count
 
@@ -69,15 +63,7 @@ $$
 
 If $\sigma_{\mathrm{split}}(f)\leq1$, then
 
-$$
-H^{*}(f)
-=
-\begin{cases}
-0 & \text{if } f \text{ is constant},\\
-1 & \text{if } f \text{ is a nonconstant linear threshold function},\\
-2 & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** A one-bit branch between two LTF slices is controlled by the best coordinate and the best pair of affine separators. This gives a coordinate-free invariant for the LTF-cofactor regime.
 

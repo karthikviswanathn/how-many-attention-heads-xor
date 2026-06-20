@@ -52,11 +52,7 @@ $$
 
 and
 
-$$
-\alpha^{x_i}(m_i + \delta x_i)
-=
-m_i + \bigl(\alpha(m_i + \delta) - m_i\bigr)x_i.
-$$
+$$ \alpha^{x_i}(m_i + \delta x_i) = m_i + \bigl(\alpha(m_i + \delta) - m_i\bigr)x_i. $$
 
 Thus
 
@@ -145,22 +141,8 @@ The checkerboard lower bound [003_checkerboard_obstruction.md](003_checkerboard_
 
 Combining this characterization with the threshold-degree lower bound [006_threshold_degree_head_complexity_bound.md](006_threshold_degree_head_complexity_bound.md) and the weighted-sum upper bound [009_weighted_sum_upper_bound.md](009_weighted_sum_upper_bound.md) gives the current general sandwich:
 
-$$
-\deg_{\pm}(f)
-\leq
-H^{*}(f)
-=
-L_{\mathrm{frac}}(f)
-\leq
-M_{+}(f) - 1
-\leq
-2^n - 1.
-$$
+$$ \deg_{\pm}(f) \leq H^{*}(f) = L_{\mathrm{frac}}(f) \leq M_{+}(f) - 1 \leq 2^n - 1. $$
 
 The new information is the exact identification of the first nontrivial level:
 
-$$
-\lbrace f : H^{*}(f) \leq 1\rbrace
-=
-\lbrace f : f \text{ is a linear threshold function}\rbrace.
-$$
+$$ \lbrace f : H^{*}(f) \leq 1\rbrace = \lbrace f : f \text{ is a linear threshold function}\rbrace. $$

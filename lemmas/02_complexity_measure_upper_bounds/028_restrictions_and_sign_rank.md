@@ -147,11 +147,7 @@ For the upper bound, let $H:=H^{*}(f)$. If $H=0$, then $f$ is constant and so is
 
 Take an $H$-atom score for $f$:
 
-$$
-S(x)
-=
-c+\sum_{h=1}^{H}\phi_h(x),
-$$
+$$ S(x) = c+\sum_{h=1}^{H}\phi_h(x), $$
 
 with
 
@@ -169,15 +165,7 @@ $$
 
 For each atom
 
-$$
-\phi_h(x)
-=
-\frac{
-\eta_h+\sum_{i=1}^{k}\rho_{h,i}\alpha_h^{x_i}(m_{h,i}+\delta_h x_i)
-}{
-\gamma_h+\sum_{i=1}^{k}\rho_{h,i}\alpha_h^{x_i}
-},
-$$
+$$ \phi_h(x) = \frac{ \eta_h+\sum_{i=1}^{k}\rho_{h,i}\alpha_h^{x_i}(m_{h,i}+\delta_h x_i) }{ \gamma_h+\sum_{i=1}^{k}\rho_{h,i}\alpha_h^{x_i} }, $$
 
 extend it to the dummy variables by giving every dummy coordinate a tiny positive weight $\varepsilon>0$ and any fixed real value parameters, for instance $m_{h,j}=0$ for dummy $j$. Keep $\gamma_h,\eta_h,\alpha_h,\delta_h$ and the original active-coordinate parameters unchanged.
 
@@ -279,14 +267,7 @@ on the Boolean cube.
 
 Split the variables as $(u,v)$ across $I\sqcup J$. Expand
 
-$$
-P(u,v)
-=
-\sum_{\substack{A\subseteq I,\ B\subseteq J\\ \lvert A\rvert+\lvert B\rvert\leq H}}
-c_{A,B}
-\left(\prod_{i\in A}u_i\right)
-\left(\prod_{j\in B}v_j\right).
-$$
+$$ P(u,v) = \sum_{\substack{A\subseteq I,\ B\subseteq J\\ \lvert A\rvert+\lvert B\rvert\leq H}} c_{A,B} \left(\prod_{i\in A}u_i\right) \left(\prod_{j\in B}v_j\right). $$
 
 For fixed $A,B$, the matrix
 

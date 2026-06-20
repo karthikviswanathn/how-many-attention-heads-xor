@@ -10,13 +10,7 @@ $$
 
 be computed by a monotone DNF with $s$ nonempty terms:
 
-$$
-f(x)
-=
-\bigvee_{a=1}^{s}\bigwedge_{i\in S_a}x_i,
-\qquad
-S_a\neq\varnothing.
-$$
+$$ f(x) = \bigvee_{a=1}^{s}\bigwedge_{i\in S_a}x_i, \qquad S_a\neq\varnothing. $$
 
 Then
 
@@ -28,13 +22,7 @@ If the DNF has an empty term, then $f$ is constant $1$ and $H^{*}(f)=0$. If the 
 
 The dual statement also holds. If $f$ is computed by a monotone CNF with $s$ nonempty clauses:
 
-$$
-f(x)
-=
-\bigwedge_{a=1}^{s}\bigvee_{i\in S_a}x_i,
-\qquad
-S_a\neq\varnothing,
-$$
+$$ f(x) = \bigwedge_{a=1}^{s}\bigvee_{i\in S_a}x_i, \qquad S_a\neq\varnothing, $$
 
 then
 
@@ -79,13 +67,7 @@ $$
 
 Then $B_S$ is positive on the cube and has strictly negative coefficients for every variable:
 
-$$
-B_S(x)
-=
-C+Rk+\varepsilon(n-k)
--R\sum_{i\in S}x_i
--\varepsilon\sum_{i\notin S}x_i.
-$$
+$$ B_S(x) = C+Rk+\varepsilon(n-k) -R\sum_{i\in S}x_i -\varepsilon\sum_{i\notin S}x_i. $$
 
 By the denominator-orientation lemma [032_denominator_orientation.md](032_denominator_orientation.md),
 
@@ -195,19 +177,11 @@ $\blacksquare$
 
 Suppose
 
-$$
-f(x)
-=
-\bigwedge_{a=1}^{s}\bigvee_{i\in S_a}x_i.
-$$
+$$ f(x) = \bigwedge_{a=1}^{s}\bigvee_{i\in S_a}x_i. $$
 
 Then
 
-$$
-1-f(x)
-=
-\bigvee_{a=1}^{s}\bigwedge_{i\in S_a}(1-x_i).
-$$
+$$ 1-f(x) = \bigvee_{a=1}^{s}\bigwedge_{i\in S_a}(1-x_i). $$
 
 Define
 
@@ -217,11 +191,7 @@ $$
 
 Then
 
-$$
-g(y)
-=
-\bigvee_{a=1}^{s}\bigwedge_{i\in S_a}y_i,
-$$
+$$ g(y) = \bigvee_{a=1}^{s}\bigwedge_{i\in S_a}y_i, $$
 
 so Lemma 2 gives
 

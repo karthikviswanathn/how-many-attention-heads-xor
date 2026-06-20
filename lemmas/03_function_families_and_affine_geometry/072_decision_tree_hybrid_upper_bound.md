@@ -55,16 +55,7 @@ for nonconstant $f$.
 
 It remains to prove the degree route. The accepting leaves give the exact DNF
 
-$$
-f(x)
-=
-\bigvee_{\ell\in\mathcal{L}_1}
-\left[
-\left(\prod_{i\in P_\ell}x_i\right)
-\left(\prod_{j\in N_\ell}(1-x_j)\right)
-=1
-\right].
-$$
+$$ f(x) = \bigvee_{\ell\in\mathcal{L}_1} \left[ \left(\prod_{i\in P_\ell}x_i\right) \left(\prod_{j\in N_\ell}(1-x_j)\right) =1 \right]. $$
 
 Equivalently, the polynomial
 
@@ -117,12 +108,6 @@ The first term is the uniform leaf-profile bound from [044_oriented_certificate_
 
 For fixed depth $d$, this gives a polynomial upper bound in the number of variables actually queried by the tree:
 
-$$
-H^{*}(f)
-\leq
-1+\sum_{r=2}^{d}\binom{v}{r}
-=
-O(v^d).
-$$
+$$ H^{*}(f) \leq 1+\sum_{r=2}^{d}\binom{v}{r} = O(v^d). $$
 
 This complements the ambient-dimension-free leaf-profile bound, which can be much smaller for balanced leaf paths but much larger when $d$ is fixed and $v$ is moderate.

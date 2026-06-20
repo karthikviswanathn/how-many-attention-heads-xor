@@ -10,14 +10,7 @@ $$
 
 Suppose $f$ has a DNF with consistent nonempty terms
 
-$$
-T_a(x)
-=
-\left(\prod_{i\in P_a}x_i\right)
-\left(\prod_{j\in N_a}(1-x_j)\right),
-\qquad
-1\leq a\leq s,
-$$
+$$ T_a(x) = \left(\prod_{i\in P_a}x_i\right) \left(\prod_{j\in N_a}(1-x_j)\right), \qquad 1\leq a\leq s, $$
 
 where $P_a$ and $N_a$ are disjoint. Let
 
@@ -44,13 +37,7 @@ $$
 
 The dual statement holds for CNFs with consistent nonempty clauses
 
-$$
-C_a(x)
-=
-\left(\bigvee_{i\in P_a}x_i\right)
-\vee
-\left(\bigvee_{j\in N_a}(1-x_j)\right),
-$$
+$$ C_a(x) = \left(\bigvee_{i\in P_a}x_i\right) \vee \left(\bigvee_{j\in N_a}(1-x_j)\right), $$
 
 with the same definitions of $w_a$, $w$, and $v$.
 
@@ -156,15 +143,7 @@ $$
 
 Thus the volume proof applies to $g^{-1}(0)$ instead of $g^{-1}(1)$. The local expansion proof applies to the corresponding $0$-certificate cover. The junta proof is unchanged. For the degree route, the polynomial
 
-$$
-Q(x)
-:=
-\frac{1}{2}
--
-\sum_{a=1}^{s}
-\left(\prod_{i\in P_a}(1-x_i)\right)
-\left(\prod_{j\in N_a}x_j\right)
-$$
+$$ Q(x) := \frac{1}{2} - \sum_{a=1}^{s} \left(\prod_{i\in P_a}(1-x_i)\right) \left(\prod_{j\in N_a}x_j\right) $$
 
 strictly sign-represents the CNF and has degree at most $\min\lbrace w,v\rbrace$. This gives the same four bounds for CNFs. $\blacksquare$
 

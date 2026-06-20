@@ -32,13 +32,7 @@ $$
 
 Let
 
-$$
-P(x)
-=
-a_{\varnothing}
-+
-\sum_{S\in\mathcal{M}}a_S\prod_{i\in S}x_i
-$$
+$$ P(x) = a_{\varnothing} + \sum_{S\in\mathcal{M}}a_S\prod_{i\in S}x_i $$
 
 be a strict sign-representing polynomial for $f$, where every $S\in\mathcal{M}$ is nonempty and every $a_S\neq0$.
 
@@ -50,13 +44,7 @@ $$
 
 is the subcube indicator $C_{S,\varnothing}(x)$. Its local cost is
 
-$$
-\kappa(S,\varnothing)
-=
-\min\lbrace2^{\lvert S\rvert},1\rbrace
-=
-1.
-$$
+$$ \kappa(S,\varnothing) = \min\lbrace2^{\lvert S\rvert},1\rbrace = 1. $$
 
 Therefore the same polynomial is a strict cylinder-threshold representation:
 
@@ -70,13 +58,7 @@ $$
 
 By the definition of $\mathrm{ctc}$,
 
-$$
-\mathrm{ctc}(f)
-\leq
-\sum_{S\in\mathcal{M}}\kappa(S,\varnothing)
-=
-\lvert\mathcal{M}\rvert.
-$$
+$$ \mathrm{ctc}(f) \leq \sum_{S\in\mathcal{M}}\kappa(S,\varnothing) = \lvert\mathcal{M}\rvert. $$
 
 Minimizing over all strict sign-representing polynomials proves
 

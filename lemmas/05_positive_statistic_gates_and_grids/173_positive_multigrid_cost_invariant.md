@@ -94,15 +94,7 @@ For coordinate permutations preserving the partition up to relabeling, transport
 
 Finally, if threshold degree equals the multigrid cost, then
 
-$$
-\mathrm{mgc}_{+}^{\mathcal{P}}(f)
-=
-\deg_{\pm}(f)
-\leq
-H^{*}(f)
-\leq
-\mathrm{mgc}_{+}^{\mathcal{P}}(f),
-$$
+$$ \mathrm{mgc}_{+}^{\mathcal{P}}(f) = \deg_{\pm}(f) \leq H^{*}(f) \leq \mathrm{mgc}_{+}^{\mathcal{P}}(f), $$
 
 so all three quantities are equal. $\blacksquare$
 

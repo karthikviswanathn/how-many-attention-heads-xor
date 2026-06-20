@@ -127,19 +127,7 @@ If $\lambda(A)=0$, then $A$ is constant and is kept exactly in the final readout
 
 For each $a\in\mathcal{J}$, the subcube raw calibration lemma [096_subcube_raw_calibration_cost.md](096_subcube_raw_calibration_cost.md) gives a constant $b_{a,0}$ and at most $\kappa(P_a,N_a)$ one-head atoms $\phi_{a,h}$ such that
 
-$$
-\left\lvert
-b_{a,0}
-+
-\sum_{h=1}^{\kappa(P_a,N_a)}\phi_{a,h}(x)
--
-C_{P_a,N_a}(x)
-\right\rvert
-<
-\epsilon_a
-\qquad
-\text{for every }x.
-$$
+$$ \left\lvert b_{a,0} + \sum_{h=1}^{\kappa(P_a,N_a)}\phi_{a,h}(x) - C_{P_a,N_a}(x) \right\rvert < \epsilon_a \qquad \text{for every }x. $$
 
 Let $\widetilde V$ be the resulting approximation to $V$: use $\psi_A$ for the affine part when $\lambda(A)=1$, keep all constant pieces in the readout bias, and replace each nonvacuous cylinder by its raw calibrated approximation. Then for every cube point,
 

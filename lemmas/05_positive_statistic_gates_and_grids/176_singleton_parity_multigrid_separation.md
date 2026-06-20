@@ -28,13 +28,7 @@ $$
 
 Then, with $\mathrm{mhc}$ computed for the singleton Hamming profile of parity,
 
-$$
-\mathrm{mgc}_{+}^{\mathcal{P}_{\mathrm{sing}}}(\mathrm{XOR}_n)
-=
-\mathrm{mhc}(\mathrm{XOR}_n)
-=
-L_n,
-$$
+$$ \mathrm{mgc}_{+}^{\mathcal{P}_{\mathrm{sing}}}(\mathrm{XOR}_n) = \mathrm{mhc}(\mathrm{XOR}_n) = L_n, $$
 
 while
 
@@ -80,11 +74,7 @@ $$
 
 Parity flips exactly when this number is odd, equivalently when $n-\ell$ is even. Hence every coordinate order has exactly
 
-$$
-\sum_{\substack{1\leq \ell\leq n\\ n-\ell\ \mathrm{even}}}2^{\ell-1}
-=
-L_n
-$$
+$$ \sum_{\substack{1\leq \ell\leq n\\ n-\ell\ \mathrm{even}}}2^{\ell-1} = L_n $$
 
 lexicographic sign changes. This proves both the $\mathrm{mgc}_{+}^{\mathcal{P}_{\mathrm{sing}}}$ value and the singleton Hamming-profile value $\mathrm{mhc}$.
 

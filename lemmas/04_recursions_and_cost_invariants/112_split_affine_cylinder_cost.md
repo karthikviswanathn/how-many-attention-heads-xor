@@ -68,15 +68,7 @@ $$
 
 then
 
-$$
-H^{*}(f)
-=
-\begin{cases}
-0, & \text{if } f \text{ is constant},\\
-1, & \text{if } f \text{ is a nonconstant LTF},\\
-2, & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(f) = \begin{cases} 0, & \text{if } f \text{ is constant},\\ 1, & \text{if } f \text{ is a nonconstant LTF},\\ 2, & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** The split affine-cylinder cost is an optimized recursive certificate. It is not a new lower bound on $\mathrm{actc}$; it is a structured way to produce affine-cylinder certificates by interpolating two cofactors.
 

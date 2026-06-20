@@ -34,11 +34,7 @@ $$
 
 Write the DNF as
 
-$$
-f(x)
-=
-\bigvee_{a=1}^{s} T_a(x),
-$$
+$$ f(x) = \bigvee_{a=1}^{s} T_a(x), $$
 
 where each term $T_a$ is a conjunction of literals and has width at most $w$.
 
@@ -80,11 +76,7 @@ $\blacksquare$
 
 Write the CNF as
 
-$$
-f(x)
-=
-\bigwedge_{a=1}^{s} C_a(x),
-$$
+$$ f(x) = \bigwedge_{a=1}^{s} C_a(x), $$
 
 where each clause $C_a$ is a disjunction of literals and has width at most $w$.
 

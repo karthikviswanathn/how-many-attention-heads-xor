@@ -72,13 +72,7 @@ $$
 
 Let
 
-$$
-P_b(y)
-=
-c_b+\sum_{S\in\mathcal{A}_b}a_{b,S}\prod_{i\in S}y_i
-\qquad
-(b\in\lbrace0,1\rbrace)
-$$
+$$ P_b(y) = c_b+\sum_{S\in\mathcal{A}_b}a_{b,S}\prod_{i\in S}y_i \qquad (b\in\lbrace0,1\rbrace) $$
 
 strictly sign-represent $f_b$. Define
 
@@ -98,11 +92,7 @@ Thus $P$ sign-represents $f$.
 
 Expanding,
 
-$$
-P(z,y)
-=
-P_0(y)+z\bigl(P_1(y)-P_0(y)\bigr).
-$$
+$$ P(z,y) = P_0(y)+z\bigl(P_1(y)-P_0(y)\bigr). $$
 
 The nonconstant monomials not involving $z$ are contained in $\mathcal{A}_0$. The monomials involving $z$ are $z$ times the monomials appearing in $P_1-P_0$. These are contained in:
 

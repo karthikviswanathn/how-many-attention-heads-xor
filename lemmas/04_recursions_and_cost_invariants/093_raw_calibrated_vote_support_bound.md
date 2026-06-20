@@ -59,13 +59,7 @@ $$
 
 Moreover, let
 
-$$
-T(x)
-=
-a_{\varnothing}
-+
-\sum_{\varnothing\neq S\subseteq[n]}a_S\prod_{i\in S}x_i
-$$
+$$ T(x) = a_{\varnothing} + \sum_{\varnothing\neq S\subseteq[n]}a_S\prod_{i\in S}x_i $$
 
 be the exact multilinear expansion of $T$. Define the exact affine-free support cost
 
@@ -174,16 +168,7 @@ $$
 
 Let
 
-$$
-T(x)
-=
-a_{\varnothing}
-+L(x)
-+
-\sum_{S\in\mathcal{M}}a_Sq_S(x),
-\qquad
-q_S(x):=\prod_{i\in S}x_i,
-$$
+$$ T(x) = a_{\varnothing} +L(x) + \sum_{S\in\mathcal{M}}a_Sq_S(x), \qquad q_S(x):=\prod_{i\in S}x_i, $$
 
 where $L$ is the linear part and
 
@@ -197,14 +182,7 @@ For each $S\in\mathcal{M}$, Lemma 1 of [041_ptf_sparsity_upper_bound.md](../02_c
 
 Choose all these tolerances small enough that the sum of the uniform errors is at most the requested $\epsilon$. Adding the constant term $a_{\varnothing}$ proves
 
-$$
-\rho(T)\leq
-\mathbf{1}\negthinspace\left[L\neq0\right]
-+
-\lvert\mathcal{M}\rvert
-=
-\mathrm{eafs}(T).
-$$
+$$ \rho(T)\leq \mathbf{1}\negthinspace\left[L\neq0\right] + \lvert\mathcal{M}\rvert = \mathrm{eafs}(T). $$
 
 Combining this with Lemma 1 proves the final displayed bound. $\blacksquare$
 

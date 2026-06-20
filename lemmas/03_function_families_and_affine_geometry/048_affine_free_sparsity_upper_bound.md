@@ -85,17 +85,7 @@ As $\delta\to0$, $B_{\delta}(x)\to1$ uniformly on the finite cube. Hence $\psi_{
 
 Let $P$ sign-represent $f$. Write
 
-$$
-P(x)
-=
-a_{\varnothing}
-+
-L(x)
-+
-\sum_{S\in\mathcal{M}}a_S q_S(x),
-\qquad
-q_S(x):=\prod_{i\in S}x_i,
-$$
+$$ P(x) = a_{\varnothing} + L(x) + \sum_{S\in\mathcal{M}}a_S q_S(x), \qquad q_S(x):=\prod_{i\in S}x_i, $$
 
 where
 
@@ -172,11 +162,7 @@ Indeed, the affine approximation contributes less than $\Delta/4$ when present a
 
 Therefore $\widetilde{P}$ has the same sign as $P$ everywhere on the cube. By the linear-fractional normal form [010_linear_fractional_normal_form.md](../01_foundations_and_normal_form/010_linear_fractional_normal_form.md), $\widetilde{P}$ is a valid head score using
 
-$$
-\ell+\lvert\mathcal{M}\rvert
-=
-\mathrm{afs}(P)
-$$
+$$ \ell+\lvert\mathcal{M}\rvert = \mathrm{afs}(P) $$
 
 heads. Hence
 
@@ -248,27 +234,11 @@ $$
 
 The polynomial
 
-$$
-P(x,y)
-:=
-\frac{1}{2}
--
-\sum_{i=1}^{m}(x_i-y_i)^2
-$$
+$$ P(x,y) := \frac{1}{2} - \sum_{i=1}^{m}(x_i-y_i)^2 $$
 
 is positive exactly when $x=y$. On the Boolean cube,
 
-$$
-P(x,y)
-=
-\frac{1}{2}
--
-\sum_{i=1}^{m}x_i
--
-\sum_{i=1}^{m}y_i
-+
-2\sum_{i=1}^{m}x_i y_i.
-$$
+$$ P(x,y) = \frac{1}{2} - \sum_{i=1}^{m}x_i - \sum_{i=1}^{m}y_i + 2\sum_{i=1}^{m}x_i y_i. $$
 
 It has one affine part and $m$ nonlinear monomials, so
 

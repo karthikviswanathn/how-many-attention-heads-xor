@@ -38,15 +38,7 @@ $$
 
 In particular, if $\lvert S\rvert\leq1$, then
 
-$$
-H^{*}(f)
-=
-\begin{cases}
-0 & \text{if } f \text{ is constant},\\
-1 & \text{if } f \text{ is a nonconstant linear threshold function},\\
-2 & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** Branching on one raw bit between two labels determined by the same LTF costs at most one head plus the number of variables used by that LTF. This includes $z\wedge T(y)$, $z\vee T(y)$, $z\oplus T(y)$, and their complements.
 

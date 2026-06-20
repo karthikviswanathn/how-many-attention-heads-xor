@@ -72,17 +72,7 @@ The same upper and lower bounds hold for the XNOR function $1-F$.
 
 Consequently, if
 
-$$
-\eta_{\oplus}(A)
-+
-\lvert L(A)\rvert
-+
-K(\Gamma)
-+
-K_z(\Gamma)
-=
-\deg_{\pm}(T)+1,
-$$
+$$ \eta_{\oplus}(A) + \lvert L(A)\rvert + K(\Gamma) + K_z(\Gamma) = \deg_{\pm}(T)+1, $$
 
 then
 
@@ -142,13 +132,7 @@ $$
 
 The threshold-degree lower bound follows from the fresh-bit XOR threshold-degree theorem [081_fresh_bit_xor_threshold_degree.md](081_fresh_bit_xor_threshold_degree.md) and the general lower bound [006_threshold_degree_head_complexity_bound.md](../01_foundations_and_normal_form/006_threshold_degree_head_complexity_bound.md):
 
-$$
-H^{*}(F)
-\geq
-\deg_{\pm}(F)
-=
-\deg_{\pm}(T)+1.
-$$
+$$ H^{*}(F) \geq \deg_{\pm}(F) = \deg_{\pm}(T)+1. $$
 
 For XNOR, note that $1-F$ is the output complement of $F$. Complementing preserves threshold degree and head complexity by [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md), and it preserves the same affine-cylinder upper-bound certificate by negating the strict score. Hence the same bounds hold for $1-F$.
 

@@ -38,23 +38,11 @@ $$
 
 Let
 
-$$
-P(x)
-=
-a_{\varnothing}
-+
-\sum_{\varnothing\neq S\subseteq\lbrace1,\ldots,n\rbrace}a_S\prod_{i\in S}x_i
-$$
+$$ P(x) = a_{\varnothing} + \sum_{\varnothing\neq S\subseteq\lbrace1,\ldots,n\rbrace}a_S\prod_{i\in S}x_i $$
 
 be a strict sign-representing polynomial for $f$. Split it as
 
-$$
-P(x)
-=
-A(x)
-+
-\sum_{S\in\mathcal{M}}a_S\prod_{i\in S}x_i,
-$$
+$$ P(x) = A(x) + \sum_{S\in\mathcal{M}}a_S\prod_{i\in S}x_i, $$
 
 where
 
@@ -76,11 +64,7 @@ $$
 
 For each $S\in\mathcal{M}$,
 
-$$
-\prod_{i\in S}x_i
-=
-C_{S,\varnothing}(x)
-$$
+$$ \prod_{i\in S}x_i = C_{S,\varnothing}(x) $$
 
 and
 
@@ -98,11 +82,7 @@ $$
 
 Its affine-cylinder cost is
 
-$$
-\lambda(A)+\lvert\mathcal{M}\rvert
-=
-\mathrm{afs}(P).
-$$
+$$ \lambda(A)+\lvert\mathcal{M}\rvert = \mathrm{afs}(P). $$
 
 Thus
 

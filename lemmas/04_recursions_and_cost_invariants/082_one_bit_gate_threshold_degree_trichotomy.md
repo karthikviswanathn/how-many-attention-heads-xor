@@ -36,14 +36,7 @@ Each slice $G_b$ is one of $0$, $1$, $u$, or $1-u$. Then:
 
 1. If $G_0$ and $G_1$ are both constant, then
 
-$$
-\deg_{\pm}(F)
-=
-\begin{cases}
-0 & \text{if } G_0=G_1,\\
-1 & \text{if } G_0\neq G_1.
-\end{cases}
-$$
+$$ \deg_{\pm}(F) = \begin{cases} 0 & \text{if } G_0=G_1,\\ 1 & \text{if } G_0\neq G_1. \end{cases} $$
 
 2. If at least one slice is nonconstant and the nonconstant slices, when there are two, are not opposite, then
 
@@ -151,20 +144,10 @@ These cases exhaust all possibilities for the pair of slices $G_0,G_1$. $\blacks
 
 For nonconstant $T$,
 
-$$
-\deg_{\pm}(z\wedge T(y))
-=
-\deg_{\pm}(z\vee T(y))
-=
-\deg_{\pm}(T),
-$$
+$$ \deg_{\pm}(z\wedge T(y)) = \deg_{\pm}(z\vee T(y)) = \deg_{\pm}(T), $$
 
 while
 
-$$
-\deg_{\pm}(z\oplus T(y))
-=
-\deg_{\pm}(T)+1.
-$$
+$$ \deg_{\pm}(z\oplus T(y)) = \deg_{\pm}(T)+1. $$
 
 Thus the lower-bound behavior of one-bit branching depends on the gate, not just on the presence of a fresh raw bit.

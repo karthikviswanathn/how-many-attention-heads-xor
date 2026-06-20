@@ -73,12 +73,7 @@ Thus $V_{L+1}$ sign-represents $F_{L+1}$ with margin $1$.
 
 Suppose $V_{j+1}$ sign-represents $F_{j+1}$ with positive margin and has the form
 
-$$
-V_{j+1}
-=
-c_{j+1,0}
-+\sum_{k=j+1}^{L}c_{j+1,k}T_k.
-$$
+$$ V_{j+1} = c_{j+1,0} +\sum_{k=j+1}^{L}c_{j+1,k}T_k. $$
 
 Let
 

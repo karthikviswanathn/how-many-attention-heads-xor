@@ -10,11 +10,7 @@ $$
 
 with block sizes $n_1,\ldots,n_b$. Suppose
 
-$$
-f(x^{(1)},\ldots,x^{(b)})
-=
-F(\lvert x^{(1)}\rvert,\ldots,\lvert x^{(b)}\rvert).
-$$
+$$ f(x^{(1)},\ldots,x^{(b)}) = F(\lvert x^{(1)}\rvert,\ldots,\lvert x^{(b)}\rvert). $$
 
 Read the grid
 
