@@ -4,9 +4,7 @@
 
 If a Boolean function $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$ is computable in the model from [../../model.md](../../model.md), then
 
-$$
-\deg_{\pm}(f) \leq H^{*}(f).
-$$
+$$ \deg_{\pm}(f) \leq H^{*}(f). $$
 
 Here $\deg_{\pm}(f)$ denotes the threshold degree of $f$, namely the minimum degree of a real polynomial that sign-represents $f$ on the Boolean cube.
 
@@ -69,9 +67,7 @@ Fix one attention head $h$, and let $w_{\mathrm{out}} \in \mathbb{R}^{d_{\mathrm
 
 Let
 
-$$
-s_h(x) := \bigl\langle w_{\mathrm{out}},  y^{(h)}(x) \bigr\rangle
-$$
+$$ s_h(x) := \bigl\langle w_{\mathrm{out}},  y^{(h)}(x) \bigr\rangle $$
 
 be the contribution of head $h$ to the final probe score on input $x \in \lbrace0,1\rbrace^n$.
 
@@ -91,9 +87,7 @@ Because there is only one attention layer, the representation at input position 
 
 Therefore, for each input position $i$ and bit value $b \in \lbrace0,1\rbrace$, there are fixed real constants
 
-$$
-\ell_{i,b} \in \mathbb{R}, \qquad \mu_{i,b} \in \mathbb{R}
-$$
+$$ \ell_{i,b} \in \mathbb{R}, \qquad \mu_{i,b} \in \mathbb{R} $$
 
 with the following meaning:
 
@@ -102,21 +96,15 @@ with the following meaning:
 
 Indeed, if $u_{i,b}$ denotes the fixed model-space input vector at position $i$ carrying bit value $b$, then
 
-$$
-\mu_{i,b} := \bigl\langle w_{\mathrm{out}},  W_O^{(h)} W_V^{(h)} u_{i,b} \bigr\rangle.
-$$
+$$ \mu_{i,b} := \bigl\langle w_{\mathrm{out}},  W_O^{(h)} W_V^{(h)} u_{i,b} \bigr\rangle. $$
 
 Likewise, the query position contributes fixed constants
 
-$$
-\ell_{=} \in \mathbb{R}, \qquad \mu_{=} \in \mathbb{R}.
-$$
+$$ \ell_{=} \in \mathbb{R}, \qquad \mu_{=} \in \mathbb{R}. $$
 
 Set
 
-$$
-\lambda_{i,b} := \exp(\ell_{i,b}) > 0, \qquad \lambda_{=} := \exp(\ell_{=}) > 0.
-$$
+$$ \lambda_{i,b} := \exp(\ell_{i,b}) > 0, \qquad \lambda_{=} := \exp(\ell_{=}) > 0. $$
 
 Now write the head's scalar score as
 
@@ -222,6 +210,4 @@ So $P$ sign-represents the Boolean function $f$ on $\lbrace0,1\rbrace^n$.
 
 Since $f$ is computed by $H^{*}(f)$ heads, Lemma 3 produces a polynomial of degree at most $H^{*}(f)$ that sign-represents $f$. Therefore
 
-$$
-\deg_{\pm}(f) \leq H^{*}(f). \qquad \blacksquare
-$$
+$$ \deg_{\pm}(f) \leq H^{*}(f). \qquad \blacksquare $$

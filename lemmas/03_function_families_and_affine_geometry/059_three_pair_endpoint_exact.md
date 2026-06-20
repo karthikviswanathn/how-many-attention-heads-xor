@@ -4,25 +4,13 @@
 
 For three pairs of input bits, define
 
-$$
-\mathrm{INT}_3(x,y):=\mathbf{1} \left[\sum_{i=1}^{3}x_i y_i\geq1\right],
-\qquad
-\mathrm{DISJ}_3:=1-\mathrm{INT}_3,
-$$
+$$ \mathrm{INT}_3(x,y):=\mathbf{1} \left[\sum_{i=1}^{3}x_i y_i\geq1\right], \qquad \mathrm{DISJ}_3:=1-\mathrm{INT}_3, $$
 
-$$
-\mathrm{SUB}_3(x,y):=\mathbf{1}[x_i\leq y_i\text{ for }i=1,2,3],
-\qquad
-\mathrm{NCON}_3:=1-\mathrm{SUB}_3,
-$$
+$$ \mathrm{SUB}_3(x,y):=\mathbf{1}[x_i\leq y_i\text{ for }i=1,2,3], \qquad \mathrm{NCON}_3:=1-\mathrm{SUB}_3, $$
 
 and
 
-$$
-\mathrm{EQ}_3(x,y):=\mathbf{1}[x=y],
-\qquad
-\mathrm{NEQ}_3:=1-\mathrm{EQ}_3.
-$$
+$$ \mathrm{EQ}_3(x,y):=\mathbf{1}[x=y], \qquad \mathrm{NEQ}_3:=1-\mathrm{EQ}_3. $$
 
 Then
 
@@ -36,17 +24,11 @@ $$ H^{*}(\mathrm{INT}_3) = H^{*}(\mathrm{DISJ}_3) = H^{*}(\mathrm{SUB}_3) = H^{*
 
 The verifier `src/hstar/three_pair_certificates.py` records explicit integer certificates of the form
 
-$$
-S(x)=\frac{A_1(x)}{B_1(x)}+\frac{A_2(x)}{B_2(x)},
-$$
+$$ S(x)=\frac{A_1(x)}{B_1(x)}+\frac{A_2(x)}{B_2(x)}, $$
 
 where $A_1,A_2$ are affine and $B_1,B_2$ are positive affine functions on the six-bit Boolean cube. For each of $\mathrm{INT}_3$, $\mathrm{SUB}_3$, and $\mathrm{EQ}_3$, it verifies exactly on all $64$ inputs that
 
-$$
-S(x)>0
-\qquad\Longleftrightarrow\qquad
-f(x)=1.
-$$
+$$ S(x)>0 \qquad\Longleftrightarrow\qquad f(x)=1. $$
 
 Running
 
@@ -86,53 +68,29 @@ returns
 
 Since each denominator is positive affine, each ratio is a single one-head atom by the affine-over-positive-affine atom lemma [015_three_bit_quadratic_upper_bound.md](../01_foundations_and_normal_form/015_three_bit_quadratic_upper_bound.md). Hence
 
-$$
-H^{*}(\mathrm{INT}_3)\leq2,
-\qquad
-H^{*}(\mathrm{SUB}_3)\leq2,
-\qquad
-H^{*}(\mathrm{EQ}_3)\leq2.
-$$
+$$ H^{*}(\mathrm{INT}_3)\leq2, \qquad H^{*}(\mathrm{SUB}_3)\leq2, \qquad H^{*}(\mathrm{EQ}_3)\leq2. $$
 
 Complementing the final threshold gives
 
-$$
-H^{*}(\mathrm{DISJ}_3)\leq2,
-\qquad
-H^{*}(\mathrm{NCON}_3)\leq2,
-\qquad
-H^{*}(\mathrm{NEQ}_3)\leq2.
-$$
+$$ H^{*}(\mathrm{DISJ}_3)\leq2, \qquad H^{*}(\mathrm{NCON}_3)\leq2, \qquad H^{*}(\mathrm{NEQ}_3)\leq2. $$
 
 ### Lemma 2. Lower bounds
 
 The intersection-profile bound [050_intersection_profile_bounds.md](050_intersection_profile_bounds.md) proves that for $m\geq2$,
 
-$$
-H^{*}(\mathrm{INT}_m)\geq2,
-\qquad
-H^{*}(\mathrm{DISJ}_m)\geq2.
-$$
+$$ H^{*}(\mathrm{INT}_m)\geq2, \qquad H^{*}(\mathrm{DISJ}_m)\geq2. $$
 
 The directed-defect profile bound [052_directed_defect_profile_bounds.md](052_directed_defect_profile_bounds.md) proves that for $m\geq2$,
 
-$$
-H^{*}(\mathrm{SUB}_m)\geq2,
-\qquad
-H^{*}(\mathrm{NCON}_m)\geq2.
-$$
+$$ H^{*}(\mathrm{SUB}_m)\geq2, \qquad H^{*}(\mathrm{NCON}_m)\geq2. $$
 
 For equality, restricting all but one pair gives $\mathrm{EQ}_1$, which is not an LTF. Thus the one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md) gives
 
-$$
-H^{*}(\mathrm{EQ}_3)\geq2.
-$$
+$$ H^{*}(\mathrm{EQ}_3)\geq2. $$
 
 Complement invariance from [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md) gives
 
-$$
-H^{*}(\mathrm{NEQ}_3)\geq2.
-$$
+$$ H^{*}(\mathrm{NEQ}_3)\geq2. $$
 
 Combining these lower bounds with Lemma 1 proves all six exact values. $\blacksquare$
 

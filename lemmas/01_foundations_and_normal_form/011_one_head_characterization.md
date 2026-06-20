@@ -4,25 +4,15 @@
 
 The first two levels of head complexity are exactly characterized:
 
-$$
-H^{*}(f) = 0
-\qquad \Longleftrightarrow \qquad
-f \text{ is constant},
-$$
+$$ H^{*}(f) = 0 \qquad \Longleftrightarrow \qquad f \text{ is constant}, $$
 
 and
 
-$$
-H^{*}(f) = 1
-\qquad \Longleftrightarrow \qquad
-f \text{ is a nonconstant linear threshold function}.
-$$
+$$ H^{*}(f) = 1 \qquad \Longleftrightarrow \qquad f \text{ is a nonconstant linear threshold function}. $$
 
 In particular, every non-linear-threshold Boolean function has
 
-$$
-H^{*}(f) \geq 2.
-$$
+$$ H^{*}(f) \geq 2. $$
 
 This strictly strengthens the checkerboard obstruction [003_checkerboard_obstruction.md](003_checkerboard_obstruction.md) as a one-head lower bound.
 
@@ -32,23 +22,15 @@ We use the linear-fractional normal form [010_linear_fractional_normal_form.md](
 
 **One head is exactly linear threshold.** First suppose $f$ is computed by one head. By the normal form, there is a constant $c$ and one atom
 
-$$
-\phi(x) = \frac{N(x)}{D(x)}
-$$
+$$ \phi(x) = \frac{N(x)}{D(x)} $$
 
 such that
 
-$$
-f(x) = 1
-\qquad \Longleftrightarrow \qquad
-c + \phi(x) > 0.
-$$
+$$ f(x) = 1 \qquad \Longleftrightarrow \qquad c + \phi(x) > 0. $$
 
 The denominator satisfies $D(x) > 0$ on the Boolean cube. Also both $N$ and $D$ are affine functions of $x$, because
 
-$$
-\alpha^{x_i} = 1 + (\alpha - 1)x_i,
-$$
+$$ \alpha^{x_i} = 1 + (\alpha - 1)x_i, $$
 
 and
 
@@ -56,60 +38,33 @@ $$ \alpha^{x_i}(m_i + \delta x_i) = m_i + \bigl(\alpha(m_i + \delta) - m_i\bigr)
 
 Thus
 
-$$
-c + \phi(x) > 0
-\qquad \Longleftrightarrow \qquad
-cD(x) + N(x) > 0.
-$$
+$$ c + \phi(x) > 0 \qquad \Longleftrightarrow \qquad cD(x) + N(x) > 0. $$
 
 The right-hand side is an affine threshold. Therefore every one-head function is a linear threshold function.
 
 **Conversely,** suppose $f$ is sign-represented by an affine function
 
-$$
-L(x) = \beta_0 + \sum_{i=1}^{n} \beta_i x_i,
-$$
+$$ L(x) = \beta_0 + \sum_{i=1}^{n} \beta_i x_i, $$
 
 meaning
 
-$$
-f(x) = 1
-\qquad \Longleftrightarrow \qquad
-L(x) > 0.
-$$
+$$ f(x) = 1 \qquad \Longleftrightarrow \qquad L(x) > 0. $$
 
 Choose one atom with
 
-$$
-\alpha = 2, \qquad \gamma = 1, \qquad \rho_i = 1,
-$$
+$$ \alpha = 2, \qquad \gamma = 1, \qquad \rho_i = 1, $$
 
 with
 
-$$
-\delta = 0, \qquad m_i = \beta_i,
-$$
+$$ \delta = 0, \qquad m_i = \beta_i, $$
 
 and
 
-$$
-\eta = \beta_0 - \sum_{i=1}^{n} \beta_i.
-$$
+$$ \eta = \beta_0 - \sum_{i=1}^{n} \beta_i. $$
 
 Its numerator is
 
-$$
-\begin{aligned}
-\eta + \sum_{i=1}^{n} 2^{x_i} \beta_i
-&=
-\beta_0 - \sum_{i=1}^{n} \beta_i
-+ \sum_{i=1}^{n} \beta_i(1 + x_i) \\
-&=
-\beta_0 + \sum_{i=1}^{n} \beta_i x_i \\
-&=
-L(x).
-\end{aligned}
-$$
+$$ \begin{aligned} \eta + \sum_{i=1}^{n} 2^{x_i} \beta_i &= \beta_0 - \sum_{i=1}^{n} \beta_i + \sum_{i=1}^{n} \beta_i(1 + x_i) \\ &= \beta_0 + \sum_{i=1}^{n} \beta_i x_i \\ &= L(x). \end{aligned} $$
 
 Its denominator is positive. Therefore the atom has the same sign as $L(x)$, and one head computes $f$.
 
@@ -119,19 +74,11 @@ So every nonconstant function computable with one head is a linear threshold fun
 
 Therefore
 
-$$
-H^{*}(f) = 0
-\qquad \Longleftrightarrow \qquad
-f \text{ is constant},
-$$
+$$ H^{*}(f) = 0 \qquad \Longleftrightarrow \qquad f \text{ is constant}, $$
 
 and
 
-$$
-H^{*}(f) = 1
-\qquad \Longleftrightarrow \qquad
-f \text{ is a nonconstant linear threshold function}.
-$$
+$$ H^{*}(f) = 1 \qquad \Longleftrightarrow \qquad f \text{ is a nonconstant linear threshold function}. $$
 
 This completes the proof. $\blacksquare$
 

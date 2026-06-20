@@ -4,15 +4,11 @@
 
 For every Boolean function
 
-$$
-f : \lbrace0,1\rbrace^5 \to \lbrace0,1\rbrace,
-$$
+$$ f : \lbrace0,1\rbrace^5 \to \lbrace0,1\rbrace, $$
 
 we have
 
-$$
-H^{*}(f) \leq 7.
-$$
+$$ H^{*}(f) \leq 7. $$
 
 This improves the general positive weighted-sum bound, which gives only $H^{*}(f) \leq 31$ at $n=5$.
 
@@ -24,15 +20,11 @@ The proof is a determinant-span certificate for seven affine-over-positive-affin
 
 Let $P$ be any multilinear polynomial in five Boolean variables. Then there are positive affine functions
 
-$$
-B_1,\ldots,B_7,
-$$
+$$ B_1,\ldots,B_7, $$
 
 affine functions
 
-$$
-A_1,\ldots,A_7,
-$$
+$$ A_1,\ldots,A_7, $$
 
 and a constant $c$ such that
 
@@ -42,71 +34,39 @@ on $\lbrace0,1\rbrace^5$.
 
 **Proof.** Work in the multilinear basis indexed by all subsets of $\lbrace1,2,3,4,5\rbrace$:
 
-$$
-\prod_{i\in S}x_i,
-\qquad
-S\subseteq\lbrace1,2,3,4,5\rbrace.
-$$
+$$ \prod_{i\in S}x_i, \qquad S\subseteq\lbrace1,2,3,4,5\rbrace. $$
 
 Define the seven positive affine denominators by
 
-$$
-B_h(x)=b_{h,0}+\sum_{i=1}^{5}b_{h,i}x_i,
-$$
+$$ B_h(x)=b_{h,0}+\sum_{i=1}^{5}b_{h,i}x_i, $$
 
 with coefficient rows
 
-$$
-\begin{array}{c|rrrrrr}
-h & b_{h,0} & b_{h,1} & b_{h,2} & b_{h,3} & b_{h,4} & b_{h,5} \\
-\hline
-1 & 1 & 85 & 64 & 51 & 27 & 31 \\
-2 & 1 & 5 & 8 & 2 & 18 & 81 \\
-3 & 1 & 65 & 91 & 50 & 61 & 97 \\
-4 & 1 & 73 & 63 & 54 & 56 & 93 \\
-5 & 1 & 28 & 81 & 67 & 1 & 40 \\
-6 & 1 & 85 & 55 & 4 & 76 & 73 \\
-7 & 1 & 84 & 18 & 9 & 86 & 3.
-\end{array}
-$$
+$$ \begin{array}{c|rrrrrr} h & b_{h,0} & b_{h,1} & b_{h,2} & b_{h,3} & b_{h,4} & b_{h,5} \\ \hline 1 & 1 & 85 & 64 & 51 & 27 & 31 \\ 2 & 1 & 5 & 8 & 2 & 18 & 81 \\ 3 & 1 & 65 & 91 & 50 & 61 & 97 \\ 4 & 1 & 73 & 63 & 54 & 56 & 93 \\ 5 & 1 & 28 & 81 & 67 & 1 & 40 \\ 6 & 1 & 85 & 55 & 4 & 76 & 73 \\ 7 & 1 & 84 & 18 & 9 & 86 & 3. \end{array} $$
 
 All coefficients are positive, so every $B_h$ is positive on the cube.
 
 Consider the following $32$ products:
 
-$$
-\prod_{j=1}^{7}B_j,
-$$
+$$ \prod_{j=1}^{7}B_j, $$
 
 for each $h\in\lbrace1,2,3,4,5,6\rbrace$, the five products
 
-$$
-M\prod_{j\neq h}B_j
-\qquad
-\text{for }
-M\in\lbrace1,x_1,x_2,x_3,x_4\rbrace,
-$$
+$$ M\prod_{j\neq h}B_j \qquad \text{for } M\in\lbrace1,x_1,x_2,x_3,x_4\rbrace, $$
 
 and the single product
 
-$$
-\prod_{j\neq 7}B_j.
-$$
+$$ \prod_{j\neq 7}B_j. $$
 
 Reduce these products using $x_i^2=x_i$ on the Boolean cube, and write their coefficient vectors in the $32$-element multilinear basis.
 
 The determinant of this $32\times32$ integer matrix is nonzero. To keep the certificate small, compute it modulo the prime
 
-$$
-p := 1000003.
-$$
+$$ p := 1000003. $$
 
 The determinant is congruent to
 
-$$
-492876
-\pmod p,
-$$
+$$ 492876 \pmod p, $$
 
 which is nonzero. Hence the determinant is nonzero over the integers, and the displayed products form a basis for all multilinear polynomials on $\lbrace0,1\rbrace^5$.
 
@@ -122,11 +82,7 @@ by a multilinear polynomial $P$ on $\lbrace0,1\rbrace^5$.
 
 Apply Lemma 1 to this $P$. Since each $B_h$ is positive on the cube, the score
 
-$$
-S(x)
-:=
-c+\sum_{h=1}^{7}\frac{A_h(x)}{B_h(x)}
-$$
+$$ S(x) := c+\sum_{h=1}^{7}\frac{A_h(x)}{B_h(x)} $$
 
 has the same sign as $P(x)$, because
 
@@ -134,9 +90,7 @@ $$ S(x) = \frac{P(x)}{\prod_{j=1}^{7}B_j(x)}. $$
 
 Each ratio $A_h(x)/B_h(x)$ is a one-head atom by Lemma 1 of [015_three_bit_quadratic_upper_bound.md](015_three_bit_quadratic_upper_bound.md). Therefore thresholding a constant plus seven one-head atoms computes $f$, and the exact normal form from [010_linear_fractional_normal_form.md](010_linear_fractional_normal_form.md) gives
 
-$$
-H^{*}(f) \leq 7.
-$$
+$$ H^{*}(f) \leq 7. $$
 
 $\blacksquare$
 

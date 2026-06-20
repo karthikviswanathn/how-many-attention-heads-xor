@@ -4,29 +4,19 @@
 
 Let
 
-$$
-f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace.
-$$
+$$ f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace. $$
 
 Suppose there are disjoint sets $P,N\subseteq\lbrace1,\ldots,n\rbrace$ with either $P=\varnothing$ or $N=\varnothing$, an affine form
 
-$$
-A(x)=a_0+\sum_{i=1}^{n}a_i x_i,
-$$
+$$ A(x)=a_0+\sum_{i=1}^{n}a_i x_i, $$
 
 and a real coefficient $c$ such that
 
-$$
-f(x)=1
-\qquad\Longleftrightarrow\qquad
-A(x)+cC_{P,N}(x)>0
-$$
+$$ f(x)=1 \qquad\Longleftrightarrow\qquad A(x)+cC_{P,N}(x)>0 $$
 
 strictly on the cube. Then
 
-$$
-\mathrm{actc}(f)\leq2.
-$$
+$$ \mathrm{actc}(f)\leq2. $$
 
 Consequently,
 
@@ -40,21 +30,15 @@ If $P=N=\varnothing$, then $C_{P,N}$ is constant, so the displayed score is affi
 
 Assume now that $(P,N)$ is nonvacuous. Since either $P=\varnothing$ or $N=\varnothing$,
 
-$$
-\kappa(P,N)=1.
-$$
+$$ \kappa(P,N)=1. $$
 
 The displayed strict score is an affine-cylinder representation with one affine part and one nonvacuous cylinder. Its cost is at most
 
-$$
-\lambda(A)+\kappa(P,N)\leq2.
-$$
+$$ \lambda(A)+\kappa(P,N)\leq2. $$
 
 Therefore
 
-$$
-\mathrm{actc}(f)\leq2.
-$$
+$$ \mathrm{actc}(f)\leq2. $$
 
 The exact case distinction now follows from the low affine-cylinder exactness theorem [109_low_affine_cylinder_cost_exactness.md](109_low_affine_cylinder_cost_exactness.md). $\blacksquare$
 
@@ -62,22 +46,12 @@ The exact case distinction now follows from the low affine-cylinder exactness th
 
 Every function that is neither constant nor a nonconstant LTF and has the form
 
-$$
-x\mapsto
-\mathbf{1} \left[
-A(x)+c\prod_{i\in P}x_i>0
-\right]
-$$
+$$ x\mapsto \mathbf{1} \left[ A(x)+c\prod_{i\in P}x_i>0 \right] $$
 
 is exactly two-head.
 
 The same is true for every function that is neither constant nor a nonconstant LTF and has the form
 
-$$
-x\mapsto
-\mathbf{1} \left[
-A(x)+c\prod_{j\in N}(1-x_j)>0
-\right].
-$$
+$$ x\mapsto \mathbf{1} \left[ A(x)+c\prod_{j\in N}(1-x_j)>0 \right]. $$
 
 The second family can have a large positive-monomial expansion, but the affine-cylinder certificate pays only the local cylinder cost $1$.

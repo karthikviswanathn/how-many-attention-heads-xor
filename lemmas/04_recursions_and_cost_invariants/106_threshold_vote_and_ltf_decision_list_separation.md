@@ -6,13 +6,7 @@ Let $s_{\mathrm{LTF}}(f)$ be the minimum number of linear threshold function ind
 
 There is an infinite family of Boolean functions $F_n:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace$ such that
 
-$$
-s_{\mathrm{LTF}}(F_n)\leq2
-\qquad
-\text{but}
-\qquad
-H^{*}(F_n)\geq c n
-$$
+$$ s_{\mathrm{LTF}}(F_n)\leq2 \qquad \text{but} \qquad H^{*}(F_n)\geq c n $$
 
 for an absolute constant $c>0$.
 
@@ -24,43 +18,29 @@ The same family has LTF decision-list length at most $2$. Thus neither threshold
 
 Use the halfspace-intersection family from [105_halfspace_intersection_head_lower_bound.md](105_halfspace_intersection_head_lower_bound.md):
 
-$$
-F_n(x)=T_n(x)\wedge U_n(x),
-$$
+$$ F_n(x)=T_n(x)\wedge U_n(x), $$
 
 where $T_n$ and $U_n$ are linear threshold functions and
 
-$$
-H^{*}(F_n)\geq c n.
-$$
+$$ H^{*}(F_n)\geq c n. $$
 
 The same function has a strict weighted vote over two LTF indicators:
 
-$$
-F_n(x)=1
-\qquad\Longleftrightarrow\qquad
-T_n(x)+U_n(x)-\frac{3}{2}>0.
-$$
+$$ F_n(x)=1 \qquad\Longleftrightarrow\qquad T_n(x)+U_n(x)-\frac{3}{2}>0. $$
 
 Hence
 
-$$
-s_{\mathrm{LTF}}(F_n)\leq2.
-$$
+$$ s_{\mathrm{LTF}}(F_n)\leq2. $$
 
 It also has a length-two LTF decision list. Test $T_n$ first. If $T_n(x)=0$, output $0$. If $T_n(x)=1$, test $U_n$. Output $1$ if $U_n(x)=1$, and output $0$ otherwise. This computes $T_n\wedge U_n$ with two LTF tests.
 
 Since $H^{*}(F_n)\geq c n$ while both auxiliary sizes are at most $2$, no constant $C$ can make either inequality
 
-$$
-H^{*}(f)\leq C  s_{\mathrm{LTF}}(f)
-$$
+$$ H^{*}(f)\leq C  s_{\mathrm{LTF}}(f) $$
 
 or
 
-$$
-H^{*}(f)\leq C  L_{\mathrm{LTFDL}}(f)
-$$
+$$ H^{*}(f)\leq C  L_{\mathrm{LTFDL}}(f) $$
 
 valid for all Boolean functions, where $L_{\mathrm{LTFDL}}(f)$ denotes LTF decision-list length. $\blacksquare$
 

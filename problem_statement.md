@@ -26,9 +26,7 @@ A Boolean function $f$ is said to be **computable with $H$ heads** if there exis
 
 Define
 
-$$
-H^{*}(f)  :=  \min \left\lbrace  H : f \text{ is computable with } H \text{ heads in the above model}  \right\rbrace.
-$$
+$$ H^{*}(f)  :=  \min \left\lbrace  H : f \text{ is computable with } H \text{ heads in the above model}  \right\rbrace. $$
 
 Our central problem is to understand $H^{*}(f)$ as a function of $f$.
 

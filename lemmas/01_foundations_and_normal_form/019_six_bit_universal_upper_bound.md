@@ -4,15 +4,11 @@
 
 For every Boolean function
 
-$$
-f : \lbrace0,1\rbrace^6 \to \lbrace0,1\rbrace,
-$$
+$$ f : \lbrace0,1\rbrace^6 \to \lbrace0,1\rbrace, $$
 
 we have
 
-$$
-H^{*}(f) \leq 11.
-$$
+$$ H^{*}(f) \leq 11. $$
 
 This improves the general positive weighted-sum bound, which gives only $H^{*}(f) \leq 63$ at $n=6$.
 
@@ -24,15 +20,11 @@ The proof is another determinant-span certificate for affine-over-positive-affin
 
 Let $P$ be any multilinear polynomial in six Boolean variables. Then there are positive affine functions
 
-$$
-B_1,\ldots,B_{11},
-$$
+$$ B_1,\ldots,B_{11}, $$
 
 affine functions
 
-$$
-A_1,\ldots,A_{11},
-$$
+$$ A_1,\ldots,A_{11}, $$
 
 and a constant $c$ such that
 
@@ -42,78 +34,39 @@ on $\lbrace0,1\rbrace^6$.
 
 **Proof.** Work in the multilinear basis indexed by all subsets of $\lbrace1,2,3,4,5,6\rbrace$:
 
-$$
-\prod_{i\in S}x_i,
-\qquad
-S\subseteq\lbrace1,2,3,4,5,6\rbrace.
-$$
+$$ \prod_{i\in S}x_i, \qquad S\subseteq\lbrace1,2,3,4,5,6\rbrace. $$
 
 Define the eleven positive affine denominators by
 
-$$
-B_h(x)=b_{h,0}+\sum_{i=1}^{6}b_{h,i}x_i,
-$$
+$$ B_h(x)=b_{h,0}+\sum_{i=1}^{6}b_{h,i}x_i, $$
 
 with coefficient rows
 
-$$
-\begin{array}{c|rrrrrrr}
-h & b_{h,0} & b_{h,1} & b_{h,2} & b_{h,3} & b_{h,4} & b_{h,5} & b_{h,6} \\
-\hline
-1 & 1 & 85 & 64 & 51 & 27 & 31 & 5 \\
-2 & 1 & 8 & 2 & 18 & 81 & 65 & 91 \\
-3 & 1 & 50 & 61 & 97 & 73 & 63 & 54 \\
-4 & 1 & 56 & 93 & 28 & 81 & 67 & 1 \\
-5 & 1 & 40 & 85 & 55 & 4 & 76 & 73 \\
-6 & 1 & 84 & 18 & 9 & 86 & 3 & 54 \\
-7 & 1 & 8 & 30 & 48 & 42 & 40 & 3 \\
-8 & 1 & 1 & 13 & 1 & 67 & 53 & 65 \\
-9 & 1 & 26 & 61 & 76 & 38 & 46 & 99 \\
-10 & 1 & 80 & 98 & 38 & 68 & 95 & 65 \\
-11 & 1 & 84 & 69 & 70 & 39 & 87 & 14.
-\end{array}
-$$
+$$ \begin{array}{c|rrrrrrr} h & b_{h,0} & b_{h,1} & b_{h,2} & b_{h,3} & b_{h,4} & b_{h,5} & b_{h,6} \\ \hline 1 & 1 & 85 & 64 & 51 & 27 & 31 & 5 \\ 2 & 1 & 8 & 2 & 18 & 81 & 65 & 91 \\ 3 & 1 & 50 & 61 & 97 & 73 & 63 & 54 \\ 4 & 1 & 56 & 93 & 28 & 81 & 67 & 1 \\ 5 & 1 & 40 & 85 & 55 & 4 & 76 & 73 \\ 6 & 1 & 84 & 18 & 9 & 86 & 3 & 54 \\ 7 & 1 & 8 & 30 & 48 & 42 & 40 & 3 \\ 8 & 1 & 1 & 13 & 1 & 67 & 53 & 65 \\ 9 & 1 & 26 & 61 & 76 & 38 & 46 & 99 \\ 10 & 1 & 80 & 98 & 38 & 68 & 95 & 65 \\ 11 & 1 & 84 & 69 & 70 & 39 & 87 & 14. \end{array} $$
 
 All coefficients are positive, so every $B_h$ is positive on the cube.
 
 Consider the following $64$ products:
 
-$$
-\prod_{j=1}^{11}B_j,
-$$
+$$ \prod_{j=1}^{11}B_j, $$
 
 for each $h\in\lbrace1,\ldots,10\rbrace$, the six products
 
-$$
-M\prod_{j\neq h}B_j
-\qquad
-\text{for }
-M\in\lbrace1,x_1,x_2,x_3,x_4,x_5\rbrace,
-$$
+$$ M\prod_{j\neq h}B_j \qquad \text{for } M\in\lbrace1,x_1,x_2,x_3,x_4,x_5\rbrace, $$
 
 and the three products
 
-$$
-M\prod_{j\neq 11}B_j
-\qquad
-\text{for }
-M\in\lbrace1,x_1,x_2\rbrace.
-$$
+$$ M\prod_{j\neq 11}B_j \qquad \text{for } M\in\lbrace1,x_1,x_2\rbrace. $$
 
 Reduce these products using $x_i^2=x_i$ on the Boolean cube, and write their coefficient vectors in the $64$-element multilinear basis.
 
 The determinant of this $64\times64$ integer matrix is nonzero. To keep the certificate small, compute it modulo the prime
 
-$$
-p := 1000003.
-$$
+$$ p := 1000003. $$
 
 The determinant is congruent to
 
-$$
-632336
-\pmod p,
-$$
+$$ 632336 \pmod p, $$
 
 which is nonzero. Hence the determinant is nonzero over the integers, and the displayed products form a basis for all multilinear polynomials on $\lbrace0,1\rbrace^6$.
 
@@ -129,11 +82,7 @@ by a multilinear polynomial $P$ on $\lbrace0,1\rbrace^6$.
 
 Apply Lemma 1 to this $P$. Since each $B_h$ is positive on the cube, the score
 
-$$
-S(x)
-:=
-c+\sum_{h=1}^{11}\frac{A_h(x)}{B_h(x)}
-$$
+$$ S(x) := c+\sum_{h=1}^{11}\frac{A_h(x)}{B_h(x)} $$
 
 has the same sign as $P(x)$, because
 
@@ -141,9 +90,7 @@ $$ S(x) = \frac{P(x)}{\prod_{j=1}^{11}B_j(x)}. $$
 
 Each ratio $A_h(x)/B_h(x)$ is a one-head atom by Lemma 1 of [015_three_bit_quadratic_upper_bound.md](015_three_bit_quadratic_upper_bound.md). Therefore thresholding a constant plus eleven one-head atoms computes $f$, and the exact normal form from [010_linear_fractional_normal_form.md](010_linear_fractional_normal_form.md) gives
 
-$$
-H^{*}(f) \leq 11.
-$$
+$$ H^{*}(f) \leq 11. $$
 
 $\blacksquare$
 

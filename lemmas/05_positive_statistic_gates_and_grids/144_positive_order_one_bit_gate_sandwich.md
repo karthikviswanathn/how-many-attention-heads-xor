@@ -4,9 +4,7 @@
 
 Let $f:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace$, and let $C_{+}(f)$ be the optimized positive-projection sign-change count from [013_positive_projection_sign_changes.md](../01_foundations_and_normal_form/013_positive_projection_sign_changes.md). For a two-input gate $G$, define
 
-$$
-H_G(z,y):=G(z,f(y)).
-$$
+$$ H_G(z,y):=G(z,f(y)). $$
 
 Then:
 
@@ -14,23 +12,11 @@ Then:
 2. if $G$ is a raw-bit literal, then $H^{*}(H_G)=1$;
 3. if $f$ is nonconstant and $G$ is XOR or XNOR, then
 
-$$
-\deg_{\pm}(f)+1
-\leq
-H^{*}(H_G)
-\leq
-C_{+}(f)+1;
-$$
+$$ \deg_{\pm}(f)+1 \leq H^{*}(H_G) \leq C_{+}(f)+1; $$
 
 4. if $f$ is nonconstant and $G$ is any other feature-dependent gate, then
 
-$$
-\deg_{\pm}(f)
-\leq
-H^{*}(H_G)
-\leq
-C_{+}(f).
-$$
+$$ \deg_{\pm}(f) \leq H^{*}(H_G) \leq C_{+}(f). $$
 
 For constant $f$, the same table reduces to the exact constant or raw-bit literal cases.
 
@@ -42,17 +28,11 @@ The constant and raw-bit literal cases are immediate. If $f$ is constant, then e
 
 Assume now that $f$ is nonconstant. By the definition of $C_{+}(f)$, choose a positive weighted sum
 
-$$
-t(y)=\sum_{i=1}^{m}\lambda_i y_i,
-\qquad
-\lambda_i>0,
-$$
+$$ t(y)=\sum_{i=1}^{m}\lambda_i y_i, \qquad \lambda_i>0, $$
 
 and a function $F$ on the image of $t$ such that
 
-$$
-f(y)=F(t(y))
-$$
+$$ f(y)=F(t(y)) $$
 
 and the ordered label sequence of $F$ has exactly $C_{+}(f)$ sign changes.
 
@@ -62,14 +42,10 @@ Apply the positive-statistic one-bit gate sandwich [143_positive_statistic_one_b
 
 The desired recursion
 
-$$
-H^{*}(z\oplus f)\leq H^{*}(f)+1
-$$
+$$ H^{*}(z\oplus f)\leq H^{*}(f)+1 $$
 
 holds for every function with $H^{*}(f)=C_{+}(f)$. More generally, this lemma gives the proved fallback
 
-$$
-H^{*}(z\oplus f)\leq C_{+}(f)+1
-$$
+$$ H^{*}(z\oplus f)\leq C_{+}(f)+1 $$
 
 for every Boolean function $f$.

@@ -6,41 +6,29 @@ Let $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$.
 
 Suppose there exist positive real numbers
 
-$$
-\lambda_1, \ldots, \lambda_n > 0
-$$
+$$ \lambda_1, \ldots, \lambda_n > 0 $$
 
 and a function
 
-$$
-F : \mathrm{Im}(t) \to \lbrace0,1\rbrace,
-$$
+$$ F : \mathrm{Im}(t) \to \lbrace0,1\rbrace, $$
 
 where
 
-$$
-t(x) := \sum_{i=1}^{n} \lambda_i x_i,
-$$
+$$ t(x) := \sum_{i=1}^{n} \lambda_i x_i, $$
 
 such that
 
-$$
-f(x) = F(t(x))
-$$
+$$ f(x) = F(t(x)) $$
 
 for every $x \in \lbrace0,1\rbrace^n$.
 
 Let
 
-$$
-M := \lvert\mathrm{Im}(t)\rvert.
-$$
+$$ M := \lvert\mathrm{Im}(t)\rvert. $$
 
 Then
 
-$$
-H^{*}(f) \leq M - 1.
-$$
+$$ H^{*}(f) \leq M - 1. $$
 
 > **Equivalently.** If a Boolean function depends only on a positive weighted sum of the input bits, then one can realize it with one head per distinct nonzero level of that statistic.
 
@@ -50,15 +38,11 @@ We work in the formal model from [../model.md](../../model.md).
 
 Set
 
-$$
-\Lambda := \sum_{i=1}^{n} \lambda_i.
-$$
+$$ \Lambda := \sum_{i=1}^{n} \lambda_i. $$
 
 Because every $\lambda_i$ is positive, the image of $t$ consists of $M$ distinct nonnegative numbers. Write them in increasing order as
 
-$$
-0 = \tau_0 < \tau_1 < \cdots < \tau_{M-1}.
-$$
+$$ 0 = \tau_0 < \tau_1 < \cdots < \tau_{M-1}. $$
 
 We will build an explicit $(M-1)$-head network whose score depends only on $t(x)$, and whose head outputs form a basis of all real-valued functions on $\mathrm{Im}(t)$.
 
@@ -66,39 +50,23 @@ We will build an explicit $(M-1)$-head network whose score depends only on $t(x)
 
 Take
 
-$$
-d_{\mathrm{model}} = d_{\mathrm{head}} = M + 2.
-$$
+$$ d_{\mathrm{model}} = d_{\mathrm{head}} = M + 2. $$
 
 Work in $\mathbb{R}^{M+2}$ with orthonormal basis
 
-$$
-q, r, u, e_1, \ldots, e_{M-1}.
-$$
+$$ q, r, u, e_1, \ldots, e_{M-1}. $$
 
 Choose token embeddings
 
-$$
-\mathrm{token}(0) = 0, \qquad \mathrm{token}(1) = u, \qquad \mathrm{token}(=) = q,
-$$
+$$ \mathrm{token}(0) = 0, \qquad \mathrm{token}(1) = u, \qquad \mathrm{token}(=) = q, $$
 
 and positional embeddings
 
-$$
-p_i = (\log \lambda_i)   r \quad \text{for } 1 \leq i \leq n,
-\qquad
-p_= = 0.
-$$
+$$ p_i = (\log \lambda_i)   r \quad \text{for } 1 \leq i \leq n, \qquad p_= = 0. $$
 
 Thus an input token at position $i$ is represented by
 
-$$
-u_i(x) =
-\begin{cases}
-(\log \lambda_i)   r & \text{if } x_i = 0, \\
-u + (\log \lambda_i)   r & \text{if } x_i = 1.
-\end{cases}
-$$
+$$ u_i(x) = \begin{cases} (\log \lambda_i)   r & \text{if } x_i = 0, \\ u + (\log \lambda_i)   r & \text{if } x_i = 1. \end{cases} $$
 
 The query token is represented by the constant vector $q$.
 
@@ -106,9 +74,7 @@ The query token is represented by the constant vector $q$.
 
 Fix distinct real numbers
 
-$$
-\alpha_1, \ldots, \alpha_{M-1} > 1.
-$$
+$$ \alpha_1, \ldots, \alpha_{M-1} > 1. $$
 
 For each $j \in \lbrace1, \ldots, M-1\rbrace$, define linear maps as follows.
 
@@ -123,41 +89,29 @@ These choices define a valid attention head in the model from [../model.md](../.
 
 For every input $x$,
 
-$$
-y^{(j)}(x) = g_j(t(x))   e_j,
-$$
+$$ y^{(j)}(x) = g_j(t(x))   e_j, $$
 
 where
 
-$$
-g_j(s) := \frac{\alpha_j s}{1 + \Lambda + (\alpha_j - 1) s}.
-$$
+$$ g_j(s) := \frac{\alpha_j s}{1 + \Lambda + (\alpha_j - 1) s}. $$
 
 **Proof.** Fix a position $i$.
 
 If $x_i = 0$, the embedded vector is $(\log \lambda_i)   r$. Therefore:
 
-$$
-W_K^{(j)} u_i(x) = (\log \lambda_i)   q,
-$$
+$$ W_K^{(j)} u_i(x) = (\log \lambda_i)   q, $$
 
 so the logit at that position is $\log \lambda_i$ and the unnormalized attention weight is $\lambda_i$. Also
 
-$$
-W_V^{(j)} u_i(x) = 0.
-$$
+$$ W_V^{(j)} u_i(x) = 0. $$
 
 If $x_i = 1$, the embedded vector is $u + (\log \lambda_i)   r$. Therefore:
 
-$$
-W_K^{(j)} u_i(x) = \bigl(\log \alpha_j + \log \lambda_i \bigr) q,
-$$
+$$ W_K^{(j)} u_i(x) = \bigl(\log \alpha_j + \log \lambda_i \bigr) q, $$
 
 so the logit is $\log(\alpha_j \lambda_i)$ and the unnormalized attention weight is $\alpha_j \lambda_i$. Also
 
-$$
-W_V^{(j)} u_i(x) = e_j.
-$$
+$$ W_V^{(j)} u_i(x) = e_j. $$
 
 For the query token, the embedding is $q$. Since $W_K^{(j)} q = 0$ and $W_V^{(j)} q = 0$, the query position contributes unnormalized weight $1$ and value $0$.
 
@@ -167,13 +121,7 @@ $$ \sum_{i : x_i = 1} \alpha_j \lambda_i   e_j = \alpha_j \left( \sum_{i=1}^{n} 
 
 while the denominator is
 
-$$
-\begin{aligned}
-1 + \sum_{i : x_i = 0} \lambda_i + \sum_{i : x_i = 1} \alpha_j \lambda_i
-&= 1 + \sum_{i=1}^{n} \lambda_i + (\alpha_j - 1) \sum_{i=1}^{n} \lambda_i x_i \\
-&= 1 + \Lambda + (\alpha_j - 1) t(x).
-\end{aligned}
-$$
+$$ \begin{aligned} 1 + \sum_{i : x_i = 0} \lambda_i + \sum_{i : x_i = 1} \alpha_j \lambda_i &= 1 + \sum_{i=1}^{n} \lambda_i + (\alpha_j - 1) \sum_{i=1}^{n} \lambda_i x_i \\ &= 1 + \Lambda + (\alpha_j - 1) t(x). \end{aligned} $$
 
 Hence
 
@@ -185,9 +133,7 @@ This proves the formula. $\blacksquare$
 
 **Proof.** Suppose
 
-$$
-c_0 + \sum_{j=1}^{M-1} c_j g_j(\tau) = 0
-$$
+$$ c_0 + \sum_{j=1}^{M-1} c_j g_j(\tau) = 0 $$
 
 for every $\tau \in \mathrm{Im}(t)$.
 
@@ -195,33 +141,21 @@ Evaluating at $\tau_0 = 0$ gives $c_0 = 0$, because $g_j(0) = 0$ for every $j$.
 
 Now fix $m \in \lbrace1, \ldots, M-1\rbrace$. Since $\tau_m > 0$, we may divide by $\tau_m$ and obtain
 
-$$
-\sum_{j=1}^{M-1}
-\frac{c_j \alpha_j}{1 + \Lambda + (\alpha_j - 1) \tau_m}
-= 0.
-$$
+$$ \sum_{j=1}^{M-1} \frac{c_j \alpha_j}{1 + \Lambda + (\alpha_j - 1) \tau_m} = 0. $$
 
 Define
 
-$$
-r_j := \frac{1 + \Lambda}{\alpha_j - 1},
-\qquad
-d_j := \frac{c_j \alpha_j}{\alpha_j - 1}.
-$$
+$$ r_j := \frac{1 + \Lambda}{\alpha_j - 1}, \qquad d_j := \frac{c_j \alpha_j}{\alpha_j - 1}. $$
 
 Then the relation becomes
 
-$$
-\sum_{j=1}^{M-1} \frac{d_j}{\tau_m + r_j} = 0
-$$
+$$ \sum_{j=1}^{M-1} \frac{d_j}{\tau_m + r_j} = 0 $$
 
 for every $m = 1, \ldots, M-1$.
 
 Now consider the rational function
 
-$$
-R(s) := \sum_{j=1}^{M-1} \frac{d_j}{s + r_j}.
-$$
+$$ R(s) := \sum_{j=1}^{M-1} \frac{d_j}{s + r_j}. $$
 
 Multiply by the common denominator to get
 
@@ -231,21 +165,15 @@ This is a polynomial of degree at most $M - 2$.
 
 Because $R(\tau_m) = 0$ for $m = 1, \ldots, M-1$, the polynomial $N$ vanishes at the $M-1$ distinct points
 
-$$
-\tau_1, \ldots, \tau_{M-1}.
-$$
+$$ \tau_1, \ldots, \tau_{M-1}. $$
 
 A polynomial of degree at most $M-2$ with $M-1$ distinct roots must be the zero polynomial. So
 
-$$
-N(s) \equiv 0.
-$$
+$$ N(s) \equiv 0. $$
 
 Now fix $j$ and evaluate this zero polynomial at $s = -r_j$. Every term vanishes except the $j$-th one, so
 
-$$
-d_j \prod_{\ell \neq j} (r_{\ell} - r_j) = 0.
-$$
+$$ d_j \prod_{\ell \neq j} (r_{\ell} - r_j) = 0. $$
 
 Because the $\alpha_j$ are distinct, the $r_j$ are distinct as well, so the product is nonzero. Therefore $d_j = 0$ for every $j$.
 
@@ -259,66 +187,41 @@ Hence every $c_j = 0$, and the functions $1, g_1, \ldots, g_{M-1}$ are linearly 
 
 **Proof.** Define a target sign pattern on $\mathrm{Im}(t)$ by
 
-$$
-\sigma(\tau)
-:=
-\begin{cases}
-+1 & \text{if } F(\tau) = 1, \\
--1 & \text{if } F(\tau) = 0.
-\end{cases}
-$$
+$$ \sigma(\tau) := \begin{cases} +1 & \text{if } F(\tau) = 1, \\ -1 & \text{if } F(\tau) = 0. \end{cases} $$
 
 By Corollary 3, there exist coefficients
 
-$$
-\beta_0, \beta_1, \ldots, \beta_{M-1}
-$$
+$$ \beta_0, \beta_1, \ldots, \beta_{M-1} $$
 
 such that
 
-$$
-\beta_0 + \sum_{j=1}^{M-1} \beta_j g_j(\tau) = \sigma(\tau)
-$$
+$$ \beta_0 + \sum_{j=1}^{M-1} \beta_j g_j(\tau) = \sigma(\tau) $$
 
 for every $\tau \in \mathrm{Im}(t)$.
 
 Choose the final readout vector
 
-$$
-w := \sum_{j=1}^{M-1} \beta_j e_j.
-$$
+$$ w := \sum_{j=1}^{M-1} \beta_j e_j. $$
 
 Since $w$ is orthogonal to $q$, the constant query skip connection makes no contribution to the readout.
 
 Let $r(x)$ be the final residual stream at the query token. By Lemma 1,
 
-$$
-w^\top r(x) = \sum_{j=1}^{M-1} \beta_j g_j(t(x)).
-$$
+$$ w^\top r(x) = \sum_{j=1}^{M-1} \beta_j g_j(t(x)). $$
 
 Now choose threshold
 
-$$
-\tau_{\mathrm{out}} := -\beta_0.
-$$
+$$ \tau_{\mathrm{out}} := -\beta_0. $$
 
 Then
 
-$$
-\begin{aligned}
-w^\top r(x) - \tau_{\mathrm{out}}
-&= \beta_0 + \sum_{j=1}^{M-1} \beta_j g_j(t(x)) \\
-&= \sigma(t(x)).
-\end{aligned}
-$$
+$$ \begin{aligned} w^\top r(x) - \tau_{\mathrm{out}} &= \beta_0 + \sum_{j=1}^{M-1} \beta_j g_j(t(x)) \\ &= \sigma(t(x)). \end{aligned} $$
 
 So this affine score is positive exactly when $F(t(x)) = 1$, and negative exactly when $F(t(x)) = 0$. Since $f(x) = F(t(x))$, the resulting $(M-1)$-head model computes $f$ exactly.
 
 Therefore
 
-$$
-H^{*}(f) \leq M - 1.
-$$
+$$ H^{*}(f) \leq M - 1. $$
 
 This completes the proof of the theorem. $\blacksquare$
 
@@ -328,24 +231,11 @@ This completes the proof of the theorem. $\blacksquare$
 
 Define
 
-$$
-M_{+}(f)
-:=
-\min \left\lbrace
-\lvert \mathrm{Im}\left(\sum_{i=1}^{n} \lambda_i x_i\right) \rvert
-:
-\lambda_1, \ldots, \lambda_n > 0,
- 
-f(x) = F \left(\sum_{i=1}^{n} \lambda_i x_i\right)
-\text{ for some } F
-\right\rbrace.
-$$
+$$ M_{+}(f) := \min \left\lbrace \lvert \mathrm{Im}\left(\sum_{i=1}^{n} \lambda_i x_i\right) \rvert : \lambda_1, \ldots, \lambda_n > 0, f(x) = F \left(\sum_{i=1}^{n} \lambda_i x_i\right) \text{ for some } F \right\rbrace. $$
 
 The theorem implies
 
-$$
-H^{*}(f) \leq M_{+}(f) - 1.
-$$
+$$ H^{*}(f) \leq M_{+}(f) - 1. $$
 
 This gives a candidate upper-bound invariant for the first core question in [../problem_statement.md](../../problem_statement.md).
 
@@ -355,50 +245,34 @@ This gives a candidate upper-bound invariant for the first core question in [../
 
 If $f$ is symmetric, take
 
-$$
-\lambda_1 = \cdots = \lambda_n = 1.
-$$
+$$ \lambda_1 = \cdots = \lambda_n = 1. $$
 
 Then
 
-$$
-t(x) = x_1 + \cdots + x_n = \lvert x\rvert,
-$$
+$$ t(x) = x_1 + \cdots + x_n = \lvert x\rvert, $$
 
 so
 
-$$
-\mathrm{Im}(t) = \lbrace0,1,\ldots,n\rbrace
-$$
+$$ \mathrm{Im}(t) = \lbrace0,1,\ldots,n\rbrace $$
 
 and $M = n+1$. Therefore
 
-$$
-H^{*}(f) \leq n.
-$$
+$$ H^{*}(f) \leq n. $$
 
 ### Corollary 6. Universal upper bound
 
 For an arbitrary Boolean function $f$, take binary weights
 
-$$
-\lambda_i = 2^{i-1}.
-$$
+$$ \lambda_i = 2^{i-1}. $$
 
 Then
 
-$$
-t(x) = \sum_{i=1}^{n} 2^{i-1} x_i
-$$
+$$ t(x) = \sum_{i=1}^{n} 2^{i-1} x_i $$
 
 is injective on $\lbrace0,1\rbrace^n$, so
 
-$$
-\lvert\mathrm{Im}(t)\rvert = 2^n.
-$$
+$$ \lvert\mathrm{Im}(t)\rvert = 2^n. $$
 
 Therefore every Boolean function satisfies
 
-$$
-H^{*}(f) \leq 2^n - 1.
-$$
+$$ H^{*}(f) \leq 2^n - 1. $$

@@ -4,29 +4,21 @@
 
 A read-once literal decision list of length $L$ consists of distinct coordinates
 
-$$
-i_1,\ldots,i_L,
-$$
+$$ i_1,\ldots,i_L, $$
 
 literals
 
-$$
-\ell_j(x)\in\lbrace x_{i_j},1-x_{i_j}\rbrace,
-$$
+$$ \ell_j(x)\in\lbrace x_{i_j},1-x_{i_j}\rbrace, $$
 
 branch labels
 
-$$
-b_1,\ldots,b_L\in\lbrace0,1\rbrace,
-$$
+$$ b_1,\ldots,b_L\in\lbrace0,1\rbrace, $$
 
 and a default label $b_{L+1}\in\lbrace0,1\rbrace$. It computes the Boolean function $f$ that returns $b_j$ at the first index $j$ with $\ell_j(x)=1$, and returns $b_{L+1}$ if no literal fires.
 
 Then
 
-$$
-H^{*}(f)\leq L.
-$$
+$$ H^{*}(f)\leq L. $$
 
 More generally, any ordinary literal decision list is equivalent to a read-once literal decision list of no larger length, so the same bound holds for its simplified length.
 
@@ -38,49 +30,29 @@ We first prove the read-once statement. For $j\in\lbrace1,\ldots,L+1\rbrace$, le
 
 We prove by backward induction that
 
-$$
-H^{*}(F_j)\leq L-j+1.
-$$
+$$ H^{*}(F_j)\leq L-j+1. $$
 
 The base case $j=L+1$ is constant, so
 
-$$
-H^{*}(F_{L+1})=0.
-$$
+$$ H^{*}(F_{L+1})=0. $$
 
 Now suppose $j\leq L$ and the claim holds for $F_{j+1}$. The coordinate $i_j$ does not occur in the suffix because the list is read-once, so $F_{j+1}$ is a function of the remaining coordinates.
 
 If $b_j=1$, then the suffix relation is
 
-$$
-F_j(x)=\ell_j(x)\vee F_{j+1}(x).
-$$
+$$ F_j(x)=\ell_j(x)\vee F_{j+1}(x). $$
 
 The OR gate is neither XOR nor XNOR. Applying the one-bit non-XOR recursion theorem [087_one_bit_non_xor_gate_recursion.md](087_one_bit_non_xor_gate_recursion.md) gives
 
-$$
-H^{*}(F_j)
-\leq
-H^{*}(F_{j+1})+1
-\leq
-L-j+1.
-$$
+$$ H^{*}(F_j) \leq H^{*}(F_{j+1})+1 \leq L-j+1. $$
 
 If $b_j=0$, then
 
-$$
-F_j(x)=(1-\ell_j(x))\wedge F_{j+1}(x).
-$$
+$$ F_j(x)=(1-\ell_j(x))\wedge F_{j+1}(x). $$
 
 The AND gate is also neither XOR nor XNOR, and the theorem applies again, with the complemented literal as the raw input. Therefore
 
-$$
-H^{*}(F_j)
-\leq
-H^{*}(F_{j+1})+1
-\leq
-L-j+1.
-$$
+$$ H^{*}(F_j) \leq H^{*}(F_{j+1})+1 \leq L-j+1. $$
 
 This completes the induction and gives $H^{*}(f)\leq L$.
 
@@ -92,9 +64,7 @@ Applying the read-once bound to the simplified list proves the general statement
 
 This proves the literal case of the decision-list upper-bound program:
 
-$$
-H^{*}(f)\leq L_{\mathrm{litDL}}(f),
-$$
+$$ H^{*}(f)\leq L_{\mathrm{litDL}}(f), $$
 
 where $L_{\mathrm{litDL}}(f)$ is the minimum length of a literal decision list computing $f$.
 

@@ -4,49 +4,33 @@
 
 Let
 
-$$
-T:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace
-$$
+$$ T:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace $$
 
 be any Boolean function, and let
 
-$$
-G:\lbrace0,1\rbrace^{2}\to\lbrace0,1\rbrace
-$$
+$$ G:\lbrace0,1\rbrace^{2}\to\lbrace0,1\rbrace $$
 
 be a two-input Boolean gate that is neither XOR nor XNOR. Define
 
-$$
-F(z,y):=G(z,T(y)).
-$$
+$$ F(z,y):=G(z,T(y)). $$
 
 Then:
 
 1. If $G$ is constant or depends only on $z$, then
 
-$$
-H^{*}(F)\leq1.
-$$
+$$ H^{*}(F)\leq1. $$
 
 2. If $G$ depends only on its second input, then
 
-$$
-H^{*}(F)\leq\mathrm{actc}(T).
-$$
+$$ H^{*}(F)\leq\mathrm{actc}(T). $$
 
 3. If $G$ genuinely depends on both inputs, then
 
-$$
-H^{*}(F)\leq1+\mathrm{lgactc}(T).
-$$
+$$ H^{*}(F)\leq1+\mathrm{lgactc}(T). $$
 
 In particular, for every non-XOR and non-XNOR gate $G$,
 
-$$
-H^{*}(G(z,T(y)))
-\leq
-1+\mathrm{actc}(T)+\mathrm{lgactc}(T),
-$$
+$$ H^{*}(G(z,T(y))) \leq 1+\mathrm{actc}(T)+\mathrm{lgactc}(T), $$
 
 and the sharper case split above should be used whenever the gate form is known.
 
@@ -58,33 +42,21 @@ If $G$ is constant, then $F$ is constant, so $H^{*}(F)=0$. If $G$ depends only o
 
 If $G$ depends only on its second input, then $F$ is either $T$ or $1-T$. The affine-cylinder upper bound [103_affine_cylinder_threshold_cost.md](103_affine_cylinder_threshold_cost.md) and complement invariance give
 
-$$
-H^{*}(F)\leq\mathrm{actc}(T).
-$$
+$$ H^{*}(F)\leq\mathrm{actc}(T). $$
 
 Now suppose $G$ depends on both inputs and is neither XOR nor XNOR. Then, up to output complement and complementing the $T$ input, $G$ is one of
 
-$$
-r(z)\wedge u
-\qquad
-\text{or}
-\qquad
-r(z)\vee u,
-$$
+$$ r(z)\wedge u \qquad \text{or} \qquad r(z)\vee u, $$
 
 where $r(z)$ is either $z$ or $1-z$.
 
 Replacing $T$ by $1-T$ does not change $\mathrm{lgactc}(T)$, because negating a strict affine-cylinder score preserves the affine slopes and cylinder supports. Output complement does not change head complexity. Therefore the genuine two-input case follows from [122_lifted_literal_gating_cost.md](122_lifted_literal_gating_cost.md):
 
-$$
-H^{*}(F)\leq1+\mathrm{lgactc}(T).
-$$
+$$ H^{*}(F)\leq1+\mathrm{lgactc}(T). $$
 
 The final uniform bound follows from the three cases, since each right-hand side is at most
 
-$$
-1+\mathrm{actc}(T)+\mathrm{lgactc}(T).
-$$
+$$ 1+\mathrm{actc}(T)+\mathrm{lgactc}(T). $$
 
 $\blacksquare$
 

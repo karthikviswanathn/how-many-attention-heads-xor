@@ -4,35 +4,19 @@
 
 Let
 
-$$
-t(y)=\sum_{i=1}^{m}\lambda_i y_i,
-\qquad
-\lambda_i>0,
-$$
+$$ t(y)=\sum_{i=1}^{m}\lambda_i y_i, \qquad \lambda_i>0, $$
 
 and let $T(y)=F(t(y))$ be nonconstant. Let $C$ be the sign-change count of $F$ along the ordered image of $t$. Assume
 
-$$
-\deg_{\pm}(T)=C.
-$$
+$$ \deg_{\pm}(T)=C. $$
 
 For any two-input Boolean gate $G$, define
 
-$$
-H_G(z,y):=G(z,T(y)).
-$$
+$$ H_G(z,y):=G(z,T(y)). $$
 
 Then
 
-$$
-H^{*}(H_G)=
-\begin{cases}
-0 & \text{if }G\text{ is constant},\\
-1 & \text{if }G\text{ is a raw-bit literal},\\
-C+1 & \text{if }G\text{ is XOR or XNOR},\\
-C & \text{otherwise}.
-\end{cases}
-$$
+$$ H^{*}(H_G)= \begin{cases} 0 & \text{if }G\text{ is constant},\\ 1 & \text{if }G\text{ is a raw-bit literal},\\ C+1 & \text{if }G\text{ is XOR or XNOR},\\ C & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** Whenever the positive-statistic sign-change upper bound is threshold-degree tight for the feature, the complete one-bit gate table is exact.
 
@@ -42,29 +26,21 @@ Constants and raw-bit literals have exact values $0$ and $1$ by the zero-head an
 
 For XOR and XNOR, the positive-statistic fresh-XOR sign-change bound [139_positive_statistic_fresh_xor_sign_change_bound.md](139_positive_statistic_fresh_xor_sign_change_bound.md) gives
 
-$$
-H^{*}(H_G)\leq C+1.
-$$
+$$ H^{*}(H_G)\leq C+1. $$
 
 The one-bit gate threshold-degree trichotomy [082_one_bit_gate_threshold_degree_trichotomy.md](../04_recursions_and_cost_invariants/082_one_bit_gate_threshold_degree_trichotomy.md) gives
 
-$$
-\deg_{\pm}(H_G)=\deg_{\pm}(T)+1=C+1.
-$$
+$$ \deg_{\pm}(H_G)=\deg_{\pm}(T)+1=C+1. $$
 
 Thus XOR and XNOR have exact value $C+1$.
 
 For every remaining nonconstant gate, the positive-statistic non-XOR gate bound [140_positive_statistic_non_xor_gate_sign_change_bound.md](140_positive_statistic_non_xor_gate_sign_change_bound.md) gives
 
-$$
-H^{*}(H_G)\leq C.
-$$
+$$ H^{*}(H_G)\leq C. $$
 
 The one-bit gate threshold-degree trichotomy gives
 
-$$
-\deg_{\pm}(H_G)=\deg_{\pm}(T)=C.
-$$
+$$ \deg_{\pm}(H_G)=\deg_{\pm}(T)=C. $$
 
 Thus these gates have exact value $C$. $\blacksquare$
 

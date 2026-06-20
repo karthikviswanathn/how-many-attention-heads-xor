@@ -4,11 +4,7 @@
 
 Let
 
-$$
-t(y)=\sum_{i=1}^{m}\lambda_i y_i,
-\qquad
-\lambda_i>0,
-$$
+$$ t(y)=\sum_{i=1}^{m}\lambda_i y_i, \qquad \lambda_i>0, $$
 
 and let $P(z,y)$ be a strict sign polynomial for a Boolean function $f(z,y)$ that can be written as a cubic polynomial in $t(y)$ and $z$, reduced using $z^2=z$:
 
@@ -16,9 +12,7 @@ $$ P(z,y) = \sum_{r=0}^{3}a_rt(y)^r + z\sum_{r=0}^{2}b_rt(y)^r. $$
 
 Then
 
-$$
-H^{*}(f)\leq3.
-$$
+$$ H^{*}(f)\leq3. $$
 
 > **Interpretation.** Any strict cubic threshold in one positive statistic and one raw bit has a three-head certificate.
 
@@ -26,19 +20,11 @@ $$
 
 Write $u$ for $t(y)$. Use the cubic basis
 
-$$
-1,\quad u,\quad u^2,\quad u^3,\quad z,\quad zu,\quad zu^2.
-$$
+$$ 1,\quad u,\quad u^2,\quad u^3,\quad z,\quad zu,\quad zu^2. $$
 
 Define positive affine denominators
 
-$$
-B_1:=1+u+z,
-\qquad
-B_2:=2+u+2z,
-\qquad
-B_3:=3+u+4z.
-$$
+$$ B_1:=1+u+z, \qquad B_2:=2+u+2z, \qquad B_3:=3+u+4z. $$
 
 The following table records seven denominator-cleared products, reduced using $z^2=z$:
 
@@ -56,11 +42,7 @@ The determinant of this $7\times7$ coefficient matrix is $-480$, so these produc
 
 Therefore there are affine functions
 
-$$
-A_h(z,u)=a_h+b_hu+c_hz,
-\qquad
-h\in\lbrace1,2,3\rbrace,
-$$
+$$ A_h(z,u)=a_h+b_hu+c_hz, \qquad h\in\lbrace1,2,3\rbrace, $$
 
 such that
 
@@ -70,15 +52,11 @@ on the Boolean cube. Since each $B_h$ has positive constant term and positive co
 
 The three-head score
 
-$$
-\frac{A_1}{B_1}+\frac{A_2}{B_2}+\frac{A_3}{B_3}
-$$
+$$ \frac{A_1}{B_1}+\frac{A_2}{B_2}+\frac{A_3}{B_3} $$
 
 has sign equal to the sign of
 
-$$
-\frac{P}{B_1B_2B_3},
-$$
+$$ \frac{P}{B_1B_2B_3}, $$
 
 and the denominator is positive on the cube. Thus three heads compute $f$. $\blacksquare$
 

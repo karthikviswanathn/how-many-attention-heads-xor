@@ -4,50 +4,27 @@
 
 For a nonempty set $S\subseteq\lbrace1,\ldots,n\rbrace$ and positive weights $\lambda_i>0$, define
 
-$$
-L_S(x):=\sum_{i\in S}\lambda_i x_i,
-\qquad
-\Lambda_S:=\sum_{i\in S}\lambda_i.
-$$
+$$ L_S(x):=\sum_{i\in S}\lambda_i x_i, \qquad \Lambda_S:=\sum_{i\in S}\lambda_i. $$
 
 An endpoint affine-threshold feature is either
 
-$$
-U_S(x):=\mathbf{1}[L_S(x)>0]
-$$
+$$ U_S(x):=\mathbf{1}[L_S(x)>0] $$
 
 or
 
-$$
-A_S(x):=\mathbf{1}[L_S(x)=\Lambda_S].
-$$
+$$ A_S(x):=\mathbf{1}[L_S(x)=\Lambda_S]. $$
 
 Let $T_1,\ldots,T_s$ be endpoint affine-threshold features, and suppose
 
-$$
-f(x)=1
-\qquad\Longleftrightarrow\qquad
-c_0+\sum_{j=1}^{s}c_jT_j(x)>0
-$$
+$$ f(x)=1 \qquad\Longleftrightarrow\qquad c_0+\sum_{j=1}^{s}c_jT_j(x)>0 $$
 
 with positive vote margin
 
-$$
-\mu
-:=
-\min_{x\in\lbrace0,1\rbrace^{n}}
-\left\lvert
-c_0+\sum_{j=1}^{s}c_jT_j(x)
-\right\rvert
->
-0.
-$$
+$$ \mu := \min_{x\in\lbrace0,1\rbrace^{n}} \left\lvert c_0+\sum_{j=1}^{s}c_jT_j(x) \right\rvert > 0. $$
 
 Then
 
-$$
-H^{*}(f)\leq s.
-$$
+$$ H^{*}(f)\leq s. $$
 
 > **Interpretation.** The unqualified threshold-vote upper bound fails for arbitrary LTF gates, but it is valid for strict votes over endpoint positive affine thresholds. This includes weighted votes over positive OR-type clauses and positive AND-type terms.
 
@@ -57,39 +34,27 @@ By the calibrated threshold-vote theorem [085_calibrated_threshold_vote_upper_bo
 
 Fix $S$ and write
 
-$$
-\lambda_{\min}:=\min_{i\in S}\lambda_i>0.
-$$
+$$ \lambda_{\min}:=\min_{i\in S}\lambda_i>0. $$
 
 ### Lower endpoint
 
 First consider
 
-$$
-U_S(x)=\mathbf{1}[L_S(x)>0].
-$$
+$$ U_S(x)=\mathbf{1}[L_S(x)>0]. $$
 
 Choose small parameters $\delta>0$ and $\kappa>0$, and define
 
-$$
-B_U(x)
-:=
-\delta+L_S(x)+\kappa\sum_{i\notin S}x_i.
-$$
+$$ B_U(x) := \delta+L_S(x)+\kappa\sum_{i\notin S}x_i. $$
 
 This affine denominator has positive constant term and strictly positive coefficients for every variable after taking the coefficient $\kappa$ outside $S$. By the denominator-orientation theorem [032_denominator_orientation.md](../02_complexity_measure_upper_bounds/032_denominator_orientation.md),
 
-$$
-\phi_U(x):=\frac{L_S(x)}{B_U(x)}
-$$
+$$ \phi_U(x):=\frac{L_S(x)}{B_U(x)} $$
 
 is a one-head atom.
 
 If $U_S(x)=0$, then $L_S(x)=0$, so
 
-$$
-\phi_U(x)=0.
-$$
+$$ \phi_U(x)=0. $$
 
 If $U_S(x)=1$, then $L_S(x)\geq\lambda_{\min}$, and
 
@@ -101,25 +66,17 @@ Taking $\delta$ and $\kappa$ small enough makes this uniformly smaller than any 
 
 Now consider
 
-$$
-A_S(x)=\mathbf{1}[L_S(x)=\Lambda_S].
-$$
+$$ A_S(x)=\mathbf{1}[L_S(x)=\Lambda_S]. $$
 
 Let
 
-$$
-D_S(x):=\Lambda_S-L_S(x).
-$$
+$$ D_S(x):=\Lambda_S-L_S(x). $$
 
 Thus $D_S(x)=0$ exactly on the upper endpoint, and $D_S(x)\geq\lambda_{\min}$ otherwise.
 
 Choose small parameters $\delta>0$ and $\kappa>0$, and define
 
-$$
-B_A(x)
-:=
-\delta+D_S(x)+\kappa\sum_{i\notin S}(1-x_i).
-$$
+$$ B_A(x) := \delta+D_S(x)+\kappa\sum_{i\notin S}(1-x_i). $$
 
 Equivalently,
 
@@ -127,9 +84,7 @@ $$ B_A(x) = \delta+\Lambda_S+\kappa(n-\lvert S\rvert) -\sum_{i\in S}\lambda_i x_
 
 This affine denominator has strictly negative coefficients for every variable and remains positive on the cube. By the denominator-orientation theorem,
 
-$$
-\phi_A(x):=\frac{\delta}{B_A(x)}
-$$
+$$ \phi_A(x):=\frac{\delta}{B_A(x)} $$
 
 is a one-head atom.
 
@@ -141,13 +96,7 @@ Choosing $\kappa$ much smaller than $\delta$ makes this uniformly as close to $1
 
 If $A_S(x)=0$, then $D_S(x)\geq\lambda_{\min}$, so
 
-$$
-0
-\leq
-\phi_A(x)
-\leq
-\frac{\delta}{\delta+\lambda_{\min}}.
-$$
+$$ 0 \leq \phi_A(x) \leq \frac{\delta}{\delta+\lambda_{\min}}. $$
 
 Choosing $\delta$ small makes this uniformly as close to $0$ as desired.
 
@@ -155,15 +104,11 @@ Therefore both endpoint feature types admit arbitrarily accurate one-head atom a
 
 Finally, choose for each feature $T_j$ an approximation error $\epsilon_j$ so small that
 
-$$
-\sum_{j=1}^{s}\lvert c_j\rvert\epsilon_j<\mu.
-$$
+$$ \sum_{j=1}^{s}\lvert c_j\rvert\epsilon_j<\mu. $$
 
 The calibrated threshold-vote theorem then gives
 
-$$
-H^{*}(f)\leq s.
-$$
+$$ H^{*}(f)\leq s. $$
 
 $\blacksquare$
 

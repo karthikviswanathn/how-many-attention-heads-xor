@@ -4,67 +4,43 @@
 
 Let the variables be split into blocks
 
-$$
-B_1,\ldots,B_b
-$$
+$$ B_1,\ldots,B_b $$
 
 with block sizes $n_1,\ldots,n_b$. Suppose
 
-$$
-f(x)=F(\lvert x_{B_1}\rvert,\ldots,\lvert x_{B_b}\rvert).
-$$
+$$ f(x)=F(\lvert x_{B_1}\rvert,\ldots,\lvert x_{B_b}\rvert). $$
 
 Let $a_1,\ldots,a_b>0$. Assume there is a Boolean function $G$ on the image of
 
-$$
-s(r_1,\ldots,r_b):=\sum_{j=1}^{b}a_jr_j
-$$
+$$ s(r_1,\ldots,r_b):=\sum_{j=1}^{b}a_jr_j $$
 
 over the profile grid such that
 
-$$
-F(r_1,\ldots,r_b)=G(s(r_1,\ldots,r_b)).
-$$
+$$ F(r_1,\ldots,r_b)=G(s(r_1,\ldots,r_b)). $$
 
 List the image of $s$ on the grid in increasing order:
 
-$$
-\tau_0<\tau_1<\cdots<\tau_{M-1}.
-$$
+$$ \tau_0<\tau_1<\cdots<\tau_{M-1}. $$
 
 Define
 
-$$
-C_a(G)
-:=
-\lvert\lbrace m\in\lbrace1,\ldots,M-1\rbrace:G(\tau_{m-1})\neq G(\tau_m)\rbrace\rvert.
-$$
+$$ C_a(G) := \lvert\lbrace m\in\lbrace1,\ldots,M-1\rbrace:G(\tau_{m-1})\neq G(\tau_m)\rbrace\rvert. $$
 
 Then
 
-$$
-H^{*}(f)\leq C_a(G),
-\qquad
-C_{+}(f)\leq C_a(G).
-$$
+$$ H^{*}(f)\leq C_a(G), \qquad C_{+}(f)\leq C_a(G). $$
 
 If
 
-$$
-\deg_{\pm}(f)=C_a(G),
-$$
+$$ \deg_{\pm}(f)=C_a(G), $$
 
 then
 
-$$
-H^{*}(f)=\deg_{\pm}(f)=C_a(G).
-$$
+$$ H^{*}(f)=\deg_{\pm}(f)=C_a(G). $$
 
 In particular, if $a_1=\cdots=a_b=1$, so that
 
-$$
-f(x)=G(\lvert x\rvert),
-$$
+$$ f(x)=G(\lvert x\rvert), $$
 
 and $N=n_1+\cdots+n_b$, then
 
@@ -80,27 +56,19 @@ $$ t(x):=\sum_{j=1}^{b}a_j\lvert x_{B_j}\rvert = \sum_{j=1}^{b}\sum_{i\in B_j}a_
 
 All coefficients of $t$ are positive. By the assumed factorization,
 
-$$
-f(x)=G(t(x)).
-$$
+$$ f(x)=G(t(x)). $$
 
 The increasing image of $t$ on the cube is exactly the increasing image of $s$ on the profile grid. Its label sign-change count is $C_a(G)$. Applying the positive-projection sign-change theorem [013_positive_projection_sign_changes.md](../01_foundations_and_normal_form/013_positive_projection_sign_changes.md) gives
 
-$$
-H^{*}(f)\leq C_a(G)
-$$
+$$ H^{*}(f)\leq C_a(G) $$
 
 and also
 
-$$
-C_{+}(f)\leq C_a(G).
-$$
+$$ C_{+}(f)\leq C_a(G). $$
 
 If $\deg_{\pm}(f)=C_a(G)$, combine the upper bound with
 
-$$
-\deg_{\pm}(f)\leq H^{*}(f)
-$$
+$$ \deg_{\pm}(f)\leq H^{*}(f) $$
 
 to get equality throughout.
 

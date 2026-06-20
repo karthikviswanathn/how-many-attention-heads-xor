@@ -4,15 +4,11 @@
 
 For
 
-$$
-\mathrm{PARITY}_n(x) = x_1 \oplus \cdots \oplus x_n,
-$$
+$$ \mathrm{PARITY}_n(x) = x_1 \oplus \cdots \oplus x_n, $$
 
 we have
 
-$$
-\deg_{\pm}(\mathrm{PARITY}_n) = n.
-$$
+$$ \deg_{\pm}(\mathrm{PARITY}_n) = n. $$
 
 Here $\deg_{\pm}$ is the threshold degree, the least degree of a real polynomial that sign-represents the function on $\lbrace0,1\rbrace^n$ (see [006_threshold_degree_head_complexity_bound.md](006_threshold_degree_head_complexity_bound.md)).
 
@@ -94,20 +90,14 @@ So no degree-$(<n)$ polynomial sign-represents parity.
 
 Define
 
-$$
-P_{\mathrm{par}}(x) := -\prod_{i=1}^{n} (1 - 2x_i).
-$$
+$$ P_{\mathrm{par}}(x) := -\prod_{i=1}^{n} (1 - 2x_i). $$
 
 This is a polynomial of degree $n$. On the Boolean cube, each factor $1 - 2x_i$ equals $+1$ when $x_i = 0$ and $-1$ when $x_i = 1$, so
 
-$$
-P_{\mathrm{par}}(x) = -(-1)^{x_1 + \cdots + x_n}.
-$$
+$$ P_{\mathrm{par}}(x) = -(-1)^{x_1 + \cdots + x_n}. $$
 
 Therefore $P_{\mathrm{par}}(x)$ is positive exactly on odd-parity inputs and negative exactly on even-parity inputs. So parity has threshold degree at most $n$.
 
 Combining the lower and upper bounds gives
 
-$$
-\deg_{\pm}(\mathrm{PARITY}_n) = n. \qquad \blacksquare
-$$
+$$ \deg_{\pm}(\mathrm{PARITY}_n) = n. \qquad \blacksquare $$

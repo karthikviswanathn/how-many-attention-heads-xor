@@ -4,15 +4,11 @@
 
 Let
 
-$$
-f:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace
-$$
+$$ f:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace $$
 
 be computed by a deterministic decision tree of depth at most $2$. Then
 
-$$
-H^{*}(f)\leq2.
-$$
+$$ H^{*}(f)\leq2. $$
 
 More precisely,
 
@@ -26,17 +22,11 @@ If the tree has depth $0$, then $f$ is constant. Assume the depth is at most $2$
 
 A depth-two decision tree queries at most one root variable and at most one additional variable on each branch. Hence $f$ depends on at most three variables. Let
 
-$$
-g:\lbrace0,1\rbrace^k\to\lbrace0,1\rbrace,
-\qquad
-k\leq3,
-$$
+$$ g:\lbrace0,1\rbrace^k\to\lbrace0,1\rbrace, \qquad k\leq3, $$
 
 be the induced function on the essential variables. By junta reduction [039_junta_upper_bounds.md](../02_complexity_measure_upper_bounds/039_junta_upper_bounds.md),
 
-$$
-H^{*}(f)=H^{*}(g).
-$$
+$$ H^{*}(f)=H^{*}(g). $$
 
 The accepting leaves of the decision tree give an exact DNF for $g$:
 
@@ -44,19 +34,13 @@ $$ g(x) = \sum_{\ell\in\mathcal{L}_1} \left(\prod_{i\in P_\ell}x_i\right) \left(
 
 where each root-to-leaf path fixes at most two variables. Thus this exact polynomial has degree at most $2$. Therefore
 
-$$
-g(x)=1
-\qquad\Longleftrightarrow\qquad
-g(x)-\frac{1}{2}>0
-$$
+$$ g(x)=1 \qquad\Longleftrightarrow\qquad g(x)-\frac{1}{2}>0 $$
 
 is a quadratic sign representation.
 
 If $k<3$, add dummy variables. Dummy-variable invariance from [039_junta_upper_bounds.md](../02_complexity_measure_upper_bounds/039_junta_upper_bounds.md) preserves $H^{*}$, and the quadratic sign representation remains quadratic. The three-bit quadratic upper-bound theorem [015_three_bit_quadratic_upper_bound.md](../01_foundations_and_normal_form/015_three_bit_quadratic_upper_bound.md) gives
 
-$$
-H^{*}(g)\leq2.
-$$
+$$ H^{*}(g)\leq2. $$
 
 Thus $H^{*}(f)\leq2$.
 
@@ -66,11 +50,7 @@ The exact case split now follows from the zero-head and one-head characterizatio
 
 Decision-tree depth two is a complete exact class:
 
-$$
-D(f)\leq2
-\qquad\Longrightarrow\qquad
-H^{*}(f)\in\lbrace0,1,2\rbrace,
-$$
+$$ D(f)\leq2 \qquad\Longrightarrow\qquad H^{*}(f)\in\lbrace0,1,2\rbrace, $$
 
 with the value determined only by whether $f$ is constant, an LTF, or neither.
 

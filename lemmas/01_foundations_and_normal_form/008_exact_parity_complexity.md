@@ -28,9 +28,7 @@ We now construct an explicit $n$-head network computing parity.
 
 Take
 
-$$
-d_{\mathrm{model}} = d_{\mathrm{head}} = n + 2.
-$$
+$$ d_{\mathrm{model}} = d_{\mathrm{head}} = n + 2. $$
 
 Work in $\mathbb{R}^{n+2}$.
 
@@ -142,9 +140,7 @@ $$R(t) := \sum_{j=1}^{n} \frac{d_j}{t + r_j}.$$
 
 Multiply by the common denominator to get
 
-$$
-N(t) := R(t) \prod_{j=1}^{n} (t + r_j) = \sum_{j=1}^{n} d_j \prod_{m \neq j} (t + r_m).
-$$
+$$ N(t) := R(t) \prod_{j=1}^{n} (t + r_j) = \sum_{j=1}^{n} d_j \prod_{m \neq j} (t + r_m). $$
 
 This is a polynomial of degree at most $n - 1$.
 

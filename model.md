@@ -6,9 +6,7 @@ This file fixes the mathematical model used throughout the project.
 
 We study Boolean functions
 
-$$
-f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace
-$$
+$$ f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace $$
 
 computed by a one-layer attention-only architecture with a linear readout from a designated query token.
 
@@ -16,15 +14,11 @@ computed by a one-layer attention-only architecture with a linear readout from a
 
 For an input
 
-$$
-x = (x_1, \ldots, x_n) \in \lbrace0,1\rbrace^n,
-$$
+$$ x = (x_1, \ldots, x_n) \in \lbrace0,1\rbrace^n, $$
 
 the model sees the sequence
 
-$$
-(x_1, \ldots, x_n, =).
-$$
+$$ (x_1, \ldots, x_n, =). $$
 
 The final symbol `=` is a distinguished query token. We only read out the residual stream at that token.
 
@@ -34,27 +28,19 @@ Fix a model dimension $d_{\mathrm{model}} \geq 1$ and a head dimension $d_{\math
 
 Choose token embeddings
 
-$$
-e_0, e_1, e_= \in \mathbb{R}^{d_{\mathrm{model}}}
-$$
+$$ e_0, e_1, e_= \in \mathbb{R}^{d_{\mathrm{model}}} $$
 
 and positional embeddings
 
-$$
-p_1, \ldots, p_n, p_= \in \mathbb{R}^{d_{\mathrm{model}}}.
-$$
+$$ p_1, \ldots, p_n, p_= \in \mathbb{R}^{d_{\mathrm{model}}}. $$
 
 For an input $x$, define the embedded vectors
 
-$$
-u_i(x) := e_{x_i} + p_i \qquad \text{for } 1 \leq i \leq n,
-$$
+$$ u_i(x) := e_{x_i} + p_i \qquad \text{for } 1 \leq i \leq n, $$
 
 and
 
-$$
-u_=(x) := e_= + p_=.
-$$
+$$ u_=(x) := e_= + p_=. $$
 
 Note that $u_=(x)$ is constant as a function of $x$.
 
@@ -62,84 +48,51 @@ Note that $u_=(x)$ is constant as a function of $x$.
 
 For each head $h \in \lbrace1, \ldots, H\rbrace$, choose matrices
 
-$$
-W_Q^{(h)}, W_K^{(h)}, W_V^{(h)} \in \mathbb{R}^{d_{\mathrm{head}} \times d_{\mathrm{model}}}.
-$$
+$$ W_Q^{(h)}, W_K^{(h)}, W_V^{(h)} \in \mathbb{R}^{d_{\mathrm{head}} \times d_{\mathrm{model}}}. $$
 
 Also choose output-projection blocks
 
-$$
-W_O^{(h)} \in \mathbb{R}^{d_{\mathrm{model}} \times d_{\mathrm{head}}}.
-$$
+$$ W_O^{(h)} \in \mathbb{R}^{d_{\mathrm{model}} \times d_{\mathrm{head}}}. $$
 
 Equivalently, one may concatenate these blocks into a single matrix
 
-$$
-W_O = \begin{bmatrix} W_O^{(1)} & \cdots & W_O^{(H)} \end{bmatrix}
-\in
-\mathbb{R}^{d_{\mathrm{model}} \times H d_{\mathrm{head}}}.
-$$
+$$ W_O = \begin{bmatrix} W_O^{(1)} & \cdots & W_O^{(H)} \end{bmatrix} \in \mathbb{R}^{d_{\mathrm{model}} \times H d_{\mathrm{head}}}. $$
 
 For each position
 
-$$
-j \in \lbrace1, \ldots, n, =\rbrace,
-$$
+$$ j \in \lbrace1, \ldots, n, =\rbrace, $$
 
 define
 
-$$
-q^{(h)}(x) := W_Q^{(h)} u_=(x) \in \mathbb{R}^{d_{\mathrm{head}}},
-$$
+$$ q^{(h)}(x) := W_Q^{(h)} u_=(x) \in \mathbb{R}^{d_{\mathrm{head}}}, $$
 
-$$
-k_j^{(h)}(x) := W_K^{(h)} u_j(x) \in \mathbb{R}^{d_{\mathrm{head}}},
-$$
+$$ k_j^{(h)}(x) := W_K^{(h)} u_j(x) \in \mathbb{R}^{d_{\mathrm{head}}}, $$
 
 and
 
-$$
-v_j^{(h)}(x) := W_V^{(h)} u_j(x) \in \mathbb{R}^{d_{\mathrm{head}}}.
-$$
+$$ v_j^{(h)}(x) := W_V^{(h)} u_j(x) \in \mathbb{R}^{d_{\mathrm{head}}}. $$
 
 The query-token logit is
 
-$$
-\ell_j^{(h)}(x) := \bigl(q^{(h)}(x)\bigr)^\top k_j^{(h)}(x).
-$$
+$$ \ell_j^{(h)}(x) := \bigl(q^{(h)}(x)\bigr)^\top k_j^{(h)}(x). $$
 
 The attention weights are the softmax probabilities
 
-$$
-\alpha_j^{(h)}(x)
-:=
-\frac{\exp\bigl(\ell_j^{(h)}(x)\bigr)}
-{\sum_{k \in \lbrace1,\ldots,n,=\rbrace} \exp\bigl(\ell_k^{(h)}(x)\bigr)}.
-$$
+$$ \alpha_j^{(h)}(x) := \frac{\exp\bigl(\ell_j^{(h)}(x)\bigr)} {\sum_{k \in \lbrace1,\ldots,n,=\rbrace} \exp\bigl(\ell_k^{(h)}(x)\bigr)}. $$
 
 The unprojected output of head $h$ at the query position is
 
-$$
-\widetilde y^{(h)}(x)
-:=
-\sum_{j \in \lbrace1,\ldots,n,=\rbrace}
-\alpha_j^{(h)}(x)  v_j^{(h)}(x)
-\in \mathbb{R}^{d_{\mathrm{head}}}.
-$$
+$$ \widetilde y^{(h)}(x) := \sum_{j \in \lbrace1,\ldots,n,=\rbrace} \alpha_j^{(h)}(x)  v_j^{(h)}(x) \in \mathbb{R}^{d_{\mathrm{head}}}. $$
 
 The projected contribution of head $h$ to the residual stream is
 
-$$
-y^{(h)}(x) := W_O^{(h)} \widetilde y^{(h)}(x) \in \mathbb{R}^{d_{\mathrm{model}}}.
-$$
+$$ y^{(h)}(x) := W_O^{(h)} \widetilde y^{(h)}(x) \in \mathbb{R}^{d_{\mathrm{model}}}. $$
 
 ## Residual Stream At The Query Token
 
 With $H$ parallel heads, the residual stream at the query token after the attention layer is
 
-$$
-r(x) := u_=(x) + \sum_{h=1}^{H} y^{(h)}(x).
-$$
+$$ r(x) := u_=(x) + \sum_{h=1}^{H} y^{(h)}(x). $$
 
 This is the only representation used by the final classifier.
 
@@ -147,37 +100,23 @@ This is the only representation used by the final classifier.
 
 Choose a readout vector
 
-$$
-w \in \mathbb{R}^{d_{\mathrm{model}}}
-$$
+$$ w \in \mathbb{R}^{d_{\mathrm{model}}} $$
 
 and a threshold
 
-$$
-\tau \in \mathbb{R}.
-$$
+$$ \tau \in \mathbb{R}. $$
 
 The classifier outputs
 
-$$
-f(x) = 1
-\qquad \Longleftrightarrow \qquad
-w^\top r(x) > \tau.
-$$
+$$ f(x) = 1 \qquad \Longleftrightarrow \qquad w^\top r(x) > \tau. $$
 
 Equivalently, one may write an affine score
 
-$$
-S(x) := w^\top r(x) - \tau
-$$
+$$ S(x) := w^\top r(x) - \tau $$
 
 and classify by the rule
 
-$$
-f(x) = 1
-\qquad \Longleftrightarrow \qquad
-S(x) > 0.
-$$
+$$ f(x) = 1 \qquad \Longleftrightarrow \qquad S(x) > 0. $$
 
 ## Computability And Head Complexity
 
@@ -193,13 +132,7 @@ such that the resulting classifier agrees with $f$ on every input in $\lbrace0,1
 
 We then define
 
-$$
-H^{*}(f)
-:=
-\min \left\lbrace
-H : f \text{ is computable with } H \text{ heads in the above model}
-\right\rbrace.
-$$
+$$ H^{*}(f) := \min \left\lbrace H : f \text{ is computable with } H \text{ heads in the above model} \right\rbrace. $$
 
 ## Masking Convention
 

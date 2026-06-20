@@ -4,21 +4,15 @@
 
 There are an absolute constant $c>0$ and an infinite family of pairs of linear threshold functions
 
-$$
-T_n,U_n:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace
-$$
+$$ T_n,U_n:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace $$
 
 such that, for
 
-$$
-F_n(x):=T_n(x)\wedge U_n(x),
-$$
+$$ F_n(x):=T_n(x)\wedge U_n(x), $$
 
 one has
 
-$$
-H^{*}(F_n)\geq c n.
-$$
+$$ H^{*}(F_n)\geq c n. $$
 
 > **Interpretation.** Even the intersection of two halfspaces can require linearly many attention heads. The obstruction is not Boolean formula size, but threshold degree.
 
@@ -26,31 +20,19 @@ $$
 
 Sherstov's optimal halfspace-intersection theorem [Optimal bounds for sign-representing the intersection of two halfspaces by polynomials](https://arxiv.org/abs/0910.4224) gives an absolute constant $c>0$ and an infinite family of pairs of halfspaces
 
-$$
-T_n,U_n:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace
-$$
+$$ T_n,U_n:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace $$
 
 such that
 
-$$
-\deg_{\pm}(T_n\wedge U_n)\geq c n.
-$$
+$$ \deg_{\pm}(T_n\wedge U_n)\geq c n. $$
 
 Apply the threshold-degree lower bound [006_threshold_degree_head_complexity_bound.md](../01_foundations_and_normal_form/006_threshold_degree_head_complexity_bound.md), which gives
 
-$$
-\deg_{\pm}(f)\leq H^{*}(f)
-$$
+$$ \deg_{\pm}(f)\leq H^{*}(f) $$
 
 for every Boolean function $f$. With $F_n=T_n\wedge U_n$, this yields
 
-$$
-H^{*}(F_n)
-\geq
-\deg_{\pm}(F_n)
-\geq
-c n.
-$$
+$$ H^{*}(F_n) \geq \deg_{\pm}(F_n) \geq c n. $$
 
 $\blacksquare$
 

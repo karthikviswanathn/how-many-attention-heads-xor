@@ -4,9 +4,7 @@
 
 Let
 
-$$
-f:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace.
-$$
+$$ f:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace. $$
 
 Suppose $f$ has a DNF with consistent nonempty terms
 
@@ -14,26 +12,13 @@ $$ T_a(x) = \left(\prod_{i\in P_a}x_i\right) \left(\prod_{j\in N_a}(1-x_j)\right
 
 where $P_a$ and $N_a$ are disjoint. Let
 
-$$
-w_a:=\lvert P_a\rvert+\lvert N_a\rvert,
-\qquad
-w:=\max_a w_a,
-$$
+$$ w_a:=\lvert P_a\rvert+\lvert N_a\rvert, \qquad w:=\max_a w_a, $$
 
 and let $v$ be the number of distinct variables appearing in the DNF.
 
 If $f$ is nonconstant, then
 
-$$
-H^{*}(f)
-\leq
-\min\left\lbrace
-2\sum_{a=1}^{s}2^{v-w_a},
-\sum_{a=1}^{s}\min\lbrace2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\rbrace,
-2^v-1,
-1+\sum_{r=2}^{\min\lbrace w,v\rbrace}\binom{v}{r}
-\right\rbrace.
-$$
+$$ H^{*}(f) \leq \min\left\lbrace 2\sum_{a=1}^{s}2^{v-w_a}, \sum_{a=1}^{s}\min\lbrace2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\rbrace, 2^v-1, 1+\sum_{r=2}^{\min\lbrace w,v\rbrace}\binom{v}{r} \right\rbrace. $$
 
 The dual statement holds for CNFs with consistent nonempty clauses
 
@@ -49,59 +34,37 @@ If $f$ is constant, then $H^{*}(f)=0$.
 
 We prove the DNF statement first. Let $V$ be the set of variables appearing in the DNF, so $\lvert V\rvert=v$. The function $f$ is a $v$-junta. Let
 
-$$
-g:\lbrace0,1\rbrace^{V}\to\lbrace0,1\rbrace
-$$
+$$ g:\lbrace0,1\rbrace^{V}\to\lbrace0,1\rbrace $$
 
 be the induced function. By junta reduction [039_junta_upper_bounds.md](../02_complexity_measure_upper_bounds/039_junta_upper_bounds.md),
 
-$$
-H^{*}(f)=H^{*}(g).
-$$
+$$ H^{*}(f)=H^{*}(g). $$
 
 ### Lemma 1. Volume on the used variables
 
 Inside the $v$-variable cube, term $T_a$ fixes $w_a$ coordinates and leaves $v-w_a$ free. Hence it covers
 
-$$
-2^{v-w_a}
-$$
+$$ 2^{v-w_a} $$
 
 points of the $v$-cube. The true set of $g$ is covered by these term cylinders, so
 
-$$
-\lvert g^{-1}(1)\rvert
-\leq
-\sum_{a=1}^{s}2^{v-w_a}.
-$$
+$$ \lvert g^{-1}(1)\rvert \leq \sum_{a=1}^{s}2^{v-w_a}. $$
 
 The sparse-support upper bound [037_sparse_support_upper_bound.md](../02_complexity_measure_upper_bounds/037_sparse_support_upper_bound.md) gives
 
-$$
-H^{*}(g)
-\leq
-2\lvert g^{-1}(1)\rvert
-\leq
-2\sum_{a=1}^{s}2^{v-w_a}.
-$$
+$$ H^{*}(g) \leq 2\lvert g^{-1}(1)\rvert \leq 2\sum_{a=1}^{s}2^{v-w_a}. $$
 
 ### Lemma 2. Local literal expansion
 
 The terms form a $1$-certificate cover of $g$. The local certificate-expansion theorem [044_oriented_certificate_expansion_upper_bound.md](../02_complexity_measure_upper_bounds/044_oriented_certificate_expansion_upper_bound.md) gives
 
-$$
-H^{*}(g)
-\leq
-\sum_{a=1}^{s}\min\lbrace2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\rbrace.
-$$
+$$ H^{*}(g) \leq \sum_{a=1}^{s}\min\lbrace2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\rbrace. $$
 
 ### Lemma 3. Junta interpolation
 
 The generic small-junta bound [039_junta_upper_bounds.md](../02_complexity_measure_upper_bounds/039_junta_upper_bounds.md) gives
 
-$$
-H^{*}(g)\leq2^v-1
-$$
+$$ H^{*}(g)\leq2^v-1 $$
 
 for nonconstant $g$.
 
@@ -109,37 +72,21 @@ for nonconstant $g$.
 
 The polynomial
 
-$$
-Q(x)
-:=
-\sum_{a=1}^{s}T_a(x)-\frac{1}{2}
-$$
+$$ Q(x) := \sum_{a=1}^{s}T_a(x)-\frac{1}{2} $$
 
 strictly sign-represents $g$. After multilinear expansion, it uses only variables in $V$ and has degree at most
 
-$$
-\min\lbrace w,v\rbrace.
-$$
+$$ \min\lbrace w,v\rbrace. $$
 
 Since $g$ is nonconstant, the affine-free sparsity theorem [048_affine_free_sparsity_upper_bound.md](048_affine_free_sparsity_upper_bound.md) gives
 
-$$
-H^{*}(g)
-\leq
-1+\sum_{r=2}^{\min\lbrace w,v\rbrace}\binom{v}{r}.
-$$
+$$ H^{*}(g) \leq 1+\sum_{r=2}^{\min\lbrace w,v\rbrace}\binom{v}{r}. $$
 
 Combining Lemmas 1 through 4 and using $H^{*}(f)=H^{*}(g)$ proves the DNF bound.
 
 For a CNF, the false inputs are covered by the cylinders that falsify one clause:
 
-$$
-C_a(x)=0
-\qquad\Longleftrightarrow\qquad
-\left(\prod_{i\in P_a}(1-x_i)\right)
-\left(\prod_{j\in N_a}x_j\right)
-=1.
-$$
+$$ C_a(x)=0 \qquad\Longleftrightarrow\qquad \left(\prod_{i\in P_a}(1-x_i)\right) \left(\prod_{j\in N_a}x_j\right) =1. $$
 
 Thus the volume proof applies to $g^{-1}(0)$ instead of $g^{-1}(1)$. The local expansion proof applies to the corresponding $0$-certificate cover. The junta proof is unchanged. For the degree route, the polynomial
 
@@ -151,11 +98,7 @@ strictly sign-represents the CNF and has degree at most $\min\lbrace w,v\rbrace$
 
 If the formula has width at most $w$ and uses $v$ variables, then every nonconstant function it computes satisfies
 
-$$
-H^{*}(f)
-\leq
-1+\sum_{r=2}^{\min\lbrace w,v\rbrace}\binom{v}{r}.
-$$
+$$ H^{*}(f) \leq 1+\sum_{r=2}^{\min\lbrace w,v\rbrace}\binom{v}{r}. $$
 
 For fixed width $w$, this is polynomial in the number of variables used by the formula. It is independent of the number of terms, unlike the volume and local-expansion bounds.
 

@@ -4,9 +4,7 @@
 
 If
 
-$$
-\mathrm{actc}(f)\leq2,
-$$
+$$ \mathrm{actc}(f)\leq2, $$
 
 then
 
@@ -20,15 +18,11 @@ In particular, every nonconstant non-LTF with $\mathrm{actc}(f)\leq2$ is exactly
 
 Lemma 103 gives
 
-$$
-H^{*}(f)\leq\mathrm{actc}(f).
-$$
+$$ H^{*}(f)\leq\mathrm{actc}(f). $$
 
 Thus the hypothesis implies
 
-$$
-H^{*}(f)\leq2.
-$$
+$$ H^{*}(f)\leq2. $$
 
 The exact zero-head and one-head characterization from [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md) says:
 
@@ -44,10 +38,6 @@ This upgrades any low-cost affine-cylinder representation into an exact head cou
 
 Since
 
-$$
-\mathrm{actc}(f)
-\leq
-\min\lbrace\mathrm{ctc}(f),\mathrm{afs}_{\pm}(f)\rbrace,
-$$
+$$ \mathrm{actc}(f) \leq \min\lbrace\mathrm{ctc}(f),\mathrm{afs}_{\pm}(f)\rbrace, $$
 
 the same exactness conclusion applies whenever either $\mathrm{ctc}(f)\leq2$ or $\mathrm{afs}_{\pm}(f)\leq2$.

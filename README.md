@@ -16,9 +16,7 @@ readout from the query token. A Boolean function $f : \lbrace0,1\rbrace^n \to \l
 *computable with $H$ heads* if some choice of embeddings, attention parameters, and
 readout reproduces $f$ on every input. Define
 
-$$
-H^{*}(f)  :=  \min\lbrace  H : f \text{ is computable with } H \text{ heads}  \rbrace.
-$$
+$$ H^{*}(f)  :=  \min\lbrace  H : f \text{ is computable with } H \text{ heads}  \rbrace. $$
 
 The central problem: **understand $H^{*}(f)$** as a function of $f$. Prove lower and upper
 bounds, compute it for natural families, and ask whether it equals a known invariant.

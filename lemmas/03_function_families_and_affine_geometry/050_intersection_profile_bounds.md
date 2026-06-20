@@ -4,29 +4,15 @@
 
 Let $F:\lbrace0,1,\ldots,m\rbrace\to\lbrace0,1\rbrace$ and define the intersection-profile function
 
-$$
-f_F(x,y)
-:=
-F \left(\sum_{i=1}^{m}x_i y_i\right),
-\qquad
-x,y\in\lbrace0,1\rbrace^m.
-$$
+$$ f_F(x,y) := F \left(\sum_{i=1}^{m}x_i y_i\right), \qquad x,y\in\lbrace0,1\rbrace^m. $$
 
 Let $C(F)$ be the number of sign changes in the sequence
 
-$$
-F(0),F(1),\ldots,F(m).
-$$
+$$ F(0),F(1),\ldots,F(m). $$
 
 Then
 
-$$
-C(F)
-\leq
-H^{*}(f_F)
-\leq
-\sum_{r=1}^{C(F)}\binom{m}{r},
-$$
+$$ C(F) \leq H^{*}(f_F) \leq \sum_{r=1}^{C(F)}\binom{m}{r}, $$
 
 with the convention that the empty sum is $0$.
 
@@ -38,9 +24,7 @@ with the convention that the empty sum is $0$.
 
 Restrict
 
-$$
-y_1=\cdots=y_m=1.
-$$
+$$ y_1=\cdots=y_m=1. $$
 
 On this subcube,
 
@@ -48,46 +32,29 @@ $$ f_F(x,1) = F \left(\sum_{i=1}^{m}x_i\right). $$
 
 This is the symmetric Boolean function on $m$ variables with Hamming-weight label sequence
 
-$$
-F(0),F(1),\ldots,F(m).
-$$
+$$ F(0),F(1),\ldots,F(m). $$
 
 By the symmetric sign-change theorem [012_symmetric_sign_changes.md](../01_foundations_and_normal_form/012_symmetric_sign_changes.md), this restricted function has head complexity $C(F)$. Restriction monotonicity from [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md) gives
 
-$$
-H^{*}(f_F)\geq C(F).
-$$
+$$ H^{*}(f_F)\geq C(F). $$
 
 ### Lemma 2. A degree-C(F) sign polynomial in the intersection size
 
 Let
 
-$$
-q_k:=
-\begin{cases}
-+1 & \text{if } F(k)=1,\\
--1 & \text{if } F(k)=0.
-\end{cases}
-$$
+$$ q_k:= \begin{cases} +1 & \text{if } F(k)=1,\\ -1 & \text{if } F(k)=0. \end{cases} $$
 
 Let
 
-$$
-\mathcal{J}:=\lbrace j\in\lbrace0,\ldots,m-1\rbrace:q_j\neq q_{j+1}\rbrace.
-$$
+$$ \mathcal{J}:=\lbrace j\in\lbrace0,\ldots,m-1\rbrace:q_j\neq q_{j+1}\rbrace. $$
 
 Then $\lvert\mathcal{J}\rvert=C(F)$. Define
 
-$$
-R(t):=
-q_0\prod_{j\in\mathcal{J}}\left(j+\frac{1}{2}-t\right).
-$$
+$$ R(t):= q_0\prod_{j\in\mathcal{J}}\left(j+\frac{1}{2}-t\right). $$
 
 For an integer $k\in\lbrace0,\ldots,m\rbrace$, the factor indexed by $j$ is positive when $k\leq j$ and negative when $k\geq j+1$. Hence the sign of $R(k)$ flips exactly once for every label change crossed before $k$. Therefore
 
-$$
-q_k R(k)>0
-$$
+$$ q_k R(k)>0 $$
 
 for every $k\in\lbrace0,\ldots,m\rbrace$, so $R$ sign-represents $F$ on the intersection-size levels and has degree $C(F)$.
 
@@ -95,11 +62,7 @@ for every $k\in\lbrace0,\ldots,m\rbrace$, so $R$ sign-represents $F$ on the inte
 
 Set
 
-$$
-z_i:=x_i y_i,
-\qquad
-s(x,y):=\sum_{i=1}^{m}z_i.
-$$
+$$ z_i:=x_i y_i, \qquad s(x,y):=\sum_{i=1}^{m}z_i. $$
 
 By Lemma 2, $R(s(x,y))$ sign-represents $f_F$. As a polynomial in the variables $z_1,\ldots,z_m$, it has degree at most $C(F)$. After multilinear reduction using $z_i^2=z_i$, it is a linear combination of monomials
 
@@ -107,23 +70,15 @@ $$ \prod_{i\in S}z_i = \prod_{i\in S}x_i y_i $$
 
 with
 
-$$
-1\leq\lvert S\rvert\leq C(F).
-$$
+$$ 1\leq\lvert S\rvert\leq C(F). $$
 
 Thus the number of nonconstant monomials in the original $2m$ Boolean variables is at most
 
-$$
-\sum_{r=1}^{C(F)}\binom{m}{r}.
-$$
+$$ \sum_{r=1}^{C(F)}\binom{m}{r}. $$
 
 Applying the polynomial-threshold sparsity upper bound [041_ptf_sparsity_upper_bound.md](../02_complexity_measure_upper_bounds/041_ptf_sparsity_upper_bound.md) gives
 
-$$
-H^{*}(f_F)
-\leq
-\sum_{r=1}^{C(F)}\binom{m}{r}.
-$$
+$$ H^{*}(f_F) \leq \sum_{r=1}^{C(F)}\binom{m}{r}. $$
 
 Together with Lemma 1, this proves the theorem. $\blacksquare$
 
@@ -133,17 +88,11 @@ Together with Lemma 1, this proves the theorem. $\blacksquare$
 
 Define
 
-$$
-\mathrm{INT}_m(x,y)
-:=
-\mathbf{1} \left[\sum_{i=1}^{m}x_i y_i\geq1\right],
-$$
+$$ \mathrm{INT}_m(x,y) := \mathbf{1} \left[\sum_{i=1}^{m}x_i y_i\geq1\right], $$
 
 and
 
-$$
-\mathrm{DISJ}_m:=1-\mathrm{INT}_m.
-$$
+$$ \mathrm{DISJ}_m:=1-\mathrm{INT}_m. $$
 
 For $m=1$,
 
@@ -153,15 +102,11 @@ because these are $\mathrm{AND}$ and $\mathrm{NAND}$ on two bits.
 
 For $m\geq2$,
 
-$$
-2\leq H^{*}(\mathrm{INT}_m)\leq m
-$$
+$$ 2\leq H^{*}(\mathrm{INT}_m)\leq m $$
 
 and
 
-$$
-2\leq H^{*}(\mathrm{DISJ}_m)\leq m.
-$$
+$$ 2\leq H^{*}(\mathrm{DISJ}_m)\leq m. $$
 
 In particular,
 
@@ -181,31 +126,19 @@ It remains to prove the lower bound for $m\geq2$. Suppose $\mathrm{INT}_m$ were 
 
 The inputs $(x,y)=(e_1,e_1)$ and $(e_2,e_2)$ are intersecting, so
 
-$$
-a_1+b_1+c>0,
-\qquad
-a_2+b_2+c>0.
-$$
+$$ a_1+b_1+c>0, \qquad a_2+b_2+c>0. $$
 
 The inputs $(e_1,e_2)$ and $(e_2,e_1)$ are disjoint, so
 
-$$
-a_1+b_2+c<0,
-\qquad
-a_2+b_1+c<0.
-$$
+$$ a_1+b_2+c<0, \qquad a_2+b_1+c<0. $$
 
 Adding the first two inequalities gives
 
-$$
-a_1+a_2+b_1+b_2+2c>0,
-$$
+$$ a_1+a_2+b_1+b_2+2c>0, $$
 
 while adding the last two gives
 
-$$
-a_1+a_2+b_1+b_2+2c<0,
-$$
+$$ a_1+a_2+b_1+b_2+2c<0, $$
 
 a contradiction. Thus $\mathrm{INT}_m$ is not a linear threshold function. By the one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md), $H^{*}(\mathrm{INT}_m)\geq2$.
 
@@ -215,14 +148,10 @@ Complement invariance from [028_restrictions_and_sign_rank.md](../02_complexity_
 
 For
 
-$$
-\mathrm{IP}_m(x,y)=\bigoplus_{i=1}^{m}x_i y_i,
-$$
+$$ \mathrm{IP}_m(x,y)=\bigoplus_{i=1}^{m}x_i y_i, $$
 
 the label sequence as a function of $\sum_i x_i y_i$ alternates at every adjacent level, so $C(F)=m$. The theorem recovers
 
-$$
-m\leq H^{*}(\mathrm{IP}_m)\leq2^m-1.
-$$
+$$ m\leq H^{*}(\mathrm{IP}_m)\leq2^m-1. $$
 
 The lower bound here is the affine-parity restriction $y=1^m$, and the upper bound is the full sparse expansion in the pair monomials.

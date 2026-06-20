@@ -8,38 +8,19 @@ $$ P(y) = c+\sum_{i=1}^{m}a_i y_i +\sum_{\substack{S\subseteq\lbrace1,\ldots,m\r
 
 strictly sign-represent a Boolean feature
 
-$$
-T:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace,
-\qquad
-T(y)=1
-\Longleftrightarrow
-P(y)>0.
-$$
+$$ T:\lbrace0,1\rbrace^{m}\to\lbrace0,1\rbrace, \qquad T(y)=1 \Longleftrightarrow P(y)>0. $$
 
 Let
 
-$$
-\ell(P):=\lvert\lbrace i:a_i\neq0\rbrace\rvert,
-\qquad
-q(P):=
-\left\lvert
-\left\lbrace
-S:\lvert S\rvert\geq2,\ a_S\neq0
-\right\rbrace
-\right\rvert.
-$$
+$$ \ell(P):=\lvert\lbrace i:a_i\neq0\rbrace\rvert, \qquad q(P):= \left\lvert \left\lbrace S:\lvert S\rvert\geq2,\ a_S\neq0 \right\rbrace \right\rvert. $$
 
 Let
 
-$$
-G:\lbrace0,1\rbrace^2\to\lbrace0,1\rbrace
-$$
+$$ G:\lbrace0,1\rbrace^2\to\lbrace0,1\rbrace $$
 
 be arbitrary, and define
 
-$$
-f(z,y):=G(z,T(y)).
-$$
+$$ f(z,y):=G(z,T(y)). $$
 
 For $b\in\lbrace0,1\rbrace$, define $\mu_b\in\lbrace-1,0,1\rbrace$ by:
 
@@ -49,19 +30,11 @@ For $b\in\lbrace0,1\rbrace$, define $\mu_b\in\lbrace-1,0,1\rbrace$ by:
 
 Then
 
-$$
-H^{*}(f)
-\leq
-1
-+\mathbf{1}[\mu_0\neq0]  q(P)
-+\mathbf{1}[\mu_1\neq\mu_0]\bigl(\ell(P)+q(P)\bigr).
-$$
+$$ H^{*}(f) \leq 1 +\mathbf{1}[\mu_0\neq0]  q(P) +\mathbf{1}[\mu_1\neq\mu_0]\bigl(\ell(P)+q(P)\bigr). $$
 
 In particular,
 
-$$
-H^{*}(f)\leq1+\ell(P)+2q(P).
-$$
+$$ H^{*}(f)\leq1+\ell(P)+2q(P). $$
 
 If the refined displayed upper bound is at most $2$, then
 
@@ -73,23 +46,15 @@ $$ H^{*}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if
 
 Split on $z$. The two cofactors are
 
-$$
-f_b(y)=G(b,T(y))
-\qquad
-(b\in\lbrace0,1\rbrace).
-$$
+$$ f_b(y)=G(b,T(y)) \qquad (b\in\lbrace0,1\rbrace). $$
 
 Each $f_b$ is one of $0$, $1$, $T$, or $1-T$. Choose strict sign polynomials $Q_b$ as follows. If $\mu_b=1$, set
 
-$$
-Q_b:=P.
-$$
+$$ Q_b:=P. $$
 
 If $\mu_b=-1$, set
 
-$$
-Q_b:=-P.
-$$
+$$ Q_b:=-P. $$
 
 If $\mu_b=0$, then $f_b$ is constant. Set $Q_b:=1$ for the constant $1$ function and $Q_b:=-1$ for the constant $0$ function.
 
@@ -99,47 +64,29 @@ Now apply the split affine-free support invariant [078_split_affine_free_support
 
 The affine indicator contributes at most
 
-$$
-1.
-$$
+$$ 1. $$
 
 The nonlinear support of the base cofactor $Q_0$ contributes at most
 
-$$
-\mathbf{1}[\mu_0\neq0]  q(P).
-$$
+$$ \mathbf{1}[\mu_0\neq0]  q(P). $$
 
 The changed linear coefficients contribute at most
 
-$$
-\mathbf{1}[\mu_1\neq\mu_0] \ell(P),
-$$
+$$ \mathbf{1}[\mu_1\neq\mu_0] \ell(P), $$
 
 because all nonzero linear coefficients of $Q_b$ are scalar multiples of the linear coefficients of $P$.
 
 The changed nonlinear coefficients contribute at most
 
-$$
-\mathbf{1}[\mu_1\neq\mu_0]  q(P),
-$$
+$$ \mathbf{1}[\mu_1\neq\mu_0]  q(P), $$
 
 for the same reason. Therefore Lemma 78 gives
 
-$$
-H^{*}(f)
-\leq
-1
-+\mathbf{1}[\mu_0\neq0]  q(P)
-+\mathbf{1}[\mu_1\neq\mu_0]\bigl(\ell(P)+q(P)\bigr).
-$$
+$$ H^{*}(f) \leq 1 +\mathbf{1}[\mu_0\neq0]  q(P) +\mathbf{1}[\mu_1\neq\mu_0]\bigl(\ell(P)+q(P)\bigr). $$
 
 The uniform corollary follows from
 
-$$
-\mathbf{1}[\mu_0\neq0]\leq1,
-\qquad
-\mathbf{1}[\mu_1\neq\mu_0]\leq1.
-$$
+$$ \mathbf{1}[\mu_0\neq0]\leq1, \qquad \mathbf{1}[\mu_1\neq\mu_0]\leq1. $$
 
 Finally, if the refined displayed upper bound is at most $2$, then $H^{*}(f)\leq2$. The exact value is forced by the zero-head and one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md): constants have value $0$, nonconstant LTFs have value $1$, and every remaining function has value exactly $2$. $\blacksquare$
 
@@ -147,30 +94,18 @@ Finally, if the refined displayed upper bound is at most $2$, then $H^{*}(f)\leq
 
 For XOR with a sparse PTF feature,
 
-$$
-f(z,y)=z\oplus T(y),
-$$
+$$ f(z,y)=z\oplus T(y), $$
 
 the branch codes satisfy $\mu_0=1$ and $\mu_1=-1$, so
 
-$$
-H^{*}(z\oplus T(y))
-\leq
-1+\ell(P)+2q(P).
-$$
+$$ H^{*}(z\oplus T(y)) \leq 1+\ell(P)+2q(P). $$
 
 For AND with a sparse PTF feature,
 
-$$
-f(z,y)=z\wedge T(y),
-$$
+$$ f(z,y)=z\wedge T(y), $$
 
 the branch codes satisfy $\mu_0=0$ and $\mu_1=1$, so
 
-$$
-H^{*}(z\wedge T(y))
-\leq
-1+\ell(P)+q(P).
-$$
+$$ H^{*}(z\wedge T(y)) \leq 1+\ell(P)+q(P). $$
 
 When $P$ is affine, $q(P)=0$, and this recovers the one-bit LTF branching bound.

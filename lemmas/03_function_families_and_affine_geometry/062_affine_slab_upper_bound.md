@@ -4,23 +4,15 @@
 
 Let
 
-$$
-L(x)=c+\sum_{i=1}^{n}a_i x_i
-$$
+$$ L(x)=c+\sum_{i=1}^{n}a_i x_i $$
 
 be an affine function on $\lbrace0,1\rbrace^n$, and let $\alpha\leq\beta$. Define the affine-slab predicate
 
-$$
-S_{L,\alpha,\beta}(x)
-:=
-\mathbf{1}[\alpha\leq L(x)\leq\beta].
-$$
+$$ S_{L,\alpha,\beta}(x) := \mathbf{1}[\alpha\leq L(x)\leq\beta]. $$
 
 Then
 
-$$
-H^{*}(S_{L,\alpha,\beta})\leq2.
-$$
+$$ H^{*}(S_{L,\alpha,\beta})\leq2. $$
 
 More precisely,
 
@@ -34,47 +26,27 @@ If $S_{L,\alpha,\beta}$ is constant, there is nothing to prove. Assume from now 
 
 Set
 
-$$
-c_*:=\frac{\alpha+\beta}{2},
-\qquad
-R_*:=\frac{\beta-\alpha}{2}.
-$$
+$$ c_*:=\frac{\alpha+\beta}{2}, \qquad R_*:=\frac{\beta-\alpha}{2}. $$
 
 Then
 
-$$
-\alpha\leq L(x)\leq\beta
-\qquad\Longleftrightarrow\qquad
-\lvert L(x)-c_*\rvert\leq R_*.
-$$
+$$ \alpha\leq L(x)\leq\beta \qquad\Longleftrightarrow\qquad \lvert L(x)-c_*\rvert\leq R_*. $$
 
 Because the Boolean cube is finite, define
 
-$$
-r_{\mathrm{in}}
-:=
-\max\lbrace\lvert L(x)-c_*\rvert:S_{L,\alpha,\beta}(x)=1\rbrace
-$$
+$$ r_{\mathrm{in}} := \max\lbrace\lvert L(x)-c_*\rvert:S_{L,\alpha,\beta}(x)=1\rbrace $$
 
 and
 
-$$
-r_{\mathrm{out}}
-:=
-\min\lbrace\lvert L(x)-c_*\rvert:S_{L,\alpha,\beta}(x)=0\rbrace.
-$$
+$$ r_{\mathrm{out}} := \min\lbrace\lvert L(x)-c_*\rvert:S_{L,\alpha,\beta}(x)=0\rbrace. $$
 
 Every true input has distance at most $R_*$ from $c_*$, and every false input has distance strictly larger than $R_*$. Therefore
 
-$$
-r_{\mathrm{in}}\leq R_*<r_{\mathrm{out}}.
-$$
+$$ r_{\mathrm{in}}\leq R_*<r_{\mathrm{out}}. $$
 
 Choose $r$ with
 
-$$
-r_{\mathrm{in}}<r<r_{\mathrm{out}},
-$$
+$$ r_{\mathrm{in}}<r<r_{\mathrm{out}}, $$
 
 and define
 
@@ -82,99 +54,51 @@ $$ M(x):=\frac{L(x)-c_*}{r} = c_0+\sum_{i=1}^{n}m_i x_i. $$
 
 Then
 
-$$
-S_{L,\alpha,\beta}(x)=1
-\qquad\Longleftrightarrow\qquad
-1-M(x)^2>0.
-$$
+$$ S_{L,\alpha,\beta}(x)=1 \qquad\Longleftrightarrow\qquad 1-M(x)^2>0. $$
 
 Choose positive numbers $q_0,q_1,\ldots,q_n$ so large that
 
-$$
-q_0+c_0>0,
-\qquad
-q_i+m_i>0
-\quad
-\text{for every }i.
-$$
+$$ q_0+c_0>0, \qquad q_i+m_i>0 \quad \text{for every }i. $$
 
 Define
 
-$$
-Q(x):=q_0+\sum_{i=1}^{n}q_i x_i,
-\qquad
-P(x):=Q(x)+M(x).
-$$
+$$ Q(x):=q_0+\sum_{i=1}^{n}q_i x_i, \qquad P(x):=Q(x)+M(x). $$
 
 Then $P$ and $Q$ have positive constant terms and positive variable coefficients, and
 
-$$
-P(x)-Q(x)=M(x).
-$$
+$$ P(x)-Q(x)=M(x). $$
 
 Now define
 
-$$
-B_1:=1+P+Q,
-\qquad
-B_2:=1+P+2Q,
-$$
+$$ B_1:=1+P+Q, \qquad B_2:=1+P+2Q, $$
 
 and
 
-$$
-A_1:=4P,
-\qquad
-A_2:=1-5P-Q.
-$$
+$$ A_1:=4P, \qquad A_2:=1-5P-Q. $$
 
 The denominators $B_1$ and $B_2$ have positive constant terms and positive variable coefficients. Consider the two-atom score
 
-$$
-T(x):=\frac{A_1(x)}{B_1(x)}+\frac{A_2(x)}{B_2(x)}.
-$$
+$$ T(x):=\frac{A_1(x)}{B_1(x)}+\frac{A_2(x)}{B_2(x)}. $$
 
 After clearing denominators, the numerator is
 
-$$
-\begin{aligned}
-A_1B_2+A_2B_1
-&=
-4P(1+P+2Q)+(1-5P-Q)(1+P+Q) \\
-&=
-1-(P-Q)^2 \\
-&=
-1-M^2.
-\end{aligned}
-$$
+$$ \begin{aligned} A_1B_2+A_2B_1 &= 4P(1+P+2Q)+(1-5P-Q)(1+P+Q) \\ &= 1-(P-Q)^2 \\ &= 1-M^2. \end{aligned} $$
 
 Since $B_1$ and $B_2$ are positive on the cube,
 
-$$
-T(x)>0
-\qquad\Longleftrightarrow\qquad
-1-M(x)^2>0
-\qquad\Longleftrightarrow\qquad
-S_{L,\alpha,\beta}(x)=1.
-$$
+$$ T(x)>0 \qquad\Longleftrightarrow\qquad 1-M(x)^2>0 \qquad\Longleftrightarrow\qquad S_{L,\alpha,\beta}(x)=1. $$
 
 By the affine-over-positive-affine atom lemma [015_three_bit_quadratic_upper_bound.md](../01_foundations_and_normal_form/015_three_bit_quadratic_upper_bound.md), each ratio $A_j/B_j$ is a one-head atom. Therefore
 
-$$
-H^{*}(S_{L,\alpha,\beta})\leq2.
-$$
+$$ H^{*}(S_{L,\alpha,\beta})\leq2. $$
 
 If $S_{L,\alpha,\beta}$ is a nonconstant LTF, the one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md) gives
 
-$$
-H^{*}(S_{L,\alpha,\beta})=1.
-$$
+$$ H^{*}(S_{L,\alpha,\beta})=1. $$
 
 If $S_{L,\alpha,\beta}$ is nonconstant and not an LTF, the same characterization gives
 
-$$
-H^{*}(S_{L,\alpha,\beta})\geq2.
-$$
+$$ H^{*}(S_{L,\alpha,\beta})\geq2. $$
 
 Together with the two-head upper bound, this proves the exact case split. $\blacksquare$
 
@@ -184,24 +108,16 @@ The affine level-set theorem [061_affine_level_set_upper_bound.md](061_affine_le
 
 Hamming-weight intervals satisfy
 
-$$
-H^{*} \left(\mathbf{1}[a\leq \lvert x\rvert\leq b]\right)\leq2.
-$$
+$$ H^{*} \left(\mathbf{1}[a\leq \lvert x\rvert\leq b]\right)\leq2. $$
 
 This agrees with the exact symmetric sign-change theorem, since a single interval has at most two boundary crossings in the Hamming-weight sequence.
 
 For binary encodings
 
-$$
-X=\sum_{i=1}^{m}2^{i-1}x_i,
-\qquad
-Y=\sum_{i=1}^{m}2^{i-1}y_i,
-$$
+$$ X=\sum_{i=1}^{m}2^{i-1}x_i, \qquad Y=\sum_{i=1}^{m}2^{i-1}y_i, $$
 
 every signed-tolerance predicate
 
-$$
-\mathbf{1}[-t\leq X-Y\leq t]
-$$
+$$ \mathbf{1}[-t\leq X-Y\leq t] $$
 
 uses at most two heads. Thus equality is the radius-zero endpoint of a larger two-head family.

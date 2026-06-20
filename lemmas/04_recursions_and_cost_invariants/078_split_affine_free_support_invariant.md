@@ -4,17 +4,11 @@
 
 Let
 
-$$
-f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace.
-$$
+$$ f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace. $$
 
 Fix a split coordinate and write inputs as $(z,y)\in\lbrace0,1\rbrace\times\lbrace0,1\rbrace^{n-1}$. Let
 
-$$
-f_b(y):=f(b,y)
-\qquad
-(b\in\lbrace0,1\rbrace).
-$$
+$$ f_b(y):=f(b,y) \qquad (b\in\lbrace0,1\rbrace). $$
 
 Let $P_0$ and $P_1$ be strict sign representations of $f_0$ and $f_1$, written as
 
@@ -22,74 +16,33 @@ $$ P_b(y) = c_b+\sum_{i=1}^{n-1}\alpha_{b,i}y_i +\sum_{\substack{S\subseteq\lbra
 
 Define
 
-$$
-\lambda(P_0,P_1)
-:=
-\mathbf{1} \left[
-c_1\neq c_0
-\text{ or }
-\exists i,\ \alpha_{0,i}\neq0
-\right],
-$$
+$$ \lambda(P_0,P_1) := \mathbf{1} \left[ c_1\neq c_0 \text{ or } \exists i,\ \alpha_{0,i}\neq0 \right], $$
 
 and the three support sets
 
-$$
-\mathcal{N}_0
-:=
-\left\lbrace
-S:\lvert S\rvert\geq2,\ a_{0,S}\neq0
-\right\rbrace,
-$$
+$$ \mathcal{N}_0 := \left\lbrace S:\lvert S\rvert\geq2,\ a_{0,S}\neq0 \right\rbrace, $$
 
-$$
-\mathcal{L}_{\Delta}
-:=
-\left\lbrace
-i:\alpha_{1,i}\neq\alpha_{0,i}
-\right\rbrace,
-$$
+$$ \mathcal{L}_{\Delta} := \left\lbrace i:\alpha_{1,i}\neq\alpha_{0,i} \right\rbrace, $$
 
 and
 
-$$
-\mathcal{N}_{\Delta}
-:=
-\left\lbrace
-S:\lvert S\rvert\geq2,\ a_{1,S}\neq a_{0,S}
-\right\rbrace.
-$$
+$$ \mathcal{N}_{\Delta} := \left\lbrace S:\lvert S\rvert\geq2,\ a_{1,S}\neq a_{0,S} \right\rbrace. $$
 
 Let
 
-$$
-C(P_0,P_1)
-:=
-\lambda(P_0,P_1)
-+\lvert\mathcal{N}_0\rvert
-+\lvert\mathcal{L}_{\Delta}\rvert
-+\lvert\mathcal{N}_{\Delta}\rvert.
-$$
+$$ C(P_0,P_1) := \lambda(P_0,P_1) +\lvert\mathcal{N}_0\rvert +\lvert\mathcal{L}_{\Delta}\rvert +\lvert\mathcal{N}_{\Delta}\rvert. $$
 
 For this split coordinate, let $\mathrm{scafs}_{\pm,j}(f)$ be the minimum of $C(P_0,P_1)$ over all strict sign representations of the two cofactors. Finally define
 
-$$
-\mathrm{scafs}_{\pm}(f)
-:=
-\min_{1\leq j\leq n}\mathrm{scafs}_{\pm,j}(f).
-$$
+$$ \mathrm{scafs}_{\pm}(f) := \min_{1\leq j\leq n}\mathrm{scafs}_{\pm,j}(f). $$
 
 Then
 
-$$
-H^{*}(f)\leq\mathrm{scafs}_{\pm}(f).
-$$
+$$ H^{*}(f)\leq\mathrm{scafs}_{\pm}(f). $$
 
 If
 
-$$
-\mathrm{scafs}_{\pm}(f)\leq2,
-$$
+$$ \mathrm{scafs}_{\pm}(f)\leq2, $$
 
 then
 
@@ -109,10 +62,7 @@ Then $P(0,y)=P_0(y)$ and $P(1,y)=P_1(y)$, so $P$ strictly sign-represents $f$.
 
 Expanding the affine part gives
 
-$$
-c_0+\sum_{i=1}^{n-1}\alpha_{0,i}y_i
-+z(c_1-c_0).
-$$
+$$ c_0+\sum_{i=1}^{n-1}\alpha_{0,i}y_i +z(c_1-c_0). $$
 
 This contributes exactly the affine indicator $\lambda(P_0,P_1)$ to affine-free support cost.
 
@@ -120,47 +70,27 @@ The degree at least two monomials of $P$ are contained in three disjoint familie
 
 1. base nonlinear monomials from $P_0$,
 
-$$
-\prod_{i\in S}y_i
-\qquad
-(S\in\mathcal{N}_0);
-$$
+$$ \prod_{i\in S}y_i \qquad (S\in\mathcal{N}_0); $$
 
 2. mixed quadratic monomials from changed linear coefficients,
 
-$$
-z y_i
-\qquad
-(i\in\mathcal{L}_{\Delta});
-$$
+$$ z y_i \qquad (i\in\mathcal{L}_{\Delta}); $$
 
 3. mixed higher monomials from changed nonlinear coefficients,
 
-$$
-z\prod_{i\in S}y_i
-\qquad
-(S\in\mathcal{N}_{\Delta}).
-$$
+$$ z\prod_{i\in S}y_i \qquad (S\in\mathcal{N}_{\Delta}). $$
 
 Therefore
 
-$$
-\mathrm{afs}(P)
-\leq
-C(P_0,P_1).
-$$
+$$ \mathrm{afs}(P) \leq C(P_0,P_1). $$
 
 The affine-free sparsity theorem [048_affine_free_sparsity_upper_bound.md](../03_function_families_and_affine_geometry/048_affine_free_sparsity_upper_bound.md) gives
 
-$$
-H^{*}(f)\leq C(P_0,P_1).
-$$
+$$ H^{*}(f)\leq C(P_0,P_1). $$
 
 Minimizing over cofactor sign polynomials and split coordinates proves
 
-$$
-H^{*}(f)\leq\mathrm{scafs}_{\pm}(f).
-$$
+$$ H^{*}(f)\leq\mathrm{scafs}_{\pm}(f). $$
 
 If $\mathrm{scafs}_{\pm}(f)\leq2$, then $H^{*}(f)\leq2$. The exact value is now forced by the zero-head and one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md): constants have value $0$, nonconstant LTFs have value $1$, and all remaining functions have value exactly $2$. $\blacksquare$
 

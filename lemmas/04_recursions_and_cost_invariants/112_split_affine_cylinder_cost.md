@@ -4,67 +4,35 @@
 
 Let
 
-$$
-f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace
-$$
+$$ f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace $$
 
 with $n\geq1$. Fix a split coordinate $j$ and write the inputs as
 
-$$
-(z,y)\in\lbrace0,1\rbrace\times\lbrace0,1\rbrace^{n-1}.
-$$
+$$ (z,y)\in\lbrace0,1\rbrace\times\lbrace0,1\rbrace^{n-1}. $$
 
 For $b\in\lbrace0,1\rbrace$, let
 
-$$
-f_b(y):=f(b,y).
-$$
+$$ f_b(y):=f(b,y). $$
 
 Given strict affine-cylinder scores $S_0,S_1$ for the two cofactors, written as in [111_affine_cylinder_cofactor_interpolation.md](111_affine_cylinder_cofactor_interpolation.md), define their split interpolation cost by
 
-$$
-\begin{aligned}
-I(S_0,S_1)
-:={}&
-\eta(A_0,A_1)
-+
-\lvert\Delta_{\mathrm{lin}}\rvert \\
-&+
-\sum_{\gamma=(P,N)\in\Gamma_0}\kappa(P,N)
-+
-\sum_{\gamma=(P,N)\in\Delta_{\mathrm{cyl}}}\kappa(P\cup\lbrace z\rbrace,N).
-\end{aligned}
-$$
+$$ \begin{aligned} I(S_0,S_1) :={}& \eta(A_0,A_1) + \lvert\Delta_{\mathrm{lin}}\rvert \\ &+ \sum_{\gamma=(P,N)\in\Gamma_0}\kappa(P,N) + \sum_{\gamma=(P,N)\in\Delta_{\mathrm{cyl}}}\kappa(P\cup\lbrace z\rbrace,N). \end{aligned} $$
 
 Let
 
-$$
-\mathrm{sactc}_{j}(f)
-$$
+$$ \mathrm{sactc}_{j}(f) $$
 
 be the minimum of $I(S_0,S_1)$ over all choices of strict affine-cylinder scores for $f_0$ and $f_1$ along the split coordinate $j$, and define
 
-$$
-\mathrm{sactc}(f)
-:=
-\min_{1\leq j\leq n}\mathrm{sactc}_{j}(f).
-$$
+$$ \mathrm{sactc}(f) := \min_{1\leq j\leq n}\mathrm{sactc}_{j}(f). $$
 
 Then
 
-$$
-H^{*}(f)
-\leq
-\mathrm{actc}(f)
-\leq
-\mathrm{sactc}(f).
-$$
+$$ H^{*}(f) \leq \mathrm{actc}(f) \leq \mathrm{sactc}(f). $$
 
 If
 
-$$
-\mathrm{sactc}(f)\leq2,
-$$
+$$ \mathrm{sactc}(f)\leq2, $$
 
 then
 
@@ -78,31 +46,19 @@ For every split coordinate $j$, the two cofactors have strict affine-cylinder sc
 
 Fix a split coordinate $j$ and strict affine-cylinder cofactor scores $S_0,S_1$. Lemma [111_affine_cylinder_cofactor_interpolation.md](111_affine_cylinder_cofactor_interpolation.md) gives
 
-$$
-\mathrm{actc}(f)\leq I(S_0,S_1).
-$$
+$$ \mathrm{actc}(f)\leq I(S_0,S_1). $$
 
 Minimizing first over the two cofactor scores and then over the split coordinate gives
 
-$$
-\mathrm{actc}(f)\leq\mathrm{sactc}(f).
-$$
+$$ \mathrm{actc}(f)\leq\mathrm{sactc}(f). $$
 
 The affine-cylinder threshold-cost theorem [103_affine_cylinder_threshold_cost.md](103_affine_cylinder_threshold_cost.md) gives
 
-$$
-H^{*}(f)\leq\mathrm{actc}(f).
-$$
+$$ H^{*}(f)\leq\mathrm{actc}(f). $$
 
 Combining the two inequalities proves
 
-$$
-H^{*}(f)
-\leq
-\mathrm{actc}(f)
-\leq
-\mathrm{sactc}(f).
-$$
+$$ H^{*}(f) \leq \mathrm{actc}(f) \leq \mathrm{sactc}(f). $$
 
 If $\mathrm{sactc}(f)\leq2$, then $\mathrm{actc}(f)\leq2$. The low affine-cylinder exactness theorem [109_low_affine_cylinder_cost_exactness.md](109_low_affine_cylinder_cost_exactness.md) now gives the displayed constant, nonconstant LTF, or two-head split. $\blacksquare$
 

@@ -4,17 +4,11 @@
 
 Let
 
-$$
-f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace.
-$$
+$$ f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace. $$
 
 For a coordinate $j$, write the two cofactors as
 
-$$
-f_{j,b}(y):=f(y_1,\ldots,y_{j-1},b,y_j,\ldots,y_{n-1})
-\qquad
-(b\in\lbrace0,1\rbrace),
-$$
+$$ f_{j,b}(y):=f(y_1,\ldots,y_{j-1},b,y_j,\ldots,y_{n-1}) \qquad (b\in\lbrace0,1\rbrace), $$
 
 where $y\in\lbrace0,1\rbrace^{n-1}$. Say that $j$ is an LTF split if both $f_{j,0}$ and $f_{j,1}$ are constants or linear threshold functions.
 
@@ -24,42 +18,23 @@ $$ L_b(y) = \beta_b+\sum_{i=1}^{n-1}\alpha_{b,i}y_i \qquad (b\in\lbrace0,1\rbrac
 
 of the two cofactors, of the slope-change count
 
-$$
-\left\lvert
-\left\lbrace
-i\in\lbrace1,\ldots,n-1\rbrace:
-\alpha_{0,i}\neq\alpha_{1,i}
-\right\rbrace
-\right\rvert.
-$$
+$$ \left\lvert \left\lbrace i\in\lbrace1,\ldots,n-1\rbrace: \alpha_{0,i}\neq\alpha_{1,i} \right\rbrace \right\rvert. $$
 
 If $f$ has at least one LTF split, define
 
-$$
-\sigma_{\mathrm{split}}(f)
-:=
-\min_{j:\ j\text{ is an LTF split}}\sigma_j(f).
-$$
+$$ \sigma_{\mathrm{split}}(f) := \min_{j:\ j\text{ is an LTF split}}\sigma_j(f). $$
 
 Then
 
-$$
-H^{*}(f)
-\leq
-1+\sigma_{\mathrm{split}}(f).
-$$
+$$ H^{*}(f) \leq 1+\sigma_{\mathrm{split}}(f). $$
 
 In particular, every function with an LTF split satisfies
 
-$$
-H^{*}(f)\leq n.
-$$
+$$ H^{*}(f)\leq n. $$
 
 If $\sigma_{\mathrm{split}}(f)=0$, then $f$ is constant or a nonconstant LTF, so
 
-$$
-H^{*}(f)\in\lbrace0,1\rbrace.
-$$
+$$ H^{*}(f)\in\lbrace0,1\rbrace. $$
 
 If $\sigma_{\mathrm{split}}(f)\leq1$, then
 
@@ -73,11 +48,7 @@ Choose an LTF split $j$ and affine cofactor separators realizing $\sigma_{\mathr
 
 The LTF cofactor slope-distance theorem [076_ltf_cofactor_slope_distance.md](076_ltf_cofactor_slope_distance.md) applies to this split and gives
 
-$$
-H^{*}(f)
-\leq
-1+\sigma_{\mathrm{split}}(f).
-$$
+$$ H^{*}(f) \leq 1+\sigma_{\mathrm{split}}(f). $$
 
 Since a slope-change count is always at most $n-1$, every function with an LTF split satisfies $H^{*}(f)\leq n$.
 

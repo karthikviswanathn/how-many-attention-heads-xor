@@ -6,29 +6,19 @@ This note gives a two-head upper bound for every three-bit Boolean function with
 
 Let $f : \lbrace0,1\rbrace^3 \to \lbrace0,1\rbrace$. Suppose there is a multilinear polynomial $P$ of degree at most $2$ such that
 
-$$
-f(x)=1
-\qquad \Longleftrightarrow \qquad
-P(x)>0
-$$
+$$ f(x)=1 \qquad \Longleftrightarrow \qquad P(x)>0 $$
 
 for every $x \in \lbrace0,1\rbrace^3$. Then
 
-$$
-H^{*}(f) \leq 2.
-$$
+$$ H^{*}(f) \leq 2. $$
 
 Consequently, the historical provisional three-head function
 
-$$
-00101001
-$$
+$$ 00101001 $$
 
 has exact value
 
-$$
-H^{*}(00101001) = 2.
-$$
+$$ H^{*}(00101001) = 2. $$
 
 ## Proof
 
@@ -36,77 +26,37 @@ $$
 
 Let
 
-$$
-A(x) = a_0 + \sum_{i=1}^{n} a_i x_i
-$$
+$$ A(x) = a_0 + \sum_{i=1}^{n} a_i x_i $$
 
 be any affine function. Let
 
-$$
-B(x) = b_0 + \sum_{i=1}^{n} b_i x_i
-$$
+$$ B(x) = b_0 + \sum_{i=1}^{n} b_i x_i $$
 
 where
 
-$$
-b_0>0,
-\qquad
-b_i>0
-\quad
-\text{for all } i.
-$$
+$$ b_0>0, \qquad b_i>0 \quad \text{for all } i. $$
 
 Then $A(x)/B(x)$ is a one-head atom in the sense of [010_linear_fractional_normal_form.md](010_linear_fractional_normal_form.md).
 
 **Proof.** Choose
 
-$$
-\alpha > 1 + \frac{\sum_i b_i}{b_0}.
-$$
+$$ \alpha > 1 + \frac{\sum_i b_i}{b_0}. $$
 
 Set
 
-$$
-\rho_i := \frac{b_i}{\alpha-1},
-\qquad
-\gamma := b_0 - \sum_i \rho_i.
-$$
+$$ \rho_i := \frac{b_i}{\alpha-1}, \qquad \gamma := b_0 - \sum_i \rho_i. $$
 
 Then $\rho_i>0$ and $\gamma>0$. Also,
 
-$$
-\begin{aligned}
-\gamma+\sum_i \rho_i\alpha^{x_i}
-&=
-\gamma+\sum_i \rho_i\bigl(1+(\alpha-1)x_i\bigr) \\
-&=
-b_0+\sum_i b_i x_i \\
-&=
-B(x).
-\end{aligned}
-$$
+$$ \begin{aligned} \gamma+\sum_i \rho_i\alpha^{x_i} &= \gamma+\sum_i \rho_i\bigl(1+(\alpha-1)x_i\bigr) \\ &= b_0+\sum_i b_i x_i \\ &= B(x). \end{aligned} $$
 
 Set $\delta := 0$ and
 
-$$
-m_i := \frac{a_i}{b_i},
-\qquad
-\eta := a_0-\sum_i \rho_i m_i.
-$$
+$$ m_i := \frac{a_i}{b_i}, \qquad \eta := a_0-\sum_i \rho_i m_i. $$
 
 Then
 
-$$
-\begin{aligned}
-\eta+\sum_i \rho_i\alpha^{x_i}m_i
-&=
-\eta+\sum_i \rho_i m_i+\sum_i b_i m_i x_i \\
-&=
-a_0+\sum_i a_i x_i \\
-&=
-A(x).
-\end{aligned}
-$$
+$$ \begin{aligned} \eta+\sum_i \rho_i\alpha^{x_i}m_i &= \eta+\sum_i \rho_i m_i+\sum_i b_i m_i x_i \\ &= a_0+\sum_i a_i x_i \\ &= A(x). \end{aligned} $$
 
 Thus $A(x)/B(x)$ has exactly the atom form from Lemma 10. $\blacksquare$
 
@@ -114,17 +64,11 @@ Thus $A(x)/B(x)$ has exactly the atom form from Lemma 10. $\blacksquare$
 
 Work in the multilinear polynomial basis
 
-$$
-1,\quad x_1,\quad x_2,\quad x_3,\quad x_1x_2,\quad x_1x_3,\quad x_2x_3.
-$$
+$$ 1,\quad x_1,\quad x_2,\quad x_3,\quad x_1x_2,\quad x_1x_3,\quad x_2x_3. $$
 
 Define two positive affine denominators
 
-$$
-B_1(x) := 1+x_1+x_2+x_3,
-\qquad
-B_2(x) := 1+x_1+2x_2+4x_3.
-$$
+$$ B_1(x) := 1+x_1+x_2+x_3, \qquad B_2(x) := 1+x_1+2x_2+4x_3. $$
 
 The following coefficient table records the products of $B_1,B_2$ with affine monomials, reduced using $x_i^2=x_i$ on the Boolean cube:
 
@@ -142,31 +86,19 @@ The $7 \times 7$ determinant of this table is $-24$, so these seven products for
 
 Therefore, for every such polynomial $P$, there are affine functions $A_1,A_2$ with
 
-$$
-P(x) = A_1(x)B_2(x)+A_2(x)B_1(x)
-$$
+$$ P(x) = A_1(x)B_2(x)+A_2(x)B_1(x) $$
 
 on the Boolean cube. Since $B_1(x)>0$ and $B_2(x)>0$, the rational score
 
-$$
-S(x)
-:=
-\frac{A_1(x)}{B_1(x)}
-+
-\frac{A_2(x)}{B_2(x)}
-$$
+$$ S(x) := \frac{A_1(x)}{B_1(x)} + \frac{A_2(x)}{B_2(x)} $$
 
 has the same sign as $P(x)$, because
 
-$$
-S(x)=\frac{P(x)}{B_1(x)B_2(x)}.
-$$
+$$ S(x)=\frac{P(x)}{B_1(x)B_2(x)}. $$
 
 By Lemma 1, each summand is a one-head atom. Hence thresholding the sum of two atoms computes $f$, so
 
-$$
-H^{*}(f) \leq 2.
-$$
+$$ H^{*}(f) \leq 2. $$
 
 $\blacksquare$
 
@@ -174,34 +106,21 @@ $\blacksquare$
 
 Let $g$ be the function with positive inputs
 
-$$
-\lbrace010,100,111\rbrace.
-$$
+$$ \lbrace010,100,111\rbrace. $$
 
 Equivalently,
 
-$$
-g(x)=1
-\qquad \Longleftrightarrow \qquad
-x_1+x_2-x_3=1.
-$$
+$$ g(x)=1 \qquad \Longleftrightarrow \qquad x_1+x_2-x_3=1. $$
 
 Indeed, the statistic
 
-$$
-s(x):=x_1+x_2-x_3
-$$
+$$ s(x):=x_1+x_2-x_3 $$
 
 takes values in $\lbrace-1,0,1,2\rbrace$ on the cube, and $s(x)=1$ exactly at $010,100,111$.
 
 Now define
 
-$$
-P(x)
-:=
-\left(s(x)-\frac{1}{2}\right)
-\left(\frac{3}{2}-s(x)\right).
-$$
+$$ P(x) := \left(s(x)-\frac{1}{2}\right) \left(\frac{3}{2}-s(x)\right). $$
 
 This polynomial is positive exactly when $s(x)=1$ and negative when $s(x)\in\lbrace-1,0,2\rbrace$. Its multilinear expansion is
 
@@ -209,15 +128,11 @@ $$ P(x) = -2x_1x_2+2x_1x_3+2x_2x_3+x_1+x_2-3x_3-\frac{3}{4}, $$
 
 so $P$ has degree at most $2$. Lemma 2 gives
 
-$$
-H^{*}(g) \leq 2.
-$$
+$$ H^{*}(g) \leq 2. $$
 
 The lower bound $H^{*}(g) \geq 2$ was proved in [014_three_bit_projection_cases.md](014_three_bit_projection_cases.md), using the lattice-square obstruction and the one-head linear-threshold characterization. Therefore
 
-$$
-H^{*}(00101001) = 2.
-$$
+$$ H^{*}(00101001) = 2. $$
 
 $\blacksquare$
 

@@ -4,25 +4,15 @@
 
 Let
 
-$$
-L(y)=a+\sum_{i=1}^{m}\alpha_i y_i
-$$
+$$ L(y)=a+\sum_{i=1}^{m}\alpha_i y_i $$
 
 be a nonconstant affine statistic on $\lbrace0,1\rbrace^{m}$. Let
 
-$$
-\ell_{\min}:=\min_y L(y),
-\qquad
-\ell_{\max}:=\max_y L(y),
-$$
+$$ \ell_{\min}:=\min_y L(y), \qquad \ell_{\max}:=\max_y L(y), $$
 
 and define the two endpoint predicates
 
-$$
-E_{\min}(y):=\mathbf{1}[L(y)=\ell_{\min}],
-\qquad
-E_{\max}(y):=\mathbf{1}[L(y)=\ell_{\max}].
-$$
+$$ E_{\min}(y):=\mathbf{1}[L(y)=\ell_{\min}], \qquad E_{\max}(y):=\mathbf{1}[L(y)=\ell_{\max}]. $$
 
 Then
 
@@ -40,101 +30,61 @@ Equivalently, if $E$ is either endpoint predicate, then both fresh-bit XOR and f
 
 We prove the claim for a generic endpoint. Let $e$ be either $\ell_{\min}$ or $\ell_{\max}$, and set
 
-$$
-R(y):=
-\begin{cases}
-L(y)-\ell_{\min} & \text{if } e=\ell_{\min},\\
-\ell_{\max}-L(y) & \text{if } e=\ell_{\max}.
-\end{cases}
-$$
+$$ R(y):= \begin{cases} L(y)-\ell_{\min} & \text{if } e=\ell_{\min},\\ \ell_{\max}-L(y) & \text{if } e=\ell_{\max}. \end{cases} $$
 
 Then $R$ is affine, $R(y)\geq0$ on the cube, and the endpoint predicate is
 
-$$
-E(y)=\mathbf{1}[R(y)=0].
-$$
+$$ E(y)=\mathbf{1}[R(y)=0]. $$
 
 Since $L$ is nonconstant, $R$ has at least one positive value. Define
 
-$$
-R_{\max}:=\max_y R(y)>0,
-\qquad
-\delta:=\min\lbrace R(y):R(y)>0\rbrace>0.
-$$
+$$ R_{\max}:=\max_y R(y)>0, \qquad \delta:=\min\lbrace R(y):R(y)>0\rbrace>0. $$
 
 The endpoint predicate is a nonconstant LTF, because
 
-$$
-E(y)=1
-\qquad\Longleftrightarrow\qquad
-\frac{\delta}{2}-R(y)>0.
-$$
+$$ E(y)=1 \qquad\Longleftrightarrow\qquad \frac{\delta}{2}-R(y)>0. $$
 
 Hence
 
-$$
-\deg_{\pm}(E)=1.
-$$
+$$ \deg_{\pm}(E)=1. $$
 
 By the fresh-bit XOR threshold-degree theorem,
 
-$$
-\deg_{\pm}(z\oplus E)=2.
-$$
+$$ \deg_{\pm}(z\oplus E)=2. $$
 
 Since threshold degree lower-bounds head complexity,
 
-$$
-H^{*}(z\oplus E)\geq2.
-$$
+$$ H^{*}(z\oplus E)\geq2. $$
 
 It remains to prove the two-head upper bound. Set
 
-$$
-B:=-R_{\max}-\frac{\delta}{2},
-\qquad
-M(z,y):=R(y)+Bz.
-$$
+$$ B:=-R_{\max}-\frac{\delta}{2}, \qquad M(z,y):=R(y)+Bz. $$
 
 We claim that
 
-$$
-z\oplus E(y)=1
-\qquad\Longleftrightarrow\qquad
-B+\delta\leq M(z,y)\leq0.
-$$
+$$ z\oplus E(y)=1 \qquad\Longleftrightarrow\qquad B+\delta\leq M(z,y)\leq0. $$
 
 If $z=0$ and $E(y)=1$, then $R(y)=0$ and $M(z,y)=0$, so the slab condition holds. If $z=0$ and $E(y)=0$, then $R(y)\geq\delta$ and $M(z,y)\geq\delta>0$, so the slab condition fails above the interval.
 
 If $z=1$ and $E(y)=1$, then $R(y)=0$ and $M(z,y)=B<B+\delta$, so the slab condition fails below the interval. If $z=1$ and $E(y)=0$, then
 
-$$
-\delta\leq R(y)\leq R_{\max},
-$$
+$$ \delta\leq R(y)\leq R_{\max}, $$
 
 and therefore
 
-$$
-B+\delta\leq M(z,y)\leq B+R_{\max}=-\frac{\delta}{2}<0.
-$$
+$$ B+\delta\leq M(z,y)\leq B+R_{\max}=-\frac{\delta}{2}<0. $$
 
 Thus the slab condition holds exactly on the true inputs of $z\oplus E$. Since $M$ is affine in $(z,y)$, the affine-slab theorem [062_affine_slab_upper_bound.md](../03_function_families_and_affine_geometry/062_affine_slab_upper_bound.md) gives
 
-$$
-H^{*}(z\oplus E)\leq2.
-$$
+$$ H^{*}(z\oplus E)\leq2. $$
 
 Together with the lower bound, this proves
 
-$$
-H^{*}(z\oplus E)=2.
-$$
+$$ H^{*}(z\oplus E)=2. $$
 
 Finally, output complement preserves head complexity by [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md), so
 
-$$
-H^{*}(1-(z\oplus E))=2.
-$$
+$$ H^{*}(1-(z\oplus E))=2. $$
 
 Applying this to $E_{\min}$ and $E_{\max}$ proves the result. $\blacksquare$
 

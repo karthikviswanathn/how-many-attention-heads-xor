@@ -8,15 +8,11 @@ We write $H^{*}(f)$ for the minimum number of heads needed to compute $f : \lbra
 
 For $1 \leq t \leq n$,
 
-$$
-T_{n,t}(x)  =  \mathbf{1} \left[ \lvert x\rvert \geq t \right]
-$$
+$$ T_{n,t}(x)  =  \mathbf{1} \left[ \lvert x\rvert \geq t \right] $$
 
 satisfies
 
-$$
-H^{*}(T_{n,t})  =  1.
-$$
+$$ H^{*}(T_{n,t})  =  1. $$
 
 ### Special cases
 
@@ -30,29 +26,21 @@ The proof is exactly the one-head construction from the previous note, together 
 
 For $n \geq 2$, define
 
-$$
-\mathrm{PARITY}_n(x)  =  x_1 \oplus x_2 \oplus \cdots \oplus x_n.
-$$
+$$ \mathrm{PARITY}_n(x)  =  x_1 \oplus x_2 \oplus \cdots \oplus x_n. $$
 
 Then the exact value is
 
-$$
-H^{*}(\mathrm{PARITY}_n) = n.
-$$
+$$ H^{*}(\mathrm{PARITY}_n) = n. $$
 
 The lower-bound proof below still gives the first nontrivial obstruction, namely $H^{*}(\mathrm{PARITY}_n) \geq 2$. The exact value follows from the symmetric sign-change theorem, since parity changes value between every pair of adjacent Hamming weights.
 
 **Checkerboard proof of the first lower bound.** Fix coordinates $i \neq j$, and fix every other coordinate to $0$. On the remaining two free bits $(a,b)$, the parity function becomes
 
-$$
-\mathrm{PARITY}_n(\ldots, a, \ldots, b, \ldots)  =  a \oplus b.
-$$
+$$ \mathrm{PARITY}_n(\ldots, a, \ldots, b, \ldots)  =  a \oplus b. $$
 
 So the restricted truth table is
 
-$$
-0,   1,   1,   0,
-$$
+$$ 0,   1,   1,   0, $$
 
 which is exactly the checkerboard pattern. By the checkerboard restriction lower bound, one head is impossible. Since parity is nonconstant, zero heads are also impossible. Hence $H^{*}(\mathrm{PARITY}_n) \geq 2$. $\blacksquare$
 
@@ -60,15 +48,11 @@ which is exactly the checkerboard pattern. By the checkerboard restriction lower
 
 For $0 \leq k \leq n$, define
 
-$$
-\mathrm{EXACT}_{n,k}(x)  =  \mathbf{1} \left[ \lvert x\rvert = k \right].
-$$
+$$ \mathrm{EXACT}_{n,k}(x)  =  \mathbf{1} \left[ \lvert x\rvert = k \right]. $$
 
 Then for every internal count $1 \leq k \leq n-1$,
 
-$$
-H^{*}(\mathrm{EXACT}_{n,k}) = 2.
-$$
+$$ H^{*}(\mathrm{EXACT}_{n,k}) = 2. $$
 
 The upper bound follows from the symmetric sign-change theorem, because the Hamming-weight sequence for $\mathrm{EXACT}_{n,k}$ has two sign changes when $1 \leq k \leq n - 1$. The checkerboard proof below gives the matching lower bound.
 
@@ -83,9 +67,7 @@ Now evaluate $\mathrm{EXACT}_{n,k}$ on the two free bits:
 
 Thus the restriction is again
 
-$$
-0,   1,   1,   0.
-$$
+$$ 0,   1,   1,   0. $$
 
 So one head is impossible by the checkerboard lower bound, and therefore $H^{*}(\mathrm{EXACT}_{n,k}) \geq 2$. $\blacksquare$
 

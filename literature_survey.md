@@ -64,15 +64,11 @@ Source: [journal page](https://www.sciencedirect.com/science/article/pii/S002200
 
 Klivans and Servedio show that every $s$-term DNF has a polynomial threshold representation of degree
 
-$$
-O(n^{1/3} \log s).
-$$
+$$ O(n^{1/3} \log s). $$
 
 **Why it matters here.** This is exactly the kind of structural upper bound one would like to import into head complexity. Right now we only know
 
-$$
-\deg_{\pm}(f) \leq H^{*}(f),
-$$
+$$ \deg_{\pm}(f) \leq H^{*}(f), $$
 
 not the reverse implication. But if some partial converse is ever proved for the attention model, this paper would immediately turn sparse DNF formulas into strong head upper bounds.
 
@@ -82,9 +78,7 @@ Source: [ECCC](https://eccc.weizmann.ac.il/report/2018/010/)
 
 Sherstov gives explicit constructive approximate polynomials for several Boolean families, including $k$-DNF and $k$-CNF, with degree
 
-$$
-O \left(n^{1-\frac{1}{k+1}}\right).
-$$
+$$ O \left(n^{1-\frac{1}{k+1}}\right). $$
 
 **Why it matters here.** The main attraction is constructive form. If we want upper bounds rather than just existential comparisons, explicit approximants are much more usable than generic existence theorems. The limitation is that the paper is about approximation, whereas our model computes Boolean functions exactly.
 
@@ -109,9 +103,7 @@ The literature currently points to four plausible upper-bound routes.
 
 This note records papers that are closest to the project question:
 
-$$
-f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace
-$$
+$$ f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace $$
 
 computed exactly by a one-layer attention-only model with a linear readout from a designated query token.
 
@@ -219,9 +211,7 @@ The survey suggests three gaps.
 
 1. I did not find a prior paper that directly studies the exact minimum head count
 
-$$
-H^{*}(f)
-$$
+$$ H^{*}(f) $$
 
 for the one-layer attention-only model from [model.md](model.md).
 
@@ -229,9 +219,7 @@ for the one-layer attention-only model from [model.md](model.md).
 
 3. Existing lower bounds are often asymptotic in input length. They do not automatically convert into finite-$n$ exact statements like
 
-$$
-H^{*}(\mathrm{XOR}_n) = n.
-$$
+$$ H^{*}(\mathrm{XOR}_n) = n. $$
 
 ## Working Takeaway For Upper Bounds
 
@@ -239,9 +227,7 @@ The strongest reusable idea from the literature is constructive counting.
 
 For the current project, the cleanest version is to make heads produce a basis of rational functions of a single positive weighted sum
 
-$$
-t(x) = \sum_{i=1}^{n} \lambda_i x_i,
-$$
+$$ t(x) = \sum_{i=1}^{n} \lambda_i x_i, $$
 
 then interpolate arbitrary target labels on the finite image of $t$.
 
@@ -251,8 +237,6 @@ That is the route taken in [lemmas/01_foundations_and_normal_form/009_weighted_s
 - a clean $n$-head upper bound for all symmetric Boolean functions,
 - a universal bound
 
-$$
-H^{*}(f) \leq 2^n - 1
-$$
+$$ H^{*}(f) \leq 2^n - 1 $$
 
 by taking binary weights.
