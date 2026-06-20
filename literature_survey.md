@@ -16,7 +16,7 @@ Weiss, Goldberg, and Yahav introduce RASP as a programming language for transfor
 - make attention compute that statistic or a basis of functions of that statistic,
 - finish by interpolation in the readout.
 
-That is exactly the shape of the weighted-sum interpolation proof in [lemmas/04_weighted_sum_upper_bound.md](lemmas/04_weighted_sum_upper_bound.md).
+That is exactly the shape of the weighted-sum interpolation proof in [lemmas/01_foundations_and_normal_form/04_weighted_sum_upper_bound.md](lemmas/01_foundations_and_normal_form/04_weighted_sum_upper_bound.md).
 
 ### 2. Yang and Chiang 2024. Counting Like Transformers: Compiling Temporal Counting Logic Into Softmax Transformers
 
@@ -100,7 +100,7 @@ Iyer, Jain, Kothari, Kovacs-Deak, Kumar, Schaeffer, Wang, and Whitmeyer study ex
 
 The literature currently points to four plausible upper-bound routes.
 
-1. **Low-cardinality statistic route.** Make the network depend only on a statistic with small image, then interpolate. This is the route currently realized in [lemmas/04_weighted_sum_upper_bound.md](lemmas/04_weighted_sum_upper_bound.md).
+1. **Low-cardinality statistic route.** Make the network depend only on a statistic with small image, then interpolate. This is the route currently realized in [lemmas/01_foundations_and_normal_form/04_weighted_sum_upper_bound.md](lemmas/01_foundations_and_normal_form/04_weighted_sum_upper_bound.md).
 2. **Rational-function route.** Because each head contributes a ratio of affine functions after scalar readout, rational degree looks like a more natural target invariant than polynomial degree.
 3. **PTF import route.** Structural upper bounds for polynomial threshold functions of DNF, CNF, and formula classes are potentially relevant, but only if we can show a converse from low-degree sign representations to few-head constructions on some class.
 4. **Exactification route.** Approximate-degree results are inspirational, especially for symmetric and formula families, but they do not by themselves answer exact computation in the model from [model.md](model.md).
@@ -245,7 +245,7 @@ $$
 
 then interpolate arbitrary target labels on the finite image of $t$.
 
-That is the route taken in [lemmas/04_weighted_sum_upper_bound.md](lemmas/04_weighted_sum_upper_bound.md). It gives:
+That is the route taken in [lemmas/01_foundations_and_normal_form/04_weighted_sum_upper_bound.md](lemmas/01_foundations_and_normal_form/04_weighted_sum_upper_bound.md). It gives:
 
 - a general upper bound when $f$ factors through a positive weighted sum,
 - a clean $n$-head upper bound for all symmetric Boolean functions,
