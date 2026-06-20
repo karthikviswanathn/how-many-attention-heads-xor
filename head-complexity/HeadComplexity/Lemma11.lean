@@ -1,6 +1,8 @@
 import HeadComplexity.Lemma9
 import HeadComplexity.AffineHead
 
+set_option linter.style.header false
+
 /-!
 # Lemma 11 — exact characterization of the zero- and one-head levels.
 
@@ -119,7 +121,7 @@ lemma eval_cubePoint_affine (P : MvPolynomial (Fin n) ℝ) (hP : P.totalDegree �
   congr 1
   · simp
   · refine Finset.sum_congr rfl (fun i _ => ?_)
-    rw [Finsupp.support_single_ne_zero i one_ne_zero, Finset.prod_singleton,
+    rw [Finsupp.support_single i one_ne_zero, Finset.prod_singleton,
       Finsupp.single_eq_same]
     simp [cubePoint]
 

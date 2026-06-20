@@ -2,6 +2,8 @@ import HeadComplexity.UpperBound
 import HeadComplexity.PartialFraction
 import HeadComplexity.SignPolynomial
 
+set_option linter.style.header false
+
 /-!
 # L12 — the unconditional equality.
 

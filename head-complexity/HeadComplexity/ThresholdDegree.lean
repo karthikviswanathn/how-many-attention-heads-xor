@@ -2,6 +2,8 @@ import HeadComplexity.SymmetricSignChanges
 import Mathlib.Algebra.MvPolynomial.Degrees
 import Mathlib.Algebra.MvPolynomial.CommRing
 
+set_option linter.style.header false
+
 /-!
 # Threshold (sign-representation) degree on the Boolean cube.
 

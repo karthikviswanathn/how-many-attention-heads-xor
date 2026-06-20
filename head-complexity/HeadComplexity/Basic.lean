@@ -4,7 +4,8 @@ import Mathlib.Analysis.SpecialFunctions.Exp
 import Mathlib.Analysis.Complex.Exponential
 import Mathlib.Data.Matrix.Mul
 import Mathlib.LinearAlgebra.Matrix.ToLin
-import Mathlib.Tactic
+
+set_option linter.style.header false
 
 /-!
 # Shared definitions for the head-complexity formalization.

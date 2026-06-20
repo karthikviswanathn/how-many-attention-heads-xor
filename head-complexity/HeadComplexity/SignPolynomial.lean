@@ -3,6 +3,8 @@ import Mathlib.Algebra.Polynomial.Roots
 import Mathlib.Algebra.Polynomial.BigOperators
 import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 
+set_option linter.style.header false
+
 /-!
 # Sign polynomial for a weight profile (L12 upper bound).
 

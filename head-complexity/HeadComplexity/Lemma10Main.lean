@@ -2,6 +2,8 @@ import HeadComplexity.FracAtomHead
 import HeadComplexity.HeadToAtom
 import HeadComplexity.Lemma11
 
+set_option linter.style.header false
+
 /-!
 # Lemma 10 — `H*(f) = L_frac(f)` (capstone).
 

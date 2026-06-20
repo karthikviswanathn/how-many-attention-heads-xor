@@ -2,6 +2,8 @@ import HeadComplexity.Lemma10
 import HeadComplexity.UpperBound
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
+set_option linter.style.header false
+
 /-!
 # Lemma 10 (one direction) — every linear-fractional atom is one head.
 

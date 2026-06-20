@@ -1,5 +1,7 @@
 import HeadComplexity.Head
 
+set_option linter.style.header false
+
 /-!
 # Skip-connection reduction.
 

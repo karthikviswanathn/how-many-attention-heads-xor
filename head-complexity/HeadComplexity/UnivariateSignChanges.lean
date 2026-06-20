@@ -2,6 +2,8 @@ import HeadComplexity.SymmetricSignChanges
 import Mathlib.Topology.Algebra.Polynomial
 import Mathlib.Topology.Order.IntermediateValue
 
+set_option linter.style.header false
+
 /-!
 # Univariate sign-change root bound (Lemma 12 lower bound, polynomial core).
 

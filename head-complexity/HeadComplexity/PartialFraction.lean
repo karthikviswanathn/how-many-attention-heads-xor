@@ -2,6 +2,8 @@ import Mathlib.Algebra.Polynomial.Roots
 import Mathlib.Algebra.Polynomial.BigOperators
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
+set_option linter.style.header false
+
 /-!
 # Real partial-fraction identity (for the L12 upper bound).
 
@@ -65,7 +67,7 @@ theorem real_partial_fraction {K : ℕ} (P : ℝ[X]) (av : Fin K → ℝ)
         (Finset.mem_erase.mpr ⟨fun e => hhi e.symm, Finset.mem_univ i⟩) (by ring)
     have hLi : (L i).eval (-av i) = ∏ j ∈ Finset.univ.erase i, (av j - av i) := by
       rw [hevalL]; exact Finset.prod_congr rfl (fun j _ => by ring)
-    rw [eval_sub, hR, eval_add, eval_mul, eval_C, hQroot, mul_zero, zero_add, eval_finset_sum]
+    rw [eval_sub, hR, eval_add, eval_mul, eval_C, hQroot, mul_zero, zero_add, eval_finsetSum]
     rw [Finset.sum_eq_single i (fun h _ hhi => by rw [eval_mul, eval_C, hLroot h hhi, mul_zero])
       (fun h => absurd (Finset.mem_univ i) h)]
     rw [eval_mul, eval_C, hLi, hbv]
@@ -105,7 +107,7 @@ theorem real_partial_fraction {K : ℕ} (P : ℝ[X]) (av : Fin K → ℝ)
       rwa [sub_eq_zero] at hPR
   refine ⟨A, bv, fun k => ?_⟩
   have hev := congrArg (eval k) hpoly
-  rw [hR, eval_add, eval_mul, eval_C, hevalQ, eval_finset_sum] at hev
+  rw [hR, eval_add, eval_mul, eval_C, hevalQ, eval_finsetSum] at hev
   simp only [eval_mul, eval_C, hevalL] at hev
   exact hev
 

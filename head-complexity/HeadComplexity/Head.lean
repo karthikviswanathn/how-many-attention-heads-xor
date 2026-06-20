@@ -1,5 +1,7 @@
 import HeadComplexity.Basic
 
+set_option linter.style.header false
+
 /-!
 # Single-head attention parameters and the attention update.
 

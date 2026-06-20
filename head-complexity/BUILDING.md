@@ -14,9 +14,9 @@ upper-bound construction see [`UPPER_BOUND_ROADMAP.md`](UPPER_BOUND_ROADMAP.md).
 
 | Component | Pinned version | Where pinned |
 |-----------|----------------|--------------|
-| Lean      | `leanprover/lean4:v4.29.0` | `lean-toolchain` |
+| Lean      | `leanprover/lean4:v4.31.0` | `lean-toolchain` |
 | Lake      | `5.0.0-src` (ships with the toolchain) | — |
-| mathlib   | `v4.29.0` (`leanprover-community/mathlib4`) | `lakefile.toml` → `[[require]]`, locked in `lake-manifest.json` |
+| mathlib   | `v4.31.0` (`leanprover-community/mathlib4`) | `lakefile.toml` → `[[require]]`, locked in `lake-manifest.json` |
 | elan      | `4.2.3` (any recent elan works) | — |
 
 `elan` installs the exact Lean/Lake the toolchain file requests, so you do **not**

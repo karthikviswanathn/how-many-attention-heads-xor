@@ -3,6 +3,8 @@ import HeadComplexity.Generalized
 import HeadComplexity.SegmentCrossing
 import HeadComplexity.SkipConnection
 
+set_option linter.style.header false
+
 /-!
 # Theorem 1: one attention head cannot compute XOR.
 

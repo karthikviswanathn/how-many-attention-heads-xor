@@ -1,5 +1,7 @@
 import HeadComplexity.AffineHead
 
+set_option linter.style.header false
+
 /-!
 # Lemma 10 — exact linear-fractional normal form.
 

@@ -1,6 +1,8 @@
 import HeadComplexity.Head
 import HeadComplexity.OneHead
 
+set_option linter.style.header false
+
 /-!
 # Theorem 2: two attention heads suffice to compute XOR.
 

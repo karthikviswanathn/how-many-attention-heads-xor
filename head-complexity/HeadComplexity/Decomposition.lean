@@ -1,6 +1,8 @@
 import HeadComplexity.Head
 import HeadComplexity.Softmax
 
+set_option linter.style.header false
+
 /-!
 # Structural decomposition of the attention update.
 

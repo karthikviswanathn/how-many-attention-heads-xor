@@ -3,6 +3,8 @@ import Mathlib.RingTheory.Polynomial.Pochhammer
 import Mathlib.Data.Finset.Powerset
 import Mathlib.Data.Fintype.EquivFin
 
+set_option linter.style.header false
+
 /-!
 # Phase 3b: univariate reduction of a symmetric polynomial on the cube.
 
@@ -272,7 +274,7 @@ lemma exists_univariate_of_symmetric {H : ℕ} (hP : P.IsSymmetric)
         _ ≤ j := binomPoly_natDegree_le j
         _ ≤ H := hjH
   · intro x
-    rw [eval_eq_betaSum P hP x, Polynomial.eval_finset_sum]
+    rw [eval_eq_betaSum P hP x, Polynomial.eval_finsetSum]
     apply Finset.sum_congr rfl
     intro j _
     rw [Polynomial.eval_smul, smul_eq_mul, binomPoly_eval]

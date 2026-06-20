@@ -3,6 +3,8 @@ import HeadComplexity.PartialFraction
 import Mathlib.LinearAlgebra.Lagrange
 import Mathlib.Algebra.BigOperators.Fin
 
+set_option linter.style.header false
+
 /-!
 # Lemma 9 — weighted-sum interpolation upper bound.
 

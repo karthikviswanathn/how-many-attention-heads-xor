@@ -2,6 +2,8 @@ import HeadComplexity.Basic
 import HeadComplexity.Head
 import HeadComplexity.SegmentCrossing
 
+set_option linter.style.header false
+
 /-!
 # Generalized `n`-bit one-layer attention model.
 
@@ -448,7 +450,8 @@ theorem checkerboard_restriction_not_computable_with_one_head
     rcases hH with ⟨w, τ, hw⟩
     refine ⟨w, τ, ?_⟩
     intro ab
-    simpa [gBool, nHeadFamilyAttnUpdate] using hw (NHead.restrictBits base i j ab)
+    simpa [gBool, NHead.restrictedUpdate, nHeadFamilyAttnUpdate]
+      using hw (NHead.restrictBits base i j ab)
   exact (NHead.checkerboard_not_computable_on_restriction (Hs 0) base i j hij gBool c
     h00 h11 h01 h10) hg
 

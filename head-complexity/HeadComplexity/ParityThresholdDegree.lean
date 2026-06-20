@@ -1,5 +1,7 @@
 import HeadComplexity.UnivariateReduction
 
+set_option linter.style.header false
+
 /-!
 # Lemma 7 — parity has threshold degree exactly `n`.
 

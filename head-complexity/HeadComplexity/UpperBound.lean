@@ -1,6 +1,8 @@
 import HeadComplexity.UnivariateReduction
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
+set_option linter.style.header false
+
 /-!
 # L12 upper bound: one head realizes one linear-fractional atom.
 

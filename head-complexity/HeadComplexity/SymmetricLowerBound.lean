@@ -1,6 +1,8 @@
 import HeadComplexity.ModelToPolynomial
 import HeadComplexity.UnivariateSignChanges
 
+set_option linter.style.header false
+
 /-!
 # L12 lower bound chain.
 

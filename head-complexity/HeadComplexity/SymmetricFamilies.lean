@@ -1,5 +1,7 @@
 import HeadComplexity.Generalized
 
+set_option linter.style.header false
+
 /-!
 # Symmetric families: parity and exact-count lower bounds (Lemma 5).
 

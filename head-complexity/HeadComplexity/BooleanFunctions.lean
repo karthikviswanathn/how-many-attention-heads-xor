@@ -1,6 +1,8 @@
 import HeadComplexity.OneHead
 import HeadComplexity.TwoHeads
 
+set_option linter.style.header false
+
 /-!
 # Boolean-function examples in the head-complexity model.
 

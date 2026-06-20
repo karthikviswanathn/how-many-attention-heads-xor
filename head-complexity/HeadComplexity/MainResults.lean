@@ -7,6 +7,8 @@ import HeadComplexity.Lemma10Main
 import HeadComplexity.Lemma11
 import HeadComplexity.L12Upper
 
+set_option linter.style.header false
+
 /-!
 # Main results — the twelve foundational lemmas, in one place.
 

@@ -1,5 +1,7 @@
 import HeadComplexity.SymmetricFamilies
 
+set_option linter.style.header false
+
 /-!
 # Symmetric sign changes (towards Lemma 12).
 
@@ -136,7 +138,6 @@ weights flips parity. -/
 lemma signChanges_parity : signChanges n (fun k => decide (Odd k)) = n := by
   rw [signChanges, Finset.filter_true_of_mem, Finset.card_range]
   intro t _
-  change decide (Odd t) ≠ decide (Odd (t + 1))
   by_cases h : Odd t
   · have h1 : ¬ Odd (t + 1) := by rw [Nat.odd_add_one]; exact not_not.mpr h
     simp [h, h1]

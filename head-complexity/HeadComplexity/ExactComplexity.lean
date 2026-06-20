@@ -1,5 +1,7 @@
 import HeadComplexity.L12Upper
 
+set_option linter.style.header false
+
 /-!
 # Exact head complexity of the standard symmetric families (L4, L5, L8).
 

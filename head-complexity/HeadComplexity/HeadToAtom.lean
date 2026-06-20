@@ -1,6 +1,8 @@
 import HeadComplexity.Lemma10
 import HeadComplexity.Generalized
 
+set_option linter.style.header false
+
 /-!
 # Lemma 10 (one direction): every head's readout is a linear-fractional atom.
 

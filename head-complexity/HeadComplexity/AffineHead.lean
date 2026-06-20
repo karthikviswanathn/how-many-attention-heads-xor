@@ -1,5 +1,7 @@
 import HeadComplexity.Lemma9
 
+set_option linter.style.header false
+
 /-!
 # Affine functionals are computable with one head.
 

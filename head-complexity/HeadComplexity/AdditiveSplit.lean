@@ -1,5 +1,7 @@
 import HeadComplexity.Generalized
 
+set_option linter.style.header false
+
 /-!
 # Additive decomposition of a restricted one-head attention map (Lemma 1).
 

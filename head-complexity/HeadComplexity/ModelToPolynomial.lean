@@ -1,5 +1,7 @@
 import HeadComplexity.ThresholdDegree
 
+set_option linter.style.header false
+
 /-!
 # Model → polynomial bridge (Lemma 6 / L12 lower bound, Phase 2).
 
@@ -166,7 +168,7 @@ lemma NHead.exists_numPoly (w : Vec d) :
 lemma totalDegree_prod_le_card {ι : Type*} (s : Finset ι)
     (D : ι → MvPolynomial (Fin n) ℝ) (hD : ∀ g, (D g).totalDegree ≤ 1) :
     (∏ g ∈ s, D g).totalDegree ≤ s.card := by
-  refine (totalDegree_finset_prod _ _).trans ?_
+  refine (totalDegree_finsetProd _ _).trans ?_
   refine (Finset.sum_le_card_nsmul _ _ 1 (fun g _ => hD g)).trans ?_
   rw [smul_eq_mul, mul_one]
 
