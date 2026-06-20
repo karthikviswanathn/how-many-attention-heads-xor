@@ -87,7 +87,7 @@ returns
 
 Therefore every nonconstant non-LTF truth table arising from a one-change two-pair local-count profile has a two-atom rational certificate with positive affine denominators.
 
-By the affine-over-positive-affine atom lemma [09_three_bit_quadratic_upper_bound.md](09_three_bit_quadratic_upper_bound.md), each ratio $A_i/B_i$ is a single one-head atom. Hence every such table has
+By the affine-over-positive-affine atom lemma [09_three_bit_quadratic_upper_bound.md](../01_foundations_and_normal_form/09_three_bit_quadratic_upper_bound.md), each ratio $A_i/B_i$ is a single one-head atom. Hence every such table has
 
 $$
 H^{*}(f_{p,F})\leq2.
@@ -97,7 +97,7 @@ $$
 
 If $f_{p,F}$ is constant, then $H^{*}(f_{p,F})=0$.
 
-If $f_{p,F}$ is a nonconstant LTF, then the one-head characterization [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md) gives
+If $f_{p,F}$ is a nonconstant LTF, then the one-head characterization [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md) gives
 
 $$
 H^{*}(f_{p,F})=1.

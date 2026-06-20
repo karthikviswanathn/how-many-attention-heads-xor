@@ -11,7 +11,7 @@ structural core out to the current frontier.
 | `02_complexity_measure_upper_bounds` | 22–39 | Restriction/junta/sign-rank invariances and upper bounds from classical complexity measures: DNF/CNF (width, volume, literal expansion, monotone), certificate covers, PTF sparsity, decision trees, Fourier support. |
 | `03_function_families_and_affine_geometry` | 40–67 | Exact head complexity for named families (affine parity, inner product, equality, intersection / Hamming-distance / directed-defect profiles, two- and three-pair families) and affine geometry (level sets, slabs, two-point and clean supports, positive runs), plus depth-two-tree and hybrid exactness. |
 | `04_recursions_and_cost_invariants` | 68–120 | Cofactor and one-bit branching recursions, decision lists / threshold votes / calibration, the cylinder-threshold cost (`ctc`) and affine-cylinder cost (`actc`) invariants and their cofactor interpolation, and the halfspace-intersection lower bound. |
-| `05_positive_statistic_gates_and_grids` | 121–176 | The current frontier: one-bit gates over a positive statistic, multi-raw-slice and shared-statistic sandwiches, raw-mask gates, positive grids, Hamming-layer and multigrid profile bounds. |
+| `05_positive_statistic_gates_and_grids` | 121–170 | The current frontier: one-bit gates over a positive statistic, multi-raw-slice and shared-statistic sandwiches, raw-mask gates, positive grids, Hamming-layer and multigrid profile bounds. |
 
 The organizing spine across all folders is the sandwich
 

@@ -107,7 +107,7 @@ f(x)=1
 \widetilde V(x)>0.
 $$
 
-Multiplying a one-head atom by a scalar gives another one-head atom, by multiplying its numerator parameters by that scalar and leaving its positive denominator unchanged. Hence the score $\widetilde V$ is a constant plus a sum of $s$ one-head atoms. The linear-fractional normal form [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md) gives
+Multiplying a one-head atom by a scalar gives another one-head atom, by multiplying its numerator parameters by that scalar and leaving its positive denominator unchanged. Hence the score $\widetilde V$ is a constant plus a sum of $s$ one-head atoms. The linear-fractional normal form [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md) gives
 
 $$
 H^{*}(f)\leq s.

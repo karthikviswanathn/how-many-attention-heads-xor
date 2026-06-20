@@ -183,7 +183,7 @@ f(x)=1
 S(x)>0.
 $$
 
-Since each $\phi_{S_a}$ is a one-head atom, the linear-fractional normal form from [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md) gives
+Since each $\phi_{S_a}$ is a one-head atom, the linear-fractional normal form from [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md) gives
 
 $$
 H^{*}(f)\leq s.

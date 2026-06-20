@@ -46,7 +46,7 @@ $$
 H^{*}(\mathrm{IP}_m)\geq m.
 $$
 
-Equivalently, using the threshold-degree theorem [xor_n_bits.md](xor_n_bits.md), this restriction proves
+Equivalently, using the threshold-degree theorem [xor_n_bits.md](../01_foundations_and_normal_form/xor_n_bits.md), this restriction proves
 
 $$
 \deg_{\pm}(\mathrm{IP}_m)\geq m.
@@ -116,7 +116,7 @@ P(x,y)
 \prod_{i\in U}x_i y_i.
 $$
 
-This polynomial has exactly $2^m-1$ nonconstant monomials in the $2m$ Boolean variables. Applying the polynomial-threshold sparsity upper bound [35_ptf_sparsity_upper_bound.md](35_ptf_sparsity_upper_bound.md) gives
+This polynomial has exactly $2^m-1$ nonconstant monomials in the $2m$ Boolean variables. Applying the polynomial-threshold sparsity upper bound [35_ptf_sparsity_upper_bound.md](../02_complexity_measure_upper_bounds/35_ptf_sparsity_upper_bound.md) gives
 
 $$
 H^{*}(\mathrm{IP}_m)\leq2^m-1.

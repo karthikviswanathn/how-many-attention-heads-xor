@@ -4,7 +4,7 @@ This note proves, carefully and without hidden steps, the following claim.
 
 ## Theorem
 
-For every $n \geq 1$, in the one-layer attention-only model from [../model.md](../model.md), the $n$-bit parity / XOR function
+For every $n \geq 1$, in the one-layer attention-only model from [../model.md](../../model.md), the $n$-bit parity / XOR function
 
 $$\mathrm{XOR}_n(x_1, \ldots, x_n) = x_1 \oplus \cdots \oplus x_n$$
 
@@ -22,7 +22,7 @@ The lower bound and the upper bound then match.
 
 ## Model Reminder
 
-We use the formal specification from [../model.md](../model.md). The facts needed in this note are:
+We use the formal specification from [../model.md](../../model.md). The facts needed in this note are:
 
 1. the input sequence is $(x_1, \ldots, x_n, =)$,
 2. there is one self-attention layer with $H$ heads,
@@ -30,7 +30,7 @@ We use the formal specification from [../model.md](../model.md). The facts neede
 4. the final residual stream is read only at the query token,
 5. the final classifier is an affine threshold applied to that query-token residual.
 
-The input vector at the query token, denoted $u_=(x)$ in [../model.md](../model.md), is constant across all inputs, so any constant contribution from the skip connection can be absorbed into the threshold.
+The input vector at the query token, denoted $u_=(x)$ in [../model.md](../../model.md), is constant across all inputs, so any constant contribution from the skip connection can be absorbed into the threshold.
 
 ## What Threshold Degree Means
 
@@ -131,7 +131,7 @@ This is exactly the desired strict sign separation.
 
 ### Lemma 2. The scalar contribution of one head is a ratio of affine functions
 
-Fix one attention head $h$, and let $w_{\mathrm{out}} \in \mathbb{R}^{d_{\mathrm{model}}}$ be the final readout vector from [../model.md](../model.md).
+Fix one attention head $h$, and let $w_{\mathrm{out}} \in \mathbb{R}^{d_{\mathrm{model}}}$ be the final readout vector from [../model.md](../../model.md).
 
 Let
 

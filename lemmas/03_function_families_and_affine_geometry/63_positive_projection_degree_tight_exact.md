@@ -8,7 +8,7 @@ $$
 f:\{0,1\}^n\to\{0,1\}.
 $$
 
-Let $C_{+}(f)$ be the minimum positive-projection sign-change count from [07_positive_projection_sign_changes.md](07_positive_projection_sign_changes.md). Then
+Let $C_{+}(f)$ be the minimum positive-projection sign-change count from [07_positive_projection_sign_changes.md](../01_foundations_and_normal_form/07_positive_projection_sign_changes.md). Then
 
 $$
 \deg_{\pm}(f)
@@ -70,13 +70,13 @@ $$
 \deg_{\pm}(f)\leq H^{*}(f)
 $$
 
-is the threshold-degree lower bound from [xor_n_bits.md](xor_n_bits.md). The upper bound
+is the threshold-degree lower bound from [xor_n_bits.md](../01_foundations_and_normal_form/xor_n_bits.md). The upper bound
 
 $$
 H^{*}(f)\leq C_{+}(f)
 $$
 
-is the positive-projection sign-change theorem [07_positive_projection_sign_changes.md](07_positive_projection_sign_changes.md). Therefore, if
+is the positive-projection sign-change theorem [07_positive_projection_sign_changes.md](../01_foundations_and_normal_form/07_positive_projection_sign_changes.md). Therefore, if
 
 $$
 \deg_{\pm}(f)=C_{+}(f),
@@ -88,7 +88,7 @@ $$
 H^{*}(f)=\deg_{\pm}(f)=C_{+}(f).
 $$
 
-The same proof works with any fixed positive projection $t$: if $f$ factors through $t$, then [07_positive_projection_sign_changes.md](07_positive_projection_sign_changes.md) gives
+The same proof works with any fixed positive projection $t$: if $f$ factors through $t$, then [07_positive_projection_sign_changes.md](../01_foundations_and_normal_form/07_positive_projection_sign_changes.md) gives
 
 $$
 H^{*}(f)\leq C_t(f).
@@ -106,7 +106,7 @@ $$
 H^{*}(f)\leq2.
 $$
 
-If $f$ is constant, then $H^{*}(f)=0$. If $f$ is a nonconstant LTF, the one-head characterization from [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md) gives
+If $f$ is constant, then $H^{*}(f)=0$. If $f$ is a nonconstant LTF, the one-head characterization from [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md) gives
 
 $$
 H^{*}(f)=1.

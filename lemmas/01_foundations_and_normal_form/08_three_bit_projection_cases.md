@@ -2,7 +2,7 @@
 
 ## Statement
 
-This note applies the one-head linear-threshold characterization and the positive-projection sign-change bound to two of the provisional three-head functions from [../three_head_functions_n3.md](../three_head_functions_n3.md).
+This note applies the one-head linear-threshold characterization and the positive-projection sign-change bound to two of the provisional three-head functions from [../three_head_functions_n3.md](../../three_head_functions_n3.md).
 
 For the function with bitstring
 
@@ -210,7 +210,7 @@ $$
 0,1,0,0,1.
 $$
 
-There are three sign changes. Hence Lemma 13 of [../lemmas.md](../lemmas.md) gives
+There are three sign changes. Hence Lemma 13 of [../lemmas.md](../../lemmas.md) gives
 
 $$
 H^{*}(g) \leq 3.

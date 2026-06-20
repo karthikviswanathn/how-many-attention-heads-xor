@@ -78,7 +78,7 @@ S>0
 \mathrm{SUB}_2(x,y)=1.
 $$
 
-Both denominators have positive constant term and positive variable coefficients. By the affine-over-positive-affine atom lemma [09_three_bit_quadratic_upper_bound.md](09_three_bit_quadratic_upper_bound.md), each ratio $A_i/B_i$ is a single one-head atom. Therefore
+Both denominators have positive constant term and positive variable coefficients. By the affine-over-positive-affine atom lemma [09_three_bit_quadratic_upper_bound.md](../01_foundations_and_normal_form/09_three_bit_quadratic_upper_bound.md), each ratio $A_i/B_i$ is a single one-head atom. Therefore
 
 $$
 H^{*}(\mathrm{SUB}_2)\leq2.

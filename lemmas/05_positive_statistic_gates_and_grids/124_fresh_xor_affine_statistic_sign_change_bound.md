@@ -130,7 +130,7 @@ $$
 
 Since each sign change flips the current label, this last equality holds exactly when $C$ is even. Hence the sign-change count of $H$ along $\operatorname{Im}(M_B)$ is $D_{\oplus}(C)$.
 
-The statistic $M_B$ uses at most $k+1$ variables. Applying the affine-statistic sign-change theorem [57_affine_statistic_sign_changes.md](57_affine_statistic_sign_changes.md) gives the following.
+The statistic $M_B$ uses at most $k+1$ variables. Applying the affine-statistic sign-change theorem [57_affine_statistic_sign_changes.md](../03_function_families_and_affine_geometry/57_affine_statistic_sign_changes.md) gives the following.
 
 If $C=0$, then $D_{\oplus}(C)=1$, so $z\oplus T$ is a nonconstant LTF and
 
@@ -158,7 +158,7 @@ H^{*}(z\oplus T)
 1+\sum_{r=2}^{\min\{D_{\oplus}(C),k+1\}}\binom{k+1}{r}.
 $$
 
-Finally, XNOR is the output complement of fresh XOR, and output complement preserves head complexity by [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md). This proves all claims. $\blacksquare$
+Finally, XNOR is the output complement of fresh XOR, and output complement preserves head complexity by [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md). This proves all claims. $\blacksquare$
 
 ## Consequences
 

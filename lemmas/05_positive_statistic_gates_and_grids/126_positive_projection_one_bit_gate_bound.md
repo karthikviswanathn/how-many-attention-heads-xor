@@ -95,7 +95,7 @@ $$
 H_G(z,y)=R(s(z,y)).
 $$
 
-The sign-change count of $R$ along the ordered image of $s$ is exactly $C_{G,t}$, by construction. The positive-projection sign-change theorem [07_positive_projection_sign_changes.md](07_positive_projection_sign_changes.md) gives
+The sign-change count of $R$ along the ordered image of $s$ is exactly $C_{G,t}$, by construction. The positive-projection sign-change theorem [07_positive_projection_sign_changes.md](../01_foundations_and_normal_form/07_positive_projection_sign_changes.md) gives
 
 $$
 H^{*}(H_G)\leq C_{G,t}.
@@ -103,7 +103,7 @@ $$
 
 If $C_{G,t}=0$, then $R$ is constant on $\operatorname{Im}(s)$, so $H_G$ is constant and $H^{*}(H_G)=0$.
 
-If $C_{G,t}=1$, then the same theorem gives $H^{*}(H_G)\leq1$, and $H_G$ is nonconstant. The zero-head and one-head characterization [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md) gives
+If $C_{G,t}=1$, then the same theorem gives $H^{*}(H_G)\leq1$, and $H_G$ is nonconstant. The zero-head and one-head characterization [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md) gives
 
 $$
 H^{*}(H_G)=1.

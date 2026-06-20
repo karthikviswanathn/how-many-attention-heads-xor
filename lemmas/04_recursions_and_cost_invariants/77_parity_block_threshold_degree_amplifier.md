@@ -90,7 +90,7 @@ $$
 \deg_{\pm}(T)+k.
 $$
 
-The head lower bound follows from the general threshold-degree lower bound [xor_n_bits.md](xor_n_bits.md).
+The head lower bound follows from the general threshold-degree lower bound [xor_n_bits.md](../01_foundations_and_normal_form/xor_n_bits.md).
 
 For the sparse upper bound, let $P(y)$ strictly sign-represent $T$. Define
 
@@ -112,7 +112,7 @@ $$
 2^k\bigl(m(P)+1\bigr)-1
 $$
 
-nonconstant monomials. The polynomial-threshold sparsity upper bound [35_ptf_sparsity_upper_bound.md](35_ptf_sparsity_upper_bound.md) gives the claimed head upper bound. $\blacksquare$
+nonconstant monomials. The polynomial-threshold sparsity upper bound [35_ptf_sparsity_upper_bound.md](../02_complexity_measure_upper_bounds/35_ptf_sparsity_upper_bound.md) gives the claimed head upper bound. $\blacksquare$
 
 ## Consequences
 

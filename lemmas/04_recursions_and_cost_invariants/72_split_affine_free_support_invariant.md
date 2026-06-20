@@ -115,7 +115,7 @@ $$
 
 ## Proof
 
-Choose a coordinate $j$ and cofactor sign polynomials $P_0,P_1$. By coordinate permutation invariance from [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md), we may write this coordinate as the first coordinate $z$.
+Choose a coordinate $j$ and cofactor sign polynomials $P_0,P_1$. By coordinate permutation invariance from [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md), we may write this coordinate as the first coordinate $z$.
 
 Define the interpolation polynomial
 
@@ -170,7 +170,7 @@ $$
 C(P_0,P_1).
 $$
 
-The affine-free sparsity theorem [42_affine_free_sparsity_upper_bound.md](42_affine_free_sparsity_upper_bound.md) gives
+The affine-free sparsity theorem [42_affine_free_sparsity_upper_bound.md](../03_function_families_and_affine_geometry/42_affine_free_sparsity_upper_bound.md) gives
 
 $$
 H^{*}(f)\leq C(P_0,P_1).
@@ -182,7 +182,7 @@ $$
 H^{*}(f)\leq\operatorname{scafs}_{\pm}(f).
 $$
 
-If $\operatorname{scafs}_{\pm}(f)\leq2$, then $H^{*}(f)\leq2$. The exact value is now forced by the zero-head and one-head characterization [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md): constants have value $0$, nonconstant LTFs have value $1$, and all remaining functions have value exactly $2$. $\blacksquare$
+If $\operatorname{scafs}_{\pm}(f)\leq2$, then $H^{*}(f)\leq2$. The exact value is now forced by the zero-head and one-head characterization [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md): constants have value $0$, nonconstant LTFs have value $1$, and all remaining functions have value exactly $2$. $\blacksquare$
 
 ## Consequences
 

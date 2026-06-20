@@ -66,7 +66,7 @@ $$
 g:\{0,1\}^{V}\to\{0,1\}
 $$
 
-be the induced function. By junta reduction [33_junta_upper_bounds.md](33_junta_upper_bounds.md),
+be the induced function. By junta reduction [33_junta_upper_bounds.md](../02_complexity_measure_upper_bounds/33_junta_upper_bounds.md),
 
 $$
 H^{*}(f)=H^{*}(g).
@@ -88,7 +88,7 @@ $$
 \sum_{a=1}^{s}2^{v-w_a}.
 $$
 
-The sparse-support upper bound [31_sparse_support_upper_bound.md](31_sparse_support_upper_bound.md) gives
+The sparse-support upper bound [31_sparse_support_upper_bound.md](../02_complexity_measure_upper_bounds/31_sparse_support_upper_bound.md) gives
 
 $$
 H^{*}(g)
@@ -100,7 +100,7 @@ $$
 
 ### Lemma 2. Local literal expansion
 
-The terms form a $1$-certificate cover of $g$. The local certificate-expansion theorem [38_oriented_certificate_expansion_upper_bound.md](38_oriented_certificate_expansion_upper_bound.md) gives
+The terms form a $1$-certificate cover of $g$. The local certificate-expansion theorem [38_oriented_certificate_expansion_upper_bound.md](../02_complexity_measure_upper_bounds/38_oriented_certificate_expansion_upper_bound.md) gives
 
 $$
 H^{*}(g)
@@ -110,7 +110,7 @@ $$
 
 ### Lemma 3. Junta interpolation
 
-The generic small-junta bound [33_junta_upper_bounds.md](33_junta_upper_bounds.md) gives
+The generic small-junta bound [33_junta_upper_bounds.md](../02_complexity_measure_upper_bounds/33_junta_upper_bounds.md) gives
 
 $$
 H^{*}(g)\leq2^v-1

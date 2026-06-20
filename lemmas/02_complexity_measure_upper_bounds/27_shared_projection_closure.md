@@ -72,7 +72,7 @@ $$
 
 so $g$ also factors through $t$.
 
-By the positive-projection sign-change theorem [07_positive_projection_sign_changes.md](07_positive_projection_sign_changes.md),
+By the positive-projection sign-change theorem [07_positive_projection_sign_changes.md](../01_foundations_and_normal_form/07_positive_projection_sign_changes.md),
 
 $$
 H^{*}(g)\leq C_t(g).

@@ -130,7 +130,7 @@ $$
 B+\delta\leq M(z,y)\leq B+R_{\max}=-\frac{\delta}{2}<0.
 $$
 
-Thus the slab condition holds exactly on the true inputs of $z\oplus E$. Since $M$ is affine in $(z,y)$, the affine-slab theorem [56_affine_slab_upper_bound.md](56_affine_slab_upper_bound.md) gives
+Thus the slab condition holds exactly on the true inputs of $z\oplus E$. Since $M$ is affine in $(z,y)$, the affine-slab theorem [56_affine_slab_upper_bound.md](../03_function_families_and_affine_geometry/56_affine_slab_upper_bound.md) gives
 
 $$
 H^{*}(z\oplus E)\leq2.
@@ -142,7 +142,7 @@ $$
 H^{*}(z\oplus E)=2.
 $$
 
-Finally, output complement preserves head complexity by [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md), so
+Finally, output complement preserves head complexity by [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md), so
 
 $$
 H^{*}(1-(z\oplus E))=2.
@@ -152,6 +152,6 @@ Applying this to $E_{\min}$ and $E_{\max}$ proves the result. $\blacksquare$
 
 ## Consequences
 
-The positive endpoint theorem [120_endpoint_feature_fresh_xor_exact.md](120_endpoint_feature_fresh_xor_exact.md) is the special case where $L(y)=\sum_{i\in S}\lambda_i y_i$ with $\lambda_i>0$: the OR-type endpoint is the complement of $E_{\min}$, and the AND-type endpoint is $E_{\max}$.
+The positive endpoint theorem [120_endpoint_feature_fresh_xor_exact.md](../04_recursions_and_cost_invariants/120_endpoint_feature_fresh_xor_exact.md) is the special case where $L(y)=\sum_{i\in S}\lambda_i y_i$ with $\lambda_i>0$: the OR-type endpoint is the complement of $E_{\min}$, and the AND-type endpoint is $E_{\max}$.
 
 Thus every affine statistic has exact two-head fresh-XOR behavior at its two finite cube endpoints, even when the generic one-bit LTF branching and optimized $\operatorname{xactc}$ upper bounds are much larger.

@@ -28,7 +28,7 @@ $$
 \deg_{\pm}(f) \leq H^{*}(f)
 $$
 
-by Lemma 6 of [../lemmas.md](../lemmas.md). It remains to match this lower bound by upper bounds for threshold degree $0,1,2,3$.
+by Lemma 6 of [../lemmas.md](../../lemmas.md). It remains to match this lower bound by upper bounds for threshold degree $0,1,2,3$.
 
 ### Lemma 1. Three-bit cubic thresholds use at most three heads
 

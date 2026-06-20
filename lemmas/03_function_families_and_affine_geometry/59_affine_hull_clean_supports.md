@@ -43,7 +43,7 @@ $$
 
 ## Proof
 
-By complement invariance [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md), it is enough to handle the case
+By complement invariance [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md), it is enough to handle the case
 
 $$
 f^{-1}(1)=A.
@@ -105,7 +105,7 @@ $$
 H^{*}(f)\leq2.
 $$
 
-The exact case split follows from the zero-head and one-head characterization [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md): constants have value $0$, nonconstant LTFs have value $1$, and nonconstant non-LTFs need at least two heads. Together with the two-head upper bound, this proves the statement. $\blacksquare$
+The exact case split follows from the zero-head and one-head characterization [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md): constants have value $0$, nonconstant LTFs have value $1$, and nonconstant non-LTFs need at least two heads. Together with the two-head upper bound, this proves the statement. $\blacksquare$
 
 ## Consequence
 

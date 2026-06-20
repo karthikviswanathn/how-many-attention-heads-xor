@@ -79,7 +79,7 @@ $$
 F(0),F(1),\ldots,F(m).
 $$
 
-By the symmetric sign-change theorem [06_symmetric_sign_changes.md](06_symmetric_sign_changes.md), the restricted function has head complexity $C(F)$. Restriction monotonicity from [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md) gives
+By the symmetric sign-change theorem [06_symmetric_sign_changes.md](../01_foundations_and_normal_form/06_symmetric_sign_changes.md), the restricted function has head complexity $C(F)$. Restriction monotonicity from [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md) gives
 
 $$
 H^{*}(h_F)\geq C(F).
@@ -241,7 +241,7 @@ $$
 
 **Proof.** The upper bound is the theorem with one sign change, so $V_m(1)=m+1$.
 
-For $m=1$, $\mathrm{NCON}_1(x,y)=x(1-y)$ and $\mathrm{SUB}_1=1-\mathrm{NCON}_1$ are nonconstant linear threshold functions, so both have head complexity $1$ by the one-head characterization [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md).
+For $m=1$, $\mathrm{NCON}_1(x,y)=x(1-y)$ and $\mathrm{SUB}_1=1-\mathrm{NCON}_1$ are nonconstant linear threshold functions, so both have head complexity $1$ by the one-head characterization [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md).
 
 Assume $m\geq2$. We prove $\mathrm{NCON}_m$ is not a linear threshold function. It is enough to restrict to the first two coordinate pairs. Suppose an affine score with coefficients $a_1,a_2$ on $x_1,x_2$, coefficients $b_1,b_2$ on $y_1,y_2$, and constant $c$ is positive on noncontainment inputs and negative on containment inputs.
 
@@ -283,4 +283,4 @@ $$
 
 a contradiction. Thus $\mathrm{NCON}_m$ is not a linear threshold function, so $H^{*}(\mathrm{NCON}_m)\geq2$.
 
-Complement invariance from [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md) gives the same lower bound for $\mathrm{SUB}_m$. $\blacksquare$
+Complement invariance from [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md) gives the same lower bound for $\mathrm{SUB}_m$. $\blacksquare$

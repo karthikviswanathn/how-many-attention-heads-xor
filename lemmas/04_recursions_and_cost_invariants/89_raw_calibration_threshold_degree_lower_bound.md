@@ -58,7 +58,7 @@ H^{*}(f)
 \sum_{j:c_j\neq0}\rho(T_j).
 $$
 
-The threshold-degree lower bound [xor_n_bits.md](xor_n_bits.md) gives
+The threshold-degree lower bound [xor_n_bits.md](../01_foundations_and_normal_form/xor_n_bits.md) gives
 
 $$
 \deg_{\pm}(f)\leq H^{*}(f).

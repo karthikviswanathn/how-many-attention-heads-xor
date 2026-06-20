@@ -36,7 +36,7 @@ $$
 \deg_{\pm}(T_n\wedge U_n)\geq c n.
 $$
 
-Apply the threshold-degree lower bound [xor_n_bits.md](xor_n_bits.md), which gives
+Apply the threshold-degree lower bound [xor_n_bits.md](../01_foundations_and_normal_form/xor_n_bits.md), which gives
 
 $$
 \deg_{\pm}(f)\leq H^{*}(f)

@@ -97,7 +97,7 @@ $\blacksquare$
 
 ## Consequence
 
-The top-threshold-degree theorem [21_top_threshold_degree.md](21_top_threshold_degree.md) is the case $d=n-1$. Then
+The top-threshold-degree theorem [21_top_threshold_degree.md](../01_foundations_and_normal_form/21_top_threshold_degree.md) is the case $d=n-1$. Then
 
 $$
 T_{>n-1}(z)=\widehat q([n])\,\chi_{[n]}(z).

@@ -267,7 +267,7 @@ $\blacksquare$
 
 ### Lemma 4. Low heads imply low partition sign-rank
 
-Suppose $f$ is computed with $H$ heads. By the threshold-degree lower-bound proof in [xor_n_bits.md](xor_n_bits.md), there is a multilinear polynomial $P$ of degree at most $H$ such that
+Suppose $f$ is computed with $H$ heads. By the threshold-degree lower-bound proof in [xor_n_bits.md](../01_foundations_and_normal_form/xor_n_bits.md), there is a multilinear polynomial $P$ of degree at most $H$ such that
 
 $$
 P(x)>0

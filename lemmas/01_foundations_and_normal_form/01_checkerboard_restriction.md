@@ -2,7 +2,7 @@
 
 ## Statement
 
-Fix the one-layer attention-only model from [../model.md](../model.md), with a single head and a linear readout from the query token.
+Fix the one-layer attention-only model from [../model.md](../../model.md), with a single head and a linear readout from the query token.
 
 Let $f : \{0,1\}^n \to \{0,1\}$. Suppose there exist distinct coordinates $i \neq j$ and a base assignment to all other coordinates such that, restricted to the two free bits $(a,b)$ in positions $i, j$, the function looks like
 
@@ -30,7 +30,7 @@ So the single-head XOR impossibility is just the first instance of a more genera
 
 Fix all coordinates except $i$ and $j$. Write the restricted input as $x^{(a,b)}$.
 
-In the notation of [../model.md](../model.md), let $\widetilde y(a,b)$ be the unprojected one-head output at the query token, and let
+In the notation of [../model.md](../../model.md), let $\widetilde y(a,b)$ be the unprojected one-head output at the query token, and let
 
 $$
 z(a,b) := W_O \widetilde y(a,b)

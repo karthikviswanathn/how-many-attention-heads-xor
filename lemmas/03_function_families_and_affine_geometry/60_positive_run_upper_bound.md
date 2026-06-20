@@ -80,7 +80,7 @@ $$
 C_t(f)\leq2\min\{R_t^0(f),R_t^1(f)\}.
 $$
 
-The positive-projection sign-change theorem [07_positive_projection_sign_changes.md](07_positive_projection_sign_changes.md) gives
+The positive-projection sign-change theorem [07_positive_projection_sign_changes.md](../01_foundations_and_normal_form/07_positive_projection_sign_changes.md) gives
 
 $$
 H^{*}(f)\leq C_t(f),
@@ -98,7 +98,7 @@ Optimizing over injective positive weighted sums $t$ proves the $R_{+}(f)$ bound
 
 ## Consequence
 
-The sparse-support upper bound [31_sparse_support_upper_bound.md](31_sparse_support_upper_bound.md) follows immediately. If $s(f)$ is the size of the smaller label class, then every run of that label contains at least one point, so
+The sparse-support upper bound [31_sparse_support_upper_bound.md](../02_complexity_measure_upper_bounds/31_sparse_support_upper_bound.md) follows immediately. If $s(f)$ is the size of the smaller label class, then every run of that label contains at least one point, so
 
 $$
 R_{+}(f)\leq s(f),

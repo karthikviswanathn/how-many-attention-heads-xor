@@ -136,7 +136,7 @@ $$
 \deg_{\pm}(g)=\deg_{\pm}(f)+1.
 $$
 
-The head lower bound follows from the general threshold-degree lower bound [xor_n_bits.md](xor_n_bits.md). The upper bound using $\ell(P)$ and $q(P)$ is the XOR case of one-bit sparse-PTF branching [74_one_bit_sparse_ptf_branching.md](74_one_bit_sparse_ptf_branching.md). $\blacksquare$
+The head lower bound follows from the general threshold-degree lower bound [xor_n_bits.md](../01_foundations_and_normal_form/xor_n_bits.md). The upper bound using $\ell(P)$ and $q(P)$ is the XOR case of one-bit sparse-PTF branching [74_one_bit_sparse_ptf_branching.md](74_one_bit_sparse_ptf_branching.md). $\blacksquare$
 
 ## Consequences
 

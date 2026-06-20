@@ -106,6 +106,6 @@ $\blacksquare$
 
 ## Consequences
 
-The polynomial-threshold sparsity theorem [35_ptf_sparsity_upper_bound.md](35_ptf_sparsity_upper_bound.md) factors through $\operatorname{ctc}$. Any future improvement to $\operatorname{ctc}$ over sparse monomial support automatically sharpens the sparse-PTF route without changing the underlying sign polynomial.
+The polynomial-threshold sparsity theorem [35_ptf_sparsity_upper_bound.md](../02_complexity_measure_upper_bounds/35_ptf_sparsity_upper_bound.md) factors through $\operatorname{ctc}$. Any future improvement to $\operatorname{ctc}$ over sparse monomial support automatically sharpens the sparse-PTF route without changing the underlying sign polynomial.
 
-This comparison does not replace the affine-free sparsity theorem [42_affine_free_sparsity_upper_bound.md](42_affine_free_sparsity_upper_bound.md): a dense affine threshold can have small $H^{*}$ while its monomial-cylinder representation has large $\operatorname{ctc}$ cost. The value of the comparison is that it locates $\operatorname{ctc}$ inside the existing hierarchy of general upper-bound invariants.
+This comparison does not replace the affine-free sparsity theorem [42_affine_free_sparsity_upper_bound.md](../03_function_families_and_affine_geometry/42_affine_free_sparsity_upper_bound.md): a dense affine threshold can have small $H^{*}$ while its monomial-cylinder representation has large $\operatorname{ctc}$ cost. The value of the comparison is that it locates $\operatorname{ctc}$ inside the existing hierarchy of general upper-bound invariants.

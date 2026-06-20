@@ -83,7 +83,7 @@ $$
 
 ## Proof
 
-Choose an LTF split $j$ and affine cofactor separators realizing $\sigma_{\mathrm{split}}(f)$. By coordinate permutation invariance from [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md), we may relabel the split coordinate as the first coordinate $z$ without changing $H^{*}$.
+Choose an LTF split $j$ and affine cofactor separators realizing $\sigma_{\mathrm{split}}(f)$. By coordinate permutation invariance from [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md), we may relabel the split coordinate as the first coordinate $z$ without changing $H^{*}$.
 
 The LTF cofactor slope-distance theorem [70_ltf_cofactor_slope_distance.md](70_ltf_cofactor_slope_distance.md) applies to this split and gives
 
@@ -95,9 +95,9 @@ $$
 
 Since a slope-change count is always at most $n-1$, every function with an LTF split satisfies $H^{*}(f)\leq n$.
 
-If $\sigma_{\mathrm{split}}(f)=0$, Lemma 76 says that $f$ is constant or a nonconstant LTF. The one-head characterization [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md) gives $H^{*}(f)\in\{0,1\}$.
+If $\sigma_{\mathrm{split}}(f)=0$, Lemma 76 says that $f$ is constant or a nonconstant LTF. The one-head characterization [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md) gives $H^{*}(f)\in\{0,1\}$.
 
-If $\sigma_{\mathrm{split}}(f)\leq1$, Lemma 76 gives $H^{*}(f)\leq2$. The exact value is then forced by the zero-head and one-head characterization from [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md): constants have value $0$, nonconstant LTFs have value $1$, and all remaining functions have value exactly $2$. $\blacksquare$
+If $\sigma_{\mathrm{split}}(f)\leq1$, Lemma 76 gives $H^{*}(f)\leq2$. The exact value is then forced by the zero-head and one-head characterization from [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md): constants have value $0$, nonconstant LTFs have value $1$, and all remaining functions have value exactly $2$. $\blacksquare$
 
 ## Consequences
 

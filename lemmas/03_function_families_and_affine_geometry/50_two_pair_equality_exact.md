@@ -70,7 +70,7 @@ S>0
 (x_1,x_2)=(y_1,y_2).
 $$
 
-Both denominators have positive constant term and positive variable coefficients. Therefore each ratio $A_i/B_i$ is a single one-head atom by the affine-over-positive-affine atom lemma [09_three_bit_quadratic_upper_bound.md](09_three_bit_quadratic_upper_bound.md). Hence
+Both denominators have positive constant term and positive variable coefficients. Therefore each ratio $A_i/B_i$ is a single one-head atom by the affine-over-positive-affine atom lemma [09_three_bit_quadratic_upper_bound.md](../01_foundations_and_normal_form/09_three_bit_quadratic_upper_bound.md). Hence
 
 $$
 H^{*}(\mathrm{EQ}_2)\leq2.
@@ -84,7 +84,7 @@ $$
 \mathrm{EQ}_1(x_1,y_1)=\mathbf{1}[x_1=y_1].
 $$
 
-This is not a linear threshold function by the two-bit checkerboard obstruction, or equivalently by the one-pair equality argument in [49_equality_threshold_vote_size.md](49_equality_threshold_vote_size.md). Since one head computes exactly the nonconstant linear threshold functions by [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md), we have
+This is not a linear threshold function by the two-bit checkerboard obstruction, or equivalently by the one-pair equality argument in [49_equality_threshold_vote_size.md](49_equality_threshold_vote_size.md). Since one head computes exactly the nonconstant linear threshold functions by [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md), we have
 
 $$
 H^{*}(\mathrm{EQ}_2)\geq2.

@@ -140,7 +140,7 @@ K(\Gamma)
 K_z(\Gamma).
 $$
 
-The threshold-degree lower bound follows from the fresh-bit XOR threshold-degree theorem [75_fresh_bit_xor_threshold_degree.md](75_fresh_bit_xor_threshold_degree.md) and the general lower bound [xor_n_bits.md](xor_n_bits.md):
+The threshold-degree lower bound follows from the fresh-bit XOR threshold-degree theorem [75_fresh_bit_xor_threshold_degree.md](75_fresh_bit_xor_threshold_degree.md) and the general lower bound [xor_n_bits.md](../01_foundations_and_normal_form/xor_n_bits.md):
 
 $$
 H^{*}(F)
@@ -150,7 +150,7 @@ H^{*}(F)
 \deg_{\pm}(T)+1.
 $$
 
-For XNOR, note that $1-F$ is the output complement of $F$. Complementing preserves threshold degree and head complexity by [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md), and it preserves the same affine-cylinder upper-bound certificate by negating the strict score. Hence the same bounds hold for $1-F$.
+For XNOR, note that $1-F$ is the output complement of $F$. Complementing preserves threshold degree and head complexity by [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md), and it preserves the same affine-cylinder upper-bound certificate by negating the strict score. Hence the same bounds hold for $1-F$.
 
 If the affine-cylinder upper bound equals $\deg_{\pm}(T)+1$, then the displayed lower and upper bounds meet. This proves the exact value for both XOR and XNOR. $\blacksquare$
 

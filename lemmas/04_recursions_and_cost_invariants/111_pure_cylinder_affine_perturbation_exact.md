@@ -44,7 +44,7 @@ $$
 
 ## Proof
 
-If $P=N=\varnothing$, then $C_{P,N}$ is constant, so the displayed score is affine. Hence $f$ is constant or a nonconstant LTF, and the conclusion follows from the zero-head and one-head characterization [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md).
+If $P=N=\varnothing$, then $C_{P,N}$ is constant, so the displayed score is affine. Hence $f$ is constant or a nonconstant LTF, and the conclusion follows from the zero-head and one-head characterization [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md).
 
 Assume now that $(P,N)$ is nonvacuous. Since either $P=\varnothing$ or $N=\varnothing$,
 

@@ -2,7 +2,7 @@
 
 ## Statement
 
-Let $\operatorname{afs}_{\pm}(f)$ be the affine-free polynomial-threshold sparsity from [42_affine_free_sparsity_upper_bound.md](42_affine_free_sparsity_upper_bound.md), and let $\operatorname{ptfsp}(f)$ be ordinary polynomial-threshold sparsity. Then
+Let $\operatorname{afs}_{\pm}(f)$ be the affine-free polynomial-threshold sparsity from [42_affine_free_sparsity_upper_bound.md](../03_function_families_and_affine_geometry/42_affine_free_sparsity_upper_bound.md), and let $\operatorname{ptfsp}(f)$ be ordinary polynomial-threshold sparsity. Then
 
 $$
 \operatorname{actc}(f)

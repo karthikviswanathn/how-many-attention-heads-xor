@@ -58,7 +58,7 @@ $$
 \deg_{\pm}(f)\geq k+\deg_{\pm}(T).
 $$
 
-The head lower bound follows from the general threshold-degree lower bound [xor_n_bits.md](xor_n_bits.md):
+The head lower bound follows from the general threshold-degree lower bound [xor_n_bits.md](../01_foundations_and_normal_form/xor_n_bits.md):
 
 $$
 H^{*}(f)\geq\deg_{\pm}(f)\geq k+\deg_{\pm}(T).

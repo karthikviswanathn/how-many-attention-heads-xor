@@ -46,7 +46,7 @@ $$
 
 ## Proof
 
-We work in the formal model from [../model.md](../model.md).
+We work in the formal model from [../model.md](../../model.md).
 
 Set
 
@@ -117,7 +117,7 @@ For each $j \in \{1, \ldots, M-1\}$, define linear maps as follows.
 3. $W_V^{(j)}$ sends $u$ to $e_j$ and annihilates $q, r, e_1, \ldots, e_{M-1}$.
 4. $W_O^{(j)}$ is the identity on $\mathbb{R}^{M+2}$.
 
-These choices define a valid attention head in the model from [../model.md](../model.md).
+These choices define a valid attention head in the model from [../model.md](../../model.md).
 
 ### Lemma 1. The output of head $j$ depends only on $t(x)$
 
@@ -365,7 +365,7 @@ $$
 H^{*}(f) \leq M_{+}(f) - 1.
 $$
 
-This gives a candidate upper-bound invariant for the first core question in [../problem_statement.md](../problem_statement.md).
+This gives a candidate upper-bound invariant for the first core question in [../problem_statement.md](../../problem_statement.md).
 
 **Update.** The later note [07_positive_projection_sign_changes.md](07_positive_projection_sign_changes.md) sharpens this bound. For a fixed positive weighted sum $t$, the head count can be bounded by the number of label changes along the ordered image of $t$, not by the total number of nonzero image levels.
 

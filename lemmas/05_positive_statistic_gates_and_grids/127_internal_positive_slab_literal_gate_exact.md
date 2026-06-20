@@ -38,7 +38,7 @@ $$
 
 ## Proof
 
-Because $S$ is a non-LTF affine slab, the affine-slab theorem [56_affine_slab_upper_bound.md](56_affine_slab_upper_bound.md) and the one-head characterization give
+Because $S$ is a non-LTF affine slab, the affine-slab theorem [56_affine_slab_upper_bound.md](../03_function_families_and_affine_geometry/56_affine_slab_upper_bound.md) and the one-head characterization give
 
 $$
 H^{*}(S)=2.
@@ -65,7 +65,7 @@ $$
 H^{*}(z\wedge S)\leq2.
 $$
 
-The one-bit gate threshold-degree trichotomy [76_one_bit_gate_threshold_degree_trichotomy.md](76_one_bit_gate_threshold_degree_trichotomy.md) says that the non-XOR gate $z\wedge S$ preserves threshold degree:
+The one-bit gate threshold-degree trichotomy [76_one_bit_gate_threshold_degree_trichotomy.md](../04_recursions_and_cost_invariants/76_one_bit_gate_threshold_degree_trichotomy.md) says that the non-XOR gate $z\wedge S$ preserves threshold degree:
 
 $$
 \deg_{\pm}(z\wedge S)=\deg_{\pm}(S)=2.
@@ -96,7 +96,7 @@ $$
 H^{*}((1-z)\wedge S)=2.
 $$
 
-Finally, output complement preserves head complexity by [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md), so the complements also have exact value $2$. $\blacksquare$
+Finally, output complement preserves head complexity by [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md), so the complements also have exact value $2$. $\blacksquare$
 
 ## Consequence
 

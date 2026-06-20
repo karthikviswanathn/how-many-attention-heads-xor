@@ -116,7 +116,7 @@ $$
 
 After $C$ sign changes, the final label equals the initial label exactly when $C$ is even. Therefore the sign-change count of $H$ along the ordered image of $s$ is $D_{\oplus}(C)$.
 
-If $C\geq2$, the positive-projection sign-change theorem [07_positive_projection_sign_changes.md](07_positive_projection_sign_changes.md) gives
+If $C\geq2$, the positive-projection sign-change theorem [07_positive_projection_sign_changes.md](../01_foundations_and_normal_form/07_positive_projection_sign_changes.md) gives
 
 $$
 H^{*}(z\oplus T(y))\leq D_{\oplus}(C).
@@ -134,9 +134,9 @@ $$
 H^{*}(z\oplus T)=2.
 $$
 
-Finally, XNOR is the output complement of fresh XOR, and output complement preserves head complexity by [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md). This gives the same values and upper bounds for XNOR.
+Finally, XNOR is the output complement of fresh XOR, and output complement preserves head complexity by [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md). This gives the same values and upper bounds for XNOR.
 
-For the exactness clause, the fresh-bit XOR threshold-degree theorem [75_fresh_bit_xor_threshold_degree.md](75_fresh_bit_xor_threshold_degree.md) gives
+For the exactness clause, the fresh-bit XOR threshold-degree theorem [75_fresh_bit_xor_threshold_degree.md](../04_recursions_and_cost_invariants/75_fresh_bit_xor_threshold_degree.md) gives
 
 $$
 H^{*}(z\oplus T)\geq\deg_{\pm}(T)+1.

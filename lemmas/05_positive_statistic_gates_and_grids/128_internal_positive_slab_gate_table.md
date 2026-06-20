@@ -78,7 +78,7 @@ $$
 H^{*}(S)=H^{*}(1-S)=2.
 $$
 
-Indeed, $S$ is a non-LTF affine slab, so this follows from the affine-slab theorem [56_affine_slab_upper_bound.md](56_affine_slab_upper_bound.md), complement invariance, and the one-head characterization. Consequently,
+Indeed, $S$ is a non-LTF affine slab, so this follows from the affine-slab theorem [56_affine_slab_upper_bound.md](../03_function_families_and_affine_geometry/56_affine_slab_upper_bound.md), complement invariance, and the one-head characterization. Consequently,
 
 $$
 \deg_{\pm}(S)=\deg_{\pm}(1-S)=2.
@@ -102,7 +102,7 @@ $$
 H^{*}(r\wedge(1-S))\leq3.
 $$
 
-The one-bit gate threshold-degree trichotomy [76_one_bit_gate_threshold_degree_trichotomy.md](76_one_bit_gate_threshold_degree_trichotomy.md) gives
+The one-bit gate threshold-degree trichotomy [76_one_bit_gate_threshold_degree_trichotomy.md](../04_recursions_and_cost_invariants/76_one_bit_gate_threshold_degree_trichotomy.md) gives
 
 $$
 \deg_{\pm}(r\wedge(1-S))=\deg_{\pm}(1-S)=2.

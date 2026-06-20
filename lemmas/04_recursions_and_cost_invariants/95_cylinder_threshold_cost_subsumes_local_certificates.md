@@ -154,6 +154,6 @@ $$
 H^{*}(f)\leq\operatorname{ctc}(f)
 $$
 
-from [93_cylinder_threshold_cost_invariant.md](93_cylinder_threshold_cost_invariant.md) recovers the local certificate-expansion theorem [38_oriented_certificate_expansion_upper_bound.md](38_oriented_certificate_expansion_upper_bound.md), with $\kappa$ replacing the harmless vacuous-cylinder cost by $0$.
+from [93_cylinder_threshold_cost_invariant.md](93_cylinder_threshold_cost_invariant.md) recovers the local certificate-expansion theorem [38_oriented_certificate_expansion_upper_bound.md](../02_complexity_measure_upper_bounds/38_oriented_certificate_expansion_upper_bound.md), with $\kappa$ replacing the harmless vacuous-cylinder cost by $0$.
 
 Thus $\operatorname{ctc}$ is a genuine extension of the local certificate route: it includes one-sided covers, but can also exploit overlapping signed cylinder votes that are not covers.

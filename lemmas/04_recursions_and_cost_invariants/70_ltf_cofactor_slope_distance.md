@@ -128,7 +128,7 @@ $$
 \operatorname{afs}(P)\leq1+t.
 $$
 
-The affine-free sparsity theorem [42_affine_free_sparsity_upper_bound.md](42_affine_free_sparsity_upper_bound.md) gives
+The affine-free sparsity theorem [42_affine_free_sparsity_upper_bound.md](../03_function_families_and_affine_geometry/42_affine_free_sparsity_upper_bound.md) gives
 
 $$
 H^{*}(f)\leq1+t.
@@ -136,9 +136,9 @@ $$
 
 If both cofactors are constants or LTFs, affine sign representations exist and $t\leq n-1$, so $H^{*}(f)\leq n$.
 
-If $t=0$, then $P$ is affine in $(z,y)$. Hence $f$ is constant or a nonconstant LTF, giving $H^{*}(f)\in\{0,1\}$ by the one-head characterization [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md).
+If $t=0$, then $P$ is affine in $(z,y)$. Hence $f$ is constant or a nonconstant LTF, giving $H^{*}(f)\in\{0,1\}$ by the one-head characterization [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md).
 
-If $t\leq1$, then $\operatorname{afs}(P)\leq2$. The exact classification follows from the low affine-free support theorem [64_low_affine_free_support_exact.md](64_low_affine_free_support_exact.md). $\blacksquare$
+If $t\leq1$, then $\operatorname{afs}(P)\leq2$. The exact classification follows from the low affine-free support theorem [64_low_affine_free_support_exact.md](../03_function_families_and_affine_geometry/64_low_affine_free_support_exact.md). $\blacksquare$
 
 ## Consequences
 

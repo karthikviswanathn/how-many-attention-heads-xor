@@ -77,7 +77,7 @@ B_U(x)
 \delta+L_S(x)+\kappa\sum_{i\notin S}x_i.
 $$
 
-This affine denominator has positive constant term and strictly positive coefficients for every variable after taking the coefficient $\kappa$ outside $S$. By the denominator-orientation theorem [26_denominator_orientation.md](26_denominator_orientation.md),
+This affine denominator has positive constant term and strictly positive coefficients for every variable after taking the coefficient $\kappa$ outside $S$. By the denominator-orientation theorem [26_denominator_orientation.md](../02_complexity_measure_upper_bounds/26_denominator_orientation.md),
 
 $$
 \phi_U(x):=\frac{L_S(x)}{B_U(x)}

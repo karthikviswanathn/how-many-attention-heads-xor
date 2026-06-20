@@ -191,9 +191,9 @@ $$
 \mathcal{M}:=\{S:\lvert S\rvert\geq2,\ a_S\neq0\}.
 $$
 
-If $L$ is nonzero, Lemma 1 of [42_affine_free_sparsity_upper_bound.md](42_affine_free_sparsity_upper_bound.md) gives one atom approximating $L$ uniformly to any prescribed tolerance. If $L$ is zero, no affine atom is needed.
+If $L$ is nonzero, Lemma 1 of [42_affine_free_sparsity_upper_bound.md](../03_function_families_and_affine_geometry/42_affine_free_sparsity_upper_bound.md) gives one atom approximating $L$ uniformly to any prescribed tolerance. If $L$ is zero, no affine atom is needed.
 
-For each $S\in\mathcal{M}$, Lemma 1 of [35_ptf_sparsity_upper_bound.md](35_ptf_sparsity_upper_bound.md) gives one atom approximating $a_Sq_S$ uniformly to any prescribed tolerance.
+For each $S\in\mathcal{M}$, Lemma 1 of [35_ptf_sparsity_upper_bound.md](../02_complexity_measure_upper_bounds/35_ptf_sparsity_upper_bound.md) gives one atom approximating $a_Sq_S$ uniformly to any prescribed tolerance.
 
 Choose all these tolerances small enough that the sum of the uniform errors is at most the requested $\epsilon$. Adding the constant term $a_{\varnothing}$ proves
 

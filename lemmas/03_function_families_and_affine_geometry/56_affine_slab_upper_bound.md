@@ -170,13 +170,13 @@ T(x)>0
 S_{L,\alpha,\beta}(x)=1.
 $$
 
-By the affine-over-positive-affine atom lemma [09_three_bit_quadratic_upper_bound.md](09_three_bit_quadratic_upper_bound.md), each ratio $A_j/B_j$ is a one-head atom. Therefore
+By the affine-over-positive-affine atom lemma [09_three_bit_quadratic_upper_bound.md](../01_foundations_and_normal_form/09_three_bit_quadratic_upper_bound.md), each ratio $A_j/B_j$ is a one-head atom. Therefore
 
 $$
 H^{*}(S_{L,\alpha,\beta})\leq2.
 $$
 
-If $S_{L,\alpha,\beta}$ is a nonconstant LTF, the one-head characterization [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md) gives
+If $S_{L,\alpha,\beta}$ is a nonconstant LTF, the one-head characterization [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md) gives
 
 $$
 H^{*}(S_{L,\alpha,\beta})=1.

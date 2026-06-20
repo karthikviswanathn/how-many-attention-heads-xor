@@ -49,7 +49,7 @@ is exactly the junta consequence of [22_restrictions_and_sign_rank.md](22_restri
 
 ### Lemma 2. Generic upper bound
 
-For $k\geq1$, the weighted-sum interpolation theorem [04_weighted_sum_upper_bound.md](04_weighted_sum_upper_bound.md) gives
+For $k\geq1$, the weighted-sum interpolation theorem [04_weighted_sum_upper_bound.md](../01_foundations_and_normal_form/04_weighted_sum_upper_bound.md) gives
 
 $$
 H^{*}(f_{\mathrm{ess}})\leq2^k-1,
@@ -61,9 +61,9 @@ using an injective positive weighted sum on the $k$ essential variables. Lemma 1
 
 Every two-bit Boolean function has head complexity at most $2$.
 
-If the function is constant, it needs $0$ heads. If it is a nonconstant linear threshold function, it needs $1$ head by [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md).
+If the function is constant, it needs $0$ heads. If it is a nonconstant linear threshold function, it needs $1$ head by [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md).
 
-It remains only to consider the non-linear-threshold two-bit functions. A two-bit Boolean function fails to be linearly separable only when its two positive inputs are opposite corners of the square, or equivalently when its two negative inputs are opposite corners. These are two-bit parity and anti-parity up to complement. The exact parity theorem [xor_n_bits.md](xor_n_bits.md) gives
+It remains only to consider the non-linear-threshold two-bit functions. A two-bit Boolean function fails to be linearly separable only when its two positive inputs are opposite corners of the square, or equivalently when its two negative inputs are opposite corners. These are two-bit parity and anti-parity up to complement. The exact parity theorem [xor_n_bits.md](../01_foundations_and_normal_form/xor_n_bits.md) gives
 
 $$
 H^{*}(\mathrm{XOR}_2)=2,
@@ -73,7 +73,7 @@ and complement invariance from [22_restrictions_and_sign_rank.md](22_restriction
 
 ### Lemma 4. Determinant certificates through twelve variables
 
-For $3\leq k\leq12$, the compact determinant certificate [19_compact_threshold_certificates.md](19_compact_threshold_certificates.md) gives
+For $3\leq k\leq12$, the compact determinant certificate [19_compact_threshold_certificates.md](../01_foundations_and_normal_form/19_compact_threshold_certificates.md) gives
 
 $$
 H^{*}(f_{\mathrm{ess}})

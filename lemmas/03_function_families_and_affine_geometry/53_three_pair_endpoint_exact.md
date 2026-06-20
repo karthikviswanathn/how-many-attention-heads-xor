@@ -97,7 +97,7 @@ returns
 }
 ```
 
-Since each denominator is positive affine, each ratio is a single one-head atom by the affine-over-positive-affine atom lemma [09_three_bit_quadratic_upper_bound.md](09_three_bit_quadratic_upper_bound.md). Hence
+Since each denominator is positive affine, each ratio is a single one-head atom by the affine-over-positive-affine atom lemma [09_three_bit_quadratic_upper_bound.md](../01_foundations_and_normal_form/09_three_bit_quadratic_upper_bound.md). Hence
 
 $$
 H^{*}(\mathrm{INT}_3)\leq2,
@@ -135,13 +135,13 @@ H^{*}(\mathrm{SUB}_m)\geq2,
 H^{*}(\mathrm{NCON}_m)\geq2.
 $$
 
-For equality, restricting all but one pair gives $\mathrm{EQ}_1$, which is not an LTF. Thus the one-head characterization [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md) gives
+For equality, restricting all but one pair gives $\mathrm{EQ}_1$, which is not an LTF. Thus the one-head characterization [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md) gives
 
 $$
 H^{*}(\mathrm{EQ}_3)\geq2.
 $$
 
-Complement invariance from [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md) gives
+Complement invariance from [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md) gives
 
 $$
 H^{*}(\mathrm{NEQ}_3)\geq2.

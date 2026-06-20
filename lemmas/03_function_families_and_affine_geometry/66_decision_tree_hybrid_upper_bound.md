@@ -39,13 +39,13 @@ If $f$ is constant, then $H^{*}(f)=0$.
 
 ## Proof
 
-The local leaf-profile upper bound is exactly [38_oriented_certificate_expansion_upper_bound.md](38_oriented_certificate_expansion_upper_bound.md) applied to the accepting and rejecting leaf covers:
+The local leaf-profile upper bound is exactly [38_oriented_certificate_expansion_upper_bound.md](../02_complexity_measure_upper_bounds/38_oriented_certificate_expansion_upper_bound.md) applied to the accepting and rejecting leaf covers:
 
 $$
 H^{*}(f)\leq\Lambda(\mathcal{T}).
 $$
 
-Since $f$ depends only on the variables queried by $\mathcal{T}$, it is a $v$-junta. The junta upper bound [33_junta_upper_bounds.md](33_junta_upper_bounds.md) gives
+Since $f$ depends only on the variables queried by $\mathcal{T}$, it is a $v$-junta. The junta upper bound [33_junta_upper_bounds.md](../02_complexity_measure_upper_bounds/33_junta_upper_bounds.md) gives
 
 $$
 H^{*}(f)\leq2^v-1
@@ -113,7 +113,7 @@ H^{*}(f)
 \right\}.
 $$
 
-The first term is the uniform leaf-profile bound from [38_oriented_certificate_expansion_upper_bound.md](38_oriented_certificate_expansion_upper_bound.md). The second is the generic junta bound. The third is the depth-degree route.
+The first term is the uniform leaf-profile bound from [38_oriented_certificate_expansion_upper_bound.md](../02_complexity_measure_upper_bounds/38_oriented_certificate_expansion_upper_bound.md). The second is the generic junta bound. The third is the depth-degree route.
 
 For fixed depth $d$, this gives a polynomial upper bound in the number of variables actually queried by the tree:
 

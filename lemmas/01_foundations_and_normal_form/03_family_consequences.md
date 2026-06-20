@@ -1,6 +1,6 @@
 # Consequences For Standard Function Families
 
-This note packages the lower bound from [01_checkerboard_restriction.md](01_checkerboard_restriction.md), the upper bound from [02_symmetric_thresholds.md](02_symmetric_thresholds.md), and the later exact symmetric characterization from [06_symmetric_sign_changes.md](06_symmetric_sign_changes.md), all in the formal model from [../model.md](../model.md).
+This note packages the lower bound from [01_checkerboard_restriction.md](01_checkerboard_restriction.md), the upper bound from [02_symmetric_thresholds.md](02_symmetric_thresholds.md), and the later exact symmetric characterization from [06_symmetric_sign_changes.md](06_symmetric_sign_changes.md), all in the formal model from [../model.md](../../model.md).
 
 We write $H^{*}(f)$ for the minimum number of heads needed to compute $f : \{0,1\}^n \to \{0,1\}$ in the one-layer attention model.
 

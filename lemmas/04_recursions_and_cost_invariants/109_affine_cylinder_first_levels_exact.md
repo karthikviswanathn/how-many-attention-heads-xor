@@ -62,7 +62,7 @@ $$
 H^{*}(f)\leq1.
 $$
 
-The zero-head and one-head characterization [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md) says that functions with $H^{*}\leq1$ are exactly constants and nonconstant LTFs. Since $\operatorname{actc}(f)\neq0$, the first part shows that $f$ is not constant. Therefore $f$ is a nonconstant LTF.
+The zero-head and one-head characterization [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md) says that functions with $H^{*}\leq1$ are exactly constants and nonconstant LTFs. Since $\operatorname{actc}(f)\neq0$, the first part shows that $f$ is not constant. Therefore $f$ is a nonconstant LTF.
 
 Finally, the displayed lower-level characterization implies
 

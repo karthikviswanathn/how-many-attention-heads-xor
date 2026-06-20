@@ -40,7 +40,7 @@ g:\{0,1\}^k\to\{0,1\},
 k\leq3,
 $$
 
-be the induced function on the essential variables. By junta reduction [33_junta_upper_bounds.md](33_junta_upper_bounds.md),
+be the induced function on the essential variables. By junta reduction [33_junta_upper_bounds.md](../02_complexity_measure_upper_bounds/33_junta_upper_bounds.md),
 
 $$
 H^{*}(f)=H^{*}(g).
@@ -66,7 +66,7 @@ $$
 
 is a quadratic sign representation.
 
-If $k<3$, add dummy variables. Dummy-variable invariance from [33_junta_upper_bounds.md](33_junta_upper_bounds.md) preserves $H^{*}$, and the quadratic sign representation remains quadratic. The three-bit quadratic upper-bound theorem [09_three_bit_quadratic_upper_bound.md](09_three_bit_quadratic_upper_bound.md) gives
+If $k<3$, add dummy variables. Dummy-variable invariance from [33_junta_upper_bounds.md](../02_complexity_measure_upper_bounds/33_junta_upper_bounds.md) preserves $H^{*}$, and the quadratic sign representation remains quadratic. The three-bit quadratic upper-bound theorem [09_three_bit_quadratic_upper_bound.md](../01_foundations_and_normal_form/09_three_bit_quadratic_upper_bound.md) gives
 
 $$
 H^{*}(g)\leq2.
@@ -74,7 +74,7 @@ $$
 
 Thus $H^{*}(f)\leq2$.
 
-The exact case split now follows from the zero-head and one-head characterization [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md). Constants have value $0$, nonconstant LTFs have value $1$, and nonconstant non-LTFs have value at least $2$. Together with the two-head upper bound, this proves the theorem. $\blacksquare$
+The exact case split now follows from the zero-head and one-head characterization [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md). Constants have value $0$, nonconstant LTFs have value $1$, and nonconstant non-LTFs have value at least $2$. Together with the two-head upper bound, this proves the theorem. $\blacksquare$
 
 ## Consequence
 

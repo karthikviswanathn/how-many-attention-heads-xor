@@ -42,7 +42,7 @@ and the same bound holds after complementing either input literal or the output.
 
 If $T$ is constant, then $F$ is either constant or a one-bit function of $z$. Hence $H^{*}(F)\leq1=H^{*}(T)+1$. Assume from now on that $T$ is nonconstant.
 
-Let $H:=H^{*}(T)$. By the linear-fractional normal form [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md), there is an $H$-atom score
+Let $H:=H^{*}(T)$. By the linear-fractional normal form [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md), there is an $H$-atom score
 
 $$
 S(y)
@@ -58,7 +58,7 @@ T(y)=1
 S(y)>0.
 $$
 
-By complement invariance [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md), the same head count also sign-represents $1-T$, using the score $-S$.
+By complement invariance [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md), the same head count also sign-represents $1-T$, using the score $-S$.
 
 Every two-input Boolean gate that is neither XOR nor XNOR is, up to constants, input literals, and output complement, either a conjunction of two literals or a disjunction of two literals. Constant gates and input-literal gates have head complexity at most $\max\{H,1\}\leq H+1$. Thus it is enough to handle
 
@@ -80,7 +80,7 @@ U(y)=1
 S_U(y)>0.
 $$
 
-The dummy-variable construction from [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md) gives the following stronger fact: for every $\eta>0$, the same $H$ atoms can be realized on the enlarged input $(z,y)$ with a score $S_{U,\eta}(z,y)$ satisfying
+The dummy-variable construction from [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md) gives the following stronger fact: for every $\eta>0$, the same $H$ atoms can be realized on the enlarged input $(z,y)$ with a score $S_{U,\eta}(z,y)$ satisfying
 
 $$
 \lvert S_{U,\eta}(z,y)-S_U(y)\rvert<\eta
@@ -104,7 +104,7 @@ $$
 \frac{1-z}{\delta+1-z+\kappa\sum_i(1-y_i)}.
 $$
 
-The denominators have a common orientation and stay positive on the cube, so the denominator-orientation theorem [26_denominator_orientation.md](26_denominator_orientation.md) makes these one-head atoms. Taking $\delta$ and $\kappa$ small makes the chosen atom $\psi_{r,\eta}$ uniformly $\eta$-close to $r$.
+The denominators have a common orientation and stay positive on the cube, so the denominator-orientation theorem [26_denominator_orientation.md](../02_complexity_measure_upper_bounds/26_denominator_orientation.md) makes these one-head atoms. Taking $\delta$ and $\kappa$ small makes the chosen atom $\psi_{r,\eta}$ uniformly $\eta$-close to $r$.
 
 ### Conjunction
 

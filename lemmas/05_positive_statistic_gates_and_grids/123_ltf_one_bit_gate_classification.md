@@ -117,13 +117,13 @@ $$
 
 If $z=1$ and $T(y)=1$, then $A(y)\geq a_+$, so $M(z,y)\geq B+a_+>B+a_-$, and the slab condition fails above.
 
-Thus $z\oplus T$ is an affine slab in the variables $(z,y)$. By the affine-slab theorem [56_affine_slab_upper_bound.md](56_affine_slab_upper_bound.md),
+Thus $z\oplus T$ is an affine slab in the variables $(z,y)$. By the affine-slab theorem [56_affine_slab_upper_bound.md](../03_function_families_and_affine_geometry/56_affine_slab_upper_bound.md),
 
 $$
 H^{*}(z\oplus T)\leq2.
 $$
 
-The fresh-bit XOR threshold-degree theorem [75_fresh_bit_xor_threshold_degree.md](75_fresh_bit_xor_threshold_degree.md) gives
+The fresh-bit XOR threshold-degree theorem [75_fresh_bit_xor_threshold_degree.md](../04_recursions_and_cost_invariants/75_fresh_bit_xor_threshold_degree.md) gives
 
 $$
 \deg_{\pm}(z\oplus T)=\deg_{\pm}(T)+1=2,
@@ -135,7 +135,7 @@ $$
 H^{*}(z\oplus T)=2.
 $$
 
-Output complement preserves head complexity by [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md), so XNOR has the same value.
+Output complement preserves head complexity by [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md), so XNOR has the same value.
 
 ### Lemma 2. Literal gating is an LTF
 
@@ -205,7 +205,7 @@ for a raw literal $r$. Lemma 2 shows that $F$ is a nonconstant LTF.
 
 If $G$ has three true inputs, then $1-G$ has one true input. Hence $1-F$ is a nonconstant LTF by the previous case, so $F$ is also a nonconstant LTF.
 
-Thus every remaining nonconstant gate gives a nonconstant LTF. By the one-head characterization [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md),
+Thus every remaining nonconstant gate gives a nonconstant LTF. By the one-head characterization [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md),
 
 $$
 H^{*}(F)=1.

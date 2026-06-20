@@ -31,7 +31,7 @@ $$
 
 If $P=N=\varnothing$, then $C_{P,N}=1$, and the constant term allowed in the definition of $\rho$ gives $\rho(C_{P,N})=0$.
 
-Assume now that $(P,N)$ is nonvacuous. The local certificate-expansion lemma [38_oriented_certificate_expansion_upper_bound.md](38_oriented_certificate_expansion_upper_bound.md) records two exact expansions. Expanding the negative literals gives
+Assume now that $(P,N)$ is nonvacuous. The local certificate-expansion lemma [38_oriented_certificate_expansion_upper_bound.md](../02_complexity_measure_upper_bounds/38_oriented_certificate_expansion_upper_bound.md) records two exact expansions. Expanding the negative literals gives
 
 $$
 \begin{aligned}
@@ -73,7 +73,7 @@ $$
 \min\{2^{\lvert P\rvert},2^{\lvert N\rvert}\}.
 $$
 
-The proof of [38_oriented_certificate_expansion_upper_bound.md](38_oriented_certificate_expansion_upper_bound.md), using [35_ptf_sparsity_upper_bound.md](35_ptf_sparsity_upper_bound.md) and bit-flip invariance from [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md), shows that every signed pure positive or signed pure negative monomial can be approximated uniformly to arbitrary accuracy by one head.
+The proof of [38_oriented_certificate_expansion_upper_bound.md](../02_complexity_measure_upper_bounds/38_oriented_certificate_expansion_upper_bound.md), using [35_ptf_sparsity_upper_bound.md](../02_complexity_measure_upper_bounds/35_ptf_sparsity_upper_bound.md) and bit-flip invariance from [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md), shows that every signed pure positive or signed pure negative monomial can be approximated uniformly to arbitrary accuracy by one head.
 
 Given $\epsilon>0$, approximate each term in $\mathcal{M}$ with uniform error at most $\epsilon/\max\{1,\lvert\mathcal{M}\rvert\}$, and keep the constant part exactly. The sum of these one-head atoms and the constant term approximates $C_{P,N}$ uniformly within $\epsilon$. Hence
 

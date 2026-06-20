@@ -94,7 +94,7 @@ $$
 
 ### Lemma 2. Few low-head functions are available
 
-By the general counting lower bound [20_counting_lower_bound.md](20_counting_lower_bound.md), the number of all $n$-bit Boolean functions computable with at most $H$ heads is at most
+By the general counting lower bound [20_counting_lower_bound.md](../01_foundations_and_normal_form/20_counting_lower_bound.md), the number of all $n$-bit Boolean functions computable with at most $H$ heads is at most
 
 $$
 2^{O(n^2H)}

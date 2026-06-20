@@ -28,13 +28,13 @@ $$
 
 If $S=\varnothing$, then $f_{S,b}$ is constant, so $H^{*}(f_{S,b})=0$.
 
-Assume $\lvert S\rvert=k\geq1$. After permuting coordinates, $f_{S,0}$ is the $k$-bit parity function with $n-k$ dummy variables. By dummy-variable invariance from [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md) and the exact parity theorem [xor_n_bits.md](xor_n_bits.md),
+Assume $\lvert S\rvert=k\geq1$. After permuting coordinates, $f_{S,0}$ is the $k$-bit parity function with $n-k$ dummy variables. By dummy-variable invariance from [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md) and the exact parity theorem [xor_n_bits.md](../01_foundations_and_normal_form/xor_n_bits.md),
 
 $$
 H^{*}(f_{S,0})=H^{*}(\mathrm{XOR}_k)=k.
 $$
 
-If $b=1$, then $f_{S,1}=1-f_{S,0}$. Complement invariance from [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md) gives
+If $b=1$, then $f_{S,1}=1-f_{S,0}$. Complement invariance from [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md) gives
 
 $$
 H^{*}(f_{S,1})=H^{*}(f_{S,0})=k.
@@ -48,7 +48,7 @@ $$
 H^{*}(g)=k.
 $$
 
-Restriction monotonicity from [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md) gives
+Restriction monotonicity from [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md) gives
 
 $$
 k=H^{*}(g)\leq H^{*}(f),

@@ -4355,7 +4355,7 @@ $$
 
 > **Interpretation.** Any strict quadratic threshold in one positive statistic and one raw bit has a two-head certificate.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/135_positive_statistic_raw_bit_quadratic_span.md](lemmas/05_positive_statistic_gates_and_grids/135_positive_statistic_raw_bit_quadratic_span.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/129_positive_statistic_raw_bit_quadratic_span.md](lemmas/05_positive_statistic_gates_and_grids/129_positive_statistic_raw_bit_quadratic_span.md)
 
 ### Lemma 136. Positive-statistic raw-bit cubic span
 
@@ -4385,7 +4385,7 @@ $$
 
 > **Interpretation.** Any strict cubic threshold in one positive statistic and one raw bit has a three-head certificate.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/136_positive_statistic_raw_bit_cubic_span.md](lemmas/05_positive_statistic_gates_and_grids/136_positive_statistic_raw_bit_cubic_span.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/130_positive_statistic_raw_bit_cubic_span.md](lemmas/05_positive_statistic_gates_and_grids/130_positive_statistic_raw_bit_cubic_span.md)
 
 ### Lemma 137. Internal positive slab exact gate table
 
@@ -4403,7 +4403,7 @@ $$
 
 > **Interpretation.** The remaining internal positive-slab brackets from Lemma 134 collapse to exact values.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/137_internal_positive_slab_exact_gate_table.md](lemmas/05_positive_statistic_gates_and_grids/137_internal_positive_slab_exact_gate_table.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/131_internal_positive_slab_exact_gate_table.md](lemmas/05_positive_statistic_gates_and_grids/131_internal_positive_slab_exact_gate_table.md)
 
 ### Lemma 138. Positive-statistic raw-bit degree span
 
@@ -4433,7 +4433,7 @@ $$
 
 > **Interpretation.** A one-dimensional positive statistic remains head-efficient after adjoining one raw bit: degree $d$ in $(t,z)$ costs at most $d$ heads.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/138_positive_statistic_raw_bit_degree_span.md](lemmas/05_positive_statistic_gates_and_grids/138_positive_statistic_raw_bit_degree_span.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/132_positive_statistic_raw_bit_degree_span.md](lemmas/05_positive_statistic_gates_and_grids/132_positive_statistic_raw_bit_degree_span.md)
 
 ### Lemma 139. Positive-statistic fresh-XOR sign-change bound
 
@@ -4459,7 +4459,7 @@ and the same bounds hold for XNOR. If $\deg_{\pm}(T)=C$, then both values are ex
 
 > **Interpretation.** For positive-statistic features, fresh XOR costs at most one more than the original one-dimensional sign-change count.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/139_positive_statistic_fresh_xor_sign_change_bound.md](lemmas/05_positive_statistic_gates_and_grids/139_positive_statistic_fresh_xor_sign_change_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/133_positive_statistic_fresh_xor_sign_change_bound.md](lemmas/05_positive_statistic_gates_and_grids/133_positive_statistic_fresh_xor_sign_change_bound.md)
 
 ### Lemma 140. Positive-statistic non-XOR gate sign-change bound
 
@@ -4483,7 +4483,7 @@ If $\deg_{\pm}(T)=C$, then every nonconstant feature-dependent non-XOR and non-X
 
 > **Interpretation.** Non-XOR one-bit branching over a positive-statistic feature preserves the original sign-change cost.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/140_positive_statistic_non_xor_gate_sign_change_bound.md](lemmas/05_positive_statistic_gates_and_grids/140_positive_statistic_non_xor_gate_sign_change_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/134_positive_statistic_non_xor_gate_sign_change_bound.md](lemmas/05_positive_statistic_gates_and_grids/134_positive_statistic_non_xor_gate_sign_change_bound.md)
 
 ### Lemma 141. Degree-tight positive-statistic gate classification
 
@@ -4507,7 +4507,7 @@ $$
 
 > **Interpretation.** Whenever the positive-statistic sign-change upper bound is threshold-degree tight for the feature, the complete one-bit gate table is exact.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/141_degree_tight_positive_statistic_gate_classification.md](lemmas/05_positive_statistic_gates_and_grids/141_degree_tight_positive_statistic_gate_classification.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/135_degree_tight_positive_statistic_gate_classification.md](lemmas/05_positive_statistic_gates_and_grids/135_degree_tight_positive_statistic_gate_classification.md)
 
 ### Lemma 142. Symmetric-feature one-bit gate exactness
 
@@ -4525,7 +4525,7 @@ $$
 
 > **Interpretation.** The exact symmetric classification is stable under adjoining one raw bit and applying any two-input gate.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/142_symmetric_feature_one_bit_gate_exact.md](lemmas/05_positive_statistic_gates_and_grids/142_symmetric_feature_one_bit_gate_exact.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/136_symmetric_feature_one_bit_gate_exact.md](lemmas/05_positive_statistic_gates_and_grids/136_symmetric_feature_one_bit_gate_exact.md)
 
 ### Lemma 143. Positive-statistic one-bit gate sandwich
 
@@ -4551,7 +4551,7 @@ $$
 
 > **Interpretation.** For one-bit gates over a positive-statistic feature, the only possible gap is the original gap between threshold degree and sign-change count.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/143_positive_statistic_one_bit_gate_sandwich.md](lemmas/05_positive_statistic_gates_and_grids/143_positive_statistic_one_bit_gate_sandwich.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/137_positive_statistic_one_bit_gate_sandwich.md](lemmas/05_positive_statistic_gates_and_grids/137_positive_statistic_one_bit_gate_sandwich.md)
 
 ### Lemma 144. Positive-order one-bit gate sandwich
 
@@ -4577,7 +4577,7 @@ $$
 
 > **Interpretation.** The positive-order sign-change invariant is stable under one-bit gates, with exactly one extra unit for XOR and XNOR.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/144_positive_order_one_bit_gate_sandwich.md](lemmas/05_positive_statistic_gates_and_grids/144_positive_order_one_bit_gate_sandwich.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/138_positive_order_one_bit_gate_sandwich.md](lemmas/05_positive_statistic_gates_and_grids/138_positive_order_one_bit_gate_sandwich.md)
 
 ### Lemma 145. Common positive-statistic multi-slice bound
 
@@ -4599,7 +4599,7 @@ $$
 
 > **Interpretation.** If all raw-bit slices share one positive statistic, the full function is controlled by the total within-slice variation plus at most one jump between adjacent raw slices.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/145_common_positive_statistic_multi_slice_bound.md](lemmas/05_positive_statistic_gates_and_grids/145_common_positive_statistic_multi_slice_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/139_common_positive_statistic_multi_slice_bound.md](lemmas/05_positive_statistic_gates_and_grids/139_common_positive_statistic_multi_slice_bound.md)
 
 ### Lemma 146. Multi-raw positive-statistic degree bound
 
@@ -4621,7 +4621,7 @@ $$
 
 > **Interpretation.** A bounded-degree threshold in one positive statistic and $k$ raw bits has a head bound exponential only in $k$, not in the number of feature variables.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/146_multi_raw_positive_statistic_degree_bound.md](lemmas/05_positive_statistic_gates_and_grids/146_multi_raw_positive_statistic_degree_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/140_multi_raw_positive_statistic_degree_bound.md](lemmas/05_positive_statistic_gates_and_grids/140_multi_raw_positive_statistic_degree_bound.md)
 
 ### Lemma 147. Ordered common positive-statistic slice bound
 
@@ -4635,7 +4635,7 @@ $$
 
 > **Interpretation.** The multi-slice construction pays only for boundary label changes that actually occur in the chosen raw-slice order.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/147_ordered_common_positive_statistic_slice_bound.md](lemmas/05_positive_statistic_gates_and_grids/147_ordered_common_positive_statistic_slice_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/141_ordered_common_positive_statistic_slice_bound.md](lemmas/05_positive_statistic_gates_and_grids/141_ordered_common_positive_statistic_slice_bound.md)
 
 ### Lemma 148. Multi-raw gate over positive-statistic feature bound
 
@@ -4653,7 +4653,7 @@ $$
 
 > **Interpretation.** A multi-raw gate over one positive-statistic feature pays one copy of the feature variation for each raw slice that actually depends on the feature, plus actual boundary jumps.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/148_multi_raw_gate_positive_statistic_feature_bound.md](lemmas/05_positive_statistic_gates_and_grids/148_multi_raw_gate_positive_statistic_feature_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/142_multi_raw_gate_positive_statistic_feature_bound.md](lemmas/05_positive_statistic_gates_and_grids/142_multi_raw_gate_positive_statistic_feature_bound.md)
 
 ### Lemma 149. Optimized ordered positive-statistic slice cost
 
@@ -4673,7 +4673,7 @@ $$
 
 > **Interpretation.** The ordered multi-slice construction becomes an optimized invariant once the common statistic and raw order are minimized.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/149_optimized_ordered_positive_statistic_slice_cost.md](lemmas/05_positive_statistic_gates_and_grids/149_optimized_ordered_positive_statistic_slice_cost.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/143_optimized_ordered_positive_statistic_slice_cost.md](lemmas/05_positive_statistic_gates_and_grids/143_optimized_ordered_positive_statistic_slice_cost.md)
 
 ### Lemma 150. Ordered slice degree bound
 
@@ -4703,7 +4703,7 @@ $$
 
 > **Interpretation.** Polynomial degree pays for within-slice variation, while the ordered construction keeps the exact boundary price.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/150_ordered_slice_degree_bound.md](lemmas/05_positive_statistic_gates_and_grids/150_ordered_slice_degree_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/144_ordered_slice_degree_bound.md](lemmas/05_positive_statistic_gates_and_grids/144_ordered_slice_degree_bound.md)
 
 ### Lemma 151. Positive mixed boundary gate bound
 
@@ -4727,7 +4727,7 @@ $$
 
 > **Interpretation.** The boundary term for a multi-raw gate depends only on the two raw endpoint functions.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/151_positive_mixed_boundary_gate_bound.md](lemmas/05_positive_statistic_gates_and_grids/151_positive_mixed_boundary_gate_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/145_positive_mixed_boundary_gate_bound.md](lemmas/05_positive_statistic_gates_and_grids/145_positive_mixed_boundary_gate_bound.md)
 
 ### Lemma 152. Equal-endpoint multi-raw gate bound
 
@@ -4747,7 +4747,7 @@ $$
 
 > **Interpretation.** If the feature starts and ends at the same label, the boundary price is the positive-order variation of a raw endpoint function.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/152_equal_endpoint_multi_raw_gate_bound.md](lemmas/05_positive_statistic_gates_and_grids/152_equal_endpoint_multi_raw_gate_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/146_equal_endpoint_multi_raw_gate_bound.md](lemmas/05_positive_statistic_gates_and_grids/146_equal_endpoint_multi_raw_gate_bound.md)
 
 ### Lemma 153. Mixed boundary inequality
 
@@ -4775,7 +4775,7 @@ $$
 
 > **Interpretation.** Opposite feature endpoints cost ordinary raw variation plus one unit for each raw slice where the gate depends on the feature.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/153_mixed_boundary_inequality.md](lemmas/05_positive_statistic_gates_and_grids/153_mixed_boundary_inequality.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/147_mixed_boundary_inequality.md](lemmas/05_positive_statistic_gates_and_grids/147_mixed_boundary_inequality.md)
 
 ### Lemma 154. Raw-mask gate endpoint bounds
 
@@ -4823,7 +4823,7 @@ $$
 
 > **Interpretation.** For common raw-mask gates, the ordered-slice boundary cost collapses to raw support size or raw positive-order variation.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/154_raw_mask_gate_endpoint_bounds.md](lemmas/05_positive_statistic_gates_and_grids/154_raw_mask_gate_endpoint_bounds.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/148_raw_mask_gate_endpoint_bounds.md](lemmas/05_positive_statistic_gates_and_grids/148_raw_mask_gate_endpoint_bounds.md)
 
 ### Theorem 155. Multi-raw gate sandwich and single-slice exactness
 
@@ -4849,7 +4849,7 @@ $$
 
 > **Interpretation.** The mixed-boundary upper bound becomes exact as soon as exactly one raw slice depends on an already solved feature and the endpoint boundary is silent.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/155_multi_raw_gate_sandwich_exactness.md](lemmas/05_positive_statistic_gates_and_grids/155_multi_raw_gate_sandwich_exactness.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/149_multi_raw_gate_sandwich_exactness.md](lemmas/05_positive_statistic_gates_and_grids/149_multi_raw_gate_sandwich_exactness.md)
 
 ### Theorem 156. Address localization exactness
 
@@ -4895,7 +4895,7 @@ $$
 
 > **Interpretation.** A solved feature can be localized to one raw address at no extra head cost when the inactive background matches both feature endpoints.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/156_address_localization_exactness.md](lemmas/05_positive_statistic_gates_and_grids/156_address_localization_exactness.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/150_address_localization_exactness.md](lemmas/05_positive_statistic_gates_and_grids/150_address_localization_exactness.md)
 
 ### Theorem 157. Few-run raw-mask gate theorem
 
@@ -4929,7 +4929,7 @@ with analogous conjunction and disjunction bounds from the theorem file.
 
 > **Interpretation.** Raw masks with few positive-order runs have small endpoint boundary cost; endpoint masks have $K_R\leq1$ and one-interval masks have $K_R\leq2$.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/157_few_run_raw_mask_gate_theorem.md](lemmas/05_positive_statistic_gates_and_grids/157_few_run_raw_mask_gate_theorem.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/151_few_run_raw_mask_gate_theorem.md](lemmas/05_positive_statistic_gates_and_grids/151_few_run_raw_mask_gate_theorem.md)
 
 ### Theorem 158. Shared-statistic slice sandwich
 
@@ -4965,7 +4965,7 @@ If exactly one raw slice is nonconstant and that slice is exact with value $C_a$
 
 > **Interpretation.** The optimized mixed endpoint cost is the only coupling term for arbitrary raw slices sharing one positive statistic.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/158_shared_statistic_slice_sandwich.md](lemmas/05_positive_statistic_gates_and_grids/158_shared_statistic_slice_sandwich.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/152_shared_statistic_slice_sandwich.md](lemmas/05_positive_statistic_gates_and_grids/152_shared_statistic_slice_sandwich.md)
 
 ### Theorem 159. Shared-statistic degree sandwich
 
@@ -4995,7 +4995,7 @@ If all endpoints are common, the $B_{+}(p,q)$ term vanishes.
 
 > **Interpretation.** Slice threshold degree lower-bounds the whole function, and slice sign-polynomial degree upper-bounds it up to endpoint coupling.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/159_shared_statistic_degree_sandwich.md](lemmas/05_positive_statistic_gates_and_grids/159_shared_statistic_degree_sandwich.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/153_shared_statistic_degree_sandwich.md](lemmas/05_positive_statistic_gates_and_grids/153_shared_statistic_degree_sandwich.md)
 
 ### Theorem 160. Addressed common-endpoint direct sum
 
@@ -5033,7 +5033,7 @@ $$
 
 > **Interpretation.** Features with the same endpoint background can be placed at raw addresses additively, with no boundary penalty.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/160_addressed_common_endpoint_direct_sum.md](lemmas/05_positive_statistic_gates_and_grids/160_addressed_common_endpoint_direct_sum.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/154_addressed_common_endpoint_direct_sum.md](lemmas/05_positive_statistic_gates_and_grids/154_addressed_common_endpoint_direct_sum.md)
 
 ### Theorem 161. Endpoint variation shared-statistic bound
 
@@ -5063,7 +5063,7 @@ $$
 
 > **Interpretation.** Endpoint coupling can be bounded by ordinary raw endpoint variation plus endpoint disagreement.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/161_endpoint_variation_shared_statistic_bound.md](lemmas/05_positive_statistic_gates_and_grids/161_endpoint_variation_shared_statistic_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/155_endpoint_variation_shared_statistic_bound.md](lemmas/05_positive_statistic_gates_and_grids/155_endpoint_variation_shared_statistic_bound.md)
 
 ### Theorem 162. Positive concatenation exactness criterion
 
@@ -5093,7 +5093,7 @@ The same exactness criterion holds with $L_{\rho}(f)$ replaced by the optimized 
 
 > **Interpretation.** Positive concatenation gives exact values whenever threshold degree meets the constructed sign-change cost.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/162_positive_concatenation_exactness_criterion.md](lemmas/05_positive_statistic_gates_and_grids/162_positive_concatenation_exactness_criterion.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/156_positive_concatenation_exactness_criterion.md](lemmas/05_positive_statistic_gates_and_grids/156_positive_concatenation_exactness_criterion.md)
 
 ### Theorem 163. Endpoint-coupled slice cost invariant
 
@@ -5120,7 +5120,7 @@ The cost is invariant under output complement, raw-coordinate permutation, and f
 
 > **Interpretation.** The endpoint-coupled cost is a sharper split invariant than ordered-slice cost because the endpoint boundary is optimized separately.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/163_endpoint_coupled_slice_cost_invariant.md](lemmas/05_positive_statistic_gates_and_grids/163_endpoint_coupled_slice_cost_invariant.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/157_endpoint_coupled_slice_cost_invariant.md](lemmas/05_positive_statistic_gates_and_grids/157_endpoint_coupled_slice_cost_invariant.md)
 
 ### Theorem 164. Sparse-slice endpoint-coupled bound
 
@@ -5150,7 +5150,7 @@ If all slices share one endpoint background label, the $B_{+}$ term vanishes. Th
 
 > **Interpretation.** Only nonconstant raw slices contribute to the within-slice cost; the rest of the raw cube appears only through endpoint coupling.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/164_sparse_slice_endpoint_coupled_bound.md](lemmas/05_positive_statistic_gates_and_grids/164_sparse_slice_endpoint_coupled_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/158_sparse_slice_endpoint_coupled_bound.md](lemmas/05_positive_statistic_gates_and_grids/158_sparse_slice_endpoint_coupled_bound.md)
 
 ### Theorem 165. Positive grid slice sandwich
 
@@ -5182,7 +5182,7 @@ $$
 
 > **Interpretation.** If the raw block factors through a positive statistic, the construction pays per raw level rather than per raw assignment.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/165_positive_grid_slice_sandwich.md](lemmas/05_positive_statistic_gates_and_grids/165_positive_grid_slice_sandwich.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/159_positive_grid_slice_sandwich.md](lemmas/05_positive_statistic_gates_and_grids/159_positive_grid_slice_sandwich.md)
 
 ### Theorem 166. Positive grid degree and exactness
 
@@ -5212,7 +5212,7 @@ If $\deg_{\pm}(f)=\sum_r C_r+J_{\mathrm{grid}}$, then $H^{*}(f)=\deg_{\pm}(f)$.
 
 > **Interpretation.** Positive-grid bounds are exact whenever threshold degree reaches the grid concatenation cost.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/166_positive_grid_degree_exactness.md](lemmas/05_positive_statistic_gates_and_grids/166_positive_grid_degree_exactness.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/160_positive_grid_degree_exactness.md](lemmas/05_positive_statistic_gates_and_grids/160_positive_grid_degree_exactness.md)
 
 ### Theorem 167. Hamming-layer positive grid bound
 
@@ -5244,7 +5244,7 @@ $$
 
 > **Interpretation.** Raw Hamming-weight structure costs $k+1$ raw layers, not $2^k$ raw assignments.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/167_hamming_layer_positive_grid_bound.md](lemmas/05_positive_statistic_gates_and_grids/167_hamming_layer_positive_grid_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/161_hamming_layer_positive_grid_bound.md](lemmas/05_positive_statistic_gates_and_grids/161_hamming_layer_positive_grid_bound.md)
 
 ### Theorem 168. Sparse raw-level positive grid bound
 
@@ -5274,7 +5274,7 @@ If all raw-level slices have one common endpoint background, then $J_{\mathrm{gr
 
 > **Interpretation.** Sparse active raw levels can be exponentially cheaper than sparse active raw assignments.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/168_sparse_raw_level_positive_grid_bound.md](lemmas/05_positive_statistic_gates_and_grids/168_sparse_raw_level_positive_grid_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/162_sparse_raw_level_positive_grid_bound.md](lemmas/05_positive_statistic_gates_and_grids/162_sparse_raw_level_positive_grid_bound.md)
 
 ### Theorem 169. Positive grid cost invariant
 
@@ -5296,7 +5296,7 @@ The cost is invariant under output complement, raw-coordinate permutation, and f
 
 > **Interpretation.** Positive-grid cost is an optimized split invariant that can be much smaller than raw-assignment slice cost.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/169_positive_grid_cost_invariant.md](lemmas/05_positive_statistic_gates_and_grids/169_positive_grid_cost_invariant.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/163_positive_grid_cost_invariant.md](lemmas/05_positive_statistic_gates_and_grids/163_positive_grid_cost_invariant.md)
 
 ### Theorem 170. Positive lexicographic multigrid bound
 
@@ -5320,7 +5320,7 @@ $$
 
 > **Interpretation.** A function of several positive statistics can be traversed by one positive projection after choosing sufficiently separated scales.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/170_positive_lexicographic_multigrid_bound.md](lemmas/05_positive_statistic_gates_and_grids/170_positive_lexicographic_multigrid_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/164_positive_lexicographic_multigrid_bound.md](lemmas/05_positive_statistic_gates_and_grids/164_positive_lexicographic_multigrid_bound.md)
 
 ### Theorem 171. Multi-Hamming profile bound
 
@@ -5342,7 +5342,7 @@ The one-block symmetric fibers give restriction lower bounds, and equality holds
 
 > **Interpretation.** Multiblock profile predicates have a direct grid-path upper bound.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/171_multi_hamming_profile_bound.md](lemmas/05_positive_statistic_gates_and_grids/171_multi_hamming_profile_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/165_multi_hamming_profile_bound.md](lemmas/05_positive_statistic_gates_and_grids/165_multi_hamming_profile_bound.md)
 
 ### Theorem 172. Multigrid run bound
 
@@ -5362,7 +5362,7 @@ If this sharper run count equals $\deg_{\pm}(f)$, the value is exact.
 
 > **Interpretation.** Sparse or interval-like behavior on a profile grid can yield head bounds far below support size in the full cube.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/172_multigrid_run_bound.md](lemmas/05_positive_statistic_gates_and_grids/172_multigrid_run_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/166_multigrid_run_bound.md](lemmas/05_positive_statistic_gates_and_grids/166_multigrid_run_bound.md)
 
 ### Theorem 173. Positive multigrid cost invariant
 
@@ -5378,7 +5378,7 @@ The invariant is unchanged by output complement and by coordinate permutations p
 
 > **Interpretation.** Multigrid cost is the partition-level positive-projection invariant behind the lexicographic grid construction.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/173_positive_multigrid_cost_invariant.md](lemmas/05_positive_statistic_gates_and_grids/173_positive_multigrid_cost_invariant.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/167_positive_multigrid_cost_invariant.md](lemmas/05_positive_statistic_gates_and_grids/167_positive_multigrid_cost_invariant.md)
 
 ### Theorem 174. Block-order Hamming profile cost
 
@@ -5406,7 +5406,7 @@ with the sharper endpoint-adjusted run bound from the theorem file.
 
 > **Interpretation.** For multiblock profile predicates, choosing the block order is part of the head upper-bound certificate.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/174_block_order_hamming_profile_cost.md](lemmas/05_positive_statistic_gates_and_grids/174_block_order_hamming_profile_cost.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/168_block_order_hamming_profile_cost.md](lemmas/05_positive_statistic_gates_and_grids/168_block_order_hamming_profile_cost.md)
 
 ### Theorem 175. Positive profile projection collapse
 
@@ -5434,7 +5434,7 @@ If $\deg_{\pm}(f)=C_a(G)$, the value is exact. In the total Hamming-weight case 
 
 > **Interpretation.** Collapse the profile grid first when it factors through a positive weighted sum. The lexicographic multigrid path is not always the sharpest certificate.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/175_positive_profile_projection_collapse.md](lemmas/05_positive_statistic_gates_and_grids/175_positive_profile_projection_collapse.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/169_positive_profile_projection_collapse.md](lemmas/05_positive_statistic_gates_and_grids/169_positive_profile_projection_collapse.md)
 
 ### Theorem 176. Singleton parity multigrid separation
 
@@ -5472,7 +5472,7 @@ $$
 
 > **Interpretation.** The singleton multigrid certificate follows a binary odometer path and is exponentially looser than the total Hamming-weight projection for parity.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/176_singleton_parity_multigrid_separation.md](lemmas/05_positive_statistic_gates_and_grids/176_singleton_parity_multigrid_separation.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/170_singleton_parity_multigrid_separation.md](lemmas/05_positive_statistic_gates_and_grids/170_singleton_parity_multigrid_separation.md)
 
 ## Dependency Order
 

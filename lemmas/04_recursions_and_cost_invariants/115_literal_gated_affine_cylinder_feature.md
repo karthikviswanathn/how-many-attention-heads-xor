@@ -120,7 +120,7 @@ r\vee T
 1-\bigl((1-r)\wedge(1-T)\bigr).
 $$
 
-The complement $1-T$ has strict score $-S$, with the same set $L(A)$ and the same cylinder supports and local costs. Complementing the output preserves head complexity by [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md). Applying the conjunction bound to $(1-r)\wedge(1-T)$ gives
+The complement $1-T$ has strict score $-S$, with the same set $L(A)$ and the same cylinder supports and local costs. Complementing the output preserves head complexity by [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md). Applying the conjunction bound to $(1-r)\wedge(1-T)$ gives
 
 $$
 H^{*}(r\vee T)
@@ -128,7 +128,7 @@ H^{*}(r\vee T)
 1+\lvert L(A)\rvert+K_{1-r}(\Gamma).
 $$
 
-Finally, if either displayed upper bound is at most $2$, then the gated function has $H^{*}\leq2$. The exact constant, nonconstant LTF, or two-head split follows from the zero-head and one-head characterization [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md). $\blacksquare$
+Finally, if either displayed upper bound is at most $2$, then the gated function has $H^{*}\leq2$. The exact constant, nonconstant LTF, or two-head split follows from the zero-head and one-head characterization [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md). $\blacksquare$
 
 ## Consequences
 

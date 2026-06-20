@@ -104,7 +104,7 @@ P(z,y)
 P_0(y)+z\bigl(P_1(y)-P_0(y)\bigr).
 $$
 
-The affine part of $P$ includes the constant term, the linear terms in $y$ from $P_0$, and the possible singleton term $z(c_1-c_0)$. All of these cost at most one affine head under the affine-free sparsity theorem [42_affine_free_sparsity_upper_bound.md](42_affine_free_sparsity_upper_bound.md).
+The affine part of $P$ includes the constant term, the linear terms in $y$ from $P_0$, and the possible singleton term $z(c_1-c_0)$. All of these cost at most one affine head under the affine-free sparsity theorem [42_affine_free_sparsity_upper_bound.md](../03_function_families_and_affine_geometry/42_affine_free_sparsity_upper_bound.md).
 
 The genuinely nonlinear monomials of $P$ are contained in three groups.
 
@@ -193,7 +193,7 @@ $$
 \lvert\mathcal{L}_{\Delta}\rvert\leq1.
 $$
 
-The displayed bound gives $H^{*}(f)\leq2$. The exact $0$, $1$, or $2$ classification follows from the low affine-free support theorem [64_low_affine_free_support_exact.md](64_low_affine_free_support_exact.md). $\blacksquare$
+The displayed bound gives $H^{*}(f)\leq2$. The exact $0$, $1$, or $2$ classification follows from the low affine-free support theorem [64_low_affine_free_support_exact.md](../03_function_families_and_affine_geometry/64_low_affine_free_support_exact.md). $\blacksquare$
 
 ## Consequences
 

@@ -70,7 +70,7 @@ H^{*}(z\oplus O_L)\geq2,
 H^{*}(z\oplus A_L)\geq2.
 $$
 
-It remains to give two-head upper bounds. We do this by writing each fresh-XOR function as an affine slab and then applying [56_affine_slab_upper_bound.md](56_affine_slab_upper_bound.md).
+It remains to give two-head upper bounds. We do this by writing each fresh-XOR function as an affine slab and then applying [56_affine_slab_upper_bound.md](../03_function_families_and_affine_geometry/56_affine_slab_upper_bound.md).
 
 ### Lemma 1. OR endpoint
 
@@ -166,7 +166,7 @@ $$
 
 Combined with the lower bound, this proves $H^{*}(z\oplus A_L)=2$.
 
-Finally, XNOR is the output complement of XOR, and output complement preserves head complexity by [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md). This proves the two XNOR equalities as well. $\blacksquare$
+Finally, XNOR is the output complement of XOR, and output complement preserves head complexity by [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md). This proves the two XNOR equalities as well. $\blacksquare$
 
 ## Consequences
 

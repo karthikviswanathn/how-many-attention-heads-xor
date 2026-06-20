@@ -56,7 +56,7 @@ $$
 F(0),F(1),\ldots,F(m).
 $$
 
-By the symmetric sign-change theorem [06_symmetric_sign_changes.md](06_symmetric_sign_changes.md), this restricted function has head complexity $C(F)$. Restriction monotonicity from [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md) gives
+By the symmetric sign-change theorem [06_symmetric_sign_changes.md](../01_foundations_and_normal_form/06_symmetric_sign_changes.md), this restricted function has head complexity $C(F)$. Restriction monotonicity from [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md) gives
 
 $$
 H^{*}(f_F)\geq C(F).
@@ -125,7 +125,7 @@ $$
 \sum_{r=1}^{C(F)}\binom{m}{r}.
 $$
 
-Applying the polynomial-threshold sparsity upper bound [35_ptf_sparsity_upper_bound.md](35_ptf_sparsity_upper_bound.md) gives
+Applying the polynomial-threshold sparsity upper bound [35_ptf_sparsity_upper_bound.md](../02_complexity_measure_upper_bounds/35_ptf_sparsity_upper_bound.md) gives
 
 $$
 H^{*}(f_F)
@@ -234,9 +234,9 @@ $$
 a_1+a_2+b_1+b_2+2c<0,
 $$
 
-a contradiction. Thus $\mathrm{INT}_m$ is not a linear threshold function. By the one-head characterization [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md), $H^{*}(\mathrm{INT}_m)\geq2$.
+a contradiction. Thus $\mathrm{INT}_m$ is not a linear threshold function. By the one-head characterization [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md), $H^{*}(\mathrm{INT}_m)\geq2$.
 
-Complement invariance from [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md) gives the same lower and upper bounds for $\mathrm{DISJ}_m$. When $m=2$, the lower and upper bounds coincide. $\blacksquare$
+Complement invariance from [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md) gives the same lower and upper bounds for $\mathrm{DISJ}_m$. When $m=2$, the lower and upper bounds coincide. $\blacksquare$
 
 ### Lemma 5. Inner product mod two revisited
 

@@ -141,7 +141,7 @@ for a raw literal $r$. These are nonconstant LTFs by the explicit separators abo
 
 If $G$ has three true inputs, then $1-G$ has one true input. Hence $1-F$ is a nonconstant LTF by the previous case, and so $F$ is also a nonconstant LTF.
 
-Thus every remaining nonconstant gate gives a nonconstant LTF $F$. The one-head characterization [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md) then yields
+Thus every remaining nonconstant gate gives a nonconstant LTF $F$. The one-head characterization [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md) then yields
 
 $$
 H^{*}(F)=1.

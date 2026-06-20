@@ -94,7 +94,7 @@ $$
 \mathrm{EQ}_1(x_1,y_1).
 $$
 
-The function $\mathrm{EQ}_1$ is the complement of $\mathrm{XOR}_2$. If a polynomial sign-represents $\mathrm{EQ}_1$, multiplying it by $-1$ sign-represents $\mathrm{XOR}_2$. Since parity on two bits has threshold degree $2$ by [xor_n_bits.md](xor_n_bits.md), we get
+The function $\mathrm{EQ}_1$ is the complement of $\mathrm{XOR}_2$. If a polynomial sign-represents $\mathrm{EQ}_1$, multiplying it by $-1$ sign-represents $\mathrm{XOR}_2$. Since parity on two bits has threshold degree $2$ by [xor_n_bits.md](../01_foundations_and_normal_form/xor_n_bits.md), we get
 
 $$
 \deg_{\pm}(\mathrm{EQ}_1)=2.
@@ -132,7 +132,7 @@ $$
 H^{*}(\mathrm{EQ}_m)\geq2
 $$
 
-follows from the threshold-degree lower bound [xor_n_bits.md](xor_n_bits.md).
+follows from the threshold-degree lower bound [xor_n_bits.md](../01_foundations_and_normal_form/xor_n_bits.md).
 
 When $m=1$, the upper and lower bounds coincide, so
 

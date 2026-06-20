@@ -24,7 +24,7 @@ This includes:
 
 ## Construction
 
-We use the model from [../model.md](../model.md) with
+We use the model from [../model.md](../../model.md) with
 
 $$
 d_{\mathrm{model}} = d_{\mathrm{head}} = 2.

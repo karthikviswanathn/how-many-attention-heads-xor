@@ -140,13 +140,13 @@ Constants have $s_{\mathrm{LTF}}=0$. Nonconstant linear threshold functions have
 
 By Lemma 1 and Lemma 2, every remaining non-parity three-bit function has threshold-vote size exactly $2$, while parity and anti-parity have threshold-vote size exactly $3$.
 
-The exact three-bit classification [10_three_bit_exact_classification.md](10_three_bit_exact_classification.md) gives
+The exact three-bit classification [10_three_bit_exact_classification.md](../01_foundations_and_normal_form/10_three_bit_exact_classification.md) gives
 
 $$
 H^{*}(f)=\deg_{\pm}(f)
 $$
 
-for every three-bit Boolean function. The top threshold-degree theorem [21_top_threshold_degree.md](21_top_threshold_degree.md) identifies parity and anti-parity as the only three-bit functions of threshold degree $3$. Threshold degree $1$ is exactly the nonconstant LTF case, and the one-head theorem [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md) gives the same $H^{*}$ value on that class. Therefore the case split above matches the $H^{*}$ case split exactly:
+for every three-bit Boolean function. The top threshold-degree theorem [21_top_threshold_degree.md](../01_foundations_and_normal_form/21_top_threshold_degree.md) identifies parity and anti-parity as the only three-bit functions of threshold degree $3$. Threshold degree $1$ is exactly the nonconstant LTF case, and the one-head theorem [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md) gives the same $H^{*}$ value on that class. Therefore the case split above matches the $H^{*}$ case split exactly:
 
 $$
 s_{\mathrm{LTF}}(f)=H^{*}(f)=\deg_{\pm}(f).

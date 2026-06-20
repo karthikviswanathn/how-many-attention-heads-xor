@@ -68,7 +68,7 @@ All equalities and inequalities are interpreted in $\mathbb{N}\cup\{\infty\}$.
 
 ## Proof
 
-We use the one-head atom normal form from [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md). An atom has the form
+We use the one-head atom normal form from [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md). An atom has the form
 
 $$
 \phi(x)
@@ -110,7 +110,7 @@ $$
 
 Thus $\phi(1-x_1,\ldots,1-x_n)$ has the same atom form with parameter $\alpha^{-1}$, coordinate weights $\rho_i\alpha$, coordinate offsets $m_i+\delta$, and slope $-\delta$.
 
-Finally, restricting coordinates gives atoms in the remaining variables. Fixed-coordinate contributions are absorbed into the new constants $\gamma$ and $\eta$, exactly as in the restriction proof of [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md).
+Finally, restricting coordinates gives atoms in the remaining variables. Fixed-coordinate contributions are absorbed into the new constants $\gamma$ and $\eta$, exactly as in the restriction proof of [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md).
 
 ### Lemma 2. Complement, permutations, bit-flips, and restrictions
 

@@ -117,7 +117,7 @@ $$
 
 nonconstant monomials.
 
-Applying the polynomial-threshold sparsity theorem [35_ptf_sparsity_upper_bound.md](35_ptf_sparsity_upper_bound.md) proves
+Applying the polynomial-threshold sparsity theorem [35_ptf_sparsity_upper_bound.md](../02_complexity_measure_upper_bounds/35_ptf_sparsity_upper_bound.md) proves
 
 $$
 H^{*}(f)
@@ -149,7 +149,7 @@ $$
 \deg_{\pm}(f)\leq d+1.
 $$
 
-If $f$ is nonconstant, the affine-free sparsity corollary [42_affine_free_sparsity_upper_bound.md](42_affine_free_sparsity_upper_bound.md) gives
+If $f$ is nonconstant, the affine-free sparsity corollary [42_affine_free_sparsity_upper_bound.md](../03_function_families_and_affine_geometry/42_affine_free_sparsity_upper_bound.md) gives
 
 $$
 H^{*}(f)

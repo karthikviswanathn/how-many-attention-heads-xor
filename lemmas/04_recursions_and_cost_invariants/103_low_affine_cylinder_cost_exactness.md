@@ -38,7 +38,7 @@ $$
 H^{*}(f)\leq2.
 $$
 
-The exact zero-head and one-head characterization from [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md) says:
+The exact zero-head and one-head characterization from [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md) says:
 
 - $H^{*}(f)=0$ exactly for constant functions,
 - $H^{*}(f)=1$ exactly for nonconstant LTFs,

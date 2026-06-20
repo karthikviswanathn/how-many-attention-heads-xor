@@ -8,7 +8,7 @@ $$
 f:\{0,1\}^n\to\{0,1\}.
 $$
 
-The partition sign-rank lower-bound route from [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md) can certify
+The partition sign-rank lower-bound route from [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md) can certify
 
 $$
 H^{*}(f)\geq h+1
@@ -94,7 +94,7 @@ $$
 1+n+\binom{n}{2}.
 $$
 
-Thus no partition sign-rank argument of the form in [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md) can certify $H^{*}(f)\geq3$ on at most $13$ input bits. $\blacksquare$
+Thus no partition sign-rank argument of the form in [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md) can certify $H^{*}(f)\geq3$ on at most $13$ input bits. $\blacksquare$
 
 ## Consequence
 

@@ -159,7 +159,7 @@ $$
 f(x)=\mathbf{1}[L(x)<\tau].
 $$
 
-This is a nonconstant LTF, so the one-head characterization [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md) gives
+This is a nonconstant LTF, so the one-head characterization [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md) gives
 
 $$
 H^{*}(f)=1.
@@ -171,7 +171,7 @@ $$
 \alpha\leq L(x)\leq\beta
 $$
 
-for suitable $\alpha\leq\beta$. The affine-slab theorem [56_affine_slab_upper_bound.md](56_affine_slab_upper_bound.md), together with complement invariance from [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md), gives
+for suitable $\alpha\leq\beta$. The affine-slab theorem [56_affine_slab_upper_bound.md](56_affine_slab_upper_bound.md), together with complement invariance from [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md), gives
 
 $$
 H^{*}(f)\leq2.

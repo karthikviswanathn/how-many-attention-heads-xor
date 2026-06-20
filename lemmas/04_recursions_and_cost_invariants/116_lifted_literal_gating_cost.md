@@ -69,7 +69,7 @@ If $\operatorname{lgactc}(T)\leq1$, then every literal-gated function here that 
 
 Fix a strict affine-cylinder score $S$ for $T$. Lemma [115_literal_gated_affine_cylinder_feature.md](115_literal_gated_affine_cylinder_feature.md) gives direct bounds for both $z$ and $1-z$ gates, using $K_{+}$ for the $z$ lift and $K_{-}$ for the $1-z$ lift.
 
-If the cheaper lift is not the literal appearing in the desired gate, apply the global bit-flip on the fresh coordinate $z$. Head complexity is invariant under this bit flip by [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md), and the bit flip swaps the two literals. Hence for either literal $r$,
+If the cheaper lift is not the literal appearing in the desired gate, apply the global bit-flip on the fresh coordinate $z$. Head complexity is invariant under this bit flip by [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md), and the bit flip swaps the two literals. Hence for either literal $r$,
 
 $$
 H^{*}(r\wedge T)
@@ -119,7 +119,7 @@ $$
 m+2\operatorname{actc}(T).
 $$
 
-Finally, if $\operatorname{lgactc}(T)\leq1$, then each literal-gated function above has head complexity at most $2$. The exact constant, nonconstant LTF, or two-head split follows from the zero-head and one-head characterization [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md). $\blacksquare$
+Finally, if $\operatorname{lgactc}(T)\leq1$, then each literal-gated function above has head complexity at most $2$. The exact constant, nonconstant LTF, or two-head split follows from the zero-head and one-head characterization [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md). $\blacksquare$
 
 ## Consequences
 

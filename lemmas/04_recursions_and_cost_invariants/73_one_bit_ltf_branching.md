@@ -102,7 +102,7 @@ $$
 H^{*}(f)\leq1+\lvert S\rvert.
 $$
 
-If $\lvert S\rvert\leq1$, then the same theorem gives $H^{*}(f)\leq2$. The exact value is forced by the zero-head and one-head characterization [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md): constants have value $0$, nonconstant LTFs have value $1$, and every remaining function has value exactly $2$. $\blacksquare$
+If $\lvert S\rvert\leq1$, then the same theorem gives $H^{*}(f)\leq2$. The exact value is forced by the zero-head and one-head characterization [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md): constants have value $0$, nonconstant LTFs have value $1$, and every remaining function has value exactly $2$. $\blacksquare$
 
 ## Consequences
 

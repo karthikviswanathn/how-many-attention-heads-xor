@@ -167,7 +167,7 @@ $$
 
 for every $x$. Therefore $\widetilde{P}$ has the same sign as $P$ on the whole cube.
 
-By the linear-fractional normal form [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md), $\widetilde{P}$ is an $\lvert\mathcal{M}\rvert$-head score computing $f$. Hence
+By the linear-fractional normal form [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md), $\widetilde{P}$ is an $\lvert\mathcal{M}\rvert$-head score computing $f$. Hence
 
 $$
 H^{*}(f)\leq\lvert\mathcal{M}\rvert.

@@ -115,7 +115,7 @@ $$
 
 where the $\epsilon_A$ term is used only when $\lambda(A)=1$.
 
-If $\lambda(A)=1$, Lemma 1 of [42_affine_free_sparsity_upper_bound.md](42_affine_free_sparsity_upper_bound.md) gives one head atom $\psi_A$ such that
+If $\lambda(A)=1$, Lemma 1 of [42_affine_free_sparsity_upper_bound.md](../03_function_families_and_affine_geometry/42_affine_free_sparsity_upper_bound.md) gives one head atom $\psi_A$ such that
 
 $$
 \lvert\psi_A(x)-A(x)\rvert<\epsilon_A
@@ -149,7 +149,7 @@ $$
 \Delta.
 $$
 
-Therefore $\widetilde V$ has the same sign as $V$ on the cube. Scalar multiples of one-head atoms are still one-head atoms by scaling numerator parameters. Hence the linear-fractional normal form [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md) gives
+Therefore $\widetilde V$ has the same sign as $V$ on the cube. Scalar multiples of one-head atoms are still one-head atoms by scaling numerator parameters. Hence the linear-fractional normal form [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md) gives
 
 $$
 H^{*}(f)

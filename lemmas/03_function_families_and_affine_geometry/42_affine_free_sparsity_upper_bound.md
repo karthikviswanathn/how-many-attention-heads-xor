@@ -71,7 +71,7 @@ $$
 B_{\delta}(x):=1+\delta\sum_{i=1}^{n}x_i.
 $$
 
-By Lemma 1 of [09_three_bit_quadratic_upper_bound.md](09_three_bit_quadratic_upper_bound.md), the ratio
+By Lemma 1 of [09_three_bit_quadratic_upper_bound.md](../01_foundations_and_normal_form/09_three_bit_quadratic_upper_bound.md), the ratio
 
 $$
 \psi_{\delta}(x):=\frac{L(x)}{B_{\delta}(x)}
@@ -140,7 +140,7 @@ $$
 
 for every $x$. If $\ell=0$, set $\psi:=0$ and use no affine head.
 
-For each $S\in\mathcal{M}$, use Lemma 1 of [35_ptf_sparsity_upper_bound.md](35_ptf_sparsity_upper_bound.md) to choose a one-head atom $\phi_S$ approximating $a_S q_S$ uniformly. If $\mathcal{M}\neq\varnothing$, take the tolerance
+For each $S\in\mathcal{M}$, use Lemma 1 of [35_ptf_sparsity_upper_bound.md](../02_complexity_measure_upper_bounds/35_ptf_sparsity_upper_bound.md) to choose a one-head atom $\phi_S$ approximating $a_S q_S$ uniformly. If $\mathcal{M}\neq\varnothing$, take the tolerance
 
 $$
 \frac{\Delta}{4\lvert\mathcal{M}\rvert}
@@ -170,7 +170,7 @@ $$
 
 Indeed, the affine approximation contributes less than $\Delta/4$ when present and nothing when absent, while the total nonlinear error is less than $\Delta/4$ when $\mathcal{M}$ is nonempty and nothing otherwise.
 
-Therefore $\widetilde{P}$ has the same sign as $P$ everywhere on the cube. By the linear-fractional normal form [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md), $\widetilde{P}$ is a valid head score using
+Therefore $\widetilde{P}$ has the same sign as $P$ everywhere on the cube. By the linear-fractional normal form [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md), $\widetilde{P}$ is a valid head score using
 
 $$
 \ell+\lvert\mathcal{M}\rvert

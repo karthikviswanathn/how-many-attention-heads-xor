@@ -73,7 +73,7 @@ $$
 
 The sign-change count of the sequence $a_0,\ldots,a_{2^n-1}$ is at most $2m$: each maximal contiguous block of minority labels contributes at most two boundary changes, one on entry and one on exit. The number of such blocks is at most $m$.
 
-Therefore the positive-projection sign-change theorem [07_positive_projection_sign_changes.md](07_positive_projection_sign_changes.md) gives
+Therefore the positive-projection sign-change theorem [07_positive_projection_sign_changes.md](../01_foundations_and_normal_form/07_positive_projection_sign_changes.md) gives
 
 $$
 H^{*}(f)\leq C_t(f)\leq2m=2s(f).
@@ -87,7 +87,7 @@ $$
 \sum_{i:a_i=1}x_i+\sum_{i:a_i=0}(1-x_i)>n-\frac{1}{2}.
 $$
 
-Its complement is also a linear threshold function. By the exact one-head characterization from [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md), every nonconstant linear threshold function has $H^{*}=1$. Hence $H^{*}(f)\leq1$ when $s(f)=1$. $\blacksquare$
+Its complement is also a linear threshold function. By the exact one-head characterization from [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md), every nonconstant linear threshold function has $H^{*}=1$. Hence $H^{*}(f)\leq1$ when $s(f)=1$. $\blacksquare$
 
 ## Consequence
 
@@ -107,7 +107,7 @@ $$
 
 This improves the generic $2^n-1$ bound whenever the smaller label class has size below $2^{n-1}$. It is especially useful for rare-event predicates and complements of rare-event predicates, where no low-dimensional positive projection or monotone normal form is visible.
 
-The first nontrivial sparse case is sharper than the displayed general bound. If $s(f)\leq2$, then [58_two_point_support_exact.md](58_two_point_support_exact.md) gives
+The first nontrivial sparse case is sharper than the displayed general bound. If $s(f)\leq2$, then [58_two_point_support_exact.md](../03_function_families_and_affine_geometry/58_two_point_support_exact.md) gives
 
 $$
 H^{*}(f)\leq2,
@@ -121,4 +121,4 @@ $$
 \operatorname{aff}(A)\cap\{0,1\}^n
 $$
 
-and $\operatorname{aff}(A)$ is proper, then [59_affine_hull_clean_supports.md](59_affine_hull_clean_supports.md) gives the same two-head upper bound and exact split.
+and $\operatorname{aff}(A)$ is proper, then [59_affine_hull_clean_supports.md](../03_function_families_and_affine_geometry/59_affine_hull_clean_supports.md) gives the same two-head upper bound and exact split.

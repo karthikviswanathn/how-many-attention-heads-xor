@@ -116,7 +116,7 @@ S(x,y)-\theta>0
 x=y.
 $$
 
-Both $B_1$ and $B_2$ are positive affine functions with positive variable coefficients, so $A_1/B_1$ and $A_2/B_2$ are one-head atoms by the affine-over-positive-affine atom lemma [09_three_bit_quadratic_upper_bound.md](09_three_bit_quadratic_upper_bound.md). Hence
+Both $B_1$ and $B_2$ are positive affine functions with positive variable coefficients, so $A_1/B_1$ and $A_2/B_2$ are one-head atoms by the affine-over-positive-affine atom lemma [09_three_bit_quadratic_upper_bound.md](../01_foundations_and_normal_form/09_three_bit_quadratic_upper_bound.md). Hence
 
 $$
 H^{*}(\mathrm{EQ}_m)\leq2.
@@ -138,7 +138,7 @@ $$
 \mathrm{EQ}_1(x_1,y_1)=\mathbf{1}[x_1=y_1].
 $$
 
-This two-bit function is not a linear threshold function, as shown in [49_equality_threshold_vote_size.md](49_equality_threshold_vote_size.md). Since one head computes exactly the nonconstant linear threshold functions by [05_linear_fractional_normal_form.md](05_linear_fractional_normal_form.md), restriction monotonicity gives
+This two-bit function is not a linear threshold function, as shown in [49_equality_threshold_vote_size.md](49_equality_threshold_vote_size.md). Since one head computes exactly the nonconstant linear threshold functions by [05_linear_fractional_normal_form.md](../01_foundations_and_normal_form/05_linear_fractional_normal_form.md), restriction monotonicity gives
 
 $$
 H^{*}(\mathrm{EQ}_m)\geq2.
@@ -150,7 +150,7 @@ $$
 H^{*}(\mathrm{EQ}_m)=2.
 $$
 
-Complement invariance from [22_restrictions_and_sign_rank.md](22_restrictions_and_sign_rank.md) gives
+Complement invariance from [22_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/22_restrictions_and_sign_rank.md) gives
 
 $$
 H^{*}(\mathrm{NEQ}_m)=2.

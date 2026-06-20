@@ -2,7 +2,7 @@
 
 ## Statement
 
-This note gives an exact normal form for $H^{*}(f)$ in the model from [../model.md](../model.md).
+This note gives an exact normal form for $H^{*}(f)$ in the model from [../model.md](../../model.md).
 
 For parameters
 
