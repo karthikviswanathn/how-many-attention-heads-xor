@@ -20,7 +20,7 @@ $$ \deg_{\pm}(f)\geq k+\deg_{\pm}(T), $$
 
 and hence
 
-$$ H^{*}(f)\geq k+\deg_{\pm}(T). $$
+$$ H^{\ast}(f)\geq k+\deg_{\pm}(T). $$
 
 The same conclusion holds if the restricted function is the complement of the displayed parity-block form.
 
@@ -42,7 +42,7 @@ $$ \deg_{\pm}(f)\geq k+\deg_{\pm}(T). $$
 
 The head lower bound follows from the general threshold-degree lower bound [006_threshold_degree_head_complexity_bound.md](../01_foundations_and_normal_form/006_threshold_degree_head_complexity_bound.md):
 
-$$ H^{*}(f)\geq\deg_{\pm}(f)\geq k+\deg_{\pm}(T). $$
+$$ H^{\ast}(f)\geq\deg_{\pm}(f)\geq k+\deg_{\pm}(T). $$
 
 If the restriction is the complement of the displayed parity-block form, the same proof applies because complementing a Boolean function preserves threshold degree. $\blacksquare$
 
@@ -56,4 +56,4 @@ $$ \left(\bigoplus_{j=1}^{k}z_j\right) \oplus \mathrm{XOR}_{r}(y) $$
 
 certifies
 
-$$ H^{*}(f)\geq k+r. $$
+$$ H^{\ast}(f)\geq k+r. $$

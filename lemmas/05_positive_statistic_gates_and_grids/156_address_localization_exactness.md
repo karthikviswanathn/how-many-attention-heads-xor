@@ -24,7 +24,7 @@ $$ e_0=e_1=0, $$
 
 then
 
-$$ d \leq H^{*}\bigl(M_a(z)\wedge T(y)\bigr) \leq C. $$
+$$ d \leq H^{\ast}\bigl(M_a(z)\wedge T(y)\bigr) \leq C. $$
 
 If
 
@@ -32,17 +32,17 @@ $$ e_0=e_1=1, $$
 
 then
 
-$$ d \leq H^{*}\bigl((1-M_a(z))\vee T(y)\bigr) \leq C. $$
+$$ d \leq H^{\ast}\bigl((1-M_a(z))\vee T(y)\bigr) \leq C. $$
 
 Consequently, in either case, if $\deg_{\pm}(T)=C$, then the corresponding localized gate has exact head complexity $C$.
 
 More generally, if $R:\lbrace0,1\rbrace^{k}\to\lbrace0,1\rbrace$ is any raw mask with $r_1=\lvert R^{-1}(1)\rvert>0$ and $e_0=e_1=0$, then
 
-$$ d \leq H^{*}\bigl(R(z)\wedge T(y)\bigr) \leq r_1C. $$
+$$ d \leq H^{\ast}\bigl(R(z)\wedge T(y)\bigr) \leq r_1C. $$
 
 If $r_0=\lvert R^{-1}(0)\rvert>0$ and $e_0=e_1=1$, then
 
-$$ d \leq H^{*}\bigl(R(z)\vee T(y)\bigr) \leq r_0C. $$
+$$ d \leq H^{\ast}\bigl(R(z)\vee T(y)\bigr) \leq r_0C. $$
 
 > **Interpretation.** A solved positive-statistic feature can be localized to one raw address at no extra head cost, provided the feature's endpoints match the inactive background label.
 
@@ -54,11 +54,11 @@ $$ \lvert M_a^{-1}(1)\rvert=1, $$
 
 the theorem gives
 
-$$ H^{*}\bigl(M_a\wedge T\bigr)\leq C. $$
+$$ H^{\ast}\bigl(M_a\wedge T\bigr)\leq C. $$
 
 For the lower bound, restrict the raw block to $z=a$. The restricted function is exactly $T(y)$. By restriction monotonicity and the threshold-degree lower bound,
 
-$$ H^{*}\bigl(M_a\wedge T\bigr) \geq H^{*}(T) \geq \deg_{\pm}(T) =d. $$
+$$ H^{\ast}\bigl(M_a\wedge T\bigr) \geq H^{\ast}(T) \geq \deg_{\pm}(T) =d. $$
 
 This proves the first bracket.
 
@@ -72,24 +72,24 @@ $$ \lvert R^{-1}(0)\rvert=1, $$
 
 so
 
-$$ H^{*}\bigl(R\vee T\bigr)\leq C. $$
+$$ H^{\ast}\bigl(R\vee T\bigr)\leq C. $$
 
 Restricting to $z=a$ again gives $T(y)$, and the same lower-bound argument gives
 
-$$ d\leq H^{*}\bigl((1-M_a)\vee T\bigr). $$
+$$ d\leq H^{\ast}\bigl((1-M_a)\vee T\bigr). $$
 
 If $\deg_{\pm}(T)=C$, then the two inequalities match in the relevant case, proving exactness.
 
 For a general raw mask $R$ with $r_1>0$ and $e_0=e_1=0$, Lemma 154 gives
 
-$$ H^{*}(R\wedge T)\leq r_1C. $$
+$$ H^{\ast}(R\wedge T)\leq r_1C. $$
 
 Choose any raw assignment $a$ with $R(a)=1$. The restriction $z=a$ is $T$, so the same lower bound gives
 
-$$ d\leq H^{*}(R\wedge T). $$
+$$ d\leq H^{\ast}(R\wedge T). $$
 
 The disjunction case is identical: if $r_0>0$ and $e_0=e_1=1$, Lemma 154 gives the upper bound $r_0C$, and any raw assignment with $R(a)=0$ restricts $R\vee T$ to $T$. $\blacksquare$
 
 ## Consequence
 
-For every threshold-degree-tight positive-statistic feature with equal zero endpoints, a single-address conjunction preserves the exact value $H^{*}=C$. The dual statement holds for equal one endpoints and a single-address exception inside a disjunction.
+For every threshold-degree-tight positive-statistic feature with equal zero endpoints, a single-address conjunction preserves the exact value $H^{\ast}=C$. The dual statement holds for equal one endpoints and a single-address exception inside a disjunction.

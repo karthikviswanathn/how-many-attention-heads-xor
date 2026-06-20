@@ -18,13 +18,13 @@ for every $x\in\lbrace0,1\rbrace^n$.
 
 Then
 
-$$ H^{*}(f)\leq\mathrm{ptfsp}(f). $$
+$$ H^{\ast}(f)\leq\mathrm{ptfsp}(f). $$
 
 In particular, if $\deg_{\pm}(f)\leq d$, then
 
-$$ H^{*}(f) \leq \sum_{r=1}^{d}\binom{n}{r}. $$
+$$ H^{\ast}(f) \leq \sum_{r=1}^{d}\binom{n}{r}. $$
 
-> **Interpretation.** Sparse polynomial threshold representations give sparse head representations. Threshold degree is a lower bound on $H^{*}$, but low threshold degree also gives a general, possibly loose, upper bound through the number of low-degree monomials.
+> **Interpretation.** Sparse polynomial threshold representations give sparse head representations. Threshold degree is a lower bound on $H^{\ast}$, but low threshold degree also gives a general, possibly loose, upper bound through the number of low-degree monomials.
 
 ## Proof
 
@@ -82,7 +82,7 @@ sign-represent $f$, where $\mathcal{M}$ is a family of nonempty sets and every $
 
 $$ \Delta:=\min_{x\in\lbrace0,1\rbrace^n}\lvert P(x)\rvert>0. $$
 
-If $\mathcal{M}=\varnothing$, then $P$ is constant-sign and $f$ is constant, so $H^{*}(f)=0$.
+If $\mathcal{M}=\varnothing$, then $P$ is constant-sign and $f$ is constant, so $H^{\ast}(f)=0$.
 
 Assume $\mathcal{M}\neq\varnothing$. For each $S\in\mathcal{M}$, use Lemma 1 with tolerance
 
@@ -104,13 +104,13 @@ for every $x$. Therefore $\widetilde{P}$ has the same sign as $P$ on the whole c
 
 By the linear-fractional normal form [010_linear_fractional_normal_form.md](../01_foundations_and_normal_form/010_linear_fractional_normal_form.md), $\widetilde{P}$ is an $\lvert\mathcal{M}\rvert$-head score computing $f$. Hence
 
-$$ H^{*}(f)\leq\lvert\mathcal{M}\rvert. $$
+$$ H^{\ast}(f)\leq\lvert\mathcal{M}\rvert. $$
 
 Minimizing over all sign-representing polynomials proves
 
-$$ H^{*}(f)\leq\mathrm{ptfsp}(f). $$
+$$ H^{\ast}(f)\leq\mathrm{ptfsp}(f). $$
 
-Finally, if $\deg_{\pm}(f)\leq d$, choose a degree-at-most-$d$ sign-representing polynomial. It has no more than
+Finally, if $\deg_{\pm}(f)\leq d$, choose a degree-at-most $d$ sign-representing polynomial. It has no more than
 
 $$ \sum_{r=1}^{d}\binom{n}{r} $$
 
@@ -120,10 +120,10 @@ nonconstant monomials. Applying the sparsity bound proves the displayed threshol
 
 For every Boolean function,
 
-$$ \deg_{\pm}(f) \leq H^{*}(f) \leq \mathrm{ptfsp}(f). $$
+$$ \deg_{\pm}(f) \leq H^{\ast}(f) \leq \mathrm{ptfsp}(f). $$
 
 For functions with small threshold degree $d$, this gives the uniform upper bound
 
-$$ H^{*}(f) \leq \binom{n}{1}+\binom{n}{2}+\cdots+\binom{n}{d}. $$
+$$ H^{\ast}(f) \leq \binom{n}{1}+\binom{n}{2}+\cdots+\binom{n}{d}. $$
 
-This bound is usually not tight. For example, nonconstant linear threshold functions have $H^{*}(f)=1$, while the sparsity route only gives $H^{*}(f)\leq n$ from an arbitrary dense affine threshold. Its value is that it converts sparse sign polynomials into head upper bounds without requiring determinant-span certificates.
+This bound is usually not tight. For example, nonconstant linear threshold functions have $H^{\ast}(f)=1$, while the sparsity route only gives $H^{\ast}(f)\leq n$ from an arbitrary dense affine threshold. Its value is that it converts sparse sign polynomials into head upper bounds without requiring determinant-span certificates.

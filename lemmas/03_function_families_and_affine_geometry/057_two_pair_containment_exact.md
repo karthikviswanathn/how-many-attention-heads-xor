@@ -8,9 +8,9 @@ $$ \mathrm{SUB}_2(x,y) := \mathbf{1}[x_i\leq y_i\text{ for }i=1,2], \qquad \math
 
 Then
 
-$$ H^{*}(\mathrm{SUB}_2)=H^{*}(\mathrm{NCON}_2)=2. $$
+$$ H^{\ast}(\mathrm{SUB}_2)=H^{\ast}(\mathrm{NCON}_2)=2. $$
 
-> **Interpretation.** The first nontrivial directed-defect endpoint has exact value $2$. This sharpens the general directed-defect bound $2\leq H^{*}\leq m+1$ at $m=2$.
+> **Interpretation.** The first nontrivial directed-defect endpoint has exact value $2$. This sharpens the general directed-defect bound $2\leq H^{\ast}\leq m+1$ at $m=2$.
 
 ## Proof
 
@@ -50,29 +50,29 @@ $$ S>0 \qquad\Longleftrightarrow\qquad \mathrm{SUB}_2(x,y)=1. $$
 
 Both denominators have positive constant term and positive variable coefficients. By the affine-over-positive-affine atom lemma [015_three_bit_quadratic_upper_bound.md](../01_foundations_and_normal_form/015_three_bit_quadratic_upper_bound.md), each ratio $A_i/B_i$ is a single one-head atom. Therefore
 
-$$ H^{*}(\mathrm{SUB}_2)\leq2. $$
+$$ H^{\ast}(\mathrm{SUB}_2)\leq2. $$
 
 ### Lemma 2. Lower bound and complement
 
 The directed-defect profile bound [052_directed_defect_profile_bounds.md](052_directed_defect_profile_bounds.md) proves that for $m\geq2$,
 
-$$ H^{*}(\mathrm{SUB}_m)\geq2, \qquad H^{*}(\mathrm{NCON}_m)\geq2. $$
+$$ H^{\ast}(\mathrm{SUB}_m)\geq2, \qquad H^{\ast}(\mathrm{NCON}_m)\geq2. $$
 
 In particular,
 
-$$ H^{*}(\mathrm{SUB}_2)\geq2. $$
+$$ H^{\ast}(\mathrm{SUB}_2)\geq2. $$
 
 Together with Lemma 1 this gives
 
-$$ H^{*}(\mathrm{SUB}_2)=2. $$
+$$ H^{\ast}(\mathrm{SUB}_2)=2. $$
 
 Complementing the final threshold computes $\mathrm{NCON}_2$ with the same two atoms, so
 
-$$ H^{*}(\mathrm{NCON}_2)\leq2. $$
+$$ H^{\ast}(\mathrm{NCON}_2)\leq2. $$
 
 The lower bound above gives
 
-$$ H^{*}(\mathrm{NCON}_2)=2. $$
+$$ H^{\ast}(\mathrm{NCON}_2)=2. $$
 
 $\blacksquare$
 
@@ -80,12 +80,12 @@ $\blacksquare$
 
 The directed-defect endpoint is exact at the first two string lengths:
 
-$$ H^{*}(\mathrm{SUB}_1)=H^{*}(\mathrm{NCON}_1)=1, $$
+$$ H^{\ast}(\mathrm{SUB}_1)=H^{\ast}(\mathrm{NCON}_1)=1, $$
 
 and
 
-$$ H^{*}(\mathrm{SUB}_2)=H^{*}(\mathrm{NCON}_2)=2. $$
+$$ H^{\ast}(\mathrm{SUB}_2)=H^{\ast}(\mathrm{NCON}_2)=2. $$
 
 For $m\geq3$, the current notes still record the general bracket
 
-$$ 2\leq H^{*}(\mathrm{SUB}_m)\leq m+1, \qquad 2\leq H^{*}(\mathrm{NCON}_m)\leq m+1. $$
+$$ 2\leq H^{\ast}(\mathrm{SUB}_m)\leq m+1, \qquad 2\leq H^{\ast}(\mathrm{NCON}_m)\leq m+1. $$

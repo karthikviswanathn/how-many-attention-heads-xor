@@ -14,7 +14,7 @@ Equivalently,
 
 $$ \mathrm{actc}(f)\geq2 \qquad\Longleftrightarrow\qquad f \text{ is neither constant nor a nonconstant LTF}. $$
 
-> **Interpretation.** The affine-cylinder cost has the same first two levels as head complexity. Its first possible slack over $H^{*}$ can only begin at level $2$.
+> **Interpretation.** The affine-cylinder cost has the same first two levels as head complexity. Its first possible slack over $H^{\ast}$ can only begin at level $2$.
 
 ## Proof
 
@@ -38,9 +38,9 @@ $$ \mathrm{actc}(f)=1. $$
 
 Conversely, suppose $\mathrm{actc}(f)=1$. The head upper bound [103_affine_cylinder_threshold_cost.md](103_affine_cylinder_threshold_cost.md) gives
 
-$$ H^{*}(f)\leq1. $$
+$$ H^{\ast}(f)\leq1. $$
 
-The zero-head and one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md) says that functions with $H^{*}\leq1$ are exactly constants and nonconstant LTFs. Since $\mathrm{actc}(f)\neq0$, the first part shows that $f$ is not constant. Therefore $f$ is a nonconstant LTF.
+The zero-head and one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md) says that functions with $H^{\ast}\leq1$ are exactly constants and nonconstant LTFs. Since $\mathrm{actc}(f)\neq0$, the first part shows that $f$ is not constant. Therefore $f$ is a nonconstant LTF.
 
 Finally, the displayed lower-level characterization implies
 
@@ -52,6 +52,6 @@ Taking the negation gives the final equivalence. $\blacksquare$
 
 The low-cost exactness theorem [109_low_affine_cylinder_cost_exactness.md](109_low_affine_cylinder_cost_exactness.md) starts with a sharp base:
 
-$$ \mathrm{actc}(f) = H^{*}(f) \qquad \text{for } \mathrm{actc}(f)\in\lbrace0,1\rbrace. $$
+$$ \mathrm{actc}(f) = H^{\ast}(f) \qquad \text{for } \mathrm{actc}(f)\in\lbrace0,1\rbrace. $$
 
 Thus any affine-cylinder certificate for a function that is neither constant nor a nonconstant LTF must pay cost at least $2$, and cost $2$ is automatically an exact two-head certificate.

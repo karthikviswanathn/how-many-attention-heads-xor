@@ -22,27 +22,27 @@ Then the following table holds.
 
 1. If $G$ is constant, then
 
-$$ H^{*}(F_G)=0. $$
+$$ H^{\ast}(F_G)=0. $$
 
 2. If $G$ is a raw-bit literal $z$ or $1-z$, then
 
-$$ H^{*}(F_G)=1. $$
+$$ H^{\ast}(F_G)=1. $$
 
 3. If $G$ is the feature literal $u$ or $1-u$, then
 
-$$ H^{*}(F_G)=2. $$
+$$ H^{\ast}(F_G)=2. $$
 
 4. If $G$ or $1-G$ is $r\wedge u$ for a raw literal $r\in\lbrace z,1-z\rbrace$, then
 
-$$ H^{*}(F_G)=2. $$
+$$ H^{\ast}(F_G)=2. $$
 
 5. If $G$ or $1-G$ is $r\wedge(1-u)$ for a raw literal $r\in\lbrace z,1-z\rbrace$, then
 
-$$ 2\leq H^{*}(F_G)\leq3. $$
+$$ 2\leq H^{\ast}(F_G)\leq3. $$
 
 6. If $G$ is XOR or XNOR, then
 
-$$ 3\leq H^{*}(F_G)\leq5. $$
+$$ 3\leq H^{\ast}(F_G)\leq5. $$
 
 These cases exhaust all two-input gates.
 
@@ -52,7 +52,7 @@ These cases exhaust all two-input gates.
 
 First note that
 
-$$ H^{*}(S)=H^{*}(1-S)=2. $$
+$$ H^{\ast}(S)=H^{\ast}(1-S)=2. $$
 
 Indeed, $S$ is a non-LTF affine slab, so this follows from the affine-slab theorem [062_affine_slab_upper_bound.md](../03_function_families_and_affine_geometry/062_affine_slab_upper_bound.md), complement invariance, and the one-head characterization. Consequently,
 
@@ -70,7 +70,7 @@ $$ 1,\ldots,1,0,\ldots,0,1,\ldots,1. $$
 
 For $r=z$, the concatenated sequence in the positive-projection one-bit gate bound is a block of zeros followed by this sequence, so it has three sign changes. For $r=1-z$, the same sequence is followed by a block of zeros, and again there are three sign changes. Lemma 132 gives
 
-$$ H^{*}(r\wedge(1-S))\leq3. $$
+$$ H^{\ast}(r\wedge(1-S))\leq3. $$
 
 The one-bit gate threshold-degree trichotomy [082_one_bit_gate_threshold_degree_trichotomy.md](../04_recursions_and_cost_invariants/082_one_bit_gate_threshold_degree_trichotomy.md) gives
 
@@ -78,17 +78,17 @@ $$ \deg_{\pm}(r\wedge(1-S))=\deg_{\pm}(1-S)=2. $$
 
 Thus
 
-$$ H^{*}(r\wedge(1-S))\geq2. $$
+$$ H^{\ast}(r\wedge(1-S))\geq2. $$
 
 Complement invariance gives the same bracket when $1-G$ has this form.
 
 For Case 6, the fresh-bit XOR threshold-degree theorem gives
 
-$$ H^{*}(z\oplus S)\geq\deg_{\pm}(S)+1=3. $$
+$$ H^{\ast}(z\oplus S)\geq\deg_{\pm}(S)+1=3. $$
 
 The positive-projection fresh-XOR sign-change bound [131_positive_projection_fresh_xor_sign_change_bound.md](131_positive_projection_fresh_xor_sign_change_bound.md) applies with $C=2$, hence
 
-$$ H^{*}(z\oplus S)\leq5. $$
+$$ H^{\ast}(z\oplus S)\leq5. $$
 
 Complement invariance gives the same bracket for XNOR.
 

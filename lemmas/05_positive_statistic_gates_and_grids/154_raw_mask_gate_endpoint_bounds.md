@@ -24,7 +24,7 @@ $$ A(z,y):=R(z)\wedge T(y), $$
 
 we have
 
-$$ H^{*}(A)\leq \begin{cases} r_1C, & e_0=e_1=0,\\ r_1C+C_R, & e_0=e_1=1,\\ r_1(C+1), & e_0\neq e_1. \end{cases} $$
+$$ H^{\ast}(A)\leq \begin{cases} r_1C, & e_0=e_1=0,\\ r_1C+C_R, & e_0=e_1=1,\\ r_1(C+1), & e_0\neq e_1. \end{cases} $$
 
 For the disjunction
 
@@ -32,7 +32,7 @@ $$ O(z,y):=R(z)\vee T(y), $$
 
 we have
 
-$$ H^{*}(O)\leq \begin{cases} r_0C, & e_0=e_1=1,\\ r_0C+C_R, & e_0=e_1=0,\\ r_0(C+1), & e_0\neq e_1. \end{cases} $$
+$$ H^{\ast}(O)\leq \begin{cases} r_0C, & e_0=e_1=1,\\ r_0C+C_R, & e_0=e_1=0,\\ r_0(C+1), & e_0\neq e_1. \end{cases} $$
 
 For the raw-mask XOR
 
@@ -40,7 +40,7 @@ $$ X(z,y):=R(z)\oplus T(y), $$
 
 we have
 
-$$ H^{*}(X)\leq \begin{cases} 2^k C+C_R, & e_0=e_1,\\ 2^k(C+1)+C_R, & e_0\neq e_1. \end{cases} $$
+$$ H^{\ast}(X)\leq \begin{cases} 2^k C+C_R, & e_0=e_1,\\ 2^k(C+1)+C_R, & e_0\neq e_1. \end{cases} $$
 
 > **Interpretation.** Common raw-mask gates pay for the number of raw slices where the feature is active, and their boundary terms collapse to raw support size or raw positive-order variation.
 
@@ -56,19 +56,19 @@ $$ g_0(a)=0, \qquad g_1(a)=R(a). $$
 
 If $e_0=e_1=0$, the equal-endpoint bound from Lemma 152 gives boundary cost $C_{+}(g_0)=0$. Hence
 
-$$ H^{*}(A)\leq r_1C. $$
+$$ H^{\ast}(A)\leq r_1C. $$
 
 If $e_0=e_1=1$, the same lemma gives boundary cost $C_{+}(R)=C_R$, so
 
-$$ H^{*}(A)\leq r_1C+C_R. $$
+$$ H^{\ast}(A)\leq r_1C+C_R. $$
 
 If $e_0\neq e_1$, Lemma 153 gives
 
-$$ H^{*}(A)\leq r_1C+\min\lbrace C_{+}(0),C_{+}(R)\rbrace+D(0,R). $$
+$$ H^{\ast}(A)\leq r_1C+\min\lbrace C_{+}(0),C_{+}(R)\rbrace+D(0,R). $$
 
 Here $C_{+}(0)=0$ and $D(0,R)=r_1$, so
 
-$$ H^{*}(A)\leq r_1(C+1). $$
+$$ H^{\ast}(A)\leq r_1(C+1). $$
 
 The disjunction case is identical after observing that for $G(a,u)=R(a)\vee u$, the slice depends on $u$ exactly when $R(a)=0$, and
 
@@ -98,7 +98,7 @@ $$ C_{+}(1-R)=C_R \qquad \text{and} \qquad D(R,1-R)=2^k, $$
 
 we get the bound
 
-$$ H^{*}(X)\leq2^kC+C_R+2^k=2^k(C+1)+C_R. $$
+$$ H^{\ast}(X)\leq2^kC+C_R+2^k=2^k(C+1)+C_R. $$
 
 $\blacksquare$
 

@@ -6,11 +6,11 @@ Use the setup of Theorem 170, and read the grid values of $F$ in the same lexico
 
 Then
 
-$$ H^{*}(f)\leq 2\min\lbrace R_0,R_1\rbrace. $$
+$$ H^{\ast}(f)\leq 2\min\lbrace R_0,R_1\rbrace. $$
 
 More sharply, if the chosen cheaper label $b$ has first and last sequence labels $\epsilon_0,\epsilon_1$ with respect to membership in the $b$-label set, then
 
-$$ H^{*}(f)\leq 2R_b-\epsilon_0-\epsilon_1. $$
+$$ H^{\ast}(f)\leq 2R_b-\epsilon_0-\epsilon_1. $$
 
 If this sharper run count equals $\deg_{\pm}(f)$, then this upper bound is exact.
 
@@ -26,11 +26,11 @@ where $\epsilon_0=1$ if the first sequence value is $b$ and $\epsilon_1=1$ if th
 
 This transition count is at most $2R_b$. It is also exactly the sign-change count of the full Boolean grid sequence. Applying Theorem 170 gives
 
-$$ H^{*}(f)\leq2R_b-\epsilon_0-\epsilon_1. $$
+$$ H^{\ast}(f)\leq2R_b-\epsilon_0-\epsilon_1. $$
 
 Choosing the cheaper label gives
 
-$$ H^{*}(f)\leq2\min\lbrace R_0,R_1\rbrace. $$
+$$ H^{\ast}(f)\leq2\min\lbrace R_0,R_1\rbrace. $$
 
 If the sharper transition count equals $\deg_{\pm}(f)$, then the threshold-degree lower bound matches the upper bound, so the value is exact. $\blacksquare$
 

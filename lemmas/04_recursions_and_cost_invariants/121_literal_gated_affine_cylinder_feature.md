@@ -24,11 +24,11 @@ $$ K_r(\Gamma):=\sum_{\gamma=(P,N)\in\Gamma}\kappa(P,N\cup\lbrace z\rbrace). $$
 
 Then
 
-$$ H^{*}(r(z)\wedge T(y)) \leq 1+\lvert L(A)\rvert+K_r(\Gamma). $$
+$$ H^{\ast}(r(z)\wedge T(y)) \leq 1+\lvert L(A)\rvert+K_r(\Gamma). $$
 
 Also,
 
-$$ H^{*}(r(z)\vee T(y)) \leq 1+\lvert L(A)\rvert+K_{1-r}(\Gamma), $$
+$$ H^{\ast}(r(z)\vee T(y)) \leq 1+\lvert L(A)\rvert+K_{1-r}(\Gamma), $$
 
 where $1-r$ denotes the complementary literal.
 
@@ -52,11 +52,11 @@ $$ \mu_0=0, \qquad \mu_1=1. $$
 
 Lemma 118 gives
 
-$$ H^{*}(F) \leq \eta_G(A)+\lvert L(A)\rvert+K_r(\Gamma). $$
+$$ H^{\ast}(F) \leq \eta_G(A)+\lvert L(A)\rvert+K_r(\Gamma). $$
 
 Since $\eta_G(A)\leq1$, this proves
 
-$$ H^{*}(z\wedge T) \leq 1+\lvert L(A)\rvert+K_z(\Gamma), $$
+$$ H^{\ast}(z\wedge T) \leq 1+\lvert L(A)\rvert+K_z(\Gamma), $$
 
 where $K_z(\Gamma)=K_r(\Gamma)$ for $r=z$.
 
@@ -66,7 +66,7 @@ $$ (1-z)C_{P,N}(y)=C_{P,N\cup\lbrace z\rbrace}(z,y), $$
 
 which gives the cost $K_r(\Gamma)$ in this case. Thus
 
-$$ H^{*}((1-z)\wedge T) \leq 1+\lvert L(A)\rvert+K_{1-z}(\Gamma). $$
+$$ H^{\ast}((1-z)\wedge T) \leq 1+\lvert L(A)\rvert+K_{1-z}(\Gamma). $$
 
 Now use De Morgan duality for disjunction. For any literal $r$,
 
@@ -74,9 +74,9 @@ $$ r\vee T = 1-\bigl((1-r)\wedge(1-T)\bigr). $$
 
 The complement $1-T$ has strict score $-S$, with the same set $L(A)$ and the same cylinder supports and local costs. Complementing the output preserves head complexity by [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md). Applying the conjunction bound to $(1-r)\wedge(1-T)$ gives
 
-$$ H^{*}(r\vee T) \leq 1+\lvert L(A)\rvert+K_{1-r}(\Gamma). $$
+$$ H^{\ast}(r\vee T) \leq 1+\lvert L(A)\rvert+K_{1-r}(\Gamma). $$
 
-Finally, if either displayed upper bound is at most $2$, then the gated function has $H^{*}\leq2$. The exact constant, nonconstant LTF, or two-head split follows from the zero-head and one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md). $\blacksquare$
+Finally, if either displayed upper bound is at most $2$, then the gated function has $H^{\ast}\leq2$. The exact constant, nonconstant LTF, or two-head split follows from the zero-head and one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md). $\blacksquare$
 
 ## Consequences
 
@@ -84,6 +84,6 @@ If the affine part has no nonzero slopes and every cylinder in $\Gamma$ remains 
 
 For positive-monomial cylinder supports, the conjunction bound specializes to
 
-$$ H^{*}(z\wedge T) \leq 1+\lvert L(A)\rvert+\lvert\Gamma\rvert. $$
+$$ H^{\ast}(z\wedge T) \leq 1+\lvert L(A)\rvert+\lvert\Gamma\rvert. $$
 
 For mixed-literal cylinder supports, the same formula holds with $\lvert\Gamma\rvert$ replaced by the lifted local costs, which can be much smaller than expanding all mixed cylinders into positive monomials.

@@ -12,7 +12,7 @@ $$ P(z,y) = \sum_{r=0}^{d}a_rt(y)^r + z\sum_{r=0}^{d-1}b_rt(y)^r. $$
 
 Then
 
-$$ H^{*}(f)\leq d. $$
+$$ H^{\ast}(f)\leq d. $$
 
 > **Interpretation.** A one-dimensional positive statistic remains head-efficient after adjoining one raw bit: degree $d$ in $(t,z)$ costs at most $d$ heads.
 

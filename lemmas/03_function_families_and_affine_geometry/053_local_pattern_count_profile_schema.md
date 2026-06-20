@@ -26,7 +26,7 @@ If $C=0$, the index set is empty and $\Lambda_{p,m}(0)=0$.
 
 Suppose $p$ has a symmetric one-bit slice: after fixing one of its two inputs to a constant, the remaining one-bit function is either $z$ or $1-z$. Then
 
-$$ C(F) \leq H^{*}(f_{p,F}) \leq \Lambda_{p,m}(C(F)). $$
+$$ C(F) \leq H^{\ast}(f_{p,F}) \leq \Lambda_{p,m}(C(F)). $$
 
 > **Interpretation.** Any count of identical local two-bit patterns inherits a symmetric sign-change lower bound when one slice exposes a free bit. The upper bound is exactly the affine-free monomial cost of expanding a univariate sign polynomial in the local count.
 
@@ -44,7 +44,7 @@ $$ z\mapsto F(\lvert z\rvert). $$
 
 By the symmetric sign-change theorem [012_symmetric_sign_changes.md](../01_foundations_and_normal_form/012_symmetric_sign_changes.md), this restricted function has head complexity $C(F)$. Restriction monotonicity from [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md) gives
 
-$$ H^{*}(f_{p,F})\geq C(F). $$
+$$ H^{\ast}(f_{p,F})\geq C(F). $$
 
 If the one-bit slice is $1-z$ instead, the same restriction gives
 
@@ -56,7 +56,7 @@ $$ F(m),F(m-1),\ldots,F(0), $$
 
 which has the same number of sign changes as the original sequence. The same symmetric theorem and restriction monotonicity again give
 
-$$ H^{*}(f_{p,F})\geq C(F). $$
+$$ H^{\ast}(f_{p,F})\geq C(F). $$
 
 ### Lemma 2. A degree-C(F) sign polynomial in the local count
 
@@ -100,7 +100,7 @@ $$ \Lambda_{p,m}(C(F)). $$
 
 Applying the affine-free polynomial-threshold sparsity bound [048_affine_free_sparsity_upper_bound.md](048_affine_free_sparsity_upper_bound.md) gives
 
-$$ H^{*}(f_{p,F}) \leq \Lambda_{p,m}(C(F)). $$
+$$ H^{\ast}(f_{p,F}) \leq \Lambda_{p,m}(C(F)). $$
 
 Together with Lemma 1, this proves the theorem. $\blacksquare$
 

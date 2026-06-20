@@ -8,9 +8,9 @@ $$ f : \lbrace0,1\rbrace^4 \to \lbrace0,1\rbrace, $$
 
 we have
 
-$$ H^{*}(f) \leq 4. $$
+$$ H^{\ast}(f) \leq 4. $$
 
-This improves the general positive weighted-sum bound, which gives only $H^{*}(f) \leq 15$ at $n=4$.
+This improves the general positive weighted-sum bound, which gives only $H^{\ast}(f) \leq 15$ at $n=4$.
 
 ## Proof
 
@@ -76,17 +76,17 @@ $$ S(x) = \frac{P(x)}{\prod_{j=1}^{4}B_j(x)}. $$
 
 Each ratio $A_h(x)/B_h(x)$ is a one-head atom by Lemma 1 of [015_three_bit_quadratic_upper_bound.md](015_three_bit_quadratic_upper_bound.md). Therefore thresholding a constant plus four one-head atoms computes $f$, and the exact normal form from [010_linear_fractional_normal_form.md](010_linear_fractional_normal_form.md) gives
 
-$$ H^{*}(f) \leq 4. $$
+$$ H^{\ast}(f) \leq 4. $$
 
 $\blacksquare$
 
 ## Consequence
 
-The current small-$n$ upper bounds are now:
+The current small $n$ upper bounds are now:
 
-- $n=1$: $H^{*}(f) \leq 1$.
-- $n=2$: $H^{*}(f) \leq 2$.
-- $n=3$: $H^{*}(f) \leq 3$, and in fact $H^{*}(f) = \deg_{\pm}(f)$.
-- $n=4$: $H^{*}(f) \leq 4$.
+- $n=1$: $H^{\ast}(f) \leq 1$.
+- $n=2$: $H^{\ast}(f) \leq 2$.
+- $n=3$: $H^{\ast}(f) \leq 3$, and in fact $H^{\ast}(f) = \deg_{\pm}(f)$.
+- $n=4$: $H^{\ast}(f) \leq 4$.
 
 The first dimension where the universal upper bound from these determinant decompositions does not yet match $n$ is $n=5$.

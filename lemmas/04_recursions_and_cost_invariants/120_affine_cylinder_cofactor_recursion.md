@@ -16,7 +16,7 @@ $$ r_b:=\mathrm{actc}(f_b). $$
 
 Then
 
-$$ H^{*}(f) \leq \mathrm{actc}(f) \leq \mathrm{sactc}(f) \leq 1+m+2(r_0+r_1)+\min\lbrace r_0,r_1\rbrace. $$
+$$ H^{\ast}(f) \leq \mathrm{actc}(f) \leq \mathrm{sactc}(f) \leq 1+m+2(r_0+r_1)+\min\lbrace r_0,r_1\rbrace. $$
 
 Equivalently, for either choice of base cofactor $b\in\lbrace0,1\rbrace$,
 
@@ -94,14 +94,14 @@ $$ \mathrm{sactc}(f) \leq 1+m+2(r_0+r_1)+\min\lbrace r_0,r_1\rbrace. $$
 
 Finally, [112_split_affine_cylinder_cost.md](112_split_affine_cylinder_cost.md) gives
 
-$$ H^{*}(f) \leq \mathrm{actc}(f) \leq \mathrm{sactc}(f), $$
+$$ H^{\ast}(f) \leq \mathrm{actc}(f) \leq \mathrm{sactc}(f), $$
 
 which completes the chain. $\blacksquare$
 
 ## Consequences
 
-If both cofactors have bounded affine-cylinder cost, then $f$ has bounded head complexity with only a linear-in-$m$ switching overhead:
+If both cofactors have bounded affine-cylinder cost, then $f$ has bounded head complexity with only a linear-in $m$ switching overhead:
 
-$$ H^{*}(f) \leq 1+m+2(r_0+r_1)+\min\lbrace r_0,r_1\rbrace. $$
+$$ H^{\ast}(f) \leq 1+m+2(r_0+r_1)+\min\lbrace r_0,r_1\rbrace. $$
 
 This is not intended to be tight for parity, where the exact recursion costs one head per fresh XOR bit. Its use is as a safe fallback when two cofactors have good affine-cylinder certificates but do not share enough structure for the sharper split interpolation lemmas to apply.

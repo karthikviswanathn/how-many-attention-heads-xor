@@ -12,7 +12,7 @@ $$ F(z,y):=G(z,T(y)). $$
 
 Then
 
-$$ H^{*}(F)= \begin{cases} 0 & \text{if } G \text{ is constant},\\ 2 & \text{if } G \text{ is XOR or XNOR},\\ 1 & \text{otherwise}. \end{cases} $$
+$$ H^{\ast}(F)= \begin{cases} 0 & \text{if } G \text{ is constant},\\ 2 & \text{if } G \text{ is XOR or XNOR},\\ 1 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** A raw bit and one arbitrary LTF feature generate no hidden head complexity. XOR and XNOR are exactly the two-head cases; every other nonconstant gate is itself an LTF.
 
@@ -74,15 +74,15 @@ If $z=1$ and $T(y)=1$, then $A(y)\geq a_+$, so $M(z,y)\geq B+a_+>B+a_-$, and the
 
 Thus $z\oplus T$ is an affine slab in the variables $(z,y)$. By the affine-slab theorem [062_affine_slab_upper_bound.md](../03_function_families_and_affine_geometry/062_affine_slab_upper_bound.md),
 
-$$ H^{*}(z\oplus T)\leq2. $$
+$$ H^{\ast}(z\oplus T)\leq2. $$
 
 The fresh-bit XOR threshold-degree theorem [081_fresh_bit_xor_threshold_degree.md](../04_recursions_and_cost_invariants/081_fresh_bit_xor_threshold_degree.md) gives
 
 $$ \deg_{\pm}(z\oplus T)=\deg_{\pm}(T)+1=2, $$
 
-and threshold degree lower-bounds $H^{*}$. Hence
+and threshold degree lower-bounds $H^{\ast}$. Hence
 
-$$ H^{*}(z\oplus T)=2. $$
+$$ H^{\ast}(z\oplus T)=2. $$
 
 Output complement preserves head complexity by [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md), so XNOR has the same value.
 
@@ -116,9 +116,9 @@ so the displayed inequality also fails. Hence every literal conjunction $r\wedge
 
 ### Conclusion
 
-If $G$ is constant, then $F$ is constant and $H^{*}(F)=0$.
+If $G$ is constant, then $F$ is constant and $H^{\ast}(F)=0$.
 
-If $G$ is XOR or XNOR, Lemma 1 gives $H^{*}(F)=2$.
+If $G$ is XOR or XNOR, Lemma 1 gives $H^{\ast}(F)=2$.
 
 Assume now that $G$ is nonconstant and neither XOR nor XNOR. If $G$ has two true inputs, then its two true inputs are adjacent in the two-bit square. Thus $G$ depends on only one input, so $F$ is one of $z$, $1-z$, $T$, or $1-T$, all nonconstant LTFs.
 
@@ -132,7 +132,7 @@ If $G$ has three true inputs, then $1-G$ has one true input. Hence $1-F$ is a no
 
 Thus every remaining nonconstant gate gives a nonconstant LTF. By the one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md),
 
-$$ H^{*}(F)=1. $$
+$$ H^{\ast}(F)=1. $$
 
 This proves the classification. $\blacksquare$
 
@@ -140,10 +140,10 @@ This proves the classification. $\blacksquare$
 
 For every nonconstant LTF $T$,
 
-$$ H^{*}(z\oplus T)=H^{*}(1-(z\oplus T))=2. $$
+$$ H^{\ast}(z\oplus T)=H^{\ast}(1-(z\oplus T))=2. $$
 
 Thus the generic one-bit LTF branching bound
 
-$$ H^{*}(G(z,T))\leq1+\lvert\mathrm{supp}(T)\rvert $$
+$$ H^{\ast}(G(z,T))\leq1+\lvert\mathrm{supp}(T)\rvert $$
 
 is sharp only in the one-bit feature case. For arbitrary-support LTF features, the exact gate cost is at most two and is one except for XOR and XNOR.

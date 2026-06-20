@@ -36,7 +36,7 @@ $$ C_t(F) := \lvert \left\lbrace m \in \lbrace1,\ldots,M-1\rbrace : \sigma_{m-1}
 
 Then
 
-$$ H^{*}(f) \leq C_t(F). $$
+$$ H^{\ast}(f) \leq C_t(F). $$
 
 Consequently, if
 
@@ -44,7 +44,7 @@ $$ C_{+}(f) := \min C_t(F), $$
 
 where the minimum ranges over all positive weighted sums $t$ through which $f$ factors, then
 
-$$ H^{*}(f) \leq C_{+}(f) \leq M_{+}(f) - 1. $$
+$$ H^{\ast}(f) \leq C_{+}(f) \leq M_{+}(f) - 1. $$
 
 The quantity $C_{+}(f)$ is finite for every Boolean function, because the binary-weight projection
 
@@ -56,7 +56,7 @@ is injective on the Boolean cube.
 
 ## Proof
 
-If $C_t(F) = 0$, then all labels on $\mathrm{Im}(t)$ are equal, so $f$ is constant and $H^{*}(f)=0$.
+If $C_t(F) = 0$, then all labels on $\mathrm{Im}(t)$ are equal, so $f$ is constant and $H^{\ast}(f)=0$.
 
 Assume
 
@@ -156,13 +156,13 @@ $$ c + \sum_{j=1}^{C} \frac{d_j}{t(x)+r_j} = S(t(x)). $$
 
 This score is positive exactly when $F(t(x)) = 1$, and negative exactly when $F(t(x)) = 0$. Hence
 
-$$ H^{*}(f) \leq C_t(F). $$
+$$ H^{\ast}(f) \leq C_t(F). $$
 
 $\blacksquare$
 
 This proves the theorem. Since $C_t(F) \leq \lvert\mathrm{Im}(t)\rvert - 1$ for every positive projection $t$, minimizing over all such projections gives
 
-$$ H^{*}(f) \leq C_{+}(f) \leq M_{+}(f) - 1. $$
+$$ H^{\ast}(f) \leq C_{+}(f) \leq M_{+}(f) - 1. $$
 
 $\blacksquare$
 
@@ -174,6 +174,6 @@ $\blacksquare$
 
 3. The universal binary-weight projection gives
 
-$$ H^{*}(f) \leq 2^n - 1 $$
+$$ H^{\ast}(f) \leq 2^n - 1 $$
 
 for every Boolean function, but the sign-change count along that projection may be much smaller than $2^n - 1$.

@@ -16,13 +16,13 @@ $$ s(f)\leq2, $$
 
 then
 
-$$ H^{*}(f)\leq2. $$
+$$ H^{\ast}(f)\leq2. $$
 
 More precisely,
 
-$$ H^{*}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
+$$ H^{\ast}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
-> **Interpretation.** The sparse-support upper bound gives $H^{*}(f)\leq2s(f)$. The first nontrivial sparse case is sharper: one or two exceptional points always cost at most two heads.
+> **Interpretation.** The sparse-support upper bound gives $H^{\ast}(f)\leq2s(f)$. The first nontrivial sparse case is sharper: one or two exceptional points always cost at most two heads.
 
 ## Proof
 
@@ -34,7 +34,7 @@ If $f^{-1}(1)$ is empty, then $f$ is constant. If $f^{-1}(1)=\lbrace p\rbrace$, 
 
 $$ \mathbf{1}[x=p]=1 \qquad\Longleftrightarrow\qquad \sum_{i:p_i=1}x_i+\sum_{i:p_i=0}(1-x_i)>n-\frac{1}{2}. $$
 
-Thus $H^{*}(f)\leq1$ in the singleton case.
+Thus $H^{\ast}(f)\leq1$ in the singleton case.
 
 It remains to handle
 
@@ -86,7 +86,7 @@ $$ f(x)=\mathbf{1}[L(x)=0]. $$
 
 The affine level-set theorem [061_affine_level_set_upper_bound.md](061_affine_level_set_upper_bound.md) gives
 
-$$ H^{*}(f)\leq2. $$
+$$ H^{\ast}(f)\leq2. $$
 
 Returning through complement invariance proves the same upper bound whenever $s(f)\leq2$.
 
@@ -96,8 +96,8 @@ Finally, the exact case split follows from the zero-head and one-head characteri
 
 For every nonconstant function whose smaller label class has size two, the only remaining question is whether that two-point support is linearly separable from its complement. If not, its exact value is
 
-$$ H^{*}(f)=2. $$
+$$ H^{\ast}(f)=2. $$
 
 In particular, sparse rare-event functions start with the exact sequence
 
-$$ s(f)=1 \Longrightarrow H^{*}(f)=1, \qquad s(f)=2 \Longrightarrow H^{*}(f)\leq2. $$
+$$ s(f)=1 \Longrightarrow H^{\ast}(f)=1, \qquad s(f)=2 \Longrightarrow H^{\ast}(f)\leq2. $$

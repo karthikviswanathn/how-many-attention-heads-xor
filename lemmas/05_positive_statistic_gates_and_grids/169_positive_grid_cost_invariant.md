@@ -16,7 +16,7 @@ $$ f(z,y)=F(u(z),t(y)). $$
 
 Here $C_r$ and $J_{\mathrm{grid}}$ are the raw-level slice variation and endpoint-jump terms from Theorem 165. Then
 
-$$ H^{*}(f)\leq\mathrm{pgc}_{+}^{z\mid y}(f). $$
+$$ H^{\ast}(f)\leq\mathrm{pgc}_{+}^{z\mid y}(f). $$
 
 Moreover, if $C_{+}(f)$ denotes the optimized positive-projection sign-change count, then
 
@@ -30,7 +30,7 @@ $$ \deg_{\pm}(f)=\mathrm{pgc}_{+}^{z\mid y}(f), $$
 
 then
 
-$$ H^{*}(f)=\deg_{\pm}(f)=\mathrm{pgc}_{+}^{z\mid y}(f). $$
+$$ H^{\ast}(f)=\deg_{\pm}(f)=\mathrm{pgc}_{+}^{z\mid y}(f). $$
 
 > **Interpretation.** Positive-grid cost is an optimized split invariant. It can be much smaller than raw-assignment slice cost when many raw assignments share one raw statistic level.
 
@@ -38,11 +38,11 @@ $$ H^{*}(f)=\deg_{\pm}(f)=\mathrm{pgc}_{+}^{z\mid y}(f). $$
 
 For any fixed positive-grid certificate, Theorem 165 gives
 
-$$ H^{*}(f)\leq\sum_r C_r+J_{\mathrm{grid}}. $$
+$$ H^{\ast}(f)\leq\sum_r C_r+J_{\mathrm{grid}}. $$
 
 Minimizing over certificates proves
 
-$$ H^{*}(f)\leq\mathrm{pgc}_{+}^{z\mid y}(f). $$
+$$ H^{\ast}(f)\leq\mathrm{pgc}_{+}^{z\mid y}(f). $$
 
 The proof of Theorem 165 constructs a single positive statistic
 
@@ -66,7 +66,7 @@ Raw-coordinate and feature-coordinate permutations transport positive statistics
 
 If $\deg_{\pm}(f)=\mathrm{pgc}_{+}^{z\mid y}(f)$, then the threshold-degree lower bound gives
 
-$$ \mathrm{pgc}_{+}^{z\mid y}(f) = \deg_{\pm}(f) \leq H^{*}(f) \leq \mathrm{pgc}_{+}^{z\mid y}(f), $$
+$$ \mathrm{pgc}_{+}^{z\mid y}(f) = \deg_{\pm}(f) \leq H^{\ast}(f) \leq \mathrm{pgc}_{+}^{z\mid y}(f), $$
 
 so equality holds throughout. $\blacksquare$
 

@@ -20,11 +20,11 @@ $$ f(z,y):=G(z,T(y)). $$
 
 Then
 
-$$ H^{*}(f)\leq1+\lvert S\rvert. $$
+$$ H^{\ast}(f)\leq1+\lvert S\rvert. $$
 
 In particular, if $\lvert S\rvert\leq1$, then
 
-$$ H^{*}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
+$$ H^{\ast}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** Branching on one raw bit between two labels determined by the same LTF costs at most one head plus the number of variables used by that LTF. This includes $z\wedge T(y)$, $z\vee T(y)$, $z\oplus T(y)$, and their complements.
 
@@ -50,14 +50,14 @@ $$ \lvert S\rvert. $$
 
 The LTF cofactor slope-distance theorem [076_ltf_cofactor_slope_distance.md](076_ltf_cofactor_slope_distance.md) gives
 
-$$ H^{*}(f)\leq1+\lvert S\rvert. $$
+$$ H^{\ast}(f)\leq1+\lvert S\rvert. $$
 
-If $\lvert S\rvert\leq1$, then the same theorem gives $H^{*}(f)\leq2$. The exact value is forced by the zero-head and one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md): constants have value $0$, nonconstant LTFs have value $1$, and every remaining function has value exactly $2$. $\blacksquare$
+If $\lvert S\rvert\leq1$, then the same theorem gives $H^{\ast}(f)\leq2$. The exact value is forced by the zero-head and one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md): constants have value $0$, nonconstant LTFs have value $1$, and every remaining function has value exactly $2$. $\blacksquare$
 
 ## Consequences
 
 The XOR-with-an-LTF family satisfies
 
-$$ H^{*}(z\oplus T(y))\leq1+\lvert\mathrm{supp}(L)\rvert. $$
+$$ H^{\ast}(z\oplus T(y))\leq1+\lvert\mathrm{supp}(L)\rvert. $$
 
-When $T$ is a single input bit, this recovers the exact two-head XOR$_2$ case. More generally, the theorem gives a simple bound for every two-variable outer Boolean gate applied to one raw coordinate and one LTF feature.
+When $T$ is a single input bit, this recovers the exact two-head $\mathrm{XOR}_2$ case. More generally, the theorem gives a simple bound for every two-variable outer Boolean gate applied to one raw coordinate and one LTF feature.

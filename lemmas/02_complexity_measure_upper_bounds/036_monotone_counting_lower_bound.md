@@ -4,7 +4,7 @@
 
 Let $\mathsf{Mon}_n$ be the set of monotone Boolean functions on $\lbrace0,1\rbrace^n$, and define
 
-$$ W_{\mathrm{mon}}(n) := \max_{f\in\mathsf{Mon}_n} H^{*}(f). $$
+$$ W_{\mathrm{mon}}(n) := \max_{f\in\mathsf{Mon}_n} H^{\ast}(f). $$
 
 Let
 
@@ -22,7 +22,7 @@ More quantitatively, if
 
 $$ H=o \left(\frac{B_n}{n^2}\right), $$
 
-then the fraction of monotone $n$-bit Boolean functions with $H^{*}(f)\leq H$ tends to $0$.
+then the fraction of monotone $n$-bit Boolean functions with $H^{\ast}(f)\leq H$ tends to $0$.
 
 > **Interpretation.** The monotone antichain upper bound is near-optimal for the whole monotone class, up to the same polynomial slack as the general Warren-counting lower bound.
 
@@ -74,7 +74,7 @@ then
 
 $$ 2^{O(n^2H)} = 2^{o(B_n)}. $$
 
-Dividing by the lower bound $\lvert\mathsf{Mon}_n\rvert\geq2^{B_n}$ from Lemma 1, the fraction of monotone functions with $H^{*}(f)\leq H$ is at most
+Dividing by the lower bound $\lvert\mathsf{Mon}_n\rvert\geq2^{B_n}$ from Lemma 1, the fraction of monotone functions with $H^{\ast}(f)\leq H$ is at most
 
 $$ 2^{-B_n+o(B_n)}, $$
 
@@ -82,7 +82,7 @@ which tends to $0$.
 
 In particular, for a sufficiently small absolute constant $c>0$, not every monotone function can satisfy
 
-$$ H^{*}(f) \leq c\frac{B_n}{n^2}. $$
+$$ H^{\ast}(f) \leq c\frac{B_n}{n^2}. $$
 
 Thus
 

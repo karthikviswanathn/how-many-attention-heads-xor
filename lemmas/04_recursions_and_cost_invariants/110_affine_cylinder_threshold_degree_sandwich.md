@@ -4,7 +4,7 @@
 
 For every Boolean function $f$,
 
-$$ \deg_{\pm}(f) \leq H^{*}(f) \leq \mathrm{actc}(f) \leq \min\lbrace\mathrm{ctc}(f),\mathrm{afs}_{\pm}(f)\rbrace. $$
+$$ \deg_{\pm}(f) \leq H^{\ast}(f) \leq \mathrm{actc}(f) \leq \min\lbrace\mathrm{ctc}(f),\mathrm{afs}_{\pm}(f)\rbrace. $$
 
 Consequently,
 
@@ -20,11 +20,11 @@ $$ \deg_{\pm}(f) \leq \mathrm{afs}_{\pm}(f) \leq \mathrm{ptfsp}(f). $$
 
 The threshold-degree lower bound [006_threshold_degree_head_complexity_bound.md](../01_foundations_and_normal_form/006_threshold_degree_head_complexity_bound.md) gives
 
-$$ \deg_{\pm}(f)\leq H^{*}(f). $$
+$$ \deg_{\pm}(f)\leq H^{\ast}(f). $$
 
 The affine-cylinder threshold-cost lemma [103_affine_cylinder_threshold_cost.md](103_affine_cylinder_threshold_cost.md) gives
 
-$$ H^{*}(f)\leq\mathrm{actc}(f) $$
+$$ H^{\ast}(f)\leq\mathrm{actc}(f) $$
 
 and
 
@@ -36,7 +36,7 @@ $$ \mathrm{actc}(f)\leq\mathrm{afs}_{\pm}(f) \leq \mathrm{ptfsp}(f). $$
 
 Combining these inequalities proves
 
-$$ \deg_{\pm}(f) \leq H^{*}(f) \leq \mathrm{actc}(f) \leq \min\lbrace\mathrm{ctc}(f),\mathrm{afs}_{\pm}(f)\rbrace. $$
+$$ \deg_{\pm}(f) \leq H^{\ast}(f) \leq \mathrm{actc}(f) \leq \min\lbrace\mathrm{ctc}(f),\mathrm{afs}_{\pm}(f)\rbrace. $$
 
 The two displayed consequences follow by deleting intermediate terms from the same chain. $\blacksquare$
 

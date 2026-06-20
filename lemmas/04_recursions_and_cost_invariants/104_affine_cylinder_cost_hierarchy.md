@@ -8,11 +8,11 @@ $$ \mathrm{actc}(f) \leq \mathrm{afs}_{\pm}(f) \leq \mathrm{ptfsp}(f). $$
 
 Combining with Lemma 103 gives
 
-$$ H^{*}(f) \leq \mathrm{actc}(f) \leq \min\lbrace\mathrm{ctc}(f),\mathrm{afs}_{\pm}(f)\rbrace. $$
+$$ H^{\ast}(f) \leq \mathrm{actc}(f) \leq \min\lbrace\mathrm{ctc}(f),\mathrm{afs}_{\pm}(f)\rbrace. $$
 
 Consequently, if $f$ is nonconstant and $\deg_{\pm}(f)\leq d$, then
 
-$$ H^{*}(f) \leq \mathrm{actc}(f) \leq 1+\sum_{r=2}^{d}\binom{n}{r}. $$
+$$ H^{\ast}(f) \leq \mathrm{actc}(f) \leq 1+\sum_{r=2}^{d}\binom{n}{r}. $$
 
 > **Interpretation.** The affine-cylinder invariant is a common refinement of two upper-bound routes: signed local cylinder votes and affine-free sparse sign polynomials.
 
@@ -64,13 +64,13 @@ $$ \mathrm{afs}_{\pm}(f)\leq\mathrm{ptfsp}(f). $$
 
 Lemma 103 gives
 
-$$ H^{*}(f)\leq\mathrm{actc}(f) \qquad \text{and} \qquad \mathrm{actc}(f)\leq\mathrm{ctc}(f). $$
+$$ H^{\ast}(f)\leq\mathrm{actc}(f) \qquad \text{and} \qquad \mathrm{actc}(f)\leq\mathrm{ctc}(f). $$
 
 Combining these inequalities yields
 
-$$ H^{*}(f) \leq \mathrm{actc}(f) \leq \min\lbrace\mathrm{ctc}(f),\mathrm{afs}_{\pm}(f)\rbrace. $$
+$$ H^{\ast}(f) \leq \mathrm{actc}(f) \leq \min\lbrace\mathrm{ctc}(f),\mathrm{afs}_{\pm}(f)\rbrace. $$
 
-Finally, if $f$ is nonconstant and $\deg_{\pm}(f)\leq d$, choose a degree-at-most-$d$ sign polynomial. Its affine-free support cost is at most
+Finally, if $f$ is nonconstant and $\deg_{\pm}(f)\leq d$, choose a degree-at-most $d$ sign polynomial. Its affine-free support cost is at most
 
 $$ 1+\sum_{r=2}^{d}\binom{n}{r}, $$
 
@@ -80,7 +80,7 @@ because all linear terms together cost one affine block and there are at most $\
 
 The ordinary sparse-PTF theorem and the affine-free sparse-PTF theorem both factor through $\mathrm{actc}$:
 
-$$ H^{*}(f) \leq \mathrm{actc}(f) \leq \mathrm{afs}_{\pm}(f) \leq \mathrm{ptfsp}(f). $$
+$$ H^{\ast}(f) \leq \mathrm{actc}(f) \leq \mathrm{afs}_{\pm}(f) \leq \mathrm{ptfsp}(f). $$
 
 Together with Lemma 103,
 

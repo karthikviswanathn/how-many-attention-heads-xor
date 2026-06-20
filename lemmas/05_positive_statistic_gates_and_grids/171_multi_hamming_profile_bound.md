@@ -18,11 +18,11 @@ in lexicographic order, with the first block slowest and the last block fastest.
 
 Then
 
-$$ H^{*}(f)\leq L_{\mathrm{Ham}}(F). $$
+$$ H^{\ast}(f)\leq L_{\mathrm{Ham}}(F). $$
 
-For every block $j$ and every choice of Hamming weights in the other blocks, the corresponding symmetric one-block fiber lower-bounds $H^{*}(f)$:
+For every block $j$ and every choice of Hamming weights in the other blocks, the corresponding symmetric one-block fiber lower-bounds $H^{\ast}(f)$:
 
-$$ H^{*}\bigl(F(r_1,\ldots,r_{j-1},\lvert x^{(j)}\rvert,r_{j+1},\ldots,r_b)\bigr) \leq H^{*}(f). $$
+$$ H^{\ast}\bigl(F(r_1,\ldots,r_{j-1},\lvert x^{(j)}\rvert,r_{j+1},\ldots,r_b)\bigr) \leq H^{\ast}(f). $$
 
 If
 
@@ -30,7 +30,7 @@ $$ \deg_{\pm}(f)=L_{\mathrm{Ham}}(F), $$
 
 then
 
-$$ H^{*}(f)=\deg_{\pm}(f)=L_{\mathrm{Ham}}(F). $$
+$$ H^{\ast}(f)=\deg_{\pm}(f)=L_{\mathrm{Ham}}(F). $$
 
 > **Interpretation.** A function of several Hamming weights has a head upper bound equal to the sign changes along any chosen lexicographic path through its weight grid.
 

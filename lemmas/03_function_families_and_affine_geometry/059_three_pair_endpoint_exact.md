@@ -14,7 +14,7 @@ $$ \mathrm{EQ}_3(x,y):=\mathbf{1}[x=y], \qquad \mathrm{NEQ}_3:=1-\mathrm{EQ}_3. 
 
 Then
 
-$$ H^{*}(\mathrm{INT}_3) = H^{*}(\mathrm{DISJ}_3) = H^{*}(\mathrm{SUB}_3) = H^{*}(\mathrm{NCON}_3) = H^{*}(\mathrm{EQ}_3) = H^{*}(\mathrm{NEQ}_3) =2. $$
+$$ H^{\ast}(\mathrm{INT}_3) = H^{\ast}(\mathrm{DISJ}_3) = H^{\ast}(\mathrm{SUB}_3) = H^{\ast}(\mathrm{NCON}_3) = H^{\ast}(\mathrm{EQ}_3) = H^{\ast}(\mathrm{NEQ}_3) =2. $$
 
 > **Interpretation.** The standard one-change profile endpoints remain two-head functions at three pairs. This pushes the exact frontier one step beyond the finite two-pair local-count classification.
 
@@ -68,29 +68,29 @@ returns
 
 Since each denominator is positive affine, each ratio is a single one-head atom by the affine-over-positive-affine atom lemma [015_three_bit_quadratic_upper_bound.md](../01_foundations_and_normal_form/015_three_bit_quadratic_upper_bound.md). Hence
 
-$$ H^{*}(\mathrm{INT}_3)\leq2, \qquad H^{*}(\mathrm{SUB}_3)\leq2, \qquad H^{*}(\mathrm{EQ}_3)\leq2. $$
+$$ H^{\ast}(\mathrm{INT}_3)\leq2, \qquad H^{\ast}(\mathrm{SUB}_3)\leq2, \qquad H^{\ast}(\mathrm{EQ}_3)\leq2. $$
 
 Complementing the final threshold gives
 
-$$ H^{*}(\mathrm{DISJ}_3)\leq2, \qquad H^{*}(\mathrm{NCON}_3)\leq2, \qquad H^{*}(\mathrm{NEQ}_3)\leq2. $$
+$$ H^{\ast}(\mathrm{DISJ}_3)\leq2, \qquad H^{\ast}(\mathrm{NCON}_3)\leq2, \qquad H^{\ast}(\mathrm{NEQ}_3)\leq2. $$
 
 ### Lemma 2. Lower bounds
 
 The intersection-profile bound [050_intersection_profile_bounds.md](050_intersection_profile_bounds.md) proves that for $m\geq2$,
 
-$$ H^{*}(\mathrm{INT}_m)\geq2, \qquad H^{*}(\mathrm{DISJ}_m)\geq2. $$
+$$ H^{\ast}(\mathrm{INT}_m)\geq2, \qquad H^{\ast}(\mathrm{DISJ}_m)\geq2. $$
 
 The directed-defect profile bound [052_directed_defect_profile_bounds.md](052_directed_defect_profile_bounds.md) proves that for $m\geq2$,
 
-$$ H^{*}(\mathrm{SUB}_m)\geq2, \qquad H^{*}(\mathrm{NCON}_m)\geq2. $$
+$$ H^{\ast}(\mathrm{SUB}_m)\geq2, \qquad H^{\ast}(\mathrm{NCON}_m)\geq2. $$
 
 For equality, restricting all but one pair gives $\mathrm{EQ}_1$, which is not an LTF. Thus the one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md) gives
 
-$$ H^{*}(\mathrm{EQ}_3)\geq2. $$
+$$ H^{\ast}(\mathrm{EQ}_3)\geq2. $$
 
 Complement invariance from [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md) gives
 
-$$ H^{*}(\mathrm{NEQ}_3)\geq2. $$
+$$ H^{\ast}(\mathrm{NEQ}_3)\geq2. $$
 
 Combining these lower bounds with Lemma 1 proves all six exact values. $\blacksquare$
 
@@ -98,6 +98,6 @@ Combining these lower bounds with Lemma 1 proves all six exact values. $\blacksq
 
 The currently known equality endpoint values are
 
-$$ H^{*}(\mathrm{EQ}_1) = H^{*}(\mathrm{EQ}_2) = H^{*}(\mathrm{EQ}_3) =2. $$
+$$ H^{\ast}(\mathrm{EQ}_1) = H^{\ast}(\mathrm{EQ}_2) = H^{\ast}(\mathrm{EQ}_3) =2. $$
 
 For intersection, disjointness, containment, and noncontainment, the exact value $2$ is now known at $m=2$ and $m=3$. The general $m$ case remains open in these notes.

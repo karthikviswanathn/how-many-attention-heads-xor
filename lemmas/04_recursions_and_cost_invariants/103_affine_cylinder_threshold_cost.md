@@ -28,7 +28,7 @@ $$ f(x)=1 \qquad\Longleftrightarrow\qquad A(x)+\sum_{a=1}^{s}c_aC_{P_a,N_a}(x)>0
 
 Then
 
-$$ H^{*}(f)\leq\mathrm{actc}(f). $$
+$$ H^{\ast}(f)\leq\mathrm{actc}(f). $$
 
 Moreover,
 
@@ -80,11 +80,11 @@ $$ \lvert\widetilde V(x)-V(x)\rvert < \Delta. $$
 
 Therefore $\widetilde V$ has the same sign as $V$ on the cube. Scalar multiples of one-head atoms are still one-head atoms by scaling numerator parameters. Hence the linear-fractional normal form [010_linear_fractional_normal_form.md](../01_foundations_and_normal_form/010_linear_fractional_normal_form.md) gives
 
-$$ H^{*}(f) \leq \lambda(A)+\sum_{a:c_a\neq0}\kappa(P_a,N_a). $$
+$$ H^{\ast}(f) \leq \lambda(A)+\sum_{a:c_a\neq0}\kappa(P_a,N_a). $$
 
 Taking the minimum over strict affine-cylinder representations proves
 
-$$ H^{*}(f)\leq\mathrm{actc}(f). $$
+$$ H^{\ast}(f)\leq\mathrm{actc}(f). $$
 
 Finally, every strict cylinder-threshold representation
 

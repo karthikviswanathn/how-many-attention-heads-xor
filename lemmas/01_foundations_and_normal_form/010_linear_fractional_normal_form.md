@@ -2,7 +2,7 @@
 
 ## Statement
 
-This note gives an exact normal form for $H^{*}(f)$ in the model from [../../model.md](../../model.md).
+This note gives an exact normal form for $H^{\ast}(f)$ in the model from [../../model.md](../../model.md).
 
 For parameters
 
@@ -30,7 +30,7 @@ for every $x \in \lbrace0,1\rbrace^n$. For $H = 0$, the sum is empty.
 
 Then
 
-$$ H^{*}(f) = L_{\mathrm{frac}}(f). $$
+$$ H^{\ast}(f) = L_{\mathrm{frac}}(f). $$
 
 > **Interpretation.** The exact model-native invariant for head complexity is the minimum number of one-head linear-fractional atoms whose sum, plus a constant, sign-represents $f$. The first two levels of this hierarchy are pinned down in [011_one_head_characterization.md](011_one_head_characterization.md).
 
@@ -167,6 +167,6 @@ So the model computes exactly the Boolean function represented by the atoms.
 
 ### Combining the two directions
 
-Lemma 1 shows $H^{*}(f) \geq L_{\mathrm{frac}}(f)$ and Lemma 2 shows $H^{*}(f) \leq L_{\mathrm{frac}}(f)$. Together,
+Lemma 1 shows $H^{\ast}(f) \geq L_{\mathrm{frac}}(f)$ and Lemma 2 shows $H^{\ast}(f) \leq L_{\mathrm{frac}}(f)$. Together,
 
-$$ H^{*}(f) = L_{\mathrm{frac}}(f). \qquad \blacksquare $$
+$$ H^{\ast}(f) = L_{\mathrm{frac}}(f). \qquad \blacksquare $$

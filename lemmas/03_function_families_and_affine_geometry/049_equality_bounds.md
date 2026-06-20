@@ -12,7 +12,7 @@ $$ \deg_{\pm}(\mathrm{EQ}_m)=2 $$
 
 and, in fact,
 
-$$ H^{*}(\mathrm{EQ}_m)=2. $$
+$$ H^{\ast}(\mathrm{EQ}_m)=2. $$
 
 > **Interpretation.** Equality has threshold degree two and exact head complexity two. The affine-free sparsity proof gives the weaker linear upper bound $m+1$, while the exact two-head construction is recorded in [060_equality_exact_two_heads.md](060_equality_exact_two_heads.md).
 
@@ -74,21 +74,21 @@ $$ x_1y_1,\ldots,x_m y_m. $$
 
 Applying the affine-free polynomial-threshold sparsity bound [048_affine_free_sparsity_upper_bound.md](048_affine_free_sparsity_upper_bound.md) gives
 
-$$ H^{*}(\mathrm{EQ}_m)\leq m+1. $$
+$$ H^{\ast}(\mathrm{EQ}_m)\leq m+1. $$
 
 The lower bound
 
-$$ H^{*}(\mathrm{EQ}_m)\geq2 $$
+$$ H^{\ast}(\mathrm{EQ}_m)\geq2 $$
 
 follows from the threshold-degree lower bound [006_threshold_degree_head_complexity_bound.md](../01_foundations_and_normal_form/006_threshold_degree_head_complexity_bound.md).
 
 When $m=1$, the upper and lower bounds coincide, so
 
-$$ H^{*}(\mathrm{EQ}_1)=2. $$
+$$ H^{\ast}(\mathrm{EQ}_1)=2. $$
 
 For all $m\geq1$, the sharper two-atom construction in [060_equality_exact_two_heads.md](060_equality_exact_two_heads.md) gives
 
-$$ H^{*}(\mathrm{EQ}_m)\leq2. $$
+$$ H^{\ast}(\mathrm{EQ}_m)\leq2. $$
 
 $\blacksquare$
 
@@ -96,6 +96,6 @@ $\blacksquare$
 
 Equality now gives a fully exact low-degree family:
 
-$$ \deg_{\pm}(\mathrm{EQ}_m)=2, \qquad H^{*}(\mathrm{EQ}_m)=2. $$
+$$ \deg_{\pm}(\mathrm{EQ}_m)=2, \qquad H^{\ast}(\mathrm{EQ}_m)=2. $$
 
 Thus equality is no longer a candidate separation between threshold degree and head complexity. It is a useful model case for constructing two affine-over-positive-affine atoms from a quadratic sign representation.

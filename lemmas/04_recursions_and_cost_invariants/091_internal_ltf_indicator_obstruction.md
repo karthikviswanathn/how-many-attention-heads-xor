@@ -116,4 +116,4 @@ If $B$ is constant, either displayed argument gives $\epsilon\geq1/4$. Hence eve
 
 The calibrated threshold-vote and calibrated decision-list theorems cannot be turned into unconditional theorems for arbitrary LTF gates by independently replacing each LTF gate with one approximate indicator atom.
 
-The obstruction is not that $T$ is hard to compute with one head: $T$ is itself an LTF, so $H^{*}(T)=1$. The obstruction is that the final threshold in the one-head computation is doing essential work.
+The obstruction is not that $T$ is hard to compute with one head: $T$ is itself an LTF, so $H^{\ast}(T)=1$. The obstruction is that the final threshold in the one-head computation is doing essential work.

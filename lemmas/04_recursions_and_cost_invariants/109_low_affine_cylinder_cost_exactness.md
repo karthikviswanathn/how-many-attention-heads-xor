@@ -8,7 +8,7 @@ $$ \mathrm{actc}(f)\leq2, $$
 
 then
 
-$$ H^{*}(f) = \begin{cases} 0, & \text{if } f \text{ is constant},\\ 1, & \text{if } f \text{ is a nonconstant LTF},\\ 2, & \text{otherwise}. \end{cases} $$
+$$ H^{\ast}(f) = \begin{cases} 0, & \text{if } f \text{ is constant},\\ 1, & \text{if } f \text{ is a nonconstant LTF},\\ 2, & \text{otherwise}. \end{cases} $$
 
 In particular, every nonconstant non-LTF with $\mathrm{actc}(f)\leq2$ is exactly two-head.
 
@@ -18,19 +18,19 @@ In particular, every nonconstant non-LTF with $\mathrm{actc}(f)\leq2$ is exactly
 
 Lemma 103 gives
 
-$$ H^{*}(f)\leq\mathrm{actc}(f). $$
+$$ H^{\ast}(f)\leq\mathrm{actc}(f). $$
 
 Thus the hypothesis implies
 
-$$ H^{*}(f)\leq2. $$
+$$ H^{\ast}(f)\leq2. $$
 
 The exact zero-head and one-head characterization from [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md) says:
 
-- $H^{*}(f)=0$ exactly for constant functions,
-- $H^{*}(f)=1$ exactly for nonconstant LTFs,
-- every nonconstant non-LTF has $H^{*}(f)\geq2$.
+- $H^{\ast}(f)=0$ exactly for constant functions,
+- $H^{\ast}(f)=1$ exactly for nonconstant LTFs,
+- every nonconstant non-LTF has $H^{\ast}(f)\geq2$.
 
-Combining this lower split with the upper bound $H^{*}(f)\leq2$ proves the displayed case distinction. $\blacksquare$
+Combining this lower split with the upper bound $H^{\ast}(f)\leq2$ proves the displayed case distinction. $\blacksquare$
 
 ## Consequences
 

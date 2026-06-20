@@ -28,7 +28,7 @@ $$ D(A_0,A_1):=\lbrace i:\alpha_{1,i}\neq\alpha_{0,i}\rbrace. $$
 
 Then
 
-$$ H^{*}(f) \leq \mathrm{actc}(f) \leq \mathrm{sactc}(f) \leq \eta(A_0,A_1) + \lvert D(A_0,A_1)\rvert + K(V), $$
+$$ H^{\ast}(f) \leq \mathrm{actc}(f) \leq \mathrm{sactc}(f) \leq \eta(A_0,A_1) + \lvert D(A_0,A_1)\rvert + K(V), $$
 
 where
 
@@ -40,7 +40,7 @@ $$ \eta(A_0,A_1) + \lvert D(A_0,A_1)\rvert + K(V) \leq2, $$
 
 then
 
-$$ H^{*}(f) = \begin{cases} 0, & \text{if } f \text{ is constant},\\ 1, & \text{if } f \text{ is a nonconstant LTF},\\ 2, & \text{otherwise}. \end{cases} $$
+$$ H^{\ast}(f) = \begin{cases} 0, & \text{if } f \text{ is constant},\\ 1, & \text{if } f \text{ is a nonconstant LTF},\\ 2, & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** When two cofactors share the same signed cylinder correction, the split only pays for that shared correction and the affine changes between the slices.
 
@@ -60,7 +60,7 @@ $$ \mathrm{sactc}(f) \leq \eta(A_0,A_1) + \lvert D(A_0,A_1)\rvert + K(V). $$
 
 Lemma [112_split_affine_cylinder_cost.md](112_split_affine_cylinder_cost.md) gives
 
-$$ H^{*}(f) \leq \mathrm{actc}(f) \leq \mathrm{sactc}(f), $$
+$$ H^{\ast}(f) \leq \mathrm{actc}(f) \leq \mathrm{sactc}(f), $$
 
 so the full chain follows.
 

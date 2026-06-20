@@ -8,17 +8,17 @@ $$ f : \lbrace0,1\rbrace^3 \to \lbrace0,1\rbrace, $$
 
 we have
 
-$$ H^{*}(f) = \deg_{\pm}(f). $$
+$$ H^{\ast}(f) = \deg_{\pm}(f). $$
 
 In particular, every three-bit Boolean function satisfies
 
-$$ H^{*}(f) \leq 3. $$
+$$ H^{\ast}(f) \leq 3. $$
 
 ## Proof
 
 The lower bound is already known:
 
-$$ \deg_{\pm}(f) \leq H^{*}(f) $$
+$$ \deg_{\pm}(f) \leq H^{\ast}(f) $$
 
 by Lemma 6 of [../lemmas.md](../../lemmas.md). It remains to match this lower bound by upper bounds for threshold degree $0,1,2,3$.
 
@@ -30,7 +30,7 @@ $$ f(x)=1 \qquad \Longleftrightarrow \qquad P(x)>0 $$
 
 for every $x\in\lbrace0,1\rbrace^3$. Then
 
-$$ H^{*}(f) \leq 3. $$
+$$ H^{\ast}(f) \leq 3. $$
 
 **Proof.** Work in the multilinear polynomial basis
 
@@ -59,7 +59,7 @@ $$ -5723136, $$
 
 so these eight products form a basis for all multilinear polynomials on $\lbrace0,1\rbrace^3$.
 
-Therefore, for every degree-at-most-$3$ polynomial $P$, there are affine functions $A_1,A_2,A_3$ with
+Therefore, for every degree-at-most $3$ polynomial $P$, there are affine functions $A_1,A_2,A_3$ with
 
 $$ P(x) = A_1(x)B_2(x)B_3(x) +A_2(x)B_1(x)B_3(x) +A_3(x)B_1(x)B_2(x) $$
 
@@ -73,7 +73,7 @@ $$ S(x) = \frac{P(x)}{B_1(x)B_2(x)B_3(x)}. $$
 
 Each summand $A_i(x)/B_i(x)$ is a one-head atom by Lemma 1 of [015_three_bit_quadratic_upper_bound.md](015_three_bit_quadratic_upper_bound.md). Hence thresholding the sum of three atoms computes $f$, so
 
-$$ H^{*}(f) \leq 3. $$
+$$ H^{\ast}(f) \leq 3. $$
 
 $\blacksquare$
 
@@ -97,23 +97,23 @@ By Lemma 2, $d\in\lbrace0,1,2,3\rbrace$.
 
 1. If $d=0$, then $f$ is constant. By Lemma 11,
 
-   $H^{*}(f) = 0 = d.$
+   $H^{\ast}(f) = 0 = d.$
 
 2. If $d=1$, then $f$ is a nonconstant linear threshold function. By Lemma 11,
 
-   $H^{*}(f) = 1 = d.$
+   $H^{\ast}(f) = 1 = d.$
 
-3. If $d=2$, the threshold-degree lower bound gives $H^{*}(f) \geq 2$, while Lemma 15 gives $H^{*}(f) \leq 2$. Hence
+3. If $d=2$, the threshold-degree lower bound gives $H^{\ast}(f) \geq 2$, while Lemma 15 gives $H^{\ast}(f) \leq 2$. Hence
 
-   $H^{*}(f) = 2 = d.$
+   $H^{\ast}(f) = 2 = d.$
 
-4. If $d=3$, the threshold-degree lower bound gives $H^{*}(f) \geq 3$, while Lemma 1 gives $H^{*}(f) \leq 3$. Hence
+4. If $d=3$, the threshold-degree lower bound gives $H^{\ast}(f) \geq 3$, while Lemma 1 gives $H^{\ast}(f) \leq 3$. Hence
 
-   $H^{*}(f) = 3 = d.$
+   $H^{\ast}(f) = 3 = d.$
 
 Thus, for every $f : \lbrace0,1\rbrace^3 \to \lbrace0,1\rbrace$,
 
-$$ H^{*}(f) = \deg_{\pm}(f). $$
+$$ H^{\ast}(f) = \deg_{\pm}(f). $$
 
 $\blacksquare$
 
@@ -121,8 +121,8 @@ $\blacksquare$
 
 The first dimensions now have exact characterizations:
 
-- $n=1$: constants have $H^{*}=0$, nonconstant functions have $H^{*}=1$.
+- $n=1$: constants have $H^{\ast}=0$, nonconstant functions have $H^{\ast}=1$.
 - $n=2$: the existing Lean development classifies all functions.
-- $n=3$: the theorem above gives $H^{*}(f) = \deg_{\pm}(f)$ for every Boolean function.
+- $n=3$: the theorem above gives $H^{\ast}(f) = \deg_{\pm}(f)$ for every Boolean function.
 
 The next genuine classification boundary is therefore $n=4$.

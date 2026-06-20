@@ -78,7 +78,7 @@ For a decision tree, the accepting leaves form a $1$-certificate cover and the r
 
 Combining this lemma with the head upper bound
 
-$$ H^{*}(f)\leq\mathrm{ctc}(f) $$
+$$ H^{\ast}(f)\leq\mathrm{ctc}(f) $$
 
 from [099_cylinder_threshold_cost_invariant.md](099_cylinder_threshold_cost_invariant.md) recovers the local certificate-expansion theorem [044_oriented_certificate_expansion_upper_bound.md](../02_complexity_measure_upper_bounds/044_oriented_certificate_expansion_upper_bound.md), with $\kappa$ replacing the harmless vacuous-cylinder cost by $0$.
 

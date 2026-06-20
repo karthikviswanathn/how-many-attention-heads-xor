@@ -18,11 +18,11 @@ $$ \mathcal{M}_0(f) := \left\lbrace S : f(1_S)=0 \text{ and } f(1_T)=1 \text{ fo
 
 Then
 
-$$ H^{*}(f) \leq \min\lbrace\lvert\mathcal{M}_1(f)\rvert,\lvert\mathcal{M}_0(f)\rvert\rbrace. $$
+$$ H^{\ast}(f) \leq \min\lbrace\lvert\mathcal{M}_1(f)\rvert,\lvert\mathcal{M}_0(f)\rvert\rbrace. $$
 
 Moreover, both $\mathcal{M}_1(f)$ and $\mathcal{M}_0(f)$ are antichains, so Sperner's bound gives
 
-$$ H^{*}(f) \leq \binom{n}{\lfloor n/2\rfloor}. $$
+$$ H^{\ast}(f) \leq \binom{n}{\lfloor n/2\rfloor}. $$
 
 > **Interpretation.** Every monotone Boolean function has a head bound controlled by its boundary antichain. This is often much smaller than the generic positive-projection interpolation bound $2^n-1$.
 
@@ -30,9 +30,9 @@ $$ H^{*}(f) \leq \binom{n}{\lfloor n/2\rfloor}. $$
 
 ### Lemma 1. Minimal true sets give a monotone DNF
 
-If $\mathcal{M}_1(f)=\varnothing$, then $f$ is constant $0$ by monotonicity, and $H^{*}(f)=0$.
+If $\mathcal{M}_1(f)=\varnothing$, then $f$ is constant $0$ by monotonicity, and $H^{\ast}(f)=0$.
 
-If $\varnothing\in\mathcal{M}_1(f)$, then $f$ is constant $1$ by monotonicity, and $H^{*}(f)=0$.
+If $\varnothing\in\mathcal{M}_1(f)$, then $f$ is constant $1$ by monotonicity, and $H^{\ast}(f)=0$.
 
 Otherwise, every set in $\mathcal{M}_1(f)$ is nonempty. We claim
 
@@ -48,13 +48,13 @@ Since $f(1_X)=1$ and the cube is finite, there is a subset $S\subseteq X$ minima
 
 Thus $f$ has a monotone DNF with $\lvert\mathcal{M}_1(f)\rvert$ nonempty terms. The monotone DNF upper bound from [029_monotone_dnf_upper_bound.md](029_monotone_dnf_upper_bound.md) gives
 
-$$ H^{*}(f)\leq\lvert\mathcal{M}_1(f)\rvert. $$
+$$ H^{\ast}(f)\leq\lvert\mathcal{M}_1(f)\rvert. $$
 
 ### Lemma 2. Maximal false sets give a monotone CNF
 
-If $\mathcal{M}_0(f)=\varnothing$, then $f$ is constant $1$ by monotonicity, and $H^{*}(f)=0$.
+If $\mathcal{M}_0(f)=\varnothing$, then $f$ is constant $1$ by monotonicity, and $H^{\ast}(f)=0$.
 
-If $\lbrace1,\ldots,n\rbrace\in\mathcal{M}_0(f)$, then $f$ is constant $0$ by monotonicity, and $H^{*}(f)=0$.
+If $\lbrace1,\ldots,n\rbrace\in\mathcal{M}_0(f)$, then $f$ is constant $0$ by monotonicity, and $H^{\ast}(f)=0$.
 
 Otherwise, every set $\lbrace1,\ldots,n\rbrace\setminus S$ with $S\in\mathcal{M}_0(f)$ is nonempty. We claim
 
@@ -70,11 +70,11 @@ Conversely, suppose the displayed CNF is false. Then for some $S\in\mathcal{M}_0
 
 Thus $f$ has a monotone CNF with $\lvert\mathcal{M}_0(f)\rvert$ nonempty clauses. The monotone CNF upper bound from [029_monotone_dnf_upper_bound.md](029_monotone_dnf_upper_bound.md) gives
 
-$$ H^{*}(f)\leq\lvert\mathcal{M}_0(f)\rvert. $$
+$$ H^{\ast}(f)\leq\lvert\mathcal{M}_0(f)\rvert. $$
 
 Combining Lemmas 1 and 2 gives
 
-$$ H^{*}(f) \leq \min\lbrace\lvert\mathcal{M}_1(f)\rvert,\lvert\mathcal{M}_0(f)\rvert\rbrace. $$
+$$ H^{\ast}(f) \leq \min\lbrace\lvert\mathcal{M}_1(f)\rvert,\lvert\mathcal{M}_0(f)\rvert\rbrace. $$
 
 ### Lemma 3. The boundary families are antichains
 
@@ -114,7 +114,7 @@ $$ \lvert\mathcal{A}\rvert \leq \binom{n}{\lfloor n/2\rfloor}. $$
 
 Applying this to $\mathcal{M}_1(f)$ and $\mathcal{M}_0(f)$ proves
 
-$$ H^{*}(f) \leq \binom{n}{\lfloor n/2\rfloor}. $$
+$$ H^{\ast}(f) \leq \binom{n}{\lfloor n/2\rfloor}. $$
 
 $\blacksquare$
 
@@ -122,6 +122,6 @@ $\blacksquare$
 
 For monotone functions, the relevant upper-bound parameter is not the total number of true inputs but the size of the monotone boundary. In particular,
 
-$$ H^{*}(f) \leq \min\lbrace\lvert\mathcal{M}_1(f)\rvert,\lvert\mathcal{M}_0(f)\rvert\rbrace \leq \binom{n}{\lfloor n/2\rfloor}. $$
+$$ H^{\ast}(f) \leq \min\lbrace\lvert\mathcal{M}_1(f)\rvert,\lvert\mathcal{M}_0(f)\rvert\rbrace \leq \binom{n}{\lfloor n/2\rfloor}. $$
 
-For symmetric monotone thresholds this recovers only $H^{*}(f)\leq1$, because the boundary has one layer. For general monotone functions, it gives a uniform sub-$2^n$ upper bound from antichain structure alone.
+For symmetric monotone thresholds this recovers only $H^{\ast}(f)\leq1$, because the boundary has one layer. For general monotone functions, it gives a uniform sub $2^n$ upper bound from antichain structure alone.

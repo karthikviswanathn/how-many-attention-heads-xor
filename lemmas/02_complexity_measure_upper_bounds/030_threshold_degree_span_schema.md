@@ -30,9 +30,9 @@ $$ \deg_{\pm}(f)\leq d $$
 
 satisfies
 
-$$ H^{*}(f)\leq H. $$
+$$ H^{\ast}(f)\leq H. $$
 
-Moreover, this fixed-denominator degree-$d$ span method cannot work unless
+Moreover, this fixed-denominator degree $d$ span method cannot work unless
 
 $$ 1+nH\geq D(n,d), $$
 
@@ -76,7 +76,7 @@ $$ S(x) = \frac{P(x)}{\prod_{j=1}^{H}B_j(x)}. $$
 
 Each ratio $A_h/B_h$ is a one-head atom by Lemma 1 of [015_three_bit_quadratic_upper_bound.md](../01_foundations_and_normal_form/015_three_bit_quadratic_upper_bound.md). Therefore the linear-fractional normal form from [010_linear_fractional_normal_form.md](../01_foundations_and_normal_form/010_linear_fractional_normal_form.md) gives
 
-$$ H^{*}(f)\leq H. $$
+$$ H^{\ast}(f)\leq H. $$
 
 For the dimension lower bound, fix denominators $B_1,\ldots,B_H$. The rational functions
 
@@ -100,12 +100,12 @@ as claimed. $\blacksquare$
 
 The threshold-degree lower bound and the degree-restricted span schema give the following strategy for exact classification:
 
-1. Lower-bound $H^{*}(f)$ by $\deg_{\pm}(f)$.
-2. For each $d$, build a degree-$d$ span certificate at or near
+1. Lower-bound $H^{\ast}(f)$ by $\deg_{\pm}(f)$.
+2. For each $d$, build a degree $d$ span certificate at or near
 
    $\left\lceil\frac{D(n,d)-1}{n}\right\rceil.$
 
-3. If the degree-$d$ threshold is $d$ itself for a range of $n,d$, then every function of threshold degree $d$ has exact value $d$.
+3. If the degree $d$ threshold is $d$ itself for a range of $n,d$, then every function of threshold degree $d$ has exact value $d$.
 
 The existing three-bit quadratic theorem is the case
 

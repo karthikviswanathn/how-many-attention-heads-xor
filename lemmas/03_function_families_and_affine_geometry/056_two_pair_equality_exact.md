@@ -8,7 +8,7 @@ $$ \mathrm{EQ}_2(x_1,x_2,y_1,y_2) := \mathbf{1}[(x_1,x_2)=(y_1,y_2)]. $$
 
 Then
 
-$$ H^{*}(\mathrm{EQ}_2)=2. $$
+$$ H^{\ast}(\mathrm{EQ}_2)=2. $$
 
 > **Interpretation.** This is the first nontrivial equality instance of the uniform exact equality theorem [060_equality_exact_two_heads.md](060_equality_exact_two_heads.md).
 
@@ -46,7 +46,7 @@ $$ S>0 \qquad\Longleftrightarrow\qquad (x_1,x_2)=(y_1,y_2). $$
 
 Both denominators have positive constant term and positive variable coefficients. Therefore each ratio $A_i/B_i$ is a single one-head atom by the affine-over-positive-affine atom lemma [015_three_bit_quadratic_upper_bound.md](../01_foundations_and_normal_form/015_three_bit_quadratic_upper_bound.md). Hence
 
-$$ H^{*}(\mathrm{EQ}_2)\leq2. $$
+$$ H^{\ast}(\mathrm{EQ}_2)\leq2. $$
 
 ### Lemma 2. One head is impossible
 
@@ -56,11 +56,11 @@ $$ \mathrm{EQ}_1(x_1,y_1)=\mathbf{1}[x_1=y_1]. $$
 
 This is not a linear threshold function by the two-bit checkerboard obstruction, or equivalently by the one-pair equality argument in [055_equality_threshold_vote_size.md](055_equality_threshold_vote_size.md). Since one head computes exactly the nonconstant linear threshold functions by [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md), we have
 
-$$ H^{*}(\mathrm{EQ}_2)\geq2. $$
+$$ H^{\ast}(\mathrm{EQ}_2)\geq2. $$
 
 Combining the lower and upper bounds gives
 
-$$ H^{*}(\mathrm{EQ}_2)=2. $$
+$$ H^{\ast}(\mathrm{EQ}_2)=2. $$
 
 $\blacksquare$
 
@@ -68,6 +68,6 @@ $\blacksquare$
 
 This is subsumed by the uniform equality theorem [060_equality_exact_two_heads.md](060_equality_exact_two_heads.md):
 
-$$ H^{*}(\mathrm{EQ}_m)=2 $$
+$$ H^{\ast}(\mathrm{EQ}_m)=2 $$
 
 for every $m\geq1$.

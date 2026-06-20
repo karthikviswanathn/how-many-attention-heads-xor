@@ -28,9 +28,9 @@ $$ \sum_{j=1}^{s}\lvert c_j\rvert\epsilon_j<\mu. $$
 
 Then
 
-$$ H^{*}(f)\leq s. $$
+$$ H^{\ast}(f)\leq s. $$
 
-> **Interpretation.** Threshold-vote size alone is not an upper bound for $H^{*}$. What suffices is calibrated access to the raw features: the one-head atoms must approximate the inner gate indicators accurately enough compared with the outer vote margin.
+> **Interpretation.** Threshold-vote size alone is not an upper bound for $H^{\ast}$. What suffices is calibrated access to the raw features: the one-head atoms must approximate the inner gate indicators accurately enough compared with the outer vote margin.
 
 ## Proof
 
@@ -60,7 +60,7 @@ $$ f(x)=1 \qquad\Longleftrightarrow\qquad \widetilde V(x)>0. $$
 
 Multiplying a one-head atom by a scalar gives another one-head atom, by multiplying its numerator parameters by that scalar and leaving its positive denominator unchanged. Hence the score $\widetilde V$ is a constant plus a sum of $s$ one-head atoms. The linear-fractional normal form [010_linear_fractional_normal_form.md](../01_foundations_and_normal_form/010_linear_fractional_normal_form.md) gives
 
-$$ H^{*}(f)\leq s. $$
+$$ H^{\ast}(f)\leq s. $$
 
 $\blacksquare$
 
@@ -68,7 +68,7 @@ $\blacksquare$
 
 Let $s_{\mathrm{LTF}}(f)$ be the minimum number of LTF indicators in a weighted vote for $f$. The inequality
 
-$$ H^{*}(f)\leq s_{\mathrm{LTF}}(f) $$
+$$ H^{\ast}(f)\leq s_{\mathrm{LTF}}(f) $$
 
 is false in general, because intersections of two halfspaces can have high threshold degree. The theorem above identifies the missing hypothesis: the specific LTF indicators in the vote must be uniformly approximable by one-head atoms at the required vote margin.
 

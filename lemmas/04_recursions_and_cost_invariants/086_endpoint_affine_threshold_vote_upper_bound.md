@@ -24,7 +24,7 @@ $$ \mu := \min_{x\in\lbrace0,1\rbrace^{n}} \left\lvert c_0+\sum_{j=1}^{s}c_jT_j(
 
 Then
 
-$$ H^{*}(f)\leq s. $$
+$$ H^{\ast}(f)\leq s. $$
 
 > **Interpretation.** The unqualified threshold-vote upper bound fails for arbitrary LTF gates, but it is valid for strict votes over endpoint positive affine thresholds. This includes weighted votes over positive OR-type clauses and positive AND-type terms.
 
@@ -108,7 +108,7 @@ $$ \sum_{j=1}^{s}\lvert c_j\rvert\epsilon_j<\mu. $$
 
 The calibrated threshold-vote theorem then gives
 
-$$ H^{*}(f)\leq s. $$
+$$ H^{\ast}(f)\leq s. $$
 
 $\blacksquare$
 

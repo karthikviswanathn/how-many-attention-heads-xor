@@ -12,7 +12,7 @@ $$ C_{+}(g_e) := \min_{\rho} \left\lvert \left\lbrace r\in\lbrace0,\ldots,2^k-2\
 
 be the optimized positive-order sign-change count of the raw endpoint function. Then
 
-$$ H^{*}\bigl(G(z,T(y))\bigr) \leq N_G C+C_{+}(g_e). $$
+$$ H^{\ast}\bigl(G(z,T(y))\bigr) \leq N_G C+C_{+}(g_e). $$
 
 > **Interpretation.** When the feature begins and ends with the same value, repeated raw slices can be joined at a cost equal to the raw endpoint variation.
 
@@ -20,7 +20,7 @@ $$ H^{*}\bigl(G(z,T(y))\bigr) \leq N_G C+C_{+}(g_e). $$
 
 Since the endpoints are both $e$, Lemma 151 gives
 
-$$ H^{*}\bigl(G(z,T(y))\bigr) \leq N_G C+B_{+}(g_e,g_e). $$
+$$ H^{\ast}\bigl(G(z,T(y))\bigr) \leq N_G C+B_{+}(g_e,g_e). $$
 
 For every positive raw order $\rho$,
 

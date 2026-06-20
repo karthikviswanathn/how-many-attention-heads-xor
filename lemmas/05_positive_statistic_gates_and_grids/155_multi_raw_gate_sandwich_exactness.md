@@ -32,17 +32,17 @@ $$ N_G:=\left\lvert\lbrace a\in\lbrace0,1\rbrace^{k}:g_0(a)\neq g_1(a)\rbrace\ri
 
 Then the following sandwich holds:
 
-$$ \max\left\lbrace \mathbf{1}_{N_G>0}H^{*}(T), H^{*}(g_0), H^{*}(g_1) \right\rbrace \leq H^{*}(H_G) \leq N_GC+B_{+}(g_{e_{\max}},g_{e_{\min}}). $$
+$$ \max\left\lbrace \mathbf{1}_{N_G>0}H^{\ast}(T), H^{\ast}(g_0), H^{\ast}(g_1) \right\rbrace \leq H^{\ast}(H_G) \leq N_GC+B_{+}(g_{e_{\max}},g_{e_{\min}}). $$
 
-Here $\mathbf{1}_{N_G>0}H^{*}(T)$ means $0$ if $N_G=0$ and $H^{*}(T)$ otherwise.
+Here $\mathbf{1}_{N_G>0}H^{\ast}(T)$ means $0$ if $N_G=0$ and $H^{\ast}(T)$ otherwise.
 
 In particular, if
 
-$$ H^{*}(T)=C, \qquad N_G=1, \qquad B_{+}(g_{e_{\max}},g_{e_{\min}})=0, $$
+$$ H^{\ast}(T)=C, \qquad N_G=1, \qquad B_{+}(g_{e_{\max}},g_{e_{\min}})=0, $$
 
 then
 
-$$ H^{*}(H_G)=C. $$
+$$ H^{\ast}(H_G)=C. $$
 
 > **Interpretation.** Multi-raw gates over one positive-statistic feature have a usable two-sided bracket. If exactly one raw slice depends on the feature and the endpoint boundary can be made silent, the upper bound is exact whenever the feature itself is exact.
 
@@ -62,7 +62,7 @@ $$ z\mapsto G(z,e)=g_e(z). $$
 
 Therefore
 
-$$ H^{*}(g_e)\leq H^{*}(H_G) $$
+$$ H^{\ast}(g_e)\leq H^{\ast}(H_G) $$
 
 for $e=0,1$.
 
@@ -76,19 +76,19 @@ $$ y\mapsto G(a,T(y)) $$
 
 is either $T(y)$ or $1-T(y)$. Complement invariance and restriction monotonicity give
 
-$$ H^{*}(T)\leq H^{*}(H_G). $$
+$$ H^{\ast}(T)\leq H^{\ast}(H_G). $$
 
 Combining these lower bounds with the upper bound proves the sandwich.
 
 Under the final hypotheses, the upper bound becomes
 
-$$ H^{*}(H_G)\leq C. $$
+$$ H^{\ast}(H_G)\leq C. $$
 
 The lower bound from the dependent raw slice gives
 
-$$ H^{*}(H_G)\geq H^{*}(T)=C. $$
+$$ H^{\ast}(H_G)\geq H^{\ast}(T)=C. $$
 
-Thus $H^{*}(H_G)=C$. $\blacksquare$
+Thus $H^{\ast}(H_G)=C$. $\blacksquare$
 
 ## Consequence
 

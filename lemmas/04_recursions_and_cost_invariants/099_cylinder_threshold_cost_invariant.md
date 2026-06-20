@@ -20,7 +20,7 @@ $$ f(x)=1 \qquad\Longleftrightarrow\qquad c_0+\sum_{a=1}^{s}c_aC_{P_a,N_a}(x)>0 
 
 by subcube indicators. Then
 
-$$ H^{*}(f)\leq\mathrm{ctc}(f). $$
+$$ H^{\ast}(f)\leq\mathrm{ctc}(f). $$
 
 Moreover, $\mathrm{ctc}(f)$ is finite for every Boolean function.
 
@@ -34,11 +34,11 @@ $$ f(x)=1 \qquad\Longleftrightarrow\qquad c_0+\sum_{a=1}^{s}c_aC_{P_a,N_a}(x)>0.
 
 The subcube-threshold vote theorem [098_subcube_threshold_vote_upper_bound.md](098_subcube_threshold_vote_upper_bound.md) gives
 
-$$ H^{*}(f) \leq \sum_{a:c_a\neq0}\kappa(P_a,N_a). $$
+$$ H^{\ast}(f) \leq \sum_{a:c_a\neq0}\kappa(P_a,N_a). $$
 
 Taking the minimum over all strict cylinder-threshold representations proves
 
-$$ H^{*}(f)\leq\mathrm{ctc}(f). $$
+$$ H^{\ast}(f)\leq\mathrm{ctc}(f). $$
 
 It remains only to note that the minimum ranges over a nonempty finite set of cylinder supports. Repeated copies of the same cylinder can be merged by adding their coefficients, and cylinders with resulting coefficient $0$ can be deleted, without increasing the cost. Since there are only finitely many subcube indicators on $\lbrace0,1\rbrace^n$, there are only finitely many possible nonzero cylinder supports.
 

@@ -54,7 +54,7 @@ The coefficient of the top character $\chi$ is exactly $\rho$. Define
 
 $$ P(z):=q(z)-\rho\chi(z). $$
 
-Then $P$ has degree at most $n-1$, because we have removed the only degree-$n$ Fourier term.
+Then $P$ has degree at most $n-1$, because we have removed the only degree $n$ Fourier term.
 
 For every $z$,
 

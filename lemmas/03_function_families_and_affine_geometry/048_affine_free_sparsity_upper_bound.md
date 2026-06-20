@@ -16,11 +16,11 @@ $$ \mathrm{afs}_{\pm}(f) $$
 
 be the minimum of $\mathrm{afs}(P)$ over all real multilinear polynomials $P$ that sign-represent $f$ on the Boolean cube. Then
 
-$$ H^{*}(f)\leq\mathrm{afs}_{\pm}(f). $$
+$$ H^{\ast}(f)\leq\mathrm{afs}_{\pm}(f). $$
 
 Consequently, if $f$ is nonconstant and $\deg_{\pm}(f)\leq d$, then
 
-$$ H^{*}(f) \leq 1+\sum_{r=2}^{d}\binom{n}{r}. $$
+$$ H^{\ast}(f) \leq 1+\sum_{r=2}^{d}\binom{n}{r}. $$
 
 > **Interpretation.** The sparse-polynomial upper bound does not need to pay one head for each linear monomial. One head can approximate the whole affine part, and the remaining heads only pay for genuinely nonlinear monomials.
 
@@ -104,15 +104,15 @@ $$ \ell+\lvert\mathcal{M}\rvert = \mathrm{afs}(P) $$
 
 heads. Hence
 
-$$ H^{*}(f)\leq\mathrm{afs}(P). $$
+$$ H^{\ast}(f)\leq\mathrm{afs}(P). $$
 
 Minimizing over all sign-representing $P$ proves
 
-$$ H^{*}(f)\leq\mathrm{afs}_{\pm}(f). $$
+$$ H^{\ast}(f)\leq\mathrm{afs}_{\pm}(f). $$
 
 ### Lemma 3. Threshold-degree corollary
 
-Assume $f$ is nonconstant and $\deg_{\pm}(f)\leq d$. Choose a degree-at-most-$d$ polynomial $P$ that sign-represents $f$.
+Assume $f$ is nonconstant and $\deg_{\pm}(f)\leq d$. Choose a degree-at-most $d$ polynomial $P$ that sign-represents $f$.
 
 If all linear coefficients of $P$ vanish, then $\mathrm{afs}(P)$ is just the number of degree at least two monomials in $P$, and this is at most
 
@@ -128,15 +128,15 @@ Applying Lemma 2 gives the corollary. $\blacksquare$
 
 For nonconstant Boolean functions,
 
-$$ \deg_{\pm}(f) \leq H^{*}(f) \leq \mathrm{afs}_{\pm}(f) \leq \mathrm{ptfsp}(f). $$
+$$ \deg_{\pm}(f) \leq H^{\ast}(f) \leq \mathrm{afs}_{\pm}(f) \leq \mathrm{ptfsp}(f). $$
 
 In particular, low threshold degree gives the improved uniform bound
 
-$$ H^{*}(f) \leq 1+\binom{n}{2}+\binom{n}{3}+\cdots+\binom{n}{d}. $$
+$$ H^{\ast}(f) \leq 1+\binom{n}{2}+\binom{n}{3}+\cdots+\binom{n}{d}. $$
 
 For $d=2$, every nonconstant quadratic threshold function satisfies
 
-$$ H^{*}(f)\leq1+\binom{n}{2}. $$
+$$ H^{\ast}(f)\leq1+\binom{n}{2}. $$
 
 This improves the earlier sparse-PTF corollary by bundling all linear terms into a single affine head.
 
@@ -154,4 +154,4 @@ $$ P(x,y) = \frac{1}{2} - \sum_{i=1}^{m}x_i - \sum_{i=1}^{m}y_i + 2\sum_{i=1}^{m
 
 It has one affine part and $m$ nonlinear monomials, so
 
-$$ H^{*}(\mathrm{EQ}_m)\leq m+1. $$
+$$ H^{\ast}(\mathrm{EQ}_m)\leq m+1. $$

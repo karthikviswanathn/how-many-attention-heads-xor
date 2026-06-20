@@ -32,7 +32,7 @@ $$ \mathrm{osc}_{+}^{z\mid y}(f) := \min_{t,\rho}\Omega_{t,\rho}(f), $$
 
 where the minimum ranges over all common positive-statistic certificates $t$ and all positive raw weights $\rho$ with distinct subset sums. Then
 
-$$ H^{*}(f)\leq \mathrm{osc}_{+}^{z\mid y}(f). $$
+$$ H^{\ast}(f)\leq \mathrm{osc}_{+}^{z\mid y}(f). $$
 
 > **Interpretation.** The ordered multi-slice construction is an optimized invariant: it charges within-slice positive-statistic variation plus only the boundary jumps forced by the chosen positive raw order.
 
@@ -40,11 +40,11 @@ $$ H^{*}(f)\leq \mathrm{osc}_{+}^{z\mid y}(f). $$
 
 Fix any certificate $t$ and any raw order $\rho$. The ordered common positive-statistic slice bound [147_ordered_common_positive_statistic_slice_bound.md](147_ordered_common_positive_statistic_slice_bound.md) gives
 
-$$ H^{*}(f)\leq\Omega_{t,\rho}(f). $$
+$$ H^{\ast}(f)\leq\Omega_{t,\rho}(f). $$
 
 Taking the minimum over all such pairs gives
 
-$$ H^{*}(f)\leq \mathrm{osc}_{+}^{z\mid y}(f). $$
+$$ H^{\ast}(f)\leq \mathrm{osc}_{+}^{z\mid y}(f). $$
 
 The minimum is over a nonempty family. Indeed, choosing positive weights for $t$ with distinct subset sums separates all points of $\lbrace0,1\rbrace^{m}$, so every raw slice factors through $t$ trivially. Positive raw weights with distinct subset sums exist by the same generic choice. $\blacksquare$
 

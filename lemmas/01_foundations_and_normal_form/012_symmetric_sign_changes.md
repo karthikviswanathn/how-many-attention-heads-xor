@@ -22,7 +22,7 @@ $$ C(F) := \lvert \left\lbrace t \in \lbrace1,\ldots,n\rbrace : \sigma_{t-1} \ne
 
 Then
 
-$$ H^{*}(f) = C(F). $$
+$$ H^{\ast}(f) = C(F). $$
 
 > **Equivalently.** For symmetric Boolean functions, head complexity is exactly the number of times the Hamming-weight truth table changes value.
 
@@ -40,7 +40,7 @@ $$ \deg_{\pm}(f) = C(F). $$
 
 $$ T := \lbrace t \in \lbrace1,\ldots,n\rbrace : \sigma_{t-1} \neq \sigma_t\rbrace. $$
 
-First, we build a degree-$C(F)$ sign-representing polynomial. Define
+First, we build a degree $C(F)$ sign-representing polynomial. Define
 
 $$ P(z) := \sigma_0 \prod_{t \in T} \left(t - \frac{1}{2} - z\right). $$
 
@@ -60,7 +60,7 @@ sign-represents $f$ and has degree $C(F)$. Thus
 
 $$ \deg_{\pm}(f) \leq C(F). $$
 
-For the reverse inequality, suppose $Q(x_1,\ldots,x_n)$ is any degree-$d$ polynomial that sign-represents $f$. Replacing $Q$ by its multilinear reduction modulo the Boolean identities $x_i^2 = x_i$ does not change its values on the cube and does not increase its degree. So we may assume $Q$ is multilinear.
+For the reverse inequality, suppose $Q(x_1,\ldots,x_n)$ is any degree $d$ polynomial that sign-represents $f$. Replacing $Q$ by its multilinear reduction modulo the Boolean identities $x_i^2 = x_i$ does not change its values on the cube and does not increase its degree. So we may assume $Q$ is multilinear.
 
 Symmetrize it over all coordinate permutations:
 
@@ -134,11 +134,11 @@ This is exactly $\psi_{r,d}(x)$. $\blacksquare$
 
 ### Lemma 3. C(F) heads realize the symmetric sign pattern
 
-If $C(F) = 0$, then $f$ is constant, so $H^{*}(f) = 0$.
+If $C(F) = 0$, then $f$ is constant, so $H^{\ast}(f) = 0$.
 
 Assume now that $C := C(F) \geq 1$.
 
-By Lemma 1, there is a degree-$C$ univariate polynomial $P(z)$ such that
+By Lemma 1, there is a degree $C$ univariate polynomial $P(z)$ such that
 
 $$ \mathrm{sgn}(P(k)) = \sigma_k \qquad \text{for } k = 0,\ldots,n. $$
 
@@ -174,7 +174,7 @@ $$ c + \sum_{j=1}^{C} \frac{d_j}{\lvert x\rvert+r_j} = S(\lvert x\rvert). $$
 
 This score is positive exactly when $F(\lvert x\rvert) = 1$, and negative exactly when $F(\lvert x\rvert) = 0$. Hence
 
-$$ H^{*}(f) \leq C(F). $$
+$$ H^{\ast}(f) \leq C(F). $$
 
 $\blacksquare$
 
@@ -182,15 +182,15 @@ $\blacksquare$
 
 By Lemma 1 and the general threshold-degree lower bound from [006_threshold_degree_head_complexity_bound.md](006_threshold_degree_head_complexity_bound.md),
 
-$$ H^{*}(f) \geq \deg_{\pm}(f) = C(F). $$
+$$ H^{\ast}(f) \geq \deg_{\pm}(f) = C(F). $$
 
 By Lemma 3,
 
-$$ H^{*}(f) \leq C(F). $$
+$$ H^{\ast}(f) \leq C(F). $$
 
 Therefore
 
-$$ H^{*}(f) = C(F). $$
+$$ H^{\ast}(f) = C(F). $$
 
 $\blacksquare$
 
@@ -198,14 +198,14 @@ $\blacksquare$
 
 1. Monotone symmetric thresholds have one sign change, so
 
-$$ H^{*}(T_{n,t}) = 1 \qquad 1 \leq t \leq n. $$
+$$ H^{\ast}(T_{n,t}) = 1 \qquad 1 \leq t \leq n. $$
 
 2. Parity has a sign change between every consecutive Hamming weight, so
 
-$$ H^{*}(\mathrm{XOR}_n) = n. $$
+$$ H^{\ast}(\mathrm{XOR}_n) = n. $$
 
 3. Internal exact-count predicates have two sign changes. For $1 \leq k \leq n-1$,
 
-$$ H^{*}(\mathrm{EXACT}_{n,k}) = 2. $$
+$$ H^{\ast}(\mathrm{EXACT}_{n,k}) = 2. $$
 
-The last item upgrades the earlier checkerboard lower bound for exact-count predicates from merely $H^{*} \geq 2$ to an exact value.
+The last item upgrades the earlier checkerboard lower bound for exact-count predicates from merely $H^{\ast} \geq 2$ to an exact value.

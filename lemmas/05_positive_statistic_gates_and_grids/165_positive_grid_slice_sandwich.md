@@ -32,7 +32,7 @@ $$ J_{\mathrm{grid}} := \left\lvert \left\lbrace r\in\lbrace0,\ldots,R-2\rbrace:
 
 Then
 
-$$ \max_{0\leq r<R}H^{*}\bigl(F(\nu_r,t(y))\bigr) \leq H^{*}(f) \leq \sum_{r=0}^{R-1}C_r+J_{\mathrm{grid}}. $$
+$$ \max_{0\leq r<R}H^{\ast}\bigl(F(\nu_r,t(y))\bigr) \leq H^{\ast}(f) \leq \sum_{r=0}^{R-1}C_r+J_{\mathrm{grid}}. $$
 
 > **Interpretation.** If the raw block itself factors through one positive statistic, the construction pays per raw level, not per raw assignment.
 
@@ -44,7 +44,7 @@ $$ y\mapsto F(\nu_r,t(y)). $$
 
 Thus
 
-$$ H^{*}\bigl(F(\nu_r,t(y))\bigr)\leq H^{*}(f) $$
+$$ H^{\ast}\bigl(F(\nu_r,t(y))\bigr)\leq H^{\ast}(f) $$
 
 for every $r$.
 
@@ -78,7 +78,7 @@ $$ \sum_{r=0}^{R-1}C_r+J_{\mathrm{grid}}. $$
 
 Applying the positive-projection sign-change upper bound [013_positive_projection_sign_changes.md](../01_foundations_and_normal_form/013_positive_projection_sign_changes.md) to $s$ gives
 
-$$ H^{*}(f)\leq\sum_r C_r+J_{\mathrm{grid}}. $$
+$$ H^{\ast}(f)\leq\sum_r C_r+J_{\mathrm{grid}}. $$
 
 $\blacksquare$
 

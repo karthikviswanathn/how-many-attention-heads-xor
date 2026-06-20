@@ -18,13 +18,13 @@ $$ f:\lbrace0,1\rbrace^3\to\lbrace0,1\rbrace, $$
 
 we have
 
-$$ s_{\mathrm{LTF}}(f)=H^{*}(f)=\deg_{\pm}(f). $$
+$$ s_{\mathrm{LTF}}(f)=H^{\ast}(f)=\deg_{\pm}(f). $$
 
 More explicitly:
 
 $$ s_{\mathrm{LTF}}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 3 & \text{if } f \text{ is parity or anti-parity},\\ 2 & \text{otherwise}. \end{cases} $$
 
-> **Interpretation.** Threshold-vote size agrees exactly with $H^{*}$ throughout the first nontrivial classified cube. This is a finite match, not a global characterization.
+> **Interpretation.** Threshold-vote size agrees exactly with $H^{\ast}$ throughout the first nontrivial classified cube. This is a finite match, not a global characterization.
 
 ## Proof
 
@@ -101,10 +101,10 @@ By Lemma 1 and Lemma 2, every remaining non-parity three-bit function has thresh
 
 The exact three-bit classification [016_three_bit_exact_classification.md](../01_foundations_and_normal_form/016_three_bit_exact_classification.md) gives
 
-$$ H^{*}(f)=\deg_{\pm}(f) $$
+$$ H^{\ast}(f)=\deg_{\pm}(f) $$
 
-for every three-bit Boolean function. The top threshold-degree theorem [027_top_threshold_degree.md](../01_foundations_and_normal_form/027_top_threshold_degree.md) identifies parity and anti-parity as the only three-bit functions of threshold degree $3$. Threshold degree $1$ is exactly the nonconstant LTF case, and the one-head theorem [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md) gives the same $H^{*}$ value on that class. Therefore the case split above matches the $H^{*}$ case split exactly:
+for every three-bit Boolean function. The top threshold-degree theorem [027_top_threshold_degree.md](../01_foundations_and_normal_form/027_top_threshold_degree.md) identifies parity and anti-parity as the only three-bit functions of threshold degree $3$. Threshold degree $1$ is exactly the nonconstant LTF case, and the one-head theorem [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md) gives the same $H^{\ast}$ value on that class. Therefore the case split above matches the $H^{\ast}$ case split exactly:
 
-$$ s_{\mathrm{LTF}}(f)=H^{*}(f)=\deg_{\pm}(f). $$
+$$ s_{\mathrm{LTF}}(f)=H^{\ast}(f)=\deg_{\pm}(f). $$
 
 $\blacksquare$

@@ -28,7 +28,7 @@ $$ J_{\rho} := \left\lvert \left\lbrace q\in\lbrace0,\ldots,2^k-2\rbrace: F_{a^{
 
 Then
 
-$$ H^{*}(f) \leq \sum_{a\in\lbrace0,1\rbrace^{k}}C_a+J_{\rho}. $$
+$$ H^{\ast}(f) \leq \sum_{a\in\lbrace0,1\rbrace^{k}}C_a+J_{\rho}. $$
 
 > **Interpretation.** The multi-slice construction pays only for actual boundary label changes between consecutive raw slices, not for every boundary.
 
@@ -68,7 +68,7 @@ $$ F_{a^{(0)}}(\tau_0),\ldots,F_{a^{(0)}}(\tau_{M-1}), F_{a^{(1)}}(\tau_0),\ldot
 
 Its sign changes are exactly the within-slice sign changes, totaling $\sum_a C_a$, plus the boundary jumps counted by $J_{\rho}$. The positive-projection sign-change upper bound [013_positive_projection_sign_changes.md](../01_foundations_and_normal_form/013_positive_projection_sign_changes.md) applied to $s$ gives
 
-$$ H^{*}(f)\leq \sum_a C_a+J_{\rho}. $$
+$$ H^{\ast}(f)\leq \sum_a C_a+J_{\rho}. $$
 
 $\blacksquare$
 

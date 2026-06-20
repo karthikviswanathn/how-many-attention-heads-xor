@@ -19,11 +19,11 @@ Suppose $f:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace$ has a label class $A$ such t
 
 Then
 
-$$ H^{*}(f)\leq2. $$
+$$ H^{\ast}(f)\leq2. $$
 
 More precisely,
 
-$$ H^{*}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
+$$ H^{\ast}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** A label class is two-head easy whenever it is exactly the cube slice cut out by its own proper affine hull. The proof turns that affine hull into one affine level set, then invokes the affine level-set theorem.
 
@@ -67,7 +67,7 @@ $$ f(x)=\mathbf{1}[L(x)=0]. $$
 
 The affine level-set theorem [061_affine_level_set_upper_bound.md](061_affine_level_set_upper_bound.md) gives
 
-$$ H^{*}(f)\leq2. $$
+$$ H^{\ast}(f)\leq2. $$
 
 The exact case split follows from the zero-head and one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md): constants have value $0$, nonconstant LTFs have value $1$, and nonconstant non-LTFs need at least two heads. Together with the two-head upper bound, this proves the statement. $\blacksquare$
 

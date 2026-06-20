@@ -24,13 +24,13 @@ $$ g(x):=G(f_1(x),\ldots,f_m(x)). $$
 
 Then
 
-$$ H^{*}(g) \leq C_t(g) \leq \sum_{j=1}^{m}C_t(f_j), $$
+$$ H^{\ast}(g) \leq C_t(g) \leq \sum_{j=1}^{m}C_t(f_j), $$
 
 where $C_t(h)$ denotes the number of sign changes of $h$ along the ordered image of $t$.
 
 In particular,
 
-$$ H^{*}(g)\leq M-1. $$
+$$ H^{\ast}(g)\leq M-1. $$
 
 > **Interpretation.** Once several functions are functions of the same positive weighted sum, arbitrary Boolean combinations stay in the same one-dimensional world. The cost is controlled by the number of new label changes along that shared statistic, not by recomputing the inputs separately.
 
@@ -48,7 +48,7 @@ so $g$ also factors through $t$.
 
 By the positive-projection sign-change theorem [013_positive_projection_sign_changes.md](../01_foundations_and_normal_form/013_positive_projection_sign_changes.md),
 
-$$ H^{*}(g)\leq C_t(g). $$
+$$ H^{\ast}(g)\leq C_t(g). $$
 
 It remains to compare sign-change counts. If $G_t$ changes between adjacent levels $\tau_{\ell-1}$ and $\tau_{\ell}$, then the vector
 
@@ -62,7 +62,7 @@ $$ C_t(g) \leq \sum_{j=1}^{m}C_t(f_j). $$
 
 Since there are only $M$ projection levels, every label sequence has at most $M-1$ sign changes, so
 
-$$ H^{*}(g)\leq C_t(g)\leq M-1. $$
+$$ H^{\ast}(g)\leq C_t(g)\leq M-1. $$
 
 $\blacksquare$
 
@@ -70,6 +70,6 @@ $\blacksquare$
 
 For two functions $f$ and $g$ sharing the same statistic $t$,
 
-$$ H^{*}(f\wedge g), \quad H^{*}(f\vee g), \quad H^{*}(f\oplus g) \leq C_t(f)+C_t(g). $$
+$$ H^{\ast}(f\wedge g), \quad H^{\ast}(f\vee g), \quad H^{\ast}(f\oplus g) \leq C_t(f)+C_t(g). $$
 
 This explains why Boolean combinations of co-statistical functions should not be treated by a generic sum-of-heads construction. The shared statistic already supplies the basis.

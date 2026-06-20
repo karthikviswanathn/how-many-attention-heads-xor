@@ -8,7 +8,7 @@ $$ f:\lbrace0,1\rbrace^{n}\to\lbrace0,1\rbrace $$
 
 with $n\geq1$,
 
-$$ H^{*}(f) \leq \mathrm{actc}(f) \leq \mathrm{sactc}(f) \leq \mathrm{scafs}_{\pm}(f), $$
+$$ H^{\ast}(f) \leq \mathrm{actc}(f) \leq \mathrm{sactc}(f) \leq \mathrm{scafs}_{\pm}(f), $$
 
 where $\mathrm{scafs}_{\pm}$ is the split affine-free support invariant from [078_split_affine_free_support_invariant.md](078_split_affine_free_support_invariant.md).
 
@@ -60,7 +60,7 @@ $$ \mathrm{sactc}(f) \leq \mathrm{scafs}_{\pm}(f). $$
 
 The split affine-cylinder cost lemma [112_split_affine_cylinder_cost.md](112_split_affine_cylinder_cost.md) gives
 
-$$ H^{*}(f) \leq \mathrm{actc}(f) \leq \mathrm{sactc}(f). $$
+$$ H^{\ast}(f) \leq \mathrm{actc}(f) \leq \mathrm{sactc}(f). $$
 
 Combining the two chains proves the theorem. $\blacksquare$
 
@@ -68,6 +68,6 @@ Combining the two chains proves the theorem. $\blacksquare$
 
 The old cofactor sparse-polynomial route now factors through the affine-cylinder split invariant:
 
-$$ H^{*}(f) \leq \mathrm{sactc}(f) \leq \mathrm{scafs}_{\pm}(f). $$
+$$ H^{\ast}(f) \leq \mathrm{sactc}(f) \leq \mathrm{scafs}_{\pm}(f). $$
 
 Thus any improvement to local cylinder scoring immediately improves the recursive split search without losing any certificate already covered by split affine-free support.

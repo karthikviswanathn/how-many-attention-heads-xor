@@ -26,11 +26,11 @@ $$ \sum_{j=1}^{L}\lvert c_j\rvert\epsilon_j<\mu, $$
 
 then
 
-$$ H^{*}(f)\leq L. $$
+$$ H^{\ast}(f)\leq L. $$
 
 In particular, if every test $T_j$ admits arbitrarily accurate one-head atom approximations, then
 
-$$ H^{*}(f)\leq L. $$
+$$ H^{\ast}(f)\leq L. $$
 
 > **Interpretation.** Decision-list priority is not itself expensive. The cost is one head per test whenever the test indicators are available as calibrated raw atoms.
 
@@ -88,7 +88,7 @@ $$ \sum_{j=1}^{L}\lvert c_j\rvert\epsilon_j<\mu. $$
 
 The calibrated threshold-vote theorem [085_calibrated_threshold_vote_upper_bound.md](085_calibrated_threshold_vote_upper_bound.md) applies to the strict vote $V_1$, and yields
 
-$$ H^{*}(f)\leq L. $$
+$$ H^{\ast}(f)\leq L. $$
 
 If each test is arbitrarily one-head approximable, choose the errors small enough to satisfy the displayed inequality. $\blacksquare$
 

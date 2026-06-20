@@ -24,7 +24,7 @@ where the minimum ranges over all positive multigrid certificates over $\mathcal
 
 Then
 
-$$ H^{*}(f)\leq\mathrm{mgc}_{+}^{\mathcal{P}}(f). $$
+$$ H^{\ast}(f)\leq\mathrm{mgc}_{+}^{\mathcal{P}}(f). $$
 
 Also
 
@@ -38,7 +38,7 @@ $$ \deg_{\pm}(f)=\mathrm{mgc}_{+}^{\mathcal{P}}(f), $$
 
 then
 
-$$ H^{*}(f)=\deg_{\pm}(f)=\mathrm{mgc}_{+}^{\mathcal{P}}(f). $$
+$$ H^{\ast}(f)=\deg_{\pm}(f)=\mathrm{mgc}_{+}^{\mathcal{P}}(f). $$
 
 > **Interpretation.** The multigrid cost is a partition-level positive-projection invariant. It captures the best lexicographic traversal of a product of positive-statistic images.
 
@@ -46,11 +46,11 @@ $$ H^{*}(f)=\deg_{\pm}(f)=\mathrm{mgc}_{+}^{\mathcal{P}}(f). $$
 
 Fix a positive multigrid certificate and block order $\pi$. The positive lexicographic multigrid bound [170_positive_lexicographic_multigrid_bound.md](170_positive_lexicographic_multigrid_bound.md) gives
 
-$$ H^{*}(f)\leq L_{\pi}(F). $$
+$$ H^{\ast}(f)\leq L_{\pi}(F). $$
 
 Minimizing proves
 
-$$ H^{*}(f)\leq\mathrm{mgc}_{+}^{\mathcal{P}}(f). $$
+$$ H^{\ast}(f)\leq\mathrm{mgc}_{+}^{\mathcal{P}}(f). $$
 
 The proof of Theorem 170 constructs one positive statistic on all variables whose ordered label sequence is exactly the chosen lexicographic grid traversal. Hence, for every certificate and order,
 
@@ -66,7 +66,7 @@ For coordinate permutations preserving the partition up to relabeling, transport
 
 Finally, if threshold degree equals the multigrid cost, then
 
-$$ \mathrm{mgc}_{+}^{\mathcal{P}}(f) = \deg_{\pm}(f) \leq H^{*}(f) \leq \mathrm{mgc}_{+}^{\mathcal{P}}(f), $$
+$$ \mathrm{mgc}_{+}^{\mathcal{P}}(f) = \deg_{\pm}(f) \leq H^{\ast}(f) \leq \mathrm{mgc}_{+}^{\mathcal{P}}(f), $$
 
 so all three quantities are equal. $\blacksquare$
 

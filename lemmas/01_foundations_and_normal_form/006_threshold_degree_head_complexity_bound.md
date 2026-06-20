@@ -4,7 +4,7 @@
 
 If a Boolean function $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$ is computable in the model from [../../model.md](../../model.md), then
 
-$$ \deg_{\pm}(f) \leq H^{*}(f). $$
+$$ \deg_{\pm}(f) \leq H^{\ast}(f). $$
 
 Here $\deg_{\pm}(f)$ denotes the threshold degree of $f$, namely the minimum degree of a real polynomial that sign-represents $f$ on the Boolean cube.
 
@@ -24,7 +24,7 @@ The classifier in the attention model has the form $\text{score}(x) > \tau$, tha
 
 ## Proof
 
-Let $f$ be computed by an $H$-head model, where $H = H^{*}(f)$. We produce a sign-representing polynomial of degree at most $H$ in three steps.
+Let $f$ be computed by an $H$-head model, where $H = H^{\ast}(f)$. We produce a sign-representing polynomial of degree at most $H$ in three steps.
 
 ### Lemma 1. On a finite domain, exact classification can be made strict
 
@@ -208,6 +208,6 @@ So $P$ sign-represents the Boolean function $f$ on $\lbrace0,1\rbrace^n$.
 
 ### Conclusion
 
-Since $f$ is computed by $H^{*}(f)$ heads, Lemma 3 produces a polynomial of degree at most $H^{*}(f)$ that sign-represents $f$. Therefore
+Since $f$ is computed by $H^{\ast}(f)$ heads, Lemma 3 produces a polynomial of degree at most $H^{\ast}(f)$ that sign-represents $f$. Therefore
 
-$$ \deg_{\pm}(f) \leq H^{*}(f). \qquad \blacksquare $$
+$$ \deg_{\pm}(f) \leq H^{\ast}(f). \qquad \blacksquare $$

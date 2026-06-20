@@ -16,7 +16,7 @@ $$ f(x)=1 \qquad\Longleftrightarrow\qquad c_0+\sum_{a=1}^{s}c_a C_{P_a,N_a}(x)>0
 
 with positive margin on the Boolean cube. Then
 
-$$ H^{*}(f) \leq \sum_{a:c_a\neq0}\kappa(P_a,N_a). $$
+$$ H^{\ast}(f) \leq \sum_{a:c_a\neq0}\kappa(P_a,N_a). $$
 
 > **Interpretation.** Any strict real threshold of subcube indicators has a head upper bound given by the local literal-orientation cost of the cylinders. The cylinders need not be disjoint, one-sided, or a certificate cover.
 
@@ -32,7 +32,7 @@ $$ \min\lbrace2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\rbrace. $$
 
 Apply the raw-calibrated vote support bound [093_raw_calibrated_vote_support_bound.md](093_raw_calibrated_vote_support_bound.md) to the strict vote over the features $C_{P_a,N_a}$. It gives
 
-$$ H^{*}(f) \leq \sum_{a:c_a\neq0}\rho(C_{P_a,N_a}) \leq \sum_{a:c_a\neq0}\kappa(P_a,N_a). $$
+$$ H^{\ast}(f) \leq \sum_{a:c_a\neq0}\rho(C_{P_a,N_a}) \leq \sum_{a:c_a\neq0}\kappa(P_a,N_a). $$
 
 $\blacksquare$
 

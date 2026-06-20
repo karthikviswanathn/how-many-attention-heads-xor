@@ -16,7 +16,7 @@ $$ q_t(a):=F_{a,t}(\tau_0), \qquad p_t(a):=F_{a,t}(\tau_{M-1}). $$
 
 Then
 
-$$ H^{*}(f)\leq \mathrm{eps}_{+}^{z\mid y}(f). $$
+$$ H^{\ast}(f)\leq \mathrm{eps}_{+}^{z\mid y}(f). $$
 
 Moreover,
 
@@ -66,4 +66,4 @@ Raw coordinate permutations simply relabel the raw assignments and transport pos
 
 ## Consequence
 
-Theorem 162 can be restated as: if $\deg_{\pm}(f)=\mathrm{eps}_{+}^{z\mid y}(f)$ for some split, then $H^{*}(f)$ is exactly this endpoint-coupled slice cost.
+Theorem 162 can be restated as: if $\deg_{\pm}(f)=\mathrm{eps}_{+}^{z\mid y}(f)$ for some split, then $H^{\ast}(f)$ is exactly this endpoint-coupled slice cost.

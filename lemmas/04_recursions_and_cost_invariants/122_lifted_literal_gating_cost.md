@@ -22,11 +22,11 @@ where the minimum ranges over all strict affine-cylinder scores $S$ for $T$.
 
 Then for either literal $r(z)\in\lbrace z,1-z\rbrace$,
 
-$$ H^{*}(r(z)\wedge T(y)) \leq 1+\mathrm{lgactc}(T), $$
+$$ H^{\ast}(r(z)\wedge T(y)) \leq 1+\mathrm{lgactc}(T), $$
 
 and
 
-$$ H^{*}(r(z)\vee T(y)) \leq 1+\mathrm{lgactc}(T). $$
+$$ H^{\ast}(r(z)\vee T(y)) \leq 1+\mathrm{lgactc}(T). $$
 
 Moreover,
 
@@ -42,7 +42,7 @@ Fix a strict affine-cylinder score $S$ for $T$. Lemma [121_literal_gated_affine_
 
 If the cheaper lift is not the literal appearing in the desired gate, apply the global bit-flip on the fresh coordinate $z$. Head complexity is invariant under this bit flip by [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md), and the bit flip swaps the two literals. Hence for either literal $r$,
 
-$$ H^{*}(r\wedge T) \leq 1+\lvert L(A)\rvert+\min\lbrace K_{+}(\Gamma),K_{-}(\Gamma)\rbrace. $$
+$$ H^{\ast}(r\wedge T) \leq 1+\lvert L(A)\rvert+\min\lbrace K_{+}(\Gamma),K_{-}(\Gamma)\rbrace. $$
 
 The same argument applies to $r\vee T$, or equivalently uses the disjunction bound in Lemma 121 and the same fresh-coordinate bit flip.
 

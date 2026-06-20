@@ -12,11 +12,11 @@ $$ E_L(x):=\mathbf{1}[L(x)=0]. $$
 
 Then
 
-$$ H^{*}(E_L)\leq2. $$
+$$ H^{\ast}(E_L)\leq2. $$
 
 More precisely,
 
-$$ H^{*}(E_L) = \begin{cases} 0 & \text{if } E_L \text{ is constant},\\ 1 & \text{if } E_L \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
+$$ H^{\ast}(E_L) = \begin{cases} 0 & \text{if } E_L \text{ is constant},\\ 1 & \text{if } E_L \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** Exact equality to any affine statistic is cheap. This subsumes internal exact-count predicates and equality of two binary-encoded strings.
 
@@ -72,15 +72,15 @@ $$ S(x)-\theta>0 \qquad\Longleftrightarrow\qquad L(x)=0. $$
 
 By the affine-over-positive-affine atom lemma [015_three_bit_quadratic_upper_bound.md](../01_foundations_and_normal_form/015_three_bit_quadratic_upper_bound.md), each ratio $A_j/B_j$ is a one-head atom. Therefore
 
-$$ H^{*}(E_L)\leq2. $$
+$$ H^{\ast}(E_L)\leq2. $$
 
 If $E_L$ is a nonconstant LTF, the one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md) gives
 
-$$ H^{*}(E_L)=1. $$
+$$ H^{\ast}(E_L)=1. $$
 
 If $E_L$ is nonconstant and not an LTF, the same characterization gives
 
-$$ H^{*}(E_L)\geq2. $$
+$$ H^{\ast}(E_L)\geq2. $$
 
 Together with the two-head upper bound, this proves the exact case split. $\blacksquare$
 
@@ -88,7 +88,7 @@ Together with the two-head upper bound, this proves the exact case split. $\blac
 
 Internal exact-count predicates satisfy
 
-$$ H^{*}(\mathrm{EXACT}_{n,k})=2 \qquad \text{for }1\leq k\leq n-1, $$
+$$ H^{\ast}(\mathrm{EXACT}_{n,k})=2 \qquad \text{for }1\leq k\leq n-1, $$
 
 recovering the symmetric sign-change theorem in that special case.
 
@@ -98,4 +98,4 @@ $$ \mathrm{EQ}_m(x,y)=\mathbf{1} \left[\sum_{i=1}^{m}2^{i-1}x_i-\sum_{i=1}^{m}2^
 
 Thus this theorem gives another route to
 
-$$ H^{*}(\mathrm{EQ}_m)=2. $$
+$$ H^{\ast}(\mathrm{EQ}_m)=2. $$

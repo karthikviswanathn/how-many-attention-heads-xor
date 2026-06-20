@@ -24,17 +24,17 @@ $$ G(z_1),G(z_2),\ldots,G(z_M). $$
 
 Then:
 
-1. If $C_L(G)=0$, then $H^{*}(f)=0$.
+1. If $C_L(G)=0$, then $H^{\ast}(f)=0$.
 
-2. If $C_L(G)=1$, then $H^{*}(f)=1$.
+2. If $C_L(G)=1$, then $H^{\ast}(f)=1$.
 
 3. If $C_L(G)=2$, then
 
-   $H^{*}(f) = \begin{cases} 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases}$
+   $H^{\ast}(f) = \begin{cases} 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases}$
 
 4. If $C_L(G)\geq3$, then
 
-   $H^{*}(f) \leq 1+\sum_{r=2}^{\min\lbrace C_L(G),k\rbrace}\binom{k}{r}.$
+   $H^{\ast}(f) \leq 1+\sum_{r=2}^{\min\lbrace C_L(G),k\rbrace}\binom{k}{r}.$
 
 > **Interpretation.** A function of one arbitrary affine statistic is controlled by the number of label changes along that statistic. The first three regimes are exact or exactly reduced to the one-head test; beyond that, the affine-free sparse-polynomial route gives an explicit support-size bound.
 
@@ -84,7 +84,7 @@ $$ \sum_{r=2}^{d}\binom{k}{r}. $$
 
 If the resulting function is nonconstant, the affine-free polynomial-threshold sparsity upper bound [048_affine_free_sparsity_upper_bound.md](048_affine_free_sparsity_upper_bound.md) gives
 
-$$ H^{*}(f) \leq 1+\sum_{r=2}^{d}\binom{k}{r}. $$
+$$ H^{\ast}(f) \leq 1+\sum_{r=2}^{d}\binom{k}{r}. $$
 
 This proves the displayed upper bound whenever $C\geq1$, and in particular for $C\geq3$.
 
@@ -92,7 +92,7 @@ This proves the displayed upper bound whenever $C\geq1$, and in particular for $
 
 If $C=0$, then $G$ is constant on $\mathrm{Im}(L)$, so $f$ is constant and
 
-$$ H^{*}(f)=0. $$
+$$ H^{\ast}(f)=0. $$
 
 If $C=1$, then $G$ changes once along the ordered image. Hence there is a cutpoint $\tau$ such that either
 
@@ -104,7 +104,7 @@ $$ f(x)=\mathbf{1}[L(x)<\tau]. $$
 
 This is a nonconstant LTF, so the one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md) gives
 
-$$ H^{*}(f)=1. $$
+$$ H^{\ast}(f)=1. $$
 
 If $C=2$, then either the true set or the false set is a single affine slab:
 
@@ -112,11 +112,11 @@ $$ \alpha\leq L(x)\leq\beta $$
 
 for suitable $\alpha\leq\beta$. The affine-slab theorem [062_affine_slab_upper_bound.md](062_affine_slab_upper_bound.md), together with complement invariance from [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md), gives
 
-$$ H^{*}(f)\leq2. $$
+$$ H^{\ast}(f)\leq2. $$
 
-If $f$ is a nonconstant LTF, the one-head characterization gives $H^{*}(f)=1$. Otherwise the same characterization gives $H^{*}(f)\geq2$, and the two-head upper bound gives
+If $f$ is a nonconstant LTF, the one-head characterization gives $H^{\ast}(f)=1$. Otherwise the same characterization gives $H^{\ast}(f)\geq2$, and the two-head upper bound gives
 
-$$ H^{*}(f)=2. $$
+$$ H^{\ast}(f)=2. $$
 
 This proves all cases. $\blacksquare$
 
@@ -124,14 +124,14 @@ This proves all cases. $\blacksquare$
 
 The positive-projection sign-change theorem gives the sharper bound
 
-$$ H^{*}(f)\leq C_{+}(f) $$
+$$ H^{\ast}(f)\leq C_{+}(f) $$
 
 when the statistic can be chosen with strictly positive weights. This lemma is the orientation-free fallback for a single affine statistic: mixed signs in $L$ no longer break the route, but for $C\geq3$ the price is the affine-free support bound.
 
 For a statistic using $k$ coordinates and $C$ sign changes, the nonconstant fallback is
 
-$$ H^{*}(f) \leq 1+\sum_{r=2}^{\min\lbrace C,k\rbrace}\binom{k}{r}. $$
+$$ H^{\ast}(f) \leq 1+\sum_{r=2}^{\min\lbrace C,k\rbrace}\binom{k}{r}. $$
 
 The cases $C=1$ and $C=2$ are sharper:
 
-$$ C=1 \Longrightarrow H^{*}(f)=1, \qquad C=2 \Longrightarrow H^{*}(f)\leq2. $$
+$$ C=1 \Longrightarrow H^{\ast}(f)=1, \qquad C=2 \Longrightarrow H^{\ast}(f)\leq2. $$

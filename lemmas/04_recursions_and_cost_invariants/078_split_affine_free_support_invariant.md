@@ -38,7 +38,7 @@ $$ \mathrm{scafs}_{\pm}(f) := \min_{1\leq j\leq n}\mathrm{scafs}_{\pm,j}(f). $$
 
 Then
 
-$$ H^{*}(f)\leq\mathrm{scafs}_{\pm}(f). $$
+$$ H^{\ast}(f)\leq\mathrm{scafs}_{\pm}(f). $$
 
 If
 
@@ -46,7 +46,7 @@ $$ \mathrm{scafs}_{\pm}(f)\leq2, $$
 
 then
 
-$$ H^{*}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
+$$ H^{\ast}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** The cofactor recursion only needs to pay for affine-free structure that is present in the base cofactor, plus coefficients that actually change across the split. Shared nonlinear cofactor terms are not paid twice.
 
@@ -86,16 +86,16 @@ $$ \mathrm{afs}(P) \leq C(P_0,P_1). $$
 
 The affine-free sparsity theorem [048_affine_free_sparsity_upper_bound.md](../03_function_families_and_affine_geometry/048_affine_free_sparsity_upper_bound.md) gives
 
-$$ H^{*}(f)\leq C(P_0,P_1). $$
+$$ H^{\ast}(f)\leq C(P_0,P_1). $$
 
 Minimizing over cofactor sign polynomials and split coordinates proves
 
-$$ H^{*}(f)\leq\mathrm{scafs}_{\pm}(f). $$
+$$ H^{\ast}(f)\leq\mathrm{scafs}_{\pm}(f). $$
 
-If $\mathrm{scafs}_{\pm}(f)\leq2$, then $H^{*}(f)\leq2$. The exact value is now forced by the zero-head and one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md): constants have value $0$, nonconstant LTFs have value $1$, and all remaining functions have value exactly $2$. $\blacksquare$
+If $\mathrm{scafs}_{\pm}(f)\leq2$, then $H^{\ast}(f)\leq2$. The exact value is now forced by the zero-head and one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md): constants have value $0$, nonconstant LTFs have value $1$, and all remaining functions have value exactly $2$. $\blacksquare$
 
 ## Consequences
 
 This invariant sharpens the raw affine-free cofactor recursion. Lemma 75 pays for the full union of nonlinear cofactor supports. The split affine-free support invariant pays only for nonlinear coefficients that already occur in the $z=0$ cofactor and coefficients that actually change across the split.
 
-In particular, if two cofactors share a large sparse sign polynomial and differ only in a few coefficients, then $H^{*}(f)$ is controlled by that shared support plus the small change set.
+In particular, if two cofactors share a large sparse sign polynomial and differ only in a few coefficients, then $H^{\ast}(f)$ is controlled by that shared support plus the small change set.

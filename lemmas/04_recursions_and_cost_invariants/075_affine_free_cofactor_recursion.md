@@ -24,19 +24,19 @@ $$ \mathcal{L}_{\Delta} := \left\lbrace i\in\lbrace1,\ldots,n-1\rbrace: \alpha_{
 
 Then
 
-$$ H^{*}(f) \leq 1 +\lvert\mathcal{N}_0\rvert +\lvert\mathcal{N}_0\cup\mathcal{N}_1\rvert +\lvert\mathcal{L}_{\Delta}\rvert. $$
+$$ H^{\ast}(f) \leq 1 +\lvert\mathcal{N}_0\rvert +\lvert\mathcal{N}_0\cup\mathcal{N}_1\rvert +\lvert\mathcal{L}_{\Delta}\rvert. $$
 
 Consequently, if both cofactors have threshold degree at most $d$, then
 
-$$ H^{*}(f) \leq 1+(n-1) +2\sum_{r=2}^{\min\lbrace d,n-1\rbrace}\binom{n-1}{r}. $$
+$$ H^{\ast}(f) \leq 1+(n-1) +2\sum_{r=2}^{\min\lbrace d,n-1\rbrace}\binom{n-1}{r}. $$
 
 In particular, if both cofactors are constants or linear threshold functions, then
 
-$$ H^{*}(f)\leq n. $$
+$$ H^{\ast}(f)\leq n. $$
 
 Finally, if $f_0$ and $f_1$ have affine sign representations whose linear coefficient vectors differ in at most one coordinate, then
 
-$$ H^{*}(f)\leq2. $$
+$$ H^{\ast}(f)\leq2. $$
 
 In that last case, the exact value is $0$, $1$, or $2$ according as $f$ is constant, a nonconstant linear threshold function, or neither.
 
@@ -74,11 +74,11 @@ Therefore
 
 $$ \mathrm{afs}(P) \leq 1 +\lvert\mathcal{N}_0\rvert +\lvert\mathcal{L}_{\Delta}\rvert +\lvert\mathcal{N}_0\cup\mathcal{N}_1\rvert. $$
 
-Applying the affine-free sparsity theorem gives the same upper bound for $H^{*}(f)$:
+Applying the affine-free sparsity theorem gives the same upper bound for $H^{\ast}(f)$:
 
-$$ H^{*}(f) \leq 1 +\lvert\mathcal{N}_0\rvert +\lvert\mathcal{N}_0\cup\mathcal{N}_1\rvert +\lvert\mathcal{L}_{\Delta}\rvert. $$
+$$ H^{\ast}(f) \leq 1 +\lvert\mathcal{N}_0\rvert +\lvert\mathcal{N}_0\cup\mathcal{N}_1\rvert +\lvert\mathcal{L}_{\Delta}\rvert. $$
 
-For the threshold-degree corollary, choose degree-at-most-$d$ sign polynomials for both cofactors. Then
+For the threshold-degree corollary, choose degree-at-most $d$ sign polynomials for both cofactors. Then
 
 $$ \lvert\mathcal{N}_b\rvert \leq \sum_{r=2}^{\min\lbrace d,n-1\rbrace}\binom{n-1}{r} \qquad (b\in\lbrace0,1\rbrace), $$
 
@@ -88,22 +88,22 @@ $$ \lvert\mathcal{L}_{\Delta}\rvert\leq n-1. $$
 
 Substituting these bounds proves
 
-$$ H^{*}(f) \leq 1+(n-1) +2\sum_{r=2}^{\min\lbrace d,n-1\rbrace}\binom{n-1}{r}. $$
+$$ H^{\ast}(f) \leq 1+(n-1) +2\sum_{r=2}^{\min\lbrace d,n-1\rbrace}\binom{n-1}{r}. $$
 
 If both cofactors are constants or linear threshold functions, take $d=1$. The sum is empty, so
 
-$$ H^{*}(f)\leq n. $$
+$$ H^{\ast}(f)\leq n. $$
 
 Finally, suppose $f_0$ and $f_1$ have affine sign representations whose linear coefficient vectors differ in at most one coordinate. Then
 
 $$ \mathcal{N}_0=\mathcal{N}_1=\varnothing, \qquad \lvert\mathcal{L}_{\Delta}\rvert\leq1. $$
 
-The displayed bound gives $H^{*}(f)\leq2$. The exact $0$, $1$, or $2$ classification follows from the low affine-free support theorem [070_low_affine_free_support_exact.md](../03_function_families_and_affine_geometry/070_low_affine_free_support_exact.md). $\blacksquare$
+The displayed bound gives $H^{\ast}(f)\leq2$. The exact $0$, $1$, or $2$ classification follows from the low affine-free support theorem [070_low_affine_free_support_exact.md](../03_function_families_and_affine_geometry/070_low_affine_free_support_exact.md). $\blacksquare$
 
 ## Consequences
 
 This theorem gives a sharper recursion than the raw sparse-polynomial cofactor bound whenever the cofactor polynomials have many linear terms. In particular, a function whose two slices along one coordinate are LTFs always has a linear head bound:
 
-$$ H^{*}(f)\leq n. $$
+$$ H^{\ast}(f)\leq n. $$
 
 The strongest exact corollary is the one-slope-change case. If the two affine slice separators differ in no slope coordinates, the glued polynomial is affine and $f$ is an LTF. If they differ in one slope coordinate, the glued polynomial is affine plus one quadratic monomial, so the low affine-free support classification gives the exact constant, one-head, or two-head split.

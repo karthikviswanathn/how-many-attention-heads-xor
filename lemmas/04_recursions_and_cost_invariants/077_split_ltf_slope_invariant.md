@@ -26,35 +26,35 @@ $$ \sigma_{\mathrm{split}}(f) := \min_{j:\ j\text{ is an LTF split}}\sigma_j(f).
 
 Then
 
-$$ H^{*}(f) \leq 1+\sigma_{\mathrm{split}}(f). $$
+$$ H^{\ast}(f) \leq 1+\sigma_{\mathrm{split}}(f). $$
 
 In particular, every function with an LTF split satisfies
 
-$$ H^{*}(f)\leq n. $$
+$$ H^{\ast}(f)\leq n. $$
 
 If $\sigma_{\mathrm{split}}(f)=0$, then $f$ is constant or a nonconstant LTF, so
 
-$$ H^{*}(f)\in\lbrace0,1\rbrace. $$
+$$ H^{\ast}(f)\in\lbrace0,1\rbrace. $$
 
 If $\sigma_{\mathrm{split}}(f)\leq1$, then
 
-$$ H^{*}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
+$$ H^{\ast}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** A one-bit branch between two LTF slices is controlled by the best coordinate and the best pair of affine separators. This gives a coordinate-free invariant for the LTF-cofactor regime.
 
 ## Proof
 
-Choose an LTF split $j$ and affine cofactor separators realizing $\sigma_{\mathrm{split}}(f)$. By coordinate permutation invariance from [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md), we may relabel the split coordinate as the first coordinate $z$ without changing $H^{*}$.
+Choose an LTF split $j$ and affine cofactor separators realizing $\sigma_{\mathrm{split}}(f)$. By coordinate permutation invariance from [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md), we may relabel the split coordinate as the first coordinate $z$ without changing $H^{\ast}$.
 
 The LTF cofactor slope-distance theorem [076_ltf_cofactor_slope_distance.md](076_ltf_cofactor_slope_distance.md) applies to this split and gives
 
-$$ H^{*}(f) \leq 1+\sigma_{\mathrm{split}}(f). $$
+$$ H^{\ast}(f) \leq 1+\sigma_{\mathrm{split}}(f). $$
 
-Since a slope-change count is always at most $n-1$, every function with an LTF split satisfies $H^{*}(f)\leq n$.
+Since a slope-change count is always at most $n-1$, every function with an LTF split satisfies $H^{\ast}(f)\leq n$.
 
-If $\sigma_{\mathrm{split}}(f)=0$, Lemma 76 says that $f$ is constant or a nonconstant LTF. The one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md) gives $H^{*}(f)\in\lbrace0,1\rbrace$.
+If $\sigma_{\mathrm{split}}(f)=0$, Lemma 76 says that $f$ is constant or a nonconstant LTF. The one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md) gives $H^{\ast}(f)\in\lbrace0,1\rbrace$.
 
-If $\sigma_{\mathrm{split}}(f)\leq1$, Lemma 76 gives $H^{*}(f)\leq2$. The exact value is then forced by the zero-head and one-head characterization from [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md): constants have value $0$, nonconstant LTFs have value $1$, and all remaining functions have value exactly $2$. $\blacksquare$
+If $\sigma_{\mathrm{split}}(f)\leq1$, Lemma 76 gives $H^{\ast}(f)\leq2$. The exact value is then forced by the zero-head and one-head characterization from [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md): constants have value $0$, nonconstant LTFs have value $1$, and all remaining functions have value exactly $2$. $\blacksquare$
 
 ## Consequences
 

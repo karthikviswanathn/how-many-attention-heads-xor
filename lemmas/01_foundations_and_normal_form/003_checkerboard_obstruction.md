@@ -12,7 +12,7 @@ for some $c \in \lbrace0,1\rbrace$.
 
 Then $f$ cannot be computed with one head, so
 
-$$ H^{*}(f)  \geq  2. $$
+$$ H^{\ast}(f)  \geq  2. $$
 
 > **Equivalently.** Any function containing a 2-bit checkerboard restriction has head complexity at least $2$: one head cannot separate one diagonal of a restricted 2-cube from the other diagonal.
 
@@ -60,6 +60,6 @@ Therefore no single head can realize a checkerboard restriction. $\blacksquare$
 
 Any function with such a restriction must satisfy
 
-$$ H^{*}(f)  \geq  2. $$
+$$ H^{\ast}(f)  \geq  2. $$
 
-This is the core lower-bound mechanism currently available in the softmax-attention model. The exact one-head characterization [011_one_head_characterization.md](011_one_head_characterization.md) strengthens it: $H^{*}(f) \leq 1$ holds if and only if $f$ is a linear threshold function, and a checkerboard restriction is not linearly separable.
+This is the core lower-bound mechanism currently available in the softmax-attention model. The exact one-head characterization [011_one_head_characterization.md](011_one_head_characterization.md) strengthens it: $H^{\ast}(f) \leq 1$ holds if and only if $f$ is a linear threshold function, and a checkerboard restriction is not linearly separable.

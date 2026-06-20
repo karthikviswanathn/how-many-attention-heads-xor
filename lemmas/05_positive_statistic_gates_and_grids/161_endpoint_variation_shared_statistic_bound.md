@@ -12,7 +12,7 @@ $$ q(a):=F_a(\tau_0), \qquad p(a):=F_a(\tau_{M-1}). $$
 
 Then
 
-$$ H^{*}(f) \leq \sum_a C_a+\min\lbrace C_{+}(p),C_{+}(q)\rbrace+D(p,q), $$
+$$ H^{\ast}(f) \leq \sum_a C_a+\min\lbrace C_{+}(p),C_{+}(q)\rbrace+D(p,q), $$
 
 where
 
@@ -24,7 +24,7 @@ $$ K_p:= \begin{cases} 0, & q_p=0,\\ 2q_p-\epsilon^p_0-\epsilon^p_1, & q_p\geq1.
 
 Define $K_q$ analogously if $q$ has such a run certificate. If both certificates are available, then
 
-$$ H^{*}(f) \leq \sum_a C_a+\min\lbrace K_p,K_q\rbrace+D(p,q). $$
+$$ H^{\ast}(f) \leq \sum_a C_a+\min\lbrace K_p,K_q\rbrace+D(p,q). $$
 
 > **Interpretation.** The endpoint coupling can be bounded by ordinary raw endpoint variation plus the number of slices whose two endpoints disagree. Few-run endpoint functions give a concrete version of the bound.
 
@@ -32,7 +32,7 @@ $$ H^{*}(f) \leq \sum_a C_a+\min\lbrace K_p,K_q\rbrace+D(p,q). $$
 
 The shared-statistic slice sandwich [158_shared_statistic_slice_sandwich.md](158_shared_statistic_slice_sandwich.md) gives
 
-$$ H^{*}(f) \leq \sum_a C_a+B_{+}(p,q). $$
+$$ H^{\ast}(f) \leq \sum_a C_a+B_{+}(p,q). $$
 
 The mixed boundary inequality [153_mixed_boundary_inequality.md](153_mixed_boundary_inequality.md) gives
 

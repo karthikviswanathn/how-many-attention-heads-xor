@@ -12,7 +12,7 @@ $$ P(z,y)=p_0+p_1t(y)+p_2t(y)^2+q_0z+q_1z  t(y). $$
 
 Then
 
-$$ H^{*}(f)\leq2. $$
+$$ H^{\ast}(f)\leq2. $$
 
 > **Interpretation.** Any strict quadratic threshold in one positive statistic and one raw bit has a two-head certificate.
 

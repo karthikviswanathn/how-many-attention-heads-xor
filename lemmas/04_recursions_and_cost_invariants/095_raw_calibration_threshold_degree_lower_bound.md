@@ -32,11 +32,11 @@ $$ \max\lbrace\rho(T_1),\rho(T_2)\rbrace \geq \frac{\deg_{\pm}(f)}{2}. $$
 
 The raw-calibrated vote support bound [093_raw_calibrated_vote_support_bound.md](093_raw_calibrated_vote_support_bound.md) gives
 
-$$ H^{*}(f) \leq \sum_{j:c_j\neq0}\rho(T_j). $$
+$$ H^{\ast}(f) \leq \sum_{j:c_j\neq0}\rho(T_j). $$
 
 The threshold-degree lower bound [006_threshold_degree_head_complexity_bound.md](../01_foundations_and_normal_form/006_threshold_degree_head_complexity_bound.md) gives
 
-$$ \deg_{\pm}(f)\leq H^{*}(f). $$
+$$ \deg_{\pm}(f)\leq H^{\ast}(f). $$
 
 Combining the two inequalities proves
 
@@ -58,6 +58,6 @@ $\blacksquare$
 
 ## Consequences
 
-Sherstov's linear threshold-degree lower bounds for intersections of two halfspaces imply that some halfspaces have large raw calibration cost $\rho$. Otherwise the conjunction of two arbitrary halfspaces would have small $H^{*}$ by Lemma 93, contradicting the threshold-degree lower bound.
+Sherstov's linear threshold-degree lower bounds for intersections of two halfspaces imply that some halfspaces have large raw calibration cost $\rho$. Otherwise the conjunction of two arbitrary halfspaces would have small $H^{\ast}$ by Lemma 93, contradicting the threshold-degree lower bound.
 
-This is why the surviving decision-list target after Lemma 94 is not a bound depending only on length. The target is to classify low-$\rho$ test families and to prove $\rho$ lower bounds for hard internal tests.
+This is why the surviving decision-list target after Lemma 94 is not a bound depending only on length. The target is to classify low $\rho$ test families and to prove $\rho$ lower bounds for hard internal tests.

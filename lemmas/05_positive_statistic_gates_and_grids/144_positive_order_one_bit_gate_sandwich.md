@@ -8,15 +8,15 @@ $$ H_G(z,y):=G(z,f(y)). $$
 
 Then:
 
-1. if $G$ is constant, then $H^{*}(H_G)=0$;
-2. if $G$ is a raw-bit literal, then $H^{*}(H_G)=1$;
+1. if $G$ is constant, then $H^{\ast}(H_G)=0$;
+2. if $G$ is a raw-bit literal, then $H^{\ast}(H_G)=1$;
 3. if $f$ is nonconstant and $G$ is XOR or XNOR, then
 
-$$ \deg_{\pm}(f)+1 \leq H^{*}(H_G) \leq C_{+}(f)+1; $$
+$$ \deg_{\pm}(f)+1 \leq H^{\ast}(H_G) \leq C_{+}(f)+1; $$
 
 4. if $f$ is nonconstant and $G$ is any other feature-dependent gate, then
 
-$$ \deg_{\pm}(f) \leq H^{*}(H_G) \leq C_{+}(f). $$
+$$ \deg_{\pm}(f) \leq H^{\ast}(H_G) \leq C_{+}(f). $$
 
 For constant $f$, the same table reduces to the exact constant or raw-bit literal cases.
 
@@ -36,16 +36,16 @@ $$ f(y)=F(t(y)) $$
 
 and the ordered label sequence of $F$ has exactly $C_{+}(f)$ sign changes.
 
-Apply the positive-statistic one-bit gate sandwich [143_positive_statistic_one_bit_gate_sandwich.md](143_positive_statistic_one_bit_gate_sandwich.md) to $T=f$ and $C=C_{+}(f)$. The lower bounds are the one-bit gate threshold-degree trichotomy and the general inequality $\deg_{\pm}\leq H^{*}$; the upper bounds are Lemmas 139 and 140 optimized over the positive projection. $\blacksquare$
+Apply the positive-statistic one-bit gate sandwich [143_positive_statistic_one_bit_gate_sandwich.md](143_positive_statistic_one_bit_gate_sandwich.md) to $T=f$ and $C=C_{+}(f)$. The lower bounds are the one-bit gate threshold-degree trichotomy and the general inequality $\deg_{\pm}\leq H^{\ast}$; the upper bounds are Lemmas 139 and 140 optimized over the positive projection. $\blacksquare$
 
 ## Consequence
 
 The desired recursion
 
-$$ H^{*}(z\oplus f)\leq H^{*}(f)+1 $$
+$$ H^{\ast}(z\oplus f)\leq H^{\ast}(f)+1 $$
 
-holds for every function with $H^{*}(f)=C_{+}(f)$. More generally, this lemma gives the proved fallback
+holds for every function with $H^{\ast}(f)=C_{+}(f)$. More generally, this lemma gives the proved fallback
 
-$$ H^{*}(z\oplus f)\leq C_{+}(f)+1 $$
+$$ H^{\ast}(z\oplus f)\leq C_{+}(f)+1 $$
 
 for every Boolean function $f$.

@@ -24,7 +24,7 @@ Source: [arXiv](https://arxiv.org/abs/2404.04393)
 
 Yang and Chiang show that temporal counting logic formulas can be compiled into future-masked soft attention transformers.
 
-**Why it matters here.** This is the strongest nearby evidence that softmax attention is naturally suited to count-like constructions. It supports trying to upper-bound $H^{*}(f)$ by the complexity of a small collection of counting statistics rather than by generic universality arguments.
+**Why it matters here.** This is the strongest nearby evidence that softmax attention is naturally suited to count-like constructions. It supports trying to upper-bound $H^{\ast}(f)$ by the complexity of a small collection of counting statistics rather than by generic universality arguments.
 
 ### 3. Kajitsuka and Sato 2024. Are Transformers with One Layer Self-Attention Using Low-Rank Weight Matrices Universal Approximators?
 
@@ -68,7 +68,7 @@ $$ O(n^{1/3} \log s). $$
 
 **Why it matters here.** This is exactly the kind of structural upper bound one would like to import into head complexity. Right now we only know
 
-$$ \deg_{\pm}(f) \leq H^{*}(f), $$
+$$ \deg_{\pm}(f) \leq H^{\ast}(f), $$
 
 not the reverse implication. But if some partial converse is ever proved for the attention model, this paper would immediately turn sparse DNF formulas into strong head upper bounds.
 
@@ -88,7 +88,7 @@ Source: [arXiv](https://arxiv.org/abs/2310.08004)
 
 Iyer, Jain, Kothari, Kovacs-Deak, Kumar, Schaeffer, Wang, and Whitmeyer study exact rational degree. They show, among other things, that symmetric and unate families have substantial rational degree, and they derive bounds for read-once formulas.
 
-**Why it matters here.** Our model naturally produces sums of ratios of affine functions, so rational degree is a more native comparison measure than polynomial degree alone. This paper is the strongest indication that rational representations should stay in view as a candidate invariant for upper and lower bounds on $H^{*}(f)$.
+**Why it matters here.** Our model naturally produces sums of ratios of affine functions, so rational degree is a more native comparison measure than polynomial degree alone. This paper is the strongest indication that rational representations should stay in view as a candidate invariant for upper and lower bounds on $H^{\ast}(f)$.
 
 ### Immediate Lessons For This Repo
 
@@ -115,7 +115,7 @@ Most transformer expressivity papers study a different regime. Typical differenc
 - approximation or language recognition rather than exact Boolean computation,
 - depth or precision as the main resource rather than the number of heads.
 
-So the literature is useful mainly for orientation, candidate invariants, and construction ideas, not as a direct answer to the quantity $H^{*}(f)$ from [problem_statement.md](problem_statement.md) and [model.md](model.md).
+So the literature is useful mainly for orientation, candidate invariants, and construction ideas, not as a direct answer to the quantity $H^{\ast}(f)$ from [problem_statement.md](problem_statement.md) and [model.md](model.md).
 
 ## Broad Expressivity And Universality
 
@@ -203,7 +203,7 @@ Source: [arXiv](https://arxiv.org/abs/2602.05896)
 
 Kozachinskiy, Steifer, and Wałȩga give a parity construction for softmax transformers with length-independent positional encodings and no layer normalization, and they also prove a lower bound showing that parity cannot be solved with one layer and one head.
 
-**Relevance.** This is very close in spirit to the repo. It directly studies parity and a shallow transformer setting. However, it still does not compute the exact quantity $H^{*}(\mathrm{XOR}_n)$ for the model in [model.md](model.md), and it does not give a general upper-bound invariant for arbitrary Boolean functions.
+**Relevance.** This is very close in spirit to the repo. It directly studies parity and a shallow transformer setting. However, it still does not compute the exact quantity $H^{\ast}(\mathrm{XOR}_n)$ for the model in [model.md](model.md), and it does not give a general upper-bound invariant for arbitrary Boolean functions.
 
 ## What Seems Missing Relative To This Repo
 
@@ -211,15 +211,15 @@ The survey suggests three gaps.
 
 1. I did not find a prior paper that directly studies the exact minimum head count
 
-$$ H^{*}(f) $$
+$$ H^{\ast}(f) $$
 
 for the one-layer attention-only model from [model.md](model.md).
 
 2. Existing upper bounds are usually too coarse for our purpose. They are about universality, Turing-completeness, or logical definability, not exact head complexity on a fixed cube.
 
-3. Existing lower bounds are often asymptotic in input length. They do not automatically convert into finite-$n$ exact statements like
+3. Existing lower bounds are often asymptotic in input length. They do not automatically convert into finite $n$ exact statements like
 
-$$ H^{*}(\mathrm{XOR}_n) = n. $$
+$$ H^{\ast}(\mathrm{XOR}_n) = n. $$
 
 ## Working Takeaway For Upper Bounds
 
@@ -237,6 +237,6 @@ That is the route taken in [lemmas/01_foundations_and_normal_form/009_weighted_s
 - a clean $n$-head upper bound for all symmetric Boolean functions,
 - a universal bound
 
-$$ H^{*}(f) \leq 2^n - 1 $$
+$$ H^{\ast}(f) \leq 2^n - 1 $$
 
 by taking binary weights.

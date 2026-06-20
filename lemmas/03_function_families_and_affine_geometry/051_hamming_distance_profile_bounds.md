@@ -20,7 +20,7 @@ $$ U_m(C) := \begin{cases} 0 & \text{if } C=0,\\ 1+m+\sum_{r=2}^{C}3^r\binom{m}{
 
 Then
 
-$$ C(F) \leq H^{*}(g_F) \leq U_m(C(F)). $$
+$$ C(F) \leq H^{\ast}(g_F) \leq U_m(C(F)). $$
 
 > **Interpretation.** Hamming-distance profiles have the same symmetric sign-change lower bound as ordinary symmetric functions, by restricting one string to zero. The upper bound is less efficient than the intersection-profile bound because each distance bit $x_i\oplus y_i$ expands into three monomials, but all linear terms still cost only one affine head.
 
@@ -46,7 +46,7 @@ $$ F(0),F(1),\ldots,F(m). $$
 
 By the symmetric sign-change theorem [012_symmetric_sign_changes.md](../01_foundations_and_normal_form/012_symmetric_sign_changes.md), the restricted function has head complexity $C(F)$. Restriction monotonicity from [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md) gives
 
-$$ H^{*}(g_F)\geq C(F). $$
+$$ H^{\ast}(g_F)\geq C(F). $$
 
 ### Lemma 2. A degree-C(F) sign polynomial in distance
 
@@ -80,7 +80,7 @@ Set
 
 $$ z_i:=x_i\oplus y_i=x_i+y_i-2x_i y_i. $$
 
-If $C(F)=0$, then $F$ is constant and $g_F$ is constant, so $H^{*}(g_F)=0$.
+If $C(F)=0$, then $F$ is constant and $g_F$ is constant, so $H^{\ast}(g_F)=0$.
 
 Assume $C(F)\geq1$. By Lemma 2, $R(z_1+\cdots+z_m)$ sign-represents $g_F$ and has degree at most $C(F)$ in the variables $z_i$. After reducing modulo $z_i^2=z_i$, it is a linear combination of products
 
@@ -108,7 +108,7 @@ $$ 1+m+\sum_{r=2}^{C(F)}3^r\binom{m}{r}. $$
 
 Applying the affine-free polynomial-threshold sparsity upper bound [048_affine_free_sparsity_upper_bound.md](048_affine_free_sparsity_upper_bound.md) gives
 
-$$ H^{*}(g_F) \leq 1+m+\sum_{r=2}^{C(F)}3^r\binom{m}{r} = U_m(C(F)). $$
+$$ H^{\ast}(g_F) \leq 1+m+\sum_{r=2}^{C(F)}3^r\binom{m}{r} = U_m(C(F)). $$
 
 Together with Lemma 1 and the constant case, this proves the theorem. $\blacksquare$
 
@@ -122,11 +122,11 @@ $$ \mathrm{HDTH}_{m,t}(x,y) := \mathbf{1}[\Delta(x,y)\geq t]. $$
 
 Then
 
-$$ H^{*}(\mathrm{HDTH}_{1,1})=2, $$
+$$ H^{\ast}(\mathrm{HDTH}_{1,1})=2, $$
 
 and for $m\geq2$,
 
-$$ 2\leq H^{*}(\mathrm{HDTH}_{m,t})\leq m+1. $$
+$$ 2\leq H^{\ast}(\mathrm{HDTH}_{m,t})\leq m+1. $$
 
 **Proof.** The upper bound is the theorem with one sign change, so $U_m(1)=m+1$.
 
@@ -138,7 +138,7 @@ on the free pair. Exact two-bit parity gives head complexity $2$, so restriction
 
 When $m=1$ and $t=1$, the function is exactly $\mathrm{XOR}_2$, so the exact parity theorem gives
 
-$$ H^{*}(\mathrm{HDTH}_{1,1})=2. $$
+$$ H^{\ast}(\mathrm{HDTH}_{1,1})=2. $$
 
 $\blacksquare$
 
@@ -150,6 +150,6 @@ $$ \mathrm{EQ}_m(x,y)=\mathbf{1}[\Delta(x,y)=0]. $$
 
 Here $C(F)=1$, so the theorem gives
 
-$$ H^{*}(\mathrm{EQ}_m)\leq m+1. $$
+$$ H^{\ast}(\mathrm{EQ}_m)\leq m+1. $$
 
 The sharper equality bracket and threshold-degree statement are recorded in [049_equality_bounds.md](049_equality_bounds.md).

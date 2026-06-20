@@ -62,6 +62,6 @@ so the criterion gives $\deg_{\pm}(f)\leq n-1$.
 
 Combined with [030_threshold_degree_span_schema.md](030_threshold_degree_span_schema.md), the criterion gives a concrete upper-bound pipeline:
 
-$$ \lVert T_{>d}\rVert_{\infty}<1 \qquad\Longrightarrow\qquad \deg_{\pm}(f)\leq d \qquad\Longrightarrow\qquad H^{*}(f)\leq H $$
+$$ \lVert T_{>d}\rVert_{\infty}<1 \qquad\Longrightarrow\qquad \deg_{\pm}(f)\leq d \qquad\Longrightarrow\qquad H^{\ast}(f)\leq H $$
 
-whenever a degree-$d$ span certificate with $H$ heads is available.
+whenever a degree $d$ span certificate with $H$ heads is available.

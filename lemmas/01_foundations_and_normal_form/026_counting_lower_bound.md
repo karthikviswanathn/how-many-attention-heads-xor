@@ -4,7 +4,7 @@
 
 Let
 
-$$ W(n) := \max_{f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace} H^{*}(f). $$
+$$ W(n) := \max_{f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace} H^{\ast}(f). $$
 
 Then
 
@@ -70,7 +70,7 @@ $$ N=2^n, \qquad d=H+1, \qquad p=1+2H(n+1). $$
 
 When $N\geq p$, Lemma 1 gives
 
-$$ \lvert\lbrace f : H^{*}(f)\leq H\rbrace\rvert \leq \left( \frac{4e(H+1)2^n}{1+2H(n+1)} \right)^{1+2H(n+1)}. $$
+$$ \lvert\lbrace f : H^{\ast}(f)\leq H\rbrace\rvert \leq \left( \frac{4e(H+1)2^n}{1+2H(n+1)} \right)^{1+2H(n+1)}. $$
 
 When $N<p$, the trivial bound $2^N$ is enough for the asymptotic conclusion below, because $p>N$ already implies
 
@@ -80,11 +80,11 @@ $$ H > \frac{2^n-1}{2(n+1)}. $$
 
 Assume first that $1\leq H\leq 2^n$ and $N\geq p$. Since $p=O(nH)$ and $d=H+1\leq 2^{n}+1$, the logarithm of the Warren factor is $O(n)$. Therefore
 
-$$ \log_2 \lvert\lbrace f : H^{*}(f)\leq H\rbrace\rvert \leq O(n^2H). $$
+$$ \log_2 \lvert\lbrace f : H^{\ast}(f)\leq H\rbrace\rvert \leq O(n^2H). $$
 
 Equivalently,
 
-$$ \lvert\lbrace f : H^{*}(f)\leq H\rbrace\rvert \leq 2^{O(n^2H)}. $$
+$$ \lvert\lbrace f : H^{\ast}(f)\leq H\rbrace\rvert \leq 2^{O(n^2H)}. $$
 
 If $N<p$, then $H=\Omega(2^n/n)$, so the trivial bound $2^{2^n}$ is also at most $2^{O(n^2H)}$. Hence the same estimate holds for every $1\leq H\leq 2^n$.
 
@@ -102,7 +102,7 @@ $$ 2^{O(n^2H)} = 2^{o(2^n)} $$
 
 is a vanishing fraction of all Boolean functions. More explicitly, for some absolute constant $c>0$, the fraction of $n$-bit Boolean functions with
 
-$$ H^{*}(f) \leq c\frac{2^n}{n^2} $$
+$$ H^{\ast}(f) \leq c\frac{2^n}{n^2} $$
 
 is at most $2^{-\Omega(2^n)}$. Thus almost every $n$-bit Boolean function requires $\Omega(2^n/n^2)$ heads.
 
@@ -124,4 +124,4 @@ For the finite range $3\leq n\leq 12$, the compact determinant certificates impr
 
 $$ W(n) \leq \left\lceil \frac{2^n-1}{n} \right\rceil. $$
 
-This counting lemma does not identify the exact invariant $H^{*}(f)$. It shows that any exact invariant must be able to take exponentially large values on typical Boolean functions.
+This counting lemma does not identify the exact invariant $H^{\ast}(f)$. It shows that any exact invariant must be able to take exponentially large values on typical Boolean functions.

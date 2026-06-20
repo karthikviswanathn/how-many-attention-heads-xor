@@ -12,15 +12,15 @@ $$ P(a,y)=p_a(t(y)) $$
 
 is a univariate polynomial in $t(y)$ of degree at most $d_a$. Choose positive raw weights $\rho_1,\ldots,\rho_k$ with distinct subset sums, and let $J_{\rho}(f)$ be the actual boundary-jump count from Lemma 147 for the slice functions of $f$ along this raw order. Then
 
-$$ H^{*}(f) \leq \sum_{a\in\lbrace0,1\rbrace^{k}}d_a+J_{\rho}(f). $$
+$$ H^{\ast}(f) \leq \sum_{a\in\lbrace0,1\rbrace^{k}}d_a+J_{\rho}(f). $$
 
 Consequently,
 
-$$ H^{*}(f) \leq \sum_{a\in\lbrace0,1\rbrace^{k}}d_a + \min_{\rho}J_{\rho}(f). $$
+$$ H^{\ast}(f) \leq \sum_{a\in\lbrace0,1\rbrace^{k}}d_a + \min_{\rho}J_{\rho}(f). $$
 
 If $P$ has degree at most $d$ in the quantities $t(y),z_1,\ldots,z_k$, reduced multilinearly in the raw bits, then
 
-$$ H^{*}(f) \leq 2^k d+\min_{\rho}J_{\rho}(f). $$
+$$ H^{\ast}(f) \leq 2^k d+\min_{\rho}J_{\rho}(f). $$
 
 > **Interpretation.** Degree controls the variation inside each raw slice, while the ordered-slice proof keeps the exact boundary price instead of paying the coarse $2^k-1$ term.
 
@@ -42,7 +42,7 @@ $$ C_a\leq d_a. $$
 
 The ordered common positive-statistic slice bound [147_ordered_common_positive_statistic_slice_bound.md](147_ordered_common_positive_statistic_slice_bound.md) gives
 
-$$ H^{*}(f) \leq \sum_a C_a+J_{\rho}(f) \leq \sum_a d_a+J_{\rho}(f). $$
+$$ H^{\ast}(f) \leq \sum_a C_a+J_{\rho}(f) \leq \sum_a d_a+J_{\rho}(f). $$
 
 Minimizing over $\rho$ proves the second displayed bound.
 

@@ -44,7 +44,7 @@ $$ N_G:=\left\lvert\lbrace a:g_0(a)\neq g_1(a)\rbrace\right\rvert. $$
 
 Then
 
-$$ H^{*}\bigl(G(z,T(y))\bigr) \leq N_G C+B_{+}(g_{e_{\max}},g_{e_{\min}}). $$
+$$ H^{\ast}\bigl(G(z,T(y))\bigr) \leq N_G C+B_{+}(g_{e_{\max}},g_{e_{\min}}). $$
 
 > **Interpretation.** For a multi-raw gate over one positive-statistic feature, the boundary term depends only on the two endpoint raw functions seen at the end and the beginning of each feature slice.
 
@@ -70,7 +70,7 @@ $$ B_{\rho}(g_{e_{\max}},g_{e_{\min}}). $$
 
 Applying the ordered common positive-statistic slice bound [147_ordered_common_positive_statistic_slice_bound.md](147_ordered_common_positive_statistic_slice_bound.md) gives
 
-$$ H^{*}\bigl(G(z,T(y))\bigr) \leq N_GC+B_{\rho}(g_{e_{\max}},g_{e_{\min}}). $$
+$$ H^{\ast}\bigl(G(z,T(y))\bigr) \leq N_GC+B_{\rho}(g_{e_{\max}},g_{e_{\min}}). $$
 
 Minimizing over $\rho$ proves the claim. $\blacksquare$
 

@@ -4,39 +4,39 @@
 
 This note records reusable structural facts.
 
-First, $H^{*}$ is monotone under restrictions. If $g$ is obtained from
+First, $H^{\ast}$ is monotone under restrictions. If $g$ is obtained from
 
 $$ f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace $$
 
 by fixing some input coordinates, then
 
-$$ H^{*}(g) \leq H^{*}(f). $$
+$$ H^{\ast}(g) \leq H^{\ast}(f). $$
 
 Consequently, if some restriction of $f$ is $k$-bit parity or its complement, then
 
-$$ H^{*}(f) \geq k. $$
+$$ H^{\ast}(f) \geq k. $$
 
-Second, adjoining dummy variables does not change $H^{*}$. If
+Second, adjoining dummy variables does not change $H^{\ast}$. If
 
 $$ F(x,y)=f(x) $$
 
 where $y$ is a block of dummy input bits, then
 
-$$ H^{*}(F)=H^{*}(f). $$
+$$ H^{\ast}(F)=H^{\ast}(f). $$
 
-Consequently, if $f$ is a $k$-junta, then $H^{*}(f)$ is exactly the head complexity of the induced function on its essential $k$ variables.
+Consequently, if $f$ is a $k$-junta, then $H^{\ast}(f)$ is exactly the head complexity of the induced function on its essential $k$ variables.
 
-Third, $H^{*}$ controls sign-rank under every input partition. Let $I\sqcup J=\lbrace1,\ldots,n\rbrace$, and write inputs as $(u,v)\in\lbrace0,1\rbrace^{I}\times\lbrace0,1\rbrace^{J}$. Let $\Sigma_f^{I,J}$ be the sign matrix
+Third, $H^{\ast}$ controls sign-rank under every input partition. Let $I\sqcup J=\lbrace1,\ldots,n\rbrace$, and write inputs as $(u,v)\in\lbrace0,1\rbrace^{I}\times\lbrace0,1\rbrace^{J}$. Let $\Sigma_f^{I,J}$ be the sign matrix
 
 $$ \Sigma_f^{I,J}(u,v) := \begin{cases} +1 & \text{if } f(u,v)=1, \\ -1 & \text{if } f(u,v)=0. \end{cases} $$
 
-Let $\mathrm{srank}_{I,J}(f)$ be its sign-rank, namely the minimum rank of a real matrix with the same strict sign pattern as $\Sigma_f^{I,J}$. If $H=H^{*}(f)$, then
+Let $\mathrm{srank}_{I,J}(f)$ be its sign-rank, namely the minimum rank of a real matrix with the same strict sign pattern as $\Sigma_f^{I,J}$. If $H=H^{\ast}(f)$, then
 
 $$ \mathrm{srank}_{I,J}(f) \leq \sum_{r=0}^{H} \sum_{i=0}^{r} \binom{\lvert I\rvert}{i} \binom{\lvert J\rvert}{r-i}, $$
 
 where binomial coefficients outside their natural range are interpreted as $0$. Equivalently,
 
-$$ H^{*}(f) \geq \min\left\lbrace H : \mathrm{srank}_{I,J}(f) \leq \sum_{r=0}^{H} \sum_{i=0}^{r} \binom{\lvert I\rvert}{i} \binom{\lvert J\rvert}{r-i} \right\rbrace. $$
+$$ H^{\ast}(f) \geq \min\left\lbrace H : \mathrm{srank}_{I,J}(f) \leq \sum_{r=0}^{H} \sum_{i=0}^{r} \binom{\lvert I\rvert}{i} \binom{\lvert J\rvert}{r-i} \right\rbrace. $$
 
 By Vandermonde's identity, the double sum is also
 
@@ -50,9 +50,9 @@ $$ \sum_{r=0}^{H}\binom{n}{r}. $$
 
 Let $g$ be obtained from $f$ by fixing coordinates outside a set $K\subseteq\lbrace1,\ldots,n\rbrace$.
 
-Take an optimal $H^{*}(f)$-head linear-fractional representation of $f$:
+Take an optimal $H^{\ast}(f)$-head linear-fractional representation of $f$:
 
-$$ c+\sum_{h=1}^{H^{*}(f)}\phi_h(x). $$
+$$ c+\sum_{h=1}^{H^{\ast}(f)}\phi_h(x). $$
 
 Each atom has the form
 
@@ -64,11 +64,11 @@ $$ \gamma_h' +\sum_{i\in K}\rho_{h,i}\alpha_h^{x_i}, \qquad \gamma_h' := \gamma_
 
 Since $\gamma_h'>0$, this is again a valid atom denominator in the remaining variables. The numerator is transformed in the same way by absorbing the fixed-coordinate contributions into a new constant $\eta_h'$. Thus each restricted atom is still a one-head atom.
 
-Therefore the restricted score computes $g$ using at most $H^{*}(f)$ heads, and
+Therefore the restricted score computes $g$ using at most $H^{\ast}(f)$ heads, and
 
-$$ H^{*}(g) \leq H^{*}(f). $$
+$$ H^{\ast}(g) \leq H^{\ast}(f). $$
 
-If a restriction of $f$ is $k$-bit parity or its complement, then the restricted function has head complexity $k$ by the exact parity theorem and complement invariance from Lemma 3 below. Restriction monotonicity gives $H^{*}(f)\geq k$. $\blacksquare$
+If a restriction of $f$ is $k$-bit parity or its complement, then the restricted function has head complexity $k$ by the exact parity theorem and complement invariance from Lemma 3 below. Restriction monotonicity gives $H^{\ast}(f)\geq k$. $\blacksquare$
 
 ### Lemma 2. Dummy variables do not change head complexity
 
@@ -78,11 +78,11 @@ $$ F(x,y):=f(x) $$
 
 on $\lbrace0,1\rbrace^{k+r}$. We prove
 
-$$ H^{*}(F)=H^{*}(f). $$
+$$ H^{\ast}(F)=H^{\ast}(f). $$
 
 The lower bound follows from restriction monotonicity by fixing the dummy block $y$ to any value.
 
-For the upper bound, let $H:=H^{*}(f)$. If $H=0$, then $f$ is constant and so is $F$. Assume $H\geq1$.
+For the upper bound, let $H:=H^{\ast}(f)$. If $H=0$, then $f$ is constant and so is $F$. Assume $H\geq1$.
 
 Take an $H$-atom score for $f$:
 
@@ -114,23 +114,23 @@ $$ \lvert S_{\varepsilon}(x,y)-S(x)\rvert<\frac{\Delta}{2} $$
 
 for every $(x,y)$. Then $S_{\varepsilon}(x,y)$ has the same sign as $S(x)$ for every $(x,y)$, so it computes $F$. Therefore
 
-$$ H^{*}(F)\leq H^{*}(f). $$
+$$ H^{\ast}(F)\leq H^{\ast}(f). $$
 
 Together with the lower bound, this proves equality. $\blacksquare$
 
 ### Lemma 3. Complement and global coordinate symmetries
 
-Complements preserve $H^{*}$. If a score $S(x)$ computes $f$ by
+Complements preserve $H^{\ast}$. If a score $S(x)$ computes $f$ by
 
 $$ f(x)=1 \qquad\Longleftrightarrow\qquad S(x)>0, $$
 
 then $-S(x)$ computes $1-f$ with the same heads. Hence
 
-$$ H^{*}(1-f)=H^{*}(f). $$
+$$ H^{\ast}(1-f)=H^{\ast}(f). $$
 
-Permuting input coordinates also preserves $H^{*}$, because a coordinate permutation just relabels the positional embeddings in the construction.
+Permuting input coordinates also preserves $H^{\ast}$, because a coordinate permutation just relabels the positional embeddings in the construction.
 
-Global bit flip also preserves $H^{*}$. To see this in the normal form, let
+Global bit flip also preserves $H^{\ast}$. To see this in the normal form, let
 
 $$ \phi(x) := \frac{ \eta+\sum_{i=1}^{n}\rho_i\alpha^{x_i}(m_i+\delta x_i) }{ \gamma+\sum_{i=1}^{n}\rho_i\alpha^{x_i} } $$
 
@@ -144,7 +144,7 @@ $$ \alpha':=\alpha^{-1}, \qquad \rho_i':=\rho_i\alpha, \qquad m_i':=m_i+\delta, 
 
 Thus every atom remains an atom after replacing every input bit by its complement. Therefore
 
-$$ H^{*}(x\mapsto f(1-x))=H^{*}(f). $$
+$$ H^{\ast}(x\mapsto f(1-x))=H^{\ast}(f). $$
 
 $\blacksquare$
 
@@ -176,22 +176,22 @@ Since $M_P$ has the same strict sign pattern as $\Sigma_f^{I,J}$, the definition
 
 $$ \mathrm{srank}_{I,J}(f) \leq \mathrm{rank}(M_P) \leq \sum_{r=0}^{H} \sum_{i=0}^{r} \binom{\lvert I\rvert}{i} \binom{\lvert J\rvert}{r-i}. $$
 
-Taking $H=H^{*}(f)$ and rearranging gives the claimed lower bound. $\blacksquare$
+Taking $H=H^{\ast}(f)$ and rearranging gives the claimed lower bound. $\blacksquare$
 
 ## Consequence
 
 The restriction part gives a simple exact obstruction:
 
-$$ \text{parity restriction on } k \text{ free bits} \qquad\Longrightarrow\qquad H^{*}(f)\geq k. $$
+$$ \text{parity restriction on } k \text{ free bits} \qquad\Longrightarrow\qquad H^{\ast}(f)\geq k. $$
 
 The dummy-variable part gives exact junta reduction. If $f$ is a $k$-junta and $f_{\mathrm{ess}}$ is its induced function on the essential variables, then
 
-$$ H^{*}(f)=H^{*}(f_{\mathrm{ess}}). $$
+$$ H^{\ast}(f)=H^{\ast}(f_{\mathrm{ess}}). $$
 
 Thus every exact classification or universal upper bound for $k$ input variables applies unchanged to $k$-juntas in any larger ambient cube.
 
 The sign-rank part gives a communication-complexity lower-bound route. For any partition $I\sqcup J$,
 
-$$ H^{*}(f) \geq \min\left\lbrace H : \mathrm{srank}_{I,J}(f) \leq \sum_{r=0}^{H}\binom{n}{r} \right\rbrace. $$
+$$ H^{\ast}(f) \geq \min\left\lbrace H : \mathrm{srank}_{I,J}(f) \leq \sum_{r=0}^{H}\binom{n}{r} \right\rbrace. $$
 
 This is weaker than the counting lower bound for a random function, but it is constructive: a single explicit high-sign-rank partition matrix certifies a concrete lower bound for that function.

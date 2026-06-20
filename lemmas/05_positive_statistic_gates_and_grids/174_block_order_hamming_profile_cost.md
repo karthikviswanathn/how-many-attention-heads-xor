@@ -20,7 +20,7 @@ $$ \mathrm{mhc}(F):=\min_{\pi}L_{\pi}^{\mathrm{Ham}}(F). $$
 
 Then
 
-$$ H^{*}(f)\leq\mathrm{mhc}(F). $$
+$$ H^{\ast}(f)\leq\mathrm{mhc}(F). $$
 
 If
 
@@ -28,15 +28,15 @@ $$ \deg_{\pm}(f)=\mathrm{mhc}(F), $$
 
 then
 
-$$ H^{*}(f)=\deg_{\pm}(f)=\mathrm{mhc}(F). $$
+$$ H^{\ast}(f)=\deg_{\pm}(f)=\mathrm{mhc}(F). $$
 
 For each block order $\pi$ and label $b\in\lbrace0,1\rbrace$, let $R_{b,\pi}$ be the number of contiguous runs of label $b$ in the corresponding lexicographic Hamming-grid sequence. Then
 
-$$ H^{*}(f) \leq 2\min_{\pi}\min\lbrace R_{0,\pi},R_{1,\pi}\rbrace. $$
+$$ H^{\ast}(f) \leq 2\min_{\pi}\min\lbrace R_{0,\pi},R_{1,\pi}\rbrace. $$
 
 More sharply, if label $b$ has first and last membership indicators $\epsilon_{0,\pi}$ and $\epsilon_{1,\pi}$ in the order $\pi$, then
 
-$$ H^{*}(f)\leq \min_{\pi,b}\left(2R_{b,\pi}-\epsilon_{0,\pi}-\epsilon_{1,\pi}\right). $$
+$$ H^{\ast}(f)\leq \min_{\pi,b}\left(2R_{b,\pi}-\epsilon_{0,\pi}-\epsilon_{1,\pi}\right). $$
 
 > **Interpretation.** For multiblock profile predicates, the block order is part of the certificate. Choosing the right order can lower the grid-path variation substantially.
 
@@ -44,21 +44,21 @@ $$ H^{*}(f)\leq \min_{\pi,b}\left(2R_{b,\pi}-\epsilon_{0,\pi}-\epsilon_{1,\pi}\r
 
 For each block order $\pi$, the multi-Hamming profile bound [171_multi_hamming_profile_bound.md](171_multi_hamming_profile_bound.md) gives
 
-$$ H^{*}(f)\leq L_{\pi}^{\mathrm{Ham}}(F). $$
+$$ H^{\ast}(f)\leq L_{\pi}^{\mathrm{Ham}}(F). $$
 
 Taking the minimum over $\pi$ proves
 
-$$ H^{*}(f)\leq\mathrm{mhc}(F). $$
+$$ H^{\ast}(f)\leq\mathrm{mhc}(F). $$
 
 If $\deg_{\pm}(f)=\mathrm{mhc}(F)$, combine this with the threshold-degree lower bound
 
-$$ \deg_{\pm}(f)\leq H^{*}(f) $$
+$$ \deg_{\pm}(f)\leq H^{\ast}(f) $$
 
 to get exactness.
 
 For the run bounds, apply the multigrid run bound [172_multigrid_run_bound.md](172_multigrid_run_bound.md) to each block order $\pi$. It gives
 
-$$ H^{*}(f)\leq2\min\lbrace R_{0,\pi},R_{1,\pi}\rbrace $$
+$$ H^{\ast}(f)\leq2\min\lbrace R_{0,\pi},R_{1,\pi}\rbrace $$
 
 and the sharper endpoint-adjusted bound for each label $b$. Minimizing over $\pi$ and $b$ gives the displayed inequalities. $\blacksquare$
 

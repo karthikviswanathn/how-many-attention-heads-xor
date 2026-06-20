@@ -20,7 +20,7 @@ $$ V_m(C) := \begin{cases} 0 & \text{if } C=0,\\ 1+m+\sum_{r=2}^{C}2^r\binom{m}{
 
 Then
 
-$$ C(F) \leq H^{*}(h_F) \leq V_m(C(F)). $$
+$$ C(F) \leq H^{\ast}(h_F) \leq V_m(C(F)). $$
 
 > **Interpretation.** Directed-defect profiles measure how many coordinates violate $x_i\leq y_i$. They sit between intersection profiles and Hamming-distance profiles: each defect bit expands into two monomials, $x_i-x_i y_i$, so the upper bound has a $2^r$ expansion cost rather than $1$ or $3^r$.
 
@@ -46,7 +46,7 @@ $$ F(0),F(1),\ldots,F(m). $$
 
 By the symmetric sign-change theorem [012_symmetric_sign_changes.md](../01_foundations_and_normal_form/012_symmetric_sign_changes.md), the restricted function has head complexity $C(F)$. Restriction monotonicity from [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md) gives
 
-$$ H^{*}(h_F)\geq C(F). $$
+$$ H^{\ast}(h_F)\geq C(F). $$
 
 ### Lemma 2. A degree-C(F) sign polynomial in the defect count
 
@@ -78,7 +78,7 @@ Set
 
 $$ z_i:=x_i(1-y_i)=x_i-x_i y_i. $$
 
-If $C(F)=0$, then $F$ is constant and $h_F$ is constant, so $H^{*}(h_F)=0$.
+If $C(F)=0$, then $F$ is constant and $h_F$ is constant, so $H^{\ast}(h_F)=0$.
 
 Assume $C(F)\geq1$. By Lemma 2, $R(z_1+\cdots+z_m)$ sign-represents $h_F$ and has degree at most $C(F)$ in the variables $z_i$. After reducing modulo $z_i^2=z_i$, it is a linear combination of products
 
@@ -106,7 +106,7 @@ $$ 1+m+\sum_{r=2}^{C(F)}2^r\binom{m}{r}. $$
 
 Applying the affine-free polynomial-threshold sparsity upper bound [048_affine_free_sparsity_upper_bound.md](048_affine_free_sparsity_upper_bound.md) gives
 
-$$ H^{*}(h_F) \leq 1+m+\sum_{r=2}^{C(F)}2^r\binom{m}{r} = V_m(C(F)). $$
+$$ H^{\ast}(h_F) \leq 1+m+\sum_{r=2}^{C(F)}2^r\binom{m}{r} = V_m(C(F)). $$
 
 Together with Lemma 1 and the constant case, this proves the theorem. $\blacksquare$
 
@@ -128,23 +128,23 @@ $$ \mathrm{SUB}_m(x,y)=\mathbf{1}[D(x,y)=0], \qquad \mathrm{NCON}_m(x,y)=\mathbf
 
 For $m=1$,
 
-$$ H^{*}(\mathrm{SUB}_1) = H^{*}(\mathrm{NCON}_1) =1. $$
+$$ H^{\ast}(\mathrm{SUB}_1) = H^{\ast}(\mathrm{NCON}_1) =1. $$
 
 For $m\geq2$,
 
-$$ 2\leq H^{*}(\mathrm{SUB}_m)\leq m+1 $$
+$$ 2\leq H^{\ast}(\mathrm{SUB}_m)\leq m+1 $$
 
 and
 
-$$ 2\leq H^{*}(\mathrm{NCON}_m)\leq m+1. $$
+$$ 2\leq H^{\ast}(\mathrm{NCON}_m)\leq m+1. $$
 
 For $m=2$, this is sharpened in [057_two_pair_containment_exact.md](057_two_pair_containment_exact.md) to
 
-$$ H^{*}(\mathrm{SUB}_2)=H^{*}(\mathrm{NCON}_2)=2. $$
+$$ H^{\ast}(\mathrm{SUB}_2)=H^{\ast}(\mathrm{NCON}_2)=2. $$
 
 For $m=3$, [059_three_pair_endpoint_exact.md](059_three_pair_endpoint_exact.md) gives
 
-$$ H^{*}(\mathrm{SUB}_3)=H^{*}(\mathrm{NCON}_3)=2. $$
+$$ H^{\ast}(\mathrm{SUB}_3)=H^{\ast}(\mathrm{NCON}_3)=2. $$
 
 **Proof.** The upper bound is the theorem with one sign change, so $V_m(1)=m+1$.
 
@@ -172,6 +172,6 @@ Adding the two cross noncontainment inequalities gives
 
 $$ a_1+a_2+b_1+b_2+2c>0, $$
 
-a contradiction. Thus $\mathrm{NCON}_m$ is not a linear threshold function, so $H^{*}(\mathrm{NCON}_m)\geq2$.
+a contradiction. Thus $\mathrm{NCON}_m$ is not a linear threshold function, so $H^{\ast}(\mathrm{NCON}_m)\geq2$.
 
 Complement invariance from [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md) gives the same lower bound for $\mathrm{SUB}_m$. $\blacksquare$

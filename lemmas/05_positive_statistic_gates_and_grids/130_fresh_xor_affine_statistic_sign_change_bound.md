@@ -30,15 +30,15 @@ Then:
 
 1. If $C=0$, then
 
-$$ H^{*}(z\oplus T(y))=H^{*}(1-(z\oplus T(y)))=1. $$
+$$ H^{\ast}(z\oplus T(y))=H^{\ast}(1-(z\oplus T(y)))=1. $$
 
 2. If $C=1$, then
 
-$$ H^{*}(z\oplus T(y))=H^{*}(1-(z\oplus T(y)))=2. $$
+$$ H^{\ast}(z\oplus T(y))=H^{\ast}(1-(z\oplus T(y)))=2. $$
 
 3. If $C\geq2$, then
 
-$$ H^{*}(z\oplus T(y)) \leq 1+\sum_{r=2}^{\min\lbrace D_{\oplus}(C),k+1\rbrace}\binom{k+1}{r}, $$
+$$ H^{\ast}(z\oplus T(y)) \leq 1+\sum_{r=2}^{\min\lbrace D_{\oplus}(C),k+1\rbrace}\binom{k+1}{r}, $$
 
 and the same upper bound holds for XNOR.
 
@@ -90,19 +90,19 @@ The statistic $M_B$ uses at most $k+1$ variables. Applying the affine-statistic 
 
 If $C=0$, then $D_{\oplus}(C)=1$, so $z\oplus T$ is a nonconstant LTF and
 
-$$ H^{*}(z\oplus T)=1. $$
+$$ H^{\ast}(z\oplus T)=1. $$
 
 If $C=1$, then $D_{\oplus}(C)=2$, so the same theorem gives
 
-$$ H^{*}(z\oplus T)\leq2. $$
+$$ H^{\ast}(z\oplus T)\leq2. $$
 
 In this case $T$ is a nonconstant LTF, so the LTF one-bit gate classification [129_ltf_one_bit_gate_classification.md](129_ltf_one_bit_gate_classification.md) gives the matching lower bound and exact value
 
-$$ H^{*}(z\oplus T)=2. $$
+$$ H^{\ast}(z\oplus T)=2. $$
 
 If $C\geq2$, then $D_{\oplus}(C)\geq3$, and the same affine-statistic theorem gives
 
-$$ H^{*}(z\oplus T) \leq 1+\sum_{r=2}^{\min\lbrace D_{\oplus}(C),k+1\rbrace}\binom{k+1}{r}. $$
+$$ H^{\ast}(z\oplus T) \leq 1+\sum_{r=2}^{\min\lbrace D_{\oplus}(C),k+1\rbrace}\binom{k+1}{r}. $$
 
 Finally, XNOR is the output complement of fresh XOR, and output complement preserves head complexity by [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md). This proves all claims. $\blacksquare$
 
@@ -114,6 +114,6 @@ $$ D_{\oplus}(C)=5 $$
 
 and therefore
 
-$$ H^{*}(z\oplus T) \leq 1+\sum_{r=2}^{\min\lbrace5,k+1\rbrace}\binom{k+1}{r}. $$
+$$ H^{\ast}(z\oplus T) \leq 1+\sum_{r=2}^{\min\lbrace5,k+1\rbrace}\binom{k+1}{r}. $$
 
 This is the current orientation-free fallback for fresh XOR over affine slabs beyond the LTF case. The endpoint and one-threshold cases are sharper: they are exactly two-head by Lemmas 127 and 129.

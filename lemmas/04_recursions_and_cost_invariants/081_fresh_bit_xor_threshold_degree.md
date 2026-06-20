@@ -16,13 +16,13 @@ $$ \deg_{\pm}(g)=\deg_{\pm}(f)+1. $$
 
 Consequently,
 
-$$ H^{*}(g)\geq\deg_{\pm}(f)+1. $$
+$$ H^{\ast}(g)\geq\deg_{\pm}(f)+1. $$
 
 If $P$ is a strict sign polynomial for $f$ with $\ell(P)$ nonzero linear coefficients and $q(P)$ nonlinear monomials, then
 
-$$ \deg_{\pm}(f)+1 \leq H^{*}(z\oplus f(y)) \leq 1+\ell(P)+2q(P). $$
+$$ \deg_{\pm}(f)+1 \leq H^{\ast}(z\oplus f(y)) \leq 1+\ell(P)+2q(P). $$
 
-> **Interpretation.** XOR with a fresh raw bit is a reliable lower-bound amplifier: it raises threshold degree by exactly one. This explains why the desired recursion $H^{*}(z\oplus f)\leq H^{*}(f)+1$ would be tight on every family where $H^{*}$ already matches threshold degree.
+> **Interpretation.** XOR with a fresh raw bit is a reliable lower-bound amplifier: it raises threshold degree by exactly one. This explains why the desired recursion $H^{\ast}(z\oplus f)\leq H^{\ast}(f)+1$ would be tight on every family where $H^{\ast}$ already matches threshold degree.
 
 ## Proof
 
@@ -90,9 +90,9 @@ The head lower bound follows from the general threshold-degree lower bound [006_
 
 For every Boolean function $f$,
 
-$$ H^{*}(z\oplus f(y))\geq\deg_{\pm}(f)+1. $$
+$$ H^{\ast}(z\oplus f(y))\geq\deg_{\pm}(f)+1. $$
 
-If a class satisfies $H^{*}(f)=\deg_{\pm}(f)$ and also admits a matching one-bit-XOR upper bound, then the class remains exact after XORing with a fresh bit.
+If a class satisfies $H^{\ast}(f)=\deg_{\pm}(f)$ and also admits a matching one-bit-XOR upper bound, then the class remains exact after XORing with a fresh bit.
 
 For parity, this recovers the inductive lower bound:
 

@@ -16,11 +16,11 @@ $$ F(\tau_0),F(\tau_1),\ldots,F(\tau_{M-1}). $$
 
 Then
 
-$$ \deg_{\pm}(T)+1 \leq H^{*}(z\oplus T(y)) \leq C+1, $$
+$$ \deg_{\pm}(T)+1 \leq H^{\ast}(z\oplus T(y)) \leq C+1, $$
 
 and the same bounds hold for XNOR. In particular, if $\deg_{\pm}(T)=C$, then
 
-$$ H^{*}(z\oplus T(y)) = H^{*}(1-(z\oplus T(y))) = C+1. $$
+$$ H^{\ast}(z\oplus T(y)) = H^{\ast}(1-(z\oplus T(y))) = C+1. $$
 
 > **Interpretation.** For positive-statistic features, fresh XOR costs at most one more than the original one-dimensional sign-change count, not the separated two-slice sign-change count.
 
@@ -50,11 +50,11 @@ $$ P(z,y):=(1-2z)Q(t(y)) $$
 
 strictly sign-represents $z\oplus T(y)$. It has degree at most $C+1$ in the two quantities $t(y)$ and $z$, reduced using $z^2=z$. The positive-statistic raw-bit degree span [138_positive_statistic_raw_bit_degree_span.md](138_positive_statistic_raw_bit_degree_span.md) gives
 
-$$ H^{*}(z\oplus T(y))\leq C+1. $$
+$$ H^{\ast}(z\oplus T(y))\leq C+1. $$
 
 The lower bound is the fresh-bit XOR threshold-degree theorem [081_fresh_bit_xor_threshold_degree.md](../04_recursions_and_cost_invariants/081_fresh_bit_xor_threshold_degree.md):
 
-$$ H^{*}(z\oplus T(y)) \geq \deg_{\pm}(z\oplus T(y)) = \deg_{\pm}(T)+1. $$
+$$ H^{\ast}(z\oplus T(y)) \geq \deg_{\pm}(z\oplus T(y)) = \deg_{\pm}(T)+1. $$
 
 XNOR is the output complement of XOR, so complement invariance gives the same bounds and exactness statement. $\blacksquare$
 

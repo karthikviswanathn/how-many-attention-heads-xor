@@ -4,21 +4,21 @@
 
 The first two levels of head complexity are exactly characterized:
 
-$$ H^{*}(f) = 0 \qquad \Longleftrightarrow \qquad f \text{ is constant}, $$
+$$ H^{\ast}(f) = 0 \qquad \Longleftrightarrow \qquad f \text{ is constant}, $$
 
 and
 
-$$ H^{*}(f) = 1 \qquad \Longleftrightarrow \qquad f \text{ is a nonconstant linear threshold function}. $$
+$$ H^{\ast}(f) = 1 \qquad \Longleftrightarrow \qquad f \text{ is a nonconstant linear threshold function}. $$
 
 In particular, every non-linear-threshold Boolean function has
 
-$$ H^{*}(f) \geq 2. $$
+$$ H^{\ast}(f) \geq 2. $$
 
 This strictly strengthens the checkerboard obstruction [003_checkerboard_obstruction.md](003_checkerboard_obstruction.md) as a one-head lower bound.
 
 ## Proof
 
-We use the linear-fractional normal form [010_linear_fractional_normal_form.md](010_linear_fractional_normal_form.md), which gives $H^{*}(f) = L_{\mathrm{frac}}(f)$.
+We use the linear-fractional normal form [010_linear_fractional_normal_form.md](010_linear_fractional_normal_form.md), which gives $H^{\ast}(f) = L_{\mathrm{frac}}(f)$.
 
 **One head is exactly linear threshold.** First suppose $f$ is computed by one head. By the normal form, there is a constant $c$ and one atom
 
@@ -74,22 +74,22 @@ So every nonconstant function computable with one head is a linear threshold fun
 
 Therefore
 
-$$ H^{*}(f) = 0 \qquad \Longleftrightarrow \qquad f \text{ is constant}, $$
+$$ H^{\ast}(f) = 0 \qquad \Longleftrightarrow \qquad f \text{ is constant}, $$
 
 and
 
-$$ H^{*}(f) = 1 \qquad \Longleftrightarrow \qquad f \text{ is a nonconstant linear threshold function}. $$
+$$ H^{\ast}(f) = 1 \qquad \Longleftrightarrow \qquad f \text{ is a nonconstant linear threshold function}. $$
 
 This completes the proof. $\blacksquare$
 
 ## Consequences
 
-The checkerboard lower bound [003_checkerboard_obstruction.md](003_checkerboard_obstruction.md) is a special case: a checkerboard restriction is not linearly separable, so any function containing such a restriction cannot have $H^{*}(f) \leq 1$.
+The checkerboard lower bound [003_checkerboard_obstruction.md](003_checkerboard_obstruction.md) is a special case: a checkerboard restriction is not linearly separable, so any function containing such a restriction cannot have $H^{\ast}(f) \leq 1$.
 
 Combining this characterization with the threshold-degree lower bound [006_threshold_degree_head_complexity_bound.md](006_threshold_degree_head_complexity_bound.md) and the weighted-sum upper bound [009_weighted_sum_upper_bound.md](009_weighted_sum_upper_bound.md) gives the current general sandwich:
 
-$$ \deg_{\pm}(f) \leq H^{*}(f) = L_{\mathrm{frac}}(f) \leq M_{+}(f) - 1 \leq 2^n - 1. $$
+$$ \deg_{\pm}(f) \leq H^{\ast}(f) = L_{\mathrm{frac}}(f) \leq M_{+}(f) - 1 \leq 2^n - 1. $$
 
 The new information is the exact identification of the first nontrivial level:
 
-$$ \lbrace f : H^{*}(f) \leq 1\rbrace = \lbrace f : f \text{ is a linear threshold function}\rbrace. $$
+$$ \lbrace f : H^{\ast}(f) \leq 1\rbrace = \lbrace f : f \text{ is a linear threshold function}\rbrace. $$

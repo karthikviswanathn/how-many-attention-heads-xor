@@ -10,7 +10,7 @@ we have, for every $m\geq1$,
 
 $$ s_{\mathrm{LTF}}(\mathrm{EQ}_m)=2. $$
 
-> **Interpretation.** Equality is a family where threshold-vote size and head complexity agree: both $s_{\mathrm{LTF}}(\mathrm{EQ}_m)$ and $H^{*}(\mathrm{EQ}_m)$ equal $2$.
+> **Interpretation.** Equality is a family where threshold-vote size and head complexity agree: both $s_{\mathrm{LTF}}(\mathrm{EQ}_m)$ and $H^{\ast}(\mathrm{EQ}_m)$ equal $2$.
 
 ## Proof
 
@@ -88,4 +88,4 @@ reports that $\mathrm{EQ}_2$ is not an LTF but is covered by two threshold votes
 
 The head-complexity analogue is resolved in [060_equality_exact_two_heads.md](060_equality_exact_two_heads.md):
 
-$$ H^{*}(\mathrm{EQ}_m)=2 \qquad \text{for every }m\geq1. $$
+$$ H^{\ast}(\mathrm{EQ}_m)=2 \qquad \text{for every }m\geq1. $$

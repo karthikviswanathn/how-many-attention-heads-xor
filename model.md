@@ -132,7 +132,7 @@ such that the resulting classifier agrees with $f$ on every input in $\lbrace0,1
 
 We then define
 
-$$ H^{*}(f) := \min \left\lbrace H : f \text{ is computable with } H \text{ heads in the above model} \right\rbrace. $$
+$$ H^{\ast}(f) := \min \left\lbrace H : f \text{ is computable with } H \text{ heads in the above model} \right\rbrace. $$
 
 ## Masking Convention
 

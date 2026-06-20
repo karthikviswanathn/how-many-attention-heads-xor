@@ -12,9 +12,9 @@ $$ f(x) = \bigvee_{a=1}^{s}\bigwedge_{i\in S_a}x_i, \qquad S_a\neq\varnothing. $
 
 Then
 
-$$ H^{*}(f)\leq s. $$
+$$ H^{\ast}(f)\leq s. $$
 
-If the DNF has an empty term, then $f$ is constant $1$ and $H^{*}(f)=0$. If the DNF has no terms, then $f$ is constant $0$ and $H^{*}(f)=0$.
+If the DNF has an empty term, then $f$ is constant $1$ and $H^{\ast}(f)=0$. If the DNF has no terms, then $f$ is constant $0$ and $H^{\ast}(f)=0$.
 
 The dual statement also holds. If $f$ is computed by a monotone CNF with $s$ nonempty clauses:
 
@@ -22,7 +22,7 @@ $$ f(x) = \bigwedge_{a=1}^{s}\bigvee_{i\in S_a}x_i, \qquad S_a\neq\varnothing, $
 
 then
 
-$$ H^{*}(f)\leq s. $$
+$$ H^{\ast}(f)\leq s. $$
 
 > **Interpretation.** A monotone OR of $s$ conjunctions needs at most one head per conjunction. This gives a non-symmetric structured upper bound that does not require the whole function to factor through a single positive weighted sum.
 
@@ -108,7 +108,7 @@ $$ f(x)=1 \qquad\Longleftrightarrow\qquad S(x)>0. $$
 
 Since each $\phi_{S_a}$ is a one-head atom, the linear-fractional normal form from [010_linear_fractional_normal_form.md](../01_foundations_and_normal_form/010_linear_fractional_normal_form.md) gives
 
-$$ H^{*}(f)\leq s. $$
+$$ H^{\ast}(f)\leq s. $$
 
 $\blacksquare$
 
@@ -132,26 +132,26 @@ $$ g(y) = \bigvee_{a=1}^{s}\bigwedge_{i\in S_a}y_i, $$
 
 so Lemma 2 gives
 
-$$ H^{*}(g)\leq s. $$
+$$ H^{\ast}(g)\leq s. $$
 
 By complement and global bit-flip invariance from [028_restrictions_and_sign_rank.md](028_restrictions_and_sign_rank.md),
 
-$$ H^{*}(f)=H^{*}(g). $$
+$$ H^{\ast}(f)=H^{\ast}(g). $$
 
-Therefore $H^{*}(f)\leq s$. $\blacksquare$
+Therefore $H^{\ast}(f)\leq s$. $\blacksquare$
 
 ## Consequence
 
 Let $\mathrm{mDNF}(f)$ be the minimum number of nonempty terms in a monotone DNF for $f$, with $\mathrm{mDNF}(0)=\mathrm{mDNF}(1)=0$. Then every monotone Boolean function satisfies
 
-$$ H^{*}(f)\leq\mathrm{mDNF}(f). $$
+$$ H^{\ast}(f)\leq\mathrm{mDNF}(f). $$
 
 Let $\mathrm{mCNF}(f)$ be the minimum number of nonempty clauses in a monotone CNF for $f$, with $\mathrm{mCNF}(0)=\mathrm{mCNF}(1)=0$. Then every monotone Boolean function also satisfies
 
-$$ H^{*}(f)\leq\mathrm{mCNF}(f). $$
+$$ H^{\ast}(f)\leq\mathrm{mCNF}(f). $$
 
 Combining the two bounds,
 
-$$ H^{*}(f) \leq \min\lbrace\mathrm{mDNF}(f),\mathrm{mCNF}(f)\rbrace. $$
+$$ H^{\ast}(f) \leq \min\lbrace\mathrm{mDNF}(f),\mathrm{mCNF}(f)\rbrace. $$
 
 This upper bound can be much smaller than the generic interpolation bound $2^n-1$ when $f$ has a compact monotone formula in either normal form.

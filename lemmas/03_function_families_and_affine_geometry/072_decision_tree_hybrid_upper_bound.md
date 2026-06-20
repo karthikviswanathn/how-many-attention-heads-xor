@@ -14,9 +14,9 @@ $$ \Lambda(\mathcal{T}) := \min\left\lbrace \sum_{\ell\in\mathcal{L}_1}\min\lbra
 
 If $f$ is nonconstant, then
 
-$$ H^{*}(f) \leq \min\left\lbrace \Lambda(\mathcal{T}), 2^v-1, 1+\sum_{r=2}^{\min\lbrace d,v\rbrace}\binom{v}{r} \right\rbrace. $$
+$$ H^{\ast}(f) \leq \min\left\lbrace \Lambda(\mathcal{T}), 2^v-1, 1+\sum_{r=2}^{\min\lbrace d,v\rbrace}\binom{v}{r} \right\rbrace. $$
 
-If $f$ is constant, then $H^{*}(f)=0$.
+If $f$ is constant, then $H^{\ast}(f)=0$.
 
 > **Interpretation.** A decision tree gives several different head certificates. Leaf profiles are ambient-dimension-free and reward one-sided certificates with few literals of one sign. The degree route is polynomial in the number of variables queried when the depth is small. The junta route is best when the tree uses few variables overall.
 
@@ -24,11 +24,11 @@ If $f$ is constant, then $H^{*}(f)=0$.
 
 The local leaf-profile upper bound is exactly [044_oriented_certificate_expansion_upper_bound.md](../02_complexity_measure_upper_bounds/044_oriented_certificate_expansion_upper_bound.md) applied to the accepting and rejecting leaf covers:
 
-$$ H^{*}(f)\leq\Lambda(\mathcal{T}). $$
+$$ H^{\ast}(f)\leq\Lambda(\mathcal{T}). $$
 
 Since $f$ depends only on the variables queried by $\mathcal{T}$, it is a $v$-junta. The junta upper bound [039_junta_upper_bounds.md](../02_complexity_measure_upper_bounds/039_junta_upper_bounds.md) gives
 
-$$ H^{*}(f)\leq2^v-1 $$
+$$ H^{\ast}(f)\leq2^v-1 $$
 
 for nonconstant $f$.
 
@@ -50,7 +50,7 @@ $$ \deg_{\pm}(f)\leq\min\lbrace d,v\rbrace. $$
 
 If $f$ is nonconstant, the affine-free polynomial-threshold sparsity theorem [048_affine_free_sparsity_upper_bound.md](048_affine_free_sparsity_upper_bound.md) gives
 
-$$ H^{*}(f) \leq 1+\sum_{r=2}^{\min\lbrace d,v\rbrace}\binom{v}{r}, $$
+$$ H^{\ast}(f) \leq 1+\sum_{r=2}^{\min\lbrace d,v\rbrace}\binom{v}{r}, $$
 
 because the sign polynomial only uses the $v$ queried variables. Taking the minimum of the three displayed upper bounds proves the theorem. $\blacksquare$
 
@@ -58,12 +58,12 @@ because the sign polynomial only uses the $v$ queried variables. Taking the mini
 
 For every nonconstant $f$ with deterministic decision-tree depth $D(f)=d$ and essential-variable count $\mathrm{ess}(f)=v$,
 
-$$ H^{*}(f) \leq \min\left\lbrace 2^{d+\lfloor d/2\rfloor-1}, 2^v-1, 1+\sum_{r=2}^{\min\lbrace d,v\rbrace}\binom{v}{r} \right\rbrace. $$
+$$ H^{\ast}(f) \leq \min\left\lbrace 2^{d+\lfloor d/2\rfloor-1}, 2^v-1, 1+\sum_{r=2}^{\min\lbrace d,v\rbrace}\binom{v}{r} \right\rbrace. $$
 
 The first term is the uniform leaf-profile bound from [044_oriented_certificate_expansion_upper_bound.md](../02_complexity_measure_upper_bounds/044_oriented_certificate_expansion_upper_bound.md). The second is the generic junta bound. The third is the depth-degree route.
 
 For fixed depth $d$, this gives a polynomial upper bound in the number of variables actually queried by the tree:
 
-$$ H^{*}(f) \leq 1+\sum_{r=2}^{d}\binom{v}{r} = O(v^d). $$
+$$ H^{\ast}(f) \leq 1+\sum_{r=2}^{d}\binom{v}{r} = O(v^d). $$
 
 This complements the ambient-dimension-free leaf-profile bound, which can be much smaller for balanced leaf paths but much larger when $d$ is fixed and $v$ is moderate.

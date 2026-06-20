@@ -84,7 +84,7 @@ $$\mathbb{E}[\pi(z)   Q(z)] = -\sum_{S \subsetneq [n]} c_S   \mathbb{E}[\chi_{[n
 
 This contradicts the earlier inequality $\mathbb{E}[\pi(z)   Q(z)] > 0$.
 
-So no degree-$(<n)$ polynomial sign-represents parity.
+So no degree $(<n)$ polynomial sign-represents parity.
 
 ### Upper bound: a degree-n sign representation
 

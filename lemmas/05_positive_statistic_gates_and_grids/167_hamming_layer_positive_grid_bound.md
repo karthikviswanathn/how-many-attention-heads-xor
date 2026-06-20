@@ -16,15 +16,15 @@ $$ J_{\mathrm{Ham}} := \left\lvert \left\lbrace r\in\lbrace0,\ldots,k-1\rbrace: 
 
 Then
 
-$$ \max_{0\leq r\leq k}H^{*}\bigl(F(r,t(y))\bigr) \leq H^{*}(f) \leq \sum_{r=0}^{k}C_r+J_{\mathrm{Ham}}. $$
+$$ \max_{0\leq r\leq k}H^{\ast}\bigl(F(r,t(y))\bigr) \leq H^{\ast}(f) \leq \sum_{r=0}^{k}C_r+J_{\mathrm{Ham}}. $$
 
 If each Hamming-layer slice has a univariate sign polynomial in $t$ of degree at most $d_r$, then
 
-$$ H^{*}(f)\leq\sum_{r=0}^{k}d_r+J_{\mathrm{Ham}}. $$
+$$ H^{\ast}(f)\leq\sum_{r=0}^{k}d_r+J_{\mathrm{Ham}}. $$
 
 If $d_r\leq d$ for all $r$, then
 
-$$ H^{*}(f)\leq(k+1)d+J_{\mathrm{Ham}}. $$
+$$ H^{\ast}(f)\leq(k+1)d+J_{\mathrm{Ham}}. $$
 
 > **Interpretation.** A raw block that appears only through Hamming weight costs $k+1$ raw layers, not $2^k$ raw assignments.
 

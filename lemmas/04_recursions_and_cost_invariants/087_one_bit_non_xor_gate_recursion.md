@@ -16,11 +16,11 @@ $$ F(z,y):=G(z,T(y)). $$
 
 Then
 
-$$ H^{*}(F)\leq H^{*}(T)+1. $$
+$$ H^{\ast}(F)\leq H^{\ast}(T)+1. $$
 
 In particular,
 
-$$ H^{*}(z\wedge T(y))\leq H^{*}(T)+1, \qquad H^{*}(z\vee T(y))\leq H^{*}(T)+1, $$
+$$ H^{\ast}(z\wedge T(y))\leq H^{\ast}(T)+1, \qquad H^{\ast}(z\vee T(y))\leq H^{\ast}(T)+1, $$
 
 and the same bound holds after complementing either input literal or the output.
 
@@ -28,9 +28,9 @@ and the same bound holds after complementing either input literal or the output.
 
 ## Proof
 
-If $T$ is constant, then $F$ is either constant or a one-bit function of $z$. Hence $H^{*}(F)\leq1=H^{*}(T)+1$. Assume from now on that $T$ is nonconstant.
+If $T$ is constant, then $F$ is either constant or a one-bit function of $z$. Hence $H^{\ast}(F)\leq1=H^{\ast}(T)+1$. Assume from now on that $T$ is nonconstant.
 
-Let $H:=H^{*}(T)$. By the linear-fractional normal form [010_linear_fractional_normal_form.md](../01_foundations_and_normal_form/010_linear_fractional_normal_form.md), there is an $H$-atom score
+Let $H:=H^{\ast}(T)$. By the linear-fractional normal form [010_linear_fractional_normal_form.md](../01_foundations_and_normal_form/010_linear_fractional_normal_form.md), there is an $H$-atom score
 
 $$ S(y) = c+\sum_{h=1}^{H}\phi_h(y) $$
 
@@ -94,7 +94,7 @@ has the same sign as $R_{\wedge}$ everywhere. This uses the $H$ approximate dumm
 
 Therefore
 
-$$ H^{*}(r\wedge U)\leq H+1. $$
+$$ H^{\ast}(r\wedge U)\leq H+1. $$
 
 ### Disjunction
 
@@ -122,7 +122,7 @@ has the same sign as $R_{\vee}$ everywhere. This gives an $(H+1)$-head represent
 
 The conjunction and disjunction cases cover all non-XOR gates after the literal and complement reductions above. Hence
 
-$$ H^{*}(F)\leq H^{*}(T)+1. $$
+$$ H^{\ast}(F)\leq H^{\ast}(T)+1. $$
 
 $\blacksquare$
 
@@ -130,8 +130,8 @@ $\blacksquare$
 
 The cofactor-recursion target is settled for one of its two simplest feature-dependent cases:
 
-$$ H^{*}(z\wedge T)\leq H^{*}(T)+1. $$
+$$ H^{\ast}(z\wedge T)\leq H^{\ast}(T)+1. $$
 
 The same proof handles $z\vee T$, implications, reverse implications, NAND, NOR, and all literal variants.
 
-Combined with the one-bit gate threshold-degree trichotomy, this isolates XOR and XNOR as the only one-bit gates that both raise threshold degree and remain outside the proved $H^{*}(T)+1$ recursion theorem.
+Combined with the one-bit gate threshold-degree trichotomy, this isolates XOR and XNOR as the only one-bit gates that both raise threshold degree and remain outside the proved $H^{\ast}(T)+1$ recursion theorem.

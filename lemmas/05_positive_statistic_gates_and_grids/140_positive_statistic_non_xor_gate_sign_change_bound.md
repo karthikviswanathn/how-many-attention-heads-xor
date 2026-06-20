@@ -14,11 +14,11 @@ $$ H_G(z,y):=G(z,T(y)). $$
 
 If $G$ is neither XOR nor XNOR, then:
 
-1. constant gates have $H^{*}(H_G)=0$;
-2. raw-bit literals have $H^{*}(H_G)=1$;
+1. constant gates have $H^{\ast}(H_G)=0$;
+2. raw-bit literals have $H^{\ast}(H_G)=1$;
 3. every other gate satisfies
 
-$$ \deg_{\pm}(T) \leq H^{*}(H_G) \leq C. $$
+$$ \deg_{\pm}(T) \leq H^{\ast}(H_G) \leq C. $$
 
 In particular, if $\deg_{\pm}(T)=C$, then every nonconstant feature-dependent non-XOR and non-XNOR gate over $z$ and $T$ has exact value $C$.
 
@@ -26,7 +26,7 @@ In particular, if $\deg_{\pm}(T)=C$, then every nonconstant feature-dependent no
 
 ## Proof
 
-As in [139_positive_statistic_fresh_xor_sign_change_bound.md](139_positive_statistic_fresh_xor_sign_change_bound.md), choose a strict degree-$C$ polynomial $Q$ such that
+As in [139_positive_statistic_fresh_xor_sign_change_bound.md](139_positive_statistic_fresh_xor_sign_change_bound.md), choose a strict degree $C$ polynomial $Q$ such that
 
 $$ T(y)=1 \qquad\Longleftrightarrow\qquad Q(t(y))>0. $$
 
@@ -40,7 +40,7 @@ The constant and raw-bit literal cases are immediate. Now suppose at least one s
 
 If the two slices are the same nonconstant function, then $H_G$ is either $T$ or $1-T$, ignoring $z$. Lemma 138 applied to $Q(t)$, or to $-Q(t)$, gives
 
-$$ H^{*}(H_G)\leq C. $$
+$$ H^{\ast}(H_G)\leq C. $$
 
 It remains to handle the case where exactly one slice is nonconstant. Let $U(y)$ be that nonconstant slice, so $U$ is either $T$ or $1-T$. Define
 
@@ -60,13 +60,13 @@ $$ P(z,y):= \begin{cases} Q_U(t(y))+Mz & \text{if }G_1\text{ is the constant }1,
 
 In each case, $P$ strictly sign-represents $H_G$ and has degree at most $C$ in $t(y)$ and $z$. Lemma 138 gives
 
-$$ H^{*}(H_G)\leq C. $$
+$$ H^{\ast}(H_G)\leq C. $$
 
 The lower bound for feature-dependent non-XOR gates is the one-bit gate threshold-degree trichotomy [082_one_bit_gate_threshold_degree_trichotomy.md](../04_recursions_and_cost_invariants/082_one_bit_gate_threshold_degree_trichotomy.md):
 
 $$ \deg_{\pm}(H_G)=\deg_{\pm}(T). $$
 
-Since $H^{*}$ lower-bounds threshold degree, the displayed sandwich follows. $\blacksquare$
+Since $H^{\ast}$ lower-bounds threshold degree, the displayed sandwich follows. $\blacksquare$
 
 ## Consequence
 

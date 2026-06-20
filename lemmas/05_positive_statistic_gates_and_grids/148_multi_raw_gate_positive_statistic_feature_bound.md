@@ -32,7 +32,7 @@ $$ J_{\rho,G} := \left\lvert \left\lbrace q\in\lbrace0,\ldots,2^k-2\rbrace: G_{a
 
 Then
 
-$$ H^{*}(H_G)\leq N_G C+J_{\rho,G}. $$
+$$ H^{\ast}(H_G)\leq N_G C+J_{\rho,G}. $$
 
 > **Interpretation.** A multi-raw gate over one positive-statistic feature pays one copy of the feature's variation for each raw slice that actually depends on the feature, plus actual boundary jumps between raw slices.
 
@@ -46,7 +46,7 @@ is either constant, $T(y)$, or $1-T(y)$. If it is constant, its sign-change coun
 
 The boundary contribution in Lemma 147 is exactly $J_{\rho,G}$ by definition. Applying Lemma 147 gives
 
-$$ H^{*}(H_G)\leq N_GC+J_{\rho,G}. $$
+$$ H^{\ast}(H_G)\leq N_GC+J_{\rho,G}. $$
 
 $\blacksquare$
 

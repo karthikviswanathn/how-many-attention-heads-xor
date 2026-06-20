@@ -12,7 +12,7 @@ $$ F(0),F(1),\ldots,F(m). $$
 
 Then
 
-$$ C(F) \leq H^{*}(f_F) \leq \sum_{r=1}^{C(F)}\binom{m}{r}, $$
+$$ C(F) \leq H^{\ast}(f_F) \leq \sum_{r=1}^{C(F)}\binom{m}{r}, $$
 
 with the convention that the empty sum is $0$.
 
@@ -36,7 +36,7 @@ $$ F(0),F(1),\ldots,F(m). $$
 
 By the symmetric sign-change theorem [012_symmetric_sign_changes.md](../01_foundations_and_normal_form/012_symmetric_sign_changes.md), this restricted function has head complexity $C(F)$. Restriction monotonicity from [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md) gives
 
-$$ H^{*}(f_F)\geq C(F). $$
+$$ H^{\ast}(f_F)\geq C(F). $$
 
 ### Lemma 2. A degree-C(F) sign polynomial in the intersection size
 
@@ -78,7 +78,7 @@ $$ \sum_{r=1}^{C(F)}\binom{m}{r}. $$
 
 Applying the polynomial-threshold sparsity upper bound [041_ptf_sparsity_upper_bound.md](../02_complexity_measure_upper_bounds/041_ptf_sparsity_upper_bound.md) gives
 
-$$ H^{*}(f_F) \leq \sum_{r=1}^{C(F)}\binom{m}{r}. $$
+$$ H^{\ast}(f_F) \leq \sum_{r=1}^{C(F)}\binom{m}{r}. $$
 
 Together with Lemma 1, this proves the theorem. $\blacksquare$
 
@@ -96,25 +96,25 @@ $$ \mathrm{DISJ}_m:=1-\mathrm{INT}_m. $$
 
 For $m=1$,
 
-$$ H^{*}(\mathrm{INT}_1) = H^{*}(\mathrm{DISJ}_1) =1, $$
+$$ H^{\ast}(\mathrm{INT}_1) = H^{\ast}(\mathrm{DISJ}_1) =1, $$
 
 because these are $\mathrm{AND}$ and $\mathrm{NAND}$ on two bits.
 
 For $m\geq2$,
 
-$$ 2\leq H^{*}(\mathrm{INT}_m)\leq m $$
+$$ 2\leq H^{\ast}(\mathrm{INT}_m)\leq m $$
 
 and
 
-$$ 2\leq H^{*}(\mathrm{DISJ}_m)\leq m. $$
+$$ 2\leq H^{\ast}(\mathrm{DISJ}_m)\leq m. $$
 
 In particular,
 
-$$ H^{*}(\mathrm{INT}_2) = H^{*}(\mathrm{DISJ}_2) =2. $$
+$$ H^{\ast}(\mathrm{INT}_2) = H^{\ast}(\mathrm{DISJ}_2) =2. $$
 
 The next endpoint is also exact by [059_three_pair_endpoint_exact.md](059_three_pair_endpoint_exact.md):
 
-$$ H^{*}(\mathrm{INT}_3) = H^{*}(\mathrm{DISJ}_3) =2. $$
+$$ H^{\ast}(\mathrm{INT}_3) = H^{\ast}(\mathrm{DISJ}_3) =2. $$
 
 **Proof.** The upper bound $m$ is the theorem with one sign change. It also follows from the monotone DNF
 
@@ -140,7 +140,7 @@ while adding the last two gives
 
 $$ a_1+a_2+b_1+b_2+2c<0, $$
 
-a contradiction. Thus $\mathrm{INT}_m$ is not a linear threshold function. By the one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md), $H^{*}(\mathrm{INT}_m)\geq2$.
+a contradiction. Thus $\mathrm{INT}_m$ is not a linear threshold function. By the one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md), $H^{\ast}(\mathrm{INT}_m)\geq2$.
 
 Complement invariance from [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md) gives the same lower and upper bounds for $\mathrm{DISJ}_m$. When $m=2$, the lower and upper bounds coincide. $\blacksquare$
 
@@ -152,6 +152,6 @@ $$ \mathrm{IP}_m(x,y)=\bigoplus_{i=1}^{m}x_i y_i, $$
 
 the label sequence as a function of $\sum_i x_i y_i$ alternates at every adjacent level, so $C(F)=m$. The theorem recovers
 
-$$ m\leq H^{*}(\mathrm{IP}_m)\leq2^m-1. $$
+$$ m\leq H^{\ast}(\mathrm{IP}_m)\leq2^m-1. $$
 
 The lower bound here is the affine-parity restriction $y=1^m$, and the upper bound is the full sparse expansion in the pair monomials.

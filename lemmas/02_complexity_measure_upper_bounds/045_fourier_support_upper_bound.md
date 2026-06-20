@@ -18,11 +18,11 @@ $$ q(x)R(x)>0 $$
 
 for every $x\in\lbrace0,1\rbrace^n$. Then
 
-$$ H^{*}(f) \leq \sum_{\substack{S\in\mathcal{A}\\ S\neq\varnothing}} \left(2^{\lvert S\rvert}-1\right). $$
+$$ H^{\ast}(f) \leq \sum_{\substack{S\in\mathcal{A}\\ S\neq\varnothing}} \left(2^{\lvert S\rvert}-1\right). $$
 
 In particular, if $\mathcal{A}\subseteq\lbrace S:\lvert S\rvert\leq d\rbrace$ and $\lvert\mathcal{A}\rvert=m$, then
 
-$$ H^{*}(f)\leq m(2^d-1). $$
+$$ H^{\ast}(f)\leq m(2^d-1). $$
 
 As a Fourier-tail corollary, if
 
@@ -50,11 +50,11 @@ $$ \sum_{\substack{S\in\mathcal{A}\\ S\neq\varnothing}} \left(2^{\lvert S\rvert}
 
 nonconstant monomials before cancellations. By the polynomial-threshold sparsity upper bound [041_ptf_sparsity_upper_bound.md](041_ptf_sparsity_upper_bound.md),
 
-$$ H^{*}(f) \leq \sum_{\substack{S\in\mathcal{A}\\ S\neq\varnothing}} \left(2^{\lvert S\rvert}-1\right). $$
+$$ H^{\ast}(f) \leq \sum_{\substack{S\in\mathcal{A}\\ S\neq\varnothing}} \left(2^{\lvert S\rvert}-1\right). $$
 
 If every set in $\mathcal{A}$ has size at most $d$, then each summand is at most $2^d-1$, giving
 
-$$ H^{*}(f)\leq m(2^d-1). $$
+$$ H^{\ast}(f)\leq m(2^d-1). $$
 
 Finally, suppose
 
@@ -74,9 +74,9 @@ Since $q(x)\in\lbrace-1,1\rbrace$, this implies $q(x)R_{\mathcal{A}}(x)>0$. Henc
 
 The Fourier-tail threshold-degree certificate [031_fourier_tail_threshold_degree.md](031_fourier_tail_threshold_degree.md) proves low threshold degree by retaining all Fourier levels up to $d$. This lemma gives a direct head bound that can be sharper when only a few low-degree Fourier coefficients need to be retained.
 
-For a degree-$d$ Fourier truncation supported on $\mathcal{A}$,
+For a degree $d$ Fourier truncation supported on $\mathcal{A}$,
 
-$$ H^{*}(f) \leq \sum_{S\in\mathcal{A}}\left(2^{\lvert S\rvert}-1\right), $$
+$$ H^{\ast}(f) \leq \sum_{S\in\mathcal{A}}\left(2^{\lvert S\rvert}-1\right), $$
 
 which can be much smaller than the uniform degree-only upper bound
 

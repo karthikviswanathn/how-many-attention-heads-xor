@@ -36,15 +36,15 @@ $$ r_1:=\lvert R^{-1}(1)\rvert, \qquad r_0:=\lvert R^{-1}(0)\rvert. $$
 
 For $A=R\wedge T$,
 
-$$ H^{*}(A)\leq \begin{cases} r_1C, & e_0=e_1=0,\\ r_1C+K_R, & e_0=e_1=1,\\ r_1(C+1), & e_0\neq e_1. \end{cases} $$
+$$ H^{\ast}(A)\leq \begin{cases} r_1C, & e_0=e_1=0,\\ r_1C+K_R, & e_0=e_1=1,\\ r_1(C+1), & e_0\neq e_1. \end{cases} $$
 
 For $O=R\vee T$,
 
-$$ H^{*}(O)\leq \begin{cases} r_0C, & e_0=e_1=1,\\ r_0C+K_R, & e_0=e_1=0,\\ r_0(C+1), & e_0\neq e_1. \end{cases} $$
+$$ H^{\ast}(O)\leq \begin{cases} r_0C, & e_0=e_1=1,\\ r_0C+K_R, & e_0=e_1=0,\\ r_0(C+1), & e_0\neq e_1. \end{cases} $$
 
 For $X=R\oplus T$,
 
-$$ H^{*}(X)\leq \begin{cases} 2^kC+K_R, & e_0=e_1,\\ 2^k(C+1)+K_R, & e_0\neq e_1. \end{cases} $$
+$$ H^{\ast}(X)\leq \begin{cases} 2^kC+K_R, & e_0=e_1,\\ 2^k(C+1)+K_R, & e_0\neq e_1. \end{cases} $$
 
 > **Interpretation.** If the raw mask has few runs in some positive raw order, the raw-boundary term in the mask-gate theorem is controlled by that run count. Endpoint masks have $K_R\leq1$, and one-interval masks have $K_R\leq2$.
 

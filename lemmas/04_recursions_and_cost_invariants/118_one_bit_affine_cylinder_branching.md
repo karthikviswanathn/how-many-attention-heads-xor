@@ -40,11 +40,11 @@ $$ \eta_G(A) := \mathbf{1} \left[ \delta_1+\mu_1 a\neq \delta_0+\mu_0 a \text{ o
 
 Then
 
-$$ \begin{aligned} H^{*}(F) &\leq \mathrm{actc}(F) \leq \mathrm{sactc}(F) \\ &\leq \eta_G(A) + \mathbf{1}[\mu_0\neq0]K(\Gamma) + \mathbf{1}[\mu_1\neq\mu_0] \bigl(\lvert L(A)\rvert+K_z(\Gamma)\bigr). \end{aligned} $$
+$$ \begin{aligned} H^{\ast}(F) &\leq \mathrm{actc}(F) \leq \mathrm{sactc}(F) \\ &\leq \eta_G(A) + \mathbf{1}[\mu_0\neq0]K(\Gamma) + \mathbf{1}[\mu_1\neq\mu_0] \bigl(\lvert L(A)\rvert+K_z(\Gamma)\bigr). \end{aligned} $$
 
 If the right-hand side is at most $2$, then
 
-$$ H^{*}(F) = \begin{cases} 0, & \text{if } F \text{ is constant},\\ 1, & \text{if } F \text{ is a nonconstant LTF},\\ 2, & \text{otherwise}. \end{cases} $$
+$$ H^{\ast}(F) = \begin{cases} 0, & \text{if } F \text{ is constant},\\ 1, & \text{if } F \text{ is a nonconstant LTF},\\ 2, & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** One-bit branching over an affine-cylinder feature pays for the base cylinder correction only if the $z=0$ slice uses the feature, and pays changed affine slopes and changed cylinder coefficients only if the two slices use different signed copies of the feature.
 
@@ -102,7 +102,7 @@ $$ \mathrm{sactc}(F) \leq \eta_G(A) + \mathbf{1}[\mu_0\neq0]K(\Gamma) + \mathbf{
 
 The split affine-cylinder cost theorem also gives
 
-$$ H^{*}(F) \leq \mathrm{actc}(F) \leq \mathrm{sactc}(F), $$
+$$ H^{\ast}(F) \leq \mathrm{actc}(F) \leq \mathrm{sactc}(F), $$
 
 so the full displayed chain follows.
 

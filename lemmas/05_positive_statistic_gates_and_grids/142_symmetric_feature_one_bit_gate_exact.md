@@ -16,7 +16,7 @@ $$ H_G(z,y):=G(z,T(y)). $$
 
 Then
 
-$$ H^{*}(H_G)= \begin{cases} 0 & \text{if }G\text{ is constant},\\ 1 & \text{if }G\text{ is a raw-bit literal},\\ C+1 & \text{if }G\text{ is XOR or XNOR},\\ C & \text{otherwise}. \end{cases} $$
+$$ H^{\ast}(H_G)= \begin{cases} 0 & \text{if }G\text{ is constant},\\ 1 & \text{if }G\text{ is a raw-bit literal},\\ C+1 & \text{if }G\text{ is XOR or XNOR},\\ C & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** The exact symmetric classification is stable under adjoining one raw bit and applying any two-input gate.
 
@@ -30,7 +30,7 @@ Then $T(y)=F(t(y))$ for a positive statistic $t$, and $C$ is exactly the sign-ch
 
 The symmetric exactness theorem [012_symmetric_sign_changes.md](../01_foundations_and_normal_form/012_symmetric_sign_changes.md) gives
 
-$$ \deg_{\pm}(T)=H^{*}(T)=C. $$
+$$ \deg_{\pm}(T)=H^{\ast}(T)=C. $$
 
 The degree-tight positive-statistic gate classification [141_degree_tight_positive_statistic_gate_classification.md](141_degree_tight_positive_statistic_gate_classification.md) now applies and gives the displayed table. $\blacksquare$
 

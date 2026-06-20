@@ -12,7 +12,7 @@ $$ P(z,y) = \sum_{r=0}^{3}a_rt(y)^r + z\sum_{r=0}^{2}b_rt(y)^r. $$
 
 Then
 
-$$ H^{*}(f)\leq3. $$
+$$ H^{\ast}(f)\leq3. $$
 
 > **Interpretation.** Any strict cubic threshold in one positive statistic and one raw bit has a three-head certificate.
 

@@ -18,7 +18,7 @@ where $B_{+}$ is the optimized positive mixed boundary cost from Lemma 151 and $
 
 Consequently, in the setup of Lemma 151, if $F(\tau_0)\neq F(\tau_{M-1})$, then
 
-$$ H^{*}\bigl(G(z,T(y))\bigr) \leq N_G C+\min\lbrace C_{+}(g_0),C_{+}(g_1)\rbrace+N_G. $$
+$$ H^{\ast}\bigl(G(z,T(y))\bigr) \leq N_G C+\min\lbrace C_{+}(g_0),C_{+}(g_1)\rbrace+N_G. $$
 
 > **Interpretation.** A mixed endpoint boundary can be paid for by ordinary raw variation plus the number of raw assignments where the gate really depends on the feature bit.
 

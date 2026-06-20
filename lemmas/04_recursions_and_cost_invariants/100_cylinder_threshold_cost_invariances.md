@@ -40,7 +40,7 @@ The cylinder-threshold cost $\mathrm{ctc}(f)$ has the following structural prope
 
    $\mathrm{ctc}(F)=\mathrm{ctc}(f).$
 
-> **Interpretation.** The optimized cylinder-threshold upper-bound invariant is stable under the same basic symmetries as $H^{*}$. Restrictions can only make the invariant smaller, so hard restrictions are valid witnesses for lower-bound attempts on $\mathrm{ctc}$.
+> **Interpretation.** The optimized cylinder-threshold upper-bound invariant is stable under the same basic symmetries as $H^{\ast}$. Restrictions can only make the invariant smaller, so hard restrictions are valid witnesses for lower-bound attempts on $\mathrm{ctc}$.
 
 ## Proof
 

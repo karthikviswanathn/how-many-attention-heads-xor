@@ -28,19 +28,19 @@ $$ t:=\lvert\Delta(L_0,L_1)\rvert. $$
 
 Then
 
-$$ H^{*}(f)\leq1+t. $$
+$$ H^{\ast}(f)\leq1+t. $$
 
 In particular, if both cofactors are constants or linear threshold functions, then
 
-$$ H^{*}(f)\leq n. $$
+$$ H^{\ast}(f)\leq n. $$
 
 If the affine sign representations can be chosen with $t=0$, then $f$ is constant or a nonconstant linear threshold function, so
 
-$$ H^{*}(f)\in\lbrace0,1\rbrace. $$
+$$ H^{\ast}(f)\in\lbrace0,1\rbrace. $$
 
 If they can be chosen with $t\leq1$, then
 
-$$ H^{*}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
+$$ H^{\ast}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** When the two slices across one bit are LTFs, the cost is controlled by how many affine slopes change across the split. The constant term and all unchanged slopes are free inside one affine head; each changed slope creates one mixed monomial $zy_i$.
 
@@ -70,11 +70,11 @@ $$ \mathrm{afs}(P)\leq1+t. $$
 
 The affine-free sparsity theorem [048_affine_free_sparsity_upper_bound.md](../03_function_families_and_affine_geometry/048_affine_free_sparsity_upper_bound.md) gives
 
-$$ H^{*}(f)\leq1+t. $$
+$$ H^{\ast}(f)\leq1+t. $$
 
-If both cofactors are constants or LTFs, affine sign representations exist and $t\leq n-1$, so $H^{*}(f)\leq n$.
+If both cofactors are constants or LTFs, affine sign representations exist and $t\leq n-1$, so $H^{\ast}(f)\leq n$.
 
-If $t=0$, then $P$ is affine in $(z,y)$. Hence $f$ is constant or a nonconstant LTF, giving $H^{*}(f)\in\lbrace0,1\rbrace$ by the one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md).
+If $t=0$, then $P$ is affine in $(z,y)$. Hence $f$ is constant or a nonconstant LTF, giving $H^{\ast}(f)\in\lbrace0,1\rbrace$ by the one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md).
 
 If $t\leq1$, then $\mathrm{afs}(P)\leq2$. The exact classification follows from the low affine-free support theorem [070_low_affine_free_support_exact.md](../03_function_families_and_affine_geometry/070_low_affine_free_support_exact.md). $\blacksquare$
 
@@ -82,6 +82,6 @@ If $t\leq1$, then $\mathrm{afs}(P)\leq2$. The exact classification follows from 
 
 For functions with LTF cofactors along one split, define the slope cost of a chosen pair of affine cofactor separators as the number of coordinates whose linear coefficients differ. Minimizing this cost over all separator choices gives a concrete invariant $\sigma_z(f)$ for that split, and the theorem gives
 
-$$ H^{*}(f)\leq1+\sigma_z(f). $$
+$$ H^{\ast}(f)\leq1+\sigma_z(f). $$
 
 This is useful because affine separators are not unique. A bad pair of separators may change many slopes, while a better pair can reveal that the glued function is already an LTF or exactly two-head.

@@ -18,7 +18,7 @@ and let $v$ be the number of distinct variables appearing in the DNF.
 
 If $f$ is nonconstant, then
 
-$$ H^{*}(f) \leq \min\left\lbrace 2\sum_{a=1}^{s}2^{v-w_a}, \sum_{a=1}^{s}\min\lbrace2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\rbrace, 2^v-1, 1+\sum_{r=2}^{\min\lbrace w,v\rbrace}\binom{v}{r} \right\rbrace. $$
+$$ H^{\ast}(f) \leq \min\left\lbrace 2\sum_{a=1}^{s}2^{v-w_a}, \sum_{a=1}^{s}\min\lbrace2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\rbrace, 2^v-1, 1+\sum_{r=2}^{\min\lbrace w,v\rbrace}\binom{v}{r} \right\rbrace. $$
 
 The dual statement holds for CNFs with consistent nonempty clauses
 
@@ -26,7 +26,7 @@ $$ C_a(x) = \left(\bigvee_{i\in P_a}x_i\right) \vee \left(\bigvee_{j\in N_a}(1-x
 
 with the same definitions of $w_a$, $w$, and $v$.
 
-If $f$ is constant, then $H^{*}(f)=0$.
+If $f$ is constant, then $H^{\ast}(f)=0$.
 
 > **Interpretation.** Mixed-literal formulas have several incomparable head certificates. Volume rewards high-width rare terms, local expansion rewards formulas close to monotone term by term, junta reduction rewards few used variables, and the width-degree route rewards low-width formulas on a moderate variable set.
 
@@ -38,7 +38,7 @@ $$ g:\lbrace0,1\rbrace^{V}\to\lbrace0,1\rbrace $$
 
 be the induced function. By junta reduction [039_junta_upper_bounds.md](../02_complexity_measure_upper_bounds/039_junta_upper_bounds.md),
 
-$$ H^{*}(f)=H^{*}(g). $$
+$$ H^{\ast}(f)=H^{\ast}(g). $$
 
 ### Lemma 1. Volume on the used variables
 
@@ -52,19 +52,19 @@ $$ \lvert g^{-1}(1)\rvert \leq \sum_{a=1}^{s}2^{v-w_a}. $$
 
 The sparse-support upper bound [037_sparse_support_upper_bound.md](../02_complexity_measure_upper_bounds/037_sparse_support_upper_bound.md) gives
 
-$$ H^{*}(g) \leq 2\lvert g^{-1}(1)\rvert \leq 2\sum_{a=1}^{s}2^{v-w_a}. $$
+$$ H^{\ast}(g) \leq 2\lvert g^{-1}(1)\rvert \leq 2\sum_{a=1}^{s}2^{v-w_a}. $$
 
 ### Lemma 2. Local literal expansion
 
 The terms form a $1$-certificate cover of $g$. The local certificate-expansion theorem [044_oriented_certificate_expansion_upper_bound.md](../02_complexity_measure_upper_bounds/044_oriented_certificate_expansion_upper_bound.md) gives
 
-$$ H^{*}(g) \leq \sum_{a=1}^{s}\min\lbrace2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\rbrace. $$
+$$ H^{\ast}(g) \leq \sum_{a=1}^{s}\min\lbrace2^{\lvert P_a\rvert},2^{\lvert N_a\rvert}\rbrace. $$
 
 ### Lemma 3. Junta interpolation
 
 The generic small-junta bound [039_junta_upper_bounds.md](../02_complexity_measure_upper_bounds/039_junta_upper_bounds.md) gives
 
-$$ H^{*}(g)\leq2^v-1 $$
+$$ H^{\ast}(g)\leq2^v-1 $$
 
 for nonconstant $g$.
 
@@ -80,9 +80,9 @@ $$ \min\lbrace w,v\rbrace. $$
 
 Since $g$ is nonconstant, the affine-free sparsity theorem [048_affine_free_sparsity_upper_bound.md](048_affine_free_sparsity_upper_bound.md) gives
 
-$$ H^{*}(g) \leq 1+\sum_{r=2}^{\min\lbrace w,v\rbrace}\binom{v}{r}. $$
+$$ H^{\ast}(g) \leq 1+\sum_{r=2}^{\min\lbrace w,v\rbrace}\binom{v}{r}. $$
 
-Combining Lemmas 1 through 4 and using $H^{*}(f)=H^{*}(g)$ proves the DNF bound.
+Combining Lemmas 1 through 4 and using $H^{\ast}(f)=H^{\ast}(g)$ proves the DNF bound.
 
 For a CNF, the false inputs are covered by the cylinders that falsify one clause:
 
@@ -98,7 +98,7 @@ strictly sign-represents the CNF and has degree at most $\min\lbrace w,v\rbrace$
 
 If the formula has width at most $w$ and uses $v$ variables, then every nonconstant function it computes satisfies
 
-$$ H^{*}(f) \leq 1+\sum_{r=2}^{\min\lbrace w,v\rbrace}\binom{v}{r}. $$
+$$ H^{\ast}(f) \leq 1+\sum_{r=2}^{\min\lbrace w,v\rbrace}\binom{v}{r}. $$
 
 For fixed width $w$, this is polynomial in the number of variables used by the formula. It is independent of the number of terms, unlike the volume and local-expansion bounds.
 

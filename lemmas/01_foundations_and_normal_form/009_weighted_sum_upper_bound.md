@@ -28,7 +28,7 @@ $$ M := \lvert\mathrm{Im}(t)\rvert. $$
 
 Then
 
-$$ H^{*}(f) \leq M - 1. $$
+$$ H^{\ast}(f) \leq M - 1. $$
 
 > **Equivalently.** If a Boolean function depends only on a positive weighted sum of the input bits, then one can realize it with one head per distinct nonzero level of that statistic.
 
@@ -221,7 +221,7 @@ So this affine score is positive exactly when $F(t(x)) = 1$, and negative exactl
 
 Therefore
 
-$$ H^{*}(f) \leq M - 1. $$
+$$ H^{\ast}(f) \leq M - 1. $$
 
 This completes the proof of the theorem. $\blacksquare$
 
@@ -235,7 +235,7 @@ $$ M_{+}(f) := \min \left\lbrace \lvert \mathrm{Im}\left(\sum_{i=1}^{n} \lambda_
 
 The theorem implies
 
-$$ H^{*}(f) \leq M_{+}(f) - 1. $$
+$$ H^{\ast}(f) \leq M_{+}(f) - 1. $$
 
 This gives a candidate upper-bound invariant for the first core question in [../problem_statement.md](../../problem_statement.md).
 
@@ -257,7 +257,7 @@ $$ \mathrm{Im}(t) = \lbrace0,1,\ldots,n\rbrace $$
 
 and $M = n+1$. Therefore
 
-$$ H^{*}(f) \leq n. $$
+$$ H^{\ast}(f) \leq n. $$
 
 ### Corollary 6. Universal upper bound
 
@@ -275,4 +275,4 @@ $$ \lvert\mathrm{Im}(t)\rvert = 2^n. $$
 
 Therefore every Boolean function satisfies
 
-$$ H^{*}(f) \leq 2^n - 1. $$
+$$ H^{\ast}(f) \leq 2^n - 1. $$

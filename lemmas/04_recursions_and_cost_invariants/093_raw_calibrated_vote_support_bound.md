@@ -26,7 +26,7 @@ $$ \mu := \min_x \left\lvert c_0+\sum_{j=1}^{s}c_jT_j(x) \right\rvert > 0. $$
 
 Then
 
-$$ H^{*}(f) \leq \sum_{j:c_j\neq0}\rho(T_j). $$
+$$ H^{\ast}(f) \leq \sum_{j:c_j\neq0}\rho(T_j). $$
 
 Moreover, let
 
@@ -42,7 +42,7 @@ $$ \rho(T)\leq\mathrm{eafs}(T). $$
 
 Consequently,
 
-$$ H^{*}(f) \leq \sum_{j:c_j\neq0}\mathrm{eafs}(T_j). $$
+$$ H^{\ast}(f) \leq \sum_{j:c_j\neq0}\mathrm{eafs}(T_j). $$
 
 > **Interpretation.** The calibrated-vote theorem does not require every feature to be approximated by one atom. A feature may cost several raw atoms, and exact multilinear sparsity gives a concrete fallback cost.
 
@@ -82,7 +82,7 @@ $$ \begin{aligned} \lvert\widetilde V(x)-V(x)\rvert &\leq \sum_{j:c_j\neq0} \lve
 
 Thus $\widetilde V$ has the same sign as $V$ at every cube point. After absorbing the constants $c_ja_{j,0}$ into the final readout constant, $\widetilde V$ is a constant plus $R$ scalar multiples of one-head atoms. Scalar multiples are still one-head atoms, by scaling the numerator parameters. Therefore the linear-fractional normal form gives
 
-$$ H^{*}(f)\leq R. $$
+$$ H^{\ast}(f)\leq R. $$
 
 ### Lemma 2. Exact affine-free support controls raw cost
 

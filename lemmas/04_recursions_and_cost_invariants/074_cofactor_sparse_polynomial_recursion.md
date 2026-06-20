@@ -16,15 +16,15 @@ $$ m_b:=\lvert\mathcal{A}_b\rvert \qquad (b\in\lbrace0,1\rbrace). $$
 
 Then
 
-$$ H^{*}(f) \leq m_0 +\lvert\mathcal{A}_0\cup\mathcal{A}_1\rvert +1. $$
+$$ H^{\ast}(f) \leq m_0 +\lvert\mathcal{A}_0\cup\mathcal{A}_1\rvert +1. $$
 
 In particular,
 
-$$ H^{*}(f) \leq 2m_0+m_1+1. $$
+$$ H^{\ast}(f) \leq 2m_0+m_1+1. $$
 
 Consequently, in terms of polynomial-threshold sparsity,
 
-$$ H^{*}(f) \leq 2\mathrm{ptfsp}(f_0) +\mathrm{ptfsp}(f_1) +1. $$
+$$ H^{\ast}(f) \leq 2\mathrm{ptfsp}(f_0) +\mathrm{ptfsp}(f_1) +1. $$
 
 Also, if both cofactors have threshold degree at most $d$, then
 
@@ -32,7 +32,7 @@ $$ \deg_{\pm}(f)\leq d+1. $$
 
 For nonconstant $f$, this gives the affine-free head bound
 
-$$ H^{*}(f) \leq 1+\sum_{r=2}^{\min\lbrace d+1,n\rbrace}\binom{n}{r}. $$
+$$ H^{\ast}(f) \leq 1+\sum_{r=2}^{\min\lbrace d+1,n\rbrace}\binom{n}{r}. $$
 
 > **Interpretation.** A clean one-head Shannon recursion remains open, but sparse sign polynomials do satisfy an explicit one-sided cofactor recursion. This gives a recursive route for structured functions whose cofactors have sparse sign representations.
 
@@ -69,7 +69,7 @@ nonconstant monomials.
 
 Applying the polynomial-threshold sparsity theorem [041_ptf_sparsity_upper_bound.md](../02_complexity_measure_upper_bounds/041_ptf_sparsity_upper_bound.md) proves
 
-$$ H^{*}(f) \leq m_0 +\lvert\mathcal{A}_0\cup\mathcal{A}_1\rvert +1. $$
+$$ H^{\ast}(f) \leq m_0 +\lvert\mathcal{A}_0\cup\mathcal{A}_1\rvert +1. $$
 
 Since
 
@@ -87,7 +87,7 @@ $$ \deg_{\pm}(f)\leq d+1. $$
 
 If $f$ is nonconstant, the affine-free sparsity corollary [048_affine_free_sparsity_upper_bound.md](../03_function_families_and_affine_geometry/048_affine_free_sparsity_upper_bound.md) gives
 
-$$ H^{*}(f) \leq 1+\sum_{r=2}^{\min\lbrace d+1,n\rbrace}\binom{n}{r}. $$
+$$ H^{\ast}(f) \leq 1+\sum_{r=2}^{\min\lbrace d+1,n\rbrace}\binom{n}{r}. $$
 
 $\blacksquare$
 
@@ -95,8 +95,8 @@ $\blacksquare$
 
 This theorem gives a provable recursive replacement for the currently open one-head cofactor recursion:
 
-$$ H^{*}(f) \stackrel{?}{\leq} \max\lbrace H^{*}(f_0),H^{*}(f_1)\rbrace+1. $$
+$$ H^{\ast}(f) \stackrel{?}{\leq} \max\lbrace H^{\ast}(f_0),H^{\ast}(f_1)\rbrace+1. $$
 
 The open recursion would compose head representations directly. The proved recursion composes sparse sign polynomials instead, then routes them through the sparse-PTF upper bound.
 
-For a decision tree, iterating this construction recovers the fact that a depth-$d$ tree has threshold degree at most $d$. For formulas and branching programs with sparse cofactor sign polynomials, the support-count version can be sharper than using degree alone.
+For a decision tree, iterating this construction recovers the fact that a depth $d$ tree has threshold degree at most $d$. For formulas and branching programs with sparse cofactor sign polynomials, the support-count version can be sharper than using degree alone.

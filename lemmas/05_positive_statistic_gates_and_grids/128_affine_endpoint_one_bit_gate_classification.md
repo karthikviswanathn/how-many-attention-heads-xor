@@ -20,7 +20,7 @@ $$ F(z,y):=G(z,E(y)). $$
 
 Then
 
-$$ H^{*}(F)= \begin{cases} 0 & \text{if } G \text{ is constant},\\ 2 & \text{if } G \text{ is XOR or XNOR},\\ 1 & \text{otherwise}. \end{cases} $$
+$$ H^{\ast}(F)= \begin{cases} 0 & \text{if } G \text{ is constant},\\ 2 & \text{if } G \text{ is XOR or XNOR},\\ 1 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** For affine endpoint features, the one-bit gate split is exact. The only genuinely two-head interactions are fresh-bit XOR and XNOR.
 
@@ -66,11 +66,11 @@ $$ r(z)\wedge(1-E(y))=1 \qquad\Longleftrightarrow\qquad (d+1)r(z)-S(y)>\frac32. 
 
 On true inputs, $r=1$ and $S\leq d-1$, so the score is at least $2$. If $r=1$ and $E=1$, the score is $1$; if $r=0$, the score is at most $0$. Thus this predicate is also an LTF. Complements of LTFs are LTFs, by negating the separator and shifting the threshold.
 
-Now classify $G$ by its true set in the two-bit square. If $G$ is constant, then $F$ is constant, so $H^{*}(F)=0$.
+Now classify $G$ by its true set in the two-bit square. If $G$ is constant, then $F$ is constant, so $H^{\ast}(F)=0$.
 
 If $G$ is XOR or XNOR, Lemma 127 gives
 
-$$ H^{*}(F)=2. $$
+$$ H^{\ast}(F)=2. $$
 
 Assume from now on that $G$ is nonconstant and neither XOR nor XNOR. If $G$ has two true inputs, then its two true inputs are adjacent in the two-bit square, so $G$ depends on only one of its two inputs. Therefore $F$ is one of $z$, $1-z$, $E$, or $1-E$, all of which are nonconstant LTFs.
 
@@ -84,7 +84,7 @@ If $G$ has three true inputs, then $1-G$ has one true input. Hence $1-F$ is a no
 
 Thus every remaining nonconstant gate gives a nonconstant LTF $F$. The one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md) then yields
 
-$$ H^{*}(F)=1. $$
+$$ H^{\ast}(F)=1. $$
 
 This completes the classification. $\blacksquare$
 

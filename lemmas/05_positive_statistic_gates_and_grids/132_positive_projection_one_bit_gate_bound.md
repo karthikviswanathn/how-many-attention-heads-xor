@@ -24,17 +24,17 @@ $$ \mathcal{S}_{G,t} := G(0,F(\tau_0)),\ldots,G(0,F(\tau_{M-1})), G(1,F(\tau_0))
 
 Let $C_{G,t}$ be the number of sign changes in this sequence. Then
 
-$$ H^{*}(H_G)\leq C_{G,t}. $$
+$$ H^{\ast}(H_G)\leq C_{G,t}. $$
 
 More precisely:
 
-1. If $C_{G,t}=0$, then $H^{*}(H_G)=0$.
+1. If $C_{G,t}=0$, then $H^{\ast}(H_G)=0$.
 
-2. If $C_{G,t}=1$, then $H^{*}(H_G)=1$.
+2. If $C_{G,t}=1$, then $H^{\ast}(H_G)=1$.
 
 3. If $C_{G,t}=2$, then
 
-$$ H^{*}(H_G)= \begin{cases} 1 & \text{if } H_G \text{ is a nonconstant LTF},\\ 2 & \text{otherwise}. \end{cases} $$
+$$ H^{\ast}(H_G)= \begin{cases} 1 & \text{if } H_G \text{ is a nonconstant LTF},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** A raw bit appended to a positive-projection feature remains a positive projection after separating the two slices. The cost is the sign-change count of the two gate slices written end to end.
 
@@ -62,21 +62,21 @@ $$ H_G(z,y)=R(s(z,y)). $$
 
 The sign-change count of $R$ along the ordered image of $s$ is exactly $C_{G,t}$, by construction. The positive-projection sign-change theorem [013_positive_projection_sign_changes.md](../01_foundations_and_normal_form/013_positive_projection_sign_changes.md) gives
 
-$$ H^{*}(H_G)\leq C_{G,t}. $$
+$$ H^{\ast}(H_G)\leq C_{G,t}. $$
 
-If $C_{G,t}=0$, then $R$ is constant on $\mathrm{Im}(s)$, so $H_G$ is constant and $H^{*}(H_G)=0$.
+If $C_{G,t}=0$, then $R$ is constant on $\mathrm{Im}(s)$, so $H_G$ is constant and $H^{\ast}(H_G)=0$.
 
-If $C_{G,t}=1$, then the same theorem gives $H^{*}(H_G)\leq1$, and $H_G$ is nonconstant. The zero-head and one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md) gives
+If $C_{G,t}=1$, then the same theorem gives $H^{\ast}(H_G)\leq1$, and $H_G$ is nonconstant. The zero-head and one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md) gives
 
-$$ H^{*}(H_G)=1. $$
+$$ H^{\ast}(H_G)=1. $$
 
-If $C_{G,t}=2$, then $H^{*}(H_G)\leq2$. If $H_G$ is a nonconstant LTF, the one-head characterization gives $H^{*}(H_G)=1$. Otherwise $H_G$ is nonconstant and not an LTF, so the same characterization gives $H^{*}(H_G)\geq2$. Hence $H^{*}(H_G)=2$ in the non-LTF case. $\blacksquare$
+If $C_{G,t}=2$, then $H^{\ast}(H_G)\leq2$. If $H_G$ is a nonconstant LTF, the one-head characterization gives $H^{\ast}(H_G)=1$. Otherwise $H_G$ is nonconstant and not an LTF, so the same characterization gives $H^{\ast}(H_G)\geq2$. Hence $H^{\ast}(H_G)=2$ in the non-LTF case. $\blacksquare$
 
 ## Consequences
 
 Let $C$ be the sign-change count of $F$ along $\mathrm{Im}(t)$. For literal gates such as $z\wedge T$, $z\vee T$, and their complements, the concatenated sequence has at most $C+1$ sign changes. Therefore
 
-$$ H^{*}(z\wedge T)\leq C+1, \qquad H^{*}(z\vee T)\leq C+1, $$
+$$ H^{\ast}(z\wedge T)\leq C+1, \qquad H^{\ast}(z\vee T)\leq C+1, $$
 
 and the same bound holds for their complements.
 

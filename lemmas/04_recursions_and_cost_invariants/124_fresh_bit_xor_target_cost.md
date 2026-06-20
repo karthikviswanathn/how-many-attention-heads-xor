@@ -24,7 +24,7 @@ where the minimum ranges over all strict affine-cylinder scores $S$ for $T$.
 
 Then
 
-$$ \deg_{\pm}(T)+1 \leq H^{*}(z\oplus T(y)) \leq \mathrm{xactc}(T), $$
+$$ \deg_{\pm}(T)+1 \leq H^{\ast}(z\oplus T(y)) \leq \mathrm{xactc}(T), $$
 
 and the same bounds hold for $1-(z\oplus T(y))$.
 
@@ -44,17 +44,17 @@ $$ \mathrm{xactc}(T) \leq 1+m+3\mathrm{actc}(T). $$
 
 Fix a strict affine-cylinder score $S$ for $T$. The fresh-bit XOR affine-cylinder bound [119_fresh_bit_xor_affine_cylinder_bound.md](119_fresh_bit_xor_affine_cylinder_bound.md) gives
 
-$$ \deg_{\pm}(T)+1 \leq H^{*}(z\oplus T) \leq \eta_{\oplus}(A) + \lvert L(A)\rvert + K_{0}(\Gamma) + K_{+}(\Gamma). $$
+$$ \deg_{\pm}(T)+1 \leq H^{\ast}(z\oplus T) \leq \eta_{\oplus}(A) + \lvert L(A)\rvert + K_{0}(\Gamma) + K_{+}(\Gamma). $$
 
 Applying the same bound after flipping the fresh coordinate $z$ gives the same upper bound with $K_{-}(\Gamma)$ in place of $K_{+}(\Gamma)$, because $zC_{P,N}$ is replaced by $(1-z)C_{P,N}=C_{P,N\cup\lbrace z\rbrace}$. Fresh-coordinate bit-flip turns XOR into XNOR, and output complement preserves head complexity, so both orientations are valid for the XOR and XNOR pair.
 
 Hence
 
-$$ \deg_{\pm}(T)+1 \leq H^{*}(z\oplus T) \leq \eta_{\oplus}(A) + \lvert L(A)\rvert + K_{0}(\Gamma) + \min\lbrace K_{+}(\Gamma),K_{-}(\Gamma)\rbrace. $$
+$$ \deg_{\pm}(T)+1 \leq H^{\ast}(z\oplus T) \leq \eta_{\oplus}(A) + \lvert L(A)\rvert + K_{0}(\Gamma) + \min\lbrace K_{+}(\Gamma),K_{-}(\Gamma)\rbrace. $$
 
 Minimizing the upper bound over $S$ gives
 
-$$ H^{*}(z\oplus T) \leq \mathrm{xactc}(T). $$
+$$ H^{\ast}(z\oplus T) \leq \mathrm{xactc}(T). $$
 
 The XNOR case follows by the same output-complement argument.
 
@@ -82,11 +82,11 @@ $\blacksquare$
 
 The two optimized one-bit costs now split the non-XOR and XOR cases:
 
-$$ H^{*}(r\wedge T),\ H^{*}(r\vee T) \leq 1+\mathrm{lgactc}(T), $$
+$$ H^{\ast}(r\wedge T),\ H^{\ast}(r\vee T) \leq 1+\mathrm{lgactc}(T), $$
 
 while
 
-$$ \deg_{\pm}(T)+1 \leq H^{*}(z\oplus T) \leq \mathrm{xactc}(T). $$
+$$ \deg_{\pm}(T)+1 \leq H^{\ast}(z\oplus T) \leq \mathrm{xactc}(T). $$
 
 Thus the exact fresh-bit XOR problem becomes the concrete equality problem
 

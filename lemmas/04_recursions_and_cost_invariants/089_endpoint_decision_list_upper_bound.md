@@ -16,7 +16,7 @@ $$ A_S(x):=\mathbf{1}[L_S(x)=\Lambda_S]. $$
 
 Let $f$ be computed by a decision list with $L$ tests, where each test is either an endpoint affine-threshold feature or the complement of one. Then
 
-$$ H^{*}(f)\leq L. $$
+$$ H^{\ast}(f)\leq L. $$
 
 > **Interpretation.** The one-head-per-test decision-list theorem extends from raw literals to endpoint OR-type and AND-type affine thresholds, including their complements.
 
@@ -82,7 +82,7 @@ $$ \sum_{j=1}^{L}\lvert c_j\rvert\epsilon_j<\mu. $$
 
 The calibrated threshold-vote theorem [085_calibrated_threshold_vote_upper_bound.md](085_calibrated_threshold_vote_upper_bound.md) gives
 
-$$ H^{*}(f)\leq L. $$
+$$ H^{\ast}(f)\leq L. $$
 
 $\blacksquare$
 
@@ -90,6 +90,6 @@ $\blacksquare$
 
 Literal decision lists are a special case, because $x_i$ is an endpoint feature and $1-x_i$ is its complement. Thus this theorem recovers
 
-$$ H^{*}(f)\leq L_{\mathrm{litDL}}(f). $$
+$$ H^{\ast}(f)\leq L_{\mathrm{litDL}}(f). $$
 
 It also covers decision lists whose tests are positive disjunctions $\mathbf{1}[\sum_{i\in S}\lambda_i x_i>0]$, positive conjunctions $\mathbf{1}[\sum_{i\in S}\lambda_i x_i=\Lambda_S]$, and complements of either kind.

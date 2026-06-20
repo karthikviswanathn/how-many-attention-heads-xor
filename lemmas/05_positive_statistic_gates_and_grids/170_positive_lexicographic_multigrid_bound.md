@@ -26,11 +26,11 @@ lexicographically, with $V_1$ slowest and $V_b$ fastest. Let $L_{\mathrm{lex}}(F
 
 Then
 
-$$ H^{*}(f)\leq L_{\mathrm{lex}}(F). $$
+$$ H^{\ast}(f)\leq L_{\mathrm{lex}}(F). $$
 
 For every block $j$ and every choice of levels in the other blocks, the corresponding one-block fiber gives a restriction lower bound:
 
-$$ H^{*}\bigl(F(\nu^{(1)}_{r_1},\ldots,\nu^{(j-1)}_{r_{j-1}},t_j(x^{(j)}),\nu^{(j+1)}_{r_{j+1}},\ldots,\nu^{(b)}_{r_b})\bigr) \leq H^{*}(f). $$
+$$ H^{\ast}\bigl(F(\nu^{(1)}_{r_1},\ldots,\nu^{(j-1)}_{r_{j-1}},t_j(x^{(j)}),\nu^{(j+1)}_{r_{j+1}},\ldots,\nu^{(b)}_{r_b})\bigr) \leq H^{\ast}(f). $$
 
 If
 
@@ -38,7 +38,7 @@ $$ \deg_{\pm}(f)=L_{\mathrm{lex}}(F), $$
 
 then
 
-$$ H^{*}(f)=\deg_{\pm}(f)=L_{\mathrm{lex}}(F). $$
+$$ H^{\ast}(f)=\deg_{\pm}(f)=L_{\mathrm{lex}}(F). $$
 
 > **Interpretation.** Any finite positive-statistic multigrid can be traversed by one positive projection. The cost is the number of label changes along that lexicographic traversal.
 
@@ -66,15 +66,15 @@ The scale inequalities ensure that increasing an earlier coordinate of the grid 
 
 Since $f$ factors through the grid, it also factors through the ordered image of $s$ along this lexicographic traversal. The sign-change count along $s$ is $L_{\mathrm{lex}}(F)$. Applying the positive-projection sign-change upper bound [013_positive_projection_sign_changes.md](../01_foundations_and_normal_form/013_positive_projection_sign_changes.md) gives
 
-$$ H^{*}(f)\leq L_{\mathrm{lex}}(F). $$
+$$ H^{\ast}(f)\leq L_{\mathrm{lex}}(F). $$
 
 For the lower bound, fix all blocks except $j$ to assignments attaining the specified levels. Restriction monotonicity gives the displayed inequality.
 
 If $\deg_{\pm}(f)=L_{\mathrm{lex}}(F)$, combine the upper bound with the threshold-degree lower bound
 
-$$ \deg_{\pm}(f)\leq H^{*}(f). $$
+$$ \deg_{\pm}(f)\leq H^{\ast}(f). $$
 
-The two sides match, so $H^{*}(f)=\deg_{\pm}(f)=L_{\mathrm{lex}}(F)$. $\blacksquare$
+The two sides match, so $H^{\ast}(f)=\deg_{\pm}(f)=L_{\mathrm{lex}}(F)$. $\blacksquare$
 
 ## Consequence
 

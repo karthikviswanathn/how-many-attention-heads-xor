@@ -20,7 +20,7 @@ $$ q(a):=F_a(\tau_0), \qquad p(a):=F_a(\tau_{M-1}). $$
 
 Then
 
-$$ \max_{a\in\lbrace0,1\rbrace^{k}}H^{*}\bigl(F_a(t(y))\bigr) \leq H^{*}(f) \leq \sum_{a\in\lbrace0,1\rbrace^{k}}C_a+B_{+}(p,q). $$
+$$ \max_{a\in\lbrace0,1\rbrace^{k}}H^{\ast}\bigl(F_a(t(y))\bigr) \leq H^{\ast}(f) \leq \sum_{a\in\lbrace0,1\rbrace^{k}}C_a+B_{+}(p,q). $$
 
 In particular, if there is a label $b\in\lbrace0,1\rbrace$ such that
 
@@ -28,11 +28,11 @@ $$ F_a(\tau_0)=F_a(\tau_{M-1})=b \qquad \text{for every }a, $$
 
 then
 
-$$ \max_a H^{*}\bigl(F_a(t(y))\bigr) \leq H^{*}(f) \leq \sum_a C_a. $$
+$$ \max_a H^{\ast}\bigl(F_a(t(y))\bigr) \leq H^{\ast}(f) \leq \sum_a C_a. $$
 
-If, moreover, exactly one raw slice is nonconstant and that slice satisfies $H^{*}(F_a(t(y)))=C_a$, then
+If, moreover, exactly one raw slice is nonconstant and that slice satisfies $H^{\ast}(F_a(t(y)))=C_a$, then
 
-$$ H^{*}(f)=C_a. $$
+$$ H^{\ast}(f)=C_a. $$
 
 > **Interpretation.** For arbitrary raw slices sharing one positive statistic, the only price beyond within-slice variation is the optimized mixed endpoint boundary. Common endpoints remove the boundary price entirely.
 
@@ -44,13 +44,13 @@ $$ y\mapsto F_a(t(y)). $$
 
 Therefore
 
-$$ H^{*}\bigl(F_a(t(y))\bigr)\leq H^{*}(f) $$
+$$ H^{\ast}\bigl(F_a(t(y))\bigr)\leq H^{\ast}(f) $$
 
 for every $a$, and taking the maximum gives the displayed lower bound.
 
 For the upper bound, fix any positive raw order $\rho$. The ordered common positive-statistic slice bound [147_ordered_common_positive_statistic_slice_bound.md](147_ordered_common_positive_statistic_slice_bound.md) gives
 
-$$ H^{*}(f)\leq \sum_a C_a+J_{\rho}(f). $$
+$$ H^{\ast}(f)\leq \sum_a C_a+J_{\rho}(f). $$
 
 For this order, the boundary term is exactly
 
@@ -58,7 +58,7 @@ $$ J_{\rho}(f)=B_{\rho}(p,q), $$
 
 because the end label of slice $a$ is $p(a)$ and the start label of slice $a'$ is $q(a')$. Minimizing over positive raw orders gives
 
-$$ H^{*}(f) \leq \sum_a C_a+B_{+}(p,q). $$
+$$ H^{\ast}(f) \leq \sum_a C_a+B_{+}(p,q). $$
 
 If all slice endpoints are the same label $b$, then $p=q=b$ is constant, so
 
@@ -68,11 +68,11 @@ This proves the common-endpoint bracket.
 
 If exactly one raw slice is nonconstant, say slice $a$, then all other $C_{a'}$ vanish. The common-endpoint upper bound gives
 
-$$ H^{*}(f)\leq C_a. $$
+$$ H^{\ast}(f)\leq C_a. $$
 
 The lower bound gives
 
-$$ H^{*}(f)\geq H^{*}\bigl(F_a(t(y))\bigr)=C_a. $$
+$$ H^{\ast}(f)\geq H^{\ast}\bigl(F_a(t(y))\bigr)=C_a. $$
 
 Thus equality holds. $\blacksquare$
 

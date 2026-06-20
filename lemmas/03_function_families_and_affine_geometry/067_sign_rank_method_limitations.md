@@ -8,7 +8,7 @@ $$ f:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace. $$
 
 The partition sign-rank lower-bound route from [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md) can certify
 
-$$ H^{*}(f)\geq h+1 $$
+$$ H^{\ast}(f)\geq h+1 $$
 
 only if there is a partition $I\sqcup J=\lbrace1,\ldots,n\rbrace$ such that
 
@@ -16,7 +16,7 @@ $$ 2^{\min\lbrace\lvert I\rvert,\lvert J\rvert\rbrace} > \sum_{r=0}^{h}\binom{n}
 
 Consequently, this sign-rank route cannot certify
 
-$$ H^{*}(f)\geq3 $$
+$$ H^{\ast}(f)\geq3 $$
 
 for any Boolean function on at most $13$ input bits.
 
@@ -50,7 +50,7 @@ For the second claim, set $h=2$. The best possible partition has
 
 $$ \min\lbrace\lvert I\rvert,\lvert J\rvert\rbrace\leq\left\lfloor\frac{n}{2}\right\rfloor, $$
 
-so a necessary condition for proving $H^{*}(f)\geq3$ by this route is
+so a necessary condition for proving $H^{\ast}(f)\geq3$ by this route is
 
 $$ 2^{\lfloor n/2\rfloor} > 1+n+\binom{n}{2}. $$
 
@@ -58,7 +58,7 @@ For every $n\leq13$,
 
 $$ 2^{\lfloor n/2\rfloor} \leq 1+n+\binom{n}{2}. $$
 
-Thus no partition sign-rank argument of the form in [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md) can certify $H^{*}(f)\geq3$ on at most $13$ input bits. $\blacksquare$
+Thus no partition sign-rank argument of the form in [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md) can certify $H^{\ast}(f)\geq3$ on at most $13$ input bits. $\blacksquare$
 
 ## Consequence
 

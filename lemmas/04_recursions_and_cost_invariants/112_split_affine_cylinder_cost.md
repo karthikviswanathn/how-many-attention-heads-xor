@@ -28,7 +28,7 @@ $$ \mathrm{sactc}(f) := \min_{1\leq j\leq n}\mathrm{sactc}_{j}(f). $$
 
 Then
 
-$$ H^{*}(f) \leq \mathrm{actc}(f) \leq \mathrm{sactc}(f). $$
+$$ H^{\ast}(f) \leq \mathrm{actc}(f) \leq \mathrm{sactc}(f). $$
 
 If
 
@@ -36,7 +36,7 @@ $$ \mathrm{sactc}(f)\leq2, $$
 
 then
 
-$$ H^{*}(f) = \begin{cases} 0, & \text{if } f \text{ is constant},\\ 1, & \text{if } f \text{ is a nonconstant LTF},\\ 2, & \text{otherwise}. \end{cases} $$
+$$ H^{\ast}(f) = \begin{cases} 0, & \text{if } f \text{ is constant},\\ 1, & \text{if } f \text{ is a nonconstant LTF},\\ 2, & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** The split affine-cylinder cost is an optimized recursive certificate. It is not a new lower bound on $\mathrm{actc}$; it is a structured way to produce affine-cylinder certificates by interpolating two cofactors.
 
@@ -54,11 +54,11 @@ $$ \mathrm{actc}(f)\leq\mathrm{sactc}(f). $$
 
 The affine-cylinder threshold-cost theorem [103_affine_cylinder_threshold_cost.md](103_affine_cylinder_threshold_cost.md) gives
 
-$$ H^{*}(f)\leq\mathrm{actc}(f). $$
+$$ H^{\ast}(f)\leq\mathrm{actc}(f). $$
 
 Combining the two inequalities proves
 
-$$ H^{*}(f) \leq \mathrm{actc}(f) \leq \mathrm{sactc}(f). $$
+$$ H^{\ast}(f) \leq \mathrm{actc}(f) \leq \mathrm{sactc}(f). $$
 
 If $\mathrm{sactc}(f)\leq2$, then $\mathrm{actc}(f)\leq2$. The low affine-cylinder exactness theorem [109_low_affine_cylinder_cost_exactness.md](109_low_affine_cylinder_cost_exactness.md) now gives the displayed constant, nonconstant LTF, or two-head split. $\blacksquare$
 

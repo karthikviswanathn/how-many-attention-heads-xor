@@ -8,9 +8,9 @@ $$ f : \lbrace0,1\rbrace^8 \to \lbrace0,1\rbrace, $$
 
 we have
 
-$$ H^{*}(f) \leq 32. $$
+$$ H^{\ast}(f) \leq 32. $$
 
-This improves the general positive weighted-sum bound, which gives only $H^{*}(f) \leq 255$ at $n=8$.
+This improves the general positive weighted-sum bound, which gives only $H^{\ast}(f) \leq 255$ at $n=8$.
 
 ## Proof
 
@@ -52,7 +52,7 @@ which is nonzero. Hence the determinant is nonzero over the integers, and the di
 
 By the determinant-span schema from [021_determinant_span_schema.md](021_determinant_span_schema.md), every Boolean function $f : \lbrace0,1\rbrace^8 \to \lbrace0,1\rbrace$ has
 
-$$ H^{*}(f) \leq 32. $$
+$$ H^{\ast}(f) \leq 32. $$
 
 $\blacksquare$
 
@@ -60,18 +60,18 @@ $\blacksquare$
 
 The current universal upper bounds for small $n$ are:
 
-- $n=1$: $H^{*}(f) \leq 1$.
-- $n=2$: $H^{*}(f) \leq 2$.
-- $n=3$: $H^{*}(f) \leq 3$, and in fact $H^{*}(f) = \deg_{\pm}(f)$.
-- $n=4$: $H^{*}(f) \leq 4$.
-- $n=5$: $H^{*}(f) \leq 7$.
-- $n=6$: $H^{*}(f) \leq 11$.
-- $n=7$: $H^{*}(f) \leq 19$.
-- $n=8$: $H^{*}(f) \leq 32$.
-- $n=9$: $H^{*}(f) \leq 57$ by [023_nine_bit_universal_upper_bound.md](023_nine_bit_universal_upper_bound.md).
-- $n=10$: $H^{*}(f) \leq 103$ by [024_ten_bit_universal_upper_bound.md](024_ten_bit_universal_upper_bound.md).
-- $n=11$: $H^{*}(f) \leq 187$ by [025_compact_threshold_certificates.md](025_compact_threshold_certificates.md).
-- $n=12$: $H^{*}(f) \leq 342$ by [025_compact_threshold_certificates.md](025_compact_threshold_certificates.md).
+- $n=1$: $H^{\ast}(f) \leq 1$.
+- $n=2$: $H^{\ast}(f) \leq 2$.
+- $n=3$: $H^{\ast}(f) \leq 3$, and in fact $H^{\ast}(f) = \deg_{\pm}(f)$.
+- $n=4$: $H^{\ast}(f) \leq 4$.
+- $n=5$: $H^{\ast}(f) \leq 7$.
+- $n=6$: $H^{\ast}(f) \leq 11$.
+- $n=7$: $H^{\ast}(f) \leq 19$.
+- $n=8$: $H^{\ast}(f) \leq 32$.
+- $n=9$: $H^{\ast}(f) \leq 57$ by [023_nine_bit_universal_upper_bound.md](023_nine_bit_universal_upper_bound.md).
+- $n=10$: $H^{\ast}(f) \leq 103$ by [024_ten_bit_universal_upper_bound.md](024_ten_bit_universal_upper_bound.md).
+- $n=11$: $H^{\ast}(f) \leq 187$ by [025_compact_threshold_certificates.md](025_compact_threshold_certificates.md).
+- $n=12$: $H^{\ast}(f) \leq 342$ by [025_compact_threshold_certificates.md](025_compact_threshold_certificates.md).
 
 This is not an exact classification. It is a universal upper bound.
 

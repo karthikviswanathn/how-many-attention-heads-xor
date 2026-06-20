@@ -2,7 +2,7 @@
 
 This file records the current **provisional** 3-bit representatives that were assigned estimated head complexity
 
-$$ H^{*}(f) = 3 $$
+$$ H^{\ast}(f) = 3 $$
 
 by the latest experimental run with
 

@@ -10,7 +10,7 @@ $$ f(x)=1 \qquad \Longleftrightarrow \qquad P(x)>0 $$
 
 for every $x \in \lbrace0,1\rbrace^3$. Then
 
-$$ H^{*}(f) \leq 2. $$
+$$ H^{\ast}(f) \leq 2. $$
 
 Consequently, the historical provisional three-head function
 
@@ -18,7 +18,7 @@ $$ 00101001 $$
 
 has exact value
 
-$$ H^{*}(00101001) = 2. $$
+$$ H^{\ast}(00101001) = 2. $$
 
 ## Proof
 
@@ -98,7 +98,7 @@ $$ S(x)=\frac{P(x)}{B_1(x)B_2(x)}. $$
 
 By Lemma 1, each summand is a one-head atom. Hence thresholding the sum of two atoms computes $f$, so
 
-$$ H^{*}(f) \leq 2. $$
+$$ H^{\ast}(f) \leq 2. $$
 
 $\blacksquare$
 
@@ -128,11 +128,11 @@ $$ P(x) = -2x_1x_2+2x_1x_3+2x_2x_3+x_1+x_2-3x_3-\frac{3}{4}, $$
 
 so $P$ has degree at most $2$. Lemma 2 gives
 
-$$ H^{*}(g) \leq 2. $$
+$$ H^{\ast}(g) \leq 2. $$
 
-The lower bound $H^{*}(g) \geq 2$ was proved in [014_three_bit_projection_cases.md](014_three_bit_projection_cases.md), using the lattice-square obstruction and the one-head linear-threshold characterization. Therefore
+The lower bound $H^{\ast}(g) \geq 2$ was proved in [014_three_bit_projection_cases.md](014_three_bit_projection_cases.md), using the lattice-square obstruction and the one-head linear-threshold characterization. Therefore
 
-$$ H^{*}(00101001) = 2. $$
+$$ H^{\ast}(00101001) = 2. $$
 
 $\blacksquare$
 
@@ -140,7 +140,7 @@ $\blacksquare$
 
 The four historical provisional three-head rows at $n=3$ are now resolved in prose:
 
-1. `00010110` is $\mathrm{EXACT}_{3,2}$, so $H^{*}=2$.
-2. `00011000` has $H^{*}=2$ by [014_three_bit_projection_cases.md](014_three_bit_projection_cases.md).
-3. `00101001` has $H^{*}=2$ by Lemma 3 above.
-4. `01101001` is $\mathrm{XOR}_3$, so $H^{*}=3$.
+1. `00010110` is $\mathrm{EXACT}_{3,2}$, so $H^{\ast}=2$.
+2. `00011000` has $H^{\ast}=2$ by [014_three_bit_projection_cases.md](014_three_bit_projection_cases.md).
+3. `00101001` has $H^{\ast}=2$ by Lemma 3 above.
+4. `01101001` is $\mathrm{XOR}_3$, so $H^{\ast}=3$.

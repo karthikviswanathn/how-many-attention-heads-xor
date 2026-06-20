@@ -8,15 +8,15 @@ $$ \mathrm{EQ}_m(x,y):=\mathbf{1}[x=y], \qquad x,y\in\lbrace0,1\rbrace^m. $$
 
 Then
 
-$$ H^{*}(\mathrm{EQ}_m)=2. $$
+$$ H^{\ast}(\mathrm{EQ}_m)=2. $$
 
 Consequently,
 
-$$ H^{*}(\mathrm{NEQ}_m)=2 $$
+$$ H^{\ast}(\mathrm{NEQ}_m)=2 $$
 
 for $\mathrm{NEQ}_m:=1-\mathrm{EQ}_m$.
 
-> **Interpretation.** Equality is not a gap example. Although the affine-free sparsity route only gives $H^{*}(\mathrm{EQ}_m)\leq m+1$, a two-head rational score compares the binary encodings of the two strings directly.
+> **Interpretation.** Equality is not a gap example. Although the affine-free sparsity route only gives $H^{\ast}(\mathrm{EQ}_m)\leq m+1$, a two-head rational score compares the binary encodings of the two strings directly.
 
 ## Proof
 
@@ -68,7 +68,7 @@ $$ S(x,y)-\theta>0 \qquad\Longleftrightarrow\qquad x=y. $$
 
 Both $B_1$ and $B_2$ are positive affine functions with positive variable coefficients, so $A_1/B_1$ and $A_2/B_2$ are one-head atoms by the affine-over-positive-affine atom lemma [015_three_bit_quadratic_upper_bound.md](../01_foundations_and_normal_form/015_three_bit_quadratic_upper_bound.md). Hence
 
-$$ H^{*}(\mathrm{EQ}_m)\leq2. $$
+$$ H^{\ast}(\mathrm{EQ}_m)\leq2. $$
 
 ### Lemma 2. One head is impossible
 
@@ -82,15 +82,15 @@ $$ \mathrm{EQ}_1(x_1,y_1)=\mathbf{1}[x_1=y_1]. $$
 
 This two-bit function is not a linear threshold function, as shown in [055_equality_threshold_vote_size.md](055_equality_threshold_vote_size.md). Since one head computes exactly the nonconstant linear threshold functions by [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md), restriction monotonicity gives
 
-$$ H^{*}(\mathrm{EQ}_m)\geq2. $$
+$$ H^{\ast}(\mathrm{EQ}_m)\geq2. $$
 
 Combining the two inequalities proves
 
-$$ H^{*}(\mathrm{EQ}_m)=2. $$
+$$ H^{\ast}(\mathrm{EQ}_m)=2. $$
 
 Complement invariance from [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md) gives
 
-$$ H^{*}(\mathrm{NEQ}_m)=2. $$
+$$ H^{\ast}(\mathrm{NEQ}_m)=2. $$
 
 $\blacksquare$
 
@@ -98,6 +98,6 @@ $\blacksquare$
 
 The equality bracket from [049_equality_bounds.md](049_equality_bounds.md) collapses completely:
 
-$$ \deg_{\pm}(\mathrm{EQ}_m)=2 \qquad \text{and} \qquad H^{*}(\mathrm{EQ}_m)=2 $$
+$$ \deg_{\pm}(\mathrm{EQ}_m)=2 \qquad \text{and} \qquad H^{\ast}(\mathrm{EQ}_m)=2 $$
 
 for every $m\geq1$.

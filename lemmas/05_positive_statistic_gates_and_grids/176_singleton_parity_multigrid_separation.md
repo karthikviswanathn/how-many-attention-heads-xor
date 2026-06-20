@@ -20,13 +20,13 @@ $$ \mathrm{mgc}_{+}^{\mathcal{P}_{\mathrm{sing}}}(\mathrm{XOR}_n) = \mathrm{mhc}
 
 while
 
-$$ H^{*}(\mathrm{XOR}_n)=n. $$
+$$ H^{\ast}(\mathrm{XOR}_n)=n. $$
 
 Thus the singleton-block multigrid cost can be larger than the true head complexity by a factor
 
 $$ \frac{L_n}{n}. $$
 
-> **Interpretation.** Multigrid cost is a certificate cost, not an exact invariant of $H^{*}$. For parity, the singleton partition forces a long binary odometer traversal, while the total Hamming-weight collapse gives the exact $n$-head value.
+> **Interpretation.** Multigrid cost is a certificate cost, not an exact invariant of $H^{\ast}$. For parity, the singleton partition forces a long binary odometer traversal, while the total Hamming-weight collapse gives the exact $n$-head value.
 
 ## Proof
 
@@ -60,7 +60,7 @@ $$ L_n= \begin{cases} 1+4+\cdots+2^{n-1}=\dfrac{2^{n+1}-1}{3} & \text{if } n \te
 
 Finally, $\mathrm{XOR}_n$ is symmetric and its Hamming-weight truth table changes at every adjacent pair of weights. The exact symmetric sign-change theorem [012_symmetric_sign_changes.md](../01_foundations_and_normal_form/012_symmetric_sign_changes.md) gives
 
-$$ H^{*}(\mathrm{XOR}_n)=n. $$
+$$ H^{\ast}(\mathrm{XOR}_n)=n. $$
 
 This proves the separation. $\blacksquare$
 

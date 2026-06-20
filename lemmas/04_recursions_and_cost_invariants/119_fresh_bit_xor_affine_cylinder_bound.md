@@ -28,7 +28,7 @@ $$ \eta_{\oplus}(A) := \mathbf{1} \left[ a\neq0 \text{ or } \exists i,\ \alpha_i
 
 Then
 
-$$ \deg_{\pm}(T)+1 \leq H^{*}(F) \leq \mathrm{actc}(F) \leq \mathrm{sactc}(F) \leq \eta_{\oplus}(A) + \lvert L(A)\rvert + K(\Gamma) + K_z(\Gamma). $$
+$$ \deg_{\pm}(T)+1 \leq H^{\ast}(F) \leq \mathrm{actc}(F) \leq \mathrm{sactc}(F) \leq \eta_{\oplus}(A) + \lvert L(A)\rvert + K(\Gamma) + K_z(\Gamma). $$
 
 The same upper and lower bounds hold for the XNOR function $1-F$.
 
@@ -38,7 +38,7 @@ $$ \eta_{\oplus}(A) + \lvert L(A)\rvert + K(\Gamma) + K_z(\Gamma) = \deg_{\pm}(T
 
 then
 
-$$ H^{*}(z\oplus T)=H^{*}(1-(z\oplus T))=\deg_{\pm}(T)+1. $$
+$$ H^{\ast}(z\oplus T)=H^{\ast}(1-(z\oplus T))=\deg_{\pm}(T)+1. $$
 
 > **Interpretation.** Fresh-bit XOR is the branch where threshold degree provably rises. This lemma gives the matching affine-cylinder upper-bound target that would make the recursion exact.
 
@@ -58,11 +58,11 @@ $$ \mathbf{1} \left[ -a\neq a \text{ or } \exists i,\ \alpha_i\neq0 \right], $$
 
 which is exactly $\eta_{\oplus}(A)$. Since $\mu_0\neq0$ and $\mu_1\neq\mu_0$, Lemma 118 gives
 
-$$ H^{*}(F) \leq \mathrm{actc}(F) \leq \mathrm{sactc}(F) \leq \eta_{\oplus}(A) + \lvert L(A)\rvert + K(\Gamma) + K_z(\Gamma). $$
+$$ H^{\ast}(F) \leq \mathrm{actc}(F) \leq \mathrm{sactc}(F) \leq \eta_{\oplus}(A) + \lvert L(A)\rvert + K(\Gamma) + K_z(\Gamma). $$
 
 The threshold-degree lower bound follows from the fresh-bit XOR threshold-degree theorem [081_fresh_bit_xor_threshold_degree.md](081_fresh_bit_xor_threshold_degree.md) and the general lower bound [006_threshold_degree_head_complexity_bound.md](../01_foundations_and_normal_form/006_threshold_degree_head_complexity_bound.md):
 
-$$ H^{*}(F) \geq \deg_{\pm}(F) = \deg_{\pm}(T)+1. $$
+$$ H^{\ast}(F) \geq \deg_{\pm}(F) = \deg_{\pm}(T)+1. $$
 
 For XNOR, note that $1-F$ is the output complement of $F$. Complementing preserves threshold degree and head complexity by [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md), and it preserves the same affine-cylinder upper-bound certificate by negating the strict score. Hence the same bounds hold for $1-F$.
 
@@ -72,7 +72,7 @@ If the affine-cylinder upper bound equals $\deg_{\pm}(T)+1$, then the displayed 
 
 For a sparse PTF score whose nonlinear terms are positive monomials, this gives the earlier bound
 
-$$ H^{*}(z\oplus T) \leq 1+\lvert L(A)\rvert+2\lvert\Gamma\rvert $$
+$$ H^{\ast}(z\oplus T) \leq 1+\lvert L(A)\rvert+2\lvert\Gamma\rvert $$
 
 whenever $A$ is not the zero affine form. If $A=0$, the leading $1$ drops out.
 

@@ -12,7 +12,7 @@ $$ f(x)=\bigvee_{a=1}^{s}T_{P_a,N_a}(x), $$
 
 where every term is consistent and nonempty. Then
 
-$$ H^{*}(f) \leq \min\left\lbrace \sum_{a=1}^{s}2^{\lvert P_a\rvert}, \sum_{a=1}^{s}2^{\lvert N_a\rvert} \right\rbrace. $$
+$$ H^{\ast}(f) \leq \min\left\lbrace \sum_{a=1}^{s}2^{\lvert P_a\rvert}, \sum_{a=1}^{s}2^{\lvert N_a\rvert} \right\rbrace. $$
 
 The same bound holds for a CNF
 
@@ -46,7 +46,7 @@ $$ \mathrm{ptfsp}(f) \leq \sum_{a=1}^{s}2^{\lvert N_a\rvert}. $$
 
 By the polynomial-threshold sparsity upper bound [041_ptf_sparsity_upper_bound.md](041_ptf_sparsity_upper_bound.md),
 
-$$ H^{*}(f) \leq \sum_{a=1}^{s}2^{\lvert N_a\rvert}. $$
+$$ H^{\ast}(f) \leq \sum_{a=1}^{s}2^{\lvert N_a\rvert}. $$
 
 Now apply the same argument after the global bit flip $y_i=1-x_i$. The flipped function
 
@@ -54,11 +54,11 @@ $$ g(y):=f(1-y) $$
 
 has DNF terms $T_{N_a,P_a}(y)$. Hence
 
-$$ H^{*}(g) \leq \sum_{a=1}^{s}2^{\lvert P_a\rvert}. $$
+$$ H^{\ast}(g) \leq \sum_{a=1}^{s}2^{\lvert P_a\rvert}. $$
 
-Global bit-flip invariance from [028_restrictions_and_sign_rank.md](028_restrictions_and_sign_rank.md) gives $H^{*}(f)=H^{*}(g)$, so
+Global bit-flip invariance from [028_restrictions_and_sign_rank.md](028_restrictions_and_sign_rank.md) gives $H^{\ast}(f)=H^{\ast}(g)$, so
 
-$$ H^{*}(f) \leq \sum_{a=1}^{s}2^{\lvert P_a\rvert}. $$
+$$ H^{\ast}(f) \leq \sum_{a=1}^{s}2^{\lvert P_a\rvert}. $$
 
 Taking the smaller of the two bounds proves the DNF statement. $\blacksquare$
 
@@ -74,22 +74,22 @@ $$ 1-f(x) = \bigvee_{a=1}^{s} \left( \prod_{i\in P_a}(1-x_i) \right) \left( \pro
 
 whose terms have positive-literal sets $N_a$ and negative-literal sets $P_a$. Lemma 1 gives
 
-$$ H^{*}(1-f) \leq \min\left\lbrace \sum_{a=1}^{s}2^{\lvert P_a\rvert}, \sum_{a=1}^{s}2^{\lvert N_a\rvert} \right\rbrace. $$
+$$ H^{\ast}(1-f) \leq \min\left\lbrace \sum_{a=1}^{s}2^{\lvert P_a\rvert}, \sum_{a=1}^{s}2^{\lvert N_a\rvert} \right\rbrace. $$
 
-Complement invariance from [028_restrictions_and_sign_rank.md](028_restrictions_and_sign_rank.md) gives $H^{*}(f)=H^{*}(1-f)$, proving the CNF statement. $\blacksquare$
+Complement invariance from [028_restrictions_and_sign_rank.md](028_restrictions_and_sign_rank.md) gives $H^{\ast}(f)=H^{\ast}(1-f)$, proving the CNF statement. $\blacksquare$
 
 ## Consequence
 
 If a DNF or CNF has $s$ terms or clauses and, after possibly applying the global bit flip, every term or clause contains at most $r$ literals of the less convenient sign, then
 
-$$ H^{*}(f)\leq s 2^r. $$
+$$ H^{\ast}(f)\leq s 2^r. $$
 
 For monotone DNF and CNF formulas, $r=0$, so this recovers the one-head-per-term bound
 
-$$ H^{*}(f)\leq s. $$
+$$ H^{\ast}(f)\leq s. $$
 
 This bound is independent of unused variables. It complements the support-volume bound
 
-$$ H^{*}(f)\leq2\sum_a2^{n-w_a}, $$
+$$ H^{\ast}(f)\leq2\sum_a2^{n-w_a}, $$
 
 which is better for high-width terms that cover few cube points.

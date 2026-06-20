@@ -12,7 +12,7 @@ $$ f(a,y)=F_a(t(y)). $$
 
 Let $C_a$ be the sign-change count of $F_a$ along the ordered image of $t$. Then
 
-$$ H^{*}(f) \leq \sum_{a\in\lbrace0,1\rbrace^{k}} C_a + 2^{k}-1. $$
+$$ H^{\ast}(f) \leq \sum_{a\in\lbrace0,1\rbrace^{k}} C_a + 2^{k}-1. $$
 
 > **Interpretation.** If all raw-bit slices share one positive statistic, then the full function is controlled by the total one-dimensional variation inside the slices, plus one possible jump between adjacent slices.
 

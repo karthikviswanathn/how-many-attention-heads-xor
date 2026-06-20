@@ -16,15 +16,15 @@ $$ q(a):=F_a(\tau_0), \qquad p(a):=F_a(\tau_{M-1}). $$
 
 Then
 
-$$ \max_a \delta_a \leq H^{*}(f) \leq \sum_a d_a+B_{+}(p,q). $$
+$$ \max_a \delta_a \leq H^{\ast}(f) \leq \sum_a d_a+B_{+}(p,q). $$
 
 In particular, if $d_a\leq d$ for all $a$, then
 
-$$ H^{*}(f)\leq2^k d+B_{+}(p,q). $$
+$$ H^{\ast}(f)\leq2^k d+B_{+}(p,q). $$
 
 If all endpoints are a common label $b$, then
 
-$$ \max_a\delta_a \leq H^{*}(f) \leq \sum_a d_a. $$
+$$ \max_a\delta_a \leq H^{\ast}(f) \leq \sum_a d_a. $$
 
 > **Interpretation.** Slice threshold degree gives the lower side, univariate sign-polynomial degree gives the upper side, and the only coupling term is the mixed endpoint boundary.
 
@@ -34,11 +34,11 @@ Let $C_a$ be the sign-change count of the slice $F_a$ along the ordered image of
 
 For the lower bound, restrict $f$ to each raw assignment $a$. Restriction monotonicity and the threshold-degree lower bound give
 
-$$ \delta_a\leq H^{*}\bigl(F_a(t(y))\bigr)\leq H^{*}(f). $$
+$$ \delta_a\leq H^{\ast}\bigl(F_a(t(y))\bigr)\leq H^{\ast}(f). $$
 
 Taking the maximum over $a$ gives
 
-$$ \max_a\delta_a\leq H^{*}(f). $$
+$$ \max_a\delta_a\leq H^{\ast}(f). $$
 
 For the upper bound, fix $a$. The polynomial $P_a$ is nonzero on every point of the image of $t$, because it strictly sign-represents the slice. If the slice label changes between consecutive image points, then $P_a$ changes sign between those two points and has a real root in the open interval between them. Distinct adjacent sign changes give disjoint intervals, so
 
@@ -46,7 +46,7 @@ $$ C_a\leq d_a. $$
 
 The shared-statistic slice sandwich [158_shared_statistic_slice_sandwich.md](158_shared_statistic_slice_sandwich.md) gives
 
-$$ H^{*}(f) \leq \sum_a C_a+B_{+}(p,q) \leq \sum_a d_a+B_{+}(p,q). $$
+$$ H^{\ast}(f) \leq \sum_a C_a+B_{+}(p,q) \leq \sum_a d_a+B_{+}(p,q). $$
 
 If $d_a\leq d$ for all $a$, then $\sum_a d_a\leq2^k d$, giving the uniform-degree bound.
 

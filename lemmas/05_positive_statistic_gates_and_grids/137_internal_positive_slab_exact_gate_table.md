@@ -20,7 +20,7 @@ $$ F_G(z,y):=G(z,S(y)). $$
 
 Then
 
-$$ H^{*}(F_G)= \begin{cases} 0 & \text{if }G\text{ is constant},\\ 1 & \text{if }G\text{ is a raw-bit literal},\\ 3 & \text{if }G\text{ is XOR or XNOR},\\ 2 & \text{otherwise}. \end{cases} $$
+$$ H^{\ast}(F_G)= \begin{cases} 0 & \text{if }G\text{ is constant},\\ 1 & \text{if }G\text{ is a raw-bit literal},\\ 3 & \text{if }G\text{ is XOR or XNOR},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** Internal positive slabs now have a complete exact one-bit gate table.
 
@@ -28,7 +28,7 @@ $$ H^{*}(F_G)= \begin{cases} 0 & \text{if }G\text{ is constant},\\ 1 & \text{if 
 
 By the affine-slab theorem [062_affine_slab_upper_bound.md](../03_function_families_and_affine_geometry/062_affine_slab_upper_bound.md), complement invariance, and the one-head characterization,
 
-$$ H^{*}(S)=H^{*}(1-S)=2. $$
+$$ H^{\ast}(S)=H^{\ast}(1-S)=2. $$
 
 Consequently,
 
@@ -44,7 +44,7 @@ It remains to handle $r\wedge(1-S)$ and XOR/XNOR.
 
 Let $r(z)$ be either $z$ or $1-z$. We claim
 
-$$ H^{*}(r(z)\wedge(1-S(y)))=2. $$
+$$ H^{\ast}(r(z)\wedge(1-S(y)))=2. $$
 
 Choose a strict quadratic sign polynomial $Q(t)$ for $1-S$:
 
@@ -66,13 +66,13 @@ In either case, $P$ is a strict quadratic polynomial in $t(y)$ and $z$. On the s
 
 The positive-statistic raw-bit quadratic span [135_positive_statistic_raw_bit_quadratic_span.md](135_positive_statistic_raw_bit_quadratic_span.md) gives
 
-$$ H^{*}(r\wedge(1-S))\leq2. $$
+$$ H^{\ast}(r\wedge(1-S))\leq2. $$
 
 The one-bit gate threshold-degree trichotomy [082_one_bit_gate_threshold_degree_trichotomy.md](../04_recursions_and_cost_invariants/082_one_bit_gate_threshold_degree_trichotomy.md) gives
 
 $$ \deg_{\pm}(r\wedge(1-S))=\deg_{\pm}(1-S)=2. $$
 
-Thus $H^{*}(r\wedge(1-S))=2$. Complement invariance gives exact value $2$ for the complements of these gates.
+Thus $H^{\ast}(r\wedge(1-S))=2$. Complement invariance gives exact value $2$ for the complements of these gates.
 
 ### Lemma 2. XOR and XNOR
 
@@ -86,15 +86,15 @@ $$ (1-2z)R(t(y)) $$
 
 is a strict cubic polynomial in $t(y)$ and $z$ that sign-represents $z\oplus S(y)$. The positive-statistic raw-bit cubic span [136_positive_statistic_raw_bit_cubic_span.md](136_positive_statistic_raw_bit_cubic_span.md) gives
 
-$$ H^{*}(z\oplus S)\leq3. $$
+$$ H^{\ast}(z\oplus S)\leq3. $$
 
 The fresh-bit XOR threshold-degree theorem [081_fresh_bit_xor_threshold_degree.md](../04_recursions_and_cost_invariants/081_fresh_bit_xor_threshold_degree.md) gives
 
-$$ H^{*}(z\oplus S)\geq\deg_{\pm}(S)+1=3. $$
+$$ H^{\ast}(z\oplus S)\geq\deg_{\pm}(S)+1=3. $$
 
 Hence
 
-$$ H^{*}(z\oplus S)=3. $$
+$$ H^{\ast}(z\oplus S)=3. $$
 
 XNOR is the output complement of XOR, so complement invariance gives exact value $3$ for XNOR as well.
 
@@ -104,6 +104,6 @@ The sixteen two-input gates are exhausted by constants, raw-bit literals, featur
 
 The previous positive-slab brackets collapse to exact values:
 
-$$ H^{*}(r\wedge(1-S))=2, \qquad H^{*}(z\oplus S)=3. $$
+$$ H^{\ast}(r\wedge(1-S))=2, \qquad H^{\ast}(z\oplus S)=3. $$
 
 Thus internal positive slabs behave like a clean three-level object under one raw-bit gates: raw-only gates cost $1$, non-XOR feature-dependent gates cost $2$, and XOR/XNOR cost $3$.

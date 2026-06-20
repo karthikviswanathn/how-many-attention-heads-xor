@@ -14,9 +14,9 @@ If $f$ has a CNF in which every clause has width at most $w$, then
 
 $$ \deg_{\pm}(f)\leq w. $$
 
-Consequently, if a degree-$w$ span certificate with $H$ heads is available in the sense of [030_threshold_degree_span_schema.md](030_threshold_degree_span_schema.md), then every width-$w$ DNF or CNF function satisfies
+Consequently, if a degree $w$ span certificate with $H$ heads is available in the sense of [030_threshold_degree_span_schema.md](030_threshold_degree_span_schema.md), then every width $w$ DNF or CNF function satisfies
 
-$$ H^{*}(f)\leq H. $$
+$$ H^{\ast}(f)\leq H. $$
 
 > **Interpretation.** Arbitrary mixed-literal DNF is not handled by the monotone one-head-per-term construction, but bounded-width DNF still gives bounded threshold degree. The head upper bound then depends on available degree-restricted span certificates.
 
@@ -80,7 +80,7 @@ $\blacksquare$
 
 ### Lemma 3. Convert threshold degree to heads when a span certificate exists
 
-This is exactly [030_threshold_degree_span_schema.md](030_threshold_degree_span_schema.md): if all degree-at-most-$w$ multilinear polynomials lie in an $H$-head denominator-cleared span, then every function with threshold degree at most $w$ has head complexity at most $H$.
+This is exactly [030_threshold_degree_span_schema.md](030_threshold_degree_span_schema.md): if all degree-at-most $w$ multilinear polynomials lie in an $H$-head denominator-cleared span, then every function with threshold degree at most $w$ has head complexity at most $H$.
 
 Combining Lemma 1 or Lemma 2 with that schema gives the stated head upper bound. $\blacksquare$
 
@@ -92,6 +92,6 @@ $$ \text{width}(f)\leq w \qquad\Longrightarrow\qquad \deg_{\pm}(f)\leq w. $$
 
 For $n=3$, the exact three-bit classification then gives
 
-$$ H^{*}(f)\leq w $$
+$$ H^{\ast}(f)\leq w $$
 
-for every three-bit function with DNF or CNF width $w$. For larger $n$, the missing ingredient is a concrete degree-$w$ span certificate.
+for every three-bit function with DNF or CNF width $w$. For larger $n$, the missing ingredient is a concrete degree $w$ span certificate.

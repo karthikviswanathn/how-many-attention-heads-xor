@@ -12,7 +12,7 @@ $$ f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace $$
 
 satisfies
 
-$$ H^{*}(f) \leq \left\lceil \frac{2^n - 1}{n} \right\rceil. $$
+$$ H^{\ast}(f) \leq \left\lceil \frac{2^n - 1}{n} \right\rceil. $$
 
 Thus the determinant-span method reaches its own dimension lower bound for every $3 \leq n \leq 12$.
 
@@ -64,7 +64,7 @@ Each residue is nonzero modulo $p$. Hence each displayed determinant is nonzero 
 
 The determinant-span schema from [021_determinant_span_schema.md](021_determinant_span_schema.md) then gives
 
-$$ H^{*}(f) \leq H_n = \left\lceil \frac{2^n - 1}{n} \right\rceil $$
+$$ H^{\ast}(f) \leq H_n = \left\lceil \frac{2^n - 1}{n} \right\rceil $$
 
 for every Boolean $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$ and every $n \in \lbrace3,\ldots,12\rbrace$. $\blacksquare$
 

@@ -8,9 +8,9 @@ $$ f : \lbrace0,1\rbrace^6 \to \lbrace0,1\rbrace, $$
 
 we have
 
-$$ H^{*}(f) \leq 11. $$
+$$ H^{\ast}(f) \leq 11. $$
 
-This improves the general positive weighted-sum bound, which gives only $H^{*}(f) \leq 63$ at $n=6$.
+This improves the general positive weighted-sum bound, which gives only $H^{\ast}(f) \leq 63$ at $n=6$.
 
 ## Proof
 
@@ -90,7 +90,7 @@ $$ S(x) = \frac{P(x)}{\prod_{j=1}^{11}B_j(x)}. $$
 
 Each ratio $A_h(x)/B_h(x)$ is a one-head atom by Lemma 1 of [015_three_bit_quadratic_upper_bound.md](015_three_bit_quadratic_upper_bound.md). Therefore thresholding a constant plus eleven one-head atoms computes $f$, and the exact normal form from [010_linear_fractional_normal_form.md](010_linear_fractional_normal_form.md) gives
 
-$$ H^{*}(f) \leq 11. $$
+$$ H^{\ast}(f) \leq 11. $$
 
 $\blacksquare$
 
@@ -98,17 +98,17 @@ $\blacksquare$
 
 The current universal upper bounds for small $n$ are:
 
-- $n=1$: $H^{*}(f) \leq 1$.
-- $n=2$: $H^{*}(f) \leq 2$.
-- $n=3$: $H^{*}(f) \leq 3$, and in fact $H^{*}(f) = \deg_{\pm}(f)$.
-- $n=4$: $H^{*}(f) \leq 4$.
-- $n=5$: $H^{*}(f) \leq 7$.
-- $n=6$: $H^{*}(f) \leq 11$.
-- $n=7$: $H^{*}(f) \leq 19$ by [020_seven_bit_universal_upper_bound.md](020_seven_bit_universal_upper_bound.md).
-- $n=8$: $H^{*}(f) \leq 32$ by [022_eight_bit_universal_upper_bound.md](022_eight_bit_universal_upper_bound.md).
-- $n=9$: $H^{*}(f) \leq 57$ by [023_nine_bit_universal_upper_bound.md](023_nine_bit_universal_upper_bound.md).
-- $n=10$: $H^{*}(f) \leq 103$ by [024_ten_bit_universal_upper_bound.md](024_ten_bit_universal_upper_bound.md).
-- $n=11$: $H^{*}(f) \leq 187$ by [025_compact_threshold_certificates.md](025_compact_threshold_certificates.md).
-- $n=12$: $H^{*}(f) \leq 342$ by [025_compact_threshold_certificates.md](025_compact_threshold_certificates.md).
+- $n=1$: $H^{\ast}(f) \leq 1$.
+- $n=2$: $H^{\ast}(f) \leq 2$.
+- $n=3$: $H^{\ast}(f) \leq 3$, and in fact $H^{\ast}(f) = \deg_{\pm}(f)$.
+- $n=4$: $H^{\ast}(f) \leq 4$.
+- $n=5$: $H^{\ast}(f) \leq 7$.
+- $n=6$: $H^{\ast}(f) \leq 11$.
+- $n=7$: $H^{\ast}(f) \leq 19$ by [020_seven_bit_universal_upper_bound.md](020_seven_bit_universal_upper_bound.md).
+- $n=8$: $H^{\ast}(f) \leq 32$ by [022_eight_bit_universal_upper_bound.md](022_eight_bit_universal_upper_bound.md).
+- $n=9$: $H^{\ast}(f) \leq 57$ by [023_nine_bit_universal_upper_bound.md](023_nine_bit_universal_upper_bound.md).
+- $n=10$: $H^{\ast}(f) \leq 103$ by [024_ten_bit_universal_upper_bound.md](024_ten_bit_universal_upper_bound.md).
+- $n=11$: $H^{\ast}(f) \leq 187$ by [025_compact_threshold_certificates.md](025_compact_threshold_certificates.md).
+- $n=12$: $H^{\ast}(f) \leq 342$ by [025_compact_threshold_certificates.md](025_compact_threshold_certificates.md).
 
 The determinant-span method remains far sharper than the injective positive-projection bound through $n=12$.

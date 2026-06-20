@@ -48,6 +48,6 @@ $\blacksquare$
 
 If a strict weighted vote uses subcube indicators $C_{P_j,N_j}$ as features, then Lemma 93 gives
 
-$$ H^{*}(f) \leq \sum_{j:c_j\neq0} \min\lbrace2^{\lvert P_j\rvert},2^{\lvert N_j\rvert}\rbrace. $$
+$$ H^{\ast}(f) \leq \sum_{j:c_j\neq0} \min\lbrace2^{\lvert P_j\rvert},2^{\lvert N_j\rvert}\rbrace. $$
 
 If a decision list tests subcube indicators, Lemma 94 gives the same summed local expansion cost over the tested cylinders. Thus the local certificate-expansion theorem can be reused inside arbitrary strict votes and decision lists, not only as a one-sided cover of a label class.

@@ -30,15 +30,15 @@ For $b\in\lbrace0,1\rbrace$, define $\mu_b\in\lbrace-1,0,1\rbrace$ by:
 
 Then
 
-$$ H^{*}(f) \leq 1 +\mathbf{1}[\mu_0\neq0]  q(P) +\mathbf{1}[\mu_1\neq\mu_0]\bigl(\ell(P)+q(P)\bigr). $$
+$$ H^{\ast}(f) \leq 1 +\mathbf{1}[\mu_0\neq0]  q(P) +\mathbf{1}[\mu_1\neq\mu_0]\bigl(\ell(P)+q(P)\bigr). $$
 
 In particular,
 
-$$ H^{*}(f)\leq1+\ell(P)+2q(P). $$
+$$ H^{\ast}(f)\leq1+\ell(P)+2q(P). $$
 
 If the refined displayed upper bound is at most $2$, then
 
-$$ H^{*}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
+$$ H^{\ast}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** A one-bit gate applied to a sparse PTF feature is cheap when the feature has few linear variables and few nonlinear monomials. If the two $z$-slices are the same function of $T$, the change term vanishes.
 
@@ -82,13 +82,13 @@ $$ \mathbf{1}[\mu_1\neq\mu_0]  q(P), $$
 
 for the same reason. Therefore Lemma 78 gives
 
-$$ H^{*}(f) \leq 1 +\mathbf{1}[\mu_0\neq0]  q(P) +\mathbf{1}[\mu_1\neq\mu_0]\bigl(\ell(P)+q(P)\bigr). $$
+$$ H^{\ast}(f) \leq 1 +\mathbf{1}[\mu_0\neq0]  q(P) +\mathbf{1}[\mu_1\neq\mu_0]\bigl(\ell(P)+q(P)\bigr). $$
 
 The uniform corollary follows from
 
 $$ \mathbf{1}[\mu_0\neq0]\leq1, \qquad \mathbf{1}[\mu_1\neq\mu_0]\leq1. $$
 
-Finally, if the refined displayed upper bound is at most $2$, then $H^{*}(f)\leq2$. The exact value is forced by the zero-head and one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md): constants have value $0$, nonconstant LTFs have value $1$, and every remaining function has value exactly $2$. $\blacksquare$
+Finally, if the refined displayed upper bound is at most $2$, then $H^{\ast}(f)\leq2$. The exact value is forced by the zero-head and one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md): constants have value $0$, nonconstant LTFs have value $1$, and every remaining function has value exactly $2$. $\blacksquare$
 
 ## Consequences
 
@@ -98,7 +98,7 @@ $$ f(z,y)=z\oplus T(y), $$
 
 the branch codes satisfy $\mu_0=1$ and $\mu_1=-1$, so
 
-$$ H^{*}(z\oplus T(y)) \leq 1+\ell(P)+2q(P). $$
+$$ H^{\ast}(z\oplus T(y)) \leq 1+\ell(P)+2q(P). $$
 
 For AND with a sparse PTF feature,
 
@@ -106,6 +106,6 @@ $$ f(z,y)=z\wedge T(y), $$
 
 the branch codes satisfy $\mu_0=0$ and $\mu_1=1$, so
 
-$$ H^{*}(z\wedge T(y)) \leq 1+\ell(P)+q(P). $$
+$$ H^{\ast}(z\wedge T(y)) \leq 1+\ell(P)+q(P). $$
 
 When $P$ is affine, $q(P)=0$, and this recovers the one-bit LTF branching bound.

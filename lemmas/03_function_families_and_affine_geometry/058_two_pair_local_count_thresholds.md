@@ -12,11 +12,11 @@ $$ f_{p,F}(x_1,x_2,y_1,y_2) := F(p(x_1,y_1)+p(x_2,y_2)). $$
 
 Assume $F(0),F(1),F(2)$ has exactly one sign change. Then
 
-$$ H^{*}(f_{p,F})\leq2. $$
+$$ H^{\ast}(f_{p,F})\leq2. $$
 
 More precisely:
 
-$$ H^{*}(f_{p,F}) = \begin{cases} 0 & \text{if } f_{p,F} \text{ is constant},\\ 1 & \text{if } f_{p,F} \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
+$$ H^{\ast}(f_{p,F}) = \begin{cases} 0 & \text{if } f_{p,F} \text{ is constant},\\ 1 & \text{if } f_{p,F} \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
 
 > **Interpretation.** Every threshold-like count of two identical local patterns is settled exactly. This packages the two-pair endpoint cases for intersection, disjointness, equality, nonequality, containment, and noncontainment.
 
@@ -65,23 +65,23 @@ Therefore every nonconstant non-LTF truth table arising from a one-change two-pa
 
 By the affine-over-positive-affine atom lemma [015_three_bit_quadratic_upper_bound.md](../01_foundations_and_normal_form/015_three_bit_quadratic_upper_bound.md), each ratio $A_i/B_i$ is a single one-head atom. Hence every such table has
 
-$$ H^{*}(f_{p,F})\leq2. $$
+$$ H^{\ast}(f_{p,F})\leq2. $$
 
 ### Lemma 2. Exactness of the cases
 
-If $f_{p,F}$ is constant, then $H^{*}(f_{p,F})=0$.
+If $f_{p,F}$ is constant, then $H^{\ast}(f_{p,F})=0$.
 
 If $f_{p,F}$ is a nonconstant LTF, then the one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md) gives
 
-$$ H^{*}(f_{p,F})=1. $$
+$$ H^{\ast}(f_{p,F})=1. $$
 
 If $f_{p,F}$ is nonconstant and not an LTF, then the same one-head characterization gives
 
-$$ H^{*}(f_{p,F})\geq2. $$
+$$ H^{\ast}(f_{p,F})\geq2. $$
 
 Lemma 1 gives the matching upper bound, so
 
-$$ H^{*}(f_{p,F})=2. $$
+$$ H^{\ast}(f_{p,F})=2. $$
 
 $\blacksquare$
 
@@ -89,6 +89,6 @@ $\blacksquare$
 
 The first nontrivial endpoints of the main two-pair profile families are all exact:
 
-$$ H^{*}(\mathrm{INT}_2) = H^{*}(\mathrm{DISJ}_2) = H^{*}(\mathrm{EQ}_2) = H^{*}(\mathrm{NEQ}_2) = H^{*}(\mathrm{SUB}_2) = H^{*}(\mathrm{NCON}_2) =2. $$
+$$ H^{\ast}(\mathrm{INT}_2) = H^{\ast}(\mathrm{DISJ}_2) = H^{\ast}(\mathrm{EQ}_2) = H^{\ast}(\mathrm{NEQ}_2) = H^{\ast}(\mathrm{SUB}_2) = H^{\ast}(\mathrm{NCON}_2) =2. $$
 
 This lemma does not cover alternating two-level profiles such as four-bit parity, where $F(0),F(1),F(2)$ has two sign changes. In that case the threshold-degree lower bound can force more than two heads.

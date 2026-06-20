@@ -20,7 +20,7 @@ $$ f(x^{(j)})=b. $$
 
 Then
 
-$$ H^{*}(f) \leq 2\min\lbrace R_t^0(f),R_t^1(f)\rbrace. $$
+$$ H^{\ast}(f) \leq 2\min\lbrace R_t^0(f),R_t^1(f)\rbrace. $$
 
 Consequently, if
 
@@ -28,7 +28,7 @@ $$ R_{+}(f) := \min_t\min\lbrace R_t^0(f),R_t^1(f)\rbrace, $$
 
 where the minimum ranges over injective positive weighted sums $t$, then
 
-$$ H^{*}(f)\leq2R_{+}(f). $$
+$$ H^{\ast}(f)\leq2R_{+}(f). $$
 
 > **Interpretation.** Sparse support is only the coarsest version of the positive-projection argument. What really matters is how many runs the cheaper label class forms in some positive ordering of the cube.
 
@@ -54,11 +54,11 @@ $$ C_t(f)\leq2\min\lbrace R_t^0(f),R_t^1(f)\rbrace. $$
 
 The positive-projection sign-change theorem [013_positive_projection_sign_changes.md](../01_foundations_and_normal_form/013_positive_projection_sign_changes.md) gives
 
-$$ H^{*}(f)\leq C_t(f), $$
+$$ H^{\ast}(f)\leq C_t(f), $$
 
 and hence
 
-$$ H^{*}(f) \leq 2\min\lbrace R_t^0(f),R_t^1(f)\rbrace. $$
+$$ H^{\ast}(f) \leq 2\min\lbrace R_t^0(f),R_t^1(f)\rbrace. $$
 
 Optimizing over injective positive weighted sums $t$ proves the $R_{+}(f)$ bound. $\blacksquare$
 
@@ -70,7 +70,7 @@ $$ R_{+}(f)\leq s(f), $$
 
 and therefore
 
-$$ H^{*}(f)\leq2s(f). $$
+$$ H^{\ast}(f)\leq2s(f). $$
 
 The run-count invariant can be strictly smaller than support size. If the smaller label class is contiguous in some positive ordering, then
 

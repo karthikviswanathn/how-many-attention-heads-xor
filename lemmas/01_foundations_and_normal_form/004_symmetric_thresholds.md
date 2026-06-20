@@ -10,7 +10,7 @@ where $\lvert x\rvert$ is the Hamming weight.
 
 Then $T_{n,t}$ is computable with one head. Since $T_{n,t}$ is nonconstant for $1 \leq t \leq n$, it follows that
 
-$$ H^{*}(T_{n,t})  =  1. $$
+$$ H^{\ast}(T_{n,t})  =  1. $$
 
 This includes:
 
@@ -95,7 +95,7 @@ Then $\langle w, z(x) \rangle > \tau$ holds exactly when $\lvert x\rvert \geq t$
 
 Zero heads only give a constant query residual, so no nonconstant function can be computed with zero heads. Since each $T_{n,t}$ with $1 \leq t \leq n$ is nonconstant, we conclude
 
-$$ H^{*}(T_{n,t})  =  1. $$
+$$ H^{\ast}(T_{n,t})  =  1. $$
 
 ## Why This Matters
 

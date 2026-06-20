@@ -16,11 +16,11 @@ $$ E_{\min}(y):=\mathbf{1}[L(y)=\ell_{\min}], \qquad E_{\max}(y):=\mathbf{1}[L(y
 
 Then
 
-$$ H^{*}(z\oplus E_{\min}(y)) = H^{*}(1-(z\oplus E_{\min}(y))) = 2, $$
+$$ H^{\ast}(z\oplus E_{\min}(y)) = H^{\ast}(1-(z\oplus E_{\min}(y))) = 2, $$
 
 and
 
-$$ H^{*}(z\oplus E_{\max}(y)) = H^{*}(1-(z\oplus E_{\max}(y))) = 2. $$
+$$ H^{\ast}(z\oplus E_{\max}(y)) = H^{\ast}(1-(z\oplus E_{\max}(y))) = 2. $$
 
 Equivalently, if $E$ is either endpoint predicate, then both fresh-bit XOR and fresh-bit XNOR over $E$ have exact head complexity $2$.
 
@@ -54,7 +54,7 @@ $$ \deg_{\pm}(z\oplus E)=2. $$
 
 Since threshold degree lower-bounds head complexity,
 
-$$ H^{*}(z\oplus E)\geq2. $$
+$$ H^{\ast}(z\oplus E)\geq2. $$
 
 It remains to prove the two-head upper bound. Set
 
@@ -76,15 +76,15 @@ $$ B+\delta\leq M(z,y)\leq B+R_{\max}=-\frac{\delta}{2}<0. $$
 
 Thus the slab condition holds exactly on the true inputs of $z\oplus E$. Since $M$ is affine in $(z,y)$, the affine-slab theorem [062_affine_slab_upper_bound.md](../03_function_families_and_affine_geometry/062_affine_slab_upper_bound.md) gives
 
-$$ H^{*}(z\oplus E)\leq2. $$
+$$ H^{\ast}(z\oplus E)\leq2. $$
 
 Together with the lower bound, this proves
 
-$$ H^{*}(z\oplus E)=2. $$
+$$ H^{\ast}(z\oplus E)=2. $$
 
 Finally, output complement preserves head complexity by [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md), so
 
-$$ H^{*}(1-(z\oplus E))=2. $$
+$$ H^{\ast}(1-(z\oplus E))=2. $$
 
 Applying this to $E_{\min}$ and $E_{\max}$ proves the result. $\blacksquare$
 

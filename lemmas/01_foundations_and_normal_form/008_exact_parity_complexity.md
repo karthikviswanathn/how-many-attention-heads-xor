@@ -8,7 +8,7 @@ $$\mathrm{XOR}_n(x_1, \ldots, x_n) = x_1 \oplus \cdots \oplus x_n$$
 
 has exact head complexity
 
-$$H^{*}(\mathrm{XOR}_n) = n.$$
+$$H^{\ast}(\mathrm{XOR}_n) = n.$$
 
 > **Equivalently.** In this one-layer attention model, parity needs exactly one head per input bit.
 
@@ -18,7 +18,7 @@ The proof combines a threshold-degree lower bound with an explicit construction.
 
 If $\mathrm{XOR}_n$ were computable with fewer than $n$ heads, then by the threshold-degree bound [006_threshold_degree_head_complexity_bound.md](006_threshold_degree_head_complexity_bound.md) it would have threshold degree less than $n$. But parity has threshold degree exactly $n$ [007_parity_threshold_degree.md](007_parity_threshold_degree.md). This is a contradiction, so
 
-$$H^{*}(\mathrm{XOR}_n) \geq n.$$
+$$H^{\ast}(\mathrm{XOR}_n) \geq n.$$
 
 ## Upper Bound
 
@@ -205,18 +205,18 @@ Therefore:
 
 So thresholding at $0$ computes $\mathrm{XOR}_n$ exactly. Hence
 
-$$H^{*}(\mathrm{XOR}_n) \leq n.$$
+$$H^{\ast}(\mathrm{XOR}_n) \leq n.$$
 
 ## Conclusion
 
 We proved:
 
-1. $H^{*}(\mathrm{XOR}_n) \geq n$ by threshold degree,
-2. $H^{*}(\mathrm{XOR}_n) \leq n$ by explicit construction.
+1. $H^{\ast}(\mathrm{XOR}_n) \geq n$ by threshold degree,
+2. $H^{\ast}(\mathrm{XOR}_n) \leq n$ by explicit construction.
 
 Therefore
 
-$$H^{*}(\mathrm{XOR}_n) = n. \qquad \blacksquare$$
+$$H^{\ast}(\mathrm{XOR}_n) = n. \qquad \blacksquare$$
 
 ## Remarks
 

@@ -12,11 +12,11 @@ $$ P_a(u):=P(a,y)\quad\text{with }u=t(y) $$
 
 is a univariate polynomial in $u$ of degree at most $d_a$. Then
 
-$$ H^{*}(f) \leq \sum_{a\in\lbrace0,1\rbrace^{k}} d_a + 2^{k}-1. $$
+$$ H^{\ast}(f) \leq \sum_{a\in\lbrace0,1\rbrace^{k}} d_a + 2^{k}-1. $$
 
 In particular, if $P$ has degree at most $d$ in the quantities $t(y),z_1,\ldots,z_k$, reduced multilinearly in the raw bits, then
 
-$$ H^{*}(f)\leq 2^{k}(d+1)-1. $$
+$$ H^{\ast}(f)\leq 2^{k}(d+1)-1. $$
 
 > **Interpretation.** A bounded-degree threshold in one positive statistic and $k$ raw bits has a head bound exponential only in the number of raw bits, and independent of the number of feature variables.
 
@@ -28,7 +28,7 @@ $$ C_a\leq d_a. $$
 
 The common positive-statistic multi-slice bound [145_common_positive_statistic_multi_slice_bound.md](145_common_positive_statistic_multi_slice_bound.md) gives
 
-$$ H^{*}(f) \leq \sum_{a\in\lbrace0,1\rbrace^{k}}C_a + 2^k-1 \leq \sum_{a\in\lbrace0,1\rbrace^{k}}d_a + 2^k-1. $$
+$$ H^{\ast}(f) \leq \sum_{a\in\lbrace0,1\rbrace^{k}}C_a + 2^k-1 \leq \sum_{a\in\lbrace0,1\rbrace^{k}}d_a + 2^k-1. $$
 
 If $P$ has total degree at most $d$ in $t(y),z_1,\ldots,z_k$, then every raw slice has degree at most $d$, so
 
@@ -36,7 +36,7 @@ $$ \sum_{a\in\lbrace0,1\rbrace^{k}}d_a\leq2^k d. $$
 
 This gives
 
-$$ H^{*}(f)\leq2^k d+2^k-1=2^k(d+1)-1. $$
+$$ H^{\ast}(f)\leq2^k d+2^k-1=2^k(d+1)-1. $$
 
 $\blacksquare$
 

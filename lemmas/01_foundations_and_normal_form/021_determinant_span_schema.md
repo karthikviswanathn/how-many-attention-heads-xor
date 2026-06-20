@@ -18,7 +18,7 @@ $$ f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace $$
 
 satisfies
 
-$$ H^{*}(f) \leq H. $$
+$$ H^{\ast}(f) \leq H. $$
 
 ## Proof
 
@@ -48,7 +48,7 @@ $$ S(x) = \frac{Q_f(x)}{\prod_{j=1}^{H}B_j(x)}. $$
 
 Each ratio $A_h(x)/B_h(x)$ is a one-head atom by Lemma 1 of [015_three_bit_quadratic_upper_bound.md](015_three_bit_quadratic_upper_bound.md). Therefore thresholding a constant plus $H$ one-head atoms computes $f$. The exact normal form from [010_linear_fractional_normal_form.md](010_linear_fractional_normal_form.md) gives
 
-$$ H^{*}(f) \leq H. $$
+$$ H^{\ast}(f) \leq H. $$
 
 $\blacksquare$
 
@@ -62,7 +62,7 @@ have one linear relation for each $h$, namely
 
 $$ \frac{B_h(x)}{B_h(x)} = 1. $$
 
-Thus the span of constant plus affine-over-$B_h$ ratios has dimension at most
+Thus the span of constant plus affine-over $B_h$ ratios has dimension at most
 
 $$ 1 + nH. $$
 

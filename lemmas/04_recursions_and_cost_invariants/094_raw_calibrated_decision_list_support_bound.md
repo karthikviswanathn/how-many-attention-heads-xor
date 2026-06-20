@@ -8,13 +8,13 @@ $$ T_1,\ldots,T_L:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace. $$
 
 Then
 
-$$ H^{*}(f) \leq \sum_{j=1}^{L}\rho(T_j), $$
+$$ H^{\ast}(f) \leq \sum_{j=1}^{L}\rho(T_j), $$
 
 where $\rho(T_j)$ is the raw atom approximation cost from [093_raw_calibrated_vote_support_bound.md](093_raw_calibrated_vote_support_bound.md).
 
 In particular,
 
-$$ H^{*}(f) \leq \sum_{j=1}^{L}\mathrm{eafs}(T_j), $$
+$$ H^{\ast}(f) \leq \sum_{j=1}^{L}\mathrm{eafs}(T_j), $$
 
 where $\mathrm{eafs}(T_j)$ is the exact affine-free support cost of the unique multilinear expansion of $T_j$.
 
@@ -30,7 +30,7 @@ with positive margin on the Boolean cube.
 
 The raw-calibrated vote support bound [093_raw_calibrated_vote_support_bound.md](093_raw_calibrated_vote_support_bound.md) applied to this strict vote gives
 
-$$ H^{*}(f) \leq \sum_{j:c_j\neq0}\rho(T_j) \leq \sum_{j=1}^{L}\rho(T_j). $$
+$$ H^{\ast}(f) \leq \sum_{j:c_j\neq0}\rho(T_j) \leq \sum_{j=1}^{L}\rho(T_j). $$
 
 The same theorem also gives
 
@@ -38,7 +38,7 @@ $$ \rho(T_j)\leq\mathrm{eafs}(T_j) $$
 
 for every test $T_j$. Therefore
 
-$$ H^{*}(f) \leq \sum_{j=1}^{L}\mathrm{eafs}(T_j). $$
+$$ H^{\ast}(f) \leq \sum_{j=1}^{L}\mathrm{eafs}(T_j). $$
 
 $\blacksquare$
 
@@ -46,4 +46,4 @@ $\blacksquare$
 
 If every test has $\rho(T_j)\leq1$, this recovers the one-head-per-test calibrated decision-list theorem.
 
-For a decision list whose tests are internal LTFs, the theorem gives a concrete route through exact multilinear support. It does not prove a length-$L$ bound for arbitrary LTF tests, but it turns the problem into bounding the raw calibration costs $\rho(T_j)$.
+For a decision list whose tests are internal LTFs, the theorem gives a concrete route through exact multilinear support. It does not prove a length $L$ bound for arbitrary LTF tests, but it turns the problem into bounding the raw calibration costs $\rho(T_j)$.

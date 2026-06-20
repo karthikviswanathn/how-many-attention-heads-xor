@@ -20,15 +20,15 @@ $$ \deg_{\pm}(F)=\deg_{\pm}(T)+k. $$
 
 Consequently,
 
-$$ H^{*}(F)\geq\deg_{\pm}(T)+k. $$
+$$ H^{\ast}(F)\geq\deg_{\pm}(T)+k. $$
 
 If $P$ is a strict sign polynomial for $T$ with $m(P)$ nonconstant monomials, then
 
-$$ H^{*}(F)\leq2^{k}\bigl(m(P)+1\bigr)-1. $$
+$$ H^{\ast}(F)\leq2^{k}\bigl(m(P)+1\bigr)-1. $$
 
 In particular,
 
-$$ H^{*}(\pi_k\oplus T) \leq 2^{k}\bigl(\mathrm{ptfsp}(T)+1\bigr)-1. $$
+$$ H^{\ast}(\pi_k\oplus T) \leq 2^{k}\bigl(\mathrm{ptfsp}(T)+1\bigr)-1. $$
 
 > **Interpretation.** A parity block is an additive threshold-degree amplifier. The sparse-PTF upper bound is only a safe fallback, but the lower bound is exact and composable.
 
