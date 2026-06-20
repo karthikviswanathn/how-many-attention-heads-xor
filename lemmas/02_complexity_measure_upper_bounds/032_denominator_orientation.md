@@ -22,13 +22,13 @@ Conversely, let $A(x)$ be any affine numerator.
 
 1. If
 
-   $$ B(x)=b_0+\sum_{i=1}^{n}b_i x_i, \qquad b_0>0, \qquad b_i>0 $$
+   $B(x)=b_0+\sum_{i=1}^{n}b_i x_i, \qquad b_0>0, \qquad b_i>0$
 
    for every $i$, then $A/B$ is a one-head atom.
 
 2. If
 
-   $$ B(x)=b_0-\sum_{i=1}^{n}d_i x_i, \qquad d_i>0, \qquad b_0>\sum_{i=1}^{n}d_i, $$
+   $B(x)=b_0-\sum_{i=1}^{n}d_i x_i, \qquad d_i>0, \qquad b_0>\sum_{i=1}^{n}d_i,$
 
    then $A/B$ is a one-head atom.
 

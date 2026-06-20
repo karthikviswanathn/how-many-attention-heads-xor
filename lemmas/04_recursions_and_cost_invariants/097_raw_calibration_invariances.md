@@ -10,35 +10,35 @@ be a Boolean feature. The raw calibration cost $\rho(T)$ has the following struc
 
 1. Output complement does not change raw cost:
 
-   $$ \rho(1-T)=\rho(T). $$
+   $\rho(1-T)=\rho(T).$
 
 2. Coordinate permutations do not change raw cost. If $\pi$ is a permutation of $\lbrace1,\ldots,n\rbrace$ and
 
-   $$ T^{\pi}(x_1,\ldots,x_n) := T(x_{\pi(1)},\ldots,x_{\pi(n)}), $$
+   $T^{\pi}(x_1,\ldots,x_n) := T(x_{\pi(1)},\ldots,x_{\pi(n)}),$
 
    then
 
-   $$ \rho(T^{\pi})=\rho(T). $$
+   $\rho(T^{\pi})=\rho(T).$
 
 3. Global bit-flip does not change raw cost. If
 
-   $$ T^{\mathrm{flip}}(x) := T(1-x_1,\ldots,1-x_n), $$
+   $T^{\mathrm{flip}}(x) := T(1-x_1,\ldots,1-x_n),$
 
    then
 
-   $$ \rho(T^{\mathrm{flip}})=\rho(T). $$
+   $\rho(T^{\mathrm{flip}})=\rho(T).$
 
 4. Adding dummy variables does not change raw cost. If
 
-   $$ F(x,y)=T(x), $$
+   $F(x,y)=T(x),$
 
    then
 
-   $$ \rho(F)=\rho(T). $$
+   $\rho(F)=\rho(T).$
 
 5. Restrictions cannot increase raw cost. If $R$ is obtained from $T$ by fixing some input coordinates, then
 
-   $$ \rho(R)\leq\rho(T). $$
+   $\rho(R)\leq\rho(T).$
 
 All equalities and inequalities are interpreted in $\mathbb{N}\cup\lbrace\infty\rbrace$.
 

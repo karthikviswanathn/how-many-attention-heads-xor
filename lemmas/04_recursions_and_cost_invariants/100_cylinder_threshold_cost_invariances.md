@@ -10,35 +10,35 @@ The cylinder-threshold cost $\mathrm{ctc}(f)$ has the following structural prope
 
 1. Output complement does not change the cost:
 
-   $$ \mathrm{ctc}(1-f)=\mathrm{ctc}(f). $$
+   $\mathrm{ctc}(1-f)=\mathrm{ctc}(f).$
 
 2. Coordinate permutations do not change the cost. If $\pi$ is a permutation of $\lbrace1,\ldots,n\rbrace$ and
 
-   $$ f^{\pi}(x_1,\ldots,x_n) := f(x_{\pi(1)},\ldots,x_{\pi(n)}), $$
+   $f^{\pi}(x_1,\ldots,x_n) := f(x_{\pi(1)},\ldots,x_{\pi(n)}),$
 
    then
 
-   $$ \mathrm{ctc}(f^{\pi})=\mathrm{ctc}(f). $$
+   $\mathrm{ctc}(f^{\pi})=\mathrm{ctc}(f).$
 
 3. Global bit-flip does not change the cost. If
 
-   $$ f^{\mathrm{flip}}(x) := f(1-x_1,\ldots,1-x_n), $$
+   $f^{\mathrm{flip}}(x) := f(1-x_1,\ldots,1-x_n),$
 
    then
 
-   $$ \mathrm{ctc}(f^{\mathrm{flip}})=\mathrm{ctc}(f). $$
+   $\mathrm{ctc}(f^{\mathrm{flip}})=\mathrm{ctc}(f).$
 
 4. Restrictions cannot increase the cost. If $g$ is obtained from $f$ by fixing some coordinates, then
 
-   $$ \mathrm{ctc}(g)\leq\mathrm{ctc}(f). $$
+   $\mathrm{ctc}(g)\leq\mathrm{ctc}(f).$
 
 5. Adding dummy variables does not change the cost. If
 
-   $$ F(x,y)=f(x), $$
+   $F(x,y)=f(x),$
 
    then
 
-   $$ \mathrm{ctc}(F)=\mathrm{ctc}(f). $$
+   $\mathrm{ctc}(F)=\mathrm{ctc}(f).$
 
 > **Interpretation.** The optimized cylinder-threshold upper-bound invariant is stable under the same basic symmetries as $H^{*}$. Restrictions can only make the invariant smaller, so hard restrictions are valid witnesses for lower-bound attempts on $\mathrm{ctc}$.
 

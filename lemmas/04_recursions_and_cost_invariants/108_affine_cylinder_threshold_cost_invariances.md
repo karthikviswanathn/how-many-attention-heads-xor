@@ -10,35 +10,35 @@ The affine-cylinder threshold cost $\mathrm{actc}(f)$ has the following structur
 
 1. Output complement does not change the cost:
 
-   $$ \mathrm{actc}(1-f)=\mathrm{actc}(f). $$
+   $\mathrm{actc}(1-f)=\mathrm{actc}(f).$
 
 2. Coordinate permutations do not change the cost. If $\pi$ is a permutation of $\lbrace1,\ldots,n\rbrace$ and
 
-   $$ f^{\pi}(x_1,\ldots,x_n) := f(x_{\pi(1)},\ldots,x_{\pi(n)}), $$
+   $f^{\pi}(x_1,\ldots,x_n) := f(x_{\pi(1)},\ldots,x_{\pi(n)}),$
 
    then
 
-   $$ \mathrm{actc}(f^{\pi})=\mathrm{actc}(f). $$
+   $\mathrm{actc}(f^{\pi})=\mathrm{actc}(f).$
 
 3. Global bit-flip does not change the cost. If
 
-   $$ f^{\mathrm{flip}}(x) := f(1-x_1,\ldots,1-x_n), $$
+   $f^{\mathrm{flip}}(x) := f(1-x_1,\ldots,1-x_n),$
 
    then
 
-   $$ \mathrm{actc}(f^{\mathrm{flip}})=\mathrm{actc}(f). $$
+   $\mathrm{actc}(f^{\mathrm{flip}})=\mathrm{actc}(f).$
 
 4. Restrictions cannot increase the cost. If $g$ is obtained from $f$ by fixing some coordinates, then
 
-   $$ \mathrm{actc}(g)\leq\mathrm{actc}(f). $$
+   $\mathrm{actc}(g)\leq\mathrm{actc}(f).$
 
 5. Adding dummy variables does not change the cost. If
 
-   $$ F(x,y)=f(x), $$
+   $F(x,y)=f(x),$
 
    then
 
-   $$ \mathrm{actc}(F)=\mathrm{actc}(f). $$
+   $\mathrm{actc}(F)=\mathrm{actc}(f).$
 
 > **Interpretation.** The affine-cylinder invariant can be optimized on the same canonical representatives as $\mathrm{ctc}$, and hard restrictions remain valid witnesses for lower-bound attempts.
 

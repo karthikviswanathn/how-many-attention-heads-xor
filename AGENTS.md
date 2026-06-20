@@ -12,7 +12,7 @@ Use LaTeX math delimiters, not backticks.
   ```markdown
   Some lead-in text.
 
-  $$ z(a,b) = \frac{N(a,b)}{D(a,b)} $$
+  $z(a,b) = \frac{N(a,b)}{D(a,b)}$
 
   Continuation text.
   ```

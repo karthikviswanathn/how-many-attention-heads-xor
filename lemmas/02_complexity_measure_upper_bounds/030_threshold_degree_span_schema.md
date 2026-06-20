@@ -103,7 +103,7 @@ The threshold-degree lower bound and the degree-restricted span schema give the 
 1. Lower-bound $H^{*}(f)$ by $\deg_{\pm}(f)$.
 2. For each $d$, build a degree-$d$ span certificate at or near
 
-   $$ \left\lceil\frac{D(n,d)-1}{n}\right\rceil. $$
+   $\left\lceil\frac{D(n,d)-1}{n}\right\rceil.$
 
 3. If the degree-$d$ threshold is $d$ itself for a range of $n,d$, then every function of threshold degree $d$ has exact value $d$.
 

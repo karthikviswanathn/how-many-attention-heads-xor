@@ -30,11 +30,11 @@ Then:
 
 3. If $C_L(G)=2$, then
 
-   $$ H^{*}(f) = \begin{cases} 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases} $$
+   $H^{*}(f) = \begin{cases} 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases}$
 
 4. If $C_L(G)\geq3$, then
 
-   $$ H^{*}(f) \leq 1+\sum_{r=2}^{\min\lbrace C_L(G),k\rbrace}\binom{k}{r}. $$
+   $H^{*}(f) \leq 1+\sum_{r=2}^{\min\lbrace C_L(G),k\rbrace}\binom{k}{r}.$
 
 > **Interpretation.** A function of one arbitrary affine statistic is controlled by the number of label changes along that statistic. The first three regimes are exact or exactly reduced to the one-head test; beyond that, the affine-free sparse-polynomial route gives an explicit support-size bound.
 

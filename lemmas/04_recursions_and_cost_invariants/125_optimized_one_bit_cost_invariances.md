@@ -10,35 +10,35 @@ The optimized one-bit costs $\mathrm{lgactc}(T)$ and $\mathrm{xactc}(T)$ have th
 
 1. Output complement does not change either cost:
 
-   $$ \mathrm{lgactc}(1-T)=\mathrm{lgactc}(T), \qquad \mathrm{xactc}(1-T)=\mathrm{xactc}(T). $$
+   $\mathrm{lgactc}(1-T)=\mathrm{lgactc}(T), \qquad \mathrm{xactc}(1-T)=\mathrm{xactc}(T).$
 
 2. Coordinate permutations do not change either cost. If $\pi$ is a permutation of $\lbrace1,\ldots,m\rbrace$ and
 
-   $$ T^{\pi}(y_1,\ldots,y_m) := T(y_{\pi(1)},\ldots,y_{\pi(m)}), $$
+   $T^{\pi}(y_1,\ldots,y_m) := T(y_{\pi(1)},\ldots,y_{\pi(m)}),$
 
    then
 
-   $$ \mathrm{lgactc}(T^{\pi})=\mathrm{lgactc}(T), \qquad \mathrm{xactc}(T^{\pi})=\mathrm{xactc}(T). $$
+   $\mathrm{lgactc}(T^{\pi})=\mathrm{lgactc}(T), \qquad \mathrm{xactc}(T^{\pi})=\mathrm{xactc}(T).$
 
 3. Global bit-flip on the feature variables does not change either cost. If
 
-   $$ T^{\mathrm{flip}}(y) := T(1-y_1,\ldots,1-y_m), $$
+   $T^{\mathrm{flip}}(y) := T(1-y_1,\ldots,1-y_m),$
 
    then
 
-   $$ \mathrm{lgactc}(T^{\mathrm{flip}})=\mathrm{lgactc}(T), \qquad \mathrm{xactc}(T^{\mathrm{flip}})=\mathrm{xactc}(T). $$
+   $\mathrm{lgactc}(T^{\mathrm{flip}})=\mathrm{lgactc}(T), \qquad \mathrm{xactc}(T^{\mathrm{flip}})=\mathrm{xactc}(T).$
 
 4. Restrictions cannot increase either cost. If $R$ is obtained from $T$ by fixing some feature coordinates, then
 
-   $$ \mathrm{lgactc}(R)\leq\mathrm{lgactc}(T), \qquad \mathrm{xactc}(R)\leq\mathrm{xactc}(T). $$
+   $\mathrm{lgactc}(R)\leq\mathrm{lgactc}(T), \qquad \mathrm{xactc}(R)\leq\mathrm{xactc}(T).$
 
 5. Adding dummy feature variables does not change either cost. If
 
-   $$ U(y,w)=T(y), $$
+   $U(y,w)=T(y),$
 
    then
 
-   $$ \mathrm{lgactc}(U)=\mathrm{lgactc}(T), \qquad \mathrm{xactc}(U)=\mathrm{xactc}(T). $$
+   $\mathrm{lgactc}(U)=\mathrm{lgactc}(T), \qquad \mathrm{xactc}(U)=\mathrm{xactc}(T).$
 
 > **Interpretation.** The optimized literal-gating and fresh-XOR costs can be minimized on the same canonical feature representatives as $\mathrm{actc}$. Hard restrictions of the feature remain valid lower-bound witnesses for these optimized one-bit targets.
 

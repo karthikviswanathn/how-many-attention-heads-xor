@@ -97,19 +97,19 @@ By Lemma 2, $d\in\lbrace0,1,2,3\rbrace$.
 
 1. If $d=0$, then $f$ is constant. By Lemma 11,
 
-   $$ H^{*}(f) = 0 = d. $$
+   $H^{*}(f) = 0 = d.$
 
 2. If $d=1$, then $f$ is a nonconstant linear threshold function. By Lemma 11,
 
-   $$ H^{*}(f) = 1 = d. $$
+   $H^{*}(f) = 1 = d.$
 
 3. If $d=2$, the threshold-degree lower bound gives $H^{*}(f) \geq 2$, while Lemma 15 gives $H^{*}(f) \leq 2$. Hence
 
-   $$ H^{*}(f) = 2 = d. $$
+   $H^{*}(f) = 2 = d.$
 
 4. If $d=3$, the threshold-degree lower bound gives $H^{*}(f) \geq 3$, while Lemma 1 gives $H^{*}(f) \leq 3$. Hence
 
-   $$ H^{*}(f) = 3 = d. $$
+   $H^{*}(f) = 3 = d.$
 
 Thus, for every $f : \lbrace0,1\rbrace^3 \to \lbrace0,1\rbrace$,
 

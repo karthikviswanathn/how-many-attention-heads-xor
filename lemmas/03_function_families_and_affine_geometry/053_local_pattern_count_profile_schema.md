@@ -110,26 +110,26 @@ This schema recovers the three profile families recorded separately in these not
 
 1. For $p(a,b)=ab$, the slice $b=1$ gives $a$, and each product over $r$ coordinates is one monomial. Hence
 
-   $$ \Lambda_{p,m}(C)\leq\sum_{r=1}^{C}\binom{m}{r}. $$
+   $\Lambda_{p,m}(C)\leq\sum_{r=1}^{C}\binom{m}{r}.$
 
    This is the intersection-profile bound from [050_intersection_profile_bounds.md](050_intersection_profile_bounds.md).
 
 2. For $p(a,b)=a\oplus b$, the slice $b=0$ gives $a$, and
 
-   $$ p(a,b)=a+b-2ab. $$
+   $p(a,b)=a+b-2ab.$
 
    Thus
 
-   $$ \Lambda_{p,m}(C) \leq 1+m+\sum_{r=2}^{C}3^r\binom{m}{r} $$
+   $\Lambda_{p,m}(C) \leq 1+m+\sum_{r=2}^{C}3^r\binom{m}{r}$
 
    for $C\geq1$. This is the Hamming-distance profile bound from [051_hamming_distance_profile_bounds.md](051_hamming_distance_profile_bounds.md).
 
 3. For $p(a,b)=a(1-b)$, the slice $b=0$ gives $a$, and
 
-   $$ p(a,b)=a-ab. $$
+   $p(a,b)=a-ab.$
 
    Thus
 
-   $$ \Lambda_{p,m}(C) \leq 1+m+\sum_{r=2}^{C}2^r\binom{m}{r} $$
+   $\Lambda_{p,m}(C) \leq 1+m+\sum_{r=2}^{C}2^r\binom{m}{r}$
 
    for $C\geq1$. This is the directed-defect profile bound from [052_directed_defect_profile_bounds.md](052_directed_defect_profile_bounds.md).

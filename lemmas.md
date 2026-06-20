@@ -1366,7 +1366,7 @@ Then:
 
 4. If $C_L(G)\geq3$, then
 
-   $$ H^{*}(f) \leq 1+\sum_{r=2}^{\min\lbrace C_L(G),k\rbrace}\binom{k}{r}. $$
+   $H^{*}(f) \leq 1+\sum_{r=2}^{\min\lbrace C_L(G),k\rbrace}\binom{k}{r}.$
 
 > **Interpretation.** Positive-projection sign changes give the sharper $C$-head bound when the statistic has positive weights. This lemma is the orientation-free fallback for a single affine statistic with mixed signs.
 
