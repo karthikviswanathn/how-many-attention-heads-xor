@@ -140,7 +140,7 @@ while adding the last two gives
 
 $$ a_1+a_2+b_1+b_2+2c<0, $$
 
-a contradiction. Thus $\mathrm{INT}_m$ is not a linear threshold function. By the one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md), $H^{\ast}(\mathrm{INT}_m)\geq2$.
+a contradiction. Thus $\mathrm{INT}&#95;m$ is not a linear threshold function. By the one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md), $H^{\ast}(\mathrm{INT}&#95;m)\geq2$.
 
 Complement invariance from [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md) gives the same lower and upper bounds for $\mathrm{DISJ}_m$. When $m=2$, the lower and upper bounds coincide. $\blacksquare$
 

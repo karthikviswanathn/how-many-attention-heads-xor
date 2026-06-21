@@ -94,7 +94,7 @@ For the exactness clause, the fresh-bit XOR threshold-degree theorem [081_fresh_
 
 $$ H^{\ast}(z\oplus T)\geq\deg_{\pm}(T)+1. $$
 
-If $\deg_{\pm}(T)+1=D_{\oplus}(C)$, this lower bound matches the positive-projection upper bound. The same complement argument handles XNOR. $\blacksquare$
+If $\deg&#95;{\pm}(T)+1=D&#95;{\oplus}(C)$, this lower bound matches the positive-projection upper bound. The same complement argument handles XNOR. $\blacksquare$
 
 ## Consequences
 

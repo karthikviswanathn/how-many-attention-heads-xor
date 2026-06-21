@@ -52,7 +52,7 @@ Parity flips exactly when this number is odd, equivalently when $n-\ell$ is even
 
 $$ \sum_{\substack{1\leq \ell\leq n\\ n-\ell\ \mathrm{even}}}2^{\ell-1} = L_n $$
 
-lexicographic sign changes. This proves both the $\mathrm{mgc}_{+}^{\mathcal{P}_{\mathrm{sing}}}$ value and the singleton Hamming-profile value $\mathrm{mhc}$.
+lexicographic sign changes. This proves both the $\mathrm{mgc}&#95;{+}^{\mathcal{P}&#95;{\mathrm{sing}}}$ value and the singleton Hamming-profile value $\mathrm{mhc}$.
 
 The closed form follows by summing the corresponding geometric progression:
 

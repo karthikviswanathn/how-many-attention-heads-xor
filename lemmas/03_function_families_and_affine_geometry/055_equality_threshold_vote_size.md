@@ -10,7 +10,7 @@ we have, for every $m\geq1$,
 
 $$ s_{\mathrm{LTF}}(\mathrm{EQ}_m)=2. $$
 
-> **Interpretation.** Equality is a family where threshold-vote size and head complexity agree: both $s_{\mathrm{LTF}}(\mathrm{EQ}_m)$ and $H^{\ast}(\mathrm{EQ}_m)$ equal $2$.
+> **Interpretation.** Equality is a family where threshold-vote size and head complexity agree: both $s&#95;{\mathrm{LTF}}(\mathrm{EQ}&#95;m)$ and $H^{\ast}(\mathrm{EQ}&#95;m)$ equal $2$.
 
 ## Proof
 
@@ -38,7 +38,7 @@ $$ s_{\mathrm{LTF}}(\mathrm{EQ}_m)\leq2. $$
 
 ### Lemma 2. Equality is not one threshold gate
 
-It remains to rule out $s_{\mathrm{LTF}}(\mathrm{EQ}_m)\leq1$. The function is nonconstant, so $s_{\mathrm{LTF}}(\mathrm{EQ}_m)\neq0$.
+It remains to rule out $s&#95;{\mathrm{LTF}}(\mathrm{EQ}&#95;m)\leq1$. The function is nonconstant, so $s&#95;{\mathrm{LTF}}(\mathrm{EQ}&#95;m)\neq0$.
 
 If $\mathrm{EQ}_m$ were a single linear threshold function, then every restriction would also be a linear threshold function. Restrict
 
@@ -64,7 +64,7 @@ Since $\gamma>0$, this implies
 
 $$ \alpha+\beta+\gamma<-\gamma<0, $$
 
-contradicting $\alpha+\beta+\gamma>0$. Hence $\mathrm{EQ}_1$ is not an LTF, and neither is $\mathrm{EQ}_m$.
+contradicting $\alpha+\beta+\gamma>0$. Hence $\mathrm{EQ}&#95;1$ is not an LTF, and neither is $\mathrm{EQ}&#95;m$.
 
 Therefore
 

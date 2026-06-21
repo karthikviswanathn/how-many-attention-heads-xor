@@ -34,7 +34,7 @@ Let
 
 $$ k:=\lfloor n/2\rfloor, \qquad \mathcal{L}_k:=\lbrace S\subseteq\lbrace1,\ldots,n\rbrace:\lvert S\rvert=k\rbrace. $$
 
-For each family $\mathcal{A}\subseteq\mathcal{L}_k$, define a monotone Boolean function $f_{\mathcal{A}}$ by
+For each family $\mathcal{A}\subseteq\mathcal{L}&#95;k$, define a monotone Boolean function $f&#95;{\mathcal{A}}$ by
 
 $$ f_{\mathcal{A}}(1_X)=1 \qquad\Longleftrightarrow\qquad \text{there exists } S\in\mathcal{A} \text{ with } S\subseteq X. $$
 

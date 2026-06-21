@@ -22,7 +22,7 @@ so that
 
 $$ \sum_{j=1}^{k}\rho_j a^{(q)}_j < \sum_{j=1}^{k}\rho_j a^{(q+1)}_j. $$
 
-Let $C_a$ be the sign-change count of $F_a$ along $\tau_0,\ldots,\tau_{M-1}$, and let $J_{\rho}$ be the number of boundary jumps:
+Let $C_a$ be the sign-change count of $F_a$ along $\tau_0,\ldots,\tau&#95;{M-1}$, and let $J&#95;{\rho}$ be the number of boundary jumps:
 
 $$ J_{\rho} := \left\lvert \left\lbrace q\in\lbrace0,\ldots,2^k-2\rbrace: F_{a^{(q)}}(\tau_{M-1})\neq F_{a^{(q+1)}}(\tau_0) \right\rbrace \right\rvert. $$
 

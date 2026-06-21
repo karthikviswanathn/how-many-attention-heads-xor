@@ -24,7 +24,7 @@ The final symbol `=` is a distinguished query token. We only read out the residu
 
 ## Embeddings
 
-Fix a model dimension $d_{\mathrm{model}} \geq 1$ and a head dimension $d_{\mathrm{head}} \geq 1$.
+Fix a model dimension $d&#95;{\mathrm{model}} \geq 1$ and a head dimension $d&#95;{\mathrm{head}} \geq 1$.
 
 Choose token embeddings
 

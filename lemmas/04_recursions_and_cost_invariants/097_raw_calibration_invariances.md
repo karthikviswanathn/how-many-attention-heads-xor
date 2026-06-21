@@ -14,7 +14,7 @@ be a Boolean feature. The raw calibration cost $\rho(T)$ has the following struc
 
 2. Coordinate permutations do not change raw cost. If $\pi$ is a permutation of $\lbrace1,\ldots,n\rbrace$ and
 
-   $T^{\pi}(x_1,\ldots,x_n) := T(x_{\pi(1)},\ldots,x_{\pi(n)}),$
+   $T^{\pi}(x_1,\ldots,x_n) := T(x&#95;{\pi(1)},\ldots,x&#95;{\pi(n)}),$
 
    then
 

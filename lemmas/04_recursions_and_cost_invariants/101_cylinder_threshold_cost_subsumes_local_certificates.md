@@ -34,7 +34,7 @@ then
 
 $$ \mathrm{ctc}(f) \leq \sum_{a=1}^{s}\kappa(P_a,N_a). $$
 
-If $f$ is computed by a deterministic decision tree $\mathcal{T}$ with accepting leaves $\mathcal{L}_1$ and rejecting leaves $\mathcal{L}_0$, then
+If $f$ is computed by a deterministic decision tree $\mathcal{T}$ with accepting leaves $\mathcal{L}&#95;1$ and rejecting leaves $\mathcal{L}&#95;0$, then
 
 $$ \mathrm{ctc}(f) \leq \min\left\lbrace \sum_{\ell\in\mathcal{L}_1}\kappa(P_\ell,N_\ell), \sum_{\ell\in\mathcal{L}_0}\kappa(P_\ell,N_\ell) \right\rbrace. $$
 

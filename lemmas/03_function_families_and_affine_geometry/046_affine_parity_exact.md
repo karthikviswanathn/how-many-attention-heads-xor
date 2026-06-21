@@ -18,13 +18,13 @@ $$ H^{\ast}(f)\geq k. $$
 
 ## Proof
 
-If $S=\varnothing$, then $f_{S,b}$ is constant, so $H^{\ast}(f_{S,b})=0$.
+If $S=\varnothing$, then $f&#95;{S,b}$ is constant, so $H^{\ast}(f&#95;{S,b})=0$.
 
 Assume $\lvert S\rvert=k\geq1$. After permuting coordinates, $f_{S,0}$ is the $k$-bit parity function with $n-k$ dummy variables. By dummy-variable invariance from [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md) and the exact parity theorem [008_exact_parity_complexity.md](../01_foundations_and_normal_form/008_exact_parity_complexity.md),
 
 $$ H^{\ast}(f_{S,0})=H^{\ast}(\mathrm{XOR}_k)=k. $$
 
-If $b=1$, then $f_{S,1}=1-f_{S,0}$. Complement invariance from [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md) gives
+If $b=1$, then $f&#95;{S,1}=1-f&#95;{S,0}$. Complement invariance from [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md) gives
 
 $$ H^{\ast}(f_{S,1})=H^{\ast}(f_{S,0})=k. $$
 

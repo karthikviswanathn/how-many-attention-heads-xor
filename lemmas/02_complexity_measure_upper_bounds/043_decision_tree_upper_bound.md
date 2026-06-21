@@ -6,7 +6,7 @@ Let $\mathcal{T}$ be a deterministic decision tree computing
 
 $$ f:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace. $$
 
-For a leaf $\ell$, let $P_\ell$ be the set of variables fixed to $1$ along the root-to-leaf path, and let $N_\ell$ be the set of variables fixed to $0$ along that path. Let $\mathcal{L}_1$ and $\mathcal{L}_0$ be the leaves labeled $1$ and $0$.
+For a leaf $\ell$, let $P&#95;\ell$ be the set of variables fixed to $1$ along the root-to-leaf path, and let $N&#95;\ell$ be the set of variables fixed to $0$ along that path. Let $\mathcal{L}&#95;1$ and $\mathcal{L}&#95;0$ be the leaves labeled $1$ and $0$.
 
 Then
 

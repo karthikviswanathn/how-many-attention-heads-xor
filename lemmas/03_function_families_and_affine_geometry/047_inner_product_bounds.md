@@ -44,7 +44,7 @@ has sign $(-1)^{m-k}$. Hence
 
 $$ Q(x,y):=(-1)^{m+1}\prod_{i=1}^{m}A_i(x,y) $$
 
-is positive exactly when $k$ is odd, namely when $\mathrm{IP}_m(x,y)=1$. Thus $Q$ sign-represents $\mathrm{IP}_m$ and has degree $m$. Therefore
+is positive exactly when $k$ is odd, namely when $\mathrm{IP}&#95;m(x,y)=1$. Thus $Q$ sign-represents $\mathrm{IP}&#95;m$ and has degree $m$. Therefore
 
 $$ \deg_{\pm}(\mathrm{IP}_m)\leq m. $$
 
@@ -62,7 +62,7 @@ The sign-valued parity of the products $x_i y_i$ is
 
 $$ \prod_{i=1}^{m}(1-2x_i y_i). $$
 
-This equals $1$ when $\mathrm{IP}_m(x,y)=0$ and $-1$ when $\mathrm{IP}_m(x,y)=1$. Therefore
+This equals $1$ when $\mathrm{IP}&#95;m(x,y)=0$ and $-1$ when $\mathrm{IP}&#95;m(x,y)=1$. Therefore
 
 $$ P(x,y):= -\prod_{i=1}^{m}(1-2x_i y_i) $$
 

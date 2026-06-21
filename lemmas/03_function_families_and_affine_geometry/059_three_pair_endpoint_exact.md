@@ -26,7 +26,7 @@ The verifier `src/hstar/three_pair_certificates.py` records explicit integer cer
 
 $$ S(x)=\frac{A_1(x)}{B_1(x)}+\frac{A_2(x)}{B_2(x)}, $$
 
-where $A_1,A_2$ are affine and $B_1,B_2$ are positive affine functions on the six-bit Boolean cube. For each of $\mathrm{INT}_3$, $\mathrm{SUB}_3$, and $\mathrm{EQ}_3$, it verifies exactly on all $64$ inputs that
+where $A_1,A_2$ are affine and $B_1,B_2$ are positive affine functions on the six-bit Boolean cube. For each of $\mathrm{INT}&#95;3$, $\mathrm{SUB}&#95;3$, and $\mathrm{EQ}&#95;3$, it verifies exactly on all $64$ inputs that
 
 $$ S(x)>0 \qquad\Longleftrightarrow\qquad f(x)=1. $$
 

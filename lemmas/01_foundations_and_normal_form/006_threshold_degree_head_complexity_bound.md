@@ -50,7 +50,7 @@ From the hypothesis,
 
 $$m_{-} \leq \tau < m_{+}.$$
 
-In particular $m_{-} < m_{+}$. Choose any $\tau'$ with
+In particular $m&#95;{-} < m&#95;{+}$. Choose any $\tau'$ with
 
 $$m_{-} < \tau' < m_{+}.$$
 
@@ -63,7 +63,7 @@ This is exactly the desired strict sign separation.
 
 ### Lemma 2. The scalar contribution of one head is a ratio of affine functions
 
-Fix one attention head $h$, and let $w_{\mathrm{out}} \in \mathbb{R}^{d_{\mathrm{model}}}$ be the final readout vector from [../../model.md](../../model.md).
+Fix one attention head $h$, and let $w&#95;{\mathrm{out}} \in \mathbb{R}^{d&#95;{\mathrm{model}}}$ be the final readout vector from [../../model.md](../../model.md).
 
 Let
 
@@ -92,7 +92,7 @@ $$ \ell_{i,b} \in \mathbb{R}, \qquad \mu_{i,b} \in \mathbb{R} $$
 with the following meaning:
 
 1. when $x_i = b$, the unnormalized attention weight contributed by position $i$ is $\exp(\ell_{i,b})$,
-2. after composing the projected value written by head $h$ with the final linear probe $w_{\mathrm{out}}$, the corresponding scalar numerator term is $\exp(\ell_{i,b}) \mu_{i,b}$.
+2. after composing the projected value written by head $h$ with the final linear probe $w&#95;{\mathrm{out}}$, the corresponding scalar numerator term is $\exp(\ell&#95;{i,b}) \mu&#95;{i,b}$.
 
 Indeed, if $u_{i,b}$ denotes the fixed model-space input vector at position $i$ carrying bit value $b$, then
 

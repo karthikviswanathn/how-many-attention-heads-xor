@@ -14,7 +14,7 @@ The optimized one-bit costs $\mathrm{lgactc}(T)$ and $\mathrm{xactc}(T)$ have th
 
 2. Coordinate permutations do not change either cost. If $\pi$ is a permutation of $\lbrace1,\ldots,m\rbrace$ and
 
-   $T^{\pi}(y_1,\ldots,y_m) := T(y_{\pi(1)},\ldots,y_{\pi(m)}),$
+   $T^{\pi}(y_1,\ldots,y_m) := T(y&#95;{\pi(1)},\ldots,y&#95;{\pi(m)}),$
 
    then
 
@@ -56,7 +56,7 @@ For $\gamma=(P,N)$, write
 
 $$ K_{0}(\gamma):=\kappa(P,N), \qquad K_{+}(\gamma):=\kappa(P\cup\lbrace z\rbrace,N), \qquad K_{-}(\gamma):=\kappa(P,N\cup\lbrace z\rbrace). $$
 
-For a family $\Gamma$, use $K_{0}(\Gamma)$, $K_{+}(\Gamma)$, and $K_{-}(\Gamma)$ for the corresponding sums over $\gamma\in\Gamma$.
+For a family $\Gamma$, use $K&#95;{0}(\Gamma)$, $K&#95;{+}(\Gamma)$, and $K&#95;{-}(\Gamma)$ for the corresponding sums over $\gamma\in\Gamma$.
 
 ### Lemma 1. Output complement
 
@@ -86,7 +86,7 @@ so $\lvert L(A)\rvert$ and $\eta_{\oplus}(A)$ are unchanged. A cylinder $(P,N)$ 
 
 $$ \kappa(N,P)=\kappa(P,N), \qquad \kappa(N\cup\lbrace z\rbrace,P)=\kappa(P,N\cup\lbrace z\rbrace), \qquad \kappa(N,P\cup\lbrace z\rbrace)=\kappa(P\cup\lbrace z\rbrace,N). $$
 
-Thus global bit-flip swaps $K_{+}$ and $K_{-}$ for each cylinder. The quantity
+Thus global bit-flip swaps $K&#95;{+}$ and $K&#95;{-}$ for each cylinder. The quantity
 
 $$ \min\lbrace K_{+}(\Gamma),K_{-}(\Gamma)\rbrace $$
 

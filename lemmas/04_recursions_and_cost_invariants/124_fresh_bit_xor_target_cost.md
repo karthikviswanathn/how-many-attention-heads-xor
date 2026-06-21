@@ -46,7 +46,7 @@ Fix a strict affine-cylinder score $S$ for $T$. The fresh-bit XOR affine-cylinde
 
 $$ \deg_{\pm}(T)+1 \leq H^{\ast}(z\oplus T) \leq \eta_{\oplus}(A) + \lvert L(A)\rvert + K_{0}(\Gamma) + K_{+}(\Gamma). $$
 
-Applying the same bound after flipping the fresh coordinate $z$ gives the same upper bound with $K_{-}(\Gamma)$ in place of $K_{+}(\Gamma)$, because $zC_{P,N}$ is replaced by $(1-z)C_{P,N}=C_{P,N\cup\lbrace z\rbrace}$. Fresh-coordinate bit-flip turns XOR into XNOR, and output complement preserves head complexity, so both orientations are valid for the XOR and XNOR pair.
+Applying the same bound after flipping the fresh coordinate $z$ gives the same upper bound with $K&#95;{-}(\Gamma)$ in place of $K&#95;{+}(\Gamma)$, because $zC&#95;{P,N}$ is replaced by $(1-z)C&#95;{P,N}=C&#95;{P,N\cup\lbrace z\rbrace}$. Fresh-coordinate bit-flip turns XOR into XNOR, and output complement preserves head complexity, so both orientations are valid for the XOR and XNOR pair.
 
 Hence
 

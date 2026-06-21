@@ -25,7 +25,7 @@ Introduction
 
 What Boolean functions can a linear probe recover from the residual stream after the first attention update? This isolates the expressivity of attention itself since downstream MLPs or layer norms could solve XOR on their own, but we want to know what is already linearly accessible before any further processing. It turns out that **a single attention head** already makes **OR** and **AND** linearly separable, but it **cannot do XOR**[^s2t3zpf12v]. We also give an explicit construction showing that **two attention heads suffice.**
 
-We will show this using the setup outlined in the above figure, checking if the residual stream of the query token $\left(h_=(a,b)\right)$ is linearly separable into XOR classes. Since the skip connection $x_=$ is a constant offset across all inputs, linear separability depends only on the attention update $z_=(a,b)$, which we analyze for the rest of the post.
+We will show this using the setup outlined in the above figure, checking if the residual stream of the query token $\left(h&#95;=(a,b)\right)$ is linearly separable into XOR classes. Since the skip connection $x&#95;=$ is a constant offset across all inputs, linear separability depends only on the attention update $z&#95;=(a,b)$, which we analyze for the rest of the post.
 
 A short sketch of the proof
 ---------------------------
@@ -36,7 +36,7 @@ A short sketch of the proof
 
 **In the single-head case**, we will show that the attention update results in a point $P$ that lies in the intersection of the line segments connecting same-class points[^tzw5rnf80qc], i.e.,
 
-$\qquad P  \in  [z_=(0,0),  z_=(1,1)]  \cap  [z_=(0,1),  z_=(1,0)].$
+$\qquad P  \in  [z&#95;=(0,0),  z&#95;=(1,1)]  \cap  [z&#95;=(0,1),  z&#95;=(1,0)].$
 
 This rules out linear separability: any separating hyperplane must place each class' segment entirely on one side, but two segments that intersect cannot be separated by a hyperplane.
 
@@ -55,34 +55,34 @@ We work with sequences of length 3 over the vocabulary $\lbrace0,1,=\rbrace$. On
 
 Each token $t \in \lbrace0,1,=\rbrace$ has a token embedding $e_t \in \mathbb{R}^d$, and each position $j \in \lbrace a,b,=\rbrace$ has a positional embedding $\text{pos}_j \in \mathbb{R}^d$. The embedded sequence is
 
-$\qquad x_a=e_a+\text{pos}_a,\qquad x_b=e_b+\text{pos}_b,\qquad x_==e_{=}+\text{pos}_=.$
+$\qquad x_a=e_a+\text{pos}&#95;a,\qquad x_b=e_b+\text{pos}&#95;b,\qquad x&#95;==e&#95;{=}+\text{pos}&#95;=.$
 
 A single attention head is parameterized by the query, key and value matrices denoted as $W_Q, W_K, W_V \in \mathbb{R}^{d \times d}$ respectively. The `=` token attends to all three positions via softmax attention, resulting in the residual stream $h_=(a,b)$:
 
-$\qquad h_=(a,b)= x_=+\sum_{j=1}^3 \alpha_j(a,b)  W_Vx_j$
+$\qquad h&#95;=(a,b)= x&#95;=+\sum&#95;{j=1}^3 \alpha_j(a,b)  W_Vx_j$
 
 where $\alpha_j(a,b)$ is the attention weight from the $j^{\text{th}}$ key to the `=` token given as:  
   
-$\qquad \alpha_j(a,b)=\dfrac{\exp\bigl(x_=^\top W_Q^\top W_K x_j\bigr)}{\sum_{k=1}^3 \exp\bigl(x_=^\top W_Q^\top W_K x_k\bigr)}$
+$\qquad \alpha_j(a,b)=\dfrac{\exp\bigl(x&#95;=^\top W_Q^\top W_K x_j\bigr)}{\sum&#95;{k=1}^3 \exp\bigl(x&#95;=^\top W_Q^\top W_K x_k\bigr)}$
 
 
 
 
 +++
 
-The `=` token's residual stream after the attention head has two parts: the **skip connection**  $x_=$ (its original embedding) and the **attention update**  $z_=(a,b)$ (the new information it gathered by attending to $a$ and $b$):  
+The `=` token's residual stream after the attention head has two parts: the **skip connection**  $x&#95;=$ (its original embedding) and the **attention update**  $z&#95;=(a,b)$ (the new information it gathered by attending to $a$ and $b$):  
   
-$\qquad h_=(a,b) = x_= + z_=(a,b).$
+$\qquad h&#95;=(a,b) = x&#95;= + z&#95;=(a,b).$
 
-Since $x_=$ doesn't depend on the input bits at all, any probe can fold it into its threshold $\tau$. So the only thing that matters for classification is the attention update $z_=(a,b)$.
+Since $x&#95;=$ doesn't depend on the input bits at all, any probe can fold it into its threshold $\tau$. So the only thing that matters for classification is the attention update $z&#95;=(a,b)$.
 
 Let $v_j := W_V x_j$ denote the value vector at position $j$. The attention update is then a convex combination of these value vectors, weighted by the attention probabilities $\lbrace p_a, p_b, p_=\rbrace$:
 
-$\qquad z_=(a,b) := p_a  v_a + p_b  v_b + p_=  v_=, \qquad p_a + p_b + p_= = 1,\quad p_j > 0.$
+$\qquad z&#95;=(a,b) := p_a  v_a + p_b  v_b + p&#95;=  v&#95;=, \qquad p_a + p_b + p&#95;= = 1,\quad p_j > 0.$
 
 The attention probabilities are the softmax of the raw attention logits $\sigma_a, \sigma_b, \sigma_=$, which measure how strongly the `=` token's query matches each key:
 
-$\qquad \sigma_a := \exp(x_=^\top W_Q^\top W_K x_a), \quad \sigma_b := \exp(x_=^\top W_Q^\top W_K x_b), \quad \sigma_= := \exp(x_=^\top W_Q^\top W_K x_=)$
+$\qquad \sigma_a := \exp(x&#95;=^\top W_Q^\top W_K x_a), \quad \sigma_b := \exp(x&#95;=^\top W_Q^\top W_K x_b), \quad \sigma&#95;= := \exp(x&#95;=^\top W_Q^\top W_K x&#95;=)$
 
 resulting in the following attention weights:
 
@@ -90,9 +90,9 @@ $\qquad p_j = \dfrac{\sigma_j}{\sigma_a + \sigma_b + \sigma_=}.$
 
 So we can equivalently write the attention update directly in terms of the $\sigma$'s:
 
-$\qquad z_=(a,b) = \dfrac{\sigma_a  v_a + \sigma_b  v_b + \sigma_=  v_=}{\sigma_a + \sigma_b + \sigma_=}.$
+$\qquad z&#95;=(a,b) = \dfrac{\sigma_a  v_a + \sigma_b  v_b + \sigma&#95;=  v&#95;=}{\sigma_a + \sigma_b + \sigma&#95;=}.$
 
-We now ask: can a hyperplane separate the four attention outputs $\lbrace z_=(a,b)\rbrace_{a,b \in \lbrace0,1\rbrace}$ into the XOR classes?  
+We now ask: can a hyperplane separate the four attention outputs $\lbrace z&#95;=(a,b)\rbrace&#95;{a,b \in \lbrace0,1\rbrace}$ into the XOR classes?  
   
 $\qquad w^\top z_=(a,b) > \tau \quad\Longleftrightarrow\quad a \oplus b = 1.$
 
@@ -126,13 +126,13 @@ The key identities
 
 In the Setup section, we saw that the attention update $z_=(a, b)$ takes the form  
   
-$\qquad z_=(a,b)=\dfrac{\sigma_a v_a+\sigma_b v_b+\sigma_= v_=}{\sigma_a+\sigma_b+\sigma_=}:= \dfrac{N(a,b)}{D(a,b)}.$  
+$\qquad z&#95;=(a,b)=\dfrac{\sigma_a v_a+\sigma_b v_b+\sigma&#95;= v&#95;=}{\sigma_a+\sigma_b+\sigma&#95;=}:= \dfrac{N(a,b)}{D(a,b)}.$  
   
-where $N(a,b):=\sigma_a v_a+\sigma_b v_b+\sigma_= v_=$ and $D(a, b):=\sigma_a+\sigma_b+\sigma_=$. Note that $D(a,b) > 0$, a fact we will use shortly.
+where $N(a,b):=\sigma_a v_a+\sigma_b v_b+\sigma&#95;= v&#95;=$ and $D(a, b):=\sigma_a+\sigma_b+\sigma&#95;=$. Note that $D(a,b) > 0$, a fact we will use shortly.
 
 The key structural fact is that $N(a,b)$ and $D(a,b)$ each split into an $a$-only term, a $b$-only term, and a constant:
 
-$\qquad N(a,b) = \underbrace{\sigma_a v_a}_{a\text{-only}}+\underbrace{\sigma_b v_b}_{b\text{-only}}+\underbrace{\sigma_= v_=}_{\text{const}}, \qquad D(a,b)=\underbrace{\sigma_a}_{a\text{-only}}+\underbrace{\sigma_b}_{b\text{-only}}+\underbrace{\sigma_=}_{\text{const}}.$
+$\qquad N(a,b) = \underbrace{\sigma_a v_a}&#95;{a\text{-only}}+\underbrace{\sigma_b v_b}&#95;{b\text{-only}}+\underbrace{\sigma&#95;= v&#95;=}&#95;{\text{const}}, \qquad D(a,b)=\underbrace{\sigma_a}&#95;{a\text{-only}}+\underbrace{\sigma_b}&#95;{b\text{-only}}+\underbrace{\sigma&#95;=}&#95;{\text{const}}.$
 
 Because of this, summing over the main diagonal $\lbrace(0,0),(1,1)\rbrace$ versus the off-diagonal $\lbrace(0,1),(1,0)\rbrace$ yields identical totals — in both cases you collect exactly one copy each of the $a{=}0$ and $a{=}1$ contributions, and one copy each of the $b{=}0$ and $b{=}1$ contributions. This gives the **key identities**:  
   
@@ -145,25 +145,25 @@ Line segments connecting the same class intersect
 
 ![xor-geometry-left.png](https://res.cloudinary.com/lesswrong-2-0/image/upload/v1775328168/lexical_client_uploads/gboqz1wwlampiphqsp1s.png)
 
-**The geometric obstruction.** The segment connecting the XOR-negative outputs $[z_=(0,0), z_=(1,1)]$ (blue) always crosses the segment connecting the XOR-positive outputs $[z_=(0,1), z_=(1,0)]$ (orange) at a point $P$. Any hyperplane $w^\top z = \tau$ must place $P$ on both sides simultaneously, making linear separation impossible.
+**The geometric obstruction.** The segment connecting the XOR-negative outputs $[z&#95;=(0,0), z&#95;=(1,1)]$ (blue) always crosses the segment connecting the XOR-positive outputs $[z&#95;=(0,1), z&#95;=(1,0)]$ (orange) at a point $P$. Any hyperplane $w^\top z = \tau$ must place $P$ on both sides simultaneously, making linear separation impossible.
 
 We now show that the positive-class segment always intersects the negative-class segment, ruling out linear separability.
 
-Recall from the definition $z_=(a,b)$, we get $N(a,b) = D(a,b)  z_=(a,b)$. Substituting this into the diagonal identity $\mathcal{N} = N(0,0) + N(1,1) = N(0,1) + N(1,0)$ gives  
+Recall from the definition $z&#95;=(a,b)$, we get $N(a,b) = D(a,b)  z&#95;=(a,b)$. Substituting this into the diagonal identity $\mathcal{N} = N(0,0) + N(1,1) = N(0,1) + N(1,0)$ gives  
   
-$\qquad \begin{aligned} \mathcal{N} = D(0,0)  z_=(0,0) + D(1,1)  z_=(1,1) \ = D(0,1)  z_=(0,1) + D(1,0)  z_=(1,0). \end{aligned}$  
+$\qquad \begin{aligned} \mathcal{N} = D(0,0)  z&#95;=(0,0) + D(1,1)  z&#95;=(1,1) \ = D(0,1)  z&#95;=(0,1) + D(1,0)  z&#95;=(1,0). \end{aligned}$  
   
 Dividing both expressions by $\mathcal{D} = D(0,0) + D(1,1) = D(0,1) + D(1, 0)$, we obtain
 
-$\qquad \begin{aligned} P &:= \dfrac{\mathcal{N}}{\mathcal{D}} \ &= \dfrac{D(0,0)   z_=(0,0) + D(1,1)   z_=(1,1)}{D(0,0) + D(1,1)} \ &= \dfrac{D(0,1)   z_=(0,1) + D(1,0)   z_=(1,0)}{D(0,1) + D(1, 0)}. \end{aligned}$
+$\qquad \begin{aligned} P &:= \dfrac{\mathcal{N}}{\mathcal{D}} \ &= \dfrac{D(0,0)   z&#95;=(0,0) + D(1,1)   z&#95;=(1,1)}{D(0,0) + D(1,1)} \ &= \dfrac{D(0,1)   z&#95;=(0,1) + D(1,0)   z&#95;=(1,0)}{D(0,1) + D(1, 0)}. \end{aligned}$
 
-Since every $D(a,b) > 0$, both sides are **convex combinations**: the left side is a point on the segment $[z_=(0,0), z_=(1,1)]$ and the right side is a point on $[z_=(0,1), z_=(1,0)]$. So point $P$ satisfies
+Since every $D(a,b) > 0$, both sides are **convex combinations**: the left side is a point on the segment $[z&#95;=(0,0), z&#95;=(1,1)]$ and the right side is a point on $[z&#95;=(0,1), z&#95;=(1,0)]$. So point $P$ satisfies
 
-$\qquad P  \in  [z_=(0,0), z_=(1,1)]  \cap  [z_=(0,1), z_=(1,0)].$
+$\qquad P  \in  [z&#95;=(0,0), z&#95;=(1,1)]  \cap  [z&#95;=(0,1), z&#95;=(1,0)].$
 
 In words: the segment joining the two XOR-negative hidden states always crosses the segment joining the two XOR-positive hidden states.
 
-This immediately rules out linear separability. If a probe $L(z) = w^\top z - \tau$ had $L < 0$ at both $z_=(0,0)$ and $z_=(1,1)$, then by convexity $L < 0$ on the entire segment $[z_=(0,0), z_=(1,1)]$. Likewise $L > 0$ on $[z_=(0,1), z_=(1,0)]$. But $P$ lies on both segments, forcing $L(P) < 0$ and $L(P) > 0$ simultaneously, resulting in a contradiction. $\square$
+This immediately rules out linear separability. If a probe $L(z) = w^\top z - \tau$ had $L < 0$ at both $z&#95;=(0,0)$ and $z&#95;=(1,1)$, then by convexity $L < 0$ on the entire segment $[z&#95;=(0,0), z&#95;=(1,1)]$. Likewise $L > 0$ on $[z&#95;=(0,1), z&#95;=(1,0)]$. But $P$ lies on both segments, forcing $L(P) < 0$ and $L(P) > 0$ simultaneously, resulting in a contradiction. $\square$
 
 > **Conclusion.** A single attention head with a linear readout cannot compute XOR.
 
@@ -172,18 +172,18 @@ Two heads can do XOR
 
 Now we switch from one head to **two parallel heads**. For the existence proof, it is enough to write the residual update as the sum of the two head outputs:
 
-$\qquad z_=(a,b)=y_=^{(0)}(a,b)+y_=^{(1)}(a,b),$
+$\qquad z&#95;=(a,b)=y&#95;=^{(0)}(a,b)+y&#95;=^{(1)}(a,b),$
 
 where
 
-$\qquad y_=^{(r)}(a,b):=\sum_{j=1}^3 \alpha_j^{(r)}(a,b)  W_V^{(r)}x_j.$
+$\qquad y&#95;=^{(r)}(a,b):=\sum&#95;{j=1}^3 \alpha_j^{(r)}(a,b)  W_V^{(r)}x_j.$
 
 The idea is simple:
 
 *   Head 0 softly detects token `0` and writes in one direction;
 *   Head 1 softly detects token `1` and writes in an orthogonal direction.
 
-Then the mixed inputs `01` and `10` are exactly the cases where **both** heads contribute. This is illustrated in the right panel of the figure in the introduction. Although each head's class segments still intersect individually, their combined outputs live in a 2D subspace where $[z_=(0,0), z_=(1,1)]$ and $[z_=(0,1), z_=(1,0)]$ pull apart, and a separating hyperplane $w^\top z = \tau$ fits between them.
+Then the mixed inputs `01` and `10` are exactly the cases where **both** heads contribute. This is illustrated in the right panel of the figure in the introduction. Although each head's class segments still intersect individually, their combined outputs live in a 2D subspace where $[z&#95;=(0,0), z&#95;=(1,1)]$ and $[z&#95;=(0,1), z&#95;=(1,0)]$ pull apart, and a separating hyperplane $w^\top z = \tau$ fits between them.
 
 An explicit construction
 ------------------------
@@ -194,14 +194,14 @@ $\qquad e_0=(1,0,0),\qquad e_1=(0,1,0),\qquad e_{=}=(0,0,1).$
 
 We choose the query, key, value and output matrices for each head as shown below, along with the resulting attention scores and weights from the `=` query position.
 
-$\begin{array}{lll} \hline & \textbf{Head 0} & \textbf{Head 1} \ \hline W_Q & I & I \ W_K & e_{=} e_0^\top & e_{=} e_1^\top \ W_V & e_0 e_0^\top & e_1 e_1^\top \ W_O & I & I \ \hline \end{array}$
+$\begin{array}{lll} \hline & \textbf{Head 0} & \textbf{Head 1} \ \hline W_Q & I & I \ W_K & e&#95;{=} e_0^\top & e&#95;{=} e_1^\top \ W_V & e_0 e_0^\top & e_1 e_1^\top \ W_O & I & I \ \hline \end{array}$
 
 The construction is symmetric by design:
 
 *   Head 0 attends preferentially to token `0` and writes in the $e_0$ direction
 *   Head 1 attends preferentially to token `1` and writes in the $e_1$ direction
 
-Since each raw attention logit is either 0 or 1, the softmax exponentiates to either $1=\exp(0)$ or $e = \exp(1)$, which is why $e$ appears throughout the tables below. Each entry is the triplet of softmax attention weights $(\alpha_a, \alpha_b, \alpha_=)$ that the `=` query assigns to positions $(x_a, x_b, x_=)$ respectively, for that head and input. The weights are non-negative and sum to 1.
+Since each raw attention logit is either 0 or 1, the softmax exponentiates to either $1=\exp(0)$ or $e = \exp(1)$, which is why $e$ appears throughout the tables below. Each entry is the triplet of softmax attention weights $(\alpha_a, \alpha_b, \alpha&#95;=)$ that the `=` query assigns to positions $(x_a, x_b, x&#95;=)$ respectively, for that head and input. The weights are non-negative and sum to 1.
 
 $\begin{array}{|l|l|l|} \hline \textbf{Input} & \textbf{Head 0} & \textbf{Head 1} \ \hline (0,0) & \left(\tfrac{e}{2e+1}, \tfrac{e}{2e+1}, \tfrac{1}{2e+1}\right) & \left(\tfrac{1}{3}, \tfrac{1}{3}, \tfrac{1}{3}\right) \\[6pt] (0,1) & \left(\tfrac{e}{e+2}, \tfrac{1}{e+2}, \tfrac{1}{e+2}\right) & \left(\tfrac{1}{e+2}, \tfrac{e}{e+2}, \tfrac{1}{e+2}\right) \\[6pt] (1,0) & \left(\tfrac{1}{e+2}, \tfrac{e}{e+2}, \tfrac{1}{e+2}\right) & \left(\tfrac{e}{e+2}, \tfrac{1}{e+2}, \tfrac{1}{e+2}\right) \\[6pt] (1,1) & \left(\tfrac{1}{3}, \tfrac{1}{3}, \tfrac{1}{3}\right) & \left(\tfrac{e}{2e+1}, \tfrac{e}{2e+1}, \tfrac{1}{2e+1}\right) \ \hline \end{array}$
 
@@ -213,7 +213,7 @@ The **same-bit inputs**  $(0,0)$ and $(1,1)$ each **activate only one head**, wh
 
 Choosing $w = e_0 + e_1$, the probe score $w^\top z_=(a,b)$ takes only two distinct values:
 
-$w^\top z_=(0,0) = w^\top z_=(1,1) = \frac{2e}{2e+1} \approx 0.84, \quad w^\top z_=(0,1) = w^\top z_=(1,0) = \frac{2e}{e+2} \approx 1.15.$
+$w^\top z&#95;=(0,0) = w^\top z&#95;=(1,1) = \frac{2e}{2e+1} \approx 0.84, \quad w^\top z&#95;=(0,1) = w^\top z&#95;=(1,0) = \frac{2e}{e+2} \approx 1.15.$
 
 The mixed inputs score strictly higher, so any threshold $\tau \in (0.84, 1.15)$ together with $w = e_0 + e_1$ correctly classifies XOR.
 

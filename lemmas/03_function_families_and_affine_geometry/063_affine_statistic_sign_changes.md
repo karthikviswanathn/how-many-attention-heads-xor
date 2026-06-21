@@ -30,7 +30,7 @@ Then:
 
 3. If $C_L(G)=2$, then
 
-   $H^{\ast}(f) = \begin{cases} 1 & \text{if } f \text{ is a nonconstant linear threshold function},\\ 2 & \text{otherwise}. \end{cases}$
+   $H^{\ast}(f) = 1$ if $f$ is a nonconstant linear threshold function, and $H^{\ast}(f) = 2$ otherwise.
 
 4. If $C_L(G)\geq3$, then
 

@@ -38,7 +38,7 @@ If $\mathrm{lgactc}(T)\leq1$, then every literal-gated function here that is nei
 
 ## Proof
 
-Fix a strict affine-cylinder score $S$ for $T$. Lemma [121_literal_gated_affine_cylinder_feature.md](121_literal_gated_affine_cylinder_feature.md) gives direct bounds for both $z$ and $1-z$ gates, using $K_{+}$ for the $z$ lift and $K_{-}$ for the $1-z$ lift.
+Fix a strict affine-cylinder score $S$ for $T$. Lemma [121_literal_gated_affine_cylinder_feature.md](121_literal_gated_affine_cylinder_feature.md) gives direct bounds for both $z$ and $1-z$ gates, using $K&#95;{+}$ for the $z$ lift and $K&#95;{-}$ for the $1-z$ lift.
 
 If the cheaper lift is not the literal appearing in the desired gate, apply the global bit-flip on the fresh coordinate $z$. Head complexity is invariant under this bit flip by [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md), and the bit flip swaps the two literals. Hence for either literal $r$,
 

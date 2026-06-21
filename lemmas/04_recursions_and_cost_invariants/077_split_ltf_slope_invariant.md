@@ -10,7 +10,7 @@ For a coordinate $j$, write the two cofactors as
 
 $$ f_{j,b}(y):=f(y_1,\ldots,y_{j-1},b,y_j,\ldots,y_{n-1}) \qquad (b\in\lbrace0,1\rbrace), $$
 
-where $y\in\lbrace0,1\rbrace^{n-1}$. Say that $j$ is an LTF split if both $f_{j,0}$ and $f_{j,1}$ are constants or linear threshold functions.
+where $y\in\lbrace0,1\rbrace^{n-1}$. Say that $j$ is an LTF split if both $f&#95;{j,0}$ and $f&#95;{j,1}$ are constants or linear threshold functions.
 
 For an LTF split $j$, define $\sigma_j(f)$ to be the minimum, over all affine sign representations
 

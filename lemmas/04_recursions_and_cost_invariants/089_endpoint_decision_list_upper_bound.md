@@ -26,7 +26,7 @@ We use two ingredients.
 
 ### Lemma 1. Decision lists are strict weighted votes of their tests
 
-Let $T_1,\ldots,T_L$ be arbitrary Boolean tests, let $b_1,\ldots,b_L\in\lbrace0,1\rbrace$ be branch labels, and let $b_{L+1}$ be the default label. The decision list returns $b_j$ at the first index $j$ with $T_j(x)=1$, and returns $b_{L+1}$ if no test fires.
+Let $T_1,\ldots,T_L$ be arbitrary Boolean tests, let $b_1,\ldots,b_L\in\lbrace0,1\rbrace$ be branch labels, and let $b&#95;{L+1}$ be the default label. The decision list returns $b_j$ at the first index $j$ with $T_j(x)=1$, and returns $b&#95;{L+1}$ if no test fires.
 
 We show that the decision-list output is a strict weighted vote over the indicators $T_1,\ldots,T_L$.
 
@@ -92,4 +92,4 @@ Literal decision lists are a special case, because $x_i$ is an endpoint feature 
 
 $$ H^{\ast}(f)\leq L_{\mathrm{litDL}}(f). $$
 
-It also covers decision lists whose tests are positive disjunctions $\mathbf{1}[\sum_{i\in S}\lambda_i x_i>0]$, positive conjunctions $\mathbf{1}[\sum_{i\in S}\lambda_i x_i=\Lambda_S]$, and complements of either kind.
+It also covers decision lists whose tests are positive disjunctions $\mathbf{1}[\sum&#95;{i\in S}\lambda_i x_i>0]$, positive conjunctions $\mathbf{1}[\sum&#95;{i\in S}\lambda_i x_i=\Lambda_S]$, and complements of either kind.

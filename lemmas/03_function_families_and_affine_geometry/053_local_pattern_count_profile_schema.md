@@ -18,7 +18,7 @@ For $0\leq C\leq m$, define the local expansion cost $\Lambda_{p,m}(C)$ as follo
 
 $$ P_{p,S}(x,y):=\prod_{i\in S}P_p(x_i,y_i). $$
 
-Let $\lambda_{p,m}(C)$ be $1$ if at least one product $P_{p,S}$ with $1\leq\lvert S\rvert\leq C$ contains a nonzero degree-one monomial after multilinear expansion, and $0$ otherwise. Let $\Gamma_{p,m}(C)$ be the set of degree at least two monomials that occur with nonzero coefficient in at least one such product. Define
+Let $\lambda&#95;{p,m}(C)$ be $1$ if at least one product $P&#95;{p,S}$ with $1\leq\lvert S\rvert\leq C$ contains a nonzero degree-one monomial after multilinear expansion, and $0$ otherwise. Let $\Gamma&#95;{p,m}(C)$ be the set of degree at least two monomials that occur with nonzero coefficient in at least one such product. Define
 
 $$ \Lambda_{p,m}(C):=\lambda_{p,m}(C)+\lvert\Gamma_{p,m}(C)\rvert. $$
 
@@ -92,7 +92,7 @@ with
 
 $$ 0\leq\lvert S\rvert\leq C(F). $$
 
-The constant part is absorbed into the final threshold. By the definition of $\Lambda_{p,m}(C(F))$, all linear monomials appearing in the expansion cost at most one affine head, and all degree at least two monomials appearing in the expansion are contained in $\Gamma_{p,m}(C(F))$.
+The constant part is absorbed into the final threshold. By the definition of $\Lambda&#95;{p,m}(C(F))$, all linear monomials appearing in the expansion cost at most one affine head, and all degree at least two monomials appearing in the expansion are contained in $\Gamma&#95;{p,m}(C(F))$.
 
 Therefore the affine-free support cost of this sign polynomial is at most
 
@@ -110,7 +110,7 @@ This schema recovers the three profile families recorded separately in these not
 
 1. For $p(a,b)=ab$, the slice $b=1$ gives $a$, and each product over $r$ coordinates is one monomial. Hence
 
-   $\Lambda_{p,m}(C)\leq\sum_{r=1}^{C}\binom{m}{r}.$
+   $\Lambda&#95;{p,m}(C)\leq\sum&#95;{r=1}^{C}\binom{m}{r}.$
 
    This is the intersection-profile bound from [050_intersection_profile_bounds.md](050_intersection_profile_bounds.md).
 
@@ -120,7 +120,7 @@ This schema recovers the three profile families recorded separately in these not
 
    Thus
 
-   $\Lambda_{p,m}(C) \leq 1+m+\sum_{r=2}^{C}3^r\binom{m}{r}$
+   $\Lambda&#95;{p,m}(C) \leq 1+m+\sum&#95;{r=2}^{C}3^r\binom{m}{r}$
 
    for $C\geq1$. This is the Hamming-distance profile bound from [051_hamming_distance_profile_bounds.md](051_hamming_distance_profile_bounds.md).
 
@@ -130,6 +130,6 @@ This schema recovers the three profile families recorded separately in these not
 
    Thus
 
-   $\Lambda_{p,m}(C) \leq 1+m+\sum_{r=2}^{C}2^r\binom{m}{r}$
+   $\Lambda&#95;{p,m}(C) \leq 1+m+\sum&#95;{r=2}^{C}2^r\binom{m}{r}$
 
    for $C\geq1$. This is the directed-defect profile bound from [052_directed_defect_profile_bounds.md](052_directed_defect_profile_bounds.md).

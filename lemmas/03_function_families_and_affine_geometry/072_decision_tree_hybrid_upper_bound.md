@@ -6,7 +6,7 @@ Let $\mathcal{T}$ be a deterministic decision tree computing
 
 $$ f:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace. $$
 
-Let $d$ be the depth of $\mathcal{T}$, and let $v$ be the number of distinct variables queried anywhere in $\mathcal{T}$. For a leaf $\ell$, let $P_\ell$ be the set of variables fixed to $1$ along the root-to-leaf path, and let $N_\ell$ be the set of variables fixed to $0$. Let $\mathcal{L}_1$ and $\mathcal{L}_0$ be the accepting and rejecting leaves.
+Let $d$ be the depth of $\mathcal{T}$, and let $v$ be the number of distinct variables queried anywhere in $\mathcal{T}$. For a leaf $\ell$, let $P&#95;\ell$ be the set of variables fixed to $1$ along the root-to-leaf path, and let $N&#95;\ell$ be the set of variables fixed to $0$. Let $\mathcal{L}&#95;1$ and $\mathcal{L}&#95;0$ be the accepting and rejecting leaves.
 
 Define the local leaf-profile cost
 

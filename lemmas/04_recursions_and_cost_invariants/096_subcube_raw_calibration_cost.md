@@ -18,7 +18,7 @@ $$ \rho(C_{P,N}) \leq \min\lbrace2^{\lvert P\rvert},2^{\lvert N\rvert}\rbrace. $
 
 ## Proof
 
-If $P=N=\varnothing$, then $C_{P,N}=1$, and the constant term allowed in the definition of $\rho$ gives $\rho(C_{P,N})=0$.
+If $P=N=\varnothing$, then $C&#95;{P,N}=1$, and the constant term allowed in the definition of $\rho$ gives $\rho(C&#95;{P,N})=0$.
 
 Assume now that $(P,N)$ is nonvacuous. The local certificate-expansion lemma [044_oriented_certificate_expansion_upper_bound.md](../02_complexity_measure_upper_bounds/044_oriented_certificate_expansion_upper_bound.md) records two exact expansions. Expanding the negative literals gives
 

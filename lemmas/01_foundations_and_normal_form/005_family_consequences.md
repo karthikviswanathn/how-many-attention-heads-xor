@@ -76,7 +76,7 @@ So one head is impossible by the checkerboard lower bound, and therefore $H^{\as
 The edge cases are different:
 
 1. $\mathrm{EXACT}_{n,0}$ is the predicate *all bits are zero*. This is a threshold of Hamming weight from below, so it is computable with one head by flipping the probe sign in the symmetric-threshold construction.
-2. $\mathrm{EXACT}_{n,n}$ is exactly $\mathrm{AND}_n$, so it has head complexity $1$.
+2. $\mathrm{EXACT}&#95;{n,n}$ is exactly $\mathrm{AND}&#95;n$, so it has head complexity $1$.
 
 So the internal exact-count predicates have exact head complexity $2$.
 

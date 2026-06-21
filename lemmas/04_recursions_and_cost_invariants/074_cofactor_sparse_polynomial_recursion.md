@@ -59,7 +59,7 @@ $$ P(z,y) = P_0(y)+z\bigl(P_1(y)-P_0(y)\bigr). $$
 The nonconstant monomials not involving $z$ are contained in $\mathcal{A}_0$. The monomials involving $z$ are $z$ times the monomials appearing in $P_1-P_0$. These are contained in:
 
 - the singleton monomial $z$, coming from the constant term $c_1-c_0$,
-- the monomials $z\prod_{i\in S}y_i$ for $S\in\mathcal{A}_0\cup\mathcal{A}_1$.
+- the monomials $z\prod&#95;{i\in S}y_i$ for $S\in\mathcal{A}&#95;0\cup\mathcal{A}&#95;1$.
 
 Therefore this construction gives a sign polynomial for $f$ with at most
 

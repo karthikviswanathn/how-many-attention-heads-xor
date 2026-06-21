@@ -14,7 +14,7 @@ Consequently,
 
 $$ H^{\ast}(\mathrm{NEQ}_m)=2 $$
 
-for $\mathrm{NEQ}_m:=1-\mathrm{EQ}_m$.
+for $\mathrm{NEQ}&#95;m:=1-\mathrm{EQ}&#95;m$.
 
 > **Interpretation.** Equality is not a gap example. Although the affine-free sparsity route only gives $H^{\ast}(\mathrm{EQ}_m)\leq m+1$, a two-head rational score compares the binary encodings of the two strings directly.
 

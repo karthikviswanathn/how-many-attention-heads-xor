@@ -42,7 +42,7 @@ Since the attention numerator is a sum over positions of per-position terms
 
 $$ \exp\bigl(\ell_t(a,b)\bigr)  \widehat v_t(a,b), $$
 
-and the denominator is the same sum without the projected value vectors, the dependence splits coordinatewise. Collecting the type-1 terms into $A(a)$ (respectively $\alpha(a)$), the type-2 terms into $B(b)$ (respectively $\beta(b)$), and the constant type-3 terms into $C$ (respectively $\gamma$) gives the stated decomposition. $\blacksquare$
+and the denominator is the same sum without the projected value vectors, the dependence splits coordinatewise. Collecting the type-1, type-2, and constant terms separately in the numerator and the denominator gives the stated decomposition $N(a,b) = A(a) + B(b) + C$ and $D(a,b) = \alpha(a) + \beta(b) + \gamma$. $\blacksquare$
 
 ## Consequence
 

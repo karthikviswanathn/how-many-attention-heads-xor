@@ -69,7 +69,7 @@ $$ H^{\ast}(f_{p,F})\leq2. $$
 
 ### Lemma 2. Exactness of the cases
 
-If $f_{p,F}$ is constant, then $H^{\ast}(f_{p,F})=0$.
+If $f&#95;{p,F}$ is constant, then $H^{\ast}(f&#95;{p,F})=0$.
 
 If $f_{p,F}$ is a nonconstant LTF, then the one-head characterization [011_one_head_characterization.md](../01_foundations_and_normal_form/011_one_head_characterization.md) gives
 

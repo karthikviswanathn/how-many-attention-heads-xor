@@ -95,7 +95,7 @@ $$ s_{\mathrm{LTF}}(\mathrm{XOR}_3) = s_{\mathrm{LTF}}(1-\mathrm{XOR}_3) =3. $$
 
 ### Conclusion
 
-Constants have $s_{\mathrm{LTF}}=0$. Nonconstant linear threshold functions have $s_{\mathrm{LTF}}=1$, and no non-LTF can have threshold-vote size $1$.
+Constants have $s&#95;{\mathrm{LTF}}=0$. Nonconstant linear threshold functions have $s&#95;{\mathrm{LTF}}=1$, and no non-LTF can have threshold-vote size $1$.
 
 By Lemma 1 and Lemma 2, every remaining non-parity three-bit function has threshold-vote size exactly $2$, while parity and anti-parity have threshold-vote size exactly $3$.
 

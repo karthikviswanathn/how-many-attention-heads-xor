@@ -54,7 +54,7 @@ and
 
 $$ \Lambda_j:=\nu^{(j)}_{R_j-1}-\nu^{(j)}_0. $$
 
-Choose positive scales $K_b,K_{b-1},\ldots,K_1$ recursively. Start with $K_b=1$. Having chosen $K_{j+1},\ldots,K_b$, choose $K_j$ so large that
+Choose positive scales $K_b,K&#95;{b-1},\ldots,K_1$ recursively. Start with $K_b=1$. Having chosen $K&#95;{j+1},\ldots,K_b$, choose $K_j$ so large that
 
 $$ K_j\Delta_j>\sum_{\ell=j+1}^{b}K_{\ell}\Lambda_{\ell}. $$
 
@@ -70,11 +70,11 @@ $$ H^{\ast}(f)\leq L_{\mathrm{lex}}(F). $$
 
 For the lower bound, fix all blocks except $j$ to assignments attaining the specified levels. Restriction monotonicity gives the displayed inequality.
 
-If $\deg_{\pm}(f)=L_{\mathrm{lex}}(F)$, combine the upper bound with the threshold-degree lower bound
+If $\deg&#95;{\pm}(f)=L&#95;{\mathrm{lex}}(F)$, combine the upper bound with the threshold-degree lower bound
 
 $$ \deg_{\pm}(f)\leq H^{\ast}(f). $$
 
-The two sides match, so $H^{\ast}(f)=\deg_{\pm}(f)=L_{\mathrm{lex}}(F)$. $\blacksquare$
+The two sides match, so $H^{\ast}(f)=\deg&#95;{\pm}(f)=L&#95;{\mathrm{lex}}(F)$. $\blacksquare$
 
 ## Consequence
 

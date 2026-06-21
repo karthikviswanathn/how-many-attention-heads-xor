@@ -14,7 +14,7 @@ branch labels
 
 $$ b_1,\ldots,b_L\in\lbrace0,1\rbrace, $$
 
-and a default label $b_{L+1}\in\lbrace0,1\rbrace$. It computes the Boolean function $f$ that returns $b_j$ at the first index $j$ with $\ell_j(x)=1$, and returns $b_{L+1}$ if no literal fires.
+and a default label $b&#95;{L+1}\in\lbrace0,1\rbrace$. It computes the Boolean function $f$ that returns $b_j$ at the first index $j$ with $\ell_j(x)=1$, and returns $b&#95;{L+1}$ if no literal fires.
 
 Then
 
@@ -26,7 +26,7 @@ More generally, any ordinary literal decision list is equivalent to a read-once 
 
 ## Proof
 
-We first prove the read-once statement. For $j\in\lbrace1,\ldots,L+1\rbrace$, let $F_j$ be the suffix decision-list function beginning at test $j$, with $F_{L+1}\equiv b_{L+1}$. Thus $F_1=f$.
+We first prove the read-once statement. For $j\in\lbrace1,\ldots,L+1\rbrace$, let $F_j$ be the suffix decision-list function beginning at test $j$, with $F&#95;{L+1}\equiv b&#95;{L+1}$. Thus $F_1=f$.
 
 We prove by backward induction that
 
@@ -36,7 +36,7 @@ The base case $j=L+1$ is constant, so
 
 $$ H^{\ast}(F_{L+1})=0. $$
 
-Now suppose $j\leq L$ and the claim holds for $F_{j+1}$. The coordinate $i_j$ does not occur in the suffix because the list is read-once, so $F_{j+1}$ is a function of the remaining coordinates.
+Now suppose $j\leq L$ and the claim holds for $F&#95;{j+1}$. The coordinate $i_j$ does not occur in the suffix because the list is read-once, so $F&#95;{j+1}$ is a function of the remaining coordinates.
 
 If $b_j=1$, then the suffix relation is
 

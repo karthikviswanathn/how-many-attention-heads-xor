@@ -28,7 +28,7 @@ Equivalently, if $E$ is either endpoint predicate, then both fresh-bit XOR and f
 
 ## Proof
 
-We prove the claim for a generic endpoint. Let $e$ be either $\ell_{\min}$ or $\ell_{\max}$, and set
+We prove the claim for a generic endpoint. Let $e$ be either $\ell&#95;{\min}$ or $\ell&#95;{\max}$, and set
 
 $$ R(y):= \begin{cases} L(y)-\ell_{\min} & \text{if } e=\ell_{\min},\\ \ell_{\max}-L(y) & \text{if } e=\ell_{\max}. \end{cases} $$
 
@@ -86,10 +86,10 @@ Finally, output complement preserves head complexity by [028_restrictions_and_si
 
 $$ H^{\ast}(1-(z\oplus E))=2. $$
 
-Applying this to $E_{\min}$ and $E_{\max}$ proves the result. $\blacksquare$
+Applying this to $E&#95;{\min}$ and $E&#95;{\max}$ proves the result. $\blacksquare$
 
 ## Consequences
 
-The positive endpoint theorem [126_endpoint_feature_fresh_xor_exact.md](../04_recursions_and_cost_invariants/126_endpoint_feature_fresh_xor_exact.md) is the special case where $L(y)=\sum_{i\in S}\lambda_i y_i$ with $\lambda_i>0$: the OR-type endpoint is the complement of $E_{\min}$, and the AND-type endpoint is $E_{\max}$.
+The positive endpoint theorem [126_endpoint_feature_fresh_xor_exact.md](../04_recursions_and_cost_invariants/126_endpoint_feature_fresh_xor_exact.md) is the special case where $L(y)=\sum&#95;{i\in S}\lambda_i y_i$ with $\lambda_i>0$: the OR-type endpoint is the complement of $E&#95;{\min}$, and the AND-type endpoint is $E&#95;{\max}$.
 
 Thus every affine statistic has exact two-head fresh-XOR behavior at its two finite cube endpoints, even when the generic one-bit LTF branching and optimized $\mathrm{xactc}$ upper bounds are much larger.

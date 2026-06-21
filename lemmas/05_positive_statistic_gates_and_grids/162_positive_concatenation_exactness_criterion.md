@@ -50,7 +50,7 @@ For a fixed raw order $\rho$, the ordered common positive-statistic slice bound 
 
 $$ H^{\ast}(f)\leq L_{\rho}(f). $$
 
-If $\deg_{\pm}(f)=L_{\rho}(f)$, the two inequalities match, proving exactness.
+If $\deg&#95;{\pm}(f)=L&#95;{\rho}(f)$, the two inequalities match, proving exactness.
 
 For the optimized endpoint-coupled cost, Theorem 158 gives for each shared positive-statistic certificate $t$:
 

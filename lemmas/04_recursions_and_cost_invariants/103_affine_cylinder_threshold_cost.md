@@ -70,7 +70,7 @@ $$ \lvert\psi_A(x)-A(x)\rvert<\epsilon_A \qquad \text{for every }x. $$
 
 If $\lambda(A)=0$, then $A$ is constant and is kept exactly in the final readout bias, using no head.
 
-For each $a\in\mathcal{J}$, the subcube raw calibration lemma [096_subcube_raw_calibration_cost.md](096_subcube_raw_calibration_cost.md) gives a constant $b_{a,0}$ and at most $\kappa(P_a,N_a)$ one-head atoms $\phi_{a,h}$ such that
+For each $a\in\mathcal{J}$, the subcube raw calibration lemma [096_subcube_raw_calibration_cost.md](096_subcube_raw_calibration_cost.md) gives a constant $b&#95;{a,0}$ and at most $\kappa(P_a,N_a)$ one-head atoms $\phi&#95;{a,h}$ such that
 
 $$ \left\lvert b_{a,0} + \sum_{h=1}^{\kappa(P_a,N_a)}\phi_{a,h}(x) - C_{P_a,N_a}(x) \right\rvert < \epsilon_a \qquad \text{for every }x. $$
 

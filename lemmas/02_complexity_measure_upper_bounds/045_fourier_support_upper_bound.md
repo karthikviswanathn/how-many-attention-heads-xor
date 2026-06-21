@@ -68,7 +68,7 @@ Then for every $x$,
 
 $$ \lvert q(x)-R_{\mathcal{A}}(x)\rvert<1. $$
 
-Since $q(x)\in\lbrace-1,1\rbrace$, this implies $q(x)R_{\mathcal{A}}(x)>0$. Hence $R_{\mathcal{A}}$ sign-represents $f$, and the first part applies. $\blacksquare$
+Since $q(x)\in\lbrace-1,1\rbrace$, this implies $q(x)R&#95;{\mathcal{A}}(x)>0$. Hence $R&#95;{\mathcal{A}}$ sign-represents $f$, and the first part applies. $\blacksquare$
 
 ## Consequence
 

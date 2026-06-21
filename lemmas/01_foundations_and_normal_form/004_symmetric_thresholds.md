@@ -8,15 +8,15 @@ $$ T_{n,t}(x)  =  \mathbf{1} \left[ \lvert x\rvert \geq t \right] $$
 
 where $\lvert x\rvert$ is the Hamming weight.
 
-Then $T_{n,t}$ is computable with one head. Since $T_{n,t}$ is nonconstant for $1 \leq t \leq n$, it follows that
+Then $T&#95;{n,t}$ is computable with one head. Since $T&#95;{n,t}$ is nonconstant for $1 \leq t \leq n$, it follows that
 
 $$ H^{\ast}(T_{n,t})  =  1. $$
 
 This includes:
 
-- $\mathrm{OR}_n$, which is $T_{n,1}$,
-- $\mathrm{AND}_n$, which is $T_{n,n}$,
-- $\mathrm{MAJORITY}_n$, which is $T_{n,\lceil n/2 \rceil}$.
+- $\mathrm{OR}&#95;n$, which is $T&#95;{n,1}$,
+- $\mathrm{AND}&#95;n$, which is $T&#95;{n,n}$,
+- $\mathrm{MAJORITY}&#95;n$, which is $T&#95;{n,\lceil n/2 \rceil}$.
 
 ## Construction
 

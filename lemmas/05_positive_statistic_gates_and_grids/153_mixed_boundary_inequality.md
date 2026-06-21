@@ -14,7 +14,7 @@ Then
 
 $$ B_{+}(p,q) \leq \min\lbrace C_{+}(p),C_{+}(q)\rbrace+D(p,q), $$
 
-where $B_{+}$ is the optimized positive mixed boundary cost from Lemma 151 and $C_{+}$ is the optimized positive-order sign-change count of a raw function.
+where $B&#95;{+}$ is the optimized positive mixed boundary cost from Lemma 151 and $C&#95;{+}$ is the optimized positive-order sign-change count of a raw function.
 
 Consequently, in the setup of Lemma 151, if $F(\tau_0)\neq F(\tau_{M-1})$, then
 

@@ -62,6 +62,6 @@ Thus no partition sign-rank argument of the form in [028_restrictions_and_sign_r
 
 ## Consequence
 
-The four-pair endpoint families $\mathrm{INT}_4$, $\mathrm{DISJ}_4$, $\mathrm{SUB}_4$, $\mathrm{NCON}_4$, $\mathrm{EQ}_4$, and $\mathrm{NEQ}_4$ live on eight input bits. Partition sign-rank cannot distinguish two heads from three heads for any eight-bit function, regardless of the partition.
+The four-pair endpoint families $\mathrm{INT}&#95;4$, $\mathrm{DISJ}&#95;4$, $\mathrm{SUB}&#95;4$, $\mathrm{NCON}&#95;4$, $\mathrm{EQ}&#95;4$, and $\mathrm{NEQ}&#95;4$ live on eight input bits. Partition sign-rank cannot distinguish two heads from three heads for any eight-bit function, regardless of the partition.
 
 For proving that a specific eight-bit function needs at least three heads, one must use a lower-bound mechanism stronger than the current threshold-degree and partition sign-rank tools.

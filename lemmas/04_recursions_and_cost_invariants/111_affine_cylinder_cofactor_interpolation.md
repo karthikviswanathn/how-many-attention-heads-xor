@@ -22,7 +22,7 @@ where
 
 $$ A_b(y)=a_b+\sum_{i=1}^{m}\alpha_{b,i}y_i, $$
 
-each $\gamma=(P,N)$ is a nonvacuous cylinder support on the $y$ variables, the supports in $\Gamma_b$ are distinct, and all coefficients $c_{b,\gamma}$ are nonzero. For $\gamma\notin\Gamma_b$, set $c_{b,\gamma}:=0$.
+each $\gamma=(P,N)$ is a nonvacuous cylinder support on the $y$ variables, the supports in $\Gamma_b$ are distinct, and all coefficients $c&#95;{b,\gamma}$ are nonzero. For $\gamma\notin\Gamma_b$, set $c&#95;{b,\gamma}:=0$.
 
 Let
 

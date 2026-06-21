@@ -54,7 +54,7 @@ Therefore
 
 $$ \begin{aligned} (1-\epsilon)B_{11}-\epsilon B_{00} &\leq A_{11}+A_{00} \\ &= A_{01}+A_{10} \\ &\leq \epsilon(B_{01}+B_{10}). \end{aligned} $$
 
-Using $B_{01}+B_{10}=B_{00}+B_{11}$, we get
+Using $B&#95;{01}+B&#95;{10}=B&#95;{00}+B&#95;{11}$, we get
 
 $$ B_{11} \leq 2\epsilon(B_{00}+B_{11}). $$
 
@@ -84,7 +84,7 @@ Therefore
 
 $$ \begin{aligned} \epsilon\widetilde B_{00}+(1+\epsilon)\widetilde B_{11} &\geq \widetilde A_{00}+\widetilde A_{11} \\ &= \widetilde A_{01}+\widetilde A_{10} \\ &\geq (1-\epsilon)(\widetilde B_{01}+\widetilde B_{10}). \end{aligned} $$
 
-Using $\widetilde B_{01}+\widetilde B_{10}=\widetilde B_{00}+\widetilde B_{11}$, we get
+Using $\widetilde B&#95;{01}+\widetilde B&#95;{10}=\widetilde B&#95;{00}+\widetilde B&#95;{11}$, we get
 
 $$ \widetilde B_{00} \leq 2\epsilon(\widetilde B_{00}+\widetilde B_{11}). $$
 

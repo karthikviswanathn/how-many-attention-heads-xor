@@ -34,7 +34,7 @@ For each block order $\pi$ and label $b\in\lbrace0,1\rbrace$, let $R_{b,\pi}$ be
 
 $$ H^{\ast}(f) \leq 2\min_{\pi}\min\lbrace R_{0,\pi},R_{1,\pi}\rbrace. $$
 
-More sharply, if label $b$ has first and last membership indicators $\epsilon_{0,\pi}$ and $\epsilon_{1,\pi}$ in the order $\pi$, then
+More sharply, if label $b$ has first and last membership indicators $\epsilon&#95;{0,\pi}$ and $\epsilon&#95;{1,\pi}$ in the order $\pi$, then
 
 $$ H^{\ast}(f)\leq \min_{\pi,b}\left(2R_{b,\pi}-\epsilon_{0,\pi}-\epsilon_{1,\pi}\right). $$
 

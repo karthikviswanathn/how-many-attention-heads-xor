@@ -46,7 +46,7 @@ For parity,
 
 $$ \mathrm{actc}(\mathrm{XOR}_n)\geq n, $$
 
-because $\deg_{\pm}(\mathrm{XOR}_n)=n$.
+because $\deg&#95;{\pm}(\mathrm{XOR}&#95;n)=n$.
 
 For the halfspace-intersection family $F_n=T_n\wedge U_n$ from [105_halfspace_intersection_head_lower_bound.md](105_halfspace_intersection_head_lower_bound.md),
 

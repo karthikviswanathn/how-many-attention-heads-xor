@@ -38,7 +38,7 @@ Let
 
 $$ C_b:=\sum_{\gamma=(P,N)\in\Gamma_b}\kappa(P,N) $$
 
-be the cylinder part of the $b$th score. Since the total affine-cylinder cost is $r_b$,
+be the cylinder part of the $b$-th score. Since the total affine-cylinder cost is $r_b$,
 
 $$ C_b\leq r_b. $$
 

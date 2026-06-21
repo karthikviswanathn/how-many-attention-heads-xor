@@ -82,7 +82,7 @@ so its sign is the sign of $U(y)$. If $r(z)=0$, then
 
 $$ R_{\wedge}(z,y)=A S_U(y)-B\leq A M-B<0. $$
 
-Thus $R_{\wedge}$ sign-represents $r\wedge U$ with a positive finite margin $\Delta_{\wedge}$. Choose approximation errors for $S_U$ and $r$ so that
+Thus $R&#95;{\wedge}$ sign-represents $r\wedge U$ with a positive finite margin $\Delta&#95;{\wedge}$. Choose approximation errors for $S_U$ and $r$ so that
 
 $$ A\lvert S_{U,\eta}(z,y)-S_U(y)\rvert +B\lvert \psi_{r,\eta}(z,y)-r(z)\rvert < \frac{\Delta_{\wedge}}{2} $$
 
@@ -110,7 +110,7 @@ If $r(z)=0$, then $R_{\vee}(z,y)=A S_U(y)$, so its sign is the sign of $U(y)$. I
 
 $$ R_{\vee}(z,y)\geq A m+B>0. $$
 
-Thus $R_{\vee}$ sign-represents $r\vee U$ with positive finite margin $\Delta_{\vee}$. Again choose the approximation errors for $S_U$ and $r$ small enough that
+Thus $R&#95;{\vee}$ sign-represents $r\vee U$ with positive finite margin $\Delta&#95;{\vee}$. Again choose the approximation errors for $S_U$ and $r$ small enough that
 
 $$ A\lvert S_{U,\eta}(z,y)-S_U(y)\rvert +B\lvert \psi_{r,\eta}(z,y)-r(z)\rvert < \frac{\Delta_{\vee}}{2} $$
 

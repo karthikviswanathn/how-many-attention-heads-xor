@@ -34,7 +34,7 @@ Fix a raw assignment $a$. Since $P$ strictly sign-represents $f$, the values
 
 $$ p_a(\tau_r) $$
 
-are nonzero for all $r$. If the slice label changes between $\tau_r$ and $\tau_{r+1}$, then $p_a(\tau_r)$ and $p_a(\tau_{r+1})$ have opposite signs. By the intermediate value theorem, $p_a$ has a real root in the interval $(\tau_r,\tau_{r+1})$.
+are nonzero for all $r$. If the slice label changes between $\tau_r$ and $\tau&#95;{r+1}$, then $p_a(\tau_r)$ and $p_a(\tau&#95;{r+1})$ have opposite signs. By the intermediate value theorem, $p_a$ has a real root in the interval $(\tau_r,\tau&#95;{r+1})$.
 
 Distinct adjacent sign changes give disjoint intervals, hence distinct roots. Therefore the sign-change count $C_a$ of the slice $f(a,y)$ along $t$ satisfies
 

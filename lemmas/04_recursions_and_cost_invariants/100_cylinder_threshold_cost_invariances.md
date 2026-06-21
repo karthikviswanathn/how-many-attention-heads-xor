@@ -14,7 +14,7 @@ The cylinder-threshold cost $\mathrm{ctc}(f)$ has the following structural prope
 
 2. Coordinate permutations do not change the cost. If $\pi$ is a permutation of $\lbrace1,\ldots,n\rbrace$ and
 
-   $f^{\pi}(x_1,\ldots,x_n) := f(x_{\pi(1)},\ldots,x_{\pi(n)}),$
+   $f^{\pi}(x_1,\ldots,x_n) := f(x&#95;{\pi(1)},\ldots,x&#95;{\pi(n)}),$
 
    then
 

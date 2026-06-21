@@ -48,7 +48,7 @@ $$ \psi_{\delta}(x):=\frac{L(x)}{B_{\delta}(x)} $$
 
 is a one-head atom, because $B_{\delta}$ has positive constant term and positive variable coefficients.
 
-As $\delta\to0$, $B_{\delta}(x)\to1$ uniformly on the finite cube. Hence $\psi_{\delta}(x)\to L(x)$ uniformly on the cube. Taking $\delta$ sufficiently small proves the claim. $\blacksquare$
+As $\delta\to0$, $B&#95;{\delta}(x)\to1$ uniformly on the finite cube. Hence $\psi&#95;{\delta}(x)\to L(x)$ uniformly on the cube. Taking $\delta$ sufficiently small proves the claim. $\blacksquare$
 
 ### Lemma 2. Approximate an affine-free sparse sign polynomial
 

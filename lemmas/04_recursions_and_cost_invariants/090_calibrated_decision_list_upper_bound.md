@@ -36,15 +36,15 @@ $$ H^{\ast}(f)\leq L. $$
 
 ## Proof
 
-For $j\in\lbrace1,\ldots,L+1\rbrace$, let $F_j$ be the suffix decision-list function beginning at test $j$, with $F_{L+1}\equiv b_{L+1}$.
+For $j\in\lbrace1,\ldots,L+1\rbrace$, let $F_j$ be the suffix decision-list function beginning at test $j$, with $F&#95;{L+1}\equiv b&#95;{L+1}$.
 
 We first build a strict weighted vote for each suffix. Start with
 
 $$ V_{L+1} := \begin{cases} 1 & \text{if } b_{L+1}=1,\\ -1 & \text{if } b_{L+1}=0. \end{cases} $$
 
-Thus $V_{L+1}$ sign-represents $F_{L+1}$ with margin $1$.
+Thus $V&#95;{L+1}$ sign-represents $F&#95;{L+1}$ with margin $1$.
 
-Suppose $V_{j+1}$ sign-represents $F_{j+1}$ with positive margin and has the form
+Suppose $V&#95;{j+1}$ sign-represents $F&#95;{j+1}$ with positive margin and has the form
 
 $$ V_{j+1} = c_{j+1,0} +\sum_{k=j+1}^{L}c_{j+1,k}T_k. $$
 

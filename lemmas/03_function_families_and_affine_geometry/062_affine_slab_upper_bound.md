@@ -40,7 +40,7 @@ and
 
 $$ r_{\mathrm{out}} := \min\lbrace\lvert L(x)-c_\ast\rvert:S_{L,\alpha,\beta}(x)=0\rbrace. $$
 
-Every true input has distance at most $R_\ast$ from $c_\ast$, and every false input has distance strictly larger than $R_\ast$. Therefore
+Every true input has distance at most $R&#95;\ast$ from $c&#95;\ast$, and every false input has distance strictly larger than $R&#95;\ast$. Therefore
 
 $$ r_{\mathrm{in}}\leq R_\ast<r_{\mathrm{out}}. $$
 

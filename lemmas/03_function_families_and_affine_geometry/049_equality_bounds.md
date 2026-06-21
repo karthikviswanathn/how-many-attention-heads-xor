@@ -54,7 +54,7 @@ On the remaining two variables,
 
 $$ \mathrm{EQ}_m(x,y) = \mathrm{EQ}_1(x_1,y_1). $$
 
-The function $\mathrm{EQ}_1$ is the complement of $\mathrm{XOR}_2$. If a polynomial sign-represents $\mathrm{EQ}_1$, multiplying it by $-1$ sign-represents $\mathrm{XOR}_2$. Since parity on two bits has threshold degree $2$ by [007_parity_threshold_degree.md](../01_foundations_and_normal_form/007_parity_threshold_degree.md), we get
+The function $\mathrm{EQ}&#95;1$ is the complement of $\mathrm{XOR}&#95;2$. If a polynomial sign-represents $\mathrm{EQ}&#95;1$, multiplying it by $-1$ sign-represents $\mathrm{XOR}&#95;2$. Since parity on two bits has threshold degree $2$ by [007_parity_threshold_degree.md](../01_foundations_and_normal_form/007_parity_threshold_degree.md), we get
 
 $$ \deg_{\pm}(\mathrm{EQ}_1)=2. $$
 

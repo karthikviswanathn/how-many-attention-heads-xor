@@ -68,7 +68,7 @@ and
 
 $$ \Gamma_b= \begin{cases} \Gamma, & \text{if } \mu_b\neq0,\\ \varnothing, & \text{if } \mu_b=0. \end{cases} $$
 
-For $\gamma\in\Gamma$, the coefficient in the $b$th cofactor is
+For $\gamma\in\Gamma$, the coefficient in the $b$-th cofactor is
 
 $$ c_{b,\gamma}=\mu_b c_{\gamma}. $$
 

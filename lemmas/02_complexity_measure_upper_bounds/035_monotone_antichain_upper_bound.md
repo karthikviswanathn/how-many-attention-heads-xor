@@ -20,7 +20,7 @@ Then
 
 $$ H^{\ast}(f) \leq \min\lbrace\lvert\mathcal{M}_1(f)\rvert,\lvert\mathcal{M}_0(f)\rvert\rbrace. $$
 
-Moreover, both $\mathcal{M}_1(f)$ and $\mathcal{M}_0(f)$ are antichains, so Sperner's bound gives
+Moreover, both $\mathcal{M}&#95;1(f)$ and $\mathcal{M}&#95;0(f)$ are antichains, so Sperner's bound gives
 
 $$ H^{\ast}(f) \leq \binom{n}{\lfloor n/2\rfloor}. $$
 
@@ -64,7 +64,7 @@ If $f(x)=0$, set
 
 $$ X:=\lbrace i:x_i=1\rbrace. $$
 
-Since $f(1_X)=0$ and the cube is finite, there is a superset $S\supseteq X$ maximal under inclusion with $f(1_S)=0$. Then $S\in\mathcal{M}_0(f)$, and the clause $\bigvee_{i\notin S}x_i$ is false because $X\subseteq S$.
+Since $f(1_X)=0$ and the cube is finite, there is a superset $S\supseteq X$ maximal under inclusion with $f(1_S)=0$. Then $S\in\mathcal{M}&#95;0(f)$, and the clause $\bigvee&#95;{i\notin S}x_i$ is false because $X\subseteq S$.
 
 Conversely, suppose the displayed CNF is false. Then for some $S\in\mathcal{M}_0(f)$, every coordinate outside $S$ has $x_i=0$. Equivalently, if $X=\lbrace i:x_i=1\rbrace$, then $X\subseteq S$. Since $f(1_S)=0$ and $1_X\leq1_S$, monotonicity gives $f(x)=0$.
 
@@ -78,9 +78,9 @@ $$ H^{\ast}(f) \leq \min\lbrace\lvert\mathcal{M}_1(f)\rvert,\lvert\mathcal{M}_0(
 
 ### Lemma 3. The boundary families are antichains
 
-If $S,T\in\mathcal{M}_1(f)$ and $S\subsetneq T$, then $T$ is not minimal true, a contradiction. Hence $\mathcal{M}_1(f)$ is an antichain.
+If $S,T\in\mathcal{M}&#95;1(f)$ and $S\subsetneq T$, then $T$ is not minimal true, a contradiction. Hence $\mathcal{M}&#95;1(f)$ is an antichain.
 
-If $S,T\in\mathcal{M}_0(f)$ and $S\subsetneq T$, then $S$ is not maximal false, a contradiction. Hence $\mathcal{M}_0(f)$ is an antichain.
+If $S,T\in\mathcal{M}&#95;0(f)$ and $S\subsetneq T$, then $S$ is not maximal false, a contradiction. Hence $\mathcal{M}&#95;0(f)$ is an antichain.
 
 ### Lemma 4. Sperner's bound
 
@@ -112,7 +112,7 @@ and
 
 $$ \lvert\mathcal{A}\rvert \leq \binom{n}{\lfloor n/2\rfloor}. $$
 
-Applying this to $\mathcal{M}_1(f)$ and $\mathcal{M}_0(f)$ proves
+Applying this to $\mathcal{M}&#95;1(f)$ and $\mathcal{M}&#95;0(f)$ proves
 
 $$ H^{\ast}(f) \leq \binom{n}{\lfloor n/2\rfloor}. $$
 

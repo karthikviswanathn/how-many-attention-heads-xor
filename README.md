@@ -13,7 +13,7 @@ We make that precise, prove what we can, and measure the rest empirically.
 Fix a **single-layer, attention-only transformer**: $n$ input bits plus one query token,
 one self-attention layer with $H$ parallel heads, no MLP, no layer norm, and a linear
 readout from the query token. A Boolean function $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$ is
-*computable with $H$ heads* if some choice of embeddings, attention parameters, and
+**computable with** $H$ **heads** if some choice of embeddings, attention parameters, and
 readout reproduces $f$ on every input. Define
 
 $$ H^{\ast}(f)  :=  \min\lbrace  H : f \text{ is computable with } H \text{ heads}  \rbrace. $$
