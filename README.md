@@ -51,6 +51,9 @@ dependency order between them, in [`lemmas.md`](lemmas.md).
 - A first split inside the symmetric functions: monotone thresholds have complexity $1$,
   while parity and the internal exact-count predicates $\mathrm{EXACT}_{n,k}$ need at
   least $2$.
+- *A geometric non-equivalence.* The affine cut-cell formulation is already different
+  for $\mathrm{XOR}_3$: it needs four plane cuts, while $H^{\ast}(\mathrm{XOR}_3)=3$.
+  See [`cut_cell_counterexample.md`](cut_cell_counterexample.md).
 
 Taken together this is a *partial* characterization, not yet a single invariant
 $I(f)$ with $H^{\ast}(f) \asymp I(f)$. Closing that gap is the main open problem.
@@ -78,6 +81,7 @@ $I(f)$ with $H^{\ast}(f) \asymp I(f)$. Closing that gap is the main open problem
 | [`lemmas/`](lemmas/) | Full writeups: checkerboard lower bound, threshold upper bounds, the $n$-bit XOR analysis, weighted-sum upper bound. |
 | [`writeup.md`](writeup.md) | Longer narrative tying the results together. |
 | [`literature_survey.md`](literature_survey.md) | Related work across transformers and Boolean complexity. |
+| [`cut_cell_counterexample.md`](cut_cell_counterexample.md) | Short counterexample showing that affine cut cells do not characterize $H^{\ast}$. |
 | [`three_head_functions_n3.md`](three_head_functions_n3.md) | Provisional empirical $H^{\ast}=3$ functions at $n=3$. |
 | [`head-complexity/`](head-complexity/) | Lean 4 formalization of the results (depends on mathlib). |
 | [`src/hstar/`](src/hstar/) | Python package that empirically estimates $H^{\ast}(f)$ by training small attention models. |
