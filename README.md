@@ -39,8 +39,7 @@ dependency order between them, in [`lemmas.md`](lemmas.md).
 
 **Upper bounds (a function needs few heads).**
 - *Symmetric thresholds need one head.* Every $T_{n,t}(x) = \mathbf{1}[ |x| \geq t ]$ is
-  computable with a single head, so $H^{*}(\mathrm{AND}_n) = H^{*}(\mathrm{OR}_n) =
-  H^{*}(\mathrm{MAJORITY}_n) = 1$.
+  computable with a single head, so $H^{\ast}(\mathrm{AND}&#95;n) = H^{\ast}(\mathrm{OR}&#95;n) = H^{\ast}(\mathrm{MAJORITY}&#95;n) = 1$.
 - *Weighted-sum interpolation.* If $f(x) = F \left(\sum_i \lambda_i x_i\right)$ for
   positive weights $\lambda_i$ and the weighted sum takes $M$ distinct values, then
   $H^{\ast}(f) \leq M - 1$. Consequently every symmetric function needs at most $n$ heads and
@@ -48,8 +47,7 @@ dependency order between them, in [`lemmas.md`](lemmas.md).
 
 **Exact answers.**
 - *Parity is the extremal case.* $H^{\ast}(\mathrm{XOR}_n) = n$: in this model, parity needs
-  exactly one head per input bit. The lower bound comes from $\deg_{\pm}(\mathrm{PARITY}_n)
-  = n$, the upper bound from an explicit $n$-head construction.
+  exactly one head per input bit. The lower bound comes from $\deg&#95;{\pm}(\mathrm{PARITY}&#95;n) = n$, the upper bound from an explicit $n$-head construction.
 - A first split inside the symmetric functions: monotone thresholds have complexity $1$,
   while parity and the internal exact-count predicates $\mathrm{EXACT}_{n,k}$ need at
   least $2$.
