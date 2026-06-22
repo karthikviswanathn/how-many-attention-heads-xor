@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
+import time
 from pathlib import Path
 
 from .config import SearchConfig, TrainingConfig
@@ -83,11 +85,31 @@ def build_parser() -> argparse.ArgumentParser:
         help="If set with --output, rewrite the JSON file every N processed representatives.",
     )
     parser.add_argument(
+        "--progress-every",
+        type=int,
+        default=5,
+        help="Print progress and ETA every N processed representatives.",
+    )
+    parser.add_argument(
+        "--no-progress",
+        action="store_true",
+        help="Disable progress and ETA reporting.",
+    )
+    parser.add_argument(
         "--verbose",
         action="store_true",
         help="Print training progress for each restart.",
     )
     return parser
+
+
+def _format_duration(seconds: float) -> str:
+    total_seconds = max(0, int(round(seconds)))
+    hours, remainder = divmod(total_seconds, 3600)
+    minutes, secs = divmod(remainder, 60)
+    if hours > 0:
+        return f"{hours:d}:{minutes:02d}:{secs:02d}"
+    return f"{minutes:02d}:{secs:02d}"
 
 
 def main() -> None:
@@ -109,14 +131,37 @@ def main() -> None:
         robust_steps_multiplier=args.robust_steps_multiplier,
         robust_restarts_multiplier=args.robust_restarts_multiplier,
     )
+    start_time = time.perf_counter()
 
     def maybe_checkpoint(payload: dict) -> None:
+        processed_count = payload["processed_count"]
+        slice_total = payload["end_index"] - payload["start_index"]
+
         if args.output is None or args.checkpoint_every is None:
+            pass
+        elif processed_count % args.checkpoint_every == 0:
+            text = json.dumps(payload, indent=2)
+            args.output.write_text(text + "\n", encoding="utf-8")
+
+        if args.no_progress or slice_total == 0:
             return
-        if payload["processed_count"] % args.checkpoint_every != 0:
+        should_print = processed_count % args.progress_every == 0 or processed_count == slice_total
+        if not should_print:
             return
-        text = json.dumps(payload, indent=2)
-        args.output.write_text(text + "\n", encoding="utf-8")
+
+        elapsed = time.perf_counter() - start_time
+        avg_seconds = elapsed / processed_count
+        remaining = slice_total - processed_count
+        eta_seconds = remaining * avg_seconds
+        print(
+            (
+                f"[progress] {processed_count}/{slice_total} "
+                f"elapsed={_format_duration(elapsed)} "
+                f"eta={_format_duration(eta_seconds)}"
+            ),
+            file=sys.stderr,
+            flush=True,
+        )
 
     payload = run_representative_search(
         args.n,
