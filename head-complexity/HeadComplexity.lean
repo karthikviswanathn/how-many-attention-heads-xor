@@ -8,3 +8,9 @@ import HeadComplexity.OneHead
 import HeadComplexity.TwoHeads
 import HeadComplexity.BooleanFunctions
 import HeadComplexity.Generalized
+import HeadComplexity.AdditiveSplit
+import HeadComplexity.SymmetricFamilies
+import HeadComplexity.SymmetricSignChanges
+import HeadComplexity.ThresholdDegree
+import HeadComplexity.UnivariateSignChanges
+import HeadComplexity.ModelToPolynomial

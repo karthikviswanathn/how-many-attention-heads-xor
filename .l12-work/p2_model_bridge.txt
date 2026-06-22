@@ -1,0 +1,257 @@
+=== STATEMENTS ===
+/- All in `namespace HeadComplexity`, `open MvPolynomial`. Variables {n d H : ℕ}. -/
+
+/-- Real bit-point: a Boolean assignment as a real evaluation map for Fin n. -/
+noncomputable def bitPt {n : ℕ} (bits : Fin n → Bool) : Fin n → ℝ :=
+  fun i => if bits i then 1 else 0
+
+/-- A sign-representing polynomial of degree ≤ k for a Boolean function. -/
+def SignReprDegLe {n : ℕ} (f : (Fin n → Bool) → Bool) (k : ℕ) : Prop :=
+  ∃ P : MvPolynomial (Fin n) ℝ,
+    P.totalDegree ≤ k ∧
+    ∀ bits : Fin n → Bool, (0 < MvPolynomial.eval (bitPt bits) P ↔ f bits = true)
+
+/-- Affine (deg ≤ 1) polynomial matching a 2-valued function at position p. -/
+noncomputable def affineAt {n : ℕ} (p : Fin n) (vf vt : ℝ) : MvPolynomial (Fin n) ℝ :=
+  C vf + C (vt - vf) * X p
+
+lemma affineAt_totalDegree_le {n : ℕ} (p : Fin n) (vf vt : ℝ) :
+    (affineAt p vf vt).totalDegree ≤ 1
+
+lemma affineAt_eval {n : ℕ} (p : Fin n) (vf vt : ℝ) (bits : Fin n → Bool) :
+    MvPolynomial.eval (bitPt bits) (affineAt p vf vt)
+      = if bits p then vt else vf
+
+/-- For a function depending on a single position p, an affine polynomial
+    matching it on every Boolean assignment. -/
+lemma exists_affine_of_single_pos {n : ℕ}
+    (s : (Fin n → Bool) → ℝ) (p : Fin n)
+    (hdep : ∀ b₁ b₂ : Fin n → Bool, b₁ p = b₂ p → s b₁ = s b₂) :
+    ∃ P : MvPolynomial (Fin n) ℝ, P.totalDegree ≤ 1 ∧
+      ∀ bits, MvPolynomial.eval (bitPt bits) P = s bits
+
+/-- sigma at a single head/position is single-position-dependent. -/
+lemma NHead.sigma_single_pos (Hh : NHead n d) (i : Fin n) :
+    ∀ b₁ b₂ : Fin n → Bool, b₁ i = b₂ i →
+      Hh.sigma b₁ (some i) = Hh.sigma b₂ (some i)
+
+/-- the per-position readout term sigma_p · (w · value_p) is single-position. -/
+lemma NHead.scoreTerm_single_pos (Hh : NHead n d) (w : Vec d) (i : Fin n) :
+    ∀ b₁ b₂ : Fin n → Bool, b₁ i = b₂ i →
+      Hh.sigma b₁ (some i) * (inner w (Hh.value b₁ (some i)) : ℝ)
+        = Hh.sigma b₂ (some i) * (inner w (Hh.value b₂ (some i)) : ℝ)
+
+/-- denominator of one head as a degree ≤ 1 polynomial. -/
+lemma NHead.exists_denomPoly (Hh : NHead n d) :
+    ∃ D : MvPolynomial (Fin n) ℝ, D.totalDegree ≤ 1 ∧
+      ∀ bits, MvPolynomial.eval (bitPt bits) D = Hh.denominator bits
+
+/-- readout numerator (w · num) of one head as a degree ≤ 1 polynomial. -/
+lemma NHead.exists_numPoly (Hh : NHead n d) (w : Vec d) :
+    ∃ Nm : MvPolynomial (Fin n) ℝ, Nm.totalDegree ≤ 1 ∧
+      ∀ bits, MvPolynomial.eval (bitPt bits) Nm
+        = (inner w (Hh.numerator bits) : ℝ)
+
+/-- MAIN PHASE-2 THEOREM. -/
+theorem signReprDegLe_of_computableWithHeadsN
+    {n H : ℕ} {f : (Fin n → Bool) → Bool}
+    (hf : computableWithHeadsN n H f) :
+    SignReprDegLe f H
+
+=== SKETCH ===
+CRITICAL CORRECTION to the assignment's framing: in THIS model `sigma p = Real.exp ⟪WK x_p, WQ x_none⟫`, which is NOT itself a polynomial in the bits. The assignment's phrase "sigma_p is affine in the bit" is true ONLY because each bit is Boolean: a function {0,1}→ℝ has exactly two input points, so it equals its unique affine (degree ≤ 1) interpolant g(b) = g(false) + (g(true)-g(false))·b. We never differentiate exp; we use the trivial multilinear-extension fact. This is the whole trick and it works. Below, "single-position" = depends only on the bit at one coordinate (or none).
+
+Step A (affineAt, the self-contained core).
+  affineAt p vf vt = C vf + C (vt-vf) * X p.
+  - eval: `map_add, map_mul, eval_C (MvPolynomial.eval_C), eval_X (MvPolynomial.eval_X)` give
+    eval (bitPt bits) = vf + (vt-vf)*(if bits p then 1 else 0). Case split on `bits p`; `ring`. (affineAt_eval)
+  - degree: totalDegree_add ≤ max; totalDegree_C = 0; totalDegree_mul ≤ tD(C)+tD(X); totalDegree_C=0,
+    totalDegree_X = 1 (needs Nontrivial ℝ, available). max 0 1 = 1. (affineAt_totalDegree_le)
+
+Step B (single-position ⇒ affine, exists_affine_of_single_pos).
+  Given s depending only on bit p, set vf := s(update bits p false) (any rep), vt := s(...true).
+  Concretely choose the two values via s evaluated on Function.update of an arbitrary witness; use hdep
+  to show eval matches s at every bits. Take P := affineAt p (s_false) (s_true). Use affineAt_eval and
+  hdep to rewrite `if bits p then s_true else s_false = s bits`. Degree from affineAt_totalDegree_le.
+  (For the p=none / constant case we use the constant polynomial C c, totalDegree_C = 0 ≤ 1.)
+
+Step C (denominator polynomial, exists_denomPoly).
+  denominator bits = ∑ p : SeqPos n, sigma bits p (Finset.sum over univ of Option (Fin n)).
+  Split the position sum: the `none` term is constant (independent of bits, since x none and x (some i)
+  for the query are bit-independent). For each `some i` term, sigma is single-position (sigma_single_pos:
+  unfold sigma, x, seqTok; only `cond (bits i) ..` depends on bits; b₁ i = b₂ i ⇒ equal). Build per-term
+  affine poly via exists_affine_of_single_pos (none ⇒ constant C). D := ∑ over univ of these polys.
+  - eval: `MvPolynomial.eval_sum` turns eval (∑) into ∑ eval; each matches its sigma term; refold the
+    Finset sum to get denominator. (Use Finset.sum_congr.)
+  - degree: `MvPolynomial.totalDegree_finsetSum_le` (each summand ≤ 1 ⇒ sum ≤ 1).
+
+Step D (readout numerator polynomial, exists_numPoly).
+  inner w (numerator bits) = inner w (∑ p, sigma p • value p) = ∑ p, sigma p * inner w (value p)
+  by `inner_sum` then `inner_smul_right` (⟪w, r•v⟫ = r*⟪w,v⟫). Each per-position term
+  sigma p · inner w (value p) is single-position (scoreTerm_single_pos: both factors depend only on bit i;
+  unfold sigma/value/x/seqTok). Build affine poly per term (none ⇒ constant), sum them. eval via
+  eval_sum + inner_sum + inner_smul_right; degree via totalDegree_finsetSum_le (≤ 1).
+
+Step E (clear denominators, MAIN theorem).
+  From hf: ∃ d, Hs : Fin H → NHead n d, computesPred f (nHeadFamilyAttnUpdate Hs), i.e.
+  ∃ w τ, ∀ bits, ⟪w, ∑_h (Hs h).attnUpdate bits⟫ > τ ↔ f bits = true.
+  For each h pick Dh (exists_denomPoly) and Nmh := exists_numPoly (Hs h) w. Each Dh evals to
+  den_h bits > 0 (denominator_pos, already in Generalized.lean).
+  Define the sign polynomial:
+    P := (∑ h, Nmh * ∏ g ∈ univ.erase h, Dg)  -  (C τ) * ∏ g ∈ univ, Dg.
+  Degree:
+    • ∏ g ∈ univ, Dg : totalDegree_finset_prod ≤ ∑ g, tD(Dg) ≤ #univ • 1 = H (Finset.sum_le_card_nsmul,
+      Finset.card_fin). So this product has deg ≤ H; times C τ (totalDegree_mul, totalDegree_C=0) still ≤ H.
+    • Nmh * ∏_{g≠h} Dg : tD ≤ 1 + (∑_{g∈erase} tD) ≤ 1 + (H-1) = H (card_erase_of_mem, sum_le_card_nsmul).
+      Sum over h: totalDegree_finsetSum_le ≤ H. Whole P: totalDegree_add/totalDegree_sub ≤ max ≤ H.
+  Eval at bitPt bits: let dh := den_h bits (>0), nh := ⟪w, num_h bits⟫. Using eval_sub, eval_sum,
+    eval_mul, eval_prod, smul_eval (for C τ), and the per-poly eval lemmas:
+      eval P = (∑ h, nh * ∏_{g≠h} dg) - τ * ∏_g dg
+             = (∏_g dg) * ( (∑ h, nh/dh) - τ )        -- algebra: ∏_{g≠h} dg = (∏_g dg)/dh
+  More cleanly avoid division: note ⟪w, attnUpdate_h⟫ = ⟪w, dh⁻¹ • num_h⟫ = dh⁻¹ * nh, and
+    ⟪w, ∑_h attnUpdate_h⟫ = ∑_h dh⁻¹ * nh (inner_sum, inner_smul_right). Multiply the inequality
+    U > τ by the positive number ∏_g dg (= Finset.prod_pos of denominator_pos). Then
+      U > τ  ⟺  (∏_g dg)·U - (∏_g dg)·τ > 0  ⟺  eval P > 0,
+    because (∏_g dg)·(dh⁻¹·nh) = nh · ∏_{g≠h} dg (mul_prod_erase / Finset.prod_erase_mul rearrangement,
+    using dh ≠ 0). The forward/backward equivalence is `lt_div_iff₀`/`div_lt_iff₀`-style; concretely use
+    `mul_lt_mul_right (Finset.prod_pos ...)` on `τ < U`, i.e. 0 < (U - τ) ⟺ 0 < (∏dg)*(U-τ) via
+    `mul_pos`/`(mul_pos_iff_of_pos_left)`. Finally chain with `hw bits : U > τ ↔ f bits = true`.
+
+  Hence ∃ P, tD P ≤ H ∧ (0 < eval P ↔ f = true). That is SignReprDegLe f H.
+
+Downstream (NOT this phase): the threshold-degree lower bound on signChanges plus a symmetrization argument
+turn SignReprDegLe into HStarN ≥ signChanges. This phase delivers exactly the model→polynomial bridge.
+
+=== DRAFT ===
+/- DRAFT (compilation NOT possible: no lean/lake toolchain present in this
+   sandbox; signatures + tactic shape are written against the grep-verified
+   mathlib v4.29.0 API above). Self-contained core sub-lemmas first. -/
+import HeadComplexity.Generalized
+import Mathlib.Algebra.MvPolynomial.Degrees
+import Mathlib.Algebra.MvPolynomial.Eval
+
+open MvPolynomial
+open scoped InnerProductSpace BigOperators
+
+namespace HeadComplexity
+
+noncomputable def bitPt {n : ℕ} (bits : Fin n → Bool) : Fin n → ℝ :=
+  fun i => if bits i then 1 else 0
+
+def SignReprDegLe {n : ℕ} (f : (Fin n → Bool) → Bool) (k : ℕ) : Prop :=
+  ∃ P : MvPolynomial (Fin n) ℝ,
+    P.totalDegree ≤ k ∧
+    ∀ bits : Fin n → Bool, (0 < MvPolynomial.eval (bitPt bits) P ↔ f bits = true)
+
+/-! ### Core self-contained sub-lemmas: the affine (degree ≤ 1) gadget. -/
+
+noncomputable def affineAt {n : ℕ} (p : Fin n) (vf vt : ℝ) : MvPolynomial (Fin n) ℝ :=
+  C vf + C (vt - vf) * X p
+
+lemma affineAt_eval {n : ℕ} (p : Fin n) (vf vt : ℝ) (bits : Fin n → Bool) :
+    MvPolynomial.eval (bitPt bits) (affineAt p vf vt) = if bits p then vt else vf := by
+  unfold affineAt bitPt
+  simp only [map_add, map_mul, eval_C, eval_X]
+  by_cases h : bits p
+  · simp [h]; ring
+  · simp [h]
+
+lemma affineAt_totalDegree_le {n : ℕ} (p : Fin n) (vf vt : ℝ) :
+    (affineAt p vf vt).totalDegree ≤ 1 := by
+  unfold affineAt
+  refine (MvPolynomial.totalDegree_add _ _).trans ?_
+  rw [MvPolynomial.totalDegree_C]
+  refine max_le (Nat.zero_le _) ?_
+  refine (MvPolynomial.totalDegree_mul _ _).trans ?_
+  rw [MvPolynomial.totalDegree_C, MvPolynomial.totalDegree_X]
+  -- 0 + 1 ≤ 1 ; `Nontrivial ℝ` is found automatically for totalDegree_X
+  simp
+
+/-- Any function depending only on bit p admits a degree ≤ 1 representing poly. -/
+lemma exists_affine_of_single_pos {n : ℕ}
+    (s : (Fin n → Bool) → ℝ) (p : Fin n)
+    (hdep : ∀ b₁ b₂ : Fin n → Bool, b₁ p = b₂ p → s b₁ = s b₂) :
+    ∃ P : MvPolynomial (Fin n) ℝ, P.totalDegree ≤ 1 ∧
+      ∀ bits, MvPolynomial.eval (bitPt bits) P = s bits := by
+  classical
+  refine ⟨affineAt p (s (fun _ => false)) (s (Function.update (fun _ => false) p true)),
+    affineAt_totalDegree_le _ _ _, ?_⟩
+  intro bits
+  rw [affineAt_eval]
+  by_cases h : bits p
+  · -- bits agrees with (update _ p true) at p
+    have : bits p = (Function.update (fun _ : Fin n => false) p true) p := by
+      simp [Function.update_self, h]
+    simp only [h, if_true]
+    exact (hdep bits _ this).symm ▸ rfl
+  · have : bits p = (fun _ : Fin n => false) p := by simp [h]
+    simp only [h, if_false]
+    exact (hdep bits _ this).symm ▸ rfl
+
+/-! ### Degree of the denominator product over heads. -/
+
+/-- The product of H degree ≤ 1 polynomials has degree ≤ H. -/
+lemma totalDegree_prod_univ_le_card {H : ℕ} {n : ℕ}
+    (D : Fin H → MvPolynomial (Fin n) ℝ) (hD : ∀ h, (D h).totalDegree ≤ 1) :
+    (∏ h, D h).totalDegree ≤ H := by
+  refine (MvPolynomial.totalDegree_finset_prod _ _).trans ?_
+  refine (Finset.sum_le_card_nsmul _ _ 1 (fun h _ => hD h)).trans ?_
+  rw [Finset.card_fin, smul_eq_mul, mul_one]
+
+/-- erase-product degree bound: 1 + (H-1) = H for h : Fin H. -/
+lemma totalDegree_term_le {H n : ℕ} (h : Fin H)
+    (Nm : MvPolynomial (Fin n) ℝ) (hNm : Nm.totalDegree ≤ 1)
+    (D : Fin H → MvPolynomial (Fin n) ℝ) (hD : ∀ g, (D g).totalDegree ≤ 1) :
+    (Nm * ∏ g ∈ Finset.univ.erase h, D g).totalDegree ≤ H := by
+  have hHpos : 1 ≤ H := h.pos
+  refine (MvPolynomial.totalDegree_mul _ _).trans ?_
+  have hprod : (∏ g ∈ Finset.univ.erase h, D g).totalDegree ≤ H - 1 := by
+    refine (MvPolynomial.totalDegree_finset_prod _ _).trans ?_
+    refine (Finset.sum_le_card_nsmul _ _ 1 (fun g _ => hD g)).trans ?_
+    rw [Finset.card_erase_of_mem (Finset.mem_univ h), Finset.card_fin,
+        smul_eq_mul, mul_one]
+  calc Nm.totalDegree + (∏ g ∈ Finset.univ.erase h, D g).totalDegree
+      ≤ 1 + (H - 1) := Nat.add_le_add hNm hprod
+    _ = H := by omega
+
+/- The remaining pieces (exists_denomPoly, exists_numPoly, and the final
+   denominator-clearing equivalence) follow the proof sketch; the algebraic
+   eval identity is:
+     eval (bitPt bits) P
+       = (∏ g, dg) * ((∑ h, (dh)⁻¹ * nh) - τ)
+   with dg = denominator g bits > 0 (Finset.prod_pos of denominator_pos),
+   so 0 < eval P ↔ τ < ∑ h (dh)⁻¹ * nh ↔ τ < ⟪w, ∑ h attnUpdate_h⟫,
+   and the last is `hw bits`. -/
+
+end HeadComplexity
+
+=== APIS ===
+True MvPolynomial.eval :: def eval (f : σ → R) : MvPolynomial σ R →+* R
+True MvPolynomial.eval_C :: theorem eval_C : ∀ a, eval f (C a) = a
+True MvPolynomial.eval_X :: theorem eval_X : ∀ n, eval f (X n) = f n
+True MvPolynomial.eval_add :: theorem eval_add : eval f (p + q) = eval f p + eval f q
+True MvPolynomial.eval_mul :: theorem eval_mul : eval f (p * q) = eval f p * eval f q
+True MvPolynomial.eval_sum :: theorem eval_sum (s : Finset ι) (f : ι → MvPolynomial σ R) (g : σ → R) : eval g (∑ i ∈ s, f i) = ∑ i ∈ s, eval g (f i)
+True MvPolynomial.eval_prod :: theorem eval_prod (s : Finset ι) (f : ι → MvPolynomial σ R) (g : σ → R) : eval g (∏ i ∈ s, f i) = ∏ i ∈ s, eval g (f i)
+True MvPolynomial.smul_eval :: theorem smul_eval (x) (p) (s) : eval x (s • p) = s * eval x p
+True RingHom.map_sub :: protected theorem map_sub [NonAssocRing α] [NonAssocRing β] (f : α →+* β) (x y) : f (x - y) = f x - f y
+True MvPolynomial.totalDegree_add :: theorem totalDegree_add (a b) : (a + b).totalDegree ≤ max a.totalDegree b.totalDegree
+True MvPolynomial.totalDegree_mul :: theorem totalDegree_mul (a b) : (a * b).totalDegree ≤ a.totalDegree + b.totalDegree
+True MvPolynomial.totalDegree_C :: theorem totalDegree_C (a : R) : (C a).totalDegree = 0
+True MvPolynomial.totalDegree_X :: @[simp] theorem totalDegree_X [Nontrivial R] (s : σ) : (X s : MvPolynomial σ R).totalDegree = 1
+True MvPolynomial.totalDegree_finset_prod :: theorem totalDegree_finset_prod (s : Finset ι) (f : ι → MvPolynomial σ R) : (s.prod f).totalDegree ≤ ∑ i ∈ s, (f i).totalDegree
+True MvPolynomial.totalDegree_finset_sum :: theorem totalDegree_finset_sum (s : Finset ι) (f : ι → MvPolynomial σ R) : (s.sum f).totalDegree ≤ Finset.sup s fun i => (f i).totalDegree
+True MvPolynomial.totalDegree_finsetSum_le :: lemma totalDegree_finsetSum_le (hf : ∀ i ∈ s, (f i).totalDegree ≤ d) : (s.sum f).totalDegree ≤ d
+True Finset.sum_le_card_nsmul :: theorem sum_le_card_nsmul (s : Finset ι) (f) (n) (h : ∀ x ∈ s, f x ≤ n) : s.sum f ≤ #s • n
+True Finset.card_erase_of_mem :: theorem card_erase_of_mem : a ∈ s → #(s.erase a) = #s - 1
+True Finset.card_fin :: theorem Finset.card_fin (n) : #(univ : Finset (Fin n)) = n
+True Finset.mul_prod_erase :: theorem mul_prod_erase [DecidableEq ι] (s) (f) {a} (h : a ∈ s) : f a * ∏ x ∈ s.erase a, f x = ∏ x ∈ s, f x
+True Finset.prod_erase_mul :: theorem prod_erase_mul [DecidableEq ι] (s) (f) {a} (h : a ∈ s) : (∏ x ∈ s.erase a, f x) * f a = ∏ x ∈ s, f x
+True Finset.prod_pos :: lemma prod_pos (h0 : ∀ i ∈ s, 0 < f i) : 0 < ∏ i ∈ s, f i
+True inner_sum :: theorem inner_sum (s) (f) (x) : ⟪x, ∑ i ∈ s, f i⟫ = ∑ i ∈ s, ⟪x, f i⟫
+True inner_smul_right :: theorem inner_smul_right (x y) (r) : ⟪x, r • y⟫ = r * ⟪x, y⟫
+True lt_div_iff₀ :: lemma lt_div_iff₀ (hc : 0 < c) : a < b / c ↔ a * c < b
+True div_lt_iff₀ :: lemma div_lt_iff₀ (hc : 0 < c) : b / c < a ↔ b < a * c
+True sub_pos :: @[to_additive (attr := simp) sub_pos] (additive form: 0 < a - b ↔ b < a)
+True NHead.denominator_pos :: lemma denominator_pos (H : NHead n d) (bits) : 0 < H.denominator bits
+True NHead.denom_smul_attn :: lemma denom_smul_attn (H) (bits) : H.denominator bits • H.attnUpdate bits = H.numerator bits

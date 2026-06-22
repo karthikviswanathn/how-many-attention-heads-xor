@@ -1,0 +1,204 @@
+=== STATEMENTS ===
+import Mathlib
+open scoped BigOperators
+namespace HeadComplexity
+open MvPolynomial
+variable {n : ℕ}
+
+/-- Map a Boolean assignment to a real point of the cube `{0,1}ⁿ ⊆ ℝⁿ`. -/
+def boolToReal (x : Fin n → Bool) : Fin n → ℝ := fun i => if x i then 1 else 0
+
+/-- A real polynomial `P` *sign-represents* `f` on the Boolean cube if the sign of
+its evaluation at each cube point matches the truth value of `f`. Encoded as a
+strict positivity ⇔ `f = true`. -/
+def SignRepresents (P : MvPolynomial (Fin n) ℝ) (f : (Fin n → Bool) → Bool) : Prop :=
+  ∀ x : Fin n → Bool, (0 < MvPolynomial.eval (boolToReal x) P ↔ f x = true)
+
+/-- `f` admits a sign representation of total degree `≤ d`. -/
+def SignRepDegLE (f : (Fin n → Bool) → Bool) (d : ℕ) : Prop :=
+  ∃ P : MvPolynomial (Fin n) ℝ, P.totalDegree ≤ d ∧ SignRepresents P f
+
+/-- Indicator polynomial of a cube point `a`: `∏ i, (Xᵢ if aᵢ else 1-Xᵢ)`. -/
+noncomputable def indicator (a : Fin n → Bool) : MvPolynomial (Fin n) ℝ :=
+  ∏ i : Fin n, (if a i then X i else 1 - X i)
+
+lemma totalDegree_factor_le (a : Fin n → Bool) (i : Fin n) :
+    ((if a i then (X i : MvPolynomial (Fin n) ℝ) else 1 - X i)).totalDegree ≤ 1
+
+lemma totalDegree_indicator_le (a : Fin n → Bool) : (indicator a).totalDegree ≤ n
+
+lemma eval_factor (a y : Fin n → Bool) (i : Fin n) :
+    MvPolynomial.eval (boolToReal y)
+        (if a i then (X i : MvPolynomial (Fin n) ℝ) else 1 - X i)
+      = (if a i = y i then 1 else 0)
+
+lemma eval_indicator (a y : Fin n → Bool) :
+    MvPolynomial.eval (boolToReal y) (indicator a) = (if a = y then 1 else 0)
+
+/-- Sign-representing multilinear interpolation of `f`. -/
+noncomputable def interp (f : (Fin n → Bool) → Bool) : MvPolynomial (Fin n) ℝ :=
+  ∑ a : Fin n → Bool, (if f a then (1 : ℝ) else -1) • indicator a
+
+lemma totalDegree_interp_le (f : (Fin n → Bool) → Bool) : (interp f).totalDegree ≤ n
+
+lemma eval_interp (f : (Fin n → Bool) → Bool) (y : Fin n → Bool) :
+    MvPolynomial.eval (boolToReal y) (interp f) = (if f y then (1 : ℝ) else -1)
+
+theorem SignRepresents_interp (f : (Fin n → Bool) → Bool) : SignRepresents (interp f) f
+
+/-- Trivial existence: every Boolean `f` is sign-representable in degree `≤ n`. -/
+theorem signRep_exists (f : (Fin n → Bool) → Bool) : SignRepDegLE f n
+
+end HeadComplexity
+
+=== SKETCH ===
+ENCODING DECISION. I chose `MvPolynomial (Fin n) ℝ` with `MvPolynomial.eval (boolToReal x) P`, where `boolToReal x i = if x i then 1 else 0`. Sign-representation is the strict positivity form `0 < eval (boolToReal x) P ↔ f x = true`. This is cleaner than the `(-1)^f` form because: (a) it talks only about `0 <`, so the lower-bound argument (Phase 2/3) only needs sign of eval; (b) the trivial interpolation makes eval EXACTLY ±1, so the iff is immediate; (c) it matches the project's existing `computesPred` style (`⟪w, g a⟫ > τ ↔ f a = true`), easing later glue.
+
+TRIVIAL EXISTENCE via multilinear interpolation:
+
+Step 1 (`totalDegree_factor_le`). For each i, the factor is `X i` (deg 1) or `1 - X i`. If `a i = true`, rewrite the `if` and use `MvPolynomial.totalDegree_X` (Degrees.lean:382, needs `Nontrivial ℝ`, found by TC). If `a i = false`, use `MvPolynomial.totalDegree_sub` (CommRing.lean:190): `(1-X i).totalDegree ≤ max (1:MvPolynomial..).totalDegree (X i).totalDegree`, then `totalDegree_one` (Degrees.lean:378) `= 0` and `totalDegree_X = 1`, so `max 0 1 = 1`.
+
+Step 2 (`totalDegree_indicator_le`). `indicator a = ∏ i, factor i`. Apply `MvPolynomial.totalDegree_finset_prod` (Degrees.lean:455): `(∏ i, factor i).totalDegree ≤ ∑ i, (factor i).totalDegree`. Bound the sum termwise with `Finset.sum_le_sum` (Order/BigOperators/Group/Finset.lean:108, additive of `prod_le_prod'`) using Step 1, giving `≤ ∑ i:Fin n, 1 = n` (via `Finset.sum_const`/`simp`, card of univ = n).
+
+Step 3 (`eval_factor`). `eval` is a ring hom. Case-split on `a i` and `y i`. If `a i = true`: factor is `X i`, `MvPolynomial.eval_X` (Eval.lean:270) gives `boolToReal y i = if y i then 1 else 0`; matches `if a i = y i then 1 else 0`. If `a i = false`: factor is `1 - X i`, use `MvPolynomial.eval_sub` (CommRing.lean:134) and `eval_X`, simp closes all 4 boolean cases (`simp [ha, hy, boolToReal, eval_sub]`).
+
+Step 4 (`eval_indicator`). `MvPolynomial.eval_prod` (Eval.lean:294, = `map_prod`) turns eval of product into product of evals. Rewrite each via Step 3 (`Finset.prod_congr`, Basic.lean:104) to `∏ i, if a i = y i then 1 else 0`. If `a = y`: all factors 1, product = 1 (`simp`). If `a ≠ y`: `Function.ne_iff` (Logic/Function/Basic.lean:64) gives an `i` with `a i ≠ y i`, so that factor is 0; `Finset.prod_eq_zero_iff` (GroupWithZero/Finset.lean:54) gives product = 0.
+
+Step 5 (`totalDegree_interp_le`). `interp f = ∑ a, c_a • indicator a`. Use `MvPolynomial.totalDegree_finsetSum_le` (Degrees.lean:467): suffices each summand has degree ≤ n. Each is `c • indicator a`; `MvPolynomial.totalDegree_smul_le` (Degrees.lean:421) gives `≤ (indicator a).totalDegree`, then Step 2.
+
+Step 6 (`eval_interp`). `MvPolynomial.eval_sum` (Eval.lean:290, = `map_sum`). Each summand: `MvPolynomial.smul_eval` (Eval.lean:278) `eval (c • p) = c * eval p`, then Step 4 gives `c_a * (if a = y then 1 else 0)`, i.e. `if a = y then c_a else 0`. Collapse with `Finset.sum_ite_eq'` (additive of `prod_ite_eq'`, Piecewise.lean:152): `∑ a, if a = y then c_a else 0 = if y ∈ univ then c_y else 0 = c_y = if f y then 1 else -1`.
+
+Step 7 (`SignRepresents_interp`). Unfold `SignRepresents`, rewrite eval by Step 6. If `f x = true`: eval = 1 > 0, iff both true. If `f x = false`: eval = -1, `0 < -1` false, iff both false (`Bool.not_eq_true`).
+
+Step 8 (`signRep_exists`). `⟨interp f, totalDegree_interp_le f, SignRepresents_interp f⟩`.
+
+VERIFICATION: the entire draft was compiled with `lake env lean` against this exact mathlib (toolchain leanprover/lean4:v4.29.0, mathlib rev v4.29.0) and exited 0, with only one cosmetic unused-simp-arg linter warning (since removed).
+
+=== DRAFT ===
+import Mathlib
+
+open scoped BigOperators
+
+namespace HeadComplexity
+
+open MvPolynomial
+
+variable {n : ℕ}
+
+/-- Map a Boolean assignment to a real point of the cube `{0,1}ⁿ`. -/
+def boolToReal (x : Fin n → Bool) : Fin n → ℝ := fun i => if x i then 1 else 0
+
+/-- A real polynomial `P` *sign-represents* `f` on the Boolean cube if its sign at
+each cube point matches the truth value of `f`. -/
+def SignRepresents (P : MvPolynomial (Fin n) ℝ) (f : (Fin n → Bool) → Bool) : Prop :=
+  ∀ x : Fin n → Bool, (0 < MvPolynomial.eval (boolToReal x) P ↔ f x = true)
+
+/-- `f` has a degree-`≤ d` sign representation. -/
+def SignRepDegLE (f : (Fin n → Bool) → Bool) (d : ℕ) : Prop :=
+  ∃ P : MvPolynomial (Fin n) ℝ, P.totalDegree ≤ d ∧ SignRepresents P f
+
+/-- The indicator polynomial of a cube point `a`. -/
+noncomputable def indicator (a : Fin n → Bool) : MvPolynomial (Fin n) ℝ :=
+  ∏ i : Fin n, (if a i then X i else 1 - X i)
+
+lemma totalDegree_factor_le (a : Fin n → Bool) (i : Fin n) :
+    ((if a i then (X i : MvPolynomial (Fin n) ℝ) else 1 - X i)).totalDegree ≤ 1 := by
+  by_cases h : a i
+  · simp [h, totalDegree_X]
+  · simp only [h]
+    calc (1 - X i : MvPolynomial (Fin n) ℝ).totalDegree
+        ≤ max (1 : MvPolynomial (Fin n) ℝ).totalDegree (X i).totalDegree := totalDegree_sub _ _
+      _ ≤ 1 := by rw [totalDegree_one, totalDegree_X]; simp
+
+lemma totalDegree_indicator_le (a : Fin n → Bool) :
+    (indicator a).totalDegree ≤ n := by
+  unfold indicator
+  calc (∏ i : Fin n, (if a i then (X i : MvPolynomial (Fin n) ℝ) else 1 - X i)).totalDegree
+      ≤ ∑ i : Fin n, ((if a i then (X i : MvPolynomial (Fin n) ℝ) else 1 - X i)).totalDegree :=
+        totalDegree_finset_prod _ _
+    _ ≤ ∑ _i : Fin n, 1 := Finset.sum_le_sum (fun i _ => totalDegree_factor_le a i)
+    _ = n := by simp
+
+lemma eval_factor (a y : Fin n → Bool) (i : Fin n) :
+    MvPolynomial.eval (boolToReal y) (if a i then (X i : MvPolynomial (Fin n) ℝ) else 1 - X i)
+      = (if a i = y i then 1 else 0) := by
+  by_cases ha : a i <;> by_cases hy : y i <;>
+    simp [ha, hy, boolToReal, eval_sub]
+
+lemma eval_indicator (a y : Fin n → Bool) :
+    MvPolynomial.eval (boolToReal y) (indicator a) = (if a = y then 1 else 0) := by
+  unfold indicator
+  rw [eval_prod]
+  have : (∏ i : Fin n, MvPolynomial.eval (boolToReal y)
+      (if a i then (X i : MvPolynomial (Fin n) ℝ) else 1 - X i))
+      = ∏ i : Fin n, (if a i = y i then (1 : ℝ) else 0) := by
+    apply Finset.prod_congr rfl
+    intro i _; exact eval_factor a y i
+  rw [this]
+  by_cases h : a = y
+  · subst h; simp
+  · rw [if_neg h]
+    rw [Finset.prod_eq_zero_iff]
+    obtain ⟨i, hi⟩ := Function.ne_iff.mp h
+    exact ⟨i, Finset.mem_univ i, by simp [hi]⟩
+
+/-- The sign-representing interpolation polynomial of `f`. -/
+noncomputable def interp (f : (Fin n → Bool) → Bool) : MvPolynomial (Fin n) ℝ :=
+  ∑ a : Fin n → Bool, (if f a then (1 : ℝ) else -1) • indicator a
+
+lemma totalDegree_interp_le (f : (Fin n → Bool) → Bool) :
+    (interp f).totalDegree ≤ n := by
+  unfold interp
+  refine totalDegree_finsetSum_le (fun a _ => ?_)
+  exact (totalDegree_smul_le _ _).trans (totalDegree_indicator_le a)
+
+lemma eval_interp (f : (Fin n → Bool) → Bool) (y : Fin n → Bool) :
+    MvPolynomial.eval (boolToReal y) (interp f) = (if f y then (1 : ℝ) else -1) := by
+  unfold interp
+  rw [eval_sum]
+  have : (∑ a : Fin n → Bool, MvPolynomial.eval (boolToReal y)
+      ((if f a then (1 : ℝ) else -1) • indicator a))
+      = ∑ a : Fin n → Bool, (if a = y then (if f a then (1:ℝ) else -1) else 0) := by
+    apply Finset.sum_congr rfl
+    intro a _
+    rw [smul_eval, eval_indicator]
+    by_cases h : a = y <;> simp [h]
+  rw [this, Finset.sum_ite_eq' Finset.univ y (fun a => if f a then (1:ℝ) else -1)]
+  simp
+
+theorem SignRepresents_interp (f : (Fin n → Bool) → Bool) :
+    SignRepresents (interp f) f := by
+  intro x
+  rw [eval_interp]
+  by_cases h : f x = true
+  · simp [h]
+  · simp only [Bool.not_eq_true] at h
+    simp [h]
+
+theorem signRep_exists (f : (Fin n → Bool) → Bool) : SignRepDegLE f n :=
+  ⟨interp f, totalDegree_interp_le f, SignRepresents_interp f⟩
+
+end HeadComplexity
+
+=== APIS ===
+True MvPolynomial.totalDegree :: def totalDegree (p : MvPolynomial σ R) : ℕ := p.support.sup fun s => s.sum fun _ e => e
+True MvPolynomial.totalDegree_add :: theorem totalDegree_add (a b : MvPolynomial σ R) : (a + b).totalDegree ≤ max a.totalDegree b.totalDegree
+True MvPolynomial.totalDegree_mul :: theorem totalDegree_mul (a b : MvPolynomial σ R) : (a * b).totalDegree ≤ a.totalDegree + b.totalDegree
+True MvPolynomial.totalDegree_finset_prod :: theorem totalDegree_finset_prod {ι : Type*} (s : Finset ι) (f : ι → MvPolynomial σ R) : (s.prod f).totalDegree ≤ ∑ i ∈ s, (f i).totalDegree
+True MvPolynomial.totalDegree_finset_sum :: theorem totalDegree_finset_sum {ι : Type*} (s : Finset ι) (f : ι → MvPolynomial σ R) : (s.sum f).totalDegree ≤ Finset.sup s fun i => (f i).totalDegree
+True MvPolynomial.totalDegree_finsetSum_le :: lemma totalDegree_finsetSum_le {ι : Type*} {s : Finset ι} {f : ι → MvPolynomial σ R} {d : ℕ} (hf : ∀ i ∈ s, (f i).totalDegree ≤ d) : (s.sum f).totalDegree ≤ d
+True MvPolynomial.totalDegree_smul_le :: theorem totalDegree_smul_le [CommSemiring S] [DistribMulAction R S] (a : R) (f : MvPolynomial σ S) : (a • f).totalDegree ≤ f.totalDegree
+True MvPolynomial.totalDegree_X :: theorem totalDegree_X {R} [CommSemiring R] [Nontrivial R] (s : σ) : (X s : MvPolynomial σ R).totalDegree = 1
+True MvPolynomial.totalDegree_one :: theorem totalDegree_one : (1 : MvPolynomial σ R).totalDegree = 0
+True MvPolynomial.totalDegree_sub :: theorem totalDegree_sub (a b : MvPolynomial σ R) : (a - b).totalDegree ≤ max a.totalDegree b.totalDegree
+True MvPolynomial.eval :: def eval (f : σ → R) : MvPolynomial σ R →+* R := eval₂Hom (RingHom.id _) f
+True MvPolynomial.eval_X :: theorem eval_X : ∀ n, eval f (X n) = f n
+True MvPolynomial.eval_sub :: theorem eval_sub (f : σ → R) : eval f (p - q) = eval f p - eval f q
+True MvPolynomial.eval_prod :: theorem eval_prod {ι : Type*} (s : Finset ι) (f : ι → MvPolynomial σ R) (g : σ → R) : eval g (∏ i ∈ s, f i) = ∏ i ∈ s, eval g (f i)
+True MvPolynomial.eval_sum :: theorem eval_sum {ι : Type*} (s : Finset ι) (f : ι → MvPolynomial σ R) (g : σ → R) : eval g (∑ i ∈ s, f i) = ∑ i ∈ s, eval g (f i)
+True MvPolynomial.smul_eval :: theorem smul_eval (x) (p : MvPolynomial σ R) (s) : eval x (s • p) = s * eval x p
+True Finset.prod_eq_zero_iff :: lemma prod_eq_zero_iff : ∏ x ∈ s, f x = 0 ↔ ∃ a ∈ s, f a = 0
+True Finset.prod_ite_eq' (additive: Finset.sum_ite_eq') :: theorem prod_ite_eq' [DecidableEq ι] (s : Finset ι) (a : ι) (b : ι → M) : (∏ x ∈ s, ite (x = a) (b x) 1) = ite (a ∈ s) (b a) 1   [@[to_additive (attr := simp)] sum_ite_eq']
+True Finset.prod_le_prod' (additive: Finset.sum_le_sum) :: theorem prod_le_prod' [MulLeftMono N] (h : ∀ i ∈ s, f i ≤ g i) : ∏ i ∈ s, f i ≤ ∏ i ∈ s, g i   [@[to_additive (attr := gcongr) sum_le_sum]]
+True Finset.prod_congr :: theorem prod_congr (h : s₁ = s₂) : (∀ x ∈ s₂, f x = g x) → s₁.prod f = s₂.prod g
+True Function.ne_iff :: theorem ne_iff {β : α → Sort*} {f₁ f₂ : ∀ a, β a} : f₁ ≠ f₂ ↔ ∃ a, f₁ a ≠ f₂ a
