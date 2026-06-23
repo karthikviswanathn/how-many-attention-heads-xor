@@ -61,7 +61,8 @@ lemma exists_strictSignRep_of_ThresholdDegLE {f : (Fin n → Bool) → Bool} {H 
         linarith
     · refine ⟨1, one_pos, ?_⟩
       intro x hx
-      exact absurd (Finset.mem_filter.mpr ⟨Finset.mem_univ x, hx⟩) (by rw [← hT]; exact fun hm => hTne ⟨x, hm⟩)
+      exact absurd (Finset.mem_filter.mpr ⟨Finset.mem_univ x, hx⟩)
+        (by rw [← hT]; exact fun hm => hTne ⟨x, hm⟩)
   refine ⟨P - C ε, ?_, ?_⟩
   · exact (totalDegree_sub _ _).trans (by rw [totalDegree_C]; exact max_le hPdeg (Nat.zero_le _))
   · intro x
@@ -88,7 +89,7 @@ noncomputable def symmetrize (P : MvPolynomial (Fin n) ℝ) : MvPolynomial (Fin 
 
 lemma symmetrize_totalDegree_le {P : MvPolynomial (Fin n) ℝ} {H : ℕ}
     (hP : P.totalDegree ≤ H) : (symmetrize P).totalDegree ≤ H :=
-  totalDegree_finsetSum_le (fun σ _ => (totalDegree_rename_le _ _).trans hP)
+  totalDegree_finsetSum_le (fun _ _ => (totalDegree_rename_le _ _).trans hP)
 
 lemma symmetrize_isSymmetric (P : MvPolynomial (Fin n) ℝ) :
     (symmetrize P).IsSymmetric := by

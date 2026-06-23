@@ -11,4 +11,8 @@ lake exe cache get   # fetch prebuilt mathlib (first time only)
 lake build
 ```
 
+For **exact, reproducible** build/verify instructions — including the
+mathlib-cache `curl` fix, the Snellius SLURM job scripts, and how to confirm the
+results are axiom-clean — see [`BUILDING.md`](BUILDING.md).
+
 See the [repository README](../README.md) for the wider project context.

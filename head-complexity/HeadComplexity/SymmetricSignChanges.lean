@@ -122,7 +122,7 @@ lemma signChanges_ge_two_of_spike (F : ℕ → Bool) (w : ℕ) (hw : w + 2 ≤ n
     rcases hx with rfl | rfl
     · exact ⟨by omega, fun h => h1 h.symm⟩
     · refine ⟨by omega, ?_⟩
-      show F (w + 1) ≠ F (w + 2)
+      change F (w + 1) ≠ F (w + 2)
       rw [h2]; exact h1
   calc 2 = ({w, w + 1} : Finset ℕ).card := by rw [Finset.card_pair (by omega)]
     _ ≤ _ := Finset.card_le_card hsub

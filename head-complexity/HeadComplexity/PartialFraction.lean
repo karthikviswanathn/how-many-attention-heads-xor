@@ -42,7 +42,8 @@ theorem real_partial_fraction {K : ℕ} (P : ℝ[X]) (av : Fin K → ℝ)
     rw [Finset.mem_erase] at hj
     exact sub_ne_zero.mpr (fun h => hj.1 (hinj h))
   set A : ℝ := P.coeff K with hA
-  set bv : Fin K → ℝ := fun i => P.eval (-av i) / (∏ j ∈ Finset.univ.erase i, (av j - av i)) with hbv
+  set bv : Fin K → ℝ :=
+    fun i => P.eval (-av i) / (∏ j ∈ Finset.univ.erase i, (av j - av i)) with hbv
   have hevalQ : ∀ k : ℝ, Q.eval k = ∏ h : Fin K, (k + av h) := by
     intro k; rw [hQ, eval_prod]; simp
   have hevalL : ∀ (h : Fin K) (k : ℝ), (L h).eval k = ∏ j ∈ Finset.univ.erase h, (k + av j) := by
@@ -60,7 +61,8 @@ theorem real_partial_fraction {K : ℕ} (P : ℝ[X]) (av : Fin K → ℝ)
     have hLroot : ∀ h, h ≠ i → (L h).eval (-av i) = 0 := by
       intro h hhi
       rw [hevalL]
-      exact Finset.prod_eq_zero (Finset.mem_erase.mpr ⟨fun e => hhi e.symm, Finset.mem_univ i⟩) (by ring)
+      exact Finset.prod_eq_zero
+        (Finset.mem_erase.mpr ⟨fun e => hhi e.symm, Finset.mem_univ i⟩) (by ring)
     have hLi : (L i).eval (-av i) = ∏ j ∈ Finset.univ.erase i, (av j - av i) := by
       rw [hevalL]; exact Finset.prod_congr rfl (fun j _ => by ring)
     rw [eval_sub, hR, eval_add, eval_mul, eval_C, hQroot, mul_zero, zero_add, eval_finset_sum]

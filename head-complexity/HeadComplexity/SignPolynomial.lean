@@ -117,12 +117,14 @@ lemma prod_sign (F : ℕ → Bool) (n k : ℕ) :
     rw [show negCount F n k = ((changeSet F n).filter (fun t => k ≤ t)).card from rfl,
       ← Finset.prod_neg]
     exact Finset.prod_congr rfl (fun t _ => by ring)
-  have hge_pos : 0 < ∏ t ∈ (changeSet F n).filter (fun t => k ≤ t), ((t : ℝ) + 1 / 2 - (k : ℝ)) := by
+  have hge_pos : 0 <
+      ∏ t ∈ (changeSet F n).filter (fun t => k ≤ t), ((t : ℝ) + 1 / 2 - (k : ℝ)) := by
     apply Finset.prod_pos
     intro t ht; rw [Finset.mem_filter] at ht
     have : (k : ℝ) ≤ (t : ℝ) := by exact_mod_cast ht.2
     linarith
-  have hlt_pos : 0 < ∏ t ∈ (changeSet F n).filter (fun t => ¬ k ≤ t), ((k : ℝ) - ((t : ℝ) + 1 / 2)) := by
+  have hlt_pos : 0 <
+      ∏ t ∈ (changeSet F n).filter (fun t => ¬ k ≤ t), ((k : ℝ) - ((t : ℝ) + 1 / 2)) := by
     apply Finset.prod_pos
     intro t ht; rw [Finset.mem_filter] at ht
     have : (t : ℝ) + 1 ≤ (k : ℝ) := by exact_mod_cast (Nat.lt_of_not_le ht.2)
