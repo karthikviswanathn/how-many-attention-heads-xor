@@ -54,9 +54,19 @@ open HeadComplexity
 #print axioms HStarN_eq_zero_iff
 #print axioms HStarN_eq_one_iff
 #print axioms HStarN_eq_Lfrac
+#print axioms NHead.restricted_numerator_antipode
+#print axioms parity_restriction_HStarN_ge_two
+#print axioms HStarN_threshold
+#print axioms HStarN_exact
 EOF
-lake env lean /tmp/AxiomCheck_$$.lean
-echo "AXIOM_RC=$?"
+# Capture the report and FAIL if any non-standard axiom (e.g. sorryAx) appears.
+AX_OUT=$(lake env lean /tmp/AxiomCheck_$$.lean 2>&1); AX_RC=$?
+echo "$AX_OUT"
+if [ $AX_RC -ne 0 ] || echo "$AX_OUT" | grep -qiE "sorryAx|sorry|native_decide"; then
+  echo "AXIOM_RC=1"
+else
+  echo "AXIOM_RC=0"
+fi
 rm -f /tmp/AxiomCheck_$$.lean
 date
 echo "DONE_SENTINEL"
