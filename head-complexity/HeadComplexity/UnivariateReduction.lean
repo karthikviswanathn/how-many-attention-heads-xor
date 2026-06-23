@@ -54,7 +54,7 @@ lemma eval_cube_monomial (x : Fin n → Bool) (d : Fin n →₀ ℕ) :
     simp [cubePoint, boolToReal, hx]
   · rw [if_neg hsub]
     obtain ⟨i, hi, hix⟩ : ∃ i ∈ d.support, i ∉ onesSet x := by
-      by_contra hcon; push_neg at hcon; exact hsub (fun i hi => hcon i hi)
+      by_contra hcon; push Not at hcon; exact hsub (fun i hi => hcon i hi)
     apply Finset.prod_eq_zero hi
     have hdi : d i ≠ 0 := Finsupp.mem_support_iff.mp hi
     have hxf : x i = false := by
@@ -266,7 +266,7 @@ lemma exists_univariate_of_symmetric {H : ℕ} (hP : P.IsSymmetric)
     by_cases hjH : H < j
     · rw [betaCoeff_eq_zero_of_gt P hdeg hjH, zero_smul, Polynomial.natDegree_zero]
       exact Nat.zero_le _
-    · push_neg at hjH
+    · push Not at hjH
       calc (betaCoeff P j • binomPoly j).natDegree
           ≤ (binomPoly j).natDegree := Polynomial.natDegree_smul_le _ _
         _ ≤ j := binomPoly_natDegree_le j

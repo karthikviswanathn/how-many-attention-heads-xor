@@ -28,7 +28,7 @@ private lemma eval_nonpos_of_false {P : MvPolynomial (Fin n) ℝ} {f : (Fin n �
     (hP : ∀ x, (0 < eval (cubePoint x) P ↔ f x = true)) {x : Fin n → Bool}
     (hx : f x = false) : eval (cubePoint x) P ≤ 0 := by
   by_contra h
-  push_neg at h
+  push Not at h
   have := (hP x).mp h
   rw [hx] at this
   exact Bool.false_ne_true this
