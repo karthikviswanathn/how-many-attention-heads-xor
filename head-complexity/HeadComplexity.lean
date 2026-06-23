@@ -25,3 +25,7 @@ import HeadComplexity.ParityThresholdDegree
 import HeadComplexity.Lemma9
 import HeadComplexity.AffineHead
 import HeadComplexity.Lemma11
+import HeadComplexity.Lemma10
+import HeadComplexity.FracAtomHead
+import HeadComplexity.HeadToAtom
+import HeadComplexity.Lemma10Main

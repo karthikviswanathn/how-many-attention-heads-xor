@@ -47,6 +47,13 @@ open HeadComplexity
 #print axioms atomHead_readout
 #print axioms symmetricFn_computable
 #print axioms HStarN_symmetricFn
+#print axioms HStarN_parity
+#print axioms thresholdDeg_parity
+#print axioms HStarN_le_weighted
+#print axioms HStarN_le_universal
+#print axioms HStarN_eq_zero_iff
+#print axioms HStarN_eq_one_iff
+#print axioms HStarN_eq_Lfrac
 EOF
 lake env lean /tmp/AxiomCheck_$$.lean
 echo "AXIOM_RC=$?"
