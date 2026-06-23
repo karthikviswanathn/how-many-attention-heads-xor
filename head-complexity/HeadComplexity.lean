@@ -14,3 +14,5 @@ import HeadComplexity.SymmetricSignChanges
 import HeadComplexity.ThresholdDegree
 import HeadComplexity.UnivariateSignChanges
 import HeadComplexity.ModelToPolynomial
+import HeadComplexity.SymmetricLowerBound
+import HeadComplexity.UnivariateReduction

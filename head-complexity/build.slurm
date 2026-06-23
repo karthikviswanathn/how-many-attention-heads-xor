@@ -39,6 +39,9 @@ open HeadComplexity
 #print axioms signChanges_parity
 #print axioms signChanges_le_natDegree
 #print axioms signReprDegLe_of_computableWithHeadsN
+#print axioms exists_univariate_of_symmetric
+#print axioms signChanges_le_of_computableWithHeadsN
+#print axioms HStarN_symmetricFn_eq_signChanges
 EOF
 lake env lean /tmp/AxiomCheck_$$.lean
 echo "AXIOM_RC=$?"
