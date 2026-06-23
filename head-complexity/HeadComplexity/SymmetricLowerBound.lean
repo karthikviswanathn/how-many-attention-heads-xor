@@ -8,8 +8,9 @@ Assembling `HStarN n (symmetricFn F) ≥ signChanges n F` from:
 * `signReprDegLe_of_computableWithHeadsN` (L6): `H` heads → degree-≤H sign rep;
 * strictification (here): turn `0 < eval ↔ f` into a strict sign representation;
 * symmetrization (here): average over `Equiv.Perm` to a symmetric polynomial;
-* univariate reduction (`UnivariateReduction.lean`): a symmetric multilinear poly
-  on the cube is a univariate polynomial of the same degree in the Hamming weight;
+* univariate reduction (`UnivariateReduction.lean`): a symmetric polynomial of
+  total degree `≤ H` on the cube is a univariate polynomial of degree `≤ H` in the
+  Hamming weight (no multilinearity assumed — on the cube any polynomial reduces);
 * `signChanges_le_natDegree` (`UnivariateSignChanges.lean`): degree ≥ sign changes.
 
 The chain is complete: `signChanges_le_of_computableWithHeadsN`
