@@ -1,4 +1,8 @@
-# L12 upper bound — proof roadmap (elementary, no analysis)
+# L12 upper bound — proof roadmap (elementary, no analysis)  ✅ COMPLETED
+
+**STATUS: DONE.** Full unconditional L12 verified (axiom-clean) as
+`HStarN_symmetricFn` in `HeadComplexity/L12Upper.lean`. Every lemma below is proven.
+
 
 Goal: prove `hub : computableWithHeadsN n (signChanges n F) (symmetricFn F)`, which
 combined with `HStarN_symmetricFn_eq_signChanges` gives the FULL unconditional L12

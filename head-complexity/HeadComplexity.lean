@@ -16,3 +16,7 @@ import HeadComplexity.UnivariateSignChanges
 import HeadComplexity.ModelToPolynomial
 import HeadComplexity.SymmetricLowerBound
 import HeadComplexity.UnivariateReduction
+import HeadComplexity.PartialFraction
+import HeadComplexity.SignPolynomial
+import HeadComplexity.UpperBound
+import HeadComplexity.L12Upper
