@@ -37,18 +37,25 @@ For C heads sharing one readout: give head i its value in coordinate `e_{c_i}` d
 per head (use d = 3 + C or a per-head block; simplest: d = 3·C blocks, or shared score
 channels + distinct value coords). w sums the per-head reads.
 
-## Lean lemma chain (each independently checkable)
+## Lean lemma chain (all proven — final symbol names in parentheses)
 
-- [ ] `Vec`/`EuclideanSpace` inner-product & `Basis.constr` API warmup (single-coord facts).
-- [ ] **`head_realizes_atom`** (CRUX): for `a > n`, `b : ℝ`, ∃ NHead n 3 (or shared d) with
-      `⟨w, attnUpdate bits⟩ = b / (hammingWeight bits + a)`. De-risks everything.
-- [ ] **`exists_family_atoms`**: combine C atoms into one NHeadFamily with shared readout,
-      `⟨w, Σ_h attnUpdate_h bits⟩ = ∑_i b_i/(k+a_i)`.
-- [ ] **`partial_fraction`**: `P(k)/Q(k) = A + ∑_i b_i/(k+a_i)` on {0..n} (polynomial identity).
-- [ ] **`sign_poly`**: build P with `P(k) > 0 ⟺ F(k)` from `signChanges` data (half-integer roots).
-- [ ] **assembly** `upper_bound : computableWithHeadsN n (signChanges n F) (symmetricFn F)`.
-- [ ] feed into `HStarN_symmetricFn_eq_signChanges` ⇒ unconditional L12.
+- [x] `Vec`/`EuclideanSpace` inner-product warmup (`vec2_inner`, `UpperBound.lean`).
+- [x] **head realizes one atom** (CRUX): for `a > n`, `b : ℝ`, a real `NHead n 2` with
+      `⟨w, attnUpdate bits⟩ = b / (hammingWeight bits + a)` (`atomHead`, `atomHead_readout`,
+      `UpperBound.lean`).
+- [x] **family of atoms**: combine `C` atoms into one `NHeadFamily` with a shared readout,
+      `⟨w, Σ_h attnUpdate_h bits⟩ = ∑_i b_i/(k+a_i)` (`atomFamily_readout`, `UpperBound.lean`).
+- [x] **partial fraction**: `P(k)/∏(k+a_i) = A + ∑_i b_i/(k+a_i)` (`real_partial_fraction`,
+      `PartialFraction.lean`).
+- [x] **sign polynomial**: build `P` with `P(k) > 0 ⟺ F(k)` from `signChanges` data
+      (half-integer roots) (`exists_sign_poly`, `SignPolynomial.lean`).
+- [x] **assembly** `symmetricFn_computable : computableWithHeadsN n (signChanges n F) (symmetricFn F)`
+      (`L12Upper.lean`, via `exists_rational_atoms`).
+- [x] feed into `HStarN_symmetricFn_eq_signChanges` ⇒ unconditional `HStarN_symmetricFn` (`L12Upper.lean`).
 
 ## Status
-Starting with `head_realizes_atom` (the crux). Constant case (C=0) is immediate
-(0 heads, g=0, τ=∓1) and is a free corollary.
+**DONE.** The crux `atomHead_readout` realizes one `b/(k+a)` atom with a genuine
+`NHead n 2` (`d = 2`, not 3 — the score and value channels share `Vec 2`). The
+`n = 0` / constant case is handled directly in `symmetricFn_computable` (0 heads,
+readout 0, `τ = ∓1`). Whole chain machine-checked, axiom-clean
+(`[propext, Classical.choice, Quot.sound]`); see `BUILDING.md` to reproduce.
