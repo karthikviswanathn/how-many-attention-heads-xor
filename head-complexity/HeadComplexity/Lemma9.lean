@@ -206,6 +206,119 @@ theorem weightedAtom_readout (bits : Fin n → Bool) :
   rw [inner_smul_right, wHead_numread lam a b hn hlam ha, wHead_denom lam a b hlam ha]
   rw [div_eq_mul_inv, mul_comm]
 
+/-- **A family of `C` weighted heads, shared readout.** -/
+theorem weightedAtomFamily_readout {C : ℕ} (hn : 1 ≤ n) (hlam : ∀ i, 0 < lam i)
+    (av bv : Fin C → ℝ) (hav : ∀ h, wLam lam + 1 < av h) (bits : Fin n → Bool) :
+    ⟪atomReadout, ∑ h, (weightedAtomHead lam (av h) (bv h)).attnUpdate bits⟫_ℝ
+      = ∑ h, bv h / (wT lam bits + av h) := by
+  rw [inner_sum]
+  exact Finset.sum_congr rfl
+    (fun h _ => weightedAtom_readout lam (av h) (bv h) hn hlam (hav h) bits)
+
 end
+
+/-- The weighted statistic is nonnegative. -/
+lemma wT_nonneg {lam : Fin n → ℝ} (hlam : ∀ i, 0 < lam i) (bits : Fin n → Bool) :
+    0 ≤ wT lam bits :=
+  Finset.sum_nonneg (fun i _ => by by_cases h : bits i <;> simp [h, (hlam i).le])
+
+open Polynomial in
+/-- **Rational atoms for a weighted-sum function.** There are `M-1` shift/coefficient
+pairs and a threshold realizing `f` through `∑ b_h/(t(x)+a_h)`. -/
+theorem exists_weighted_atoms (lam : Fin n → ℝ) (hlam : ∀ i, 0 < lam i)
+    (f : (Fin n → Bool) → Bool) (G : ℝ → Bool) (hf : ∀ bits, f bits = G (wT lam bits)) :
+    ∃ (av bv : Fin ((Finset.univ.image (wT lam)).card - 1) → ℝ) (τ : ℝ),
+      (∀ h, wLam lam + 1 < av h) ∧
+      ∀ bits, ((∑ h, bv h / (wT lam bits + av h)) > τ ↔ f bits = true) := by
+  classical
+  set S := Finset.univ.image (wT lam) with hS
+  set M := S.card with hMdef
+  set P := Lagrange.interpolate S id (fun x => if G x then (1 : ℝ) else -1) with hP
+  have hPdeg : P.natDegree ≤ M - 1 :=
+    Polynomial.natDegree_le_iff_degree_le.mpr
+      (Lagrange.degree_interpolate_le (r := fun x => if G x then (1 : ℝ) else -1) (Set.injOn_id _))
+  have hPsign : ∀ bits, 0 < P.eval (wT lam bits) ↔ f bits = true := by
+    intro bits
+    have hmem : wT lam bits ∈ S := Finset.mem_image_of_mem _ (Finset.mem_univ bits)
+    have heval : P.eval (wT lam bits) = if G (wT lam bits) then (1 : ℝ) else -1 := by
+      have := Lagrange.eval_interpolate_at_node (s := S) (v := id)
+        (r := fun x => if G x then (1 : ℝ) else -1) (Set.injOn_id _) hmem
+      simpa [hP] using this
+    rw [heval, hf bits]
+    cases G (wT lam bits) <;> norm_num
+  set av : Fin (M - 1) → ℝ := fun h => wLam lam + 2 + (h : ℕ) with hav
+  have havinj : Function.Injective av := by
+    intro x y hxy
+    rw [hav] at hxy
+    simp only [add_right_inj, Nat.cast_inj] at hxy
+    exact Fin.ext hxy
+  have hLnn : 0 ≤ wLam lam := Finset.sum_nonneg (fun i _ => (hlam i).le)
+  have havpos : ∀ h, wLam lam + 1 < av h := by
+    intro h; rw [hav]; have : (0 : ℝ) ≤ (h : ℕ) := Nat.cast_nonneg _; linarith
+  obtain ⟨A, bv, hpf⟩ := real_partial_fraction P av havinj hPdeg
+  refine ⟨av, bv, -A, havpos, ?_⟩
+  intro bits
+  have hTnn := wT_nonneg hlam bits
+  have hfacpos : ∀ h : Fin (M - 1), (0 : ℝ) < wT lam bits + av h := by
+    intro h; rw [hav]; have : (0 : ℝ) ≤ (h : ℕ) := Nat.cast_nonneg _; linarith
+  have hQpos : 0 < ∏ h : Fin (M - 1), (wT lam bits + av h) :=
+    Finset.prod_pos (fun h _ => hfacpos h)
+  have herase_ne : ∀ h : Fin (M - 1),
+      (∏ j ∈ Finset.univ.erase h, (wT lam bits + av j)) ≠ 0 :=
+    fun h => Finset.prod_ne_zero_iff.mpr (fun j _ => ne_of_gt (hfacpos j))
+  have hQfac : ∀ h : Fin (M - 1),
+      (∏ j, (wT lam bits + av j))
+        = (wT lam bits + av h) * ∏ j ∈ Finset.univ.erase h, (wT lam bits + av j) :=
+    fun h =>
+      (Finset.mul_prod_erase Finset.univ (fun j => wT lam bits + av j) (Finset.mem_univ h)).symm
+  have hkey : (∑ h, bv h / (wT lam bits + av h))
+      = P.eval (wT lam bits) / (∏ h, (wT lam bits + av h)) - A := by
+    have h1 : (∑ h, bv h / (wT lam bits + av h))
+        = (∑ h, bv h * ∏ j ∈ Finset.univ.erase h, (wT lam bits + av j))
+          / (∏ h, (wT lam bits + av h)) := by
+      rw [Finset.sum_div]
+      refine Finset.sum_congr rfl (fun h _ => ?_)
+      rw [hQfac h, mul_div_mul_right _ _ (herase_ne h)]
+    rw [h1, hpf (wT lam bits)]
+    field_simp
+    ring
+  rw [gt_iff_lt, hkey, lt_sub_iff_add_lt, neg_add_cancel, lt_div_iff₀ hQpos, zero_mul]
+  exact (hPsign bits)
+
+/-- **Lemma 9 (computability form).** A function of a positive weighted sum with
+image size `M` is computable with `M - 1` heads. -/
+theorem weighted_computable (lam : Fin n → ℝ) (hlam : ∀ i, 0 < lam i)
+    (f : (Fin n → Bool) → Bool) (G : ℝ → Bool) (hf : ∀ bits, f bits = G (wT lam bits)) :
+    computableWithHeadsN n ((Finset.univ.image (wT lam)).card - 1) f := by
+  classical
+  rcases Nat.eq_zero_or_pos n with hn0 | hn
+  · subst hn0
+    have hcard : (Finset.univ.image (wT lam)).card - 1 = 0 := by
+      have h1 : (Finset.univ.image (wT lam)).card ≤ 1 :=
+        Finset.card_image_le.trans (by simp)
+      omega
+    rw [hcard]
+    refine ⟨2, (Fin.elim0 : NHeadFamily 0 2 0), (0 : Vec 2), (if f default then -1 else 1), ?_⟩
+    intro bits
+    rw [nHeadFamilyAttnUpdate_zero, inner_zero_right, Subsingleton.elim bits default]
+    cases f default <;> norm_num
+  · obtain ⟨av, bv, τ, hav, hatom⟩ := exists_weighted_atoms lam hlam f G hf
+    refine ⟨2, fun h => weightedAtomHead lam (av h) (bv h), atomReadout, τ, ?_⟩
+    intro bits
+    change ⟪atomReadout, ∑ h, (weightedAtomHead lam (av h) (bv h)).attnUpdate bits⟫_ℝ > τ ↔ _
+    rw [weightedAtomFamily_readout lam hn hlam av bv hav bits]
+    exact hatom bits
+
+/-- **Lemma 9.** `H*(f) ≤ M - 1`, where `M = |Im(t)|` for a positive weighted sum
+`t(x) = ∑ λ_i x_i` with `f(x) = F(t(x))`. -/
+theorem HStarN_le_weighted (lam : Fin n → ℝ) (hlam : ∀ i, 0 < lam i)
+    (f : (Fin n → Bool) → Bool) (G : ℝ → Bool) (hf : ∀ bits, f bits = G (wT lam bits)) :
+    HStarN n f ≤ (Finset.univ.image (wT lam)).card - 1 := by
+  classical
+  have hc := weighted_computable lam hlam f G hf
+  have hex : ∃ k, computableWithHeadsN n k f := ⟨_, hc⟩
+  unfold HStarN
+  rw [dif_pos hex]
+  exact Nat.find_min' hex hc
 
 end HeadComplexity

@@ -22,3 +22,4 @@ import HeadComplexity.UpperBound
 import HeadComplexity.L12Upper
 import HeadComplexity.ExactComplexity
 import HeadComplexity.ParityThresholdDegree
+import HeadComplexity.Lemma9
