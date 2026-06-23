@@ -322,22 +322,24 @@ theorem signChanges_le_of_computableWithHeadsN {H : ℕ} {F : ℕ → Bool}
   calc signChanges n F ≤ p.natDegree := signChanges_le_natDegree p F n hpos hneg
     _ ≤ H := hpdeg
 
-/-- **Lemma 12 (full equality).** For a symmetric Boolean function `symmetricFn F`,
-the head complexity equals the number of sign changes `C(F)` of the weight profile
-`F`, *given* the upper-bound construction `hub` that realizes `symmetricFn F` with
-`signChanges n F` heads.
+/-- **Lemma 12 (equality), conditional form.** For a symmetric Boolean function
+`symmetricFn F`, the head complexity equals the number of sign changes `C(F)` of
+the weight profile `F`, *given* the upper-bound construction `hub` that realizes
+`symmetricFn F` with `signChanges n F` heads.
 
 Both directions are discharged here:
 * `≤` (upper bound) is `Nat.find_min'` applied to `hub`;
 * `≥` (lower bound) is `signChanges_le_of_computableWithHeadsN` applied to the
   realizing family `Nat.find_spec` selects.
 
-The hypothesis `hub` is the *only* unproven input: it is the general-`n`,
-`C(F)`-head softmax construction, which has no mathlib foundation (no softmax /
-LTF approximation theory) and is the multi-week analytic part of the paper. The
-entire lower-bound machinery (`signChanges_le_of_computableWithHeadsN` — model →
-threshold degree → strictify → symmetrize → univariate reduction → root count)
-is fully formalized and axiom-clean. -/
+`hub` is now itself proven — see `symmetricFn_computable` in `L12Upper.lean`,
+which builds the `C(F)`-head softmax family explicitly via the linear-fractional
+normal form (sign polynomial → partial fractions → one head per atom). Feeding
+that into this lemma gives the *unconditional* `HStarN_symmetricFn`. This
+conditional version is kept as the clean statement of the bridge: it isolates the
+lower-bound machinery (`signChanges_le_of_computableWithHeadsN` — model →
+threshold degree → strictify → symmetrize → univariate reduction → root count),
+which is fully formalized and axiom-clean. -/
 theorem HStarN_symmetricFn_eq_signChanges {F : ℕ → Bool}
     (hub : computableWithHeadsN n (signChanges n F) (symmetricFn F)) :
     HStarN n (symmetricFn F) = signChanges n F := by

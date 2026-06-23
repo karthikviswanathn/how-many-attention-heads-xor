@@ -89,7 +89,7 @@ theorem symmetricFn_computable (F : ℕ → Bool) (n : ℕ) :
   · obtain ⟨av, bv, τ, hav, hatom⟩ := exists_rational_atoms F n
     refine ⟨2, fun h => atomHead n (av h) (bv h), atomReadout, τ, ?_⟩
     intro bits
-    show ⟪atomReadout, ∑ h, (atomHead n (av h) (bv h)).attnUpdate bits⟫_ℝ > τ ↔ _
+    change ⟪atomReadout, ∑ h, (atomHead n (av h) (bv h)).attnUpdate bits⟫_ℝ > τ ↔ _
     rw [atomFamily_readout hn av bv hav bits]
     simp only [symmetricFn]
     exact hatom (hammingWeight bits) (hammingWeight_le n bits)

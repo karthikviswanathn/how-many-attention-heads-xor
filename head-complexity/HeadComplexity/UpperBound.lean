@@ -95,7 +95,7 @@ lemma atomTok_inner_two (t : Fin 3) :
 /-- Readout `⟪e₁, ·⟫` of a token equals its value-channel coordinate. -/
 lemma atomReadout_inner (t : Fin 3) :
     ⟪atomReadout, atomTok n a b t⟫_ℝ = atomTok n a b t 1 := by
-  rw [vec2_inner]; simp [atomReadout, PiLp.single_apply]
+  rw [vec2_inner]; simp [atomReadout]
 
 end
 
@@ -182,8 +182,8 @@ lemma atomHead_numread (bits : Fin n → Bool) :
   rw [atomHead_sigma_none a b ha]
   have hquery : atomTok n a b (NHead.seqTok bits none) 1 = 0 := by simp [NHead.seqTok]
   rw [hquery, mul_zero, zero_add]
-  have hbit : ∀ i, (atomHead n a b).sigma bits (some i) * atomTok n a b (NHead.seqTok bits (some i)) 1
-      = b / n := by
+  have hbit : ∀ i, (atomHead n a b).sigma bits (some i)
+        * atomTok n a b (NHead.seqTok bits (some i)) 1 = b / n := by
     intro i
     rw [atomHead_sigma_some a b ha]
     have hseq : NHead.seqTok bits (some i) = cond (bits i) 1 0 := rfl
