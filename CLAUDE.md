@@ -1,5 +1,15 @@
 # Project guidance for Claude Code
 
+> **Read [`CODEX_WORKFLOW.md`](CODEX_WORKFLOW.md) and follow it.** It distills the
+> hard-won, working pattern for driving Codex (and delegated subagents) on this
+> project's Lean proofs — the non-negotiables (`</dev/null`; Codex can't run long
+> builds; keep questions focused or it loops), what Codex is good/bad at, the
+> consult→write→build→verify loop, and how to safely parallelize by delegating
+> well-specified subtasks. Prefer this workflow by default for nontrivial Codex
+> use. **And keep improving it:** when you learn something new about working with
+> Codex/subagents (a failure mode, a sharper prompt shape, a better delegation
+> contract), update `CODEX_WORKFLOW.md` so the next session inherits it.
+
 ## Consulting Codex (second opinion)
 
 You have access to OpenAI's Codex CLI as a peer reviewer. Use it to get a

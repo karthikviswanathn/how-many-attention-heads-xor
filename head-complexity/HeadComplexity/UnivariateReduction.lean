@@ -293,13 +293,14 @@ lemma exists_hammingWeight_eq {k : ℕ} (hk : k ≤ n) :
         simp [decide_eq_true_eq]]
   exact hTcard
 
-/-- **Lemma 12 lower bound.** If a symmetric Boolean function `symmetricFn F` is
-computable with `H` heads, then the number of sign changes of its weight profile
-`F` is at most `H`. -/
-theorem signChanges_le_of_computableWithHeadsN {H : ℕ} {F : ℕ → Bool}
-    (hcomp : computableWithHeadsN n H (symmetricFn F)) :
+/-- **Threshold-degree lower bound for sign changes.** If `symmetricFn F` has
+threshold degree `≤ H`, then its weight profile has at most `H` sign changes.
+This is the symmetric heart of the Lemma 12 lower bound (model → polynomial is
+the separate `signReprDegLe_of_computableWithHeadsN` step), and is reused for the
+threshold degree of parity (Lemma 7). -/
+theorem signChanges_le_of_ThresholdDegLE {H : ℕ} {F : ℕ → Bool}
+    (hTD : ThresholdDegLE (n := n) (symmetricFn F) H) :
     signChanges n F ≤ H := by
-  have hTD : ThresholdDegLE (symmetricFn F) H := signReprDegLe_of_computableWithHeadsN hcomp
   obtain ⟨P, hPdeg, hPstrict⟩ := exists_strictSignRep_of_ThresholdDegLE hTD
   -- symmetrize
   have hQdeg : (symmetrize P).totalDegree ≤ H := symmetrize_totalDegree_le hPdeg
@@ -321,6 +322,14 @@ theorem signChanges_le_of_computableWithHeadsN {H : ℕ} {F : ℕ → Bool}
     rw [symmetricFn_apply, hx]; exact hFk
   calc signChanges n F ≤ p.natDegree := signChanges_le_natDegree p F n hpos hneg
     _ ≤ H := hpdeg
+
+/-- **Lemma 12 lower bound.** If a symmetric Boolean function `symmetricFn F` is
+computable with `H` heads, then the number of sign changes of its weight profile
+`F` is at most `H`. -/
+theorem signChanges_le_of_computableWithHeadsN {H : ℕ} {F : ℕ → Bool}
+    (hcomp : computableWithHeadsN n H (symmetricFn F)) :
+    signChanges n F ≤ H :=
+  signChanges_le_of_ThresholdDegLE (signReprDegLe_of_computableWithHeadsN hcomp)
 
 /-- **Lemma 12 (equality), conditional form.** For a symmetric Boolean function
 `symmetricFn F`, the head complexity equals the number of sign changes `C(F)` of
