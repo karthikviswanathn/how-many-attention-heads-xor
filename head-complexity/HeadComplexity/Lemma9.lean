@@ -1,6 +1,7 @@
 import HeadComplexity.UpperBound
 import HeadComplexity.PartialFraction
 import Mathlib.LinearAlgebra.Lagrange
+import Mathlib.Algebra.BigOperators.Fin
 
 /-!
 # Lemma 9 — weighted-sum interpolation upper bound.
@@ -320,5 +321,50 @@ theorem HStarN_le_weighted (lam : Fin n → ℝ) (hlam : ∀ i, 0 < lam i)
   unfold HStarN
   rw [dif_pos hex]
   exact Nat.find_min' hex hc
+
+/-! ## Universal upper bound (Corollary 6): every function is computable -/
+
+/-- The binary weighting `λ_i = 2^i` separates all inputs. -/
+lemma wT_two_pow_injective :
+    Function.Injective (wT (n := n) (fun i => (2 : ℝ) ^ (i : ℕ))) := by
+  have key : ∀ bits : Fin n → Bool,
+      wT (fun i => (2 : ℝ) ^ (i : ℕ)) bits
+        = ((finFunctionFinEquiv (fun i => if bits i then (1 : Fin 2) else 0) : ℕ) : ℝ) := by
+    intro bits
+    rw [finFunctionFinEquiv_apply, Nat.cast_sum]
+    unfold wT
+    refine Finset.sum_congr rfl (fun i _ => ?_)
+    by_cases hb : bits i <;> simp [hb]
+  intro b b' h
+  rw [key, key] at h
+  have h2 : finFunctionFinEquiv (fun i => if b i then (1 : Fin 2) else 0)
+      = finFunctionFinEquiv (fun i => if b' i then (1 : Fin 2) else 0) := by
+    apply Fin.val_injective
+    exact_mod_cast h
+  have h3 := finFunctionFinEquiv.injective h2
+  funext i
+  have hi := congrFun h3 i
+  by_cases hb : b i <;> by_cases hb' : b' i <;> simp_all
+
+/-- **Corollary 6.** Every Boolean function is computable, with at most `2^n - 1`
+heads. -/
+theorem HStarN_le_universal (f : (Fin n → Bool) → Bool) : HStarN n f ≤ 2 ^ n - 1 := by
+  classical
+  set lam : Fin n → ℝ := fun i => (2 : ℝ) ^ (i : ℕ) with hlamdef
+  have hlam : ∀ i, 0 < lam i := fun i => by rw [hlamdef]; positivity
+  have hinj : Function.Injective (wT lam) := wT_two_pow_injective
+  have hf : ∀ bits, f bits = (f ∘ Function.invFun (wT lam)) (wT lam bits) := by
+    intro bits
+    change f bits = f (Function.invFun (wT lam) (wT lam bits))
+    rw [Function.leftInverse_invFun hinj bits]
+  have hcomp := weighted_computable lam hlam f _ hf
+  have hcard : (Finset.univ.image (wT lam)).card = 2 ^ n := by
+    rw [Finset.card_image_of_injective _ hinj, Finset.card_univ]
+    simp
+  rw [hcard] at hcomp
+  have hex : ∃ k, computableWithHeadsN n k f := ⟨_, hcomp⟩
+  unfold HStarN
+  rw [dif_pos hex]
+  exact Nat.find_min' hex hcomp
 
 end HeadComplexity
