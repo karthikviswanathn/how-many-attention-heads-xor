@@ -218,12 +218,12 @@ theorem signReprDegLe_of_computableWithHeadsN {n H : ℕ} {f : (Fin n → Bool) 
         = (∏ g, (Hs g).denominator bits) * (⟪w, nHeadFamilyAttnUpdate Hs bits⟫_ℝ - τ) := by
       rw [hU, mul_sub, Finset.mul_sum]
       congr 1
-      refine Finset.sum_congr rfl (fun h _ => ?_)
-      rw [← Finset.mul_prod_erase Finset.univ (fun g => (Hs g).denominator bits)
-            (Finset.mem_univ h)]
-      have hne : (Hs h).denominator bits ≠ 0 := (hdpos h).ne'
-      field_simp
-      ring
+      · refine Finset.sum_congr rfl (fun h _ => ?_)
+        rw [← Finset.mul_prod_erase Finset.univ (fun g => (Hs g).denominator bits)
+              (Finset.mem_univ h)]
+        have hne : (Hs h).denominator bits ≠ 0 := (hdpos h).ne'
+        field_simp
+      · ring
     rw [hPeval, hid, mul_pos_iff_of_pos_left hprodpos, sub_pos]
     exact hsep bits
 
