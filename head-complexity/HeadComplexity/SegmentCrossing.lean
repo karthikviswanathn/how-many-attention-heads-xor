@@ -1,3 +1,4 @@
+import Mathlib.Analysis.Convex.Segment
 import HeadComplexity.Basic
 
 set_option linter.style.header false
@@ -17,25 +18,20 @@ namespace HeadComplexity
 private lemma convex_sum_le {a b τ x y : ℝ}
     (ha : 0 ≤ a) (hb : 0 ≤ b) (hab : a + b = 1)
     (hx : x ≤ τ) (hy : y ≤ τ) : a * x + b * y ≤ τ := by
-  have hτ : a * τ + b * τ = τ := by linear_combination τ * hab
-  have h1 : a * x ≤ a * τ := mul_le_mul_of_nonneg_left hx ha
-  have h2 : b * y ≤ b * τ := mul_le_mul_of_nonneg_left hy hb
-  linarith
+  have max_le : max x y ≤ τ := by apply max_le hx hy
+  have := Convex.combo_le_max x y ha hb hab
+  simp only [smul_eq_mul] at this
+  exact le_trans this max_le
 
 /-- A convex combination of two reals, both strictly greater than `τ`,
 is strictly greater than `τ`. -/
 private lemma lt_convex_sum {a b τ x y : ℝ}
     (ha : 0 ≤ a) (hb : 0 ≤ b) (hab : a + b = 1)
     (hx : τ < x) (hy : τ < y) : τ < a * x + b * y := by
-  have hτ : a * τ + b * τ = τ := by linear_combination τ * hab
-  have h1 : a * τ ≤ a * x := mul_le_mul_of_nonneg_left hx.le ha
-  have h2 : b * τ ≤ b * y := mul_le_mul_of_nonneg_left hy.le hb
-  rcases eq_or_lt_of_le ha with ha' | ha'
-  · have hb' : 0 < b := by linarith
-    have : b * τ < b * y := mul_lt_mul_of_pos_left hy hb'
-    linarith
-  · have : a * τ < a * x := mul_lt_mul_of_pos_left hx ha'
-    linarith
+  have min_lt : τ < min x y := by apply lt_min hx hy
+  have := Convex.min_le_combo x y ha hb hab
+  simp only [smul_eq_mul] at this
+  exact lt_of_lt_of_le min_lt this
 
 /-- **Segment crossing obstruction.** If a point `P` lies simultaneously on
 the segments `[p, q]` and `[r, s]`, then no linear functional `L` can place
@@ -55,6 +51,6 @@ theorem segment_cross_not_separable
   have hLP_gt : τ < L P := by
     rw [← hP2, map_add, L.map_smul, L.map_smul, smul_eq_mul, smul_eq_mul]
     exact lt_convex_sum hc he hce hr hs
-  linarith
+  exact not_le.mpr hLP_gt hLP_le
 
 end HeadComplexity
