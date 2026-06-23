@@ -60,20 +60,20 @@ lemma atomHead_x_none (bits : Fin n → Bool) :
 
 /-- Coordinate-0 (score channel) of each token embedding. -/
 @[simp] lemma atomTok_zero_coord0 : atomTok n a b 0 0 = 0 := by
-  simp [atomTok, EuclideanSpace.single_apply]
+  simp [atomTok]
 @[simp] lemma atomTok_one_coord0 :
     atomTok n a b 1 0 = Real.log 2 / Real.sqrt (Real.log (a - n)) := by
-  simp [atomTok, EuclideanSpace.single_apply]
+  simp [atomTok]
 @[simp] lemma atomTok_two_coord0 : atomTok n a b 2 0 = Real.sqrt (Real.log (a - n)) := by
-  simp [atomTok, EuclideanSpace.single_apply]
+  simp [atomTok]
 
 /-- Coordinate-1 (value channel) of each token embedding. -/
 @[simp] lemma atomTok_zero_coord1 : atomTok n a b 0 1 = b / n := by
-  simp [atomTok, EuclideanSpace.single_apply]
+  simp [atomTok]
 @[simp] lemma atomTok_one_coord1 : atomTok n a b 1 1 = b / (2 * n) := by
-  simp [atomTok, EuclideanSpace.single_apply]
+  simp [atomTok]
 @[simp] lemma atomTok_two_coord1 : atomTok n a b 2 1 = 0 := by
-  simp [atomTok, EuclideanSpace.single_apply]
+  simp [atomTok]
 
 @[simp] lemma atomHead_WK : (atomHead n a b).WK = LinearMap.id := rfl
 @[simp] lemma atomHead_WQ : (atomHead n a b).WQ = LinearMap.id := rfl
@@ -188,7 +188,7 @@ lemma atomHead_numread (bits : Fin n → Bool) :
     rw [atomHead_sigma_some a b ha]
     have hseq : NHead.seqTok bits (some i) = cond (bits i) 1 0 := rfl
     rw [hseq]
-    cases bits i <;> simp <;> ring
+    cases bits i <;> simp; ring
   rw [Finset.sum_congr rfl (fun i _ => hbit i), Finset.sum_const, Finset.card_univ,
     Fintype.card_fin, nsmul_eq_mul]
   field_simp
