@@ -57,8 +57,17 @@ This is a *use the dead time* habit, not a request for a final answer:
 - Frame it as a brainstorm: share the relevant code/context and think out loud
   with Codex about the uncertainty, alternatives, or what could go wrong.
 - Keep it bounded — one focused question per idle window, not a research project.
-- When the background task finishes, fold any useful insight back into the work;
-  treat Codex's input as advice, per the consult guidance above.
+
+**Run the brainstorm in the background too.** A foreground `codex exec` blocks
+you — so instead of waiting on the compile, you'd just be waiting on Codex, which
+defeats the purpose. Launch the consult itself as a background job
+(`run_in_background`) and let the harness monitor it the same way it monitors a
+background build: you get re-invoked when it exits. That way the compile and the
+Codex consult run concurrently, and you react to whichever finishes first instead
+of blocking on either.
+
+When a background job finishes — build or consult — fold any useful insight back
+into the work and treat Codex's input as advice, per the consult guidance above.
 
 Don't manufacture doubts to fill time, and don't let brainstorming delay reacting
 to the task once it completes. The point is to convert otherwise-wasted waiting
