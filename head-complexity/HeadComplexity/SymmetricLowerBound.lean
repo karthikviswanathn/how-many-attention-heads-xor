@@ -2,15 +2,19 @@ import HeadComplexity.ModelToPolynomial
 import HeadComplexity.UnivariateSignChanges
 
 /-!
-# L12 lower bound chain (in progress).
+# L12 lower bound chain.
 
 Assembling `HStarN n (symmetricFn F) ≥ signChanges n F` from:
-* `signReprDegLe_of_computableWithHeadsN` (L6, done): `H` heads → degree-≤H sign rep;
+* `signReprDegLe_of_computableWithHeadsN` (L6): `H` heads → degree-≤H sign rep;
 * strictification (here): turn `0 < eval ↔ f` into a strict sign representation;
-* symmetrization (TODO): average over `Equiv.Perm` to a symmetric polynomial;
-* univariate reduction (TODO): a symmetric multilinear poly on the cube is a
-  univariate polynomial of the same degree in the Hamming weight;
-* `signChanges_le_natDegree` (Phase 3c, done): degree ≥ sign changes.
+* symmetrization (here): average over `Equiv.Perm` to a symmetric polynomial;
+* univariate reduction (`UnivariateReduction.lean`): a symmetric multilinear poly
+  on the cube is a univariate polynomial of the same degree in the Hamming weight;
+* `signChanges_le_natDegree` (`UnivariateSignChanges.lean`): degree ≥ sign changes.
+
+The chain is complete: `signChanges_le_of_computableWithHeadsN`
+(`UnivariateReduction.lean`) discharges the lower bound, and together with the
+upper bound it yields the unconditional `HStarN_symmetricFn` in `L12Upper.lean`.
 -/
 
 namespace HeadComplexity

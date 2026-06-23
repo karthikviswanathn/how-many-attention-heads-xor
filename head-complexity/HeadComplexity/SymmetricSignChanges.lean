@@ -9,10 +9,13 @@ Hamming-weight axis:
 
 $$ H^{*}(f) = C(F) := \#\{ t \in \{1,\dots,n\} : F(t-1) \neq F(t) \}. $$
 
-The full equality is out of reach of the current toolchain: its lower bound
-routes through threshold (sign-representation) degree, which mathlib does not
-have, and its upper bound needs a general-`n` `C(F)`-head construction. This
-file establishes the verified milestones that the full proof will build on:
+The full equality is now proved unconditionally in `L12Upper.lean`
+(`HStarN_symmetricFn`): its lower bound routes through threshold
+(sign-representation) degree (`SymmetricLowerBound.lean`,
+`UnivariateReduction.lean`) and its upper bound is the explicit `C(F)`-head
+softmax construction (`SignPolynomial.lean`, `PartialFraction.lean`,
+`UpperBound.lean`). This file establishes the early combinatorial milestones that
+the full proof builds on:
 
 * `symmetricFn F` and the sign-change count `signChanges n F = C(F)`;
 * the **general-`n` lower bound** that a *width-1 spike* in `F`
@@ -21,8 +24,9 @@ file establishes the verified milestones that the full proof will build on:
 * the sign-change counts of the standard families (parity `= n`,
   exact-count `= 2`, threshold `= 1`).
 
-The headline equality `HStarN n (symmetricFn F) = signChanges n F` is recorded
-as a target with its currently-proven direction (`spike ⇒ ≥ 2`).
+The headline equality `HStarN n (symmetricFn F) = signChanges n F` is proved in
+full in `L12Upper.lean`; the spike result here (`spike ⇒ ≥ 2`) is the first
+slice of its lower bound.
 -/
 
 namespace HeadComplexity
@@ -139,18 +143,19 @@ lemma signChanges_parity : signChanges n (fun k => decide (Odd k)) = n := by
   · have h1 : Odd (t + 1) := by rw [Nat.odd_add_one]; exact h
     simp [h, h1]
 
-/-! ## Lemma 12 target
+/-! ## Lemma 12
 
 The full Lemma 12 is the equality
 
-  `HStarN n (symmetricFn F) = signChanges n F`.
+  `HStarN n (symmetricFn F) = signChanges n F`,
 
-Its lower bound `HStarN n (symmetricFn F) ≥ signChanges n F` routes through
-threshold (sign-representation) degree, and its upper bound needs a general-`n`
-`signChanges`-many-head construction; neither is available in the current
-toolchain (mathlib has no threshold-degree theory, no softmax, no LTF theory).
+proved unconditionally in `L12Upper.lean` (`HStarN_symmetricFn`): its lower bound
+is built in `SymmetricLowerBound.lean` + `UnivariateReduction.lean` (model →
+threshold degree → symmetrize → univariate root count) and its upper bound is the
+explicit `signChanges`-many-head softmax construction in `SignPolynomial.lean` +
+`PartialFraction.lean` + `UpperBound.lean`.
 
-What is verified here is the first nontrivial slice of that lower bound: a
+What this file contributes is the first nontrivial slice of that lower bound: a
 *width-1 spike* in `F` simultaneously forces `signChanges n F ≥ 2`
 (`signChanges_ge_two_of_spike`) and `¬ computableWithHeadsN n 1 (symmetricFn F)`
 (`symmetricFn_spike_not_computable_with_one_head`), i.e. `H^{*} ≥ 2`. Combined
