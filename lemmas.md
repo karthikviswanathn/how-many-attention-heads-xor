@@ -162,6 +162,9 @@ What they *do* give is:
 - a block-order Hamming-profile cost for multiblock profile predicates,
 - a positive profile-projection collapse theorem for weighted Hamming profiles,
 - a singleton parity separation showing multigrid cost can be much larger than $H^{\ast}$,
+- a two-head theorem for singleton points in a two-block Hamming grid,
+- a two-head theorem for affine line layers in a two-block Hamming grid,
+- a two-head theorem for affine strips in a two-block Hamming grid,
 - an exact threshold-degree amplification theorem for XOR with a fresh raw bit,
 - a local certificate-expansion upper bound,
 - ambient-dimension-free upper bounds for small juntas,
@@ -3504,6 +3507,72 @@ $$ H^{\ast}(\mathrm{XOR}_n)=n. $$
 
 **Proof.** [lemmas/05_positive_statistic_gates_and_grids/176_singleton_parity_multigrid_separation.md](lemmas/05_positive_statistic_gates_and_grids/176_singleton_parity_multigrid_separation.md)
 
+### Theorem 177. Two-block singleton grid points are two-head
+
+Let the variables be split into two nonempty blocks $A$ and $B$, and write
+
+$$ s(x)=\sum_{i\in A}x_i, \qquad t(x)=\sum_{j\in B}x_j. $$
+
+For fixed grid levels $r$ and $q$, define
+
+$$ f_{r,q}(x)=\mathbf{1}[s(x)=r \text{ and } t(x)=q]. $$
+
+Then
+
+$$ H^{\ast}(f_{r,q})\leq2. $$
+
+More precisely, its exact value is $1$ if it is a nonconstant LTF and $2$ otherwise. For the associated singleton grid function $G_{r,q}$, this gives
+
+$$ H^{\ast}(f_{r,q})=\delta(G_{r,q}). $$
+
+> **Interpretation.** A two-block Hamming-grid disk whose positive set is one grid point is not a counterexample to the two-block collapse conjecture. A nonresonant linear recombination of the two Hamming weights turns the grid point into an affine level set.
+
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/177_two_block_singleton_grid_point_exact.md](lemmas/05_positive_statistic_gates_and_grids/177_two_block_singleton_grid_point_exact.md)
+
+### Theorem 178. Two-block affine grid lines are two-head
+
+Let the variables be split into two nonempty blocks $A$ and $B$, and write
+
+$$ s(x)=\sum_{i\in A}x_i, \qquad t(x)=\sum_{j\in B}x_j. $$
+
+For real $a,b,c$, with $(a,b)\neq(0,0)$, define
+
+$$ f_{a,b,c}(x)=\mathbf{1}[a s(x)+b t(x)+c=0]. $$
+
+Then
+
+$$ H^{\ast}(f_{a,b,c})\leq2. $$
+
+More precisely, the exact value is $0$, $1$, or $2$ according as the predicate is constant, a nonconstant LTF, or neither. If $G_{a,b,c}$ is the corresponding affine-line indicator on the two-block Hamming grid, then
+
+$$ H^{\ast}(f_{a,b,c})=\delta(G_{a,b,c}). $$
+
+> **Interpretation.** A two-block Hamming profile supported on one affine grid line is just an affine level-set predicate after lifting to the cube.
+
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/178_two_block_affine_grid_line_exact.md](lemmas/05_positive_statistic_gates_and_grids/178_two_block_affine_grid_line_exact.md)
+
+### Theorem 179. Two-block affine grid strips are two-head
+
+Let the variables be split into two nonempty blocks $A$ and $B$, and write
+
+$$ s(x)=\sum_{i\in A}x_i, \qquad t(x)=\sum_{j\in B}x_j. $$
+
+For real $a,b,c,\alpha,\beta$, with $(a,b)\neq(0,0)$ and $\alpha\leq\beta$, define
+
+$$ f_{a,b,c,\alpha,\beta}(x)=\mathbf{1}[\alpha\leq a s(x)+b t(x)+c\leq\beta]. $$
+
+Then
+
+$$ H^{\ast}(f_{a,b,c,\alpha,\beta})\leq2. $$
+
+More precisely, the exact value is $0$, $1$, or $2$ according as the predicate is constant, a nonconstant LTF, or neither. If $G_{a,b,c,\alpha,\beta}$ is the corresponding affine-strip indicator on the two-block Hamming grid, then
+
+$$ H^{\ast}(f_{a,b,c,\alpha,\beta})=\delta(G_{a,b,c,\alpha,\beta}). $$
+
+> **Interpretation.** A two-block Hamming profile supported between two parallel affine grid lines is exactly an affine slab after lifting to the cube.
+
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/179_two_block_affine_grid_strips_exact.md](lemmas/05_positive_statistic_gates_and_grids/179_two_block_affine_grid_strips_exact.md)
+
 ## Dependency Order
 
 The current dependency structure is:
@@ -3684,6 +3753,9 @@ The current dependency structure is:
 174. Theorem 174 specializes Theorems 171 and 172 to the best block order for multiblock Hamming-profile predicates.
 175. Theorem 175 applies the positive-projection sign-change theorem from Lemma 13 to weighted sums of block Hamming weights.
 176. Theorem 176 combines Theorem 175 and the exact symmetric parity value with an explicit lexicographic parity-transition count for singleton partitions.
+177. Theorem 177 reduces a singleton two-block Hamming grid point to the affine level-set theorem by a nonresonant linear recombination of the two block weights.
+178. Theorem 178 applies the affine level-set theorem directly to any affine line layer in the two-block Hamming grid and compares it with bivariate grid sign degree.
+179. Theorem 179 applies the affine slab theorem directly to any affine strip in the two-block Hamming grid and compares it with bivariate grid sign degree.
 
 ## What This Currently Says About The First Core Question
 
