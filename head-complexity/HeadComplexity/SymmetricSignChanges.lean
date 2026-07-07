@@ -3,32 +3,22 @@ import HeadComplexity.SymmetricFamilies
 set_option linter.style.header false
 
 /-!
-# Symmetric sign changes (towards Lemma 12).
+# Symmetric sign changes.
 
-Lemma 12 states that for a symmetric Boolean function `f(x) = F(|x|)` the head
-complexity equals the number of sign changes of the profile `F` along the
-Hamming-weight axis:
+For a symmetric Boolean function `f(x) = F(|x|)`, the final theorem
+`HStarN_symmetricFn` in `L12Upper.lean` states that the head complexity equals
+the number of sign changes of the profile `F` along the Hamming-weight axis:
 
 $$ H^{*}(f) = C(F) := \#\{ t \in \{1,\dots,n\} : F(t-1) \neq F(t) \}. $$
 
-The full equality is now proved unconditionally in `L12Upper.lean`
-(`HStarN_symmetricFn`): its lower bound routes through threshold
-(sign-representation) degree (`SymmetricLowerBound.lean`,
-`UnivariateReduction.lean`) and its upper bound is the explicit `C(F)`-head
-softmax construction (`SignPolynomial.lean`, `PartialFraction.lean`,
-`UpperBound.lean`). This file establishes the early combinatorial milestones that
-the full proof builds on:
+This file contains the profile-level definitions and elementary checkerboard
+consequences used by that theorem:
 
 * `symmetricFn F` and the sign-change count `signChanges n F = C(F)`;
-* the **general-`n` lower bound** that a *width-1 spike* in `F`
+* the general-`n` lower bound that a *width-1 spike* in `F`
   (`F w = F (w+2) ≠ F (w+1)`) forces `H^{*} ≥ 2`, via the checkerboard engine.
   This single theorem subsumes the parity and exact-count lower bounds;
-* the sign-change counts of the standard families (parity `= n`,
-  exact-count `= 2`, threshold `= 1`).
-
-The headline equality `HStarN n (symmetricFn F) = signChanges n F` is proved in
-full in `L12Upper.lean`; the spike result here (`spike ⇒ ≥ 2`) is the first
-slice of its lower bound.
+* the parity sign-change count `signChanges_parity`.
 -/
 
 namespace HeadComplexity

@@ -3,10 +3,10 @@ import HeadComplexity.Generalized
 set_option linter.style.header false
 
 /-!
-# Symmetric families: parity and exact-count lower bounds (Lemma 5).
+# Symmetric families: parity and exact-count lower bounds.
 
 This file defines the `n`-bit symmetric functions `PARITY` and `EXACT`, and
-proves the checkerboard lower bounds of Lemma 5:
+proves checkerboard lower bounds used by the current L1-L12 theorem stack:
 
 * `PARITY n` needs at least two heads for `n ≥ 2`;
 * `EXACT n k` needs at least two heads for `1 ≤ k ≤ n - 1`.
@@ -14,13 +14,9 @@ proves the checkerboard lower bounds of Lemma 5:
 Both follow from the reusable general-`n` checkerboard engine in
 `Generalized.lean` (`parity_restriction_not_computable_with_one_head`,
 `not_computableWithHeadsN_zero_of_false_true`). The only new work is the
-elementary Hamming-weight bookkeeping under a two-coordinate restriction.
-
-The lower bounds are stated unconditionally as non-computability with `0` and
-`1` heads (the substantive content), plus the packaged `2 ≤ k` consequence for
-any exact head complexity. We do *not* assert `2 ≤ HStarN`, because `HStarN`
-defaults to `0` for functions not yet proven realizable, and a matching
-general-`n` upper-bound construction is not part of this file.
+elementary Hamming-weight bookkeeping under a two-coordinate restriction. Exact
+values for these families are proved later from the symmetric sign-change
+characterization in `ExactComplexity.lean`.
 -/
 
 namespace HeadComplexity

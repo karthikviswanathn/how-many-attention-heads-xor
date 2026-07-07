@@ -5,8 +5,8 @@ This document gives **exact, reproducible** instructions for compiling the
 axiom-clean. It covers both a generic machine and the specific HPC environment
 (SURF Snellius, project `gusr0688`) the proofs were developed on.
 
-For the wider project context see [`README.md`](README.md); for the L12
-upper-bound construction see [`UPPER_BOUND_ROADMAP.md`](UPPER_BOUND_ROADMAP.md).
+For the wider project context see [`README.md`](README.md), and for the current
+proof architecture see [`PROOF_OVERVIEW.md`](PROOF_OVERVIEW.md).
 
 ---
 
