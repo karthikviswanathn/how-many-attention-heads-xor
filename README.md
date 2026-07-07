@@ -12,15 +12,13 @@ We make that precise, prove what we can, and measure the rest empirically.
 
 Fix a **single-layer, attention-only transformer**: $n$ input bits plus one query token,
 one self-attention layer with $H$ parallel heads, no MLP, no layer norm, and a linear
-readout from the query token. A Boolean function $f : \{0,1\}^n \to \{0,1\}$ is
-*computable with $H$ heads* if some choice of embeddings, attention parameters, and
+readout from the query token. A Boolean function $f : \lbrace 0,1\rbrace^n \to \lbrace 0,1\rbrace$ is
+*computable with* $H$ *heads* if some choice of embeddings, attention parameters, and
 readout reproduces $f$ on every input. Define
 
-$$
-H^{*}(f) \;:=\; \min\{\, H : f \text{ is computable with } H \text{ heads} \,\}.
-$$
+$$H^{\ast}(f) := \min\lbrace H : f \text{ is computable with } H \text{ heads} \rbrace.$$
 
-The central problem: **understand $H^{*}(f)$** as a function of $f$. Prove lower and upper
+The central problem: **understand $H^{\ast}(f)$** as a function of $f$. Prove lower and upper
 bounds, compute it for natural families, and ask whether it equals a known invariant.
 
 The precise model (embeddings, softmax head, residual readout, masking convention) is in
@@ -35,40 +33,39 @@ dependency order between them, in [`lemmas.md`](lemmas.md).
 **Lower bounds (a function needs many heads).**
 - *Checkerboard obstruction.* If $f$ has a 2-bit "checkerboard" restriction (one diagonal
   of some 2-cube slice disagrees with the other, the way $\mathrm{XOR}$ does), then
-  $H^{*}(f) \geq 2$. One head can never separate the two diagonals.
+  $H^{\ast}(f) \geq 2$. One head can never separate the two diagonals.
 - *Threshold-degree bound.* Head complexity dominates threshold degree:
-  $\deg_{\pm}(f) \leq H^{*}(f)$.
+  $\deg_{\pm}(f) \leq H^{\ast}(f)$.
 
 **Upper bounds (a function needs few heads).**
-- *Symmetric thresholds need one head.* Every $T_{n,t}(x) = \mathbf{1}[\,|x| \geq t\,]$ is
-  computable with a single head, so $H^{*}(\mathrm{AND}_n) = H^{*}(\mathrm{OR}_n) =
-  H^{*}(\mathrm{MAJORITY}_n) = 1$.
-- *Weighted-sum interpolation.* If $f(x) = F\!\left(\sum_i \lambda_i x_i\right)$ for
+- *Symmetric thresholds need one head.* Every $T_{n,t}(x) = \mathbf{1}[|x| \geq t]$ is
+  computable with a single head, so $H^{\ast}(\mathrm{AND}_n) = H^{\ast}(\mathrm{OR}_n) = H^{\ast}(\mathrm{MAJORITY}_n) = 1$.
+- *Weighted-sum interpolation.* If $f(x) = F\left(\sum_i \lambda_i x_i\right)$ for
   positive weights $\lambda_i$ and the weighted sum takes $M$ distinct values, then
-  $H^{*}(f) \leq M - 1$. Consequently every symmetric function needs at most $n$ heads and
+  $H^{\ast}(f) \leq M - 1$. Consequently every symmetric function needs at most $n$ heads and
   every Boolean function at most $2^n - 1$.
 
 **Exact answers.**
-- *Parity is the extremal case.* $H^{*}(\mathrm{XOR}_n) = n$: in this model, parity needs
-  exactly one head per input bit. The lower bound comes from $\deg_{\pm}(\mathrm{PARITY}_n)
-  = n$, the upper bound from an explicit $n$-head construction.
+- *Parity is the extremal case.* $H^{\ast}(\mathrm{XOR}_n) = n$: in this model, parity needs
+  exactly one head per input bit. The lower bound comes from
+  $\deg _{\pm}(\mathrm{PARITY}_n) = n$, the upper bound from an explicit $n$-head construction.
 - A first split inside the symmetric functions: monotone thresholds have complexity $1$,
   while parity and the internal exact-count predicates $\mathrm{EXACT}_{n,k}$ need at
   least $2$.
 
 Taken together this is a *partial* characterization, not yet a single invariant
-$I(f)$ with $H^{*}(f) \asymp I(f)$. Closing that gap is the main open problem.
+$I(f)$ with $H^{\ast}(f) \asymp I(f)$. Closing that gap is the main open problem.
 
 ## Open directions
 
-- Find an invariant that pins down $H^{*}(f)$ on broad classes, or a family where head
+- Find an invariant that pins down $H^{\ast}(f)$ on broad classes, or a family where head
   complexity behaves qualitatively unlike the classical measures.
 - Tighten the gap between the threshold-degree lower bound and the weighted-sum upper
   bound.
 - Push the formalization in [`head-complexity/`](head-complexity/) to cover more of the
   lemma stack.
 - Extend the empirical search to larger $n$ and reconcile it with the proofs. The current
-  run flags four provisional $H^{*}(f) = 3$ functions at $n = 3$ (see
+  run flags four provisional $H^{\ast}(f) = 3$ functions at $n = 3$ (see
   [`three_head_functions_n3.md`](three_head_functions_n3.md)); these are estimates
   awaiting proof.
 
@@ -77,14 +74,14 @@ $I(f)$ with $H^{*}(f) \asymp I(f)$. Closing that gap is the main open problem.
 | Path | What it is |
 | --- | --- |
 | [`problem_statement.md`](problem_statement.md) | The question and the core open problems. |
-| [`model.md`](model.md) | The precise attention model and the definition of $H^{*}(f)$. |
+| [`model.md`](model.md) | The precise attention model and the definition of $H^{\ast}(f)$. |
 | [`lemmas.md`](lemmas.md) | Ledger of the main lemmas, their status, and how they fit together. |
 | [`lemmas/`](lemmas/) | Full writeups: checkerboard lower bound, threshold upper bounds, the $n$-bit XOR analysis, weighted-sum upper bound. |
 | [`writeup.md`](writeup.md) | Longer narrative tying the results together. |
 | [`literature_survey.md`](literature_survey.md) | Related work across transformers and Boolean complexity. |
-| [`three_head_functions_n3.md`](three_head_functions_n3.md) | Provisional empirical $H^{*}=3$ functions at $n=3$. |
+| [`three_head_functions_n3.md`](three_head_functions_n3.md) | Provisional empirical $H^{\ast}=3$ functions at $n=3$. |
 | [`head-complexity/`](head-complexity/) | Lean 4 formalization of the results (depends on mathlib). |
-| [`src/hstar/`](src/hstar/) | Python package that empirically estimates $H^{*}(f)$ by training small attention models. |
+| [`src/hstar/`](src/hstar/) | Python package that empirically estimates $H^{\ast}(f)$ by training small attention models. |
 | [`proposal.pdf`](proposal.pdf) / [`proposal.tex`](proposal.tex) | Project proposal (build with `./compile_pdf.sh`). |
 | [`AGENTS.md`](AGENTS.md) | Markdown conventions used across the writeups. |
 
@@ -103,7 +100,7 @@ lake build
 
 **Python search.** Needs Python with [PyTorch](https://pytorch.org/). The package
 enumerates symmetry-class representatives of $n$-bit functions and, for each, trains
-attention models with increasing head counts to estimate $H^{*}(f)$.
+attention models with increasing head counts to estimate $H^{\ast}(f)$.
 
 ```bash
 # Estimate H*(f) over all 3-bit representatives, trying up to 3 heads.
