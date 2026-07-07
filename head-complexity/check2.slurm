@@ -14,9 +14,9 @@ export PATH="$ELAN_HOME/bin:$PATH"
 export LEAN_NUM_THREADS="${SLURM_CPUS_PER_TASK:-12}"
 cd /gpfs/work5/0/gusr0688/fair_stuff/how-many-attention-heads-xor/head-complexity
 echo "host=$(hostname)"; date
-echo "=== build dep oleans (ThresholdDegree, UnivariateSignChanges) ==="
-lake build HeadComplexity.ThresholdDegree HeadComplexity.UnivariateSignChanges
+echo "=== build target oleans (Results.ThresholdDegree, Polynomial.ModelToPolynomial) ==="
+lake build HeadComplexity.Results.ThresholdDegree HeadComplexity.Polynomial.ModelToPolynomial
 echo "DEP_RC=$?"
-echo "=== check ModelToPolynomial ==="
-lake env lean HeadComplexity/ModelToPolynomial.lean
+echo "=== check Polynomial/ModelToPolynomial ==="
+lake env lean HeadComplexity/Polynomial/ModelToPolynomial.lean
 echo "CHECK_RC=$?"; date; echo "DONE_SENTINEL"

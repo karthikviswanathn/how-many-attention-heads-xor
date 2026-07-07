@@ -1,32 +1,5 @@
-import HeadComplexity.Basic
-import HeadComplexity.Softmax
-import HeadComplexity.Head
-import HeadComplexity.SegmentCrossing
-import HeadComplexity.Decomposition
-import HeadComplexity.SkipConnection
-import HeadComplexity.OneHead
-import HeadComplexity.TwoHeads
-import HeadComplexity.BooleanFunctions
-import HeadComplexity.Generalized
-import HeadComplexity.AdditiveSplit
-import HeadComplexity.SymmetricFamilies
-import HeadComplexity.SymmetricSignChanges
-import HeadComplexity.ThresholdDegree
-import HeadComplexity.UnivariateSignChanges
-import HeadComplexity.ModelToPolynomial
-import HeadComplexity.SymmetricLowerBound
-import HeadComplexity.UnivariateReduction
-import HeadComplexity.PartialFraction
-import HeadComplexity.SignPolynomial
-import HeadComplexity.UpperBound
-import HeadComplexity.L12Upper
-import HeadComplexity.ExactComplexity
-import HeadComplexity.ParityThresholdDegree
-import HeadComplexity.Lemma9
-import HeadComplexity.AffineHead
-import HeadComplexity.Lemma11
-import HeadComplexity.Lemma10
-import HeadComplexity.FracAtomHead
-import HeadComplexity.HeadToAtom
-import HeadComplexity.Lemma10Main
-import HeadComplexity.MainResults
+-- main (most general) results
+import HeadComplexity.Results.All
+
+-- main (most specific) examples
+import HeadComplexity.Examples.All

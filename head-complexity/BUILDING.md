@@ -38,9 +38,10 @@ lake build           # compile the HeadComplexity library (~minutes once cache i
 ```
 
 `lake exe cache get` fetches mathlib's prebuilt `.olean` files so you don't
-recompile mathlib (which would take hours). `lake build` then compiles only this
-project's files. A clean full build of `HeadComplexity` is a few minutes on a
-modern multi-core machine once the mathlib cache is present.
+recompile mathlib (which would take hours). `lake build` then compiles the public
+`HeadComplexity` umbrella, including all `Results` and `Examples`. A clean full
+build of `HeadComplexity` is a few minutes on a modern multi-core machine once the
+mathlib cache is present.
 
 If `lake exe cache get` fails with a TLS/`curl`/JSON error, see §4.
 
@@ -56,10 +57,10 @@ theorems depend only on Lean's three standard axioms
 cat > /tmp/AxiomCheck.lean <<'EOF'
 import HeadComplexity
 open HeadComplexity
-#print axioms HStarN_symmetricFn                 -- L12, unconditional equality
+#print axioms lemma12_symmetric                  -- L12, unconditional equality
 #print axioms symmetricFn_computable             -- L12 upper bound
 #print axioms signChanges_le_of_computableWithHeadsN  -- L12 lower bound
-#print axioms signReprDegLe_of_computableWithHeadsN   -- L6 (model → threshold degree)
+#print axioms lemma6_degree_le                   -- L6 (model → threshold degree)
 EOF
 lake env lean /tmp/AxiomCheck.lean
 ```
@@ -67,14 +68,14 @@ lake env lean /tmp/AxiomCheck.lean
 Expected output — every line ends in exactly `[propext, Classical.choice, Quot.sound]`:
 
 ```
-'HeadComplexity.HStarN_symmetricFn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HeadComplexity.lemma12_symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]
 ...
 ```
 
 A grep for `sorry`/`admit` should also come back empty:
 
 ```bash
-grep -rn "sorry\|admit\b" HeadComplexity/*.lean HeadComplexity.lean   # → no matches
+rg -n "sorry|admit\b" HeadComplexity.lean HeadComplexity   # → no matches
 ```
 
 `build.slurm` (§5) runs an expanded version of this axiom check automatically and
@@ -153,8 +154,8 @@ A 16-thread ~3-min build costs ≈ 1.6 SBU.
 | Script | What it does | Submit with |
 |--------|--------------|-------------|
 | `build.slurm`   | full `lake build` + `#print axioms` check (16 cpu / 32 G / 25 min) | `sbatch build.slurm` |
-| `check.slurm`   | typecheck one **already-imported** file via `lake env lean` (8 cpu / 24 G) | `sbatch --export=ALL,CHECK_FILE=HeadComplexity/<File>.lean check.slurm` |
-| `checkmod.slurm`| build one module **and its deps** via `lake build <Module>` (16 cpu / 48 G) | `sbatch --export=ALL,CHECK_MOD=HeadComplexity.<Module> checkmod.slurm` |
+| `check.slurm`   | typecheck one **already-imported** file via `lake env lean` (8 cpu / 24 G) | `sbatch --export=ALL,CHECK_FILE=HeadComplexity/Results/ThresholdDegree.lean check.slurm` |
+| `checkmod.slurm`| build one module **and its deps** via `lake build <Module>` (16 cpu / 48 G) | `sbatch --export=ALL,CHECK_MOD=HeadComplexity.Results.ThresholdDegree checkmod.slurm` |
 
 Each script writes `<name>.slurm.out` (gitignored via `*.out`) ending in a
 `DONE_SENTINEL` line, with `BUILD_RC` / `CHECK_RC` / `AXIOM_RC` = `0` on success.
@@ -168,10 +169,11 @@ grep -E "BUILD_RC|AXIOM_RC|Build completed" build.slurm.out
 #   AXIOM_RC=0
 ```
 
-> **check vs checkmod:** `lake env lean HeadComplexity/Foo.lean` (what `check.slurm`
-> runs) requires every import of `Foo` to already have a built `.olean`. For a
-> *brand-new* file whose deps aren't yet in the root build, use `checkmod.slurm`
-> (`lake build HeadComplexity.Foo`), which builds the dependency oleans first.
+> **check vs checkmod:** `lake env lean HeadComplexity/Results/ThresholdDegree.lean`
+> (what `check.slurm` runs) requires every import of that file to already have a
+> built `.olean`. For a *brand-new* file whose deps aren't yet in the root build,
+> use `checkmod.slurm` (`lake build HeadComplexity.Results.ThresholdDegree`),
+> which builds the dependency oleans first.
 
 ---
 

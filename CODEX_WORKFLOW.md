@@ -90,7 +90,7 @@ background for orthogonal sub-lemmas. Three things make this safe:
 codex exec "$(cat prompt.txt)" </dev/null 2>&1   # prompt ends: "be concise; don't run lake"
 
 # my build lane (so it doesn't collide with a subagent's checkmod.slurm)
-sbatch --export=ALL,CHECK_MOD=HeadComplexity.<Mod> checkmod2.slurm
+sbatch --export=ALL,CHECK_MOD=HeadComplexity.Results.ThresholdDegree checkmod2.slurm
 while squeue -u $USER -h -n lean-mod2 -o "%i" | grep -q .; do sleep 15; done
 grep -nE "CHECK_RC|error:|warning:" checkmod2.slurm.out
 ```
