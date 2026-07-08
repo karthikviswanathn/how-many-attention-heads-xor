@@ -2,7 +2,7 @@ import HeadComplexity.Foundation.SegmentCrossing
 import HeadComplexity.Model.AdditiveSplit
 import HeadComplexity.Model.NHead
 import HeadComplexity.Examples.HeadToNHead
-import HeadComplexity.Examples.SkipConnection
+import HeadComplexity.Model.SkipConnection
 
 set_option linter.style.header false
 
@@ -178,6 +178,27 @@ theorem one_head_cannot_xor_attnUpdate {d : ℕ} (H : Head d) :
     simp [f, NHead.restrictBits]
   exact (parity_restriction_not_computable_with_one_head
     f (fun _ => false) 0 1 (by decide) h00 h11 h01 h10) hcomp
+
+/-- Adding a constant vector to a function does not change whether it
+computes XOR under a linear readout: the offset is absorbed into the
+threshold. -/
+lemma computesXor_iff_of_add_const {d : ℕ} (f : Bool × Bool → Vec d) (c : Vec d) :
+    computesXor f ↔ computesXor (fun ab => c + f ab) := by
+  simpa [computesXor, computesPred] using
+    (computesPred_iff_of_add_const (fun ab : Bool × Bool => xor ab.1 ab.2) f c)
+
+/-- The skip-connection reduction: a head's full residual `x_= + z_=`
+computes XOR iff its bare attention update `z_=` does. The `x_=` term
+is constant in the input, so a linear probe can absorb it into its
+threshold. -/
+lemma computesXor_residual_iff_attnUpdate {d : ℕ} (H : Head d) :
+    computesXor H.residual ↔ computesXor H.attnUpdate := by
+  have hconst : H.residual = fun ab => H.x (false, false) 2 + H.attnUpdate ab := by
+    funext ab
+    change H.x ab 2 + H.attnUpdate ab = H.x (false, false) 2 + H.attnUpdate ab
+    rfl
+  rw [hconst]
+  exact (computesXor_iff_of_add_const H.attnUpdate (H.x (false, false) 2)).symm
 
 /-- **Theorem 1 (full residual form).** No single attention head can compute
 XOR even when reading the full residual stream `h_= = x_= + z_=`. The skip

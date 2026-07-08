@@ -1,6 +1,7 @@
 import HeadComplexity.Examples.HeadToNHead
 import HeadComplexity.Examples.OneHead
 import HeadComplexity.Examples.TwoHeads
+import HeadComplexity.Model.SkipConnection
 
 set_option linter.style.header false
 
@@ -106,26 +107,8 @@ lemma HStar_eq_of_exact {f : Bool × Bool → Bool} {k : ℕ}
 lemma computesBool_iff_of_add_const
     (f : Bool × Bool → Bool) (g : Bool × Bool → Vec d) (c : Vec d) :
     computesBool f g ↔ computesBool f (fun ab => c + g ab) := by
-  constructor
-  · rintro ⟨w, τ, h⟩
-    refine ⟨w, τ + ⟪w, c⟫_ℝ, fun ab => ?_⟩
-    simp only [inner_add_right]
-    constructor
-    · intro hgt
-      exact (h ab).mp (by linarith)
-    · intro hf
-      have := (h ab).mpr hf
-      linarith
-  · rintro ⟨w, τ, h⟩
-    refine ⟨w, τ - ⟪w, c⟫_ℝ, fun ab => ?_⟩
-    have key := h ab
-    simp only [inner_add_right] at key
-    constructor
-    · intro hgt
-      exact key.mp (by linarith)
-    · intro hf
-      have := key.mpr hf
-      linarith
+  simpa [computesBool, computesPred] using
+    (computesPred_iff_of_add_const f g c)
 
 /-- Generic skip-connection reduction for Boolean classification. -/
 lemma computesBool_residual_iff_attnUpdate
