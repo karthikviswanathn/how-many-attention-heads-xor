@@ -1,6 +1,7 @@
-import HeadComplexity.Examples.Decomposition
-import HeadComplexity.Examples.HeadToNHead
 import HeadComplexity.Foundation.SegmentCrossing
+import HeadComplexity.Model.AdditiveSplit
+import HeadComplexity.Model.NHead
+import HeadComplexity.Examples.HeadToNHead
 import HeadComplexity.Examples.SkipConnection
 
 set_option linter.style.header false
@@ -23,6 +24,58 @@ open scoped InnerProductSpace
 namespace Head
 
 variable {d : ℕ} (H : Head d)
+
+/-- The attention denominator is strictly positive. -/
+lemma denominator_pos (ab : Bool × Bool) : 0 < H.denominator ab := by
+  simpa using NHead.denominator_pos H.toNHead (pairToBits ab)
+
+lemma denominator_ne_zero (ab : Bool × Bool) : H.denominator ab ≠ 0 :=
+  (H.denominator_pos ab).ne'
+
+private lemma restrictBits_pairToBits (ab : Bool × Bool) :
+    NHead.restrictBits (fun _ : Fin 2 => false) 0 1 ab = pairToBits ab := by
+  funext k
+  fin_cases k <;> simp [NHead.restrictBits, pairToBits]
+
+/-- The two-bit numerator split, obtained by specializing the generalized model. -/
+theorem numerator_additive_split :
+    ∃ (A B : Bool → Vec d) (C : Vec d), ∀ a b : Bool,
+      H.numerator (a, b) = A a + B b + C := by
+  have h01 : (0 : Fin 2) ≠ 1 := by decide
+  rcases NHead.numerator_additive_split H.toNHead (fun _ : Fin 2 => false) 0 1 h01 with
+    ⟨A, B, C, h⟩
+  refine ⟨A, B, C, ?_⟩
+  intro a b
+  simpa [restrictBits_pairToBits] using h a b
+
+/-- The two-bit denominator split, obtained by specializing the generalized model. -/
+theorem denominator_additive_split :
+    ∃ (α β : Bool → ℝ) (γ : ℝ), ∀ a b : Bool,
+      H.denominator (a, b) = α a + β b + γ := by
+  have h01 : (0 : Fin 2) ≠ 1 := by decide
+  rcases NHead.denominator_additive_split H.toNHead (fun _ : Fin 2 => false) 0 1 h01 with
+    ⟨α, β, γ, h⟩
+  refine ⟨α, β, γ, ?_⟩
+  intro a b
+  simpa [restrictBits_pairToBits] using h a b
+
+/-- The antipode identity for the attention numerator: summing `N(a,b)`
+over the diagonal equals summing over the off-diagonal. -/
+theorem numerator_antipode :
+    H.numerator (false, false) + H.numerator (true, true)
+    = H.numerator (false, true) + H.numerator (true, false) := by
+  rcases H.numerator_additive_split with ⟨A, B, C, h⟩
+  rw [h false false, h true true, h false true, h true false]
+  abel
+
+/-- The antipode identity for the attention denominator: summing `D(a,b)`
+across the diagonal equals summing across the off-diagonal. -/
+theorem denominator_antipode :
+    H.denominator (false, false) + H.denominator (true, true)
+    = H.denominator (false, true) + H.denominator (true, false) := by
+  rcases H.denominator_additive_split with ⟨α, β, γ, h⟩
+  rw [h false false, h true true, h false true, h true false]
+  abel
 
 /-- Multiplying the attention update by the denominator recovers the numerator. -/
 lemma denom_smul_attn (ab : Bool × Bool) :
