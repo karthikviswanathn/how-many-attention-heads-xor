@@ -1,10 +1,15 @@
 # Proof architecture
 
 How the twelve formalized lemmas fit together. See `README.md` for the
-lemma→theorem→file map, `HeadComplexity/MainResults.lean` for a verified
+lemma→theorem→file map, `HeadComplexity/Results/All.lean` for a verified
 table of contents, and `BUILDING.md` to reproduce the build.
 
-## The model (`Basic.lean`, `Generalized.lean`)
+The public theorem surface lives under `HeadComplexity.Results`; lower-level
+`Model`, `Polynomial`, and `Atoms` modules hold the technical proofs and
+constructions imported by those result facades. There is also an examples umbrella
+for an explicit list of direct applications.
+
+## The model (`Foundation/Vec.lean`, `Model/NHead.lean`)
 
 A single softmax attention head is `NHead n d`: token embeddings `Fin 3 → Vec d`
 (bit-0 / bit-1 / query), positional embeddings `Option (Fin n) → Vec d`, and linear
@@ -26,10 +31,10 @@ Everything is built from a **lower-bound spine** (you need many heads) and an
 
 ```
 computableWithHeadsN n H f
-  └─ L6  signReprDegLe_of_computableWithHeadsN   (ModelToPolynomial.lean)
+  └─ L6  degree_le_of_computableWithHeadsN       (Results/ThresholdDegree.lean)
         clears each head's softmax ratio to a degree-≤1 affine polynomial;
         H heads ⟹ a degree-≤H real polynomial sign-representing f  (ThresholdDegLE f H)
-  └─ for symmetric f:  ThresholdDegLE f H → signChanges ≤ H        (UnivariateReduction.lean)
+  └─ for symmetric f:  ThresholdDegLE f H → signChanges ≤ H        (Polynomial/UnivariateReduction.lean)
         strictify → symmetrize over Equiv.Perm → reduce to a univariate
         polynomial in the Hamming weight → count real roots (IVT)
 ```
@@ -46,26 +51,26 @@ a value coordinate so one readout sums them.
 
 | gadget | readout | used by |
 |--------|---------|---------|
-| `atomHead` (`UpperBound.lean`) | `b/(\|x\|+a)` | L12 upper bound |
-| `weightedAtomHead` (`Lemma9.lean`) | `b/(∑λᵢxᵢ+a)` | L9 |
-| `affineHead` (`AffineHead.lean`) | affine `L(x)`, const absorbed in `τ` | L11 |
-| `atomHead'` (`FracAtomHead.lean`) | a full linear-fractional atom | L10 |
+| `atomHead` (`Atoms/HammingAtom.lean`) | `b/(\|x\|+a)` | L12 upper bound |
+| `weightedAtomHead` (`Atoms/WeightedAtom.lean`) | `b/(∑λᵢxᵢ+a)` | L9 |
+| `affineHead` (`Atoms/AffineHead.lean`) | affine `L(x)`, const absorbed in `τ` | L11 |
+| `atomHead'` (`Atoms/FracAtomHead.lean`) | a full linear-fractional atom | L10 |
 
-The L12 upper bound (`SignPolynomial.lean` → `PartialFraction.lean` →
-`UpperBound.lean` → `L12Upper.lean`) builds a degree-`signChanges` sign polynomial,
+The L12 upper bound (`Atoms/SignPolynomial.lean` → `Atoms/PartialFraction.lean` →
+`Atoms/HammingAtom.lean` → `Results/SymmetricComplexity.lean`) builds a degree-`signChanges` sign polynomial,
 splits it by partial fractions into `b_h/(k+a_h)` atoms, and realizes one per head.
 L9 generalizes `|x|` to a weighted sum (Lagrange interpolation over the image
 nodes). L10's two directions show this is tight: *every* head **is** an atom
-(`HeadToAtom.lean`, reading the atom parameters off the head's maps) and *every*
-atom is realized by a head (`FracAtomHead.lean`), so `H* = L_frac`.
+(`Atoms/HeadToFracAtom.lean`, reading the atom parameters off the head's maps) and *every*
+atom is realized by a head (`Atoms/FracAtomHead.lean`), so `H* = L_frac`.
 
 ## Capstones
 
-* **L12** (`L12Upper.lean`): `HStarN_symmetricFn` — `≥` from the lower-bound spine,
+* **L12** (`Results/SymmetricComplexity.lean`): `HStarN_symmetricFn` — `≥` from the lower-bound spine,
   `≤` from the upper-bound spine, joined by `le_antisymm` over `Nat.find`.
-* **L4, L5, L8** (`ExactComplexity.lean`): corollaries of L12 — the head complexity
+* **L4, L5, L8** (`Results/ExactFamilies.lean`): corollaries of L12 — the head complexity
   of a standard family is the number of sign changes of its profile.
-* **L10** (`Lemma10Main.lean`), **L11** (`Lemma11.lean`): the exact normal form and
+* **L10** (`Results/FractionalNormalForm.lean`), **L11** (`Results/LowComplexity.lean`): the exact normal form and
   the level-0/1 classification, both using that every `f` is computable.
 
 The same `le_antisymm`-over-two-`Nat.find` shape recurs in L10 and L12: a per-`H`
