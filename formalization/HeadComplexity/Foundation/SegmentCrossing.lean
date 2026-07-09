@@ -15,7 +15,7 @@ geometric core of the one-head XOR impossibility argument.
 namespace HeadComplexity
 
 /-- A convex combination of two reals, both at most `τ`, is at most `τ`. -/
-private lemma convex_sum_le {a b τ x y : ℝ}
+private theorem convex_sum_le {a b τ x y : ℝ}
     (ha : 0 ≤ a) (hb : 0 ≤ b) (hab : a + b = 1)
     (hx : x ≤ τ) (hy : y ≤ τ) : a * x + b * y ≤ τ := by
   have max_le : max x y ≤ τ := by apply max_le hx hy
@@ -25,7 +25,7 @@ private lemma convex_sum_le {a b τ x y : ℝ}
 
 /-- A convex combination of two reals, both strictly greater than `τ`,
 is strictly greater than `τ`. -/
-private lemma lt_convex_sum {a b τ x y : ℝ}
+private theorem lt_convex_sum {a b τ x y : ℝ}
     (ha : 0 ≤ a) (hb : 0 ≤ b) (hab : a + b = 1)
     (hx : τ < x) (hy : τ < y) : τ < a * x + b * y := by
   have min_lt : τ < min x y := by apply lt_min hx hy

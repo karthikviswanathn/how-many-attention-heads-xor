@@ -19,7 +19,7 @@ variable {α : Type*} {d n : ℕ}
 
 /-- Adding a constant vector to the representation only shifts the readout
 threshold, so it does not change `computesPred`. -/
-lemma computesPred_iff_of_add_const
+theorem computesPred_iff_of_add_const
     (f : α → Bool) (g : α → Vec d) (c : Vec d) :
     computesPred f g ↔ computesPred f (fun a => c + g a) := by
   constructor
@@ -47,7 +47,7 @@ namespace Head
 
 /-- The query-position residual is a constant query embedding plus the attention
 update. -/
-lemma residual_eq_const_add_attnUpdate
+theorem residual_eq_const_add_attnUpdate
     (H : Head n d) (base : Fin n → Bool) :
     H.residual = fun bits => H.x base none + H.attnUpdate bits := by
   funext bits
@@ -56,7 +56,7 @@ lemma residual_eq_const_add_attnUpdate
 
 /-- The skip connection does not change computability by a linear readout:
 the constant query embedding is absorbed into the threshold. -/
-lemma computesPred_residual_iff_attnUpdate
+theorem computesPred_residual_iff_attnUpdate
     (H : Head n d) (f : (Fin n → Bool) → Bool) :
     computesPred f H.residual ↔ computesPred f H.attnUpdate := by
   rw [H.residual_eq_const_add_attnUpdate (fun _ => false)]

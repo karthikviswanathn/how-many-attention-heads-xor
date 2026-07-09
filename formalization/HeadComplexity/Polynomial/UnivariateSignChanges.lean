@@ -5,7 +5,7 @@ import Mathlib.Topology.Order.IntermediateValue
 set_option linter.style.header false
 
 /-!
-# Univariate sign-change root bound (Lemma 12 lower bound, polynomial core).
+# Univariate sign-change root bound (Theorem 12 lower bound, polynomial core).
 
 If a real univariate polynomial `p` strictly sign-represents a weight profile
 `F` on `{0, 1, …, n}` (positive where `F` is true, negative where false), then
@@ -23,7 +23,7 @@ open Polynomial Set
 
 /-- A real polynomial strictly sign-representing `F` on `{0,…,n}` has degree at
 least the number of sign changes of `F`. -/
-lemma signChanges_le_natDegree (p : ℝ[X]) (F : ℕ → Bool) (n : ℕ)
+theorem signChanges_le_natDegree (p : ℝ[X]) (F : ℕ → Bool) (n : ℕ)
     (hpos : ∀ k, k ≤ n → F k = true → 0 < p.eval (k : ℝ))
     (hneg : ∀ k, k ≤ n → F k = false → p.eval (k : ℝ) < 0) :
     signChanges n F ≤ p.natDegree := by

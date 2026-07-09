@@ -39,14 +39,14 @@ def EXACT (n k : ℕ) (bits : Fin n → Bool) : Bool :=
   decide (hammingWeight bits = k)
 
 /-- The two index choices `firstIndex`, `secondIndex` are distinct. -/
-lemma firstIndex_ne_secondIndex (hn : 2 ≤ n) :
+theorem firstIndex_ne_secondIndex (hn : 2 ≤ n) :
     firstIndex hn ≠ secondIndex hn := by
   simp [firstIndex, secondIndex, Fin.ext_iff]
 
 /-- Hamming weight of a two-coordinate restriction: the two free coordinates
 contribute `0/1` each, and the remaining coordinates contribute the weight of
 the frozen base off `{i, j}`. -/
-lemma hammingWeight_restrictBits (base : Fin n → Bool) (i j : Fin n) (hij : i ≠ j)
+theorem hammingWeight_restrictBits (base : Fin n → Bool) (i j : Fin n) (hij : i ≠ j)
     (a b : Bool) :
     hammingWeight (restrictBits base i j (a, b))
       = (if a then 1 else 0) + (if b then 1 else 0)
@@ -65,7 +65,7 @@ lemma hammingWeight_restrictBits (base : Fin n → Bool) (i j : Fin n) (hij : i 
     simp [restrictBits, hxi, hxj]
 
 /-- Hamming weight of a two-coordinate restriction over an all-`false` base. -/
-lemma hammingWeight_restrict_false (i j : Fin n) (hij : i ≠ j) (a b : Bool) :
+theorem hammingWeight_restrict_false (i j : Fin n) (hij : i ≠ j) (a b : Bool) :
     hammingWeight (restrictBits (fun _ => false) i j (a, b))
       = (if a then 1 else 0) + (if b then 1 else 0) := by
   rw [hammingWeight_restrictBits _ i j hij]
@@ -76,7 +76,7 @@ lemma hammingWeight_restrict_false (i j : Fin n) (hij : i ≠ j) (a b : Bool) :
 /-! ## Parity -/
 
 /-- Parity exhibits the XOR checkerboard pattern on the first two coordinates. -/
-lemma PARITY_restrict_false_corners (i j : Fin n) (hij : i ≠ j) :
+theorem PARITY_restrict_false_corners (i j : Fin n) (hij : i ≠ j) :
     PARITY n (restrictBits (fun _ => false) i j (false, false)) = false
     ∧ PARITY n (restrictBits (fun _ => false) i j (true, true)) = false
     ∧ PARITY n (restrictBits (fun _ => false) i j (false, true)) = true
@@ -87,7 +87,7 @@ lemma PARITY_restrict_false_corners (i j : Fin n) (hij : i ≠ j) :
   · unfold PARITY; rw [hammingWeight_restrict_false i j hij false true]; decide
   · unfold PARITY; rw [hammingWeight_restrict_false i j hij true false]; decide
 
-/-- **Lemma 5 (parity, one head).** For `n ≥ 2`, `PARITY n` cannot be computed
+/-- **Theorem 5 (parity, one head).** For `n ≥ 2`, `PARITY n` cannot be computed
 with a single head. -/
 theorem PARITY_not_computable_with_one_head (hn : 2 ≤ n) :
     ¬ computableWithHeadsN n 1 (PARITY n) := by
@@ -97,7 +97,7 @@ theorem PARITY_not_computable_with_one_head (hn : 2 ≤ n) :
   exact parity_restriction_not_computable_with_one_head (PARITY n)
     (fun _ => false) (firstIndex hn) (secondIndex hn) hij h00 h11 h01 h10
 
-/-- **Lemma 5 (parity, zero heads).** For `n ≥ 2`, `PARITY n` cannot be computed
+/-- **Theorem 5 (parity, zero heads).** For `n ≥ 2`, `PARITY n` cannot be computed
 with zero heads. -/
 theorem PARITY_not_computable_with_zero_heads (hn : 2 ≤ n) :
     ¬ computableWithHeadsN n 0 (PARITY n) := by
@@ -109,7 +109,7 @@ theorem PARITY_not_computable_with_zero_heads (hn : 2 ≤ n) :
     (restrictBits (fun _ => false) (firstIndex hn) (secondIndex hn) (false, true))
     h00 h01
 
-/-- **Lemma 5 (parity, exact bound).** Any exact head complexity of `PARITY n`
+/-- **Theorem 5 (parity, exact bound).** Any exact head complexity of `PARITY n`
 is at least `2` when `n ≥ 2`. -/
 theorem PARITY_exactHeadComplexity_ge_two (hn : 2 ≤ n) {k : ℕ}
     (hk : exactHeadComplexityN n (PARITY n) k) : 2 ≤ k := by
@@ -122,22 +122,22 @@ theorem PARITY_exactHeadComplexity_ge_two (hn : 2 ≤ n) {k : ℕ}
 /-! ## Exact-count predicates -/
 
 /-- The indicator `if`-values, reduced definitionally. -/
-lemma if_true_one : (if (true : Bool) then (1 : ℕ) else 0) = 1 := rfl
-lemma if_false_one : (if (false : Bool) then (1 : ℕ) else 0) = 0 := rfl
+theorem if_true_one : (if (true : Bool) then (1 : ℕ) else 0) = 1 := rfl
+theorem if_false_one : (if (false : Bool) then (1 : ℕ) else 0) = 0 := rfl
 
 /-- Hamming weight of the all-`false` input is `0`. -/
-lemma hammingWeight_const_false : hammingWeight (fun _ : Fin n => false) = 0 := by
+theorem hammingWeight_const_false : hammingWeight (fun _ : Fin n => false) = 0 := by
   simp [hammingWeight]
 
 /-- Hamming weight of the indicator of a finite set is its cardinality. -/
-lemma hammingWeight_indicator (S : Finset (Fin n)) :
+theorem hammingWeight_indicator (S : Finset (Fin n)) :
     hammingWeight (fun x => decide (x ∈ S)) = S.card := by
   unfold hammingWeight
   congr 1
   ext x
   simp [decide_eq_true_eq]
 
-/-- **Lemma 5 (exact-count, one head).** For `1 ≤ k ≤ n - 1`, the exact-count
+/-- **Theorem 5 (exact-count, one head).** For `1 ≤ k ≤ n - 1`, the exact-count
 predicate `EXACT n k` cannot be computed with a single head.
 
 We freeze `k - 1` of the coordinates off `{firstIndex, secondIndex}` to `true`;
@@ -181,7 +181,7 @@ theorem EXACT_not_computable_with_one_head (hn : 2 ≤ n) {k : ℕ}
   exact parity_restriction_not_computable_with_one_head (EXACT n k)
     base i j hij h00 h11 h01 h10
 
-/-- **Lemma 5 (exact-count, zero heads).** For `1 ≤ k ≤ n`, `EXACT n k`
+/-- **Theorem 5 (exact-count, zero heads).** For `1 ≤ k ≤ n`, `EXACT n k`
 cannot be computed with zero heads. -/
 theorem EXACT_not_computable_with_zero_heads {k : ℕ} (hk1 : 1 ≤ k) (hk2 : k ≤ n) :
     ¬ computableWithHeadsN n 0 (EXACT n k) := by

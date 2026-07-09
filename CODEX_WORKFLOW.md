@@ -1,6 +1,6 @@
 # Working with Codex (and subagents) on Lean proofs — field notes
 
-Practical lessons from formalizing Lemmas 4–12 of this project with OpenAI's Codex
+Practical lessons from formalizing Theorems 4–12 of this project with OpenAI's Codex
 CLI as a peer reviewer. These extend the basic guidance in [`CLAUDE.md`](CLAUDE.md).
 The throughline: **Codex is a fast idea/-API engine; the Lean build is the only
 oracle.** Use Codex to shorten the path to a *candidate* proof, then verify every
@@ -23,28 +23,28 @@ line yourself with the build loop.
    builds are not.)
 
 3. **Keep questions FOCUSED — bounded to one obstacle.** A broad question
-   ("prove this injectivity AND plan all of Lemma 11") sent Codex into a
+   ("prove this injectivity AND plan all of Theorem 11") sent Codex into a
    13 000-line mathlib-grep loop that never converged; I killed it and solved the
    piece myself (`finFunctionFinEquiv`). The same model, asked one tight question
    ("what is the cleanest single-head construction realizing `b/(t(x)+a)`"),
    returned a complete, correct construction in ~130 k tokens. Recipe for a good
    consult prompt:
-   - one specific obstacle (a single lemma, a single error, a single design fork);
+   - one specific obstacle (a single theorem, a single error, a single design fork);
    - the exact goal state / error text + the minimal surrounding definitions;
-   - "be concise, <N words, concrete lemma names / tactics";
+   - "be concise, <N words, concrete theorem names / tactics";
    - "do not run lake; reason from the goal";
    - if asking for a construction, give the working *template* it should mirror.
 
 ## What Codex is good / bad at here
 
 - **Good:** model-level constructions (it designed the `atomHead` softmax gadget
-  and the weighted/affine generalizations), naming the right mathlib lemma when
+  and the weighted/affine generalizations), naming the right mathlib theorem when
   you describe the goal, spotting a faithfulness gap, and giving a proof *skeleton*.
 - **Unreliable:** exact mathlib signatures (it suggested `degree_interpolate_le`
   without its explicit `r` argument; it missed that `r`/`r'` are `variable`s), and
-  whether a niche lemma exists at all (it correctly reported "no ready-made
-  subset-sums-of-2^i-are-injective lemma" — but only after a long search). Treat
-  every lemma name as a hypothesis to check against the build.
+  whether a niche theorem exists at all (it correctly reported "no ready-made
+  subset-sums-of-2^i-are-injective theorem" — but only after a long search). Treat
+  every theorem name as a hypothesis to check against the build.
 - **Verify, don't trust:** more than once Codex's suggested tactic was *almost*
   right (e.g. `<;> simp; ring` where `simp` fully closes one branch, so the
   trailing `ring` errors on no goals). The build caught it; Codex's reasoning did
@@ -67,12 +67,12 @@ faster and safer than iterating against Codex's prose.
 
 ## Delegating subtasks (parallelism)
 
-For a big but *well-specified* piece (e.g. the Lemma 11 affine head — a concrete
+For a big but *well-specified* piece (e.g. the Theorem 11 affine head — a concrete
 `d=n+1` construction), spawn a background **subagent** with: the full design, the
 worked templates to mirror (`atomHead`/`weightedAtomHead`), the exact build
 commands, and explicit permission to consult Codex for stuck steps. Meanwhile work
 the easy/independent parts on the main thread, and run Codex consults in the
-background for orthogonal sub-lemmas. Three things make this safe:
+background for orthogonal sub-theorems. Three things make this safe:
 
 - **Non-overlapping files.** Give the subagent its own file; never edit the same
   file concurrently. Add the root `import` only when assembling.

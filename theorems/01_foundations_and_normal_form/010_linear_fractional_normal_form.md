@@ -38,7 +38,7 @@ $$ H^{\ast}(f) = L_{\mathrm{frac}}(f). $$
 
 We prove the normal form in both directions.
 
-### Lemma 1. Every attention head gives one atom
+### Theorem 1. Every attention head gives one atom
 
 Fix an $H$-head model and a final readout vector $w$ with threshold $\tau$.
 
@@ -96,7 +96,7 @@ $$ c := w^\top u_= - \tau. $$
 
 Thus every $H$-head model gives an $H$-atom representation.
 
-### Lemma 2. Every atom is realized by one attention head
+### Theorem 2. Every atom is realized by one attention head
 
 Now suppose we are given $H$ atoms. We construct an $H$-head model realizing their sum.
 
@@ -167,6 +167,6 @@ So the model computes exactly the Boolean function represented by the atoms.
 
 ### Combining the two directions
 
-Lemma 1 shows $H^{\ast}(f) \geq L&#95;{\mathrm{frac}}(f)$ and Lemma 2 shows $H^{\ast}(f) \leq L&#95;{\mathrm{frac}}(f)$. Together,
+Theorem 1 shows $H^{\ast}(f) \geq L&#95;{\mathrm{frac}}(f)$ and Theorem 2 shows $H^{\ast}(f) \leq L&#95;{\mathrm{frac}}(f)$. Together,
 
 $$ H^{\ast}(f) = L_{\mathrm{frac}}(f). \qquad \blacksquare $$

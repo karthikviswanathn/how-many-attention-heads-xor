@@ -4,7 +4,7 @@ import HeadComplexity.Atoms.AffineHead
 set_option linter.style.header false
 
 /-!
-# Lemma 11 — exact characterization of the zero- and one-head levels.
+# Theorem 11 — exact characterization of the zero- and one-head levels.
 
 `H*(f) = 0 ⟺ f constant`, and `H*(f) = 1 ⟺ f is a nonconstant linear threshold
 function`.  A linear threshold function is one sign-represented by an affine
@@ -12,7 +12,7 @@ functional (`isLTF`); this coincides with `ThresholdDegLE f 1`.
 
 This file proves the parts not needing the affine-head construction: the
 zero-head characterization (using that every function is computable, from the
-Lemma 9 universal bound) and `isLTF`.  The one-head converse uses
+Theorem 9 universal bound) and `isLTF`.  The one-head converse uses
 `affine_computable` (the affine head, `Atoms/AffineHead.lean`).
 -/
 
@@ -30,8 +30,8 @@ def isLTF (f : (Fin n → Bool) → Bool) : Prop :=
     ∀ x : Fin n → Bool, (0 < c + ∑ i, cs i * boolToReal (x i)) ↔ f x = true
 
 /-- **Every Boolean function is computable** (with some number of heads), from the
-binary-weight universal construction of Lemma 9. -/
-lemma exists_computable (f : (Fin n → Bool) → Bool) :
+binary-weight universal construction of Theorem 9. -/
+theorem exists_computable (f : (Fin n → Bool) → Bool) :
     ∃ k, computableWithHeadsN n k f := by
   classical
   set lam : Fin n → ℝ := fun i => (2 : ℝ) ^ (i : ℕ) with hlamdef
@@ -45,7 +45,7 @@ lemma exists_computable (f : (Fin n → Bool) → Bool) :
 /-! ## Zero heads ⟺ constant -/
 
 /-- A zero-head model computes exactly the constant functions. -/
-lemma computableWithHeadsN_zero_iff (f : (Fin n → Bool) → Bool) :
+theorem computableWithHeadsN_zero_iff (f : (Fin n → Bool) → Bool) :
     computableWithHeadsN n 0 f ↔ ∀ x y, f x = f y := by
   constructor
   · rintro ⟨d, Hs, w, τ, hsep⟩ x y
@@ -60,7 +60,7 @@ lemma computableWithHeadsN_zero_iff (f : (Fin n → Bool) → Bool) :
     rw [headFamilyAttnUpdate_zero, inner_zero_right, hconst bits default]
     cases f default <;> norm_num
 
-/-- **Lemma 11 (level 0).** `H*(f) = 0` iff `f` is constant. -/
+/-- **Theorem 11 (level 0).** `H*(f) = 0` iff `f` is constant. -/
 theorem HStarN_eq_zero_iff (f : (Fin n → Bool) → Bool) :
     HStarN n f = 0 ↔ ∀ x y, f x = f y := by
   classical
@@ -73,7 +73,7 @@ theorem HStarN_eq_zero_iff (f : (Fin n → Bool) → Bool) :
 
 open MvPolynomial in
 /-- A monomial exponent vector with exponent-sum `≤ 1` is `0` or `single i 1`. -/
-private lemma finsupp_sum_le_one (d : Fin n →₀ ℕ) (h : d.sum (fun _ e => e) ≤ 1) :
+private theorem finsupp_sum_le_one (d : Fin n →₀ ℕ) (h : d.sum (fun _ e => e) ≤ 1) :
     d = 0 ∨ ∃ i, d = Finsupp.single i 1 := by
   classical
   by_cases h0 : d = 0
@@ -97,7 +97,7 @@ private lemma finsupp_sum_le_one (d : Fin n →₀ ℕ) (h : d.sum (fun _ e => e
 
 open MvPolynomial in
 /-- A polynomial of total degree `≤ 1` evaluates on the cube to its affine part. -/
-lemma eval_cubePoint_affine (P : MvPolynomial (Fin n) ℝ) (hP : P.totalDegree ≤ 1)
+theorem eval_cubePoint_affine (P : MvPolynomial (Fin n) ℝ) (hP : P.totalDegree ≤ 1)
     (x : Fin n → Bool) :
     eval (cubePoint x) P
       = P.coeff 0 + ∑ i, P.coeff (Finsupp.single i 1) * boolToReal (x i) := by
@@ -127,8 +127,8 @@ lemma eval_cubePoint_affine (P : MvPolynomial (Fin n) ℝ) (hP : P.totalDegree �
 
 /-! ## The level-1 characterization -/
 
-/-- `H*(f) = 1` heads give a linear threshold function (via Lemma 6). -/
-lemma isLTF_of_computable_one (f : (Fin n → Bool) → Bool)
+/-- `H*(f) = 1` heads give a linear threshold function (via Theorem 6). -/
+theorem isLTF_of_computable_one (f : (Fin n → Bool) → Bool)
     (h : computableWithHeadsN n 1 f) : isLTF f := by
   obtain ⟨P, hPdeg, hPsign⟩ := signReprDegLe_of_computableWithHeadsN h
   refine ⟨P.coeff 0, fun i => P.coeff (Finsupp.single i 1), fun x => ?_⟩
@@ -136,12 +136,12 @@ lemma isLTF_of_computable_one (f : (Fin n → Bool) → Bool)
   exact hPsign x
 
 /-- A linear threshold function is computed by one head (the affine head). -/
-lemma computable_one_of_isLTF (f : (Fin n → Bool) → Bool) (h : isLTF f) :
+theorem computable_one_of_isLTF (f : (Fin n → Bool) → Bool) (h : isLTF f) :
     computableWithHeadsN n 1 f := by
   obtain ⟨c, cs, hsign⟩ := h
   exact affine_computable f c cs hsign
 
-/-- **Lemma 11 (level 1).** `H*(f) = 1` iff `f` is a nonconstant linear threshold
+/-- **Theorem 11 (level 1).** `H*(f) = 1` iff `f` is a nonconstant linear threshold
 function. -/
 theorem HStarN_eq_one_iff (f : (Fin n → Bool) → Bool) :
     HStarN n f = 1 ↔ (¬ (∀ x y, f x = f y) ∧ isLTF f) := by

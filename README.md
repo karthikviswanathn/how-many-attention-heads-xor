@@ -29,8 +29,8 @@ The precise model (embeddings, softmax head, residual readout, masking conventio
 
 ## What we know so far
 
-The results below are written up in full under [`lemmas/`](lemmas/) and indexed, with the
-dependency order between them, in [`lemmas.md`](lemmas.md).
+The results below are written up in full under [`theorems/`](theorems/) and indexed, with the
+dependency order between them, in [`theorems.md`](theorems.md).
 
 **Lower bounds (a function needs many heads).**
 - *Checkerboard obstruction.* If $f$ has a 2-bit "checkerboard" restriction (one diagonal
@@ -66,7 +66,7 @@ $I(f)$ with $H^{*}(f) \asymp I(f)$. Closing that gap is the main open problem.
 - Tighten the gap between the threshold-degree lower bound and the weighted-sum upper
   bound.
 - Push the formalization in [`head-complexity/`](head-complexity/) to cover more of the
-  lemma stack.
+  theorem stack.
 - Extend the empirical search to larger $n$ and reconcile it with the proofs. The current
   run flags four provisional $H^{*}(f) = 3$ functions at $n = 3$ (see
   [`three_head_functions_n3.md`](three_head_functions_n3.md)); these are estimates
@@ -78,8 +78,8 @@ $I(f)$ with $H^{*}(f) \asymp I(f)$. Closing that gap is the main open problem.
 | --- | --- |
 | [`problem_statement.md`](problem_statement.md) | The question and the core open problems. |
 | [`model.md`](model.md) | The precise attention model and the definition of $H^{*}(f)$. |
-| [`lemmas.md`](lemmas.md) | Ledger of the main lemmas, their status, and how they fit together. |
-| [`lemmas/`](lemmas/) | Full writeups: checkerboard lower bound, threshold upper bounds, the $n$-bit XOR analysis, weighted-sum upper bound. |
+| [`theorems.md`](theorems.md) | Ledger of the main theorems, their status, and how they fit together. |
+| [`theorems/`](theorems/) | Full writeups: checkerboard lower bound, threshold upper bounds, the $n$-bit XOR analysis, weighted-sum upper bound. |
 | [`writeup.md`](writeup.md) | Longer narrative tying the results together. |
 | [`literature_survey.md`](literature_survey.md) | Related work across transformers and Boolean complexity. |
 | [`three_head_functions_n3.md`](three_head_functions_n3.md) | Provisional empirical $H^{*}=3$ functions at $n=3$. |
@@ -89,7 +89,7 @@ $I(f)$ with $H^{*}(f) \asymp I(f)$. Closing that gap is the main open problem.
 | [`AGENTS.md`](AGENTS.md) | Markdown conventions used across the writeups. |
 
 New here? Read [`problem_statement.md`](problem_statement.md), then skim
-[`lemmas.md`](lemmas.md). The individual files under [`lemmas/`](lemmas/) are self-contained.
+[`theorems.md`](theorems.md). The individual files under [`theorems/`](theorems/) are self-contained.
 
 ## Getting started
 

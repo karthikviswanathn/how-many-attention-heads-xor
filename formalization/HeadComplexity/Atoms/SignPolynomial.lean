@@ -26,10 +26,10 @@ def changeSet : Finset ℕ := (Finset.range n).filter (fun t => F t ≠ F (t + 1
 /-- Number of sign changes at position `≥ k`. -/
 def negCount (k : ℕ) : ℕ := ((changeSet F n).filter (fun t => k ≤ t)).card
 
-lemma changeSet_card : (changeSet F n).card = signChanges n F := rfl
+theorem changeSet_card : (changeSet F n).card = signChanges n F := rfl
 
 /-- Recurrence for `negCount` across one step. -/
-lemma negCount_succ {k : ℕ} (hk : k < n) :
+theorem negCount_succ {k : ℕ} (hk : k < n) :
     negCount F n k = negCount F n (k + 1) + (if F k ≠ F (k + 1) then 1 else 0) := by
   classical
   unfold negCount changeSet
@@ -69,7 +69,7 @@ lemma negCount_succ {k : ℕ} (hk : k < n) :
     intro t _ ⟨h1, h2⟩; subst h2; exact hF h1
 
 /-- **Flip parity (auxiliary).** -/
-lemma eq_Fn_iff_even_negCount_aux (F : ℕ → Bool) (n : ℕ) :
+theorem eq_Fn_iff_even_negCount_aux (F : ℕ → Bool) (n : ℕ) :
     ∀ (d k : ℕ), k + d = n → ((F k = F n) ↔ Even (negCount F n k)) := by
   intro d
   induction d with
@@ -96,13 +96,13 @@ lemma eq_Fn_iff_even_negCount_aux (F : ℕ → Bool) (n : ℕ) :
 
 /-- **Flip parity.** `F k = F n` exactly when the number of sign changes above `k`
 is even. -/
-lemma eq_Fn_iff_even_negCount {k : ℕ} (hk : k ≤ n) :
+theorem eq_Fn_iff_even_negCount {k : ℕ} (hk : k ≤ n) :
     (F k = F n) ↔ Even (negCount F n k) :=
   eq_Fn_iff_even_negCount_aux F n (n - k) k (by omega)
 
 /-- **Product sign.** The product of `k - (t + ½)` over sign changes is positive
 exactly when an even number of changes lie at or above `k`. -/
-lemma prod_sign (F : ℕ → Bool) (n k : ℕ) :
+theorem prod_sign (F : ℕ → Bool) (n k : ℕ) :
     (0 < ∏ t ∈ changeSet F n, ((k : ℝ) - ((t : ℝ) + 1 / 2))) ↔ Even (negCount F n k) := by
   classical
   have hpow : (0 < (-1 : ℝ) ^ negCount F n k) ↔ Even (negCount F n k) := by
@@ -134,7 +134,7 @@ lemma prod_sign (F : ℕ → Bool) (n k : ℕ) :
   rw [hge, mul_assoc, mul_pos_iff_of_pos_right (mul_pos hge_pos hlt_pos)]
 
 /-- Each factor `k - (t + ½)` is nonzero (a half-integer is never an integer). -/
-lemma factor_ne_zero (k t : ℕ) : ((k : ℝ) - ((t : ℝ) + 1 / 2)) ≠ 0 := by
+theorem factor_ne_zero (k t : ℕ) : ((k : ℝ) - ((t : ℝ) + 1 / 2)) ≠ 0 := by
   intro hc
   have hr : (2 : ℝ) * (k : ℝ) = 2 * (t : ℝ) + 1 := by linarith
   have hcast : ((2 * k : ℕ) : ℝ) = ((2 * t + 1 : ℕ) : ℝ) := by push_cast; linarith [hr]

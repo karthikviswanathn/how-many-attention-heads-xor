@@ -17,11 +17,11 @@ def bits2 (a b : Bool) : Fin 2 → Bool
   | 0 => a
   | 1 => b
 
-@[simp] lemma bits2_zero (a b : Bool) : bits2 a b 0 = a := rfl
-@[simp] lemma bits2_one (a b : Bool) : bits2 a b 1 = b := rfl
+@[simp] theorem bits2_zero (a b : Bool) : bits2 a b 0 = a := rfl
+@[simp] theorem bits2_one (a b : Bool) : bits2 a b 1 = b := rfl
 
 /-- The standard two-coordinate restriction of a 2-bit input is `bits2`. -/
-lemma restrictBits_zero_one (a b : Bool) :
+theorem restrictBits_zero_one (a b : Bool) :
     Head.restrictBits (fun _ : Fin 2 => false) 0 1 (a, b) = bits2 a b := by
   funext i
   fin_cases i <;> simp [Head.restrictBits, bits2]
@@ -33,7 +33,7 @@ def xorFn : (Fin 2 → Bool) → Bool := fun bits => xor (bits 0) (bits 1)
 def computesXor {d : ℕ} (g : (Fin 2 → Bool) → Vec d) : Prop :=
   computesPred xorFn g
 
-@[simp] lemma xorFn_bits2 (a b : Bool) :
+@[simp] theorem xorFn_bits2 (a b : Bool) :
     xorFn (bits2 a b) = xor a b := rfl
 
 end HeadComplexity

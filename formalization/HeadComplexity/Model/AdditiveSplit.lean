@@ -3,9 +3,9 @@ import HeadComplexity.Model.Head
 set_option linter.style.header false
 
 /-!
-# Additive decomposition of a restricted one-head attention map (Lemma 1).
+# Additive decomposition of a restricted one-head attention map (Theorem 1).
 
-Lemma 1 states that, after freezing all but two input coordinates `i, j`, the
+Theorem 1 states that, after freezing all but two input coordinates `i, j`, the
 softmax numerator and denominator of a single head split additively:
 
 $$ N(a,b) = A(a) + B(b) + C, \qquad D(a,b) = \alpha(a) + \beta(b) + \gamma. $$
@@ -20,8 +20,8 @@ split with the explicit witnesses
 `A a = N(a, 0)`, `B b = N(0, b)`, `C = -N(0, 0)`
 
 (and likewise for `D`), the only non-trivial corner `(1,1)` being discharged by
-the antipode identity. This is a faithful Lean formalization of Lemma 1's
-statement; the per-position content it rests on lives in the antipode lemmas.
+the antipode identity. This is a faithful Lean formalization of Theorem 1's
+statement; the per-position content it rests on lives in the antipode theorems.
 -/
 
 namespace HeadComplexity
@@ -30,7 +30,7 @@ namespace Head
 
 variable {n d : ℕ}
 
-/-- **Lemma 1 (numerator).** On a two-coordinate restriction, the softmax
+/-- **Theorem 1 (numerator).** On a two-coordinate restriction, the softmax
 numerator of a single head decomposes additively as `A a + B b + C`, with `A`
 depending only on `a`, `B` only on `b`, and `C` constant. -/
 theorem numerator_additive_split (H : Head n d) (base : Fin n → Bool)
@@ -53,7 +53,7 @@ theorem numerator_additive_split (H : Head n d) (base : Fin n → Bool)
       rw [add_comm (H.numerator (restrictBits base i j (true, true)))]; exact hanti
     rw [eq_sub_of_add_eq hsum]; abel
 
-/-- **Lemma 1 (denominator).** On a two-coordinate restriction, the softmax
+/-- **Theorem 1 (denominator).** On a two-coordinate restriction, the softmax
 denominator decomposes additively as `α a + β b + γ`. -/
 theorem denominator_additive_split (H : Head n d) (base : Fin n → Bool)
     (i j : Fin n) (hij : i ≠ j) :

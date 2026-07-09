@@ -7,7 +7,7 @@ set_option linter.style.header false
 /-!
 # Threshold (sign-representation) degree on the Boolean cube.
 
-Foundation for the Lemma 12 lower bound `H^{*}(f) ≥ C(F)`. We encode a Boolean
+Foundation for the Theorem 12 lower bound `H^{*}(f) ≥ C(F)`. We encode a Boolean
 function `f : (Fin n → Bool) → Bool` and ask for a real polynomial whose sign
 matches `f` at every cube point; the least total degree of such a polynomial is
 the threshold degree. The lower-bound chain is:

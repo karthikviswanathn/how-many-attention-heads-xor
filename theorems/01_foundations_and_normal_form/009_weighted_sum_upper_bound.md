@@ -85,7 +85,7 @@ For each $j \in \lbrace1, \ldots, M-1\rbrace$, define linear maps as follows.
 
 These choices define a valid attention head in the model from [../model.md](../../model.md).
 
-### Lemma 1. The output of head j depends only on t(x)
+### Theorem 1. The output of head j depends only on t(x)
 
 For every input $x$,
 
@@ -129,7 +129,7 @@ $$ y^{(j)}(x) = \frac{\alpha_j t(x)}{1 + \Lambda + (\alpha_j - 1) t(x)}   e_j = 
 
 This proves the formula. $\blacksquare$
 
-### Lemma 2. The functions 1, g₁, …, g_M-1 are linearly independent on Im(t)
+### Theorem 2. The functions 1, g₁, …, g_M-1 are linearly independent on Im(t)
 
 **Proof.** Suppose
 
@@ -181,9 +181,9 @@ Hence every $c_j = 0$, and the functions $1, g_1, \ldots, g_{M-1}$ are linearly 
 
 ### Corollary 3. The functions 1, g₁, …, g_M-1 form a basis of all real-valued functions on Im(t)
 
-**Reason.** The set $\mathrm{Im}(t)$ has exactly $M$ points, so the vector space of real-valued functions on it has dimension $M$. By Lemma 2 we already have $M$ linearly independent functions on that set. $\blacksquare$
+**Reason.** The set $\mathrm{Im}(t)$ has exactly $M$ points, so the vector space of real-valued functions on it has dimension $M$. By Theorem 2 we already have $M$ linearly independent functions on that set. $\blacksquare$
 
-### Lemma 4. M-1 heads realize f exactly
+### Theorem 4. M-1 heads realize f exactly
 
 **Proof.** Define a target sign pattern on $\mathrm{Im}(t)$ by
 
@@ -205,7 +205,7 @@ $$ w := \sum_{j=1}^{M-1} \beta_j e_j. $$
 
 Since $w$ is orthogonal to $q$, the constant query skip connection makes no contribution to the readout.
 
-Let $r(x)$ be the final residual stream at the query token. By Lemma 1,
+Let $r(x)$ be the final residual stream at the query token. By Theorem 1,
 
 $$ w^\top r(x) = \sum_{j=1}^{M-1} \beta_j g_j(t(x)). $$
 

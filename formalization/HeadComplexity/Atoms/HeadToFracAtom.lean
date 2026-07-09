@@ -4,7 +4,7 @@ import HeadComplexity.Model.Head
 set_option linter.style.header false
 
 /-!
-# Lemma 10 (one direction): every head's readout is a linear-fractional atom.
+# Theorem 10 (one direction): every head's readout is a linear-fractional atom.
 
 A single attention head's readout `⟪w, attnUpdate⟫` is exactly the value of a
 one-head linear-fractional atom (`FracAtom`).  Summing over a family of heads and
@@ -33,7 +33,7 @@ noncomputable def Head.queryVec (H : Head n d) : Vec d :=
 /-- The query vector after `W_Q`. -/
 noncomputable def Head.queryQ (H : Head n d) : Vec d := H.WQ H.queryVec
 
-lemma Head.x_none_eq_queryVec (H : Head n d) (bits : Fin n → Bool) :
+theorem Head.x_none_eq_queryVec (H : Head n d) (bits : Fin n → Bool) :
     H.x bits none = H.queryVec := by
   simp [Head.x, Head.seqTok, Head.queryVec]
 
@@ -53,13 +53,13 @@ section
 variable (H : Head n d) (w : Vec d) (bits : Fin n → Bool)
 
 /-- `sigma` at the query token equals the atom's `γ`. -/
-lemma sigma_none_eq_gamma : H.sigma bits none = (headToAtom H w).γ := by
+theorem sigma_none_eq_gamma : H.sigma bits none = (headToAtom H w).γ := by
   unfold Head.sigma headToAtom
   rw [H.x_none_eq_queryVec bits]
   rfl
 
 /-- `sigma` at an input position factors as `ρ i * (if bits i then α else 1)`. -/
-lemma sigma_some_eq_wt (i : Fin n) :
+theorem sigma_some_eq_wt (i : Fin n) :
     H.sigma bits (some i) = (headToAtom H w).wt bits i := by
   unfold Head.sigma headToAtom FracAtom.wt
   have hx : H.x bits (some i)
@@ -79,12 +79,12 @@ lemma sigma_some_eq_wt (i : Fin n) :
       rw [hsplit, map_add, inner_add_left, Real.exp_add]
 
 /-- The atom's `value` reading at the query token equals `⟪w, WV (x none)⟫`. -/
-lemma value_none_eq :
+theorem value_none_eq :
     ⟪w, H.WV (H.x bits none)⟫_ℝ = ⟪w, H.WV H.queryVec⟫_ℝ := by
   rw [H.x_none_eq_queryVec bits]
 
 /-- The `value` reading at an input position equals `m i + (if bits i then δ else 0)`. -/
-lemma value_some_eq (i : Fin n) :
+theorem value_some_eq (i : Fin n) :
     ⟪w, H.WV (H.x bits (some i))⟫_ℝ
       = (headToAtom H w).m i + (if bits i then (headToAtom H w).δ else 0) := by
   unfold headToAtom
@@ -102,7 +102,7 @@ lemma value_some_eq (i : Fin n) :
       rw [hsplit, map_add, inner_add_right]
 
 /-- The denominator equals the atom's denominator `γ + ∑ i, wt`. -/
-lemma denominator_eq_atom_denom :
+theorem denominator_eq_atom_denom :
     H.denominator bits = (headToAtom H w).γ + ∑ i, (headToAtom H w).wt bits i := by
   unfold Head.denominator
   rw [Fintype.sum_option]
@@ -112,7 +112,7 @@ lemma denominator_eq_atom_denom :
 
 /-- Readout of the numerator equals the atom's numerator
 `η + ∑ i, wt i * (m i + …)`. -/
-lemma numerator_readout_eq :
+theorem numerator_readout_eq :
     ⟪w, H.numerator bits⟫_ℝ
       = (headToAtom H w).η
         + ∑ i, (headToAtom H w).wt bits i
@@ -141,7 +141,7 @@ theorem head_readout_eq_eval :
 
 end
 
-/-- **Lemma 10 (one direction).** If `f` is computable with `H` attention heads,
+/-- **Theorem 10 (one direction).** If `f` is computable with `H` attention heads,
 then `f` is computable by `H` linear-fractional atoms. -/
 theorem fracComputable_of_computable {n H : ℕ} {f : (Fin n → Bool) → Bool}
     (h : computableWithHeadsN n H f) : fracComputable n H f := by

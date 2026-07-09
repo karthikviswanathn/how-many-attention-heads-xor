@@ -26,7 +26,7 @@ The classifier in the attention model has the form $\text{score}(x) > \tau$, tha
 
 Let $f$ be computed by an $H$-head model, where $H = H^{\ast}(f)$. We produce a sign-representing polynomial of degree at most $H$ in three steps.
 
-### Lemma 1. On a finite domain, exact classification can be made strict
+### Theorem 1. On a finite domain, exact classification can be made strict
 
 Let $X$ be a finite set, and let $f : X \to \lbrace0,1\rbrace$ be nonconstant. Suppose a real-valued score function $S$ and threshold $\tau$ satisfy
 
@@ -61,7 +61,7 @@ Then:
 
 This is exactly the desired strict sign separation.
 
-### Lemma 2. The scalar contribution of one head is a ratio of affine functions
+### Theorem 2. The scalar contribution of one head is a ratio of affine functions
 
 Fix one attention head $h$, and let $w&#95;{\mathrm{out}} \in \mathbb{R}^{d&#95;{\mathrm{model}}}$ be the final readout vector from [../../model.md](../../model.md).
 
@@ -132,7 +132,7 @@ Then $s_h(x) = a_h(x) / b_h(x)$ on the Boolean cube.
 
 Also, every term in $D_h(x)$ is strictly positive, so $b_h(x) > 0$ for every Boolean input.
 
-### Lemma 3. Any H-head classifier has threshold degree at most H
+### Theorem 3. Any H-head classifier has threshold degree at most H
 
 Let $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$ be computed by an $H$-head model in the one-layer architecture.
 
@@ -160,7 +160,7 @@ Because the model computes $f$, there exists some threshold $\tau$ such that
 
 $$U(x) > \tau \quad \text{iff} \quad f(x) = 1.$$
 
-By Lemma 1, because $f$ is nonconstant, there exists another threshold $\tau'$ such that
+By Theorem 1, because $f$ is nonconstant, there exists another threshold $\tau'$ such that
 
 $$U(x) - \tau' > 0 \text{ on positive examples},$$
 
@@ -180,7 +180,7 @@ Also
 
 $$S(x) > 0 \text{ on positive examples}, \qquad S(x) < 0 \text{ on negative examples}.$$
 
-By Lemma 2, for each head $h$ we can write
+By Theorem 2, for each head $h$ we can write
 
 $$s_h(x) = \frac{a_h(x)}{b_h(x)}$$
 
@@ -208,6 +208,6 @@ So $P$ sign-represents the Boolean function $f$ on $\lbrace0,1\rbrace^n$.
 
 ### Conclusion
 
-Since $f$ is computed by $H^{\ast}(f)$ heads, Lemma 3 produces a polynomial of degree at most $H^{\ast}(f)$ that sign-represents $f$. Therefore
+Since $f$ is computed by $H^{\ast}(f)$ heads, Theorem 3 produces a polynomial of degree at most $H^{\ast}(f)$ that sign-represents $f$. Therefore
 
 $$ \deg_{\pm}(f) \leq H^{\ast}(f). \qquad \blacksquare $$

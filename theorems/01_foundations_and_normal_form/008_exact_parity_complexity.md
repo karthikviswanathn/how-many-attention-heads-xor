@@ -59,7 +59,7 @@ For head $j$, define linear maps as follows.
 
 These maps are linear, so they define a valid attention head.
 
-### Lemma 1. The output of head j depends only on Hamming weight
+### Theorem 1. The output of head j depends only on Hamming weight
 
 Let $k = x_1 + \cdots + x_n$ be the Hamming weight of the input.
 
@@ -102,7 +102,7 @@ $$y_j(x) = \frac{k   \alpha_j}{(n - k) + k   \alpha_j + 1}   e_j = \frac{k   \al
 
 This proves the formula.
 
-### Lemma 2. The functions 1, g₁, …, gₙ are linearly independent on {0, …, n}
+### Theorem 2. The functions 1, g₁, …, gₙ are linearly independent on {0, …, n}
 
 Consider the $n + 1$ real-valued functions on the set $\lbrace0, \ldots, n\rbrace$
 
@@ -162,11 +162,11 @@ Therefore $1, g_1, \ldots, g_n$ are linearly independent.
 
 The set $\lbrace0, \ldots, n\rbrace$ has exactly $n + 1$ points, so the vector space of real-valued functions on this set has dimension $n + 1$.
 
-By Lemma 2 we already have $n + 1$ linearly independent functions.
+By Theorem 2 we already have $n + 1$ linearly independent functions.
 
 Therefore $1, g_1, \ldots, g_n$ form a basis.
 
-### Lemma 4. n heads can realize parity exactly
+### Theorem 4. n heads can realize parity exactly
 
 Define a target sign pattern on Hamming weights by
 
@@ -184,7 +184,7 @@ $$w := \sum_{j=1}^{n} \beta_j   e_j.$$
 
 Since $w$ is orthogonal to $q$, the constant query skip connection does not affect the probe score.
 
-By Lemma 1, on an input of Hamming weight $k$,
+By Theorem 1, on an input of Hamming weight $k$,
 
 $$\Bigl\langle w, \sum_{j=1}^{n} y_j(x) \Bigr\rangle = \sum_{j=1}^{n} \beta_j   g_j(k).$$
 

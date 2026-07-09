@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Conventions for writing lemma / writeup markdown in this repo so that it renders cleanly in GitHub, VS Code preview, and Obsidian.
+Conventions for writing theorem / writeup markdown in this repo so that it renders cleanly in GitHub, VS Code preview, and Obsidian.
 
 ## Math
 
@@ -27,8 +27,8 @@ Use LaTeX math delimiters, not backticks.
 
 ## Structure
 
-- `#` for the lemma title, `##` for top-level sections (`Statement`, `Proof`, `Consequence`, etc.).
-- Sub-lemmas inside a proof use `###` with a period-separated title like `### Lemma 2. Antipode identities`. Never put an em dash in a heading.
+- `#` for the theorem title, `##` for top-level sections (`Statement`, `Proof`, `Consequence`, etc.).
+- Sub-theorems inside a proof use `###` with a period-separated title like `### Theorem 2. Antipode identities`. Never put an em dash in a heading.
 - Inline mini-proofs use **bold run-in headers**: `**Proof.**`, `**Reason.**`, `**Claim.**`.
 - Use blockquotes (`>`) for informal restatements or remarks that sit alongside the formal statement.
 - Use ordered lists (`1.`, `2.`, ...) for enumerated cases and unordered lists (`-`) for bullet points.
@@ -47,7 +47,7 @@ Use LaTeX math delimiters, not backticks.
 ## Example skeleton
 
 ```markdown
-# Lemma Title
+# Theorem Title
 
 ## Statement
 
@@ -63,7 +63,7 @@ $$
 
 Prose lead-in.
 
-### Lemma 1. Short name
+### Theorem 1. Short name
 
 **Claim.** Something.
 
@@ -87,4 +87,4 @@ H^{*}(f) \geq 2.
 $$
 ```
 
-Apply this style to every file under `lemmas/` and to `writeup.md`.
+Apply this style to every file under `theorems/` and to `writeup.md`.

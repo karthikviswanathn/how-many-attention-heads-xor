@@ -1,4 +1,4 @@
-# Lemmas Toward The First Core Question
+# Theorems Toward The First Core Question
 
 ## Goal
 
@@ -6,13 +6,13 @@ We want a step-by-step route to the first core question in [problem_statement.md
 
 > Can $H^{\ast}(f)$ be expressed, exactly or approximately, in terms of a known invariant of $f$?
 
-This file is the statement ledger. It records the current lemma statements, how they fit together, and where each proof lives under `lemmas/`.
+This file is the statement ledger. It records the current theorem statements, how they fit together, and where each proof lives under `theorems/`.
 
 For nearby literature and context, see [literature_survey.md](literature_survey.md).
 
 ## Current Status
 
-The current main-branch lemma stack uses the numbered foundation files in `lemmas/01_foundations_and_normal_form/`, through Lemma 12.
+The current main-branch theorem stack uses the numbered foundation files in `theorems/01_foundations_and_normal_form/`, through Theorem 12.
 
 These notes give:
 
@@ -26,9 +26,9 @@ These notes give:
 
 The stack still does **not** give an exact characterization of $H^{\ast}(f)$ for all nonsymmetric Boolean functions.
 
-## Main Lemma Stack
+## Main Theorem Stack
 
-### Lemma 1. One-head two-coordinate restrictions split additively
+### Theorem 1. One-head two-coordinate restrictions split additively
 
 Fix a single-head model and freeze all but two input coordinates. Then the softmax numerator and denominator at the query token can be written as
 
@@ -36,9 +36,9 @@ $$ N(a,b) = A(a) + B(b) + C, \qquad D(a,b) = \alpha(a) + \beta(b) + \gamma $$
 
 for suitable functions $A, B, \alpha, \beta$ and constants $C, \gamma$.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/001_checkerboard_additive_decomposition.md](lemmas/01_foundations_and_normal_form/001_checkerboard_additive_decomposition.md)
+**Proof.** [theorems/01_foundations_and_normal_form/001_checkerboard_additive_decomposition.md](theorems/01_foundations_and_normal_form/001_checkerboard_additive_decomposition.md)
 
-### Lemma 2. Antipode identities on a restricted 2-cube
+### Theorem 2. Antipode identities on a restricted 2-cube
 
 Under the same setup,
 
@@ -48,9 +48,9 @@ and
 
 $$ D(0,0) + D(1,1) = D(0,1) + D(1,0). $$
 
-**Proof.** [lemmas/01_foundations_and_normal_form/002_antipode_identities.md](lemmas/01_foundations_and_normal_form/002_antipode_identities.md)
+**Proof.** [theorems/01_foundations_and_normal_form/002_antipode_identities.md](theorems/01_foundations_and_normal_form/002_antipode_identities.md)
 
-### Lemma 3. Checkerboard obstruction for one head
+### Theorem 3. Checkerboard obstruction for one head
 
 If $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$ has a 2-bit checkerboard restriction, then
 
@@ -58,9 +58,9 @@ $$ H^{\ast}(f) \geq 2. $$
 
 > **Equivalently.** One head cannot separate one diagonal of a restricted 2-cube from the other diagonal.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/003_checkerboard_obstruction.md](lemmas/01_foundations_and_normal_form/003_checkerboard_obstruction.md)
+**Proof.** [theorems/01_foundations_and_normal_form/003_checkerboard_obstruction.md](theorems/01_foundations_and_normal_form/003_checkerboard_obstruction.md)
 
-### Lemma 4. One head computes every symmetric threshold
+### Theorem 4. One head computes every symmetric threshold
 
 For
 
@@ -76,9 +76,9 @@ In particular,
 
 $$ H^{\ast}(\mathrm{OR}_n) = H^{\ast}(\mathrm{AND}_n) = H^{\ast}(\mathrm{MAJORITY}_n) = 1. $$
 
-**Proof.** [lemmas/01_foundations_and_normal_form/004_symmetric_thresholds.md](lemmas/01_foundations_and_normal_form/004_symmetric_thresholds.md)
+**Proof.** [theorems/01_foundations_and_normal_form/004_symmetric_thresholds.md](theorems/01_foundations_and_normal_form/004_symmetric_thresholds.md)
 
-### Lemma 5. Family consequences from the checkerboard obstruction
+### Theorem 5. Family consequences from the checkerboard obstruction
 
 For $n \geq 2$,
 
@@ -88,14 +88,14 @@ For $1 \leq k \leq n - 1$,
 
 $$ H^{\ast}(\mathrm{EXACT}_{n,k}) \geq 2. $$
 
-Together with Lemma 4, this gives a first split inside symmetric functions:
+Together with Theorem 4, this gives a first split inside symmetric functions:
 
 - monotone symmetric thresholds have head complexity $1$,
 - parity and internal exact-count predicates need at least $2$ heads.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/005_family_consequences.md](lemmas/01_foundations_and_normal_form/005_family_consequences.md)
+**Proof.** [theorems/01_foundations_and_normal_form/005_family_consequences.md](theorems/01_foundations_and_normal_form/005_family_consequences.md)
 
-### Lemma 6. Threshold degree is bounded by head complexity
+### Theorem 6. Threshold degree is bounded by head complexity
 
 If a Boolean function $f$ is computable in the model from [model.md](model.md), then
 
@@ -103,9 +103,9 @@ $$ \deg_{\pm}(f) \leq H^{\ast}(f). $$
 
 Here $\deg_{\pm}(f)$ denotes the threshold degree of $f$, namely the minimum degree of a real polynomial that sign-represents $f$ on the Boolean cube.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/006_threshold_degree_head_complexity_bound.md](lemmas/01_foundations_and_normal_form/006_threshold_degree_head_complexity_bound.md)
+**Proof.** [theorems/01_foundations_and_normal_form/006_threshold_degree_head_complexity_bound.md](theorems/01_foundations_and_normal_form/006_threshold_degree_head_complexity_bound.md)
 
-### Lemma 7. Parity has threshold degree exactly n
+### Theorem 7. Parity has threshold degree exactly n
 
 For
 
@@ -115,9 +115,9 @@ we have
 
 $$ \deg_{\pm}(\mathrm{PARITY}_n) = n. $$
 
-**Proof.** [lemmas/01_foundations_and_normal_form/007_parity_threshold_degree.md](lemmas/01_foundations_and_normal_form/007_parity_threshold_degree.md)
+**Proof.** [theorems/01_foundations_and_normal_form/007_parity_threshold_degree.md](theorems/01_foundations_and_normal_form/007_parity_threshold_degree.md)
 
-### Lemma 8. Exact parity complexity
+### Theorem 8. Exact parity complexity
 
 For every $n \geq 1$,
 
@@ -125,9 +125,9 @@ $$ H^{\ast}(\mathrm{XOR}_n) = n. $$
 
 > **Equivalently.** In this one-layer attention model, parity needs exactly one head per input bit.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/008_exact_parity_complexity.md](lemmas/01_foundations_and_normal_form/008_exact_parity_complexity.md)
+**Proof.** [theorems/01_foundations_and_normal_form/008_exact_parity_complexity.md](theorems/01_foundations_and_normal_form/008_exact_parity_complexity.md)
 
-### Lemma 9. Weighted-sum interpolation upper bound
+### Theorem 9. Weighted-sum interpolation upper bound
 
 Suppose there exist positive real numbers
 
@@ -158,9 +158,9 @@ In particular:
 - every symmetric Boolean function satisfies $H^{\ast}(f) \leq n$,
 - every Boolean function satisfies $H^{\ast}(f) \leq 2^n - 1$.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/009_weighted_sum_upper_bound.md](lemmas/01_foundations_and_normal_form/009_weighted_sum_upper_bound.md)
+**Proof.** [theorems/01_foundations_and_normal_form/009_weighted_sum_upper_bound.md](theorems/01_foundations_and_normal_form/009_weighted_sum_upper_bound.md)
 
-### Lemma 10. Exact linear-fractional normal form
+### Theorem 10. Exact linear-fractional normal form
 
 Define a one-head atom to be a function of the form
 
@@ -176,9 +176,9 @@ $$ H^{\ast}(f) = L_{\mathrm{frac}}(f). $$
 
 > **Interpretation.** The exact model-native invariant is the minimum number of one-head linear-fractional atoms needed before the final threshold.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/010_linear_fractional_normal_form.md](lemmas/01_foundations_and_normal_form/010_linear_fractional_normal_form.md)
+**Proof.** [theorems/01_foundations_and_normal_form/010_linear_fractional_normal_form.md](theorems/01_foundations_and_normal_form/010_linear_fractional_normal_form.md)
 
-### Lemma 11. Exact one-head characterization
+### Theorem 11. Exact one-head characterization
 
 The first two levels of head complexity are:
 
@@ -194,9 +194,9 @@ $$ H^{\ast}(f) \geq 2. $$
 
 This strictly strengthens the checkerboard obstruction as a one-head lower bound.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/011_one_head_characterization.md](lemmas/01_foundations_and_normal_form/011_one_head_characterization.md)
+**Proof.** [theorems/01_foundations_and_normal_form/011_one_head_characterization.md](theorems/01_foundations_and_normal_form/011_one_head_characterization.md)
 
-### Lemma 12. Exact symmetric sign-change characterization
+### Theorem 12. Exact symmetric sign-change characterization
 
 Let $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$ be symmetric, so
 
@@ -226,24 +226,24 @@ In particular:
 - parity has $H^{\ast}(\mathrm{XOR}_n) = n$,
 - internal exact-count predicates have $H^{\ast}(\mathrm{EXACT}_{n,k}) = 2$ for $1 \leq k \leq n - 1$.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/012_symmetric_sign_changes.md](lemmas/01_foundations_and_normal_form/012_symmetric_sign_changes.md)
+**Proof.** [theorems/01_foundations_and_normal_form/012_symmetric_sign_changes.md](theorems/01_foundations_and_normal_form/012_symmetric_sign_changes.md)
 
 ## Dependency Order
 
 The current dependency structure is:
 
-1. Lemma 1 gives the additive decomposition.
-2. Lemma 2 converts that decomposition into antipode identities.
-3. Lemma 3 turns the antipode identities into a one-head lower bound.
-4. Lemma 4 gives an independent one-head upper bound family.
-5. Lemma 5 combines Lemmas 3 and 4 to answer standard-family cases.
-6. Lemma 6 converts head complexity into a threshold-degree upper bound.
-7. Lemma 7 computes the threshold degree of parity exactly.
-8. Lemma 8 combines Lemmas 6 and 7 with an explicit $n$-head construction for parity.
-9. Lemma 9 gives a broader constructive upper-bound route by interpolating over the image of a positive weighted sum.
-10. Lemma 10 gives the exact linear-fractional normal form for $H^{\ast}$.
-11. Lemma 11 uses Lemma 10 to characterize the zero-head and one-head levels exactly.
-12. Lemma 12 uses Lemmas 6 and 10 to characterize every symmetric Boolean function exactly.
+1. Theorem 1 gives the additive decomposition.
+2. Theorem 2 converts that decomposition into antipode identities.
+3. Theorem 3 turns the antipode identities into a one-head lower bound.
+4. Theorem 4 gives an independent one-head upper bound family.
+5. Theorem 5 combines Theorems 3 and 4 to answer standard-family cases.
+6. Theorem 6 converts head complexity into a threshold-degree upper bound.
+7. Theorem 7 computes the threshold degree of parity exactly.
+8. Theorem 8 combines Theorems 6 and 7 with an explicit $n$-head construction for parity.
+9. Theorem 9 gives a broader constructive upper-bound route by interpolating over the image of a positive weighted sum.
+10. Theorem 10 gives the exact linear-fractional normal form for $H^{\ast}$.
+11. Theorem 11 uses Theorem 10 to characterize the zero-head and one-head levels exactly.
+12. Theorem 12 uses Theorems 6 and 10 to characterize every symmetric Boolean function exactly.
 
 ## What This Currently Says About The First Core Question
 

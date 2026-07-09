@@ -52,50 +52,50 @@ noncomputable def atomReadout : Vec 2 := EuclideanSpace.single 1 1
 section
 variable (a b : ℝ)
 
-@[simp] lemma atomHead_tokenEmbed : (atomHead n a b).tokenEmbed = atomTok n a b := rfl
-@[simp] lemma atomHead_posEmbed (p : SeqPos n) : (atomHead n a b).posEmbed p = 0 := rfl
+@[simp] theorem atomHead_tokenEmbed : (atomHead n a b).tokenEmbed = atomTok n a b := rfl
+@[simp] theorem atomHead_posEmbed (p : SeqPos n) : (atomHead n a b).posEmbed p = 0 := rfl
 
 /-- The query embedding `x_=` equals `tokenEmbed 2`. -/
-lemma atomHead_x_none (bits : Fin n → Bool) :
+theorem atomHead_x_none (bits : Fin n → Bool) :
     (atomHead n a b).x bits none = atomTok n a b 2 := by
   simp [Head.x, Head.seqTok]
 
 /-- Coordinate-0 (score channel) of each token embedding. -/
-@[simp] lemma atomTok_zero_coord0 : atomTok n a b 0 0 = 0 := by
+@[simp] theorem atomTok_zero_coord0 : atomTok n a b 0 0 = 0 := by
   simp [atomTok]
-@[simp] lemma atomTok_one_coord0 :
+@[simp] theorem atomTok_one_coord0 :
     atomTok n a b 1 0 = Real.log 2 / Real.sqrt (Real.log (a - n)) := by
   simp [atomTok]
-@[simp] lemma atomTok_two_coord0 : atomTok n a b 2 0 = Real.sqrt (Real.log (a - n)) := by
+@[simp] theorem atomTok_two_coord0 : atomTok n a b 2 0 = Real.sqrt (Real.log (a - n)) := by
   simp [atomTok]
 
 /-- Coordinate-1 (value channel) of each token embedding. -/
-@[simp] lemma atomTok_zero_coord1 : atomTok n a b 0 1 = b / n := by
+@[simp] theorem atomTok_zero_coord1 : atomTok n a b 0 1 = b / n := by
   simp [atomTok]
-@[simp] lemma atomTok_one_coord1 : atomTok n a b 1 1 = b / (2 * n) := by
+@[simp] theorem atomTok_one_coord1 : atomTok n a b 1 1 = b / (2 * n) := by
   simp [atomTok]
-@[simp] lemma atomTok_two_coord1 : atomTok n a b 2 1 = 0 := by
+@[simp] theorem atomTok_two_coord1 : atomTok n a b 2 1 = 0 := by
   simp [atomTok]
 
-@[simp] lemma atomHead_WK : (atomHead n a b).WK = LinearMap.id := rfl
-@[simp] lemma atomHead_WQ : (atomHead n a b).WQ = LinearMap.id := rfl
-@[simp] lemma atomHead_WV : (atomHead n a b).WV = LinearMap.id := rfl
+@[simp] theorem atomHead_WK : (atomHead n a b).WK = LinearMap.id := rfl
+@[simp] theorem atomHead_WQ : (atomHead n a b).WQ = LinearMap.id := rfl
+@[simp] theorem atomHead_WV : (atomHead n a b).WV = LinearMap.id := rfl
 
 /-- Real inner product on `Vec 2` as a coordinate sum (sidesteps the
-`InnerProductSpace ℝ ℝ` instance diamond via the `rfl` lemma `inner_eq_star_dotProduct`). -/
-lemma vec2_inner (x y : Vec 2) : ⟪x, y⟫_ℝ = x 0 * y 0 + x 1 * y 1 := by
+`InnerProductSpace ℝ ℝ` instance diamond via the `rfl` theorem `inner_eq_star_dotProduct`). -/
+theorem vec2_inner (x y : Vec 2) : ⟪x, y⟫_ℝ = x 0 * y 0 + x 1 * y 1 := by
   change dotProduct (y.ofLp) (star x.ofLp) = _
   simp only [dotProduct, Fin.sum_univ_two, Pi.star_apply, star_trivial]
   ring
 
 /-- Inner product of a token with the query token (score before exp). -/
-lemma atomTok_inner_two (t : Fin 3) :
+theorem atomTok_inner_two (t : Fin 3) :
     ⟪atomTok n a b t, atomTok n a b 2⟫_ℝ
       = atomTok n a b t 0 * Real.sqrt (Real.log (a - n)) := by
   rw [vec2_inner]; simp
 
 /-- Readout `⟪e₁, ·⟫` of a token equals its value-channel coordinate. -/
-lemma atomReadout_inner (t : Fin 3) :
+theorem atomReadout_inner (t : Fin 3) :
     ⟪atomReadout, atomTok n a b t⟫_ℝ = atomTok n a b t 1 := by
   rw [vec2_inner]; simp [atomReadout]
 
@@ -107,22 +107,22 @@ section
 variable (a b : ℝ) (hn : 1 ≤ n) (ha : (n : ℝ) + 1 < a)
 
 include ha in
-private lemma a_sub_n_pos : 0 < a - n := by
+private theorem a_sub_n_pos : 0 < a - n := by
   have : (1 : ℝ) < a - n := by linarith
   linarith
 
 include ha in
-private lemma log_a_sub_n_pos : 0 < Real.log (a - n) := by
+private theorem log_a_sub_n_pos : 0 < Real.log (a - n) := by
   apply Real.log_pos; linarith
 
 include ha in
-private lemma sqrt_log_ne : Real.sqrt (Real.log (a - n)) ≠ 0 := by
+private theorem sqrt_log_ne : Real.sqrt (Real.log (a - n)) ≠ 0 := by
   have := log_a_sub_n_pos a ha
   positivity
 
 include ha in
 /-- Softmax weight at the query token is `a - n`. -/
-lemma atomHead_sigma_none (bits : Fin n → Bool) :
+theorem atomHead_sigma_none (bits : Fin n → Bool) :
     (atomHead n a b).sigma bits none = a - n := by
   have hpos := a_sub_n_pos a ha
   have hsq : Real.sqrt (Real.log (a - n)) * Real.sqrt (Real.log (a - n)) = Real.log (a - n) :=
@@ -134,7 +134,7 @@ lemma atomHead_sigma_none (bits : Fin n → Bool) :
 
 include ha in
 /-- Softmax weight at a bit position: `2` if the bit is set, else `1`. -/
-lemma atomHead_sigma_some (bits : Fin n → Bool) (i : Fin n) :
+theorem atomHead_sigma_some (bits : Fin n → Bool) (i : Fin n) :
     (atomHead n a b).sigma bits (some i) = if bits i then 2 else 1 := by
   have hs := sqrt_log_ne a ha
   unfold Head.sigma
@@ -151,13 +151,13 @@ lemma atomHead_sigma_some (bits : Fin n → Bool) (i : Fin n) :
       simp
 
 /-- The value vector equals the token embedding (since `W_V = id`). -/
-lemma atomHead_value_eq (bits : Fin n → Bool) (p : SeqPos n) :
+theorem atomHead_value_eq (bits : Fin n → Bool) (p : SeqPos n) :
     (atomHead n a b).value bits p = atomTok n a b (Head.seqTok bits p) := by
   simp [Head.value, Head.x, atomHead_WV]
 
 include ha in
 /-- Denominator is `k + a` where `k = |x|`. -/
-lemma atomHead_denom (bits : Fin n → Bool) :
+theorem atomHead_denom (bits : Fin n → Bool) :
     (atomHead n a b).denominator bits = (hammingWeight bits : ℝ) + a := by
   unfold Head.denominator
   rw [Fintype.sum_option, atomHead_sigma_none a b ha]
@@ -175,7 +175,7 @@ lemma atomHead_denom (bits : Fin n → Bool) :
 
 include hn ha in
 /-- Readout of the numerator is the constant `b`. -/
-lemma atomHead_numread (bits : Fin n → Bool) :
+theorem atomHead_numread (bits : Fin n → Bool) :
     ⟪atomReadout, (atomHead n a b).numerator bits⟫_ℝ = b := by
   have hn0 : (n : ℝ) ≠ 0 := by positivity
   unfold Head.numerator

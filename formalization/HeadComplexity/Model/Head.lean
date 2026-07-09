@@ -24,14 +24,14 @@ def computesPred {α : Type*} (f : α → Bool) (g : α → Vec d) : Prop :=
   ∃ (w : Vec d) (τ : ℝ), ∀ a : α, ⟪w, g a⟫_ℝ > τ ↔ f a = true
 
 /-- The real-inner-product map `inner w : Vec d → ℝ` packaged as a
-linear functional so it can be passed to segment-separation lemmas. -/
+linear functional so it can be passed to segment-separation theorems. -/
 noncomputable def innerLeftLin {d : ℕ} (w : Vec d) : Vec d →ₗ[ℝ] ℝ where
   toFun v := ⟪w, v⟫_ℝ
   map_add' x y := inner_add_right w x y
   map_smul' c x := by
     simp [inner_smul_right, smul_eq_mul]
 
-@[simp] lemma innerLeftLin_apply {d : ℕ} (w v : Vec d) :
+@[simp] theorem innerLeftLin_apply {d : ℕ} (w v : Vec d) :
     innerLeftLin w v = ⟪w, v⟫_ℝ := rfl
 
 /-- Sequence positions for the `n`-bit generalized model: `some i` is an
@@ -85,11 +85,11 @@ noncomputable def attnUpdate (H : Head n d) (bits : Fin n → Bool) : Vec d :=
 noncomputable def residual (H : Head n d) (bits : Fin n → Bool) : Vec d :=
   H.x bits none + H.attnUpdate bits
 
-lemma sigma_pos (H : Head n d) (bits : Fin n → Bool) (p : SeqPos n) :
+theorem sigma_pos (H : Head n d) (bits : Fin n → Bool) (p : SeqPos n) :
     0 < H.sigma bits p :=
   Real.exp_pos _
 
-lemma denominator_pos (H : Head n d) (bits : Fin n → Bool) :
+theorem denominator_pos (H : Head n d) (bits : Fin n → Bool) :
     0 < H.denominator bits := by
   unfold denominator
   apply Finset.sum_pos
@@ -97,11 +97,11 @@ lemma denominator_pos (H : Head n d) (bits : Fin n → Bool) :
     exact H.sigma_pos bits p
   · exact Finset.univ_nonempty
 
-lemma denominator_ne_zero (H : Head n d) (bits : Fin n → Bool) :
+theorem denominator_ne_zero (H : Head n d) (bits : Fin n → Bool) :
     H.denominator bits ≠ 0 :=
   (H.denominator_pos bits).ne'
 
-lemma denom_smul_attn (H : Head n d) (bits : Fin n → Bool) :
+theorem denom_smul_attn (H : Head n d) (bits : Fin n → Bool) :
     H.denominator bits • H.attnUpdate bits = H.numerator bits := by
   unfold attnUpdate
   rw [smul_inv_smul₀ (H.denominator_ne_zero bits)]
@@ -113,7 +113,7 @@ def restrictBits (base : Fin n → Bool) (i j : Fin n) (ab : Bool × Bool) :
     Fin n → Bool :=
   fun k => if k = i then ab.1 else if k = j then ab.2 else base k
 
-private lemma combo_eq_scaled_sum {V : Type*} [AddCommGroup V] [Module ℝ V]
+private theorem combo_eq_scaled_sum {V : Type*} [AddCommGroup V] [Module ℝ V]
     (a b : ℝ) (u v : V) :
     (a / (a + b)) • u + (b / (a + b)) • v = (a + b)⁻¹ • (a • u + b • v) := by
   rw [smul_add, smul_smul, smul_smul]
@@ -127,7 +127,7 @@ noncomputable def restrictedUpdate
     Bool × Bool → Vec d :=
   fun ab => H.attnUpdate (restrictBits base i j ab)
 
-private lemma restrict_term_antipode
+private theorem restrict_term_antipode
     (H : Head n d) (base : Fin n → Bool) (i j : Fin n) (hij : i ≠ j)
     (p : SeqPos n) :
     H.sigma (restrictBits base i j (false, false)) p •
@@ -152,7 +152,7 @@ private lemma restrict_term_antipode
           abel
         · simp [sigma, value, x, seqTok, restrictBits, hk, hj]
 
-private lemma restrict_sigma_antipode
+private theorem restrict_sigma_antipode
     (H : Head n d) (base : Fin n → Bool) (i j : Fin n) (hij : i ≠ j)
     (p : SeqPos n) :
     H.sigma (restrictBits base i j (false, false)) p
@@ -312,15 +312,15 @@ noncomputable def HStarN (n : ℕ) (f : (Fin n → Bool) → Bool) : ℕ :=
     classical
     exact if h : ∃ k, computableWithHeadsN n k f then Nat.find h else 0
 
-@[simp] lemma headFamilyAttnUpdate_zero {n d : ℕ} {Hs : HeadFamily n d 0}
+@[simp] theorem headFamilyAttnUpdate_zero {n d : ℕ} {Hs : HeadFamily n d 0}
     (bits : Fin n → Bool) : headFamilyAttnUpdate Hs bits = 0 := by
   simp [headFamilyAttnUpdate]
 
-@[simp] lemma headFamilyAttnUpdate_one {n d : ℕ} {Hs : HeadFamily n d 1}
+@[simp] theorem headFamilyAttnUpdate_one {n d : ℕ} {Hs : HeadFamily n d 1}
     (bits : Fin n → Bool) : headFamilyAttnUpdate Hs bits = (Hs 0).attnUpdate bits := by
   simp [headFamilyAttnUpdate]
 
-lemma HStarN_eq_of_exact {n k : ℕ} {f : (Fin n → Bool) → Bool}
+theorem HStarN_eq_of_exact {n k : ℕ} {f : (Fin n → Bool) → Bool}
     (hk : exactHeadComplexityN n f k) : HStarN n f = k := by
   classical
   unfold HStarN
@@ -332,7 +332,7 @@ lemma HStarN_eq_of_exact {n k : ℕ} {f : (Fin n → Bool) → Bool}
   · exfalso
     exact hExists ⟨k, hk.1⟩
 
-lemma not_computableWithHeadsN_zero_of_false_true
+theorem not_computableWithHeadsN_zero_of_false_true
     {n : ℕ} (f : (Fin n → Bool) → Bool) (bitsFalse bitsTrue : Fin n → Bool)
     (hFalse : f bitsFalse = false) (hTrue : f bitsTrue = true) :
     ¬ computableWithHeadsN n 0 f := by

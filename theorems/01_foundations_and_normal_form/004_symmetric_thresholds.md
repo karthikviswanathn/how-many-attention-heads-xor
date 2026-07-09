@@ -63,7 +63,7 @@ $$ s(k)  =  \frac{e  k}{e  k + (n-k) + e}. $$
 
 So the entire head output lies on a single ray, and the only thing that matters is the scalar score $s(k)$.
 
-## Monotonicity Lemma
+## Monotonicity Theorem
 
 **Claim.** The function $s(k)$ is strictly increasing in $k$.
 

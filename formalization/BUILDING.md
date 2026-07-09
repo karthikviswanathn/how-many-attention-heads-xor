@@ -57,10 +57,10 @@ theorems depend only on Lean's three standard axioms
 cat > /tmp/AxiomCheck.lean <<'EOF'
 import HeadComplexity
 open HeadComplexity
-#print axioms lemma12_symmetric                  -- L12, unconditional equality
+#print axioms theorem12_symmetric                  -- L12, unconditional equality
 #print axioms symmetricFn_computable             -- L12 upper bound
 #print axioms signChanges_le_of_computableWithHeadsN  -- L12 lower bound
-#print axioms lemma6_degree_le                   -- L6 (model → threshold degree)
+#print axioms theorem6_degree_le                   -- L6 (model → threshold degree)
 EOF
 lake env lean /tmp/AxiomCheck.lean
 ```
@@ -68,7 +68,7 @@ lake env lean /tmp/AxiomCheck.lean
 Expected output — every line ends in exactly `[propext, Classical.choice, Quot.sound]`:
 
 ```
-'HeadComplexity.lemma12_symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HeadComplexity.theorem12_symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]
 ...
 ```
 
@@ -197,6 +197,6 @@ theorem HStarN_symmetricFn (F : ℕ → Bool) (n : ℕ) :
     HStarN n (symmetricFn F) = signChanges n F
 ```
 
-(Lemma 12: the head complexity of a symmetric Boolean function equals the number
+(Theorem 12: the head complexity of a symmetric Boolean function equals the number
 of sign changes of its weight profile), depending only on the three standard
 Lean axioms.

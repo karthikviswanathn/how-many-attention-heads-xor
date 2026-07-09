@@ -3,7 +3,7 @@ import HeadComplexity.Polynomial.ThresholdDegree
 set_option linter.style.header false
 
 /-!
-# Model → polynomial bridge (Lemma 6 / L12 lower bound, Phase 2).
+# Model → polynomial bridge (Theorem 6 / L12 lower bound, Phase 2).
 
 `computableWithHeadsN n H f → ThresholdDegLE f H`: any function computed by `H`
 attention heads has a real polynomial of total degree `≤ H` whose sign matches
@@ -30,7 +30,7 @@ variable {n d : ℕ}
 noncomputable def affineAt (p : Fin n) (vf vt : ℝ) : MvPolynomial (Fin n) ℝ :=
   C vf + C (vt - vf) * X p
 
-lemma affineAt_eval (p : Fin n) (vf vt : ℝ) (bits : Fin n → Bool) :
+theorem affineAt_eval (p : Fin n) (vf vt : ℝ) (bits : Fin n → Bool) :
     eval (cubePoint bits) (affineAt p vf vt) = if bits p then vt else vf := by
   unfold affineAt cubePoint boolToReal
   simp only [map_add, map_mul, eval_C, eval_X]
@@ -38,7 +38,7 @@ lemma affineAt_eval (p : Fin n) (vf vt : ℝ) (bits : Fin n → Bool) :
   · simp [h]
   · simp [h]
 
-lemma affineAt_totalDegree_le (p : Fin n) (vf vt : ℝ) :
+theorem affineAt_totalDegree_le (p : Fin n) (vf vt : ℝ) :
     (affineAt p vf vt).totalDegree ≤ 1 := by
   unfold affineAt
   refine (totalDegree_add _ _).trans ?_
@@ -48,7 +48,7 @@ lemma affineAt_totalDegree_le (p : Fin n) (vf vt : ℝ) :
   rw [totalDegree_C, totalDegree_X]
 
 /-- A function depending only on bit `p` has a degree ≤ 1 representing polynomial. -/
-lemma exists_affine_of_single_pos (s : (Fin n → Bool) → ℝ) (p : Fin n)
+theorem exists_affine_of_single_pos (s : (Fin n → Bool) → ℝ) (p : Fin n)
     (hdep : ∀ b₁ b₂ : Fin n → Bool, b₁ p = b₂ p → s b₁ = s b₂) :
     ∃ P : MvPolynomial (Fin n) ℝ, P.totalDegree ≤ 1 ∧
       ∀ bits, eval (cubePoint bits) P = s bits := by
@@ -65,7 +65,7 @@ lemma exists_affine_of_single_pos (s : (Fin n → Bool) → ℝ) (p : Fin n)
     rw [if_neg h]; exact (hdep bits _ hb).symm
 
 /-- A constant function has a degree 0 representing polynomial. -/
-lemma exists_const_poly (c : ℝ) :
+theorem exists_const_poly (c : ℝ) :
     ∃ P : MvPolynomial (Fin n) ℝ, P.totalDegree ≤ 1 ∧
       ∀ bits, eval (cubePoint bits) P = c := by
   refine ⟨C c, ?_, ?_⟩
@@ -77,25 +77,25 @@ lemma exists_const_poly (c : ℝ) :
 variable (H : Head n d)
 
 /-- The query position embedding is bit-independent. -/
-lemma Head_x_none_const (b₁ b₂ : Fin n → Bool) : H.x b₁ none = H.x b₂ none := by
+theorem Head_x_none_const (b₁ b₂ : Fin n → Bool) : H.x b₁ none = H.x b₂ none := by
   simp [Head.x, Head.seqTok]
 
 /-- `σ` at an input position depends only on that bit. -/
-lemma Head_sigma_single (i : Fin n) (b₁ b₂ : Fin n → Bool) (h : b₁ i = b₂ i) :
+theorem Head_sigma_single (i : Fin n) (b₁ b₂ : Fin n → Bool) (h : b₁ i = b₂ i) :
     H.sigma b₁ (some i) = H.sigma b₂ (some i) := by
   unfold Head.sigma
   rw [show H.x b₁ (some i) = H.x b₂ (some i) by simp [Head.x, Head.seqTok, h],
       Head_x_none_const H b₁ b₂]
 
 /-- `σ` at the query position is bit-independent. -/
-lemma Head_sigma_none_const (b₁ b₂ : Fin n → Bool) :
+theorem Head_sigma_none_const (b₁ b₂ : Fin n → Bool) :
     H.sigma b₁ none = H.sigma b₂ none := by
   unfold Head.sigma
   rw [Head_x_none_const H b₁ b₂]
 
 /-- The readout score term `σ_p · ⟪w, value_p⟫` at an input position depends only
 on that bit. -/
-lemma Head_scoreTerm_single (w : Vec d) (i : Fin n) (b₁ b₂ : Fin n → Bool)
+theorem Head_scoreTerm_single (w : Vec d) (i : Fin n) (b₁ b₂ : Fin n → Bool)
     (h : b₁ i = b₂ i) :
     H.sigma b₁ (some i) * ⟪w, H.value b₁ (some i)⟫_ℝ
       = H.sigma b₂ (some i) * ⟪w, H.value b₂ (some i)⟫_ℝ := by
@@ -105,7 +105,7 @@ lemma Head_scoreTerm_single (w : Vec d) (i : Fin n) (b₁ b₂ : Fin n → Bool)
   unfold Head.value
   rw [hx]
 
-lemma Head_scoreTerm_none_const (w : Vec d) (b₁ b₂ : Fin n → Bool) :
+theorem Head_scoreTerm_none_const (w : Vec d) (b₁ b₂ : Fin n → Bool) :
     H.sigma b₁ none * ⟪w, H.value b₁ none⟫_ℝ
       = H.sigma b₂ none * ⟪w, H.value b₂ none⟫_ℝ := by
   have hv : H.value b₁ none = H.value b₂ none := by
@@ -115,7 +115,7 @@ lemma Head_scoreTerm_none_const (w : Vec d) (b₁ b₂ : Fin n → Bool) :
 /-! ## Per-head denominator and numerator-readout polynomials -/
 
 /-- The denominator of one head as a degree ≤ 1 polynomial. -/
-lemma Head.exists_denomPoly :
+theorem Head.exists_denomPoly :
     ∃ D : MvPolynomial (Fin n) ℝ, D.totalDegree ≤ 1 ∧
       ∀ bits, eval (cubePoint bits) D = H.denominator bits := by
   classical
@@ -137,7 +137,7 @@ lemma Head.exists_denomPoly :
   rfl
 
 /-- The numerator readout `⟪w, numerator⟫` of one head as a degree ≤ 1 polynomial. -/
-lemma Head.exists_numPoly (w : Vec d) :
+theorem Head.exists_numPoly (w : Vec d) :
     ∃ Nm : MvPolynomial (Fin n) ℝ, Nm.totalDegree ≤ 1 ∧
       ∀ bits, eval (cubePoint bits) Nm = ⟪w, H.numerator bits⟫_ℝ := by
   classical
@@ -165,14 +165,14 @@ lemma Head.exists_numPoly (w : Vec d) :
 
 /-! ## Degree helpers -/
 
-lemma totalDegree_prod_le_card {ι : Type*} (s : Finset ι)
+theorem totalDegree_prod_le_card {ι : Type*} (s : Finset ι)
     (D : ι → MvPolynomial (Fin n) ℝ) (hD : ∀ g, (D g).totalDegree ≤ 1) :
     (∏ g ∈ s, D g).totalDegree ≤ s.card := by
   refine (totalDegree_finsetProd _ _).trans ?_
   refine (Finset.sum_le_card_nsmul _ _ 1 (fun g _ => hD g)).trans ?_
   rw [smul_eq_mul, mul_one]
 
-/-! ## Main theorem (Lemma 6): `H` heads give a degree-≤H sign representation. -/
+/-! ## Main theorem (Theorem 6): `H` heads give a degree-≤H sign representation. -/
 
 theorem signReprDegLe_of_computableWithHeadsN {n H : ℕ} {f : (Fin n → Bool) → Bool}
     (hf : computableWithHeadsN n H f) : ThresholdDegLE f H := by

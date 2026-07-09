@@ -3,7 +3,7 @@ import HeadComplexity.Polynomial.UnivariateReduction
 set_option linter.style.header false
 
 /-!
-# Lemma 7 — parity has threshold degree exactly `n`.
+# Theorem 7 — parity has threshold degree exactly `n`.
 
 `deg±(PARITY_n) = n`, where `deg±` is the least total degree of a real polynomial
 sign-representing the function on the Boolean cube (`thresholdDeg` below).
@@ -31,7 +31,7 @@ noncomputable def thresholdDeg (f : (Fin n → Bool) → Bool) : ℕ := by
 /-! ## The parity sign polynomial `-∏ (1 - 2 X_i)` -/
 
 /-- Each factor `C 1 - C 2 * X i` has total degree `≤ 1`. -/
-lemma totalDegree_parityFactor (i : Fin n) :
+theorem totalDegree_parityFactor (i : Fin n) :
     (C (1 : ℝ) - C 2 * X i).totalDegree ≤ 1 := by
   refine (totalDegree_sub _ _).trans (max_le ?_ ?_)
   · rw [totalDegree_C]; exact Nat.zero_le _
@@ -40,7 +40,7 @@ lemma totalDegree_parityFactor (i : Fin n) :
     exact le_of_eq (totalDegree_X i)
 
 /-- Evaluating the parity polynomial on a cube point. -/
-lemma eval_parityPoly (x : Fin n → Bool) :
+theorem eval_parityPoly (x : Fin n → Bool) :
     eval (cubePoint x) (-∏ i : Fin n, (C 1 - C 2 * X i))
       = -∏ i : Fin n, (1 - 2 * boolToReal (x i)) := by
   rw [map_neg, map_prod]
@@ -49,7 +49,7 @@ lemma eval_parityPoly (x : Fin n → Bool) :
   simp [cubePoint, map_sub, map_mul, eval_C, eval_X]
 
 /-- On the cube the product of `1 - 2 x_i` is `(-1)^{|x|}`. -/
-lemma prod_one_sub_two (x : Fin n → Bool) :
+theorem prod_one_sub_two (x : Fin n → Bool) :
     ∏ i : Fin n, (1 - 2 * boolToReal (x i)) = (-1 : ℝ) ^ hammingWeight x := by
   have hterm : ∀ i : Fin n,
       (1 - 2 * boolToReal (x i) : ℝ) = if x i = true then (-1 : ℝ) else 1 := by
@@ -59,7 +59,7 @@ lemma prod_one_sub_two (x : Fin n → Bool) :
   rfl
 
 /-- `0 < -(-1)^m` exactly when `m` is odd. -/
-lemma neg_neg_one_pow_pos_iff (m : ℕ) : (0 : ℝ) < -((-1 : ℝ) ^ m) ↔ Odd m := by
+theorem neg_neg_one_pow_pos_iff (m : ℕ) : (0 : ℝ) < -((-1 : ℝ) ^ m) ↔ Odd m := by
   constructor
   · intro h
     by_contra hodd
@@ -70,23 +70,23 @@ lemma neg_neg_one_pow_pos_iff (m : ℕ) : (0 : ℝ) < -((-1 : ℝ) ^ m) ↔ Odd 
     rw [hodd.neg_one_pow]; norm_num
 
 /-- The parity polynomial sign-represents `PARITY n`. -/
-lemma signRep_parityPoly : SignRepresents (-∏ i : Fin n, (C 1 - C 2 * X i)) (PARITY n) := by
+theorem signRep_parityPoly : SignRepresents (-∏ i : Fin n, (C 1 - C 2 * X i)) (PARITY n) := by
   intro x
   rw [eval_parityPoly, prod_one_sub_two, neg_neg_one_pow_pos_iff,
     PARITY_eq_symmetricFn, symmetricFn_apply]
   simp [decide_eq_true_eq]
 
 /-- **Upper bound.** Parity has threshold degree at most `n`. -/
-lemma parity_ThresholdDegLE (n : ℕ) : ThresholdDegLE (PARITY n) n := by
+theorem parity_ThresholdDegLE (n : ℕ) : ThresholdDegLE (PARITY n) n := by
   refine ⟨-∏ i : Fin n, (C 1 - C 2 * X i), ?_, signRep_parityPoly⟩
   rw [totalDegree_neg]
   have h := totalDegree_prod_le_card (Finset.univ : Finset (Fin n))
     (fun i => C (1 : ℝ) - C 2 * X i) totalDegree_parityFactor
   simpa using h
 
-/-! ## Lemma 7 -/
+/-! ## Theorem 7 -/
 
-/-- **Lemma 7.** Parity has threshold degree exactly `n`. -/
+/-- **Theorem 7.** Parity has threshold degree exactly `n`. -/
 theorem thresholdDeg_parity (n : ℕ) : thresholdDeg (PARITY n) = n := by
   classical
   have hex : ∃ d, ThresholdDegLE (PARITY n) d := ⟨n, parity_ThresholdDegLE n⟩

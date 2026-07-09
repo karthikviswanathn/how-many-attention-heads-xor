@@ -30,7 +30,7 @@ $$ H^{\ast}(f) = C(F). $$
 
 We prove matching lower and upper bounds.
 
-### Lemma 1. Symmetric threshold degree equals sign-change count
+### Theorem 1. Symmetric threshold degree equals sign-change count
 
 For symmetric $f$ as above,
 
@@ -98,7 +98,7 @@ $$ \deg_{\pm}(f) = C(F). $$
 
 $\blacksquare$
 
-### Lemma 2. Shifted reciprocal Hamming-weight functions cost one head
+### Theorem 2. Shifted reciprocal Hamming-weight functions cost one head
 
 Fix $r > 0$ and $d \in \mathbb{R}$. The scalar function
 
@@ -132,13 +132,13 @@ $$ \frac{(\alpha - 1)d}{\gamma + n + (\alpha - 1)k} = \frac{(\alpha - 1)d}{(\alp
 
 This is exactly $\psi_{r,d}(x)$. $\blacksquare$
 
-### Lemma 3. C(F) heads realize the symmetric sign pattern
+### Theorem 3. C(F) heads realize the symmetric sign pattern
 
 If $C(F) = 0$, then $f$ is constant, so $H^{\ast}(f) = 0$.
 
 Assume now that $C := C(F) \geq 1$.
 
-By Lemma 1, there is a degree $C$ univariate polynomial $P(z)$ such that
+By Theorem 1, there is a degree $C$ univariate polynomial $P(z)$ such that
 
 $$ \mathrm{sgn}(P(k)) = \sigma_k \qquad \text{for } k = 0,\ldots,n. $$
 
@@ -164,7 +164,7 @@ for some real numbers
 
 $$ c,d_1,\ldots,d_C \in \mathbb{R}. $$
 
-By Lemma 2, each function
+By Theorem 2, each function
 
 $$ x \mapsto \frac{d_j}{\lvert x\rvert+r_j} $$
 
@@ -180,11 +180,11 @@ $\blacksquare$
 
 ### Conclusion
 
-By Lemma 1 and the general threshold-degree lower bound from [006_threshold_degree_head_complexity_bound.md](006_threshold_degree_head_complexity_bound.md),
+By Theorem 1 and the general threshold-degree lower bound from [006_threshold_degree_head_complexity_bound.md](006_threshold_degree_head_complexity_bound.md),
 
 $$ H^{\ast}(f) \geq \deg_{\pm}(f) = C(F). $$
 
-By Lemma 3,
+By Theorem 3,
 
 $$ H^{\ast}(f) \leq C(F). $$
 

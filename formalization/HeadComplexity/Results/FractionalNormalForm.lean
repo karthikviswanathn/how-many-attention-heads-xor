@@ -5,7 +5,7 @@ import HeadComplexity.Results.LowComplexity
 set_option linter.style.header false
 
 /-!
-# Lemma 10 — `H*(f) = L_frac(f)` (capstone).
+# Theorem 10 — `H*(f) = L_frac(f)` (capstone).
 
 Combining the two directions (`fracComputable_of_computable` and
 `computable_of_fracComputable`) gives, for every `H`, that computability with `H`
@@ -22,7 +22,7 @@ theorem computableWithHeadsN_iff_fracComputable (H : ℕ) (f : (Fin n → Bool) 
     computableWithHeadsN n H f ↔ fracComputable n H f :=
   ⟨fracComputable_of_computable, computable_of_fracComputable⟩
 
-/-- **Lemma 10.** The head complexity equals the linear-fractional complexity. -/
+/-- **Theorem 10.** The head complexity equals the linear-fractional complexity. -/
 theorem HStarN_eq_Lfrac (f : (Fin n → Bool) → Bool) : HStarN n f = Lfrac n f := by
   classical
   have hiff := computableWithHeadsN_iff_fracComputable (n := n) (f := f)

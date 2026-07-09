@@ -40,13 +40,13 @@ variable {n : ℕ}
 /-- The set of coordinates set to `true`. -/
 def onesSet (x : Fin n → Bool) : Finset (Fin n) := univ.filter (fun i => x i = true)
 
-@[simp] lemma onesSet_card (x : Fin n → Bool) : (onesSet x).card = hammingWeight x := rfl
+@[simp] theorem onesSet_card (x : Fin n → Bool) : (onesSet x).card = hammingWeight x := rfl
 
-lemma mem_onesSet {x : Fin n → Bool} {i : Fin n} : i ∈ onesSet x ↔ x i = true := by
+theorem mem_onesSet {x : Fin n → Bool} {i : Fin n} : i ∈ onesSet x ↔ x i = true := by
   simp only [onesSet, mem_filter, mem_univ, true_and]
 
 /-- On the cube a monomial is the indicator that its support lies in the ones-set. -/
-lemma eval_cube_monomial (x : Fin n → Bool) (d : Fin n →₀ ℕ) :
+theorem eval_cube_monomial (x : Fin n → Bool) (d : Fin n →₀ ℕ) :
     (∏ i ∈ d.support, cubePoint x i ^ d i) = if d.support ⊆ onesSet x then 1 else 0 := by
   by_cases hsub : d.support ⊆ onesSet x
   · rw [if_pos hsub]
@@ -66,7 +66,7 @@ lemma eval_cube_monomial (x : Fin n → Bool) (d : Fin n →₀ ℕ) :
     simp [cubePoint, boolToReal, hxf, zero_pow hdi]
 
 /-- Evaluation on the cube as a sum over support-subset indicators. -/
-lemma eval_cube_eq_subset_sum (x : Fin n → Bool) (P : MvPolynomial (Fin n) ℝ) :
+theorem eval_cube_eq_subset_sum (x : Fin n → Bool) (P : MvPolynomial (Fin n) ℝ) :
     eval (cubePoint x) P
       = ∑ d ∈ P.support, P.coeff d * (if d.support ⊆ onesSet x then 1 else 0) := by
   rw [eval_eq]
@@ -74,7 +74,7 @@ lemma eval_cube_eq_subset_sum (x : Fin n → Bool) (P : MvPolynomial (Fin n) ℝ
 
 /-! ## A permutation sending one set onto another of the same size -/
 
-lemma exists_perm_image {A A' : Finset (Fin n)} (h : A.card = A'.card) :
+theorem exists_perm_image {A A' : Finset (Fin n)} (h : A.card = A'.card) :
     ∃ σ : Equiv.Perm (Fin n), A.image (σ : Fin n → Fin n) = A' := by
   classical
   have hmem : {a : Fin n // a ∈ A} ≃ {a : Fin n // a ∈ A'} :=
@@ -106,7 +106,7 @@ def supportCoeffSum (A : Finset (Fin n)) : ℝ :=
   ∑ d ∈ P.support.filter (fun d => d.support = A), P.coeff d
 
 /-- For symmetric `P`, `supportCoeffSum` depends only on the cardinality of the set. -/
-lemma supportCoeffSum_const (hP : P.IsSymmetric) {A A' : Finset (Fin n)}
+theorem supportCoeffSum_const (hP : P.IsSymmetric) {A A' : Finset (Fin n)}
     (h : A.card = A'.card) : supportCoeffSum P A = supportCoeffSum P A' := by
   classical
   obtain ⟨σ, hσ⟩ := exists_perm_image h
@@ -154,14 +154,14 @@ lemma supportCoeffSum_const (hP : P.IsSymmetric) {A A' : Finset (Fin n)}
 noncomputable def betaCoeff (j : ℕ) : ℝ :=
   if h : ∃ A : Finset (Fin n), A.card = j then supportCoeffSum P h.choose else 0
 
-lemma supportCoeffSum_eq_beta (hP : P.IsSymmetric) (A : Finset (Fin n)) :
+theorem supportCoeffSum_eq_beta (hP : P.IsSymmetric) (A : Finset (Fin n)) :
     supportCoeffSum P A = betaCoeff P A.card := by
   unfold betaCoeff
   have hex : ∃ B : Finset (Fin n), B.card = A.card := ⟨A, rfl⟩
   rw [dif_pos hex]
   exact supportCoeffSum_const P hP hex.choose_spec.symm
 
-lemma support_card_le_totalDegree {d : Fin n →₀ ℕ} (hd : d ∈ P.support) :
+theorem support_card_le_totalDegree {d : Fin n →₀ ℕ} (hd : d ∈ P.support) :
     d.support.card ≤ P.totalDegree := by
   calc d.support.card = ∑ _i ∈ d.support, 1 := by rw [Finset.card_eq_sum_ones]
     _ ≤ ∑ i ∈ d.support, d i :=
@@ -169,7 +169,7 @@ lemma support_card_le_totalDegree {d : Fin n →₀ ℕ} (hd : d ∈ P.support) 
     _ = d.sum (fun _ e => e) := rfl
     _ ≤ P.totalDegree := le_totalDegree hd
 
-lemma betaCoeff_eq_zero_of_gt {H : ℕ} (hdeg : P.totalDegree ≤ H) {j : ℕ} (hj : H < j) :
+theorem betaCoeff_eq_zero_of_gt {H : ℕ} (hdeg : P.totalDegree ≤ H) {j : ℕ} (hj : H < j) :
     betaCoeff P j = 0 := by
   unfold betaCoeff
   by_cases hex : ∃ A : Finset (Fin n), A.card = j
@@ -190,11 +190,11 @@ lemma betaCoeff_eq_zero_of_gt {H : ℕ} (hdeg : P.totalDegree ≤ H) {j : ℕ} (
 noncomputable def binomPoly (j : ℕ) : Polynomial ℝ :=
   ((Nat.factorial j : ℝ)⁻¹) • descPochhammer ℝ j
 
-lemma binomPoly_eval (j k : ℕ) : (binomPoly j).eval (k : ℝ) = (k.choose j : ℝ) := by
+theorem binomPoly_eval (j k : ℕ) : (binomPoly j).eval (k : ℝ) = (k.choose j : ℝ) := by
   rw [binomPoly, Polynomial.eval_smul, smul_eq_mul, Nat.cast_choose_eq_descPochhammer_div,
     div_eq_inv_mul]
 
-lemma binomPoly_natDegree_le (j : ℕ) : (binomPoly j).natDegree ≤ j := by
+theorem binomPoly_natDegree_le (j : ℕ) : (binomPoly j).natDegree ≤ j := by
   rw [binomPoly]
   calc (((Nat.factorial j : ℝ)⁻¹) • descPochhammer ℝ j).natDegree
       ≤ (descPochhammer ℝ j).natDegree := Polynomial.natDegree_smul_le _ _
@@ -203,7 +203,7 @@ lemma binomPoly_natDegree_le (j : ℕ) : (binomPoly j).natDegree ≤ j := by
 /-! ## The reduction identity -/
 
 /-- Symmetric `P` on the cube equals `∑_j β_j · C(|x|, j)`. -/
-lemma eval_eq_betaSum (hP : P.IsSymmetric) (x : Fin n → Bool) :
+theorem eval_eq_betaSum (hP : P.IsSymmetric) (x : Fin n → Bool) :
     eval (cubePoint x) P
       = ∑ j ∈ Finset.range (n + 1), betaCoeff P j * ((hammingWeight x).choose j : ℝ) := by
   classical
@@ -258,7 +258,7 @@ lemma eval_eq_betaSum (hP : P.IsSymmetric) (x : Fin n → Bool) :
 
 /-- **Univariate reduction.** A symmetric polynomial of total degree `≤ H` on the
 cube is a univariate polynomial of degree `≤ H` in the Hamming weight. -/
-lemma exists_univariate_of_symmetric {H : ℕ} (hP : P.IsSymmetric)
+theorem exists_univariate_of_symmetric {H : ℕ} (hP : P.IsSymmetric)
     (hdeg : P.totalDegree ≤ H) :
     ∃ p : Polynomial ℝ, p.natDegree ≤ H ∧
       ∀ x : Fin n → Bool, p.eval (hammingWeight x : ℝ) = eval (cubePoint x) P := by
@@ -282,7 +282,7 @@ lemma exists_univariate_of_symmetric {H : ℕ} (hP : P.IsSymmetric)
 /-! ## L12 lower bound -/
 
 /-- For any `k ≤ n` there is an input of Hamming weight `k`. -/
-lemma exists_hammingWeight_eq {k : ℕ} (hk : k ≤ n) :
+theorem exists_hammingWeight_eq {k : ℕ} (hk : k ≤ n) :
     ∃ x : Fin n → Bool, hammingWeight x = k := by
   classical
   obtain ⟨T, _, hTcard⟩ := Finset.exists_subset_card_eq
@@ -297,9 +297,9 @@ lemma exists_hammingWeight_eq {k : ℕ} (hk : k ≤ n) :
 
 /-- **Threshold-degree lower bound for sign changes.** If `symmetricFn F` has
 threshold degree `≤ H`, then its weight profile has at most `H` sign changes.
-This is the symmetric heart of the Lemma 12 lower bound (model → polynomial is
+This is the symmetric heart of the Theorem 12 lower bound (model → polynomial is
 the separate `signReprDegLe_of_computableWithHeadsN` step), and is reused for the
-threshold degree of parity (Lemma 7). -/
+threshold degree of parity (Theorem 7). -/
 theorem signChanges_le_of_ThresholdDegLE {H : ℕ} {F : ℕ → Bool}
     (hTD : ThresholdDegLE (n := n) (symmetricFn F) H) :
     signChanges n F ≤ H := by
@@ -325,7 +325,7 @@ theorem signChanges_le_of_ThresholdDegLE {H : ℕ} {F : ℕ → Bool}
   calc signChanges n F ≤ p.natDegree := signChanges_le_natDegree p F n hpos hneg
     _ ≤ H := hpdeg
 
-/-- **Lemma 12 lower bound.** If a symmetric Boolean function `symmetricFn F` is
+/-- **Theorem 12 lower bound.** If a symmetric Boolean function `symmetricFn F` is
 computable with `H` heads, then the number of sign changes of its weight profile
 `F` is at most `H`. -/
 theorem signChanges_le_of_computableWithHeadsN {H : ℕ} {F : ℕ → Bool}
@@ -333,7 +333,7 @@ theorem signChanges_le_of_computableWithHeadsN {H : ℕ} {F : ℕ → Bool}
     signChanges n F ≤ H :=
   signChanges_le_of_ThresholdDegLE (signReprDegLe_of_computableWithHeadsN hcomp)
 
-/-- **Lemma 12 (equality), conditional form.** For a symmetric Boolean function
+/-- **Theorem 12 (equality), conditional form.** For a symmetric Boolean function
 `symmetricFn F`, the head complexity equals the number of sign changes `C(F)` of
 the weight profile `F`, *given* the upper-bound construction `hub` that realizes
 `symmetricFn F` with `signChanges n F` heads.
@@ -346,7 +346,7 @@ Both directions are discharged here:
 `hub` is now itself proven — see `symmetricFn_computable` in `Results/SymmetricComplexity.lean`,
 which builds the `C(F)`-head softmax family explicitly via the linear-fractional
 normal form (sign polynomial → partial fractions → one head per atom). Feeding
-that into this lemma gives the *unconditional* `HStarN_symmetricFn`. This
+that into this theorem gives the *unconditional* `HStarN_symmetricFn`. This
 conditional version is kept as the clean statement of the bridge: it isolates the
 lower-bound machinery (`signChanges_le_of_computableWithHeadsN` — model →
 threshold degree → strictify → symmetrize → univariate reduction → root count),

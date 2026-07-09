@@ -59,51 +59,51 @@ abbrev exactHeadComplexity (f : (Fin 2 → Bool) → Bool) (k : ℕ) : Prop :=
 noncomputable def HStar (f : (Fin 2 → Bool) → Bool) : ℕ :=
   HStarN 2 f
 
-@[simp] lemma twoBitHeadFamilyAttnUpdate_zero {Hs : TwoBitHeadFamily d 0} (bits : Fin 2 → Bool) :
+@[simp] theorem twoBitHeadFamilyAttnUpdate_zero {Hs : TwoBitHeadFamily d 0} (bits : Fin 2 → Bool) :
     twoBitHeadFamilyAttnUpdate Hs bits = 0 := by
   simp [twoBitHeadFamilyAttnUpdate]
 
-@[simp] lemma twoBitHeadFamilyAttnUpdate_one {Hs : TwoBitHeadFamily d 1} (bits : Fin 2 → Bool) :
+@[simp] theorem twoBitHeadFamilyAttnUpdate_one {Hs : TwoBitHeadFamily d 1} (bits : Fin 2 → Bool) :
     twoBitHeadFamilyAttnUpdate Hs bits = (Hs 0).attnUpdate bits := by
   simp [twoBitHeadFamilyAttnUpdate]
 
-@[simp] lemma computesXor_iff_computesBool_xor (g : (Fin 2 → Bool) → Vec d) :
+@[simp] theorem computesXor_iff_computesBool_xor (g : (Fin 2 → Bool) → Vec d) :
     computesXor g ↔ computesBool xorFn g := by
   rfl
 
-@[simp] lemma falseFn_apply (bits : Fin 2 → Bool) : falseFn bits = false := rfl
-@[simp] lemma trueFn_apply (bits : Fin 2 → Bool) : trueFn bits = true := rfl
-@[simp] lemma norFn_apply (bits : Fin 2 → Bool) : norFn bits = !(orFn bits) := rfl
-@[simp] lemma nandFn_apply (bits : Fin 2 → Bool) : nandFn bits = !(andFn bits) := rfl
-@[simp] lemma xnorFn_apply (bits : Fin 2 → Bool) : xnorFn bits = !(xorFn bits) := rfl
+@[simp] theorem falseFn_apply (bits : Fin 2 → Bool) : falseFn bits = false := rfl
+@[simp] theorem trueFn_apply (bits : Fin 2 → Bool) : trueFn bits = true := rfl
+@[simp] theorem norFn_apply (bits : Fin 2 → Bool) : norFn bits = !(orFn bits) := rfl
+@[simp] theorem nandFn_apply (bits : Fin 2 → Bool) : nandFn bits = !(andFn bits) := rfl
+@[simp] theorem xnorFn_apply (bits : Fin 2 → Bool) : xnorFn bits = !(xorFn bits) := rfl
 
-lemma HStar_eq_of_exact {f : (Fin 2 → Bool) → Bool} {k : ℕ}
+theorem HStar_eq_of_exact {f : (Fin 2 → Bool) → Bool} {k : ℕ}
     (hk : exactHeadComplexity f k) : HStar f = k := by
   exact HStarN_eq_of_exact hk
 
 /-- Adding a constant vector only shifts the probe threshold. -/
-lemma computesBool_iff_of_add_const
+theorem computesBool_iff_of_add_const
     (f : (Fin 2 → Bool) → Bool) (g : (Fin 2 → Bool) → Vec d) (c : Vec d) :
     computesBool f g ↔ computesBool f (fun bits => c + g bits) := by
   simpa [computesBool] using computesPred_iff_of_add_const f g c
 
 /-- Generic skip-connection reduction for two-bit Boolean classification. -/
-lemma computesBool_residual_iff_attnUpdate
+theorem computesBool_residual_iff_attnUpdate
     (f : (Fin 2 → Bool) → Bool) (H : Head 2 d) :
     computesBool f H.residual ↔ computesBool f H.attnUpdate := by
   simpa [computesBool] using Head.computesPred_residual_iff_attnUpdate H f
 
 noncomputable def oneProbe : Vec 3 := EuclideanSpace.single (1 : Fin 3) 1
 
-private lemma exp_one_add_two_pos : (0 : ℝ) < Real.exp 1 + 2 := by
+private theorem exp_one_add_two_pos : (0 : ℝ) < Real.exp 1 + 2 := by
   have : (0 : ℝ) < Real.exp 1 := Real.exp_pos _
   linarith
 
-private lemma exp_one_div_exp_one_add_two_pos :
+private theorem exp_one_div_exp_one_add_two_pos :
     (0 : ℝ) < Real.exp 1 / (Real.exp 1 + 2) := by
   exact div_pos (Real.exp_pos _) exp_one_add_two_pos
 
-private lemma exp_one_div_exp_one_add_two_lt_two_exp_one_div_two_exp_one_add_one :
+private theorem exp_one_div_exp_one_add_two_lt_two_exp_one_div_two_exp_one_add_one :
     Real.exp 1 / (Real.exp 1 + 2) < 2 * Real.exp 1 / (2 * Real.exp 1 + 1) := by
   have hden1 : (0 : ℝ) < Real.exp 1 + 2 := exp_one_add_two_pos
   have hden2 : (0 : ℝ) < 2 * Real.exp 1 + 1 := by
@@ -112,55 +112,55 @@ private lemma exp_one_div_exp_one_add_two_lt_two_exp_one_div_two_exp_one_add_one
   rw [div_lt_div_iff₀ hden1 hden2]
   nlinarith [Real.one_lt_exp_iff.mpr one_pos]
 
-@[simp] lemma oneProbe_apply :
+@[simp] theorem oneProbe_apply :
     oneProbe = EuclideanSpace.single (1 : Fin 3) 1 := rfl
 
-private lemma head1_score_ff_ff :
+private theorem head1_score_ff_ff :
     ⟪oneProbe, head1.attnUpdate (bits2 false false)⟫_ℝ = 0 := by
   rw [head1_attnUpdate_ff_ff]
   simp [oneProbe]
 
-private lemma head1_score_ff_tt :
+private theorem head1_score_ff_tt :
     ⟪oneProbe, head1.attnUpdate (bits2 false true)⟫_ℝ
       = Real.exp 1 / (Real.exp 1 + 2) := by
   rw [head1_attnUpdate_ff_tt]
   rw [inner_smul_right, oneProbe_apply, inner_single_single]
   simp [div_eq_mul_inv]
 
-private lemma head1_score_tt_ff :
+private theorem head1_score_tt_ff :
     ⟪oneProbe, head1.attnUpdate (bits2 true false)⟫_ℝ
       = Real.exp 1 / (Real.exp 1 + 2) := by
   rw [head1_attnUpdate_tt_ff]
   rw [inner_smul_right, oneProbe_apply, inner_single_single]
   simp [div_eq_mul_inv]
 
-private lemma head1_score_tt_tt :
+private theorem head1_score_tt_tt :
     ⟪oneProbe, head1.attnUpdate (bits2 true true)⟫_ℝ
       = 2 * Real.exp 1 / (2 * Real.exp 1 + 1) := by
   rw [head1_attnUpdate_tt_tt]
   rw [inner_smul_right, oneProbe_apply, inner_single_single]
   simp [div_eq_mul_inv]
 
-private lemma neg_head1_score_ff_ff :
+private theorem neg_head1_score_ff_ff :
     ⟪-oneProbe, head1.attnUpdate (bits2 false false)⟫_ℝ = 0 := by
   simpa [inner_neg_left] using congrArg Neg.neg head1_score_ff_ff
 
-private lemma neg_head1_score_ff_tt :
+private theorem neg_head1_score_ff_tt :
     ⟪-oneProbe, head1.attnUpdate (bits2 false true)⟫_ℝ
       = -(Real.exp 1 / (Real.exp 1 + 2)) := by
   simpa [inner_neg_left] using congrArg Neg.neg head1_score_ff_tt
 
-private lemma neg_head1_score_tt_ff :
+private theorem neg_head1_score_tt_ff :
     ⟪-oneProbe, head1.attnUpdate (bits2 true false)⟫_ℝ
       = -(Real.exp 1 / (Real.exp 1 + 2)) := by
   simpa [inner_neg_left] using congrArg Neg.neg head1_score_tt_ff
 
-private lemma neg_head1_score_tt_tt :
+private theorem neg_head1_score_tt_tt :
     ⟪-oneProbe, head1.attnUpdate (bits2 true true)⟫_ℝ
       = -(2 * Real.exp 1 / (2 * Real.exp 1 + 1)) := by
   simpa [inner_neg_left] using congrArg Neg.neg head1_score_tt_tt
 
-private lemma bits_eq_bits2_of_cases
+private theorem bits_eq_bits2_of_cases
     (bits : Fin 2 → Bool) (a b : Bool) (h0 : bits 0 = a) (h1 : bits 1 = b) :
     bits = bits2 a b := by
   funext i
@@ -349,7 +349,7 @@ theorem nand_computable_with_one_head :
     ∃ H : Head 2 3, computesBool nandFn H.residual := by
   exact ⟨head1, head1_computes_nand_residual⟩
 
-private lemma one_head_count_of_attnUpdate
+private theorem one_head_count_of_attnUpdate
     {f : (Fin 2 → Bool) → Bool} {H : Head 2 3}
     (h : computesBool f H.attnUpdate) : computableWithHeads f 1 := by
   refine ⟨3, (fun _ => H), ?_⟩
@@ -380,7 +380,7 @@ theorem nand_computable_with_one_head_count :
 
 /-- A `0`-head model has constant output, so it cannot realize a target that is
 false on one input and true on another. -/
-lemma not_computableWithHeads_zero_of_false_true
+theorem not_computableWithHeads_zero_of_false_true
     (f : (Fin 2 → Bool) → Bool) (bitsFalse bitsTrue : Fin 2 → Bool)
     (hFalse : f bitsFalse = false) (hTrue : f bitsTrue = true) :
     ¬ computableWithHeads f 0 :=
@@ -507,7 +507,7 @@ noncomputable def xorTwoHeadFamily : TwoBitHeadFamily 3 2
   | 0 => head0
   | 1 => head1
 
-lemma xorTwoHeadFamily_attnUpdate (bits : Fin 2 → Bool) :
+theorem xorTwoHeadFamily_attnUpdate (bits : Fin 2 → Bool) :
     twoBitHeadFamilyAttnUpdate xorTwoHeadFamily bits = twoHeadUpdate bits := by
   simp [twoBitHeadFamilyAttnUpdate, headFamilyAttnUpdate, xorTwoHeadFamily,
     twoHeadUpdate]
@@ -639,7 +639,7 @@ theorem HStar_nand : HStar nandFn = 1 := HStar_eq_of_exact exactHeadComplexity_n
 theorem HStar_xor : HStar xorFn = 2 := HStar_eq_of_exact exactHeadComplexity_xor
 theorem HStar_xnor : HStar xnorFn = 2 := HStar_eq_of_exact exactHeadComplexity_xnor
 
-private lemma funext_two_bit
+private theorem funext_two_bit
     {f g : (Fin 2 → Bool) → Bool}
     (h : ∀ a b, f (bits2 a b) = g (bits2 a b)) : f = g := by
   funext bits
@@ -649,7 +649,7 @@ private lemma funext_two_bit
   rw [hbits]
   exact h (bits 0) (bits 1)
 
-private lemma ext_by_cases
+private theorem ext_by_cases
     {f g : (Fin 2 → Bool) → Bool}
     (hff : f (bits2 false false) = g (bits2 false false))
     (hft : f (bits2 false true) = g (bits2 false true))

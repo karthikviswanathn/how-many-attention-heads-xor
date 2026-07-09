@@ -36,7 +36,7 @@ open scoped BigOperators InnerProductSpace
 variable {n : ℕ}
 
 /-- Real inner product on `Vec d` as a coordinate sum. -/
-lemma vecN_inner {d : ℕ} (x y : Vec d) : ⟪x, y⟫_ℝ = ∑ i, x i * y i := by
+theorem vecN_inner {d : ℕ} (x y : Vec d) : ⟪x, y⟫_ℝ = ∑ i, x i * y i := by
   change dotProduct (y.ofLp) (star x.ofLp) = _
   simp only [dotProduct, Pi.star_apply, star_trivial]
   exact Finset.sum_congr rfl (fun i _ => mul_comm _ _)
@@ -74,17 +74,17 @@ noncomputable def affReadout (n : ℕ) : Vec (n + 1) := ∑ i : Fin n, Euclidean
 section
 variable (cs : Fin n → ℝ) (c : ℝ)
 
-@[simp] lemma affHead_WK : (affHead cs c).WK = LinearMap.id := rfl
-@[simp] lemma affHead_WQ : (affHead cs c).WQ = LinearMap.id := rfl
-@[simp] lemma affHead_WV : (affHead cs c).WV = LinearMap.id := rfl
+@[simp] theorem affHead_WK : (affHead cs c).WK = LinearMap.id := rfl
+@[simp] theorem affHead_WQ : (affHead cs c).WQ = LinearMap.id := rfl
+@[simp] theorem affHead_WV : (affHead cs c).WV = LinearMap.id := rfl
 
 /-- The query embedding equals `single 0 1`. -/
-lemma affHead_x_none (bits : Fin n → Bool) :
+theorem affHead_x_none (bits : Fin n → Bool) :
     (affHead cs c).x bits none = EuclideanSpace.single (0 : Fin (n + 1)) 1 := by
   simp [Head.x, Head.seqTok, affHead, affTok, affPos]
 
 /-- The embedding at position `i`. -/
-lemma affHead_x_some (bits : Fin n → Bool) (i : Fin n) :
+theorem affHead_x_some (bits : Fin n → Bool) (i : Fin n) :
     (affHead cs c).x bits (some i)
       = affTok (cond (bits i) 1 0) + EuclideanSpace.single i.succ (affCoeff cs c i) := by
   simp [Head.x, Head.seqTok, affHead, affPos]
@@ -97,7 +97,7 @@ section
 variable (cs : Fin n → ℝ) (c : ℝ)
 
 /-- The query `single 0 1` reads coordinate `0` of any vector. -/
-lemma affReadout_query_inner (v : Vec (n + 1)) :
+theorem affReadout_query_inner (v : Vec (n + 1)) :
     ⟪v, EuclideanSpace.single (0 : Fin (n + 1)) 1⟫_ℝ = v 0 := by
   rw [vecN_inner]
   rw [Finset.sum_eq_single (0 : Fin (n + 1))]
@@ -107,7 +107,7 @@ lemma affReadout_query_inner (v : Vec (n + 1)) :
   · intro h; exact absurd (Finset.mem_univ _) h
 
 /-- Score-channel value at position `i`: `log 2` if bit set, else `0`. -/
-lemma affHead_score_some (bits : Fin n → Bool) (i : Fin n) :
+theorem affHead_score_some (bits : Fin n → Bool) (i : Fin n) :
     ((affHead cs c).x bits (some i)) 0 = if bits i then Real.log 2 else 0 := by
   rw [affHead_x_some]
   rw [PiLp.add_apply]
@@ -120,7 +120,7 @@ lemma affHead_score_some (bits : Fin n → Bool) (i : Fin n) :
   | true => simp [affTok]
 
 /-- Softmax weight at the query token is `exp 1`. -/
-lemma affHead_sigma_none (bits : Fin n → Bool) :
+theorem affHead_sigma_none (bits : Fin n → Bool) :
     (affHead cs c).sigma bits none = Real.exp 1 := by
   unfold Head.sigma
   rw [affHead_x_none]
@@ -129,7 +129,7 @@ lemma affHead_sigma_none (bits : Fin n → Bool) :
   rw [PiLp.single_apply, if_pos rfl]
 
 /-- Softmax weight at position `i`: `2` if bit set, else `1`. -/
-lemma affHead_sigma_some (bits : Fin n → Bool) (i : Fin n) :
+theorem affHead_sigma_some (bits : Fin n → Bool) (i : Fin n) :
     (affHead cs c).sigma bits (some i) = if bits i then 2 else 1 := by
   unfold Head.sigma
   rw [affHead_x_none]
@@ -149,7 +149,7 @@ section
 variable (cs : Fin n → ℝ) (c : ℝ)
 
 /-- The readout reads value channel `i.succ` of a vector, i.e. `⟪w, v⟫ = ∑ i, v i.succ`. -/
-lemma affReadout_inner (v : Vec (n + 1)) :
+theorem affReadout_inner (v : Vec (n + 1)) :
     ⟪affReadout n, v⟫_ℝ = ∑ i : Fin n, v i.succ := by
   unfold affReadout
   rw [sum_inner]
@@ -162,19 +162,19 @@ lemma affReadout_inner (v : Vec (n + 1)) :
   · intro h; exact absurd (Finset.mem_univ _) h
 
 /-- The value vector equals the embedding (since `W_V = id`). -/
-lemma affHead_value (bits : Fin n → Bool) (p : SeqPos n) :
+theorem affHead_value (bits : Fin n → Bool) (p : SeqPos n) :
     (affHead cs c).value bits p = (affHead cs c).x bits p := by
   simp [Head.value, affHead]
 
 /-- Readout of the query embedding is `0` (query has no value channels). -/
-lemma affReadout_x_none (bits : Fin n → Bool) :
+theorem affReadout_x_none (bits : Fin n → Bool) :
     ⟪affReadout n, (affHead cs c).x bits none⟫_ℝ = 0 := by
   rw [affHead_x_none, affReadout_inner]
   refine Finset.sum_eq_zero (fun i _ => ?_)
   rw [PiLp.single_apply, if_neg (Fin.succ_ne_zero i)]
 
 /-- Readout of the embedding at position `i` is `a i`. -/
-lemma affReadout_x_some (bits : Fin n → Bool) (i : Fin n) :
+theorem affReadout_x_some (bits : Fin n → Bool) (i : Fin n) :
     ⟪affReadout n, (affHead cs c).x bits (some i)⟫_ℝ = affCoeff cs c i := by
   rw [affHead_x_some, affReadout_inner]
   rw [Finset.sum_eq_single i]
@@ -207,7 +207,7 @@ section
 variable (cs : Fin n → ℝ) (c : ℝ)
 
 /-- Hamming weight as a real sum of `boolToReal`. -/
-lemma hammingWeight_eq_sum (bits : Fin n → Bool) :
+theorem hammingWeight_eq_sum (bits : Fin n → Bool) :
     (hammingWeight bits : ℝ) = ∑ i, boolToReal (bits i) := by
   unfold hammingWeight boolToReal
   rw [Finset.card_filter, Nat.cast_sum]
@@ -215,7 +215,7 @@ lemma hammingWeight_eq_sum (bits : Fin n → Bool) :
   cases bits i <;> simp
 
 /-- Denominator is `exp 1 + n + |x|`. -/
-lemma affHead_denom (bits : Fin n → Bool) :
+theorem affHead_denom (bits : Fin n → Bool) :
     (affHead cs c).denominator bits
       = Real.exp 1 + (n : ℝ) + ∑ i, boolToReal (bits i) := by
   unfold Head.denominator
@@ -231,7 +231,7 @@ lemma affHead_denom (bits : Fin n → Bool) :
   ring
 
 /-- Readout of the numerator is `∑ j, a j * (1 + boolToReal (bits j))`. -/
-lemma affHead_numread (bits : Fin n → Bool) :
+theorem affHead_numread (bits : Fin n → Bool) :
     ⟪affReadout n, (affHead cs c).numerator bits⟫_ℝ
       = ∑ j, affCoeff cs c j * (1 + boolToReal (bits j)) := by
   unfold Head.numerator
@@ -245,7 +245,7 @@ lemma affHead_numread (bits : Fin n → Bool) :
   | true => simp [boolToReal]; ring
 
 /-- **The key sign identity.** -/
-lemma affHead_sign_identity (bits : Fin n → Bool) :
+theorem affHead_sign_identity (bits : Fin n → Bool) :
     ⟪affReadout n, (affHead cs c).numerator bits⟫_ℝ
         - affTau cs c * (affHead cs c).denominator bits
       = c + ∑ i, cs i * boolToReal (bits i) := by

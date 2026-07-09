@@ -1,16 +1,16 @@
 # head-complexity
 
 Lean 4 formalization of the head-complexity results for one-layer attention. The
-definitions and theorems mirror the informal proofs in the top-level `lemmas/` writeups.
+definitions and theorems mirror the informal proofs in the top-level `theorems/` writeups.
 
-## Status — all 12 foundational lemmas formalized
+## Status — all 12 foundational theorems formalized
 
-Every lemma in `lemmas/01_foundations_and_normal_form/` (L1–L12) is machine-checked
+Every theorem in `theorems/01_foundations_and_normal_form/` (L1–L12) is machine-checked
 for **general `n`**, with no `sorry`/`admit`, depending only on the three standard
 Lean axioms `[propext, Classical.choice, Quot.sound]` (the full build runs a
 `#print axioms` gate). `H*` is `HStarN` (the least number of heads realizing `f`).
 
-| # | Lemma | Headline Lean result | File |
+| # | Theorem | Headline Lean result | File |
 |---|-------|----------------------|------|
 | 1 | 2-coordinate numerator additive split | `restricted_numerator_additive_split` | `Results/RestrictionLowerBounds.lean` |
 | 2 | restricted numerator antipode identity | `restricted_numerator_antipode` | `Results/RestrictionLowerBounds.lean` |

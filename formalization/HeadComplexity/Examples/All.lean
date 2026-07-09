@@ -8,7 +8,7 @@ set_option linter.style.header false
 # Examples umbrella.
 
 This module collects the endpoint examples. The imported modules contain the
-supporting constructions and helper lemmas; the aliases below are the public
+supporting constructions and helper theorems; the aliases below are the public
 example-facing table of contents.
 -/
 

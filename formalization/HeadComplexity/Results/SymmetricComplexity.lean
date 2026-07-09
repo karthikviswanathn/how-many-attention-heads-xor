@@ -13,7 +13,7 @@ Assembling the pieces:
 * `atomHead_readout` / `atomFamily_readout` — one head per `b_h/(k+a_h)` atom.
 
 This yields `computableWithHeadsN n (signChanges n F) (symmetricFn F)` (the upper
-bound), which with the verified lower bound gives the full, unconditional Lemma 12:
+bound), which with the verified lower bound gives the full, unconditional Theorem 12:
 `HStarN n (symmetricFn F) = signChanges n F`.
 -/
 
@@ -23,7 +23,7 @@ open Finset
 open scoped BigOperators InnerProductSpace
 
 /-- Hamming weight never exceeds `n`. -/
-lemma hammingWeight_le (n : ℕ) (bits : Fin n → Bool) : hammingWeight bits ≤ n := by
+theorem hammingWeight_le (n : ℕ) (bits : Fin n → Bool) : hammingWeight bits ≤ n := by
   unfold hammingWeight
   calc (Finset.univ.filter fun i => bits i = true).card ≤ (Finset.univ : Finset (Fin n)).card :=
         Finset.card_filter_le _ _
@@ -96,7 +96,7 @@ theorem symmetricFn_computable (F : ℕ → Bool) (n : ℕ) :
     simp only [symmetricFn]
     exact hatom (hammingWeight bits) (hammingWeight_le n bits)
 
-/-- **Lemma 12 (unconditional).** For a symmetric Boolean function, the head
+/-- **Theorem 12 (unconditional).** For a symmetric Boolean function, the head
 complexity equals the number of sign changes of its weight profile. -/
 theorem HStarN_symmetricFn (F : ℕ → Bool) (n : ℕ) :
     HStarN n (symmetricFn F) = signChanges n F :=

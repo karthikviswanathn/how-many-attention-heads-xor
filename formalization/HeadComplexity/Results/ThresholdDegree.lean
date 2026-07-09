@@ -13,10 +13,10 @@ complexity: heads imply low threshold degree, and parity has threshold degree `n
 
 namespace HeadComplexity
 
-/-- **Lemma 6.** `H` heads give a degree-`≤ H` sign representation. -/
+/-- **Theorem 6.** `H` heads give a degree-`≤ H` sign representation. -/
 alias degree_le_of_computableWithHeadsN := signReprDegLe_of_computableWithHeadsN
 
-/-- **Lemma 7.** Parity has threshold degree exactly `n`. -/
+/-- **Theorem 7.** Parity has threshold degree exactly `n`. -/
 alias parity_thresholdDeg := thresholdDeg_parity
 
 end HeadComplexity
