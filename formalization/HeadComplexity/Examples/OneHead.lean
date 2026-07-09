@@ -1,87 +1,96 @@
-import HeadComplexity.Foundation.SegmentCrossing
 import HeadComplexity.Model.AdditiveSplit
-import HeadComplexity.Model.NHead
-import HeadComplexity.Examples.HeadToNHead
-import HeadComplexity.Model.SkipConnection
+import HeadComplexity.Examples.TwoBit
 
 set_option linter.style.header false
 
 /-!
 # Theorem 1: one attention head cannot compute XOR.
 
-The four attention outputs `z(a,b)` satisfy a segment-crossing obstruction:
-the midpoint `𝒟⁻¹ • 𝒩` (with `𝒟 = D(ff,ff) + D(tt,tt)`,
-`𝒩 = N(ff,ff) + N(tt,tt)`) lies simultaneously on the diagonal segment
-`[z(ff,ff), z(tt,tt)]` and on the off-diagonal segment
-`[z(ff,tt), z(tt,ff)]`. No linear probe can place the diagonal outputs
-below a threshold and the off-diagonal outputs above it.
+A single `NHead 2 d` would give a one-head realization of the two-bit XOR
+function, but the model-level checkerboard lower bound rules that out.
 -/
 
 namespace HeadComplexity
 
 open scoped InnerProductSpace
 
-namespace Head
+variable {d : ℕ} (H : NHead 2 d)
 
-variable {d : ℕ} (H : Head d)
+/-- The Bool-product view of a two-bit input. -/
+private def pairBits (ab : Bool × Bool) : Fin 2 → Bool :=
+  bits2 ab.1 ab.2
 
-/-- The attention denominator is strictly positive. -/
-lemma denominator_pos (ab : Bool × Bool) : 0 < H.denominator ab := by
-  simpa using NHead.denominator_pos H.toNHead (pairToBits ab)
+@[simp] private lemma pairBits_mk (a b : Bool) :
+    pairBits (a, b) = bits2 a b := rfl
 
-lemma denominator_ne_zero (ab : Bool × Bool) : H.denominator ab ≠ 0 :=
-  (H.denominator_pos ab).ne'
+private lemma restrictBits_pairBits (ab : Bool × Bool) :
+    NHead.restrictBits (fun _ : Fin 2 => false) 0 1 ab = pairBits ab := by
+  rcases ab with ⟨a, b⟩
+  exact restrictBits_zero_one a b
 
-private lemma restrictBits_pairToBits (ab : Bool × Bool) :
-    NHead.restrictBits (fun _ : Fin 2 => false) 0 1 ab = pairToBits ab := by
-  funext k
-  fin_cases k <;> simp [NHead.restrictBits, pairToBits]
+/-- The attention numerator as a Bool-product map. -/
+private noncomputable def boolNumerator (H : NHead 2 d) (ab : Bool × Bool) : Vec d :=
+  H.numerator (pairBits ab)
+
+/-- The attention denominator as a Bool-product map. -/
+private noncomputable def boolDenominator (H : NHead 2 d) (ab : Bool × Bool) : ℝ :=
+  H.denominator (pairBits ab)
+
+/-- The attention update as a Bool-product map. -/
+private noncomputable def boolUpdate (H : NHead 2 d) (ab : Bool × Bool) : Vec d :=
+  H.attnUpdate (pairBits ab)
+
+/-- The attention denominator is strictly positive on the Bool-product view. -/
+lemma denominator_pos (ab : Bool × Bool) : 0 < boolDenominator H ab := by
+  simpa [boolDenominator] using NHead.denominator_pos H (pairBits ab)
+
+lemma denominator_ne_zero (ab : Bool × Bool) : boolDenominator H ab ≠ 0 :=
+  (denominator_pos H ab).ne'
 
 /-- The two-bit numerator split, obtained by specializing the generalized model. -/
 theorem numerator_additive_split :
     ∃ (A B : Bool → Vec d) (C : Vec d), ∀ a b : Bool,
-      H.numerator (a, b) = A a + B b + C := by
+      boolNumerator H (a, b) = A a + B b + C := by
   have h01 : (0 : Fin 2) ≠ 1 := by decide
-  rcases NHead.numerator_additive_split H.toNHead (fun _ : Fin 2 => false) 0 1 h01 with
+  rcases NHead.numerator_additive_split H (fun _ : Fin 2 => false) 0 1 h01 with
     ⟨A, B, C, h⟩
   refine ⟨A, B, C, ?_⟩
   intro a b
-  simpa [restrictBits_pairToBits] using h a b
+  simpa [boolNumerator, pairBits, restrictBits_zero_one] using h a b
 
 /-- The two-bit denominator split, obtained by specializing the generalized model. -/
 theorem denominator_additive_split :
     ∃ (α β : Bool → ℝ) (γ : ℝ), ∀ a b : Bool,
-      H.denominator (a, b) = α a + β b + γ := by
+      boolDenominator H (a, b) = α a + β b + γ := by
   have h01 : (0 : Fin 2) ≠ 1 := by decide
-  rcases NHead.denominator_additive_split H.toNHead (fun _ : Fin 2 => false) 0 1 h01 with
+  rcases NHead.denominator_additive_split H (fun _ : Fin 2 => false) 0 1 h01 with
     ⟨α, β, γ, h⟩
   refine ⟨α, β, γ, ?_⟩
   intro a b
-  simpa [restrictBits_pairToBits] using h a b
+  simpa [boolDenominator, pairBits, restrictBits_zero_one] using h a b
 
 /-- The antipode identity for the attention numerator: summing `N(a,b)`
 over the diagonal equals summing over the off-diagonal. -/
 theorem numerator_antipode :
-    H.numerator (false, false) + H.numerator (true, true)
-    = H.numerator (false, true) + H.numerator (true, false) := by
-  rcases H.numerator_additive_split with ⟨A, B, C, h⟩
+    boolNumerator H (false, false) + boolNumerator H (true, true)
+    = boolNumerator H (false, true) + boolNumerator H (true, false) := by
+  rcases numerator_additive_split H with ⟨A, B, C, h⟩
   rw [h false false, h true true, h false true, h true false]
   abel
 
 /-- The antipode identity for the attention denominator: summing `D(a,b)`
 across the diagonal equals summing across the off-diagonal. -/
 theorem denominator_antipode :
-    H.denominator (false, false) + H.denominator (true, true)
-    = H.denominator (false, true) + H.denominator (true, false) := by
-  rcases H.denominator_additive_split with ⟨α, β, γ, h⟩
+    boolDenominator H (false, false) + boolDenominator H (true, true)
+    = boolDenominator H (false, true) + boolDenominator H (true, false) := by
+  rcases denominator_additive_split H with ⟨α, β, γ, h⟩
   rw [h false false, h true true, h false true, h true false]
   abel
 
 /-- Multiplying the attention update by the denominator recovers the numerator. -/
 lemma denom_smul_attn (ab : Bool × Bool) :
-    H.denominator ab • H.attnUpdate ab = H.numerator ab := by
-  unfold Head.attnUpdate
-  rw [smul_inv_smul₀ (H.denominator_ne_zero ab)]
+    boolDenominator H ab • boolUpdate H ab = boolNumerator H ab := by
+  simpa [boolDenominator, boolUpdate, boolNumerator] using NHead.denom_smul_attn H (pairBits ab)
 
 /-- A two-term convex combination written with explicit divisions equals
 the inverse-scaled sum of its weighted summands. -/
@@ -95,115 +104,100 @@ private lemma combo_eq_scaled_sum {V : Type*} [AddCommGroup V] [Module ℝ V]
 
 /-- The **midpoint** `P` of the four attention outputs: `𝒟⁻¹ • 𝒩`. -/
 noncomputable def midpoint : Vec d :=
-  (H.denominator (false, false) + H.denominator (true, true))⁻¹
-  • (H.numerator (false, false) + H.numerator (true, true))
+  (boolDenominator H (false, false) + boolDenominator H (true, true))⁻¹
+  • (boolNumerator H (false, false) + boolNumerator H (true, true))
 
 /-- The midpoint lies on the diagonal segment `[z(ff,ff), z(tt,tt)]`. -/
 lemma midpoint_in_diag_segment :
-    H.midpoint ∈ segment ℝ (H.attnUpdate (false, false)) (H.attnUpdate (true, true)) := by
-  set D0 := H.denominator (false, false)
-  set D1 := H.denominator (true, true)
+    midpoint H ∈ segment ℝ (boolUpdate H (false, false)) (boolUpdate H (true, true)) := by
+  set D0 := boolDenominator H (false, false)
+  set D1 := boolDenominator H (true, true)
   have hpos : (0 : ℝ) < D0 + D1 :=
-    add_pos (H.denominator_pos _) (H.denominator_pos _)
+    add_pos (denominator_pos H _) (denominator_pos H _)
   refine ⟨D0 / (D0 + D1), D1 / (D0 + D1), ?_, ?_, ?_, ?_⟩
-  · exact div_nonneg (H.denominator_pos _).le hpos.le
-  · exact div_nonneg (H.denominator_pos _).le hpos.le
+  · exact div_nonneg (denominator_pos H _).le hpos.le
+  · exact div_nonneg (denominator_pos H _).le hpos.le
   · rw [← add_div, div_self hpos.ne']
-  · unfold Head.midpoint
-    rw [← H.denom_smul_attn (false, false), ← H.denom_smul_attn (true, true)]
+  · unfold midpoint
+    rw [← denom_smul_attn H (false, false), ← denom_smul_attn H (true, true)]
     exact combo_eq_scaled_sum _ _ _ _
 
 /-- The midpoint also lies on the off-diagonal segment `[z(ff,tt), z(tt,ff)]`,
 because the denominator and numerator antipode identities make both
 representations of the midpoint equal. -/
 lemma midpoint_in_offdiag_segment :
-    H.midpoint ∈ segment ℝ (H.attnUpdate (false, true)) (H.attnUpdate (true, false)) := by
-  set D0 := H.denominator (false, true)
-  set D1 := H.denominator (true, false)
+    midpoint H ∈ segment ℝ (boolUpdate H (false, true)) (boolUpdate H (true, false)) := by
+  set D0 := boolDenominator H (false, true)
+  set D1 := boolDenominator H (true, false)
   have hpos : (0 : ℝ) < D0 + D1 :=
-    add_pos (H.denominator_pos _) (H.denominator_pos _)
+    add_pos (denominator_pos H _) (denominator_pos H _)
   refine ⟨D0 / (D0 + D1), D1 / (D0 + D1), ?_, ?_, ?_, ?_⟩
-  · exact div_nonneg (H.denominator_pos _).le hpos.le
-  · exact div_nonneg (H.denominator_pos _).le hpos.le
+  · exact div_nonneg (denominator_pos H _).le hpos.le
+  · exact div_nonneg (denominator_pos H _).le hpos.le
   · rw [← add_div, div_self hpos.ne']
-  · unfold Head.midpoint
-    rw [H.numerator_antipode, H.denominator_antipode,
-        ← H.denom_smul_attn (false, true), ← H.denom_smul_attn (true, false)]
+  · unfold midpoint
+    rw [numerator_antipode H, denominator_antipode H,
+        ← denom_smul_attn H (false, true), ← denom_smul_attn H (true, false)]
     exact combo_eq_scaled_sum _ _ _ _
 
-end Head
-
-/-- Example of with a separate proof that no single attention head can
-compute XOR: for every `H`, the bare attention update `z_=` is not linearly
-separable into XOR classes. -/
-example {d : ℕ} (H : Head d) :
+/-- A separate proof that no single attention head can compute XOR:
+for every `H`, the bare attention update is not linearly separable into
+XOR classes. -/
+example {d : ℕ} (H : NHead 2 d) :
      ¬ computesXor H.attnUpdate := by
   rintro ⟨w, τ, hw⟩
   -- Diagonal inputs (XOR = false): `⟨w, z⟩ ≤ τ`.
-  have h00 : ⟪w, H.attnUpdate (false, false)⟫_ℝ ≤ τ := by
+  have h00 : ⟪w, boolUpdate H (false, false)⟫_ℝ ≤ τ := by
     by_contra h
-    exact (Bool.false_ne_true) ((hw (false, false)).mp (lt_of_not_ge h))
-  have h11 : ⟪w, H.attnUpdate (true, true)⟫_ℝ ≤ τ := by
+    have hx := (hw (bits2 false false)).mp (by
+      simpa [boolUpdate, pairBits] using lt_of_not_ge h)
+    simp [xorFn] at hx
+  have h11 : ⟪w, boolUpdate H (true, true)⟫_ℝ ≤ τ := by
     by_contra h
-    exact (Bool.false_ne_true) ((hw (true, true)).mp (lt_of_not_ge h))
+    have hx := (hw (bits2 true true)).mp (by
+      simpa [boolUpdate, pairBits] using lt_of_not_ge h)
+    simp [xorFn] at hx
   -- Off-diagonal inputs (XOR = true): `⟨w, z⟩ > τ`.
-  have h01 : τ < ⟪w, H.attnUpdate (false, true)⟫_ℝ :=
-    (hw (false, true)).mpr rfl
-  have h10 : τ < ⟪w, H.attnUpdate (true, false)⟫_ℝ :=
-    (hw (true, false)).mpr rfl
+  have h01 : τ < ⟪w, boolUpdate H (false, true)⟫_ℝ := by
+    have hx := (hw (bits2 false true)).mpr (by simp [xorFn])
+    simpa [boolUpdate, pairBits] using hx
+  have h10 : τ < ⟪w, boolUpdate H (true, false)⟫_ℝ := by
+    have hx := (hw (bits2 true false)).mpr (by simp [xorFn])
+    simpa [boolUpdate, pairBits] using hx
   -- Apply the segment-crossing obstruction.
   exact segment_cross_not_separable (innerLeftLin w) h00 h11 h01 h10
-    H.midpoint_in_diag_segment H.midpoint_in_offdiag_segment
+    (midpoint_in_diag_segment H) (midpoint_in_offdiag_segment H)
 
-/-- **Theorem 1 (attention update form).** No single attention head can
-compute XOR: for every `H`, the bare attention update `z_=` is not linearly
-separable into XOR classes. -/
-theorem one_head_cannot_xor_attnUpdate {d : ℕ} (H : Head d) :
+/-- **Theorem 1 (attention update form).** No single head computes
+two-bit XOR from the bare attention update. -/
+theorem one_head_cannot_xor_attnUpdate {d : ℕ} (H : NHead 2 d) :
     ¬ computesXor H.attnUpdate := by
   intro hxor
-  let f : (Fin 2 → Bool) → Bool := fun bits => xor (bits 0) (bits 1)
-  have hcomp : computableWithHeadsN 2 1 f := by
-    refine ⟨d, fun _ => H.toNHead, ?_⟩
+  have hcomp : computableWithHeadsN 2 1 xorFn := by
+    refine ⟨d, fun _ => H, ?_⟩
     rcases hxor with ⟨w, τ, hw⟩
     refine ⟨w, τ, ?_⟩
     intro bits
-    simpa [f, nHeadFamilyAttnUpdate] using hw (bits 0, bits 1)
-  have h00 : f (NHead.restrictBits (fun _ => false) 0 1 (false, false)) = false := by
-    simp [f, NHead.restrictBits]
-  have h11 : f (NHead.restrictBits (fun _ => false) 0 1 (true, true)) = false := by
-    simp [f, NHead.restrictBits]
-  have h01 : f (NHead.restrictBits (fun _ => false) 0 1 (false, true)) = true := by
-    simp [f, NHead.restrictBits]
-  have h10 : f (NHead.restrictBits (fun _ => false) 0 1 (true, false)) = true := by
-    simp [f, NHead.restrictBits]
+    simpa [computesXor, nHeadFamilyAttnUpdate] using hw bits
+  have h00 : xorFn (NHead.restrictBits (fun _ => false) 0 1 (false, false)) = false := by
+    simp [xorFn, NHead.restrictBits]
+  have h11 : xorFn (NHead.restrictBits (fun _ => false) 0 1 (true, true)) = false := by
+    simp [xorFn, NHead.restrictBits]
+  have h01 : xorFn (NHead.restrictBits (fun _ => false) 0 1 (false, true)) = true := by
+    simp [xorFn, NHead.restrictBits]
+  have h10 : xorFn (NHead.restrictBits (fun _ => false) 0 1 (true, false)) = true := by
+    simp [xorFn, NHead.restrictBits]
   exact (parity_restriction_not_computable_with_one_head
-    f (fun _ => false) 0 1 (by decide) h00 h11 h01 h10) hcomp
+    xorFn (fun _ => false) 0 1 (by decide) h00 h11 h01 h10) hcomp
 
-/-- Adding a constant vector to a function does not change whether it
-computes XOR under a linear readout: the offset is absorbed into the
-threshold. -/
-lemma computesXor_iff_of_add_const {d : ℕ} (f : Bool × Bool → Vec d) (c : Vec d) :
-    computesXor f ↔ computesXor (fun ab => c + f ab) := by
-  simpa [computesXor, computesPred] using
-    (computesPred_iff_of_add_const (fun ab : Bool × Bool => xor ab.1 ab.2) f c)
-
-/-- The skip-connection reduction: a head's full residual `x_= + z_=`
-computes XOR iff its bare attention update `z_=` does. The `x_=` term
-is constant in the input, so a linear probe can absorb it into its
-threshold. -/
-lemma computesXor_residual_iff_attnUpdate {d : ℕ} (H : Head d) :
+/-- The skip connection does not change two-bit XOR computability. -/
+lemma computesXor_residual_iff_attnUpdate {d : ℕ} (H : NHead 2 d) :
     computesXor H.residual ↔ computesXor H.attnUpdate := by
-  have hconst : H.residual = fun ab => H.x (false, false) 2 + H.attnUpdate ab := by
-    funext ab
-    change H.x ab 2 + H.attnUpdate ab = H.x (false, false) 2 + H.attnUpdate ab
-    rfl
-  rw [hconst]
-  exact (computesXor_iff_of_add_const H.attnUpdate (H.x (false, false) 2)).symm
+  simpa [computesXor] using NHead.computesPred_residual_iff_attnUpdate H xorFn
 
-/-- **Theorem 1 (full residual form).** No single attention head can compute
-XOR even when reading the full residual stream `h_= = x_= + z_=`. The skip
-connection is a constant offset and is absorbed into the readout threshold. -/
-theorem one_head_cannot_xor_residual {d : ℕ} (H : Head d) :
+/-- **Theorem 1 (full residual form).** No single head computes
+two-bit XOR from the query residual stream. -/
+theorem one_head_cannot_xor_residual {d : ℕ} (H : NHead 2 d) :
     ¬ computesXor H.residual := by
   rw [computesXor_residual_iff_attnUpdate]
   exact one_head_cannot_xor_attnUpdate H
