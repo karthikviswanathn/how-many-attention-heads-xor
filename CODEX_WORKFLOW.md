@@ -89,6 +89,40 @@ background for orthogonal sub-lemmas. Three things make this safe:
 # focused background consult
 codex exec "$(cat prompt.txt)" </dev/null 2>&1   # prompt ends: "be concise; don't run lake"
 
+# point Codex at a file by @path instead of pasting it (verified to work in `exec`):
+codex exec "Review @HeadComplexity/Sandwich.lean for gaps; name the main theorem." </dev/null
+#  @path is resolved relative to Codex's workdir; it reads the file itself (a SHORT
+#  command, safe under </dev/null). Saves the $(cat ...)+quoting dance for code/spec
+#  review. Note it still pulls the whole file into Codex's context, so for a focused
+#  question prefer @-mentioning the ONE relevant file, not the whole tree. (For THEORY
+#  consults keep hand-distilling context — raw files dilute the question.)
+
+# AUTO-RESUME on flaky connection. Codex sometimes dies mid-reasoning with
+# "ERROR: Reconnecting... 5/5" (transient API/network hiccup). DON'T relaunch from
+# scratch — that re-pays for all the reasoning. Codex sessions are RESUMABLE:
+SID=$(grep -oE 'session id: [0-9a-f-]+' out | awk '{print $3}')   # printed in the header
+codex exec resume "$SID" "Your last turn was cut off by a reconnect, not by you. \
+  Continue EXACTLY where you stopped; don't repeat finished reasoning." </dev/null
+#  Resume preserves full context (verified). A completed turn ends with a "tokens used"
+#  footer; a reconnect-death does NOT — that's the success/failure signal. The wrapper
+#  bisym_scratch/codex_robust.sh automates it (run -> if no footer, resume same SID ->
+#  repeat), so one background job self-heals across reconnects and notifies once with the
+#  full answer. MUST run from a git repo dir (a bare scratch dir => "Not inside a trusted
+#  directory").
+#  PANEL-VISIBILITY GOTCHA: stream codex with `... | tee -a "$OUT" "$TMP"` (NO `>>`
+#  redirect on tee). `tee "$TMP" >> "$OUT"` sends tee's passthrough INTO the file, so a
+#  run_in_background task panel shows only the wrapper's own `echo` lines and looks frozen
+#  ("[robust] initial run" then blank) even though the OUT file is filling fine. tee with
+#  no stdout redirect passes through to the wrapper's stdout = the panel. Watch either the
+#  panel or `tail -f "$OUT"`.
+#  DIAGNOSING "codex is dead": on a SHARED login node, `pgrep -x codex` / `pkill -x codex`
+#  match EVERY user's VSCode-extension `codex app-server` (dozens), not yours — a non-issue
+#  mistaken for a pileup. Filter to your own work with `pkill -u $USER -f 'codex exec'`.
+#  Reachability check: `curl -sS -o /dev/null -w '%{http_code} %{time_total}\n'
+#  https://api.openai.com/v1/models` (401 fast = network FINE, auth-gated as expected).
+#  A fresh `timeout 60 codex exec "Reply ALIVE" </dev/null` ending in "tokens used" = healthy;
+#  transient reconnect deaths clear on their own — don't over-engineer around a blip.
+
 # my build lane (so it doesn't collide with a subagent's checkmod.slurm)
 sbatch --export=ALL,CHECK_MOD=HeadComplexity.<Mod> checkmod2.slurm
 while squeue -u $USER -h -n lean-mod2 -o "%i" | grep -q .; do sleep 15; done
