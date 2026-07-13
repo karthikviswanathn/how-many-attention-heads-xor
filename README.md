@@ -36,6 +36,10 @@ dependency order between them, in [`lemmas.md`](lemmas.md).
   $H^{\ast}(f) \geq 2$. One head can never separate the two diagonals.
 - *Threshold-degree bound.* Head complexity dominates threshold degree:
   $\deg_{\pm}(f) \leq H^{\ast}(f)$.
+- *The bound can be strict.* An explicit Paley-Hadamard bilinear threshold on $76$ variables has
+  $\deg_{\pm}(f)=2$ but $H^{\ast}(f)\geq3$. The proof uses a two-block singleton slice:
+  two heads force sign-rank at most six, while the Paley-Hadamard slice has sign-rank at
+  least seven. See [`180_paley_hadamard_strict_separation.md`](lemmas/06_strict_separations/180_paley_hadamard_strict_separation.md).
 
 **Upper bounds (a function needs few heads).**
 - *Symmetric thresholds need one head.* Every $T_{n,t}(x) = \mathbf{1}[ |x| \geq t ]$ is
@@ -62,8 +66,10 @@ $I(f)$ with $H^{\ast}(f) \asymp I(f)$. Closing that gap is the main open problem
 
 - Find an invariant that pins down $H^{\ast}(f)$ on broad classes, or a family where head
   complexity behaves qualitatively unlike the classical measures.
-- Tighten the gap between the threshold-degree lower bound and the weighted-sum upper
-  bound.
+- Determine the smallest input dimension admitting $\deg_{\pm}(f)<H^{\ast}(f)$, and find
+  smaller or more natural strict-separation families.
+- Quantify the gap between threshold degree and head complexity beyond the first explicit
+  separation.
 - Push the formalization in [`head-complexity/`](head-complexity/) to cover more of the
   lemma stack.
 - Extend the empirical search to larger $n$ and reconcile it with the proofs. The current

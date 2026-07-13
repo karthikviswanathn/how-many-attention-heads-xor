@@ -62,6 +62,7 @@ What they *do* give is:
 - a denominator-orientation characterization for one-head atoms,
 - restriction monotonicity, junta invariance, and a partition sign-rank lower-bound route,
 - a dimension ceiling showing partition sign-rank cannot certify three heads below fourteen bits,
+- an explicit quadratic Paley-Hadamard bilinear threshold on $76$ bits with threshold degree two and head complexity at least three,
 - monotone DNF and CNF upper bounds using one head per term or clause,
 - a monotone antichain upper bound via minimal true sets and maximal false sets,
 - a monotone counting lower bound showing the antichain upper bound is polynomially sharp,
@@ -3573,6 +3574,24 @@ $$ H^{\ast}(f_{a,b,c,\alpha,\beta})=\delta(G_{a,b,c,\alpha,\beta}). $$
 
 **Proof.** [lemmas/05_positive_statistic_gates_and_grids/179_two_block_affine_grid_strips_exact.md](lemmas/05_positive_statistic_gates_and_grids/179_two_block_affine_grid_strips_exact.md)
 
+### Theorem 180. A quadratic Paley-Hadamard threshold needs at least three heads
+
+Let $S$ be the leading $38\times38$ principal submatrix of the explicit order-$40$ Paley-Hadamard matrix constructed from the quadratic character modulo $19$. For two blocks $x,y\in\lbrace0,1\rbrace^{38}$, define
+
+$$ P(x,y):=\frac{1}{2}+\sum_{i=1}^{38}\sum_{j=1}^{38}S_{i,j}x_i y_j. $$
+
+Let $f_{\mathrm{PH}}(x,y)=1$ exactly when $P(x,y)>0$. Then
+
+$$ \deg_{\pm}(f_{\mathrm{PH}})=2 \qquad\text{and}\qquad H^{\ast}(f_{\mathrm{PH}})\geq3. $$
+
+Consequently,
+
+$$ \deg_{\pm}(f_{\mathrm{PH}})<H^{\ast}(f_{\mathrm{PH}}). $$
+
+> **Interpretation.** The threshold-degree lower bound is not universally exact. The strict gap is certified by a two-block singleton slice whose Paley-Hadamard sign matrix has sign-rank at least seven, while every two-head score has singleton-slice sign-rank at most six.
+
+**Proof.** [lemmas/06_strict_separations/180_paley_hadamard_strict_separation.md](lemmas/06_strict_separations/180_paley_hadamard_strict_separation.md)
+
 ## Dependency Order
 
 The current dependency structure is:
@@ -3756,10 +3775,15 @@ The current dependency structure is:
 177. Theorem 177 reduces a singleton two-block Hamming grid point to the affine level-set theorem by a nonresonant linear recombination of the two block weights.
 178. Theorem 178 applies the affine level-set theorem directly to any affine line layer in the two-block Hamming grid and compares it with bivariate grid sign degree.
 179. Theorem 179 applies the affine slab theorem directly to any affine strip in the two-block Hamming grid and compares it with bivariate grid sign degree.
+180. Theorem 180 combines the linear-fractional normal form from Lemma 10 with Forster's sign-rank lower bound for a $38\times38$ submatrix of an order-$40$ Paley-Hadamard matrix. Clearing two positive denominators gives a sum of two affine products, whose two-block singleton-slice matrix has rank at most six.
 
 ## What This Currently Says About The First Core Question
 
-The current evidence now gives a precise first-level characterization: one head is exactly linear threshold power. The full problem can be reframed as understanding the minimum number of linear-fractional attention atoms needed before the final threshold:
+The current evidence gives a precise first-level characterization: one head is exactly linear threshold power. It also gives an explicit strict separation at the next level. The Paley-Hadamard bilinear threshold from Theorem 180 satisfies
+
+$$ \deg_{\pm}(f_{\mathrm{PH}})=2<3\leq H^{\ast}(f_{\mathrm{PH}}). $$
+
+Thus the full problem cannot be reduced to threshold degree. It can instead be reframed as understanding the minimum number of linear-fractional attention atoms needed before the final threshold:
 
 $$ \deg_{\pm}(f) \leq H^{\ast}(f) = L_{\mathrm{frac}}(f) \leq C_{+}(f) \leq M_{+}(f) - 1. $$
 

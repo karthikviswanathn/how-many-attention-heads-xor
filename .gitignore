@@ -16,3 +16,5 @@ artifacts/intro-presentation/qa/
 project-management/
 .gitignore
 .env
+head_complexity_paper/
+tmp
