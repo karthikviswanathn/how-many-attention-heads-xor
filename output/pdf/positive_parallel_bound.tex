@@ -1,0 +1,358 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1.05in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\cube}{\{0,1\}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Hstar}{H^{\ast}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\im}{\operatorname{Im}}
+
+\title{\vspace{-2.0em}Positive Parallel Cuts Give a Head Upper Bound}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-2.6em}
+
+\section*{Setup}
+
+Work on the Boolean cube $\cube^n$.  A Boolean function is a map
+\[
+f:\cube^n\to\cube.
+\]
+The quantity $\Hstar(f)$ is the minimum number of attention heads needed by a
+single-layer attention-only model, with a final linear threshold readout, to
+compute $f$ exactly on the cube.
+
+For the present note, we only need the following scalar normal form for one
+head.  Choose parameters
+\[
+\gamma>0,\qquad \rho_i>0,\qquad \alpha>0,\qquad \alpha\neq1,
+\]
+and choose arbitrary real parameters
+\[
+\eta,\quad m_1,\ldots,m_n,\quad \delta.
+\]
+After composing the head output with the final linear readout, a single head can
+contribute the scalar atom
+\[
+\phi(x)=
+\frac{\eta+\sum_{i=1}^{n}\rho_i\alpha^{x_i}(m_i+\delta x_i)}
+     {\gamma+\sum_{i=1}^{n}\rho_i\alpha^{x_i}},
+\]
+where $x\in\cube^n$.
+
+Let $H$ be a nonnegative integer.  To prove $\Hstar(f)\leq H$, it is enough to
+choose $H$ atoms
+\[
+\phi_1,\ldots,\phi_H
+\]
+and a constant $c\in\R$ such that the real score
+\[
+S(x)=c+\sum_{h=1}^{H}\phi_h(x)
+\]
+satisfies
+\[
+f(x)=1 \iff S(x)>0
+\qquad
+\text{for every }x\in\cube^n.
+\]
+
+\section*{Positive parallel cuts}
+
+A positive parallel statistic is an affine-linear statistic with strictly
+positive variable coefficients:
+\[
+t(x)=\sum_{i=1}^{n}\lambda_i x_i,
+\qquad
+\lambda_i>0.
+\]
+Its level sets
+\[
+t(x)=a
+\]
+for real values $a$ are parallel affine hyperplanes in $\R^n$.  The positivity
+assumption means that all these hyperplanes have normal vector in the positive
+orthant.
+
+Suppose there is a function
+\[
+F:\im(t)\to\cube
+\]
+such that $f$ factors through $t$:
+\[
+f(x)=F(t(x)).
+\]
+Write the distinct values of $t$ on the cube in increasing order.  Thus, for
+some integer $M\geq1$, there are real numbers $\tau_0,\ldots,\tau_{M-1}$ with
+\[
+\im(t)=\{\tau_0<\tau_1<\cdots<\tau_{M-1}\}.
+\]
+For each $m\in\{0,\ldots,M-1\}$, define the sign
+\[
+\sigma_m=
+\begin{cases}
++1,&F(\tau_m)=1,\\
+-1,&F(\tau_m)=0.
+\end{cases}
+\]
+The number of label changes along this one-dimensional profile is
+\[
+C_t(F):=
+\left|\{m\in\{1,\ldots,M-1\}:\sigma_{m-1}\neq\sigma_m\}\right|.
+\]
+
+Let $\mathcal A_+(f)$ be the set of pairs $(t,F)$ satisfying all of the
+conditions just stated:
+\[
+\mathcal A_+(f):=
+\left\{
+(t,F):
+t(x)=\sum_{i=1}^{n}\lambda_i x_i,\ \lambda_i>0,\ F:\im(t)\to\cube,\ f=F\circ t
+\right\}.
+\]
+For every pair $(t,F)\in\mathcal A_+(f)$, the number $C_t(F)$ is defined as
+above.  Define the positive-parallel complexity by minimizing this count:
+\[
+P_{\parallel}^{+}(f):=
+\min_{(t,F)\in\mathcal A_+(f)} C_t(F).
+\]
+This minimum is finite.  For example,
+\[
+t(x)=\sum_{i=1}^{n}2^{i-1}x_i
+\]
+is injective on $\cube^n$, so every $f$ factors through this positive statistic.
+
+\begin{theorem}
+For every Boolean function $f:\cube^n\to\cube$,
+\[
+\Hstar(f)\leq P_{\parallel}^{+}(f).
+\]
+\end{theorem}
+
+\section*{Proof}
+
+Fix a pair $(t,F)\in\mathcal A_+(f)$.  By definition of $\mathcal A_+(f)$,
+there are positive coefficients $\lambda_1,\ldots,\lambda_n$ such that
+\[
+t(x)=\sum_{i=1}^{n}\lambda_i x_i,
+\qquad
+\lambda_i>0,
+\]
+and $f(x)=F(t(x))$ for every $x\in\cube^n$.
+
+Let $M$ be the number of distinct values of $t$ on the cube.  Write these values
+as
+\[
+\im(t)=\{\tau_0<\tau_1<\cdots<\tau_{M-1}\}.
+\]
+For each $m\in\{0,\ldots,M-1\}$, let
+\[
+\sigma_m=
+\begin{cases}
++1,&F(\tau_m)=1,\\
+-1,&F(\tau_m)=0.
+\end{cases}
+\]
+Let
+\[
+C:=C_t(F).
+\]
+We prove
+\[
+\Hstar(f)\leq C.
+\]
+The theorem follows by minimizing over all positive-parallel representations.
+
+If $C=0$, then $F$ is constant on $\im(t)$, so $f$ is constant on the cube.
+Thus $\Hstar(f)=0$.  From now on assume $C\geq1$.
+
+\subsection*{Step 1. A univariate sign polynomial}
+
+Let
+\[
+J:=\{m\in\{1,\ldots,M-1\}:\sigma_{m-1}\neq\sigma_m\}.
+\]
+Thus $|J|=C$.  For every $m\in J$, choose a cutpoint
+\[
+a_m\in(\tau_{m-1},\tau_m).
+\]
+Define
+\[
+p(z):=\sigma_0\prod_{m\in J}(a_m-z).
+\]
+Then $p$ changes sign exactly once between $\tau_{m-1}$ and $\tau_m$ for each
+$m\in J$, and it changes sign nowhere else between consecutive image values.
+Hence
+\[
+\sgn p(\tau_m)=\sigma_m
+\qquad
+\text{for every }m=0,\ldots,M-1.
+\]
+Equivalently,
+\[
+F(\tau_m)=1
+\iff
+p(\tau_m)>0.
+\]
+
+\subsection*{Step 2. Put the sign polynomial over a positive denominator}
+
+Choose distinct positive shifts
+\[
+r_1,\ldots,r_C>0
+\]
+and set
+\[
+B(z):=\prod_{j=1}^{C}(z+r_j).
+\]
+Since every $\tau_m$ is nonnegative,
+\[
+B(\tau_m)>0
+\qquad
+\text{for every }m.
+\]
+Therefore the rational function
+\[
+R(z):=\frac{p(z)}{B(z)}
+\]
+has the same signs as $p$ on the finite set $\im(t)$:
+\[
+\sgn R(\tau_m)=\sigma_m.
+\]
+
+Because $\deg p=\deg B=C$ and the roots $-r_1,\ldots,-r_C$ of $B$ are simple,
+partial fractions give real constants
+\[
+c,b_1,\ldots,b_C\in\R
+\]
+such that
+\[
+R(z)=c+\sum_{j=1}^{C}\frac{b_j}{z+r_j}.
+\]
+Substituting $z=t(x)$ gives
+\[
+R(t(x))=
+c+\sum_{j=1}^{C}\frac{b_j}{t(x)+r_j}.
+\]
+This score has the correct signs on the cube:
+\[
+f(x)=1
+\iff
+F(t(x))=1
+\iff
+R(t(x))>0.
+\]
+
+\subsection*{Step 3. Each reciprocal term is one head}
+
+It remains to show that, for any fixed $r>0$ and $b\in\R$,
+\[
+x\longmapsto \frac{b}{t(x)+r}
+\]
+is a valid one-head atom.
+
+Let
+\[
+\Lambda:=\sum_{i=1}^{n}\lambda_i.
+\]
+Choose
+\[
+\alpha>1+\frac{\Lambda}{r},
+\qquad
+\rho_i:=\frac{\lambda_i}{\alpha-1},
+\qquad
+\gamma:=r-\frac{\Lambda}{\alpha-1}.
+\]
+Then
+\[
+\alpha>1,\qquad \rho_i>0,\qquad \gamma>0.
+\]
+On the Boolean cube,
+\[
+\alpha^{x_i}=1+(\alpha-1)x_i.
+\]
+Therefore
+\[
+\begin{aligned}
+\gamma+\sum_{i=1}^{n}\rho_i\alpha^{x_i}
+&=
+r-\frac{\Lambda}{\alpha-1}
++\sum_{i=1}^{n}\frac{\lambda_i}{\alpha-1}
+\left(1+(\alpha-1)x_i\right)\\
+&=
+r+\sum_{i=1}^{n}\lambda_i x_i\\
+&=
+r+t(x).
+\end{aligned}
+\]
+Now take the numerator of the one-head atom to be the constant $b$, by setting
+\[
+\eta=b,\qquad m_i=0,\qquad \delta=0.
+\]
+The atom becomes exactly
+\[
+\phi(x)=\frac{b}{r+t(x)}.
+\]
+
+Thus each summand
+\[
+\frac{b_j}{t(x)+r_j}
+\]
+costs one head.  The constant $c$ is absorbed into the final readout threshold.
+Consequently the score
+\[
+R(t(x))=
+c+\sum_{j=1}^{C}\frac{b_j}{t(x)+r_j}
+\]
+is realized with $C$ heads and computes $f$ after thresholding at zero.  Hence
+\[
+\Hstar(f)\leq C_t(F).
+\]
+Minimizing over all positive-parallel representations gives
+\[
+\Hstar(f)\leq P_{\parallel}^{+}(f).
+\]
+\qed
+
+\section*{What the positivity assumption is doing}
+
+The proof used $\lambda_i>0$ in exactly one place: it made the denominator
+\[
+t(x)+r=r+\sum_i\lambda_i x_i
+\]
+positive on the cube with all slopes of the same sign.  That is precisely the
+kind of denominator produced by a single softmax attention head in the scalar
+normal form above.
+
+If one allows arbitrary parallel hyperplanes
+\[
+L(x)=a_0+\sum_i a_i x_i
+\]
+with mixed-sign coefficients $a_i$, the same partial-fraction proof would
+produce terms of the form
+\[
+\frac{b}{L(x)+r}.
+\]
+Here $b\in\R$ is a numerator coefficient and $r$ is a shift chosen so that the
+denominator avoids zero on the cube.
+Those denominators may have mixed-sign slopes.  They are not automatically
+one-head denominators.  Thus the theorem proved here is the positive-parallel
+bound
+\[
+\Hstar(f)\leq P_{\parallel}^{+}(f),
+\]
+not an unrestricted mixed-sign parallel bound.
+
+\end{document}
