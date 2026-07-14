@@ -1,11 +1,11 @@
-import HeadComplexity.Model.NHead
+import HeadComplexity.Model.Head
 
 set_option linter.style.header false
 
 /-!
 # Skip-connection reduction in the generalized model.
 
-The query token embedding in `NHead.residual` is independent of the input bits.
+The query token embedding in `Head.residual` is independent of the input bits.
 For linear readouts, adding such a constant vector only shifts the threshold.
 This module records that model-level fact once, so example-specific predicates
 can specialize it without reproving the threshold algebra.
@@ -43,12 +43,12 @@ lemma computesPred_iff_of_add_const
       have := key.mpr hf
       linarith
 
-namespace NHead
+namespace Head
 
 /-- The query-position residual is a constant query embedding plus the attention
 update. -/
 lemma residual_eq_const_add_attnUpdate
-    (H : NHead n d) (base : Fin n → Bool) :
+    (H : Head n d) (base : Fin n → Bool) :
     H.residual = fun bits => H.x base none + H.attnUpdate bits := by
   funext bits
   change H.x bits none + H.attnUpdate bits = H.x base none + H.attnUpdate bits
@@ -57,11 +57,11 @@ lemma residual_eq_const_add_attnUpdate
 /-- The skip connection does not change computability by a linear readout:
 the constant query embedding is absorbed into the threshold. -/
 lemma computesPred_residual_iff_attnUpdate
-    (H : NHead n d) (f : (Fin n → Bool) → Bool) :
+    (H : Head n d) (f : (Fin n → Bool) → Bool) :
     computesPred f H.residual ↔ computesPred f H.attnUpdate := by
   rw [H.residual_eq_const_add_attnUpdate (fun _ => false)]
   exact (computesPred_iff_of_add_const f H.attnUpdate (H.x (fun _ => false) none)).symm
 
-end NHead
+end Head
 
 end HeadComplexity

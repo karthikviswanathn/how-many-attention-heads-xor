@@ -40,14 +40,14 @@ abbrev SeqPos (n : ℕ) := Option (Fin n)
 
 /-- Parameters of a single attention head over `n` input bits plus a
     query token. -/
-structure NHead (n d : ℕ) where
+structure Head (n d : ℕ) where
   tokenEmbed : Fin 3 → Vec d
   posEmbed   : SeqPos n → Vec d
   WQ : Vec d →ₗ[ℝ] Vec d
   WK : Vec d →ₗ[ℝ] Vec d
   WV : Vec d →ₗ[ℝ] Vec d
 
-namespace NHead
+namespace Head
 
 variable {n d : ℕ}
 
@@ -58,38 +58,38 @@ def seqTok (bits : Fin n → Bool) : SeqPos n → Fin 3
   | none => 2
 
 /-- Embedded vector at a sequence position. -/
-noncomputable def x (H : NHead n d) (bits : Fin n → Bool) (p : SeqPos n) : Vec d :=
+noncomputable def x (H : Head n d) (bits : Fin n → Bool) (p : SeqPos n) : Vec d :=
   H.tokenEmbed (seqTok bits p) + H.posEmbed p
 
 /-- Unnormalized attention weights to the query token. -/
-noncomputable def sigma (H : NHead n d) (bits : Fin n → Bool) (p : SeqPos n) : ℝ :=
+noncomputable def sigma (H : Head n d) (bits : Fin n → Bool) (p : SeqPos n) : ℝ :=
   Real.exp ⟪H.WK (H.x bits p), H.WQ (H.x bits none)⟫_ℝ
 
 /-- Value vector at position `p`. -/
-noncomputable def value (H : NHead n d) (bits : Fin n → Bool) (p : SeqPos n) : Vec d :=
+noncomputable def value (H : Head n d) (bits : Fin n → Bool) (p : SeqPos n) : Vec d :=
   H.WV (H.x bits p)
 
 /-- Attention numerator at the query token. -/
-noncomputable def numerator (H : NHead n d) (bits : Fin n → Bool) : Vec d :=
+noncomputable def numerator (H : Head n d) (bits : Fin n → Bool) : Vec d :=
   ∑ p, H.sigma bits p • H.value bits p
 
 /-- Attention denominator at the query token. -/
-noncomputable def denominator (H : NHead n d) (bits : Fin n → Bool) : ℝ :=
+noncomputable def denominator (H : Head n d) (bits : Fin n → Bool) : ℝ :=
   ∑ p, H.sigma bits p
 
 /-- One-head attention update at the query token. -/
-noncomputable def attnUpdate (H : NHead n d) (bits : Fin n → Bool) : Vec d :=
+noncomputable def attnUpdate (H : Head n d) (bits : Fin n → Bool) : Vec d :=
   (H.denominator bits)⁻¹ • H.numerator bits
 
 /-- Full residual stream at the query token. -/
-noncomputable def residual (H : NHead n d) (bits : Fin n → Bool) : Vec d :=
+noncomputable def residual (H : Head n d) (bits : Fin n → Bool) : Vec d :=
   H.x bits none + H.attnUpdate bits
 
-lemma sigma_pos (H : NHead n d) (bits : Fin n → Bool) (p : SeqPos n) :
+lemma sigma_pos (H : Head n d) (bits : Fin n → Bool) (p : SeqPos n) :
     0 < H.sigma bits p :=
   Real.exp_pos _
 
-lemma denominator_pos (H : NHead n d) (bits : Fin n → Bool) :
+lemma denominator_pos (H : Head n d) (bits : Fin n → Bool) :
     0 < H.denominator bits := by
   unfold denominator
   apply Finset.sum_pos
@@ -97,11 +97,11 @@ lemma denominator_pos (H : NHead n d) (bits : Fin n → Bool) :
     exact H.sigma_pos bits p
   · exact Finset.univ_nonempty
 
-lemma denominator_ne_zero (H : NHead n d) (bits : Fin n → Bool) :
+lemma denominator_ne_zero (H : Head n d) (bits : Fin n → Bool) :
     H.denominator bits ≠ 0 :=
   (H.denominator_pos bits).ne'
 
-lemma denom_smul_attn (H : NHead n d) (bits : Fin n → Bool) :
+lemma denom_smul_attn (H : Head n d) (bits : Fin n → Bool) :
     H.denominator bits • H.attnUpdate bits = H.numerator bits := by
   unfold attnUpdate
   rw [smul_inv_smul₀ (H.denominator_ne_zero bits)]
@@ -123,12 +123,12 @@ private lemma combo_eq_scaled_sum {V : Type*} [AddCommGroup V] [Module ℝ V]
 
 /-- The restricted attention-update map on the chosen 2-bit subcube. -/
 noncomputable def restrictedUpdate
-    (H : NHead n d) (base : Fin n → Bool) (i j : Fin n) :
+    (H : Head n d) (base : Fin n → Bool) (i j : Fin n) :
     Bool × Bool → Vec d :=
   fun ab => H.attnUpdate (restrictBits base i j ab)
 
 private lemma restrict_term_antipode
-    (H : NHead n d) (base : Fin n → Bool) (i j : Fin n) (hij : i ≠ j)
+    (H : Head n d) (base : Fin n → Bool) (i j : Fin n) (hij : i ≠ j)
     (p : SeqPos n) :
     H.sigma (restrictBits base i j (false, false)) p •
         H.value (restrictBits base i j (false, false)) p
@@ -153,7 +153,7 @@ private lemma restrict_term_antipode
         · simp [sigma, value, x, seqTok, restrictBits, hk, hj]
 
 private lemma restrict_sigma_antipode
-    (H : NHead n d) (base : Fin n → Bool) (i j : Fin n) (hij : i ≠ j)
+    (H : Head n d) (base : Fin n → Bool) (i j : Fin n) (hij : i ≠ j)
     (p : SeqPos n) :
     H.sigma (restrictBits base i j (false, false)) p
       + H.sigma (restrictBits base i j (true, true)) p
@@ -174,7 +174,7 @@ private lemma restrict_sigma_antipode
         · simp [sigma, x, seqTok, restrictBits, hk, hj]
 
 theorem restricted_numerator_antipode
-    (H : NHead n d) (base : Fin n → Bool) (i j : Fin n) (hij : i ≠ j) :
+    (H : Head n d) (base : Fin n → Bool) (i j : Fin n) (hij : i ≠ j) :
     H.numerator (restrictBits base i j (false, false))
       + H.numerator (restrictBits base i j (true, true))
       =
@@ -185,7 +185,7 @@ theorem restricted_numerator_antipode
   simpa [numerator, Finset.sum_add_distrib] using hsum
 
 theorem restricted_denominator_antipode
-    (H : NHead n d) (base : Fin n → Bool) (i j : Fin n) (hij : i ≠ j) :
+    (H : Head n d) (base : Fin n → Bool) (i j : Fin n) (hij : i ≠ j) :
     H.denominator (restrictBits base i j (false, false))
       + H.denominator (restrictBits base i j (true, true))
       =
@@ -198,14 +198,14 @@ theorem restricted_denominator_antipode
 /-- The intersection point of the diagonal and off-diagonal segments on
     a 2-bit restriction. -/
 noncomputable def restrictedMidpoint
-    (H : NHead n d) (base : Fin n → Bool) (i j : Fin n) : Vec d :=
+    (H : Head n d) (base : Fin n → Bool) (i j : Fin n) : Vec d :=
   (H.denominator (restrictBits base i j (false, false))
       + H.denominator (restrictBits base i j (true, true)))⁻¹ •
     (H.numerator (restrictBits base i j (false, false))
       + H.numerator (restrictBits base i j (true, true)))
 
 theorem restricted_midpoint_in_diag_segment
-    (H : NHead n d) (base : Fin n → Bool) (i j : Fin n) :
+    (H : Head n d) (base : Fin n → Bool) (i j : Fin n) :
     H.restrictedMidpoint base i j
       ∈ segment ℝ (H.restrictedUpdate base i j (false, false))
           (H.restrictedUpdate base i j (true, true)) := by
@@ -222,7 +222,7 @@ theorem restricted_midpoint_in_diag_segment
     exact combo_eq_scaled_sum _ _ _ _
 
 theorem restricted_midpoint_in_offdiag_segment
-    (H : NHead n d) (base : Fin n → Bool) (i j : Fin n) (hij : i ≠ j) :
+    (H : Head n d) (base : Fin n → Bool) (i j : Fin n) (hij : i ≠ j) :
     H.restrictedMidpoint base i j
       ∈ segment ℝ (H.restrictedUpdate base i j (false, true))
           (H.restrictedUpdate base i j (true, false)) := by
@@ -240,10 +240,10 @@ theorem restricted_midpoint_in_offdiag_segment
         ← H.denom_smul_attn (restrictBits base i j (true, false))]
     exact combo_eq_scaled_sum _ _ _ _
 
-/-- The restricted 2-bit attention map of a single generalized head can
+/-- The restricted 2-bit attention map of a single head can
     never realize the checkerboard pattern. -/
 theorem checkerboard_not_computable_on_restriction
-    (H : NHead n d) (base : Fin n → Bool) (i j : Fin n) (hij : i ≠ j)
+    (H : Head n d) (base : Fin n → Bool) (i j : Fin n) (hij : i ≠ j)
     (f : Bool × Bool → Bool) (c : Bool)
     (h00 : f (false, false) = c)
     (h11 : f (true, true) = c)
@@ -287,19 +287,19 @@ theorem checkerboard_not_computable_on_restriction
       (H.restricted_midpoint_in_offdiag_segment base i j hij)
       (H.restricted_midpoint_in_diag_segment base i j)
 
-end NHead
+end Head
 
-/-- A family of `H` generalized heads over `n` input bits. -/
-abbrev NHeadFamily (n d H : ℕ) : Type := Fin H → NHead n d
+/-- A family of `H` heads over `n` input bits. -/
+abbrev HeadFamily (n d H : ℕ) : Type := Fin H → Head n d
 
 /-- Summed multi-head attention update for the generalized model. -/
-noncomputable def nHeadFamilyAttnUpdate {n d H : ℕ} (Hs : NHeadFamily n d H) :
+noncomputable def headFamilyAttnUpdate {n d H : ℕ} (Hs : HeadFamily n d H) :
     (Fin n → Bool) → Vec d :=
   fun bits => ∑ h, (Hs h).attnUpdate bits
 
 /-- `n`-bit head computability with `H` heads. -/
 def computableWithHeadsN (n H : ℕ) (f : (Fin n → Bool) → Bool) : Prop :=
-  ∃ d, ∃ Hs : NHeadFamily n d H, computesPred f (nHeadFamilyAttnUpdate Hs)
+  ∃ d, ∃ Hs : HeadFamily n d H, computesPred f (headFamilyAttnUpdate Hs)
 
 /-- Exact head complexity in the generalized `n`-bit model. -/
 def exactHeadComplexityN (n : ℕ) (f : (Fin n → Bool) → Bool) (k : ℕ) : Prop :=
@@ -312,13 +312,13 @@ noncomputable def HStarN (n : ℕ) (f : (Fin n → Bool) → Bool) : ℕ :=
     classical
     exact if h : ∃ k, computableWithHeadsN n k f then Nat.find h else 0
 
-@[simp] lemma nHeadFamilyAttnUpdate_zero {n d : ℕ} {Hs : NHeadFamily n d 0}
-    (bits : Fin n → Bool) : nHeadFamilyAttnUpdate Hs bits = 0 := by
-  simp [nHeadFamilyAttnUpdate]
+@[simp] lemma headFamilyAttnUpdate_zero {n d : ℕ} {Hs : HeadFamily n d 0}
+    (bits : Fin n → Bool) : headFamilyAttnUpdate Hs bits = 0 := by
+  simp [headFamilyAttnUpdate]
 
-@[simp] lemma nHeadFamilyAttnUpdate_one {n d : ℕ} {Hs : NHeadFamily n d 1}
-    (bits : Fin n → Bool) : nHeadFamilyAttnUpdate Hs bits = (Hs 0).attnUpdate bits := by
-  simp [nHeadFamilyAttnUpdate]
+@[simp] lemma headFamilyAttnUpdate_one {n d : ℕ} {Hs : HeadFamily n d 1}
+    (bits : Fin n → Bool) : headFamilyAttnUpdate Hs bits = (Hs 0).attnUpdate bits := by
+  simp [headFamilyAttnUpdate]
 
 lemma HStarN_eq_of_exact {n k : ℕ} {f : (Fin n → Bool) → Bool}
     (hk : exactHeadComplexityN n f k) : HStarN n f = k := by
@@ -338,9 +338,9 @@ lemma not_computableWithHeadsN_zero_of_false_true
     ¬ computableWithHeadsN n 0 f := by
   rintro ⟨d, Hs, w, τ, h⟩
   have h0 : (0 : ℝ) > τ ↔ f bitsFalse = true := by
-    simpa [nHeadFamilyAttnUpdate] using (h bitsFalse)
+    simpa [headFamilyAttnUpdate] using (h bitsFalse)
   have h1 : (0 : ℝ) > τ ↔ f bitsTrue = true := by
-    simpa [nHeadFamilyAttnUpdate] using (h bitsTrue)
+    simpa [headFamilyAttnUpdate] using (h bitsTrue)
   have hs : f bitsFalse = true ↔ f bitsTrue = true := h0.symm.trans h1
   have hF : f bitsFalse = true := hs.mpr hTrue
   exact Bool.false_ne_true (hFalse.symm.trans hF)
@@ -357,20 +357,20 @@ def secondIndex {n : ℕ} (hn : 2 ≤ n) : Fin n :=
 theorem checkerboard_restriction_not_computable_with_one_head
     {n : ℕ} (f : (Fin n → Bool) → Bool) (base : Fin n → Bool)
     (i j : Fin n) (hij : i ≠ j) (c : Bool)
-    (h00 : f (NHead.restrictBits base i j (false, false)) = c)
-    (h11 : f (NHead.restrictBits base i j (true, true)) = c)
-    (h01 : f (NHead.restrictBits base i j (false, true)) = !c)
-    (h10 : f (NHead.restrictBits base i j (true, false)) = !c) :
+    (h00 : f (Head.restrictBits base i j (false, false)) = c)
+    (h11 : f (Head.restrictBits base i j (true, true)) = c)
+    (h01 : f (Head.restrictBits base i j (false, true)) = !c)
+    (h10 : f (Head.restrictBits base i j (true, false)) = !c) :
     ¬ computableWithHeadsN n 1 f := by
   rintro ⟨d, Hs, hH⟩
-  let gBool : Bool × Bool → Bool := fun ab => f (NHead.restrictBits base i j ab)
+  let gBool : Bool × Bool → Bool := fun ab => f (Head.restrictBits base i j ab)
   have hg : computesPred gBool ((Hs 0).restrictedUpdate base i j) := by
     rcases hH with ⟨w, τ, hw⟩
     refine ⟨w, τ, ?_⟩
     intro ab
-    simpa [gBool, NHead.restrictedUpdate, nHeadFamilyAttnUpdate]
-      using hw (NHead.restrictBits base i j ab)
-  exact (NHead.checkerboard_not_computable_on_restriction (Hs 0) base i j hij gBool c
+    simpa [gBool, Head.restrictedUpdate, headFamilyAttnUpdate]
+      using hw (Head.restrictBits base i j ab)
+  exact (Head.checkerboard_not_computable_on_restriction (Hs 0) base i j hij gBool c
     h00 h11 h01 h10) hg
 
 /-- A named corollary for the parity-pattern case: any function whose
@@ -379,10 +379,10 @@ theorem checkerboard_restriction_not_computable_with_one_head
 theorem parity_restriction_not_computable_with_one_head
     {n : ℕ} (f : (Fin n → Bool) → Bool) (base : Fin n → Bool)
     (i j : Fin n) (hij : i ≠ j)
-    (h00 : f (NHead.restrictBits base i j (false, false)) = false)
-    (h11 : f (NHead.restrictBits base i j (true, true)) = false)
-    (h01 : f (NHead.restrictBits base i j (false, true)) = true)
-    (h10 : f (NHead.restrictBits base i j (true, false)) = true) :
+    (h00 : f (Head.restrictBits base i j (false, false)) = false)
+    (h11 : f (Head.restrictBits base i j (true, true)) = false)
+    (h01 : f (Head.restrictBits base i j (false, true)) = true)
+    (h10 : f (Head.restrictBits base i j (true, false)) = true) :
     ¬ computableWithHeadsN n 1 f := by
   exact checkerboard_restriction_not_computable_with_one_head
     f base i j hij false h00 h11 h01 h10
@@ -390,16 +390,16 @@ theorem parity_restriction_not_computable_with_one_head
 theorem parity_restriction_exactHeadComplexity_ge_two
     {n k : ℕ} (f : (Fin n → Bool) → Bool) (base : Fin n → Bool)
     (i j : Fin n) (hij : i ≠ j)
-    (h00 : f (NHead.restrictBits base i j (false, false)) = false)
-    (h11 : f (NHead.restrictBits base i j (true, true)) = false)
-    (h01 : f (NHead.restrictBits base i j (false, true)) = true)
-    (h10 : f (NHead.restrictBits base i j (true, false)) = true)
+    (h00 : f (Head.restrictBits base i j (false, false)) = false)
+    (h11 : f (Head.restrictBits base i j (true, true)) = false)
+    (h01 : f (Head.restrictBits base i j (false, true)) = true)
+    (h10 : f (Head.restrictBits base i j (true, false)) = true)
     (hk : exactHeadComplexityN n f k) :
     2 ≤ k := by
   have h0 : ¬ computableWithHeadsN n 0 f := by
     exact not_computableWithHeadsN_zero_of_false_true f
-      (NHead.restrictBits base i j (false, false))
-      (NHead.restrictBits base i j (false, true))
+      (Head.restrictBits base i j (false, false))
+      (Head.restrictBits base i j (false, true))
       h00 h01
   have h1 : ¬ computableWithHeadsN n 1 f := by
     exact parity_restriction_not_computable_with_one_head f base i j hij h00 h11 h01 h10
@@ -412,10 +412,10 @@ theorem parity_restriction_exactHeadComplexity_ge_two
 theorem parity_restriction_HStarN_ge_two
     {n : ℕ} (f : (Fin n → Bool) → Bool) (base : Fin n → Bool)
     (i j : Fin n) (hij : i ≠ j)
-    (h00 : f (NHead.restrictBits base i j (false, false)) = false)
-    (h11 : f (NHead.restrictBits base i j (true, true)) = false)
-    (h01 : f (NHead.restrictBits base i j (false, true)) = true)
-    (h10 : f (NHead.restrictBits base i j (true, false)) = true)
+    (h00 : f (Head.restrictBits base i j (false, false)) = false)
+    (h11 : f (Head.restrictBits base i j (true, true)) = false)
+    (h01 : f (Head.restrictBits base i j (false, true)) = true)
+    (h10 : f (Head.restrictBits base i j (true, false)) = true)
     (hExact : exactHeadComplexityN n f (HStarN n f)) :
     2 ≤ HStarN n f := by
   exact parity_restriction_exactHeadComplexity_ge_two f base i j hij h00 h11 h01 h10 hExact

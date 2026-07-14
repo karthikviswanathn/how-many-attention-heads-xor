@@ -5,7 +5,7 @@ set_option linter.style.header false
 /-!
 # Two-bit example helpers.
 
-The examples use the `NHead` model directly.  This file keeps only
+The examples use the `Head` model directly.  This file keeps only
 the lightweight two-bit notation: named Boolean functions on `Fin 2 → Bool` and
 the XOR-specific readout predicate used by the endpoint examples.
 -/
@@ -22,9 +22,9 @@ def bits2 (a b : Bool) : Fin 2 → Bool
 
 /-- The standard two-coordinate restriction of a 2-bit input is `bits2`. -/
 lemma restrictBits_zero_one (a b : Bool) :
-    NHead.restrictBits (fun _ : Fin 2 => false) 0 1 (a, b) = bits2 a b := by
+    Head.restrictBits (fun _ : Fin 2 => false) 0 1 (a, b) = bits2 a b := by
   funext i
-  fin_cases i <;> simp [NHead.restrictBits, bits2]
+  fin_cases i <;> simp [Head.restrictBits, bits2]
 
 /-- XOR on two generalized-model input bits. -/
 def xorFn : (Fin 2 → Bool) → Bool := fun bits => xor (bits 0) (bits 1)

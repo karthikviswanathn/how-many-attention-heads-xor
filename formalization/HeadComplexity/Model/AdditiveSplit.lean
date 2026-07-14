@@ -1,4 +1,4 @@
-import HeadComplexity.Model.NHead
+import HeadComplexity.Model.Head
 
 set_option linter.style.header false
 
@@ -12,7 +12,7 @@ $$ N(a,b) = A(a) + B(b) + C, \qquad D(a,b) = \alpha(a) + \beta(b) + \gamma. $$
 
 For a two-valued domain `Bool × Bool` this additive form is *equivalent* to the
 antipode (balance) identity `N(0,0)+N(1,1) = N(0,1)+N(1,0)`, which is already
-established for the general `n`-bit model in `Model/NHead.lean`
+established for the general `n`-bit model in `Model/Head.lean`
 (`restricted_numerator_antipode` / `restricted_denominator_antipode`, proved
 directly by a per-position case analysis). We therefore obtain the additive
 split with the explicit witnesses
@@ -26,14 +26,14 @@ statement; the per-position content it rests on lives in the antipode lemmas.
 
 namespace HeadComplexity
 
-namespace NHead
+namespace Head
 
 variable {n d : ℕ}
 
 /-- **Lemma 1 (numerator).** On a two-coordinate restriction, the softmax
 numerator of a single head decomposes additively as `A a + B b + C`, with `A`
 depending only on `a`, `B` only on `b`, and `C` constant. -/
-theorem numerator_additive_split (H : NHead n d) (base : Fin n → Bool)
+theorem numerator_additive_split (H : Head n d) (base : Fin n → Bool)
     (i j : Fin n) (hij : i ≠ j) :
     ∃ (A B : Bool → Vec d) (C : Vec d), ∀ a b : Bool,
       H.numerator (restrictBits base i j (a, b)) = A a + B b + C := by
@@ -55,7 +55,7 @@ theorem numerator_additive_split (H : NHead n d) (base : Fin n → Bool)
 
 /-- **Lemma 1 (denominator).** On a two-coordinate restriction, the softmax
 denominator decomposes additively as `α a + β b + γ`. -/
-theorem denominator_additive_split (H : NHead n d) (base : Fin n → Bool)
+theorem denominator_additive_split (H : Head n d) (base : Fin n → Bool)
     (i j : Fin n) (hij : i ≠ j) :
     ∃ (α β : Bool → ℝ) (γ : ℝ), ∀ a b : Bool,
       H.denominator (restrictBits base i j (a, b)) = α a + β b + γ := by
@@ -66,6 +66,6 @@ theorem denominator_additive_split (H : NHead n d) (base : Fin n → Bool)
   intro a b
   cases a <;> cases b <;> dsimp only <;> linarith
 
-end NHead
+end Head
 
 end HeadComplexity

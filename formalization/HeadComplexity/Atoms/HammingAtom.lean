@@ -26,7 +26,7 @@ full `C(F)`-head construction.
 
 namespace HeadComplexity
 
-open MvPolynomial Finset NHead
+open MvPolynomial Finset Head
 open scoped BigOperators InnerProductSpace
 
 variable {n : ℕ}
@@ -39,7 +39,7 @@ noncomputable def atomTok (n : ℕ) (a b : ℝ) : Fin 3 → Vec 2 :=
      EuclideanSpace.single 0 (Real.sqrt (Real.log (a - n))) ]
 
 /-- The atom head: scores depend only on the token, values live in coordinate 1. -/
-noncomputable def atomHead (n : ℕ) (a b : ℝ) : NHead n 2 where
+noncomputable def atomHead (n : ℕ) (a b : ℝ) : Head n 2 where
   tokenEmbed := atomTok n a b
   posEmbed := fun _ => 0
   WQ := LinearMap.id
@@ -58,7 +58,7 @@ variable (a b : ℝ)
 /-- The query embedding `x_=` equals `tokenEmbed 2`. -/
 lemma atomHead_x_none (bits : Fin n → Bool) :
     (atomHead n a b).x bits none = atomTok n a b 2 := by
-  simp [NHead.x, NHead.seqTok]
+  simp [Head.x, Head.seqTok]
 
 /-- Coordinate-0 (score channel) of each token embedding. -/
 @[simp] lemma atomTok_zero_coord0 : atomTok n a b 0 0 = 0 := by
@@ -127,7 +127,7 @@ lemma atomHead_sigma_none (bits : Fin n → Bool) :
   have hpos := a_sub_n_pos a ha
   have hsq : Real.sqrt (Real.log (a - n)) * Real.sqrt (Real.log (a - n)) = Real.log (a - n) :=
     Real.mul_self_sqrt (le_of_lt (log_a_sub_n_pos a ha))
-  unfold NHead.sigma
+  unfold Head.sigma
   rw [atomHead_x_none]
   simp only [atomHead_WK, atomHead_WQ, LinearMap.id_coe, id_eq]
   rw [atomTok_inner_two, atomTok_two_coord0, hsq, Real.exp_log hpos]
@@ -137,11 +137,11 @@ include ha in
 lemma atomHead_sigma_some (bits : Fin n → Bool) (i : Fin n) :
     (atomHead n a b).sigma bits (some i) = if bits i then 2 else 1 := by
   have hs := sqrt_log_ne a ha
-  unfold NHead.sigma
+  unfold Head.sigma
   rw [atomHead_x_none]
   simp only [atomHead_WK, atomHead_WQ, LinearMap.id_coe, id_eq]
   have hx : (atomHead n a b).x bits (some i) = atomTok n a b (cond (bits i) 1 0) := by
-    simp [NHead.x, NHead.seqTok]
+    simp [Head.x, Head.seqTok]
   rw [hx, atomTok_inner_two]
   cases bits i with
   | false => simp
@@ -152,14 +152,14 @@ lemma atomHead_sigma_some (bits : Fin n → Bool) (i : Fin n) :
 
 /-- The value vector equals the token embedding (since `W_V = id`). -/
 lemma atomHead_value_eq (bits : Fin n → Bool) (p : SeqPos n) :
-    (atomHead n a b).value bits p = atomTok n a b (NHead.seqTok bits p) := by
-  simp [NHead.value, NHead.x, atomHead_WV]
+    (atomHead n a b).value bits p = atomTok n a b (Head.seqTok bits p) := by
+  simp [Head.value, Head.x, atomHead_WV]
 
 include ha in
 /-- Denominator is `k + a` where `k = |x|`. -/
 lemma atomHead_denom (bits : Fin n → Bool) :
     (atomHead n a b).denominator bits = (hammingWeight bits : ℝ) + a := by
-  unfold NHead.denominator
+  unfold Head.denominator
   rw [Fintype.sum_option, atomHead_sigma_none a b ha]
   have hsome : ∀ i, (atomHead n a b).sigma bits (some i) = 1 + (if bits i then (1:ℝ) else 0) := by
     intro i; rw [atomHead_sigma_some a b ha]; cases bits i with
@@ -178,17 +178,17 @@ include hn ha in
 lemma atomHead_numread (bits : Fin n → Bool) :
     ⟪atomReadout, (atomHead n a b).numerator bits⟫_ℝ = b := by
   have hn0 : (n : ℝ) ≠ 0 := by positivity
-  unfold NHead.numerator
+  unfold Head.numerator
   rw [inner_sum, Fintype.sum_option]
   simp_rw [inner_smul_right, atomHead_value_eq, atomReadout_inner]
   rw [atomHead_sigma_none a b ha]
-  have hquery : atomTok n a b (NHead.seqTok bits none) 1 = 0 := by simp [NHead.seqTok]
+  have hquery : atomTok n a b (Head.seqTok bits none) 1 = 0 := by simp [Head.seqTok]
   rw [hquery, mul_zero, zero_add]
   have hbit : ∀ i, (atomHead n a b).sigma bits (some i)
-        * atomTok n a b (NHead.seqTok bits (some i)) 1 = b / n := by
+        * atomTok n a b (Head.seqTok bits (some i)) 1 = b / n := by
     intro i
     rw [atomHead_sigma_some a b ha]
-    have hseq : NHead.seqTok bits (some i) = cond (bits i) 1 0 := rfl
+    have hseq : Head.seqTok bits (some i) = cond (bits i) 1 0 := rfl
     rw [hseq]
     cases bits i <;> simp; ring
   rw [Finset.sum_congr rfl (fun i _ => hbit i), Finset.sum_const, Finset.card_univ,
@@ -200,7 +200,7 @@ include hn ha in
 theorem atomHead_readout (bits : Fin n → Bool) :
     ⟪atomReadout, (atomHead n a b).attnUpdate bits⟫_ℝ
       = b / ((hammingWeight bits : ℝ) + a) := by
-  unfold NHead.attnUpdate
+  unfold Head.attnUpdate
   rw [inner_smul_right, atomHead_numread a b hn ha, atomHead_denom a b ha]
   rw [div_eq_mul_inv, mul_comm]
 

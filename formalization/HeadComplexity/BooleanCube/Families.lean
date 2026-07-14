@@ -1,4 +1,4 @@
-import HeadComplexity.Model.NHead
+import HeadComplexity.Model.Head
 
 set_option linter.style.header false
 
@@ -12,7 +12,7 @@ proves checkerboard lower bounds used by the current L1-L12 theorem stack:
 * `EXACT n k` needs at least two heads for `1 ≤ k ≤ n - 1`.
 
 Both follow from the reusable general-`n` checkerboard engine in
-`Model/NHead.lean` (`parity_restriction_not_computable_with_one_head`,
+`Model/Head.lean` (`parity_restriction_not_computable_with_one_head`,
 `not_computableWithHeadsN_zero_of_false_true`). The only new work is the
 elementary Hamming-weight bookkeeping under a two-coordinate restriction. Exact
 values for these families are proved later from the symmetric sign-change
@@ -22,7 +22,7 @@ characterization in `Results/ExactFamilies.lean`.
 namespace HeadComplexity
 
 open scoped BigOperators
-open NHead (restrictBits)
+open Head (restrictBits)
 
 variable {n : ℕ}
 

@@ -51,13 +51,13 @@ lemma computableWithHeadsN_zero_iff (f : (Fin n → Bool) → Bool) :
   · rintro ⟨d, Hs, w, τ, hsep⟩ x y
     have hx := hsep x
     have hy := hsep y
-    rw [nHeadFamilyAttnUpdate_zero, inner_zero_right] at hx hy
+    rw [headFamilyAttnUpdate_zero, inner_zero_right] at hx hy
     have key : f x = true ↔ f y = true := hx.symm.trans hy
     cases hfx : f x <;> cases hfy : f y <;> simp_all
   · intro hconst
     refine ⟨2, Fin.elim0, 0, (if f default then -1 else 1), ?_⟩
     intro bits
-    rw [nHeadFamilyAttnUpdate_zero, inner_zero_right, hconst bits default]
+    rw [headFamilyAttnUpdate_zero, inner_zero_right, hconst bits default]
     cases f default <;> norm_num
 
 /-- **Lemma 11 (level 0).** `H*(f) = 0` iff `f` is constant. -/

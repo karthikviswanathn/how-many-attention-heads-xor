@@ -32,7 +32,7 @@ echo "=== axiom check (new L1/L5/L12 theorems must depend only on standard axiom
 cat > /tmp/AxiomCheck_$$.lean <<'EOF'
 import HeadComplexity
 open HeadComplexity
-#print axioms NHead.numerator_additive_split
+#print axioms Head.numerator_additive_split
 #print axioms PARITY_not_computable_with_one_head
 #print axioms EXACT_not_computable_with_one_head
 #print axioms symmetricFn_spike_not_computable_with_one_head
@@ -54,7 +54,7 @@ open HeadComplexity
 #print axioms HStarN_eq_zero_iff
 #print axioms HStarN_eq_one_iff
 #print axioms HStarN_eq_Lfrac
-#print axioms NHead.restricted_numerator_antipode
+#print axioms Head.restricted_numerator_antipode
 #print axioms parity_restriction_HStarN_ge_two
 #print axioms HStarN_threshold
 #print axioms HStarN_exact

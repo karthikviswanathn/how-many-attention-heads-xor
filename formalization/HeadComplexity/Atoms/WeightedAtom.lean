@@ -25,7 +25,7 @@ Reusing `real_partial_fraction` and a Lagrange sign polynomial gives the `M-1` h
 
 namespace HeadComplexity
 
-open MvPolynomial Finset NHead
+open MvPolynomial Finset Head
 open scoped BigOperators InnerProductSpace
 
 variable {n : ℕ}
@@ -52,7 +52,7 @@ noncomputable def wPos (lam : Fin n → ℝ) (a : ℝ) : SeqPos n → Vec 2
   | none => 0
 
 /-- The weighted atom head over `n` bits. -/
-noncomputable def weightedAtomHead (lam : Fin n → ℝ) (a b : ℝ) : NHead n 2 where
+noncomputable def weightedAtomHead (lam : Fin n → ℝ) (a b : ℝ) : Head n 2 where
   tokenEmbed := wTok lam a b
   posEmbed := wPos lam a
   WQ := LinearMap.id
@@ -76,13 +76,13 @@ variable (lam : Fin n → ℝ) (a b : ℝ)
 /-- The query embedding equals `tokenEmbed 2` (positional part is zero). -/
 lemma wHead_x_none (bits : Fin n → Bool) :
     (weightedAtomHead lam a b).x bits none = wTok lam a b 2 := by
-  simp [NHead.x, NHead.seqTok, weightedAtomHead, wPos]
+  simp [Head.x, Head.seqTok, weightedAtomHead, wPos]
 
 /-- Score-channel coordinate of position `i`. -/
 lemma wHead_x_some_coord0 (bits : Fin n → Bool) (i : Fin n) :
     ((weightedAtomHead lam a b).x bits (some i)) 0
       = wTok lam a b (cond (bits i) 1 0) 0 + Real.log (lam i) / wScore lam a := by
-  simp only [NHead.x, NHead.seqTok, weightedAtomHead, wPos]
+  simp only [Head.x, Head.seqTok, weightedAtomHead, wPos]
   rw [PiLp.add_apply, PiLp.single_apply]
   simp
 
@@ -90,7 +90,7 @@ lemma wHead_x_some_coord0 (bits : Fin n → Bool) (i : Fin n) :
 lemma wHead_x_some_coord1 (bits : Fin n → Bool) (i : Fin n) :
     ((weightedAtomHead lam a b).x bits (some i)) 1
       = wTok lam a b (cond (bits i) 1 0) 1 := by
-  simp only [NHead.x, NHead.seqTok, weightedAtomHead, wPos]
+  simp only [Head.x, Head.seqTok, weightedAtomHead, wPos]
   rw [PiLp.add_apply, PiLp.single_apply]
   simp
 
@@ -131,7 +131,7 @@ include ha in
 /-- Softmax weight at the query token is `a - Λ`. -/
 lemma wHead_sigma_none (bits : Fin n → Bool) :
     (weightedAtomHead lam a b).sigma bits none = a - wLam lam := by
-  unfold NHead.sigma
+  unfold Head.sigma
   rw [wHead_x_none]
   simp only [weightedAtomHead_WK, weightedAtomHead_WQ, LinearMap.id_coe, id_eq]
   rw [vec2_inner]
@@ -143,7 +143,7 @@ include hlam ha in
 lemma wHead_sigma_some (bits : Fin n → Bool) (i : Fin n) :
     (weightedAtomHead lam a b).sigma bits (some i) = if bits i then 2 * lam i else lam i := by
   have hs := wScore_ne lam a ha
-  unfold NHead.sigma
+  unfold Head.sigma
   rw [wHead_x_none]
   simp only [weightedAtomHead_WK, weightedAtomHead_WQ, LinearMap.id_coe, id_eq]
   rw [vec2_inner]
@@ -165,13 +165,13 @@ lemma wHead_sigma_some (bits : Fin n → Bool) (i : Fin n) :
 /-- The value vector equals the embedding (since `W_V = id`). -/
 lemma wHead_value (bits : Fin n → Bool) (p : SeqPos n) :
     (weightedAtomHead lam a b).value bits p = (weightedAtomHead lam a b).x bits p := by
-  simp [NHead.value, weightedAtomHead]
+  simp [Head.value, weightedAtomHead]
 
 include hlam ha in
 /-- Denominator is `t(x) + a`. -/
 lemma wHead_denom (bits : Fin n → Bool) :
     (weightedAtomHead lam a b).denominator bits = wT lam bits + a := by
-  unfold NHead.denominator
+  unfold Head.denominator
   rw [Fintype.sum_option, wHead_sigma_none lam a b ha]
   have hsome : ∀ i, (weightedAtomHead lam a b).sigma bits (some i)
       = lam i + (if bits i then lam i else 0) := by
@@ -186,7 +186,7 @@ include hn hlam ha in
 lemma wHead_numread (bits : Fin n → Bool) :
     ⟪atomReadout, (weightedAtomHead lam a b).numerator bits⟫_ℝ = b := by
   have hL := (wLam_pos lam hn hlam).ne'
-  unfold NHead.numerator
+  unfold Head.numerator
   rw [inner_sum, Fintype.sum_option]
   simp_rw [inner_smul_right, wHead_value]
   have hquery : ⟪atomReadout, (weightedAtomHead lam a b).x bits none⟫_ℝ = 0 := by
@@ -205,7 +205,7 @@ include hn hlam ha in
 /-- **One weighted head = one atom `b/(t(x)+a)`.** -/
 theorem weightedAtom_readout (bits : Fin n → Bool) :
     ⟪atomReadout, (weightedAtomHead lam a b).attnUpdate bits⟫_ℝ = b / (wT lam bits + a) := by
-  unfold NHead.attnUpdate
+  unfold Head.attnUpdate
   rw [inner_smul_right, wHead_numread lam a b hn hlam ha, wHead_denom lam a b hlam ha]
   rw [div_eq_mul_inv, mul_comm]
 
@@ -301,9 +301,9 @@ theorem weighted_computable (lam : Fin n → ℝ) (hlam : ∀ i, 0 < lam i)
         Finset.card_image_le.trans (by simp)
       omega
     rw [hcard]
-    refine ⟨2, (Fin.elim0 : NHeadFamily 0 2 0), (0 : Vec 2), (if f default then -1 else 1), ?_⟩
+    refine ⟨2, (Fin.elim0 : HeadFamily 0 2 0), (0 : Vec 2), (if f default then -1 else 1), ?_⟩
     intro bits
-    rw [nHeadFamilyAttnUpdate_zero, inner_zero_right, Subsingleton.elim bits default]
+    rw [headFamilyAttnUpdate_zero, inner_zero_right, Subsingleton.elim bits default]
     cases f default <;> norm_num
   · obtain ⟨av, bv, τ, hav, hatom⟩ := exists_weighted_atoms lam hlam f G hf
     refine ⟨2, fun h => weightedAtomHead lam (av h) (bv h), atomReadout, τ, ?_⟩

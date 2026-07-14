@@ -6,7 +6,7 @@ set_option linter.style.header false
 /-!
 # Theorem 2: two attention heads suffice to compute XOR.
 
-We give construct two `NHead 2 3` terms. Both heads use the standard token
+We give construct two `Head 2 3` terms. Both heads use the standard token
 embeddings `e_0`, `e_1`, `e_=` and no positional embeddings. The first head
 attends to token `0` and writes in the `e_0` direction; the second attends to
 token `1` and writes in the `e_1` direction. Their sum places the four
@@ -34,7 +34,7 @@ noncomputable def outerProduct {n : ℕ} (u v : Vec n) : Vec n →ₗ[ℝ] Vec n
 noncomputable def stdTokenEmbed : Fin 3 → Vec 3 := fun i => EuclideanSpace.single i 1
 
 /-- **Head 0**: attends to token `0`, writes in the `e_0` direction. -/
-noncomputable def head0 : NHead 2 3 where
+noncomputable def head0 : Head 2 3 where
   tokenEmbed := stdTokenEmbed
   posEmbed := fun _ => 0
   WQ := LinearMap.id
@@ -42,7 +42,7 @@ noncomputable def head0 : NHead 2 3 where
   WV := outerProduct (EuclideanSpace.single 0 1) (EuclideanSpace.single 0 1)
 
 /-- **Head 1**: attends to token `1`, writes in the `e_1` direction. -/
-noncomputable def head1 : NHead 2 3 where
+noncomputable def head1 : Head 2 3 where
   tokenEmbed := stdTokenEmbed
   posEmbed := fun _ => 0
   WQ := LinearMap.id
@@ -73,13 +73,13 @@ noncomputable def twoHeadUpdate (bits : Fin 2 → Bool) : Vec 3 :=
     head1.WV = outerProduct (EuclideanSpace.single 1 1) (EuclideanSpace.single 1 1) := rfl
 
 @[simp] lemma head0_x_apply (bits : Fin 2 → Bool) (p : SeqPos 2) :
-    head0.x bits p = EuclideanSpace.single (NHead.seqTok bits p) 1 := by
-  change head0.tokenEmbed (NHead.seqTok bits p) + head0.posEmbed p = _
+    head0.x bits p = EuclideanSpace.single (Head.seqTok bits p) 1 := by
+  change head0.tokenEmbed (Head.seqTok bits p) + head0.posEmbed p = _
   simp
 
 @[simp] lemma head1_x_apply (bits : Fin 2 → Bool) (p : SeqPos 2) :
-    head1.x bits p = EuclideanSpace.single (NHead.seqTok bits p) 1 := by
-  change head1.tokenEmbed (NHead.seqTok bits p) + head1.posEmbed p = _
+    head1.x bits p = EuclideanSpace.single (Head.seqTok bits p) 1 := by
+  change head1.tokenEmbed (Head.seqTok bits p) + head1.posEmbed p = _
   simp
 
 /-- Inner product of two standard basis vectors of `Vec n`: `1` on the
@@ -106,15 +106,15 @@ lemma head0_attnUpdate_ff_ff :
     head0.attnUpdate (bits2 false false) =
     (2 * Real.exp 1 / (2 * Real.exp 1 + 1)) • EuclideanSpace.single (0 : Fin 3) 1 := by
   have hD : head0.denominator (bits2 false false) = 2 * Real.exp 1 + 1 := by
-    unfold NHead.denominator NHead.sigma
-    simp [NHead.seqTok, univ_option]
+    unfold Head.denominator Head.sigma
+    simp [Head.seqTok, univ_option]
     ring
   have hN : head0.numerator (bits2 false false)
       = (2 * Real.exp 1) • EuclideanSpace.single (0 : Fin 3) 1 := by
-    unfold NHead.numerator NHead.sigma NHead.value
-    simp [NHead.seqTok, univ_option]
+    unfold Head.numerator Head.sigma Head.value
+    simp [Head.seqTok, univ_option]
     module
-  unfold NHead.attnUpdate
+  unfold Head.attnUpdate
   rw [hD, hN, smul_smul]
   congr 1
   rw [div_eq_mul_inv, mul_comm]
@@ -124,14 +124,14 @@ lemma head0_attnUpdate_ff_tt :
     head0.attnUpdate (bits2 false true) =
     (Real.exp 1 / (Real.exp 1 + 2)) • EuclideanSpace.single (0 : Fin 3) 1 := by
   have hD : head0.denominator (bits2 false true) = Real.exp 1 + 2 := by
-    unfold NHead.denominator NHead.sigma
-    simp [NHead.seqTok, univ_option]
+    unfold Head.denominator Head.sigma
+    simp [Head.seqTok, univ_option]
     ring
   have hN : head0.numerator (bits2 false true)
       = (Real.exp 1) • EuclideanSpace.single (0 : Fin 3) 1 := by
-    unfold NHead.numerator NHead.sigma NHead.value
-    simp [NHead.seqTok, univ_option]
-  unfold NHead.attnUpdate
+    unfold Head.numerator Head.sigma Head.value
+    simp [Head.seqTok, univ_option]
+  unfold Head.attnUpdate
   rw [hD, hN, smul_smul]
   congr 1
   rw [div_eq_mul_inv, mul_comm]
@@ -141,14 +141,14 @@ lemma head0_attnUpdate_tt_ff :
     head0.attnUpdate (bits2 true false) =
     (Real.exp 1 / (Real.exp 1 + 2)) • EuclideanSpace.single (0 : Fin 3) 1 := by
   have hD : head0.denominator (bits2 true false) = Real.exp 1 + 2 := by
-    unfold NHead.denominator NHead.sigma
-    simp [NHead.seqTok, univ_option]
+    unfold Head.denominator Head.sigma
+    simp [Head.seqTok, univ_option]
     ring
   have hN : head0.numerator (bits2 true false)
       = (Real.exp 1) • EuclideanSpace.single (0 : Fin 3) 1 := by
-    unfold NHead.numerator NHead.sigma NHead.value
-    simp [NHead.seqTok, univ_option]
-  unfold NHead.attnUpdate
+    unfold Head.numerator Head.sigma Head.value
+    simp [Head.seqTok, univ_option]
+  unfold Head.attnUpdate
   rw [hD, hN, smul_smul]
   congr 1
   rw [div_eq_mul_inv, mul_comm]
@@ -157,18 +157,18 @@ lemma head0_attnUpdate_tt_ff :
 lemma head0_attnUpdate_tt_tt :
     head0.attnUpdate (bits2 true true) = (0 : Vec 3) := by
   have hN : head0.numerator (bits2 true true) = (0 : Vec 3) := by
-    unfold NHead.numerator NHead.sigma NHead.value
-    simp [NHead.seqTok, univ_option]
-  unfold NHead.attnUpdate
+    unfold Head.numerator Head.sigma Head.value
+    simp [Head.seqTok, univ_option]
+  unfold Head.attnUpdate
   rw [hN, smul_zero]
 
 /-- `head1.attnUpdate (false, false) = 0`. -/
 lemma head1_attnUpdate_ff_ff :
     head1.attnUpdate (bits2 false false) = (0 : Vec 3) := by
   have hN : head1.numerator (bits2 false false) = (0 : Vec 3) := by
-    unfold NHead.numerator NHead.sigma NHead.value
-    simp [NHead.seqTok, univ_option]
-  unfold NHead.attnUpdate
+    unfold Head.numerator Head.sigma Head.value
+    simp [Head.seqTok, univ_option]
+  unfold Head.attnUpdate
   rw [hN, smul_zero]
 
 /-- `head1.attnUpdate (false, true) = (e /(e + 2)) • e_1`. -/
@@ -176,14 +176,14 @@ lemma head1_attnUpdate_ff_tt :
     head1.attnUpdate (bits2 false true) =
     (Real.exp 1 / (Real.exp 1 + 2)) • EuclideanSpace.single (1 : Fin 3) 1 := by
   have hD : head1.denominator (bits2 false true) = Real.exp 1 + 2 := by
-    unfold NHead.denominator NHead.sigma
-    simp [NHead.seqTok, univ_option]
+    unfold Head.denominator Head.sigma
+    simp [Head.seqTok, univ_option]
     ring
   have hN : head1.numerator (bits2 false true)
       = (Real.exp 1) • EuclideanSpace.single (1 : Fin 3) 1 := by
-    unfold NHead.numerator NHead.sigma NHead.value
-    simp [NHead.seqTok, univ_option]
-  unfold NHead.attnUpdate
+    unfold Head.numerator Head.sigma Head.value
+    simp [Head.seqTok, univ_option]
+  unfold Head.attnUpdate
   rw [hD, hN, smul_smul]
   congr 1
   rw [div_eq_mul_inv, mul_comm]
@@ -193,14 +193,14 @@ lemma head1_attnUpdate_tt_ff :
     head1.attnUpdate (bits2 true false) =
     (Real.exp 1 / (Real.exp 1 + 2)) • EuclideanSpace.single (1 : Fin 3) 1 := by
   have hD : head1.denominator (bits2 true false) = Real.exp 1 + 2 := by
-    unfold NHead.denominator NHead.sigma
-    simp [NHead.seqTok, univ_option]
+    unfold Head.denominator Head.sigma
+    simp [Head.seqTok, univ_option]
     ring
   have hN : head1.numerator (bits2 true false)
       = (Real.exp 1) • EuclideanSpace.single (1 : Fin 3) 1 := by
-    unfold NHead.numerator NHead.sigma NHead.value
-    simp [NHead.seqTok, univ_option]
-  unfold NHead.attnUpdate
+    unfold Head.numerator Head.sigma Head.value
+    simp [Head.seqTok, univ_option]
+  unfold Head.attnUpdate
   rw [hD, hN, smul_smul]
   congr 1
   rw [div_eq_mul_inv, mul_comm]
@@ -210,15 +210,15 @@ lemma head1_attnUpdate_tt_tt :
     head1.attnUpdate (bits2 true true) =
     (2 * Real.exp 1 / (2 * Real.exp 1 + 1)) • EuclideanSpace.single (1 : Fin 3) 1 := by
   have hD : head1.denominator (bits2 true true) = 2 * Real.exp 1 + 1 := by
-    unfold NHead.denominator NHead.sigma
-    simp [NHead.seqTok, univ_option]
+    unfold Head.denominator Head.sigma
+    simp [Head.seqTok, univ_option]
     ring
   have hN : head1.numerator (bits2 true true)
       = (2 * Real.exp 1) • EuclideanSpace.single (1 : Fin 3) 1 := by
-    unfold NHead.numerator NHead.sigma NHead.value
-    simp [NHead.seqTok, univ_option]
+    unfold Head.numerator Head.sigma Head.value
+    simp [Head.seqTok, univ_option]
     module
-  unfold NHead.attnUpdate
+  unfold Head.attnUpdate
   rw [hD, hN, smul_smul]
   congr 1
   rw [div_eq_mul_inv, mul_comm]

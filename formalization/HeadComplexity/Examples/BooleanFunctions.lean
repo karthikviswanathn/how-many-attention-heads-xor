@@ -40,12 +40,12 @@ def symmFn (c0 c1 c2 : Bool) : (Fin 2 → Bool) → Bool := fun bits =>
   | true, true => c2
 
 /-- Two-bit head families are just the model specialized to `n = 2`. -/
-abbrev HeadFamily (d H : ℕ) : Type := NHeadFamily 2 d H
+abbrev TwoBitHeadFamily (d H : ℕ) : Type := HeadFamily 2 d H
 
 /-- The summed attention update of a two-bit head family. -/
-noncomputable def headFamilyAttnUpdate {H : ℕ} (Hs : HeadFamily d H) :
+noncomputable def twoBitHeadFamilyAttnUpdate {H : ℕ} (Hs : TwoBitHeadFamily d H) :
     (Fin 2 → Bool) → Vec d :=
-  nHeadFamilyAttnUpdate Hs
+  headFamilyAttnUpdate Hs
 
 /-- Two-bit computability with `H` heads. -/
 abbrev computableWithHeads (f : (Fin 2 → Bool) → Bool) (H : ℕ) : Prop :=
@@ -59,13 +59,13 @@ abbrev exactHeadComplexity (f : (Fin 2 → Bool) → Bool) (k : ℕ) : Prop :=
 noncomputable def HStar (f : (Fin 2 → Bool) → Bool) : ℕ :=
   HStarN 2 f
 
-@[simp] lemma headFamilyAttnUpdate_zero {Hs : HeadFamily d 0} (bits : Fin 2 → Bool) :
-    headFamilyAttnUpdate Hs bits = 0 := by
-  simp [headFamilyAttnUpdate]
+@[simp] lemma twoBitHeadFamilyAttnUpdate_zero {Hs : TwoBitHeadFamily d 0} (bits : Fin 2 → Bool) :
+    twoBitHeadFamilyAttnUpdate Hs bits = 0 := by
+  simp [twoBitHeadFamilyAttnUpdate]
 
-@[simp] lemma headFamilyAttnUpdate_one {Hs : HeadFamily d 1} (bits : Fin 2 → Bool) :
-    headFamilyAttnUpdate Hs bits = (Hs 0).attnUpdate bits := by
-  simp [headFamilyAttnUpdate]
+@[simp] lemma twoBitHeadFamilyAttnUpdate_one {Hs : TwoBitHeadFamily d 1} (bits : Fin 2 → Bool) :
+    twoBitHeadFamilyAttnUpdate Hs bits = (Hs 0).attnUpdate bits := by
+  simp [twoBitHeadFamilyAttnUpdate]
 
 @[simp] lemma computesXor_iff_computesBool_xor (g : (Fin 2 → Bool) → Vec d) :
     computesXor g ↔ computesBool xorFn g := by
@@ -89,9 +89,9 @@ lemma computesBool_iff_of_add_const
 
 /-- Generic skip-connection reduction for two-bit Boolean classification. -/
 lemma computesBool_residual_iff_attnUpdate
-    (f : (Fin 2 → Bool) → Bool) (H : NHead 2 d) :
+    (f : (Fin 2 → Bool) → Bool) (H : Head 2 d) :
     computesBool f H.residual ↔ computesBool f H.attnUpdate := by
-  simpa [computesBool] using NHead.computesPred_residual_iff_attnUpdate H f
+  simpa [computesBool] using Head.computesPred_residual_iff_attnUpdate H f
 
 noncomputable def oneProbe : Vec 3 := EuclideanSpace.single (1 : Fin 3) 1
 
@@ -316,47 +316,47 @@ theorem head1_computes_nand_residual :
 /-- The 0-head model computes the constantly-false function. -/
 theorem false_computable_with_zero_heads :
     computableWithHeads falseFn 0 := by
-  refine ⟨1, (Fin.elim0 : HeadFamily 1 0), ?_⟩
+  refine ⟨1, (Fin.elim0 : TwoBitHeadFamily 1 0), ?_⟩
   refine ⟨0, 0, ?_⟩
   intro bits
-  simp [falseFn, nHeadFamilyAttnUpdate]
+  simp [falseFn, headFamilyAttnUpdate]
 
 /-- The 0-head model also computes the constantly-true function. -/
 theorem true_computable_with_zero_heads :
     computableWithHeads trueFn 0 := by
-  refine ⟨1, (Fin.elim0 : HeadFamily 1 0), ?_⟩
+  refine ⟨1, (Fin.elim0 : TwoBitHeadFamily 1 0), ?_⟩
   refine ⟨0, -1, ?_⟩
   intro bits
-  simp [trueFn, nHeadFamilyAttnUpdate]
+  simp [trueFn, headFamilyAttnUpdate]
 
 /-- A single head suffices to compute `OR` in the query residual. -/
 theorem or_computable_with_one_head :
-    ∃ H : NHead 2 3, computesBool orFn H.residual := by
+    ∃ H : Head 2 3, computesBool orFn H.residual := by
   exact ⟨head1, head1_computes_or_residual⟩
 
 /-- A single head suffices to compute `AND` in the query residual. -/
 theorem and_computable_with_one_head :
-    ∃ H : NHead 2 3, computesBool andFn H.residual := by
+    ∃ H : Head 2 3, computesBool andFn H.residual := by
   exact ⟨head1, head1_computes_and_residual⟩
 
 /-- A single head suffices to compute `NOR` in the query residual. -/
 theorem nor_computable_with_one_head :
-    ∃ H : NHead 2 3, computesBool norFn H.residual := by
+    ∃ H : Head 2 3, computesBool norFn H.residual := by
   exact ⟨head1, head1_computes_nor_residual⟩
 
 /-- A single head suffices to compute `NAND` in the query residual. -/
 theorem nand_computable_with_one_head :
-    ∃ H : NHead 2 3, computesBool nandFn H.residual := by
+    ∃ H : Head 2 3, computesBool nandFn H.residual := by
   exact ⟨head1, head1_computes_nand_residual⟩
 
 private lemma one_head_count_of_attnUpdate
-    {f : (Fin 2 → Bool) → Bool} {H : NHead 2 3}
+    {f : (Fin 2 → Bool) → Bool} {H : Head 2 3}
     (h : computesBool f H.attnUpdate) : computableWithHeads f 1 := by
   refine ⟨3, (fun _ => H), ?_⟩
   rcases h with ⟨w, τ, hw⟩
   refine ⟨w, τ, ?_⟩
   intro bits
-  simpa [computesBool, nHeadFamilyAttnUpdate] using hw bits
+  simpa [computesBool, headFamilyAttnUpdate] using hw bits
 
 /-- `OR` is computable with one head in the uniform multi-head model. -/
 theorem or_computable_with_one_head_count :
@@ -412,13 +412,13 @@ theorem nand_not_computable_with_zero_heads :
 
 /-- No single head computes `XOR` in this model. -/
 theorem xor_not_computable_with_one_head :
-    ¬ ∃ (d : ℕ) (H : NHead 2 d), computesBool xorFn H.residual := by
+    ¬ ∃ (d : ℕ) (H : Head 2 d), computesBool xorFn H.residual := by
   rintro ⟨d, H, hH⟩
   exact one_head_cannot_xor_residual H (by simpa [computesXor, computesBool] using hH)
 
 /-- General one-head lower bound for checkerboard truth tables. -/
 theorem checkerboard_not_computable_with_one_head_attnUpdate
-    {d : ℕ} (H : NHead 2 d) (f : (Fin 2 → Bool) → Bool) (c : Bool)
+    {d : ℕ} (H : Head 2 d) (f : (Fin 2 → Bool) → Bool) (c : Bool)
     (h00 : f (bits2 false false) = c)
     (h11 : f (bits2 true true) = c)
     (h01 : f (bits2 false true) = !c)
@@ -430,21 +430,21 @@ theorem checkerboard_not_computable_with_one_head_attnUpdate
     rcases hComp with ⟨w, τ, hw⟩
     refine ⟨w, τ, ?_⟩
     intro bits
-    simpa [computesBool, nHeadFamilyAttnUpdate] using hw bits
-  have h00N : f (NHead.restrictBits (fun _ => false) 0 1 (false, false)) = c := by
+    simpa [computesBool, headFamilyAttnUpdate] using hw bits
+  have h00N : f (Head.restrictBits (fun _ => false) 0 1 (false, false)) = c := by
     simpa [restrictBits_zero_one] using h00
-  have h11N : f (NHead.restrictBits (fun _ => false) 0 1 (true, true)) = c := by
+  have h11N : f (Head.restrictBits (fun _ => false) 0 1 (true, true)) = c := by
     simpa [restrictBits_zero_one] using h11
-  have h01N : f (NHead.restrictBits (fun _ => false) 0 1 (false, true)) = !c := by
+  have h01N : f (Head.restrictBits (fun _ => false) 0 1 (false, true)) = !c := by
     simpa [restrictBits_zero_one] using h01
-  have h10N : f (NHead.restrictBits (fun _ => false) 0 1 (true, false)) = !c := by
+  have h10N : f (Head.restrictBits (fun _ => false) 0 1 (true, false)) = !c := by
     simpa [restrictBits_zero_one] using h10
   exact (checkerboard_restriction_not_computable_with_one_head
     f (fun _ => false) 0 1 (by decide) c h00N h11N h01N h10N) hCompN
 
 /-- Residual-form checkerboard lower bound. -/
 theorem checkerboard_not_computable_with_one_head_residual
-    {d : ℕ} (H : NHead 2 d) (f : (Fin 2 → Bool) → Bool) (c : Bool)
+    {d : ℕ} (H : Head 2 d) (f : (Fin 2 → Bool) → Bool) (c : Bool)
     (h00 : f (bits2 false false) = c)
     (h11 : f (bits2 true true) = c)
     (h01 : f (bits2 false true) = !c)
@@ -463,10 +463,10 @@ theorem xor_not_computable_with_zero_heads :
 theorem xor_not_computable_with_one_head_count :
     ¬ computableWithHeads xorFn 1 := by
   rintro ⟨d, Hs, hH⟩
-  have hSingle : computesBool xorFn (headFamilyAttnUpdate Hs) := hH
-  rw [show headFamilyAttnUpdate Hs = (Hs 0).attnUpdate by
+  have hSingle : computesBool xorFn (twoBitHeadFamilyAttnUpdate Hs) := hH
+  rw [show twoBitHeadFamilyAttnUpdate Hs = (Hs 0).attnUpdate by
     funext bits
-    simp [headFamilyAttnUpdate]] at hSingle
+    simp [twoBitHeadFamilyAttnUpdate]] at hSingle
   exact one_head_cannot_xor_attnUpdate (Hs 0)
     (by simpa [computesXor, computesBool] using hSingle)
 
@@ -503,14 +503,14 @@ theorem xnor_computable_with_two_heads :
     simp [xnorFn, hfalse, lo, hgt]
 
 /-- A concrete 2-head family realizing the existing XOR construction. -/
-noncomputable def xorTwoHeadFamily : HeadFamily 3 2
+noncomputable def xorTwoHeadFamily : TwoBitHeadFamily 3 2
   | 0 => head0
   | 1 => head1
 
 lemma xorTwoHeadFamily_attnUpdate (bits : Fin 2 → Bool) :
-    headFamilyAttnUpdate xorTwoHeadFamily bits = twoHeadUpdate bits := by
-  simp [headFamilyAttnUpdate, nHeadFamilyAttnUpdate, xorTwoHeadFamily,
-    twoHeadUpdate, Fin.sum_univ_two]
+    twoBitHeadFamilyAttnUpdate xorTwoHeadFamily bits = twoHeadUpdate bits := by
+  simp [twoBitHeadFamilyAttnUpdate, headFamilyAttnUpdate, xorTwoHeadFamily,
+    twoHeadUpdate]
 
 /-- `XOR` is computable with two heads in the uniform multi-head model. -/
 theorem xor_computable_with_two_heads_count :
@@ -519,8 +519,8 @@ theorem xor_computable_with_two_heads_count :
   rcases xor_computable_with_two_heads with ⟨w, τ, hw⟩
   refine ⟨w, τ, ?_⟩
   intro bits
-  have hupdate : nHeadFamilyAttnUpdate xorTwoHeadFamily bits = twoHeadUpdate bits := by
-    simpa [headFamilyAttnUpdate] using xorTwoHeadFamily_attnUpdate bits
+  have hupdate : headFamilyAttnUpdate xorTwoHeadFamily bits = twoHeadUpdate bits := by
+    simpa [twoBitHeadFamilyAttnUpdate] using xorTwoHeadFamily_attnUpdate bits
   rw [hupdate]
   exact hw bits
 
@@ -528,10 +528,10 @@ theorem xor_computable_with_two_heads_count :
 theorem xnor_not_computable_with_one_head_count :
     ¬ computableWithHeads xnorFn 1 := by
   rintro ⟨d, Hs, hH⟩
-  have hSingle : computesBool xnorFn (headFamilyAttnUpdate Hs) := hH
-  rw [show headFamilyAttnUpdate Hs = (Hs 0).attnUpdate by
+  have hSingle : computesBool xnorFn (twoBitHeadFamilyAttnUpdate Hs) := hH
+  rw [show twoBitHeadFamilyAttnUpdate Hs = (Hs 0).attnUpdate by
     funext bits
-    simp [headFamilyAttnUpdate]] at hSingle
+    simp [twoBitHeadFamilyAttnUpdate]] at hSingle
   exact (checkerboard_not_computable_with_one_head_attnUpdate
     (Hs 0) xnorFn true rfl rfl rfl rfl) hSingle
 
@@ -542,8 +542,8 @@ theorem xnor_computable_with_two_heads_count :
   rcases xnor_computable_with_two_heads with ⟨w, τ, hw⟩
   refine ⟨w, τ, ?_⟩
   intro bits
-  have hupdate : nHeadFamilyAttnUpdate xorTwoHeadFamily bits = twoHeadUpdate bits := by
-    simpa [headFamilyAttnUpdate] using xorTwoHeadFamily_attnUpdate bits
+  have hupdate : headFamilyAttnUpdate xorTwoHeadFamily bits = twoHeadUpdate bits := by
+    simpa [twoBitHeadFamilyAttnUpdate] using xorTwoHeadFamily_attnUpdate bits
   rw [hupdate]
   exact hw bits
 

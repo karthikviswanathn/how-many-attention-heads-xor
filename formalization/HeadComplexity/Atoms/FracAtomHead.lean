@@ -8,7 +8,7 @@ set_option linter.style.header false
 # Lemma 10 (one direction) — every linear-fractional atom is one head.
 
 Given a `FracAtom φ` over `n` bits we build a single attention head
-`atomHead' φ : NHead n 3` whose readout under `w = e₁` is exactly `φ.eval`.
+`atomHead' φ : Head n 3` whose readout under `w = e₁` is exactly `φ.eval`.
 Summing such heads (all sharing the readout `e₁`) realizes any
 `fracComputable` function, giving
 
@@ -41,7 +41,7 @@ of the numerator is `η + ∑ φ.wt·(m_i + δ x_i)` and the denominator is
 
 namespace HeadComplexity
 
-open Finset NHead
+open Finset Head
 open scoped BigOperators InnerProductSpace
 
 variable {n : ℕ}
@@ -83,7 +83,7 @@ noncomputable def fracPos (φ : FracAtom n) : SeqPos n → Vec 3
   | none => 0
 
 /-- **One head realizing one atom.** -/
-noncomputable def atomHead' (φ : FracAtom n) : NHead n 3 where
+noncomputable def atomHead' (φ : FracAtom n) : Head n 3 where
   tokenEmbed := fracTok φ
   posEmbed := fracPos φ
   WQ := projTo0 2
@@ -117,13 +117,13 @@ lemma fracTok_two_coord1 : fracTok φ 2 1 = φ.η / φ.γ := by
 /-- The query embedding equals `tokenEmbed 2` (positional part is zero). -/
 lemma atomHead'_x_none (bits : Fin n → Bool) :
     (atomHead' φ).x bits none = fracTok φ 2 := by
-  simp [NHead.x, NHead.seqTok, atomHead', fracPos]
+  simp [Head.x, Head.seqTok, atomHead', fracPos]
 
 /-- Score-channel coordinate (coord 0) of position `i`. -/
 lemma atomHead'_x_some_coord0 (bits : Fin n → Bool) (i : Fin n) :
     ((atomHead' φ).x bits (some i)) 0
       = fracTok φ (cond (bits i) 1 0) 0 + Real.log (φ.ρ i) := by
-  simp only [NHead.x, NHead.seqTok, atomHead', fracPos]
+  simp only [Head.x, Head.seqTok, atomHead', fracPos]
   rw [PiLp.add_apply, PiLp.add_apply, PiLp.single_apply, PiLp.single_apply]
   simp
 
@@ -131,7 +131,7 @@ lemma atomHead'_x_some_coord0 (bits : Fin n → Bool) (i : Fin n) :
 lemma atomHead'_x_some_coord1 (bits : Fin n → Bool) (i : Fin n) :
     ((atomHead' φ).x bits (some i)) 1
       = fracTok φ (cond (bits i) 1 0) 1 + φ.m i := by
-  simp only [NHead.x, NHead.seqTok, atomHead', fracPos]
+  simp only [Head.x, Head.seqTok, atomHead', fracPos]
   rw [PiLp.add_apply, PiLp.add_apply, PiLp.single_apply, PiLp.single_apply]
   simp
 
@@ -167,13 +167,13 @@ lemma atomHead'_score (bits : Fin n → Bool) (p : SeqPos n) :
 /-- Softmax weight at the query token is `γ`. -/
 lemma atomHead'_sigma_none (bits : Fin n → Bool) :
     (atomHead' φ).sigma bits none = φ.γ := by
-  unfold NHead.sigma
+  unfold Head.sigma
   rw [atomHead'_score, atomHead'_x_none, fracTok_two_coord0, Real.exp_log φ.hγ]
 
 /-- Softmax weight at a bit position equals `φ.wt`. -/
 lemma atomHead'_sigma_some (bits : Fin n → Bool) (i : Fin n) :
     (atomHead' φ).sigma bits (some i) = φ.wt bits i := by
-  unfold NHead.sigma
+  unfold Head.sigma
   rw [atomHead'_score, atomHead'_x_some_coord0]
   unfold FracAtom.wt
   cases hb : bits i with
@@ -190,7 +190,7 @@ lemma atomHead'_sigma_some (bits : Fin n → Bool) (i : Fin n) :
 /-- The value vector equals the embedding (since `W_V = id`). -/
 lemma atomHead'_value (bits : Fin n → Bool) (p : SeqPos n) :
     (atomHead' φ).value bits p = (atomHead' φ).x bits p := by
-  simp [NHead.value, atomHead']
+  simp [Head.value, atomHead']
 
 end
 
@@ -202,7 +202,7 @@ variable (φ : FracAtom n)
 /-- Denominator is `γ + ∑ i, φ.wt`. -/
 lemma atomHead'_denom (bits : Fin n → Bool) :
     (atomHead' φ).denominator bits = φ.γ + ∑ i, φ.wt bits i := by
-  unfold NHead.denominator
+  unfold Head.denominator
   rw [Fintype.sum_option, atomHead'_sigma_none]
   congr 1
   exact Finset.sum_congr rfl (fun i _ => atomHead'_sigma_some φ bits i)
@@ -212,7 +212,7 @@ lemma atomHead'_denom (bits : Fin n → Bool) :
 lemma atomHead'_numread (bits : Fin n → Bool) :
     ⟪fracReadout, (atomHead' φ).numerator bits⟫_ℝ
       = φ.η + ∑ i, φ.wt bits i * (φ.m i + if bits i then φ.δ else 0) := by
-  unfold NHead.numerator
+  unfold Head.numerator
   rw [inner_sum, Fintype.sum_option]
   simp_rw [inner_smul_right, atomHead'_value, fracReadout_inner]
   -- query term: γ * (η/γ) = η
@@ -234,7 +234,7 @@ lemma atomHead'_numread (bits : Fin n → Bool) :
 /-- **`⟪e₁, attnUpdate⟫ = φ.eval`.** -/
 theorem atomHead'_readout (bits : Fin n → Bool) :
     ⟪fracReadout, (atomHead' φ).attnUpdate bits⟫_ℝ = φ.eval bits := by
-  unfold NHead.attnUpdate FracAtom.eval
+  unfold Head.attnUpdate FracAtom.eval
   rw [inner_smul_right, atomHead'_numread, atomHead'_denom, div_eq_inv_mul]
 
 end
