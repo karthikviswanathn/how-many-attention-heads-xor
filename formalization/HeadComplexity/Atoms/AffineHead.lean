@@ -30,7 +30,7 @@ then transfers the affine sign condition to the head readout.
 
 namespace HeadComplexity
 
-open Finset NHead
+open Finset Head
 open scoped BigOperators InnerProductSpace
 
 variable {n : ℕ}
@@ -61,7 +61,7 @@ noncomputable def affPos (cs : Fin n → ℝ) (c : ℝ) : SeqPos n → Vec (n + 
   | none => 0
 
 /-- The affine head over `n` bits. -/
-noncomputable def affHead (cs : Fin n → ℝ) (c : ℝ) : NHead n (n + 1) where
+noncomputable def affHead (cs : Fin n → ℝ) (c : ℝ) : Head n (n + 1) where
   tokenEmbed := affTok
   posEmbed := affPos cs c
   WQ := LinearMap.id
@@ -81,13 +81,13 @@ variable (cs : Fin n → ℝ) (c : ℝ)
 /-- The query embedding equals `single 0 1`. -/
 lemma affHead_x_none (bits : Fin n → Bool) :
     (affHead cs c).x bits none = EuclideanSpace.single (0 : Fin (n + 1)) 1 := by
-  simp [NHead.x, NHead.seqTok, affHead, affTok, affPos]
+  simp [Head.x, Head.seqTok, affHead, affTok, affPos]
 
 /-- The embedding at position `i`. -/
 lemma affHead_x_some (bits : Fin n → Bool) (i : Fin n) :
     (affHead cs c).x bits (some i)
       = affTok (cond (bits i) 1 0) + EuclideanSpace.single i.succ (affCoeff cs c i) := by
-  simp [NHead.x, NHead.seqTok, affHead, affPos]
+  simp [Head.x, Head.seqTok, affHead, affPos]
 
 end
 
@@ -122,7 +122,7 @@ lemma affHead_score_some (bits : Fin n → Bool) (i : Fin n) :
 /-- Softmax weight at the query token is `exp 1`. -/
 lemma affHead_sigma_none (bits : Fin n → Bool) :
     (affHead cs c).sigma bits none = Real.exp 1 := by
-  unfold NHead.sigma
+  unfold Head.sigma
   rw [affHead_x_none]
   simp only [affHead_WK, affHead_WQ, LinearMap.id_coe, id_eq]
   rw [affReadout_query_inner]
@@ -131,7 +131,7 @@ lemma affHead_sigma_none (bits : Fin n → Bool) :
 /-- Softmax weight at position `i`: `2` if bit set, else `1`. -/
 lemma affHead_sigma_some (bits : Fin n → Bool) (i : Fin n) :
     (affHead cs c).sigma bits (some i) = if bits i then 2 else 1 := by
-  unfold NHead.sigma
+  unfold Head.sigma
   rw [affHead_x_none]
   simp only [affHead_WK, affHead_WQ, LinearMap.id_coe, id_eq]
   rw [affReadout_query_inner, affHead_score_some]
@@ -164,7 +164,7 @@ lemma affReadout_inner (v : Vec (n + 1)) :
 /-- The value vector equals the embedding (since `W_V = id`). -/
 lemma affHead_value (bits : Fin n → Bool) (p : SeqPos n) :
     (affHead cs c).value bits p = (affHead cs c).x bits p := by
-  simp [NHead.value, affHead]
+  simp [Head.value, affHead]
 
 /-- Readout of the query embedding is `0` (query has no value channels). -/
 lemma affReadout_x_none (bits : Fin n → Bool) :
@@ -218,7 +218,7 @@ lemma hammingWeight_eq_sum (bits : Fin n → Bool) :
 lemma affHead_denom (bits : Fin n → Bool) :
     (affHead cs c).denominator bits
       = Real.exp 1 + (n : ℝ) + ∑ i, boolToReal (bits i) := by
-  unfold NHead.denominator
+  unfold Head.denominator
   rw [Fintype.sum_option, affHead_sigma_none]
   have hsome : ∀ i, (affHead cs c).sigma bits (some i)
       = 1 + boolToReal (bits i) := by
@@ -234,7 +234,7 @@ lemma affHead_denom (bits : Fin n → Bool) :
 lemma affHead_numread (bits : Fin n → Bool) :
     ⟪affReadout n, (affHead cs c).numerator bits⟫_ℝ
       = ∑ j, affCoeff cs c j * (1 + boolToReal (bits j)) := by
-  unfold NHead.numerator
+  unfold Head.numerator
   rw [inner_sum, Fintype.sum_option]
   simp_rw [inner_smul_right, affHead_value]
   rw [affReadout_x_none, mul_zero, zero_add]
@@ -289,7 +289,7 @@ theorem affine_computable {n : ℕ} (f : (Fin n → Bool) → Bool) (c : ℝ) (c
   intro bits
   change ⟪affReadout n, ∑ h : Fin 1, (affHead cs c).attnUpdate bits⟫_ℝ > affTau cs c ↔ _
   rw [Fintype.sum_unique]
-  unfold NHead.attnUpdate
+  unfold Head.attnUpdate
   rw [inner_smul_right]
   set D := (affHead cs c).denominator bits with hD
   set N := ⟪affReadout n, (affHead cs c).numerator bits⟫_ℝ with hN

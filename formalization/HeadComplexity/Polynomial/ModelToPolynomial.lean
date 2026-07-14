@@ -74,48 +74,48 @@ lemma exists_const_poly (c : ℝ) :
 
 /-! ## Single-position dependence of one head -/
 
-variable (H : NHead n d)
+variable (H : Head n d)
 
 /-- The query position embedding is bit-independent. -/
-lemma NHead_x_none_const (b₁ b₂ : Fin n → Bool) : H.x b₁ none = H.x b₂ none := by
-  simp [NHead.x, NHead.seqTok]
+lemma Head_x_none_const (b₁ b₂ : Fin n → Bool) : H.x b₁ none = H.x b₂ none := by
+  simp [Head.x, Head.seqTok]
 
 /-- `σ` at an input position depends only on that bit. -/
-lemma NHead_sigma_single (i : Fin n) (b₁ b₂ : Fin n → Bool) (h : b₁ i = b₂ i) :
+lemma Head_sigma_single (i : Fin n) (b₁ b₂ : Fin n → Bool) (h : b₁ i = b₂ i) :
     H.sigma b₁ (some i) = H.sigma b₂ (some i) := by
-  unfold NHead.sigma
-  rw [show H.x b₁ (some i) = H.x b₂ (some i) by simp [NHead.x, NHead.seqTok, h],
-      NHead_x_none_const H b₁ b₂]
+  unfold Head.sigma
+  rw [show H.x b₁ (some i) = H.x b₂ (some i) by simp [Head.x, Head.seqTok, h],
+      Head_x_none_const H b₁ b₂]
 
 /-- `σ` at the query position is bit-independent. -/
-lemma NHead_sigma_none_const (b₁ b₂ : Fin n → Bool) :
+lemma Head_sigma_none_const (b₁ b₂ : Fin n → Bool) :
     H.sigma b₁ none = H.sigma b₂ none := by
-  unfold NHead.sigma
-  rw [NHead_x_none_const H b₁ b₂]
+  unfold Head.sigma
+  rw [Head_x_none_const H b₁ b₂]
 
 /-- The readout score term `σ_p · ⟪w, value_p⟫` at an input position depends only
 on that bit. -/
-lemma NHead_scoreTerm_single (w : Vec d) (i : Fin n) (b₁ b₂ : Fin n → Bool)
+lemma Head_scoreTerm_single (w : Vec d) (i : Fin n) (b₁ b₂ : Fin n → Bool)
     (h : b₁ i = b₂ i) :
     H.sigma b₁ (some i) * ⟪w, H.value b₁ (some i)⟫_ℝ
       = H.sigma b₂ (some i) * ⟪w, H.value b₂ (some i)⟫_ℝ := by
-  have hx : H.x b₁ (some i) = H.x b₂ (some i) := by simp [NHead.x, NHead.seqTok, h]
-  rw [NHead_sigma_single H i b₁ b₂ h]
+  have hx : H.x b₁ (some i) = H.x b₂ (some i) := by simp [Head.x, Head.seqTok, h]
+  rw [Head_sigma_single H i b₁ b₂ h]
   congr 2
-  unfold NHead.value
+  unfold Head.value
   rw [hx]
 
-lemma NHead_scoreTerm_none_const (w : Vec d) (b₁ b₂ : Fin n → Bool) :
+lemma Head_scoreTerm_none_const (w : Vec d) (b₁ b₂ : Fin n → Bool) :
     H.sigma b₁ none * ⟪w, H.value b₁ none⟫_ℝ
       = H.sigma b₂ none * ⟪w, H.value b₂ none⟫_ℝ := by
   have hv : H.value b₁ none = H.value b₂ none := by
-    unfold NHead.value; rw [NHead_x_none_const H b₁ b₂]
-  rw [NHead_sigma_none_const H b₁ b₂, hv]
+    unfold Head.value; rw [Head_x_none_const H b₁ b₂]
+  rw [Head_sigma_none_const H b₁ b₂, hv]
 
 /-! ## Per-head denominator and numerator-readout polynomials -/
 
 /-- The denominator of one head as a degree ≤ 1 polynomial. -/
-lemma NHead.exists_denomPoly :
+lemma Head.exists_denomPoly :
     ∃ D : MvPolynomial (Fin n) ℝ, D.totalDegree ≤ 1 ∧
       ∀ bits, eval (cubePoint bits) D = H.denominator bits := by
   classical
@@ -125,10 +125,10 @@ lemma NHead.exists_denomPoly :
     cases p with
     | none =>
         obtain ⟨P, hP1, hP2⟩ := exists_const_poly (n := n) (H.sigma (fun _ => false) none)
-        exact ⟨P, hP1, fun bits => (hP2 bits).trans (NHead_sigma_none_const H _ bits)⟩
+        exact ⟨P, hP1, fun bits => (hP2 bits).trans (Head_sigma_none_const H _ bits)⟩
     | some i =>
         exact exists_affine_of_single_pos (fun bits => H.sigma bits (some i)) i
-          (fun b₁ b₂ h => NHead_sigma_single H i b₁ b₂ h)
+          (fun b₁ b₂ h => Head_sigma_single H i b₁ b₂ h)
   choose Dp hDp1 hDp2 using hp
   refine ⟨∑ p, Dp p, totalDegree_finsetSum_le (fun p _ => hDp1 p), ?_⟩
   intro bits
@@ -137,7 +137,7 @@ lemma NHead.exists_denomPoly :
   rfl
 
 /-- The numerator readout `⟪w, numerator⟫` of one head as a degree ≤ 1 polynomial. -/
-lemma NHead.exists_numPoly (w : Vec d) :
+lemma Head.exists_numPoly (w : Vec d) :
     ∃ Nm : MvPolynomial (Fin n) ℝ, Nm.totalDegree ≤ 1 ∧
       ∀ bits, eval (cubePoint bits) Nm = ⟪w, H.numerator bits⟫_ℝ := by
   classical
@@ -149,11 +149,11 @@ lemma NHead.exists_numPoly (w : Vec d) :
     | none =>
         obtain ⟨P, hP1, hP2⟩ := exists_const_poly (n := n)
           (H.sigma (fun _ => false) none * ⟪w, H.value (fun _ => false) none⟫_ℝ)
-        exact ⟨P, hP1, fun bits => (hP2 bits).trans (NHead_scoreTerm_none_const H w _ bits)⟩
+        exact ⟨P, hP1, fun bits => (hP2 bits).trans (Head_scoreTerm_none_const H w _ bits)⟩
     | some i =>
         exact exists_affine_of_single_pos
           (fun bits => H.sigma bits (some i) * ⟪w, H.value bits (some i)⟫_ℝ) i
-          (fun b₁ b₂ h => NHead_scoreTerm_single H w i b₁ b₂ h)
+          (fun b₁ b₂ h => Head_scoreTerm_single H w i b₁ b₂ h)
   choose Np hNp1 hNp2 using hp
   refine ⟨∑ p, Np p, totalDegree_finsetSum_le (fun p _ => hNp1 p), ?_⟩
   intro bits
@@ -200,9 +200,9 @@ theorem signReprDegLe_of_computableWithHeadsN {n H : ℕ} {f : (Fin n → Bool) 
     have hdpos : ∀ h, 0 < (Hs h).denominator bits := fun h => (Hs h).denominator_pos bits
     have hprodpos : 0 < ∏ g, (Hs g).denominator bits := Finset.prod_pos (fun g _ => hdpos g)
     -- score in cleared form
-    have hU : ⟪w, nHeadFamilyAttnUpdate Hs bits⟫_ℝ
+    have hU : ⟪w, headFamilyAttnUpdate Hs bits⟫_ℝ
         = ∑ h, ((Hs h).denominator bits)⁻¹ * ⟪w, (Hs h).numerator bits⟫_ℝ := by
-      rw [show nHeadFamilyAttnUpdate Hs bits = ∑ h, (Hs h).attnUpdate bits from rfl, inner_sum]
+      rw [show headFamilyAttnUpdate Hs bits = ∑ h, (Hs h).attnUpdate bits from rfl, inner_sum]
       refine Finset.sum_congr rfl (fun h _ => ?_)
       rw [show (Hs h).attnUpdate bits
             = ((Hs h).denominator bits)⁻¹ • (Hs h).numerator bits from rfl, inner_smul_right]
@@ -217,7 +217,7 @@ theorem signReprDegLe_of_computableWithHeadsN {n H : ℕ} {f : (Fin n → Bool) 
     have hid : (∑ h, ⟪w, (Hs h).numerator bits⟫_ℝ
               * ∏ g ∈ Finset.univ.erase h, (Hs g).denominator bits)
           - τ * ∏ g, (Hs g).denominator bits
-        = (∏ g, (Hs g).denominator bits) * (⟪w, nHeadFamilyAttnUpdate Hs bits⟫_ℝ - τ) := by
+        = (∏ g, (Hs g).denominator bits) * (⟪w, headFamilyAttnUpdate Hs bits⟫_ℝ - τ) := by
       rw [hU, mul_sub, Finset.mul_sum]
       congr 1
       · refine Finset.sum_congr rfl (fun h _ => ?_)

@@ -1,5 +1,3 @@
-import HeadComplexity.Examples.HeadToNHead
-import HeadComplexity.Examples.OneHead
 import HeadComplexity.Examples.TwoHeads
 
 set_option linter.style.header false
@@ -7,11 +5,9 @@ set_option linter.style.header false
 /-!
 # Boolean-function examples in the head-complexity model.
 
-This file packages the existing XOR results into a more general
-`computesBool` predicate and proves explicit upper bounds for the
-2-bit functions `OR` and `AND` using a single head. Together with the
-one-head XOR impossibility and the two-head XOR construction, this
-gives a small library of formalized examples for the problem statement.
+This file keeps a compact two-bit example layer: named Boolean functions,
+explicit one- and two-head constructions, and the exact head-complexity
+table for all symmetric two-bit functions.
 -/
 
 namespace HeadComplexity
@@ -20,125 +16,82 @@ open scoped InnerProductSpace
 
 variable {d : ℕ}
 
-/-- A vector-valued function on Boolean pairs computes a Boolean target
-    under a linear readout when some probe and threshold classify the
-    four inputs exactly. -/
-def computesBool (f : Bool × Bool → Bool) (g : Bool × Bool → Vec d) : Prop :=
-  ∃ (w : Vec d) (τ : ℝ), ∀ ab : Bool × Bool,
-    ⟪w, g ab⟫_ℝ > τ ↔ f ab = true
+/-- A vector-valued two-bit function computes a Boolean target under a linear
+readout. -/
+def computesBool (f : (Fin 2 → Bool) → Bool) (g : (Fin 2 → Bool) → Vec d) : Prop :=
+  computesPred f g
 
 /-- Named versions of the standard 2-bit Boolean functions. -/
-def falseFn : Bool × Bool → Bool := fun _ => false
-def trueFn : Bool × Bool → Bool := fun _ => true
-def orFn : Bool × Bool → Bool := fun ab => ab.1 || ab.2
-def andFn : Bool × Bool → Bool := fun ab => ab.1 && ab.2
-def xorFn : Bool × Bool → Bool := fun ab => xor ab.1 ab.2
-def norFn : Bool × Bool → Bool := fun ab => !(orFn ab)
-def nandFn : Bool × Bool → Bool := fun ab => !(andFn ab)
-def xnorFn : Bool × Bool → Bool := fun ab => !(xorFn ab)
+def falseFn : (Fin 2 → Bool) → Bool := fun _ => false
+def trueFn : (Fin 2 → Bool) → Bool := fun _ => true
+def orFn : (Fin 2 → Bool) → Bool := fun bits => bits 0 || bits 1
+def andFn : (Fin 2 → Bool) → Bool := fun bits => bits 0 && bits 1
+def norFn : (Fin 2 → Bool) → Bool := fun bits => !(orFn bits)
+def nandFn : (Fin 2 → Bool) → Bool := fun bits => !(andFn bits)
+def xnorFn : (Fin 2 → Bool) → Bool := fun bits => !(xorFn bits)
 
-/-- The 2-bit symmetric Boolean function determined by its values on
-    Hamming weights `0`, `1`, and `2`. -/
-def symmFn (c0 c1 c2 : Bool) : Bool × Bool → Bool
-  | (false, false) => c0
-  | (false, true)  => c1
-  | (true, false)  => c1
-  | (true, true)   => c2
+/-- The 2-bit symmetric Boolean function determined by its values on Hamming
+weights `0`, `1`, and `2`. -/
+def symmFn (c0 c1 c2 : Bool) : (Fin 2 → Bool) → Bool := fun bits =>
+  match bits 0, bits 1 with
+  | false, false => c0
+  | false, true => c1
+  | true, false => c1
+  | true, true => c2
 
-/-- A family of `H` attention heads sharing the same ambient vector space. -/
-abbrev HeadFamily (d H : ℕ) : Type := Fin H → Head d
+/-- Two-bit head families are just the model specialized to `n = 2`. -/
+abbrev TwoBitHeadFamily (d H : ℕ) : Type := HeadFamily 2 d H
 
-/-- The summed attention update of an `H`-head family. This is the
-    multi-head quantity used for the exact-complexity examples below. -/
-noncomputable def headFamilyAttnUpdate {H : ℕ} (Hs : HeadFamily d H) :
-    Bool × Bool → Vec d :=
-  fun ab => ∑ i, (Hs i).attnUpdate ab
+/-- The summed attention update of a two-bit head family. -/
+noncomputable def twoBitHeadFamilyAttnUpdate {H : ℕ} (Hs : TwoBitHeadFamily d H) :
+    (Fin 2 → Bool) → Vec d :=
+  headFamilyAttnUpdate Hs
 
-/-- A Boolean function is computable with `H` heads if some embedding
-    dimension and some `H`-head family realize it via a linear readout
-    from the summed attention update. -/
-def computableWithHeads (f : Bool × Bool → Bool) (H : ℕ) : Prop :=
-  ∃ d, ∃ Hs : HeadFamily d H, computesBool f (headFamilyAttnUpdate Hs)
+/-- Two-bit computability with `H` heads. -/
+abbrev computableWithHeads (f : (Fin 2 → Bool) → Bool) (H : ℕ) : Prop :=
+  computableWithHeadsN 2 H f
 
-/-- Exact head complexity for the present formalization: realizable with
-    `k` heads and unrealizable with any smaller number. -/
-def exactHeadComplexity (f : Bool × Bool → Bool) (k : ℕ) : Prop :=
-  computableWithHeads f k ∧ ∀ h < k, ¬ computableWithHeads f h
+/-- Exact two-bit head complexity. -/
+abbrev exactHeadComplexity (f : (Fin 2 → Bool) → Bool) (k : ℕ) : Prop :=
+  exactHeadComplexityN 2 f k
 
-/-- Explicit head complexity value, defaulting to `0` only when a
-    function is unrealizable in the current formalization. -/
-noncomputable def HStar (f : Bool × Bool → Bool) : ℕ :=
-  by
-    classical
-    exact if h : ∃ k, computableWithHeads f k then Nat.find h else 0
+/-- Explicit two-bit head complexity value. -/
+noncomputable def HStar (f : (Fin 2 → Bool) → Bool) : ℕ :=
+  HStarN 2 f
 
-@[simp] lemma headFamilyAttnUpdate_zero {Hs : HeadFamily d 0} (ab : Bool × Bool) :
-    headFamilyAttnUpdate Hs ab = 0 := by
-  simp [headFamilyAttnUpdate]
+@[simp] lemma twoBitHeadFamilyAttnUpdate_zero {Hs : TwoBitHeadFamily d 0} (bits : Fin 2 → Bool) :
+    twoBitHeadFamilyAttnUpdate Hs bits = 0 := by
+  simp [twoBitHeadFamilyAttnUpdate]
 
-@[simp] lemma headFamilyAttnUpdate_one {Hs : HeadFamily d 1} (ab : Bool × Bool) :
-    headFamilyAttnUpdate Hs ab = (Hs 0).attnUpdate ab := by
-  simp [headFamilyAttnUpdate]
+@[simp] lemma twoBitHeadFamilyAttnUpdate_one {Hs : TwoBitHeadFamily d 1} (bits : Fin 2 → Bool) :
+    twoBitHeadFamilyAttnUpdate Hs bits = (Hs 0).attnUpdate bits := by
+  simp [twoBitHeadFamilyAttnUpdate]
 
-@[simp] lemma computesXor_iff_computesBool_xor (g : Bool × Bool → Vec d) :
+@[simp] lemma computesXor_iff_computesBool_xor (g : (Fin 2 → Bool) → Vec d) :
     computesXor g ↔ computesBool xorFn g := by
   rfl
 
-@[simp] lemma falseFn_apply (ab : Bool × Bool) : falseFn ab = false := rfl
-@[simp] lemma trueFn_apply (ab : Bool × Bool) : trueFn ab = true := rfl
-@[simp] lemma norFn_apply (ab : Bool × Bool) : norFn ab = !(orFn ab) := rfl
-@[simp] lemma nandFn_apply (ab : Bool × Bool) : nandFn ab = !(andFn ab) := rfl
-@[simp] lemma xnorFn_apply (ab : Bool × Bool) : xnorFn ab = !(xorFn ab) := rfl
+@[simp] lemma falseFn_apply (bits : Fin 2 → Bool) : falseFn bits = false := rfl
+@[simp] lemma trueFn_apply (bits : Fin 2 → Bool) : trueFn bits = true := rfl
+@[simp] lemma norFn_apply (bits : Fin 2 → Bool) : norFn bits = !(orFn bits) := rfl
+@[simp] lemma nandFn_apply (bits : Fin 2 → Bool) : nandFn bits = !(andFn bits) := rfl
+@[simp] lemma xnorFn_apply (bits : Fin 2 → Bool) : xnorFn bits = !(xorFn bits) := rfl
 
-lemma HStar_eq_of_exact {f : Bool × Bool → Bool} {k : ℕ}
+lemma HStar_eq_of_exact {f : (Fin 2 → Bool) → Bool} {k : ℕ}
     (hk : exactHeadComplexity f k) : HStar f = k := by
-  classical
-  unfold HStar
-  split_ifs with hExists
-  · apply le_antisymm
-    · exact Nat.find_min' hExists hk.1
-    · by_contra hlt
-      exact (hk.2 (Nat.find hExists) (Nat.lt_of_not_ge hlt)) (Nat.find_spec hExists)
-  · exfalso
-    exact hExists ⟨k, hk.1⟩
+  exact HStarN_eq_of_exact hk
 
 /-- Adding a constant vector only shifts the probe threshold. -/
 lemma computesBool_iff_of_add_const
-    (f : Bool × Bool → Bool) (g : Bool × Bool → Vec d) (c : Vec d) :
-    computesBool f g ↔ computesBool f (fun ab => c + g ab) := by
-  constructor
-  · rintro ⟨w, τ, h⟩
-    refine ⟨w, τ + ⟪w, c⟫_ℝ, fun ab => ?_⟩
-    simp only [inner_add_right]
-    constructor
-    · intro hgt
-      exact (h ab).mp (by linarith)
-    · intro hf
-      have := (h ab).mpr hf
-      linarith
-  · rintro ⟨w, τ, h⟩
-    refine ⟨w, τ - ⟪w, c⟫_ℝ, fun ab => ?_⟩
-    have key := h ab
-    simp only [inner_add_right] at key
-    constructor
-    · intro hgt
-      exact key.mp (by linarith)
-    · intro hf
-      have := key.mpr hf
-      linarith
+    (f : (Fin 2 → Bool) → Bool) (g : (Fin 2 → Bool) → Vec d) (c : Vec d) :
+    computesBool f g ↔ computesBool f (fun bits => c + g bits) := by
+  simpa [computesBool] using computesPred_iff_of_add_const f g c
 
-/-- Generic skip-connection reduction for Boolean classification. -/
+/-- Generic skip-connection reduction for two-bit Boolean classification. -/
 lemma computesBool_residual_iff_attnUpdate
-    (f : Bool × Bool → Bool) (H : Head d) :
+    (f : (Fin 2 → Bool) → Bool) (H : Head 2 d) :
     computesBool f H.residual ↔ computesBool f H.attnUpdate := by
-  have hconst : H.residual = fun ab => H.x (false, false) 2 + H.attnUpdate ab := by
-    funext ab
-    change H.x ab 2 + H.attnUpdate ab = H.x (false, false) 2 + H.attnUpdate ab
-    rfl
-  rw [hconst]
-  exact (computesBool_iff_of_add_const f H.attnUpdate (H.x (false, false) 2)).symm
-
-namespace Head
+  simpa [computesBool] using Head.computesPred_residual_iff_attnUpdate H f
 
 noncomputable def oneProbe : Vec 3 := EuclideanSpace.single (1 : Fin 3) 1
 
@@ -152,64 +105,66 @@ private lemma exp_one_div_exp_one_add_two_pos :
 
 private lemma exp_one_div_exp_one_add_two_lt_two_exp_one_div_two_exp_one_add_one :
     Real.exp 1 / (Real.exp 1 + 2) < 2 * Real.exp 1 / (2 * Real.exp 1 + 1) := by
-  have he : (1 : ℝ) < Real.exp 1 := Real.one_lt_exp_iff.mpr one_pos
   have hden1 : (0 : ℝ) < Real.exp 1 + 2 := exp_one_add_two_pos
   have hden2 : (0 : ℝ) < 2 * Real.exp 1 + 1 := by
     have : (0 : ℝ) < Real.exp 1 := Real.exp_pos _
     linarith
   rw [div_lt_div_iff₀ hden1 hden2]
-  nlinarith
+  nlinarith [Real.one_lt_exp_iff.mpr one_pos]
 
 @[simp] lemma oneProbe_apply :
     oneProbe = EuclideanSpace.single (1 : Fin 3) 1 := rfl
 
-noncomputable def twoProbe : Vec 3 :=
-  EuclideanSpace.single (0 : Fin 3) 1 + EuclideanSpace.single (1 : Fin 3) 1
-
 private lemma head1_score_ff_ff :
-    ⟪oneProbe, head1.attnUpdate (false, false)⟫_ℝ = 0 := by
+    ⟪oneProbe, head1.attnUpdate (bits2 false false)⟫_ℝ = 0 := by
   rw [head1_attnUpdate_ff_ff]
   simp [oneProbe]
 
 private lemma head1_score_ff_tt :
-    ⟪oneProbe, head1.attnUpdate (false, true)⟫_ℝ
+    ⟪oneProbe, head1.attnUpdate (bits2 false true)⟫_ℝ
       = Real.exp 1 / (Real.exp 1 + 2) := by
   rw [head1_attnUpdate_ff_tt]
   rw [inner_smul_right, oneProbe_apply, inner_single_single]
   simp [div_eq_mul_inv]
 
 private lemma head1_score_tt_ff :
-    ⟪oneProbe, head1.attnUpdate (true, false)⟫_ℝ
+    ⟪oneProbe, head1.attnUpdate (bits2 true false)⟫_ℝ
       = Real.exp 1 / (Real.exp 1 + 2) := by
   rw [head1_attnUpdate_tt_ff]
   rw [inner_smul_right, oneProbe_apply, inner_single_single]
   simp [div_eq_mul_inv]
 
 private lemma head1_score_tt_tt :
-    ⟪oneProbe, head1.attnUpdate (true, true)⟫_ℝ
+    ⟪oneProbe, head1.attnUpdate (bits2 true true)⟫_ℝ
       = 2 * Real.exp 1 / (2 * Real.exp 1 + 1) := by
   rw [head1_attnUpdate_tt_tt]
   rw [inner_smul_right, oneProbe_apply, inner_single_single]
   simp [div_eq_mul_inv]
 
 private lemma neg_head1_score_ff_ff :
-    ⟪-oneProbe, head1.attnUpdate (false, false)⟫_ℝ = 0 := by
+    ⟪-oneProbe, head1.attnUpdate (bits2 false false)⟫_ℝ = 0 := by
   simpa [inner_neg_left] using congrArg Neg.neg head1_score_ff_ff
 
 private lemma neg_head1_score_ff_tt :
-    ⟪-oneProbe, head1.attnUpdate (false, true)⟫_ℝ
+    ⟪-oneProbe, head1.attnUpdate (bits2 false true)⟫_ℝ
       = -(Real.exp 1 / (Real.exp 1 + 2)) := by
   simpa [inner_neg_left] using congrArg Neg.neg head1_score_ff_tt
 
 private lemma neg_head1_score_tt_ff :
-    ⟪-oneProbe, head1.attnUpdate (true, false)⟫_ℝ
+    ⟪-oneProbe, head1.attnUpdate (bits2 true false)⟫_ℝ
       = -(Real.exp 1 / (Real.exp 1 + 2)) := by
   simpa [inner_neg_left] using congrArg Neg.neg head1_score_tt_ff
 
 private lemma neg_head1_score_tt_tt :
-    ⟪-oneProbe, head1.attnUpdate (true, true)⟫_ℝ
+    ⟪-oneProbe, head1.attnUpdate (bits2 true true)⟫_ℝ
       = -(2 * Real.exp 1 / (2 * Real.exp 1 + 1)) := by
   simpa [inner_neg_left] using congrArg Neg.neg head1_score_tt_tt
+
+private lemma bits_eq_bits2_of_cases
+    (bits : Fin 2 → Bool) (a b : Bool) (h0 : bits 0 = a) (h1 : bits 1 = b) :
+    bits = bits2 a b := by
+  funext i
+  fin_cases i <;> simp [bits2, h0, h1]
 
 /-- Head 1 separates `OR` on the bare attention update. -/
 theorem head1_computes_or_attnUpdate :
@@ -222,18 +177,18 @@ theorem head1_computes_or_attnUpdate :
     dsimp [τ]
     linarith [exp_one_div_exp_one_add_two_pos]
   refine ⟨oneProbe, τ, ?_⟩
-  rintro ⟨a, b⟩
-  cases a <;> cases b
-  · rw [head1_score_ff_ff]
+  intro bits
+  cases h0 : bits 0 <;> cases h1 : bits 1
+  · rw [bits_eq_bits2_of_cases bits false false h0 h1, head1_score_ff_ff]
     have hnot : ¬ 0 > τ := by linarith
     simp [orFn, τ, hnot]
-  · rw [head1_score_ff_tt]
+  · rw [bits_eq_bits2_of_cases bits false true h0 h1, head1_score_ff_tt]
     have hgt : Real.exp 1 / (Real.exp 1 + 2) > τ := by linarith
     simp [orFn, τ, hgt]
-  · rw [head1_score_tt_ff]
+  · rw [bits_eq_bits2_of_cases bits true false h0 h1, head1_score_tt_ff]
     have hgt : Real.exp 1 / (Real.exp 1 + 2) > τ := by linarith
     simp [orFn, τ, hgt]
-  · rw [head1_score_tt_tt]
+  · rw [bits_eq_bits2_of_cases bits true true h0 h1, head1_score_tt_tt]
     have hgt : 2 * Real.exp 1 / (2 * Real.exp 1 + 1) > τ := by
       linarith [hτ_lt_mid, exp_one_div_exp_one_add_two_lt_two_exp_one_div_two_exp_one_add_one]
     simp [orFn, τ, hgt]
@@ -256,18 +211,18 @@ theorem head1_computes_and_attnUpdate :
   have hzero : (0 : ℝ) < τ := by
     linarith [exp_one_div_exp_one_add_two_pos, hlo]
   refine ⟨oneProbe, τ, ?_⟩
-  rintro ⟨a, b⟩
-  cases a <;> cases b
-  · rw [head1_score_ff_ff]
+  intro bits
+  cases h0 : bits 0 <;> cases h1 : bits 1
+  · rw [bits_eq_bits2_of_cases bits false false h0 h1, head1_score_ff_ff]
     have hnot : ¬ 0 > τ := by linarith
     simp [andFn, τ, hnot]
-  · rw [head1_score_ff_tt]
+  · rw [bits_eq_bits2_of_cases bits false true h0 h1, head1_score_ff_tt]
     have hnot : ¬ lo > τ := by linarith
     simp [andFn, lo, τ, hnot]
-  · rw [head1_score_tt_ff]
+  · rw [bits_eq_bits2_of_cases bits true false h0 h1, head1_score_tt_ff]
     have hnot : ¬ lo > τ := by linarith
     simp [andFn, lo, τ, hnot]
-  · rw [head1_score_tt_tt]
+  · rw [bits_eq_bits2_of_cases bits true true h0 h1, head1_score_tt_tt]
     have hgt : hi > τ := by linarith
     simp [andFn, hi, τ, hgt]
 
@@ -287,18 +242,18 @@ theorem head1_computes_nor_attnUpdate :
     dsimp [τ]
     linarith [exp_one_div_exp_one_add_two_lt_two_exp_one_div_two_exp_one_add_one]
   refine ⟨-oneProbe, τ, ?_⟩
-  rintro ⟨a, b⟩
-  cases a <;> cases b
-  · rw [neg_head1_score_ff_ff]
+  intro bits
+  cases h0 : bits 0 <;> cases h1 : bits 1
+  · rw [bits_eq_bits2_of_cases bits false false h0 h1, neg_head1_score_ff_ff]
     have hgt : (0 : ℝ) > τ := by linarith
     simp [norFn, orFn, τ, hgt]
-  · rw [neg_head1_score_ff_tt]
+  · rw [bits_eq_bits2_of_cases bits false true h0 h1, neg_head1_score_ff_tt]
     have hnot : ¬ -lo > τ := by linarith
     simp [norFn, orFn, lo, τ, hnot]
-  · rw [neg_head1_score_tt_ff]
+  · rw [bits_eq_bits2_of_cases bits true false h0 h1, neg_head1_score_tt_ff]
     have hnot : ¬ -lo > τ := by linarith
     simp [norFn, orFn, lo, τ, hnot]
-  · rw [neg_head1_score_tt_tt]
+  · rw [bits_eq_bits2_of_cases bits true true h0 h1, neg_head1_score_tt_tt]
     have hnot : ¬ -(2 * Real.exp 1 / (2 * Real.exp 1 + 1)) > τ := by linarith
     simp [norFn, orFn, τ, hnot]
 
@@ -319,18 +274,18 @@ theorem head1_computes_nand_attnUpdate :
     dsimp [τ]
     linarith
   refine ⟨-oneProbe, τ, ?_⟩
-  rintro ⟨a, b⟩
-  cases a <;> cases b
-  · rw [neg_head1_score_ff_ff]
+  intro bits
+  cases h0 : bits 0 <;> cases h1 : bits 1
+  · rw [bits_eq_bits2_of_cases bits false false h0 h1, neg_head1_score_ff_ff]
     have hgt : (0 : ℝ) > τ := by linarith
     simp [nandFn, andFn, τ, hgt]
-  · rw [neg_head1_score_ff_tt]
+  · rw [bits_eq_bits2_of_cases bits false true h0 h1, neg_head1_score_ff_tt]
     have hgt : -lo > τ := by linarith
     simp [nandFn, andFn, lo, τ, hgt]
-  · rw [neg_head1_score_tt_ff]
+  · rw [bits_eq_bits2_of_cases bits true false h0 h1, neg_head1_score_tt_ff]
     have hgt : -lo > τ := by linarith
     simp [nandFn, andFn, lo, τ, hgt]
-  · rw [neg_head1_score_tt_tt]
+  · rw [bits_eq_bits2_of_cases bits true true h0 h1, neg_head1_score_tt_tt]
     have hnot : ¬ -hi > τ := by linarith
     simp [nandFn, andFn, hi, τ, hnot]
 
@@ -358,156 +313,142 @@ theorem head1_computes_nand_residual :
   rw [computesBool_residual_iff_attnUpdate]
   exact head1_computes_nand_attnUpdate
 
-end Head
-
 /-- The 0-head model computes the constantly-false function. -/
 theorem false_computable_with_zero_heads :
     computableWithHeads falseFn 0 := by
-  refine ⟨1, Fin.elim0, ?_⟩
+  refine ⟨1, (Fin.elim0 : TwoBitHeadFamily 1 0), ?_⟩
   refine ⟨0, 0, ?_⟩
-  intro ab
+  intro bits
   simp [falseFn, headFamilyAttnUpdate]
 
 /-- The 0-head model also computes the constantly-true function. -/
 theorem true_computable_with_zero_heads :
     computableWithHeads trueFn 0 := by
-  refine ⟨1, Fin.elim0, ?_⟩
+  refine ⟨1, (Fin.elim0 : TwoBitHeadFamily 1 0), ?_⟩
   refine ⟨0, -1, ?_⟩
-  intro ab
+  intro bits
   simp [trueFn, headFamilyAttnUpdate]
 
 /-- A single head suffices to compute `OR` in the query residual. -/
 theorem or_computable_with_one_head :
-    ∃ H : Head 3, computesBool orFn H.residual := by
-  exact ⟨Head.head1, Head.head1_computes_or_residual⟩
+    ∃ H : Head 2 3, computesBool orFn H.residual := by
+  exact ⟨head1, head1_computes_or_residual⟩
 
 /-- A single head suffices to compute `AND` in the query residual. -/
 theorem and_computable_with_one_head :
-    ∃ H : Head 3, computesBool andFn H.residual := by
-  exact ⟨Head.head1, Head.head1_computes_and_residual⟩
+    ∃ H : Head 2 3, computesBool andFn H.residual := by
+  exact ⟨head1, head1_computes_and_residual⟩
 
 /-- A single head suffices to compute `NOR` in the query residual. -/
 theorem nor_computable_with_one_head :
-    ∃ H : Head 3, computesBool norFn H.residual := by
-  exact ⟨Head.head1, Head.head1_computes_nor_residual⟩
+    ∃ H : Head 2 3, computesBool norFn H.residual := by
+  exact ⟨head1, head1_computes_nor_residual⟩
 
 /-- A single head suffices to compute `NAND` in the query residual. -/
 theorem nand_computable_with_one_head :
-    ∃ H : Head 3, computesBool nandFn H.residual := by
-  exact ⟨Head.head1, Head.head1_computes_nand_residual⟩
+    ∃ H : Head 2 3, computesBool nandFn H.residual := by
+  exact ⟨head1, head1_computes_nand_residual⟩
+
+private lemma one_head_count_of_attnUpdate
+    {f : (Fin 2 → Bool) → Bool} {H : Head 2 3}
+    (h : computesBool f H.attnUpdate) : computableWithHeads f 1 := by
+  refine ⟨3, (fun _ => H), ?_⟩
+  rcases h with ⟨w, τ, hw⟩
+  refine ⟨w, τ, ?_⟩
+  intro bits
+  simpa [computesBool, headFamilyAttnUpdate] using hw bits
 
 /-- `OR` is computable with one head in the uniform multi-head model. -/
 theorem or_computable_with_one_head_count :
-    computableWithHeads orFn 1 := by
-  refine ⟨3, (fun _ => Head.head1), ?_⟩
-  convert Head.head1_computes_or_attnUpdate using 1
-  funext ab
-  simp [headFamilyAttnUpdate]
+    computableWithHeads orFn 1 :=
+  one_head_count_of_attnUpdate head1_computes_or_attnUpdate
 
 /-- `AND` is computable with one head in the uniform multi-head model. -/
 theorem and_computable_with_one_head_count :
-    computableWithHeads andFn 1 := by
-  refine ⟨3, (fun _ => Head.head1), ?_⟩
-  convert Head.head1_computes_and_attnUpdate using 1
-  funext ab
-  simp [headFamilyAttnUpdate]
+    computableWithHeads andFn 1 :=
+  one_head_count_of_attnUpdate head1_computes_and_attnUpdate
 
 /-- `NOR` is computable with one head in the uniform multi-head model. -/
 theorem nor_computable_with_one_head_count :
-    computableWithHeads norFn 1 := by
-  refine ⟨3, (fun _ => Head.head1), ?_⟩
-  convert Head.head1_computes_nor_attnUpdate using 1
-  funext ab
-  simp [headFamilyAttnUpdate]
+    computableWithHeads norFn 1 :=
+  one_head_count_of_attnUpdate head1_computes_nor_attnUpdate
 
 /-- `NAND` is computable with one head in the uniform multi-head model. -/
 theorem nand_computable_with_one_head_count :
-    computableWithHeads nandFn 1 := by
-  refine ⟨3, (fun _ => Head.head1), ?_⟩
-  convert Head.head1_computes_nand_attnUpdate using 1
-  funext ab
-  simp [headFamilyAttnUpdate]
+    computableWithHeads nandFn 1 :=
+  one_head_count_of_attnUpdate head1_computes_nand_attnUpdate
 
-/-- A `0`-head model has constant output, so it cannot realize a target
-    that is false on one input and true on another. -/
+/-- A `0`-head model has constant output, so it cannot realize a target that is
+false on one input and true on another. -/
 lemma not_computableWithHeads_zero_of_false_true
-    (f : Bool × Bool → Bool) (abFalse abTrue : Bool × Bool)
-    (hFalse : f abFalse = false) (hTrue : f abTrue = true) :
-    ¬ computableWithHeads f 0 := by
-  rintro ⟨d, Hs, w, τ, h⟩
-  have h0 : (0 : ℝ) > τ ↔ f abFalse = true := by
-    simpa [headFamilyAttnUpdate] using (h abFalse)
-  have h1 : (0 : ℝ) > τ ↔ f abTrue = true := by
-    simpa [headFamilyAttnUpdate] using (h abTrue)
-  have hs : f abFalse = true ↔ f abTrue = true := h0.symm.trans h1
-  have hF : f abFalse = true := hs.mpr hTrue
-  exact Bool.false_ne_true (hFalse.symm.trans hF)
+    (f : (Fin 2 → Bool) → Bool) (bitsFalse bitsTrue : Fin 2 → Bool)
+    (hFalse : f bitsFalse = false) (hTrue : f bitsTrue = true) :
+    ¬ computableWithHeads f 0 :=
+  not_computableWithHeadsN_zero_of_false_true f bitsFalse bitsTrue hFalse hTrue
 
 /-- `OR` is not computable with zero heads. -/
 theorem or_not_computable_with_zero_heads :
     ¬ computableWithHeads orFn 0 := by
   exact not_computableWithHeads_zero_of_false_true orFn
-    (false, false) (false, true) rfl rfl
+    (bits2 false false) (bits2 false true) rfl rfl
 
 /-- `AND` is not computable with zero heads. -/
 theorem and_not_computable_with_zero_heads :
     ¬ computableWithHeads andFn 0 := by
   exact not_computableWithHeads_zero_of_false_true andFn
-    (false, false) (true, true) rfl rfl
+    (bits2 false false) (bits2 true true) rfl rfl
 
 /-- `NOR` is not computable with zero heads. -/
 theorem nor_not_computable_with_zero_heads :
     ¬ computableWithHeads norFn 0 := by
   exact not_computableWithHeads_zero_of_false_true norFn
-    (false, true) (false, false) rfl rfl
+    (bits2 false true) (bits2 false false) rfl rfl
 
 /-- `NAND` is not computable with zero heads. -/
 theorem nand_not_computable_with_zero_heads :
     ¬ computableWithHeads nandFn 0 := by
   exact not_computableWithHeads_zero_of_false_true nandFn
-    (true, true) (false, false) rfl rfl
+    (bits2 true true) (bits2 false false) rfl rfl
 
 /-- No single head computes `XOR` in this model. -/
 theorem xor_not_computable_with_one_head :
-    ¬ ∃ (d : ℕ) (H : Head d), computesBool xorFn H.residual := by
+    ¬ ∃ (d : ℕ) (H : Head 2 d), computesBool xorFn H.residual := by
   rintro ⟨d, H, hH⟩
-  rw [← computesXor_iff_computesBool_xor] at hH
-  exact one_head_cannot_xor_residual H hH
+  exact one_head_cannot_xor_residual H (by simpa [computesXor, computesBool] using hH)
 
 /-- General one-head lower bound for checkerboard truth tables. -/
 theorem checkerboard_not_computable_with_one_head_attnUpdate
-    {d : ℕ} (H : Head d) (f : Bool × Bool → Bool) (c : Bool)
-    (h00 : f (false, false) = c)
-    (h11 : f (true, true) = c)
-    (h01 : f (false, true) = !c)
-    (h10 : f (true, false) = !c) :
+    {d : ℕ} (H : Head 2 d) (f : (Fin 2 → Bool) → Bool) (c : Bool)
+    (h00 : f (bits2 false false) = c)
+    (h11 : f (bits2 true true) = c)
+    (h01 : f (bits2 false true) = !c)
+    (h10 : f (bits2 true false) = !c) :
     ¬ computesBool f H.attnUpdate := by
   intro hComp
-  let fN : (Fin 2 → Bool) → Bool := fun bits => f (bits 0, bits 1)
-  have hCompN : computableWithHeadsN 2 1 fN := by
-    refine ⟨d, fun _ => H.toNHead, ?_⟩
+  have hCompN : computableWithHeadsN 2 1 f := by
+    refine ⟨d, fun _ => H, ?_⟩
     rcases hComp with ⟨w, τ, hw⟩
     refine ⟨w, τ, ?_⟩
     intro bits
-    simpa [fN, nHeadFamilyAttnUpdate] using hw (bits 0, bits 1)
-  have h00N : fN (NHead.restrictBits (fun _ => false) 0 1 (false, false)) = c := by
-    simpa [fN, NHead.restrictBits] using h00
-  have h11N : fN (NHead.restrictBits (fun _ => false) 0 1 (true, true)) = c := by
-    simpa [fN, NHead.restrictBits] using h11
-  have h01N : fN (NHead.restrictBits (fun _ => false) 0 1 (false, true)) = !c := by
-    simpa [fN, NHead.restrictBits] using h01
-  have h10N : fN (NHead.restrictBits (fun _ => false) 0 1 (true, false)) = !c := by
-    simpa [fN, NHead.restrictBits] using h10
+    simpa [computesBool, headFamilyAttnUpdate] using hw bits
+  have h00N : f (Head.restrictBits (fun _ => false) 0 1 (false, false)) = c := by
+    simpa [restrictBits_zero_one] using h00
+  have h11N : f (Head.restrictBits (fun _ => false) 0 1 (true, true)) = c := by
+    simpa [restrictBits_zero_one] using h11
+  have h01N : f (Head.restrictBits (fun _ => false) 0 1 (false, true)) = !c := by
+    simpa [restrictBits_zero_one] using h01
+  have h10N : f (Head.restrictBits (fun _ => false) 0 1 (true, false)) = !c := by
+    simpa [restrictBits_zero_one] using h10
   exact (checkerboard_restriction_not_computable_with_one_head
-    fN (fun _ => false) 0 1 (by decide) c h00N h11N h01N h10N) hCompN
+    f (fun _ => false) 0 1 (by decide) c h00N h11N h01N h10N) hCompN
 
 /-- Residual-form checkerboard lower bound. -/
 theorem checkerboard_not_computable_with_one_head_residual
-    {d : ℕ} (H : Head d) (f : Bool × Bool → Bool) (c : Bool)
-    (h00 : f (false, false) = c)
-    (h11 : f (true, true) = c)
-    (h01 : f (false, true) = !c)
-    (h10 : f (true, false) = !c) :
+    {d : ℕ} (H : Head 2 d) (f : (Fin 2 → Bool) → Bool) (c : Bool)
+    (h00 : f (bits2 false false) = c)
+    (h11 : f (bits2 true true) = c)
+    (h01 : f (bits2 false true) = !c)
+    (h10 : f (bits2 true false) = !c) :
     ¬ computesBool f H.residual := by
   rw [computesBool_residual_iff_attnUpdate]
   exact checkerboard_not_computable_with_one_head_attnUpdate H f c h00 h11 h01 h10
@@ -516,101 +457,81 @@ theorem checkerboard_not_computable_with_one_head_residual
 theorem xor_not_computable_with_zero_heads :
     ¬ computableWithHeads xorFn 0 := by
   exact not_computableWithHeads_zero_of_false_true xorFn
-    (false, false) (false, true) rfl rfl
+    (bits2 false false) (bits2 false true) rfl rfl
 
 /-- `XOR` is not computable with a single head in the uniform multi-head model. -/
 theorem xor_not_computable_with_one_head_count :
     ¬ computableWithHeads xorFn 1 := by
   rintro ⟨d, Hs, hH⟩
-  have hSingle : computesBool xorFn ((headFamilyAttnUpdate Hs)) := hH
-  rw [show headFamilyAttnUpdate Hs = (Hs 0).attnUpdate by
-    funext ab
-    simp [headFamilyAttnUpdate]] at hSingle
-  rw [← computesXor_iff_computesBool_xor] at hSingle
-  exact one_head_cannot_xor_attnUpdate (Hs 0) hSingle
+  have hSingle : computesBool xorFn (twoBitHeadFamilyAttnUpdate Hs) := hH
+  rw [show twoBitHeadFamilyAttnUpdate Hs = (Hs 0).attnUpdate by
+    funext bits
+    simp [twoBitHeadFamilyAttnUpdate]] at hSingle
+  exact one_head_cannot_xor_attnUpdate (Hs 0)
+    (by simpa [computesXor, computesBool] using hSingle)
 
 /-- Two heads suffice to compute `XOR`. -/
 theorem xor_computable_with_two_heads :
-    computesBool xorFn (Head.twoHeadUpdate : Bool × Bool → Vec 3) := by
-  rw [← computesXor_iff_computesBool_xor]
-  exact Head.two_heads_suffice
+    computesBool xorFn (twoHeadUpdate : (Fin 2 → Bool) → Vec 3) := by
+  simpa [computesXor, computesBool] using two_heads_suffice
 
 /-- Negating the two-head probe separates `XNOR`. -/
 theorem xnor_computable_with_two_heads :
-    computesBool xnorFn (Head.twoHeadUpdate : Bool × Bool → Vec 3) := by
+    computesBool xnorFn (twoHeadUpdate : (Fin 2 → Bool) → Vec 3) := by
   let lo : ℝ := 2 * Real.exp 1 / (2 * Real.exp 1 + 1)
   let hi : ℝ := 2 * Real.exp 1 / (Real.exp 1 + 2)
   let τ : ℝ := -((lo + hi) / 2)
-  have hgap : lo < hi := Head.xor_gap
-  refine ⟨-Head.twoProbe, τ, ?_⟩
-  rintro ⟨a, b⟩
-  cases a <;> cases b
-  · have hscore : ⟪-Head.twoProbe, Head.twoHeadUpdate (false, false)⟫_ℝ = -lo := by
-      unfold Head.twoProbe
-      rw [inner_neg_left]
-      rw [Head.probe_score]
-      simp [lo]
-    rw [hscore]
-    have hgt : -lo > τ := by
-      dsimp [τ]
-      linarith
-    simp [xnorFn, xorFn, lo, hi, τ, hgt]
-  · have hscore : ⟪-Head.twoProbe, Head.twoHeadUpdate (false, true)⟫_ℝ = -hi := by
-      unfold Head.twoProbe
-      rw [inner_neg_left]
-      rw [Head.probe_score]
-      simp [hi]
-    rw [hscore]
+  have hgap : lo < hi := xor_gap
+  refine ⟨-twoProbe, τ, ?_⟩
+  intro bits
+  unfold twoProbe
+  rw [inner_neg_left, probe_score]
+  by_cases hx : xorFn bits = true
+  · rw [hx]
     have hnot : ¬ -hi > τ := by
       dsimp [τ]
       linarith
-    simp [xnorFn, xorFn, lo, hi, τ, hnot]
-  · have hscore : ⟪-Head.twoProbe, Head.twoHeadUpdate (true, false)⟫_ℝ = -hi := by
-      unfold Head.twoProbe
-      rw [inner_neg_left]
-      rw [Head.probe_score]
-      simp [hi]
-    rw [hscore]
-    have hnot : ¬ -hi > τ := by
-      dsimp [τ]
-      linarith
-    simp [xnorFn, xorFn, lo, hi, τ, hnot]
-  · have hscore : ⟪-Head.twoProbe, Head.twoHeadUpdate (true, true)⟫_ℝ = -lo := by
-      unfold Head.twoProbe
-      rw [inner_neg_left]
-      rw [Head.probe_score]
-      simp [lo]
-    rw [hscore]
+    simp [xnorFn, hx, hi, hnot]
+  · have hfalse : xorFn bits = false := by
+      cases h : xorFn bits
+      · rfl
+      · exact False.elim (hx h)
+    rw [hfalse]
     have hgt : -lo > τ := by
       dsimp [τ]
       linarith
-    simp [xnorFn, xorFn, lo, hi, τ, hgt]
+    simp [xnorFn, hfalse, lo, hgt]
 
 /-- A concrete 2-head family realizing the existing XOR construction. -/
-noncomputable def xorTwoHeadFamily : HeadFamily 3 2
-  | 0 => Head.head0
-  | 1 => Head.head1
+noncomputable def xorTwoHeadFamily : TwoBitHeadFamily 3 2
+  | 0 => head0
+  | 1 => head1
 
-lemma xorTwoHeadFamily_attnUpdate (ab : Bool × Bool) :
-    headFamilyAttnUpdate xorTwoHeadFamily ab = Head.twoHeadUpdate ab := by
-  simp [headFamilyAttnUpdate, xorTwoHeadFamily, Head.twoHeadUpdate, Fin.sum_univ_two]
+lemma xorTwoHeadFamily_attnUpdate (bits : Fin 2 → Bool) :
+    twoBitHeadFamilyAttnUpdate xorTwoHeadFamily bits = twoHeadUpdate bits := by
+  simp [twoBitHeadFamilyAttnUpdate, headFamilyAttnUpdate, xorTwoHeadFamily,
+    twoHeadUpdate]
 
 /-- `XOR` is computable with two heads in the uniform multi-head model. -/
 theorem xor_computable_with_two_heads_count :
     computableWithHeads xorFn 2 := by
   refine ⟨3, xorTwoHeadFamily, ?_⟩
-  convert xor_computable_with_two_heads using 1
-  funext ab
-  exact xorTwoHeadFamily_attnUpdate ab
+  rcases xor_computable_with_two_heads with ⟨w, τ, hw⟩
+  refine ⟨w, τ, ?_⟩
+  intro bits
+  have hupdate : headFamilyAttnUpdate xorTwoHeadFamily bits = twoHeadUpdate bits := by
+    simpa [twoBitHeadFamilyAttnUpdate] using xorTwoHeadFamily_attnUpdate bits
+  rw [hupdate]
+  exact hw bits
 
 /-- `XNOR` is not computable with one head. -/
 theorem xnor_not_computable_with_one_head_count :
     ¬ computableWithHeads xnorFn 1 := by
   rintro ⟨d, Hs, hH⟩
-  have hSingle : computesBool xnorFn ((headFamilyAttnUpdate Hs)) := hH
-  rw [show headFamilyAttnUpdate Hs = (Hs 0).attnUpdate by
-    funext ab
-    simp [headFamilyAttnUpdate]] at hSingle
+  have hSingle : computesBool xnorFn (twoBitHeadFamilyAttnUpdate Hs) := hH
+  rw [show twoBitHeadFamilyAttnUpdate Hs = (Hs 0).attnUpdate by
+    funext bits
+    simp [twoBitHeadFamilyAttnUpdate]] at hSingle
   exact (checkerboard_not_computable_with_one_head_attnUpdate
     (Hs 0) xnorFn true rfl rfl rfl rfl) hSingle
 
@@ -618,9 +539,13 @@ theorem xnor_not_computable_with_one_head_count :
 theorem xnor_computable_with_two_heads_count :
     computableWithHeads xnorFn 2 := by
   refine ⟨3, xorTwoHeadFamily, ?_⟩
-  convert xnor_computable_with_two_heads using 1
-  funext ab
-  exact xorTwoHeadFamily_attnUpdate ab
+  rcases xnor_computable_with_two_heads with ⟨w, τ, hw⟩
+  refine ⟨w, τ, ?_⟩
+  intro bits
+  have hupdate : headFamilyAttnUpdate xorTwoHeadFamily bits = twoHeadUpdate bits := by
+    simpa [twoBitHeadFamilyAttnUpdate] using xorTwoHeadFamily_attnUpdate bits
+  rw [hupdate]
+  exact hw bits
 
 /-- Exact head complexity of `OR` in the current formalization. -/
 theorem exactHeadComplexity_or :
@@ -701,7 +626,7 @@ theorem exactHeadComplexity_xnor :
     rcases hCases with h0 | h1
     · subst h0
       exact not_computableWithHeads_zero_of_false_true xnorFn
-        (false, true) (false, false) rfl rfl
+        (bits2 false true) (bits2 false false) rfl rfl
     · subst h1
       exact xnor_not_computable_with_one_head_count
 
@@ -714,43 +639,63 @@ theorem HStar_nand : HStar nandFn = 1 := HStar_eq_of_exact exactHeadComplexity_n
 theorem HStar_xor : HStar xorFn = 2 := HStar_eq_of_exact exactHeadComplexity_xor
 theorem HStar_xnor : HStar xnorFn = 2 := HStar_eq_of_exact exactHeadComplexity_xnor
 
-/-- Classification of all symmetric 2-bit Boolean functions by exact
-    head complexity. -/
+private lemma funext_two_bit
+    {f g : (Fin 2 → Bool) → Bool}
+    (h : ∀ a b, f (bits2 a b) = g (bits2 a b)) : f = g := by
+  funext bits
+  have hbits : bits = bits2 (bits 0) (bits 1) := by
+    funext i
+    fin_cases i <;> rfl
+  rw [hbits]
+  exact h (bits 0) (bits 1)
+
+private lemma ext_by_cases
+    {f g : (Fin 2 → Bool) → Bool}
+    (hff : f (bits2 false false) = g (bits2 false false))
+    (hft : f (bits2 false true) = g (bits2 false true))
+    (htf : f (bits2 true false) = g (bits2 true false))
+    (htt : f (bits2 true true) = g (bits2 true true)) : f = g := by
+  apply funext_two_bit
+  intro a b
+  cases a <;> cases b <;> assumption
+
+/-- Classification of all symmetric 2-bit Boolean functions by exact head
+complexity. -/
 theorem exactHeadComplexity_symmFn (c0 c1 c2 : Bool) :
     exactHeadComplexity (symmFn c0 c1 c2)
       (if c0 = c1 then if c1 = c2 then 0 else 1 else if c0 = c2 then 2 else 1) := by
   cases c0 <;> cases c1 <;> cases c2 <;>
     simp only [Bool.false_eq_true, Bool.true_eq_false, ↓reduceIte]
   · have hs : symmFn false false false = falseFn := by
-      funext ab; rcases ab with ⟨a, b⟩; cases a <;> cases b <;> rfl
+      apply ext_by_cases <;> rfl
     rw [hs]
     exact exactHeadComplexity_false
   · have hs : symmFn false false true = andFn := by
-      funext ab; rcases ab with ⟨a, b⟩; cases a <;> cases b <;> rfl
+      apply ext_by_cases <;> rfl
     rw [hs]
     exact exactHeadComplexity_and
   · have hs : symmFn false true false = xorFn := by
-      funext ab; rcases ab with ⟨a, b⟩; cases a <;> cases b <;> rfl
+      apply ext_by_cases <;> rfl
     rw [hs]
     exact exactHeadComplexity_xor
   · have hs : symmFn false true true = orFn := by
-      funext ab; rcases ab with ⟨a, b⟩; cases a <;> cases b <;> rfl
+      apply ext_by_cases <;> rfl
     rw [hs]
     exact exactHeadComplexity_or
   · have hs : symmFn true false false = norFn := by
-      funext ab; rcases ab with ⟨a, b⟩; cases a <;> cases b <;> rfl
+      apply ext_by_cases <;> rfl
     rw [hs]
     exact exactHeadComplexity_nor
   · have hs : symmFn true false true = xnorFn := by
-      funext ab; rcases ab with ⟨a, b⟩; cases a <;> cases b <;> rfl
+      apply ext_by_cases <;> rfl
     rw [hs]
     exact exactHeadComplexity_xnor
   · have hs : symmFn true true false = nandFn := by
-      funext ab; rcases ab with ⟨a, b⟩; cases a <;> cases b <;> rfl
+      apply ext_by_cases <;> rfl
     rw [hs]
     exact exactHeadComplexity_nand
   · have hs : symmFn true true true = trueFn := by
-      funext ab; rcases ab with ⟨a, b⟩; cases a <;> cases b <;> rfl
+      apply ext_by_cases <;> rfl
     rw [hs]
     exact exactHeadComplexity_true
 

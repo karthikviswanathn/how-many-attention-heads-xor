@@ -82,9 +82,9 @@ theorem symmetricFn_computable (F : ℕ → Bool) (n : ℕ) :
   · subst hn0
     have hsc : signChanges 0 F = 0 := by simp [signChanges]
     rw [hsc]
-    refine ⟨2, (Fin.elim0 : NHeadFamily 0 2 0), (0 : Vec 2), (if F 0 then -1 else 1), ?_⟩
+    refine ⟨2, (Fin.elim0 : HeadFamily 0 2 0), (0 : Vec 2), (if F 0 then -1 else 1), ?_⟩
     intro bits
-    rw [nHeadFamilyAttnUpdate_zero, inner_zero_right]
+    rw [headFamilyAttnUpdate_zero, inner_zero_right]
     have hw0 : hammingWeight bits = 0 := Nat.le_zero.mp (hammingWeight_le 0 bits)
     simp only [symmetricFn, hw0]
     cases F 0 <;> norm_num

@@ -24,7 +24,7 @@ consequences used by that theorem:
 namespace HeadComplexity
 
 open scoped BigOperators
-open NHead (restrictBits)
+open Head (restrictBits)
 
 variable {n : ℕ}
 

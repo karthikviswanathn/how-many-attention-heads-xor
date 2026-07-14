@@ -18,7 +18,7 @@ namespace HeadComplexity
 alias example1_one_head_cannot_xor := one_head_cannot_xor_residual
 
 /-- **Example 2.** The explicit two-head construction computes XOR. -/
-alias example2_two_heads_compute_xor := Head.two_heads_suffice
+alias example2_two_heads_compute_xor := two_heads_suffice
 
 /-- **Example 3.** The constantly-false function has head complexity `0`. -/
 alias example3_HStar_false := HStar_false

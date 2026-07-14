@@ -9,9 +9,9 @@ The public theorem surface lives under `HeadComplexity.Results`; lower-level
 constructions imported by those result facades. There is also an examples umbrella
 for an explicit list of direct applications.
 
-## The model (`Foundation/Vec.lean`, `Model/NHead.lean`)
+## The model (`Foundation/Vec.lean`, `Model/Head.lean`)
 
-A single softmax attention head is `NHead n d`: token embeddings `Fin 3 → Vec d`
+A single softmax attention head is `Head n d`: token embeddings `Fin 3 → Vec d`
 (bit-0 / bit-1 / query), positional embeddings `Option (Fin n) → Vec d`, and linear
 maps `WQ, WK, WV`. On input `bits`, position `p` has embedding
 `x p = tokenEmbed (seqTok bits p) + posEmbed p`; the softmax weight is
@@ -45,7 +45,7 @@ reusing the symmetric chain), and the `≥` half of Lemma 12.
 
 ### Upper bounds — explicit softmax heads
 
-Each construction is one `NHead` whose readout is a prescribed rational/affine
+Each construction is one `Head` whose readout is a prescribed rational/affine
 function, proved by clearing the softmax denominator. They form a family, sharing
 a value coordinate so one readout sums them.
 
