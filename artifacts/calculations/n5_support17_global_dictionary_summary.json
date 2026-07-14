@@ -1,0 +1,233 @@
+{
+  "status": "Every covered family has an exact rank-15 restriction and forced-sign kernel certificate. Uncovered families are exact misses for this finite dictionary only.",
+  "dictionary_size": 512,
+  "dictionary_mode": "mixed",
+  "seed": 20260714,
+  "workers": 4,
+  "numerical_incidence_hits": 2,
+  "selected_tuples": 2,
+  "exact_covered_families": 2,
+  "uncovered_families": 23114,
+  "top_uncovered_zero_layer_profiles": [
+    {
+      "profile": [
+        0,
+        3,
+        4,
+        6,
+        1,
+        1
+      ],
+      "count": 545
+    },
+    {
+      "profile": [
+        0,
+        3,
+        4,
+        5,
+        2,
+        1
+      ],
+      "count": 508
+    },
+    {
+      "profile": [
+        0,
+        3,
+        3,
+        6,
+        2,
+        1
+      ],
+      "count": 463
+    },
+    {
+      "profile": [
+        0,
+        3,
+        5,
+        5,
+        1,
+        1
+      ],
+      "count": 392
+    },
+    {
+      "profile": [
+        0,
+        2,
+        6,
+        4,
+        3,
+        0
+      ],
+      "count": 362
+    },
+    {
+      "profile": [
+        0,
+        2,
+        5,
+        6,
+        1,
+        1
+      ],
+      "count": 336
+    },
+    {
+      "profile": [
+        0,
+        2,
+        6,
+        3,
+        4,
+        0
+      ],
+      "count": 334
+    },
+    {
+      "profile": [
+        0,
+        2,
+        7,
+        3,
+        3,
+        0
+      ],
+      "count": 329
+    },
+    {
+      "profile": [
+        0,
+        4,
+        4,
+        5,
+        1,
+        1
+      ],
+      "count": 328
+    },
+    {
+      "profile": [
+        0,
+        4,
+        3,
+        5,
+        2,
+        1
+      ],
+      "count": 319
+    },
+    {
+      "profile": [
+        1,
+        1,
+        6,
+        4,
+        2,
+        1
+      ],
+      "count": 311
+    },
+    {
+      "profile": [
+        0,
+        3,
+        3,
+        6,
+        3,
+        0
+      ],
+      "count": 302
+    },
+    {
+      "profile": [
+        0,
+        2,
+        4,
+        7,
+        1,
+        1
+      ],
+      "count": 299
+    },
+    {
+      "profile": [
+        0,
+        2,
+        4,
+        6,
+        2,
+        1
+      ],
+      "count": 293
+    },
+    {
+      "profile": [
+        0,
+        3,
+        5,
+        4,
+        2,
+        1
+      ],
+      "count": 272
+    },
+    {
+      "profile": [
+        0,
+        2,
+        5,
+        4,
+        4,
+        0
+      ],
+      "count": 272
+    },
+    {
+      "profile": [
+        0,
+        3,
+        4,
+        5,
+        3,
+        0
+      ],
+      "count": 250
+    },
+    {
+      "profile": [
+        0,
+        4,
+        3,
+        6,
+        1,
+        1
+      ],
+      "count": 242
+    },
+    {
+      "profile": [
+        0,
+        3,
+        3,
+        7,
+        1,
+        1
+      ],
+      "count": 241
+    },
+    {
+      "profile": [
+        1,
+        1,
+        7,
+        3,
+        2,
+        1
+      ],
+      "count": 239
+    }
+  ]
+}

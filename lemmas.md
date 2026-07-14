@@ -24,6 +24,9 @@ What they *do* give is:
 - Boolean closure for functions sharing one positive projection statistic,
 - a two-head upper bound for all three-bit quadratic threshold functions,
 - an exact classification of all three-bit Boolean functions by threshold degree,
+- an exact integer-certificate classification of all Boolean functions through four bits, with head complexity equal to threshold degree,
+- an exact two-head classification of every five-bit function of threshold degree two,
+- an exact four-head classification of every five-bit function of threshold degree four,
 - an exact match between three-bit head complexity and threshold-vote size,
 - exact threshold-vote and head complexity two for equality on two strings,
 - a four-head universal upper bound for all four-bit Boolean functions,
@@ -61,8 +64,8 @@ What they *do* give is:
 - DNF and CNF width as threshold-degree upper bounds,
 - a denominator-orientation characterization for one-head atoms,
 - restriction monotonicity, junta invariance, and a partition sign-rank lower-bound route,
-- a dimension ceiling showing partition sign-rank cannot certify three heads below fourteen bits,
-- an explicit quadratic Paley-Hadamard bilinear threshold on $76$ bits with threshold degree two and head complexity at least three,
+- a dimension ceiling for the degree-only partition sign-rank bound, together with a sharper two-head factorization that surpasses that ceiling,
+- explicit quadratic strict separations on $56$, $43$, $12$, $11$, $9$, and $8$ bits, with threshold degree two and head complexity at least three,
 - monotone DNF and CNF upper bounds using one head per term or clause,
 - a monotone antichain upper bound via minimal true sets and maximal false sets,
 - a monotone counting lower bound showing the antichain upper bound is polynomially sharp,
@@ -310,7 +313,7 @@ In particular:
 
 > **Candidate invariant.** The proof defines a positive weighted-sum image complexity $M_{+}(f)$ and shows
 >
-> $$ > H^{\ast}(f) \leq M_{+}(f) - 1. > $$
+> $H^{\ast}(f) \leq M_{+}(f) - 1$.
 
 **Proof.** [lemmas/01_foundations_and_normal_form/009_weighted_sum_upper_bound.md](lemmas/01_foundations_and_normal_form/009_weighted_sum_upper_bound.md)
 
@@ -1438,9 +1441,9 @@ $$ H^{\ast}(f)\leq2R_{+}(f). $$
 
 **Proof.** [lemmas/03_function_families_and_affine_geometry/066_positive_run_upper_bound.md](lemmas/03_function_families_and_affine_geometry/066_positive_run_upper_bound.md)
 
-### Lemma 67. Sign-rank method limitations
+### Lemma 67. Degree-based partition sign-rank limitations
 
-The partition sign-rank lower-bound route can certify
+The degree-based partition sign-rank lower-bound route from Lemma 28 can certify
 
 $$ H^{\ast}(f)\geq h+1 $$
 
@@ -1454,7 +1457,7 @@ $$ H^{\ast}(f)\geq3 $$
 
 for any Boolean function on at most $13$ input bits.
 
-> **Interpretation.** Partition sign-rank is a genuine lower-bound route, but it is dimension-limited at small input sizes. In particular, it cannot settle whether eight-bit endpoint functions such as $\mathrm{INT}_4$ need more than two heads.
+> **Interpretation.** The rank bound obtained by treating a cleared score as an arbitrary low-degree polynomial is dimension-limited. Sharper factorizations of actual head scores can surpass this ceiling, as Theorem 182 does on twelve bits.
 
 **Proof.** [lemmas/03_function_families_and_affine_geometry/067_sign_rank_method_limitations.md](lemmas/03_function_families_and_affine_geometry/067_sign_rank_method_limitations.md)
 
@@ -3574,23 +3577,136 @@ $$ H^{\ast}(f_{a,b,c,\alpha,\beta})=\delta(G_{a,b,c,\alpha,\beta}). $$
 
 **Proof.** [lemmas/05_positive_statistic_gates_and_grids/179_two_block_affine_grid_strips_exact.md](lemmas/05_positive_statistic_gates_and_grids/179_two_block_affine_grid_strips_exact.md)
 
-### Theorem 180. A quadratic Paley-Hadamard threshold needs at least three heads
+### Theorem 180. A quadratic hypercube-path threshold needs at least three heads
 
-Let $S$ be the leading $38\times38$ principal submatrix of the explicit order-$40$ Paley-Hadamard matrix constructed from the quadratic character modulo $19$. For two blocks $x,y\in\lbrace0,1\rbrace^{38}$, define
+Let $\mathcal{R}$ contain the $48$ even-parity strings $r\in\lbrace0,1\rbrace^8$ with $r_8=0$ that also satisfy $r_4=0$ or $r_1+r_2+r_3\equiv1\pmod2$. Define $S_{r,j}=(-1)^{r_j}$. For Boolean variables $x_r$, where $r\in\mathcal{R}$, and $y_1,\ldots,y_8$, define
 
-$$ P(x,y):=\frac{1}{2}+\sum_{i=1}^{38}\sum_{j=1}^{38}S_{i,j}x_i y_j. $$
+$$ P(x,y):=\frac{1}{2}+\sum_{r\in\mathcal{R}}\sum_{j=1}^{8}S_{r,j}x_r y_j. $$
 
-Let $f_{\mathrm{PH}}(x,y)=1$ exactly when $P(x,y)>0$. Then
+Let $f_{\mathrm{HC}}(x,y)=1$ exactly when $P(x,y)>0$. Then
 
-$$ \deg_{\pm}(f_{\mathrm{PH}})=2 \qquad\text{and}\qquad H^{\ast}(f_{\mathrm{PH}})\geq3. $$
+$$ \deg_{\pm}(f_{\mathrm{HC}})=2 \qquad\text{and}\qquad H^{\ast}(f_{\mathrm{HC}})\geq3. $$
 
 Consequently,
 
-$$ \deg_{\pm}(f_{\mathrm{PH}})<H^{\ast}(f_{\mathrm{PH}}). $$
+$$ \deg_{\pm}(f_{\mathrm{HC}})<H^{\ast}(f_{\mathrm{HC}}). $$
 
-> **Interpretation.** The threshold-degree lower bound is not universally exact. The strict gap is certified by a two-block singleton slice whose Paley-Hadamard sign matrix has sign-rank at least seven, while every two-head score has singleton-slice sign-rank at most six.
+> **Interpretation.** The threshold-degree lower bound is not universally exact. The strict gap is certified by a two-block singleton slice whose hypercube-path sign matrix has sign-rank at least seven, while every two-head score has singleton-slice sign-rank at most six.
 
-**Proof.** [lemmas/06_strict_separations/180_paley_hadamard_strict_separation.md](lemmas/06_strict_separations/180_paley_hadamard_strict_separation.md)
+**Proof.** [lemmas/06_strict_separations/180_hypercube_path_strict_separation.md](lemmas/06_strict_separations/180_hypercube_path_strict_separation.md)
+
+### Theorem 181. A compact 43-bit hypercube-path threshold needs at least three heads
+
+For $r\in\lbrace0,1\rbrace^8$, let $\mathrm{code}(r)=\sum_{j=1}^{8}2^{j-1}r_j$.
+Let $\mathcal{R}_{35}$ contain the strings whose codes belong to
+
+$$ \lbrace0,3,5,10,12,15,18,20,23,30,34,36,39,46,54,65,72,75,77,80,83,85,90,92,95,96,99,101,106,108,111,114,116,119,126\rbrace. $$
+
+Define $S^{(35)}&#95;{r,j}=(-1)^{r_j}$. For Boolean variables $x_r$, where $r\in\mathcal{R}&#95;{35}$, and $y_1,\ldots,y_8$, define
+
+$$ P_{35}(x,y):=\frac{1}{2}+\sum_{r\in\mathcal{R}_{35}}\sum_{j=1}^{8}S^{(35)}_{r,j}x_r y_j. $$
+
+Let $f&#95;{35}(x,y)=1$ exactly when $P&#95;{35}(x,y)>0$. Then
+
+$$ \deg_{\pm}(f_{35})=2 \qquad\text{and}\qquad H^{\ast}(f_{35})\geq3. $$
+
+Consequently,
+
+$$ \deg_{\pm}(f_{35})<H^{\ast}(f_{35}). $$
+
+> **Interpretation.** A deterministic exhaustive certificate compresses the structured construction from $56$ bits to $43$ bits while preserving the sign-rank-seven singleton-slice obstruction.
+
+**Proof.** [lemmas/06_strict_separations/181_compact_hypercube_path_strict_separation.md](lemmas/06_strict_separations/181_compact_hypercube_path_strict_separation.md)
+
+### Theorem 182. A twelve-bit Hamming threshold needs at least three heads
+
+For $x,y\in\lbrace0,1\rbrace^6$, let
+
+$$ \Delta(x,y):=\sum_{i=1}^{6}(x_i+y_i-2x_i y_i), $$
+
+and define $f_{\mathrm{Ham}}(x,y)=1$ exactly when $\Delta(x,y)\geq3$. Then
+
+$$ \deg_{\pm}(f_{\mathrm{Ham}})=2 \qquad\text{and}\qquad H^{\ast}(f_{\mathrm{Ham}})\geq3. $$
+
+Consequently,
+
+$$ \deg_{\pm}(f_{\mathrm{Ham}})<H^{\ast}(f_{\mathrm{Ham}}). $$
+
+> **Interpretation.** A natural Hamming-distance threshold gives a strict separation on twelve bits. An explicit eight-column restriction has sign-rank at least seven, while every two-head partition sign matrix has sign-rank at most six.
+
+**Proof.** [lemmas/06_strict_separations/182_hamming_threshold_strict_separation.md](lemmas/06_strict_separations/182_hamming_threshold_strict_separation.md)
+
+### Theorem 183. Head complexity equals threshold degree through four bits
+
+For every integer $n$ with $0\leq n\leq4$ and every Boolean function $f:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace$,
+
+$$ H^{\ast}(f)=\deg_{\pm}(f). $$
+
+> **Interpretation.** An exact integer certificate classifies all $65536$ four-bit truth tables. It verifies two-head scores for every function of threshold degree at most two, three-head scores for every degree-three function, and leaves only parity and its complement at degree and head complexity four.
+
+**Proof.** [lemmas/06_strict_separations/183_small_dimension_exact_classification.md](lemmas/06_strict_separations/183_small_dimension_exact_classification.md)
+
+### Theorem 184. An eleven-bit quadratic threshold needs at least three heads
+
+Let $x\in\lbrace0,1\rbrace^6$ and $y\in\lbrace0,1\rbrace^5$. Define
+
+$$ \begin{aligned} Q(x,y):={}&1-2x_3+8y_5-16x_1y_2+14x_1y_4-14x_1y_5-22x_2y_4+16x_2y_5 \\ &+2x_3y_1+12x_3y_2+6x_3y_5-18x_4y_3-2x_5y_1-14x_5y_3-16x_6y_5 \\ &+16y_1y_3+22y_2y_5-12y_3y_5. \end{aligned} $$
+
+Let $f_{11}(x,y)=1$ exactly when $Q(x,y)>0$. Then
+
+$$ \deg_{\pm}(f_{11})=2<3\leq H^{\ast}(f_{11}). $$
+
+> **Interpretation.** This six-bit by five-bit quadratic embeds the compact hypercube-path obstruction as an exact $35\times8$ submatrix. Its certificate is deterministic and uses only integer arithmetic.
+
+**Proof.** [lemmas/06_strict_separations/184_eleven_bit_quadratic_strict_separation.md](lemmas/06_strict_separations/184_eleven_bit_quadratic_strict_separation.md)
+
+### Theorem 185. A nine-bit antipodal-slice threshold needs at least three heads
+
+Let $x\in\lbrace-1,1\rbrace^4$ and $y\in\lbrace-1,1\rbrace^5$. Define
+
+$$ Q(x,y):=\left(\sum_{j=0}^{4}y_j\right)\left(1+\sum_{i=1}^{4}x_i\right)-3\left(y_0+\sum_{i=1}^{4}x_i y_i\right), $$
+
+and let $f_9(x,y)=1$ exactly when $Q(x,y)>0$. Then
+
+$$ \deg_{\pm}(f_9)=2<3\leq H^{\ast}(f_9). $$
+
+> **Interpretation.** Five antipodal pairs force a nonsingular $5\times5$ cross-coefficient block in every quadratic sign representation. Clearing two heads gives a sum of two affine products, whose corresponding block has rank at most four.
+
+**Proof.** [lemmas/06_strict_separations/185_nine_bit_antipodal_slice_strict_separation.md](lemmas/06_strict_separations/185_nine_bit_antipodal_slice_strict_separation.md)
+
+### Theorem 186. Five-bit degree-four functions need exactly four heads
+
+For every Boolean function $f : \lbrace0,1\rbrace^5 \to \lbrace0,1\rbrace$,
+
+$$ \deg_{\pm}(f)=4 \qquad\Longrightarrow\qquad H^{\ast}(f)=4. $$
+
+> **Interpretation.** An exact affine-cocircuit reduction gives $65$ normal orbits. Uniform four-head shattering certificates cover $60$ orbits, and exact finite archives cover every target in the five residual orbits.
+
+**Proof.** [lemmas/06_strict_separations/186_five_bit_degree_four_exact.md](lemmas/06_strict_separations/186_five_bit_degree_four_exact.md)
+
+### Theorem 187. Five-bit degree-two functions need exactly two heads
+
+For every Boolean function $f : \lbrace0,1\rbrace^5 \to \lbrace0,1\rbrace$,
+
+$$ \deg_{\pm}(f)=2 \qquad\Longrightarrow\qquad H^{\ast}(f)=2. $$
+
+> **Interpretation.** An analytic matrix-completion reduction leaves only fully locked complementary-five-cycle sign cells. An exhaustive exact cocircuit and tangent-tope certificate reduces every such cell to $380$ archived symmetry classes, all of which have exact rational two-head certificates.
+
+**Proof.** [lemmas/06_strict_separations/187_five_bit_degree_two_exact.md](lemmas/06_strict_separations/187_five_bit_degree_two_exact.md)
+
+### Theorem 189. An eight-bit Hamming threshold has head complexity three
+
+For $x,y\in\lbrace0,1\rbrace^4$, define
+
+$$ \Delta(x,y):=\sum_{i=1}^4(x_i+y_i-2x_i y_i), $$
+
+and let $f_8(x,y)=1$ exactly when $\Delta(x,y)\geq2$. Then
+
+$$ \deg_{\pm}(f_8)=2<3=H^{\ast}(f_8). $$
+
+> **Interpretation.** The radius-one Hamming-ball threshold is an explicit eight-bit strict separation. Checkerboard curvature and shell transitions rule out two heads, while an exact integer linear-fractional certificate gives three heads.
+
+**Proof.** [lemmas/06_strict_separations/189_eight_bit_hamming_threshold_strict_separation.md](lemmas/06_strict_separations/189_eight_bit_hamming_threshold_strict_separation.md)
 
 ## Dependency Order
 
@@ -3662,7 +3778,7 @@ The current dependency structure is:
 64. Lemma 64 combines complement invariance from Lemma 28, the affine level-set theorem from Lemma 61, and the one-head characterization from Lemma 10.
 65. Lemma 65 generalizes Lemma 64 by using finite hyperplane avoidance inside the vector space of affine functions vanishing on a proper affine hull.
 66. Lemma 66 is a direct corollary of the positive-projection sign-change theorem from Lemma 13.
-67. Lemma 67 combines the sign-rank lower-bound schema from Lemma 28 with the trivial rank ceiling of a communication matrix.
+67. Lemma 67 combines the degree-based sign-rank lower-bound schema from Lemma 28 with the trivial rank ceiling of a communication matrix. Its limitation does not apply to the sharper two-head factorization in Theorem 182.
 68. Lemma 68 combines the positive run-count setup from Lemma 66, the affine-slab theorem from Lemma 62, complement invariance from Lemma 28, and the one-head characterization from Lemma 10.
 69. Lemma 69 combines the threshold-degree lower bound from Lemma 6, the positive-projection sign-change theorem from Lemma 13, and the one-head characterization from Lemma 10.
 70. Lemma 70 combines the affine-free sparsity upper bound from Lemma 48 with the one-head characterization from Lemma 10.
@@ -3775,13 +3891,21 @@ The current dependency structure is:
 177. Theorem 177 reduces a singleton two-block Hamming grid point to the affine level-set theorem by a nonresonant linear recombination of the two block weights.
 178. Theorem 178 applies the affine level-set theorem directly to any affine line layer in the two-block Hamming grid and compares it with bivariate grid sign degree.
 179. Theorem 179 applies the affine slab theorem directly to any affine strip in the two-block Hamming grid and compares it with bivariate grid sign degree.
-180. Theorem 180 combines the linear-fractional normal form from Lemma 10 with Forster's sign-rank lower bound for a $38\times38$ submatrix of an order-$40$ Paley-Hadamard matrix. Clearing two positive denominators gives a sum of two affine products, whose two-block singleton-slice matrix has rank at most six.
+180. Theorem 180 combines the linear-fractional normal form from Lemma 10 with an explicit $48\times8$ sign matrix whose rows hit every generic two-dimensional tope cycle. Clearing two positive denominators gives a sum of two affine products, whose two-block singleton-slice matrix has rank at most six.
+181. Theorem 181 compresses the tope-cycle hitting set in Theorem 180 from $48$ rows to $35$ rows and verifies all $5160960$ antipodal coordinate-flip paths by exhaustive enumeration.
+182. Theorem 182 applies the same tope-cycle obstruction to an eight-column restriction of the six-bit Hamming-distance threshold matrix. It also strengthens the two-head rank bound from singleton slices to arbitrary Cartesian partitions.
+183. Theorem 183 exhaustively classifies all four-bit functions using exact integer two-head and three-head scores, exact positive-circuit obstructions to degree two, and the analytic parity theorem.
+184. Theorem 184 embeds the compact path obstruction from Theorem 181 into the partition sign matrix of an explicit quadratic polynomial on a six-bit by five-bit split.
+185. Theorem 185 uses five antipodal slice pairs to force strict diagonal dominance in a $5\times5$ quadratic cross block. Every cleared two-head score has cross-block rank at most four.
+186. Theorem 186 reduces every five-bit degree-four sign table to an affine-cocircuit extension, then covers all $65$ normal orbits by exact four-head shattering and finite residual certificates.
+187. Theorem 187 combines the monochromatic-triangle matrix-completion theorem and the sign-cell locking reduction with an exhaustive exact cocircuit tangent cover and $380$ rational two-head archive certificates.
+189. Theorem 189 combines the linear-fractional normal form and denominator orientation with a fourteen-rectangle mixed-curvature certificate, a normalized shell-transition reduction, and a four-dimensional column-max spectral inequality. An exact integer three-head score gives the matching upper bound.
 
 ## What This Currently Says About The First Core Question
 
-The current evidence gives a precise first-level characterization: one head is exactly linear threshold power. It also gives an explicit strict separation at the next level. The Paley-Hadamard bilinear threshold from Theorem 180 satisfies
+The current evidence gives a precise first-level characterization: one head is exactly linear threshold power. It also gives an explicit strict separation at the next level. The Hamming threshold from Theorem 189 satisfies
 
-$$ \deg_{\pm}(f_{\mathrm{PH}})=2<3\leq H^{\ast}(f_{\mathrm{PH}}). $$
+$$ \deg_{\pm}(f_8)=2<3=H^{\ast}(f_8). $$
 
 Thus the full problem cannot be reduced to threshold degree. It can instead be reframed as understanding the minimum number of linear-fractional attention atoms needed before the final threshold:
 
@@ -4033,9 +4157,9 @@ $$ H^{\ast}(f)\geq k+\deg_{\pm}(T). $$
 
 For symmetric functions, the exact answer is now the sign-change count of the Hamming-weight truth table. More generally, positive-projection sign-change count gives a sharper upper bound than positive weighted-sum image size. Parity is the maximally alternating symmetric case, giving $H^{\ast}(\mathrm{XOR}_n) = n$.
 
-For all functions on at most three bits, threshold degree is now exact:
+For all functions on at most four bits, threshold degree is now exact:
 
-$$ H^{\ast}(f) = \deg_{\pm}(f) \qquad (n \leq 3). $$
+$$ H^{\ast}(f) = \deg_{\pm}(f) \qquad (n \leq 4). $$
 
 This also solves the first adaptive decision-tree layer: if $D(f)\leq2$, then $f$ is a three-junta with a quadratic sign representation, so $H^{\ast}(f)$ is $0$, $1$, or $2$ according as it is constant, a nonconstant LTF, or neither.
 
@@ -4115,14 +4239,14 @@ The first nontrivial run-count case is exact: if $R_{+}(f)=1$, then $H^{\ast}(f)
 
 There are also reusable lower-bound closure tools. If $f$ has a restriction equal to $k$-bit parity or anti-parity, then $H^{\ast}(f)\geq k$. Dummy variables do not change $H^{\ast}$, so every exact classification for $k$ variables automatically applies to $k$-juntas inside larger cubes. More generally, a high-sign-rank communication matrix under any input partition forces enough heads to support a degree $H$ sign matrix of that rank.
 
-The sign-rank route has a small-dimension ceiling: it cannot certify $H^{\ast}\geq3$ for any function on at most $13$ input bits. Thus eight-bit questions such as whether $\mathrm{INT}_4$ needs three heads require a different lower-bound mechanism.
+The degree-based sign-rank route from Lemma 28 has a small-dimension ceiling: it cannot certify $H^{\ast}\geq3$ for any function on at most $13$ input bits. Theorem 182 surpasses that ceiling by retaining the exact sum-of-two-affine-products form of a cleared two-head score, which forces partition sign-rank at most $6$.
 
 That is not yet a full invariant. It is only a partial answer:
 
 - checkerboard structure certifies $H^{\ast}(f) \geq 2$,
 - counting structure certifies that worst-case and typical head complexity are exponential up to polynomial slack,
 - restriction and sign-rank structure certify additional explicit lower bounds,
-- sign-rank dimension structure shows that this lower-bound route cannot certify three heads below fourteen input bits,
+- sign-rank dimension structure shows that the degree-only route cannot certify three heads below fourteen input bits, while exact two-head factorization gives the sharper rank-six obstruction used in Theorem 182,
 - affine-parity restrictions certify $H^{\ast}(f)\geq\pi&#95;{\oplus}(f)$, where $\pi&#95;{\oplus}(f)$ is the largest affine-parity subcube dimension,
 - inner-product mod $2$ has the explicit bracket $m\leq H^{\ast}(\mathrm{IP}_m)\leq2^m-1$,
 - equality on two $m$-bit strings is fully exact: $\deg&#95;{\pm}(\mathrm{EQ}&#95;m)=H^{\ast}(\mathrm{EQ}&#95;m)=2$ and $s&#95;{\mathrm{LTF}}(\mathrm{EQ}&#95;m)=2$,
@@ -4204,6 +4328,7 @@ That is not yet a full invariant. It is only a partial answer:
 - junta structure certifies ambient-dimension-free bounds depending only on $\mathrm{ess}(f)$,
 - certificate-cover structure certifies upper bounds from one-sided weighted subcube covers,
 - three-bit quadratic threshold structure certifies $H^{\ast}(f) \leq 2$,
+- five-bit quadratic threshold structure certifies $H^{\ast}(f) \leq 2$,
 - three-bit arbitrary threshold structure certifies $H^{\ast}(f) \leq 3$, closing the full $n=3$ classification,
 - three-bit threshold-vote structure certifies $s&#95;{\mathrm{LTF}}(f)=H^{\ast}(f)=\deg&#95;{\pm}(f)$ for every three-bit Boolean function,
 - four-bit arbitrary threshold structure certifies $H^{\ast}(f) \leq 4$,

@@ -1,0 +1,1307 @@
+{
+  "status": "Every success is exact. A search survivor is not an H2 lower bound.",
+  "dimension": 7,
+  "source": "adversarial_n7_pilot_results.json",
+  "restarts_per_orientation": 20,
+  "max_iterations": 2000,
+  "excluded_archived_masks": [],
+  "records": [
+    {
+      "truth_mask_hex": "0x0000000000008d005505d5004d05dd01",
+      "degree_two_coefficients": [
+        15,
+        -31,
+        -30,
+        -31,
+        31,
+        17,
+        -30,
+        -31,
+        31,
+        29,
+        -30,
+        -30,
+        -44,
+        31,
+        3,
+        44,
+        13,
+        13,
+        -14,
+        3,
+        -34,
+        29,
+        -4,
+        -16,
+        14,
+        0,
+        17,
+        -44,
+        -44
+      ],
+      "one_oriented_factor_search": {
+        "found": true,
+        "dimension": 7,
+        "truth_mask_hex": "0x8d005505d5004d05dd01",
+        "restart": 0,
+        "oriented_rounding_scale": 10,
+        "free_rounding_scale": 10,
+        "orientation": -1,
+        "one_factor_form": {
+          "oriented_factor": [
+            16,
+            -1,
+            -1,
+            -3,
+            -1,
+            -7,
+            -1,
+            -1
+          ],
+          "free_factor": [
+            -10,
+            7,
+            5,
+            -1,
+            2,
+            -3,
+            -1,
+            -2
+          ],
+          "absorbed_numerators": [
+            [
+              30,
+              455,
+              -14,
+              208,
+              -30,
+              -108,
+              -79,
+              234
+            ],
+            [
+              23,
+              -224,
+              -28,
+              -11,
+              224,
+              -27,
+              -95,
+              -67
+            ]
+          ]
+        },
+        "admissible_shift": 8,
+        "denominators": [
+          [
+            16,
+            -1,
+            -1,
+            -3,
+            -1,
+            -7,
+            -1,
+            -1
+          ],
+          [
+            118,
+            -1,
+            -3,
+            -25,
+            -6,
+            -59,
+            -9,
+            -10
+          ]
+        ],
+        "numerators": [
+          [
+            30,
+            455,
+            -14,
+            208,
+            -30,
+            -108,
+            -79,
+            234
+          ],
+          [
+            -217,
+            -3864,
+            84,
+            -1675,
+            464,
+            837,
+            537,
+            -1939
+          ]
+        ],
+        "denominator_value_ranges": [
+          [
+            1,
+            16
+          ],
+          [
+            5,
+            118
+          ]
+        ],
+        "minimum_signed_cleared_score": 68,
+        "fixed_factor_normalized_margin": 0.00826409895647363
+      }
+    },
+    {
+      "truth_mask_hex": "0x000000000002020050711000dafb1200",
+      "degree_two_coefficients": [
+        -44,
+        29,
+        -62,
+        3,
+        29,
+        60,
+        -62,
+        -62,
+        30,
+        -87,
+        2,
+        27,
+        -87,
+        62,
+        30,
+        2,
+        30,
+        -62,
+        -87,
+        27,
+        27,
+        87,
+        -87,
+        -87,
+        -26,
+        0,
+        62,
+        -57,
+        -87
+      ],
+      "one_oriented_factor_search": {
+        "found": true,
+        "dimension": 7,
+        "truth_mask_hex": "0x2020050711000dafb1200",
+        "restart": 0,
+        "oriented_rounding_scale": 10,
+        "free_rounding_scale": 30,
+        "orientation": -1,
+        "one_factor_form": {
+          "oriented_factor": [
+            16,
+            -1,
+            -1,
+            -1,
+            -6,
+            -1,
+            -1,
+            -4
+          ],
+          "free_factor": [
+            -29,
+            30,
+            -2,
+            -1,
+            1,
+            -1,
+            -13,
+            -1
+          ],
+          "absorbed_numerators": [
+            [
+              -546,
+              5751,
+              769,
+              -3649,
+              963,
+              -2629,
+              951,
+              4684
+            ],
+            [
+              -8282,
+              7907,
+              772,
+              -1214,
+              -873,
+              1981,
+              -500,
+              -838
+            ]
+          ]
+        },
+        "admissible_shift": 31,
+        "denominators": [
+          [
+            16,
+            -1,
+            -1,
+            -1,
+            -6,
+            -1,
+            -1,
+            -4
+          ],
+          [
+            467,
+            -1,
+            -33,
+            -32,
+            -185,
+            -32,
+            -44,
+            -125
+          ]
+        ],
+        "numerators": [
+          [
+            -546,
+            5751,
+            769,
+            -3649,
+            963,
+            -2629,
+            951,
+            4684
+          ],
+          [
+            8644,
+            -170374,
+            -23067,
+            111905,
+            -30726,
+            83480,
+            -29981,
+            -146042
+          ]
+        ],
+        "denominator_value_ranges": [
+          [
+            1,
+            16
+          ],
+          [
+            15,
+            467
+          ]
+        ],
+        "minimum_signed_cleared_score": 407,
+        "fixed_factor_normalized_margin": 0.0004836674444649858
+      }
+    },
+    {
+      "truth_mask_hex": "0x00000000a38381808100fff4ffbbffff",
+      "degree_two_coefficients": [
+        47,
+        0,
+        -32,
+        23,
+        66,
+        28,
+        -62,
+        -66,
+        63,
+        93,
+        2,
+        0,
+        -93,
+        -65,
+        80,
+        -30,
+        -78,
+        62,
+        -3,
+        -19,
+        -83,
+        7,
+        -63,
+        14,
+        56,
+        -32,
+        -93,
+        71,
+        -93
+      ],
+      "one_oriented_factor_search": {
+        "found": true,
+        "dimension": 7,
+        "truth_mask_hex": "0xa38381808100fff4ffbbffff",
+        "restart": 1,
+        "oriented_rounding_scale": 300,
+        "free_rounding_scale": 100,
+        "orientation": -1,
+        "one_factor_form": {
+          "oriented_factor": [
+            306,
+            -169,
+            -1,
+            -1,
+            -1,
+            -131,
+            -1,
+            -1
+          ],
+          "free_factor": [
+            100,
+            -94,
+            -41,
+            -47,
+            -18,
+            34,
+            64,
+            40
+          ],
+          "absorbed_numerators": [
+            [
+              -36366,
+              -24762,
+              -77907,
+              -47231,
+              39266,
+              65592,
+              -80811,
+              18691
+            ],
+            [
+              36292,
+              -32026,
+              16143,
+              1617,
+              8930,
+              -28743,
+              26576,
+              -51437
+            ]
+          ]
+        },
+        "admissible_shift": 65,
+        "denominators": [
+          [
+            306,
+            -169,
+            -1,
+            -1,
+            -1,
+            -131,
+            -1,
+            -1
+          ],
+          [
+            19990,
+            -11079,
+            -106,
+            -112,
+            -83,
+            -8481,
+            -1,
+            -25
+          ]
+        ],
+        "numerators": [
+          [
+            -36366,
+            -24762,
+            -77907,
+            -47231,
+            39266,
+            65592,
+            -80811,
+            18691
+          ],
+          [
+            2400082,
+            1577504,
+            5080098,
+            3071632,
+            -2543360,
+            -4292223,
+            5279291,
+            -1266352
+          ]
+        ],
+        "denominator_value_ranges": [
+          [
+            1,
+            306
+          ],
+          [
+            103,
+            19990
+          ]
+        ],
+        "minimum_signed_cleared_score": 24012,
+        "fixed_factor_normalized_margin": 0.00041363460435038524
+      }
+    },
+    {
+      "truth_mask_hex": "0x0000000a003e023f003f020b00ff033f",
+      "degree_two_coefficients": [
+        30,
+        42,
+        21,
+        -9,
+        -15,
+        0,
+        -15,
+        15,
+        -18,
+        -35,
+        -29,
+        -39,
+        31,
+        31,
+        -60,
+        -60,
+        21,
+        -51,
+        -13,
+        -60,
+        60,
+        -60,
+        -21,
+        -60,
+        -30,
+        -60,
+        9,
+        -60,
+        -60
+      ],
+      "one_oriented_factor_search": {
+        "found": true,
+        "dimension": 7,
+        "truth_mask_hex": "0xa003e023f003f020b00ff033f",
+        "restart": 0,
+        "oriented_rounding_scale": 10,
+        "free_rounding_scale": 10,
+        "orientation": -1,
+        "one_factor_form": {
+          "oriented_factor": [
+            17,
+            -1,
+            -1,
+            -1,
+            -10,
+            -1,
+            -1,
+            -1
+          ],
+          "free_factor": [
+            -7,
+            -3,
+            5,
+            10,
+            6,
+            4,
+            3,
+            0
+          ],
+          "absorbed_numerators": [
+            [
+              127,
+              -214,
+              -175,
+              -146,
+              -634,
+              368,
+              -97,
+              -15
+            ],
+            [
+              270,
+              78,
+              -112,
+              -129,
+              -318,
+              -64,
+              -160,
+              -122
+            ]
+          ]
+        },
+        "admissible_shift": 11,
+        "denominators": [
+          [
+            17,
+            -1,
+            -1,
+            -1,
+            -10,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            180,
+            -14,
+            -6,
+            -1,
+            -104,
+            -7,
+            -8,
+            -11
+          ]
+        ],
+        "numerators": [
+          [
+            127,
+            -214,
+            -175,
+            -146,
+            -634,
+            368,
+            -97,
+            -15
+          ],
+          [
+            -1127,
+            2432,
+            1813,
+            1477,
+            6656,
+            -4112,
+            907,
+            43
+          ]
+        ],
+        "denominator_value_ranges": [
+          [
+            1,
+            17
+          ],
+          [
+            29,
+            180
+          ]
+        ],
+        "minimum_signed_cleared_score": 133,
+        "fixed_factor_normalized_margin": 0.005414525642358448
+      }
+    },
+    {
+      "truth_mask_hex": "0x0000002a032303230000002e13730337",
+      "degree_two_coefficients": [
+        35,
+        30,
+        -20,
+        -20,
+        -9,
+        40,
+        -50,
+        10,
+        -70,
+        -10,
+        -40,
+        -60,
+        40,
+        70,
+        -10,
+        -70,
+        -70,
+        50,
+        -70,
+        -70,
+        60,
+        -10,
+        -70,
+        30,
+        -70,
+        -21,
+        -70,
+        -70,
+        -10
+      ],
+      "one_oriented_factor_search": {
+        "found": true,
+        "dimension": 7,
+        "truth_mask_hex": "0x2a032303230000002e13730337",
+        "restart": 4,
+        "oriented_rounding_scale": 10,
+        "free_rounding_scale": 10,
+        "orientation": -1,
+        "one_factor_form": {
+          "oriented_factor": [
+            15,
+            -1,
+            -3,
+            -5,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "free_factor": [
+            -1,
+            0,
+            -6,
+            0,
+            -10,
+            -1,
+            6,
+            0
+          ],
+          "absorbed_numerators": [
+            [
+              -2480,
+              495,
+              3049,
+              -246,
+              3557,
+              -728,
+              2331,
+              150
+            ],
+            [
+              128,
+              300,
+              233,
+              -386,
+              1255,
+              -494,
+              -85,
+              -94
+            ]
+          ]
+        },
+        "admissible_shift": 7,
+        "denominators": [
+          [
+            15,
+            -1,
+            -3,
+            -5,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            104,
+            -7,
+            -27,
+            -35,
+            -17,
+            -8,
+            -1,
+            -7
+          ]
+        ],
+        "numerators": [
+          [
+            -2480,
+            495,
+            3049,
+            -246,
+            3557,
+            -728,
+            2331,
+            150
+          ],
+          [
+            17488,
+            -3165,
+            -21110,
+            1336,
+            -23644,
+            4602,
+            -16402,
+            -1144
+          ]
+        ],
+        "denominator_value_ranges": [
+          [
+            2,
+            15
+          ],
+          [
+            2,
+            104
+          ]
+        ],
+        "minimum_signed_cleared_score": 117,
+        "fixed_factor_normalized_margin": 0.0004803402020358838
+      }
+    },
+    {
+      "truth_mask_hex": "0x0000003200001033000000121001131b",
+      "degree_two_coefficients": [
+        7,
+        8,
+        -10,
+        -4,
+        -4,
+        -4,
+        -10,
+        2,
+        -2,
+        -14,
+        -8,
+        -14,
+        0,
+        6,
+        -14,
+        -14,
+        -14,
+        -14,
+        -14,
+        12,
+        -2,
+        10,
+        6,
+        -2,
+        -14,
+        -14,
+        -14,
+        -14,
+        -8
+      ],
+      "one_oriented_factor_search": {
+        "found": true,
+        "dimension": 7,
+        "truth_mask_hex": "0x3200001033000000121001131b",
+        "restart": 2,
+        "oriented_rounding_scale": 10,
+        "free_rounding_scale": 10,
+        "orientation": -1,
+        "one_factor_form": {
+          "oriented_factor": [
+            16,
+            -1,
+            -1,
+            -1,
+            -3,
+            -1,
+            -7,
+            -1
+          ],
+          "free_factor": [
+            1,
+            -8,
+            7,
+            0,
+            10,
+            6,
+            5,
+            1
+          ],
+          "absorbed_numerators": [
+            [
+              2851,
+              -1973,
+              -1276,
+              1229,
+              -1470,
+              -249,
+              -2100,
+              -651
+            ],
+            [
+              542,
+              1228,
+              -1755,
+              -731,
+              -1606,
+              -1744,
+              -1068,
+              -43
+            ]
+          ]
+        },
+        "admissible_shift": 8,
+        "denominators": [
+          [
+            16,
+            -1,
+            -1,
+            -1,
+            -3,
+            -1,
+            -7,
+            -1
+          ],
+          [
+            129,
+            -16,
+            -1,
+            -8,
+            -14,
+            -2,
+            -51,
+            -7
+          ]
+        ],
+        "numerators": [
+          [
+            2851,
+            -1973,
+            -1276,
+            1229,
+            -1470,
+            -249,
+            -2100,
+            -651
+          ],
+          [
+            -22266,
+            17012,
+            8453,
+            -10563,
+            10154,
+            248,
+            15732,
+            5165
+          ]
+        ],
+        "denominator_value_ranges": [
+          [
+            1,
+            16
+          ],
+          [
+            30,
+            129
+          ]
+        ],
+        "minimum_signed_cleared_score": 184,
+        "fixed_factor_normalized_margin": 0.001395981272917346
+      }
+    },
+    {
+      "truth_mask_hex": "0x0000007700103373045dffff5f5fffff",
+      "degree_two_coefficients": [
+        21,
+        30,
+        6,
+        30,
+        30,
+        6,
+        30,
+        0,
+        -23,
+        -40,
+        20,
+        -43,
+        -17,
+        -20,
+        -10,
+        -12,
+        17,
+        30,
+        -43,
+        -28,
+        -20,
+        -10,
+        20,
+        -25,
+        -43,
+        -37,
+        -43,
+        -43,
+        -30
+      ],
+      "one_oriented_factor_search": {
+        "found": true,
+        "dimension": 7,
+        "truth_mask_hex": "0x7700103373045dffff5f5fffff",
+        "restart": 0,
+        "oriented_rounding_scale": 30,
+        "free_rounding_scale": 100,
+        "orientation": -1,
+        "one_factor_form": {
+          "oriented_factor": [
+            36,
+            -10,
+            -1,
+            -1,
+            -1,
+            -20,
+            -1,
+            -1
+          ],
+          "free_factor": [
+            27,
+            -13,
+            1,
+            -2,
+            -100,
+            -14,
+            -1,
+            -14
+          ],
+          "absorbed_numerators": [
+            [
+              -10649,
+              6797,
+              223,
+              1201,
+              -12803,
+              13874,
+              1528,
+              2870
+            ],
+            [
+              10756,
+              -4520,
+              -1524,
+              1397,
+              -57238,
+              -4300,
+              25,
+              -6166
+            ]
+          ]
+        },
+        "admissible_shift": 117,
+        "denominators": [
+          [
+            36,
+            -10,
+            -1,
+            -1,
+            -1,
+            -20,
+            -1,
+            -1
+          ],
+          [
+            4239,
+            -1183,
+            -116,
+            -119,
+            -217,
+            -2354,
+            -118,
+            -131
+          ]
+        ],
+        "numerators": [
+          [
+            -10649,
+            6797,
+            223,
+            1201,
+            -12803,
+            13874,
+            1528,
+            2870
+          ],
+          [
+            1256689,
+            -799769,
+            -27615,
+            -139120,
+            1440713,
+            -1627558,
+            -178751,
+            -341956
+          ]
+        ],
+        "denominator_value_ranges": [
+          [
+            1,
+            36
+          ],
+          [
+            1,
+            4239
+          ]
+        ],
+        "minimum_signed_cleared_score": 602,
+        "fixed_factor_normalized_margin": 0.0001796962835678706
+      }
+    },
+    {
+      "truth_mask_hex": "0x00000202ff53ffff7073027bff77ffff",
+      "degree_two_coefficients": [
+        2,
+        2,
+        2,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -2,
+        -4,
+        1,
+        -4,
+        2,
+        2,
+        1,
+        2,
+        -4,
+        -4,
+        -1,
+        1,
+        4,
+        0,
+        -3,
+        2,
+        -4,
+        1,
+        -1,
+        -3,
+        -4
+      ],
+      "one_oriented_factor_search": {
+        "found": true,
+        "dimension": 7,
+        "truth_mask_hex": "0x202ff53ffff7073027bff77ffff",
+        "restart": 6,
+        "oriented_rounding_scale": 30,
+        "free_rounding_scale": 100,
+        "orientation": -1,
+        "one_factor_form": {
+          "oriented_factor": [
+            37,
+            -1,
+            -1,
+            -30,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "free_factor": [
+            -98,
+            29,
+            27,
+            14,
+            -51,
+            42,
+            100,
+            13
+          ],
+          "absorbed_numerators": [
+            [
+              -2406,
+              -683,
+              -2012,
+              -761,
+              157,
+              120,
+              5315,
+              -2201
+            ],
+            [
+              3018,
+              560,
+              -1638,
+              237,
+              89,
+              -3220,
+              -2191,
+              -1312
+            ]
+          ]
+        },
+        "admissible_shift": 101,
+        "denominators": [
+          [
+            37,
+            -1,
+            -1,
+            -30,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            3639,
+            -72,
+            -74,
+            -3016,
+            -152,
+            -59,
+            -1,
+            -88
+          ]
+        ],
+        "numerators": [
+          [
+            -2406,
+            -683,
+            -2012,
+            -761,
+            157,
+            120,
+            5315,
+            -2201
+          ],
+          [
+            246024,
+            69543,
+            201574,
+            77098,
+            -15768,
+            -15340,
+            -539006,
+            220989
+          ]
+        ],
+        "denominator_value_ranges": [
+          [
+            1,
+            37
+          ],
+          [
+            177,
+            3639
+          ]
+        ],
+        "minimum_signed_cleared_score": 2372,
+        "fixed_factor_normalized_margin": 0.0012415317765900446
+      }
+    },
+    {
+      "truth_mask_hex": "0x00000800ae008e0e3000ee3efa30ee8e",
+      "degree_two_coefficients": [
+        -15,
+        83,
+        90,
+        -23,
+        -75,
+        -15,
+        0,
+        -90,
+        7,
+        -60,
+        67,
+        -67,
+        -23,
+        37,
+        -67,
+        67,
+        -127,
+        -60,
+        30,
+        37,
+        113,
+        53,
+        -127,
+        60,
+        7,
+        120,
+        -127,
+        -30,
+        -127
+      ],
+      "one_oriented_factor_search": {
+        "found": true,
+        "dimension": 7,
+        "truth_mask_hex": "0x800ae008e0e3000ee3efa30ee8e",
+        "restart": 4,
+        "oriented_rounding_scale": 10,
+        "free_rounding_scale": 100,
+        "orientation": -1,
+        "one_factor_form": {
+          "oriented_factor": [
+            14,
+            -2,
+            -3,
+            -1,
+            -1,
+            -3,
+            -1,
+            -2
+          ],
+          "free_factor": [
+            -99,
+            1,
+            -2,
+            100,
+            4,
+            -1,
+            -4,
+            -1
+          ],
+          "absorbed_numerators": [
+            [
+              506,
+              -267,
+              -20,
+              10871,
+              -437,
+              193,
+              477,
+              -176
+            ],
+            [
+              3140,
+              -612,
+              2632,
+              -4715,
+              -4139,
+              1654,
+              4605,
+              -1811
+            ]
+          ]
+        },
+        "admissible_shift": 101,
+        "denominators": [
+          [
+            14,
+            -2,
+            -3,
+            -1,
+            -1,
+            -3,
+            -1,
+            -2
+          ],
+          [
+            1315,
+            -201,
+            -305,
+            -1,
+            -97,
+            -304,
+            -105,
+            -203
+          ]
+        ],
+        "numerators": [
+          [
+            506,
+            -267,
+            -20,
+            10871,
+            -437,
+            193,
+            477,
+            -176
+          ],
+          [
+            -47966,
+            26355,
+            4652,
+            -1102686,
+            39998,
+            -17839,
+            -43572,
+            15965
+          ]
+        ],
+        "denominator_value_ranges": [
+          [
+            1,
+            14
+          ],
+          [
+            99,
+            1315
+          ]
+        ],
+        "minimum_signed_cleared_score": 564,
+        "fixed_factor_normalized_margin": 0.0027767509427756992
+      }
+    }
+  ],
+  "survivor_masks_ranked": []
+}

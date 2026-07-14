@@ -134,7 +134,7 @@ The key structural fact is that $N(a,b)$ and $D(a,b)$ each split into an $a$-onl
 
 $\qquad N(a,b) = \underbrace{\sigma_a v_a}&#95;{a\text{-only}}+\underbrace{\sigma_b v_b}&#95;{b\text{-only}}+\underbrace{\sigma&#95;= v&#95;=}&#95;{\text{const}}, \qquad D(a,b)=\underbrace{\sigma_a}&#95;{a\text{-only}}+\underbrace{\sigma_b}&#95;{b\text{-only}}+\underbrace{\sigma&#95;=}&#95;{\text{const}}.$
 
-Because of this, summing over the main diagonal $\lbrace(0,0),(1,1)\rbrace$ versus the off-diagonal $\lbrace(0,1),(1,0)\rbrace$ yields identical totals — in both cases you collect exactly one copy each of the $a{=}0$ and $a{=}1$ contributions, and one copy each of the $b{=}0$ and $b{=}1$ contributions. This gives the **key identities**:  
+Because of this, summing over the main diagonal $\lbrace(0,0),(1,1)\rbrace$ versus the off-diagonal $\lbrace(0,1),(1,0)\rbrace$ yields identical totals. In both cases you collect exactly one copy each of the $a{=}0$ and $a{=}1$ contributions, and one copy each of the $b{=}0$ and $b{=}1$ contributions. This gives the **key identities**:
   
 $\qquad N(0,0)+N(1,1) = N(0,1)+N(1,0) = \mathcal{N},$
 
@@ -235,10 +235,12 @@ In a single-layer, attention-only model with a linear readout from the query pos
 
 Together, these establish that two attention heads are necessary and sufficient to compute XOR with a logistic regression probe.
 
+The broader theory now also gives an explicit counterexample to equality between threshold degree and head complexity. For $x,y\in\lbrace0,1\rbrace^4$, let $f_8(x,y)=1$ exactly when the Hamming distance between $x$ and $y$ is at least $2$. Then $\deg_{\pm}(f_8)=2$ but $H^{\ast}(f_8)=3$. The [full proof](lemmas/06_strict_separations/189_eight_bit_hamming_threshold_strict_separation.md) shows that the least possible strict-separation dimension is currently between $5$ and $8$.
+
 **Open questions.** A few natural directions this raises:
 
-*   ***Parity on*** $n$ ***bits:*** How does the minimum number of heads scale with input length?
-*   ***Wider implications:*** *The geometric constraint is not specific to XOR or binary inputs: for any two token values* $A \neq B$*, a single attention head cannot linearly separate "same" inputs* $\lbrace(A,A),(B,B)\rbrace$ *from "mixed" inputs* $\lbrace(A,B),(B,A)\rbrace$*. This is a purely structural consequence of the weighted-average form of attention, independent of dimension or parameters. Where else does this diagonal-vs-off-diagonal bottleneck limit single-head expressivity?*
+- **Parity on $n$ bits:** How does the minimum number of heads scale with input length?
+- **Wider implications:** The geometric constraint is not specific to XOR or binary inputs: for any two token values $A \neq B$, a single attention head cannot linearly separate "same" inputs $\lbrace(A,A),(B,B)\rbrace$ from "mixed" inputs $\lbrace(A,B),(B,A)\rbrace$. This is a purely structural consequence of the weighted-average form of attention, independent of dimension or parameters. Where else does this diagonal-vs-off-diagonal bottleneck limit single-head expressivity?
 
 [^s2t3zpf12v]: \(\begin{aligned} \text{OR}(a,b) &= \max(a,b) \\ \text{AND}(a,b) &= \min(a,b) \\ \text{XOR}(a,b) &= (a + b) \mod 2 \end{aligned}\)XOR is denoted by \(\oplus\) in equations. 
 

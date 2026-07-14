@@ -36,10 +36,26 @@ dependency order between them, in [`lemmas.md`](lemmas.md).
   $H^{\ast}(f) \geq 2$. One head can never separate the two diagonals.
 - *Threshold-degree bound.* Head complexity dominates threshold degree:
   $\deg_{\pm}(f) \leq H^{\ast}(f)$.
-- *The bound can be strict.* An explicit Paley-Hadamard bilinear threshold on $76$ variables has
-  $\deg_{\pm}(f)=2$ but $H^{\ast}(f)\geq3$. The proof uses a two-block singleton slice:
-  two heads force sign-rank at most six, while the Paley-Hadamard slice has sign-rank at
-  least seven. See [`180_paley_hadamard_strict_separation.md`](lemmas/06_strict_separations/180_paley_hadamard_strict_separation.md).
+- *The bound can be strict.* For $x,y\in\lbrace0,1\rbrace^4$, the explicit eight-bit
+  Hamming threshold $f_8(x,y)=\mathbf{1}[\Delta(x,y)\geq2]$ has
+  $\deg_{\pm}(f_8)=2$ but $H^{\ast}(f_8)=3$. Its shell transitions force a
+  four-dimensional column-max spectral inequality that no cleared two-head score can
+  satisfy. See
+  [`189_eight_bit_hamming_threshold_strict_separation.md`](lemmas/06_strict_separations/189_eight_bit_hamming_threshold_strict_separation.md).
+  An earlier $12$-bit example is the Hamming threshold
+  $\mathbf{1}[\Delta(x,y)\geq3]$ from
+  [`182_hamming_threshold_strict_separation.md`](lemmas/06_strict_separations/182_hamming_threshold_strict_separation.md).
+  An exact integer certificate also proves equality $H^{\ast}(f)=\deg_{\pm}(f)$ for every
+  function on at most four bits. See
+  [`183_small_dimension_exact_classification.md`](lemmas/06_strict_separations/183_small_dimension_exact_classification.md).
+  An exhaustive cocircuit and tangent-tope certificate proves that every five-bit
+  function of threshold degree two has head complexity exactly two. See
+  [`187_five_bit_degree_two_exact.md`](lemmas/06_strict_separations/187_five_bit_degree_two_exact.md).
+  A second exact classification eliminates all five-bit functions of threshold degree four:
+  each has exactly four-head complexity. See
+  [`186_five_bit_degree_four_exact.md`](lemmas/06_strict_separations/186_five_bit_degree_four_exact.md).
+  Thus the least separation dimension is currently between $5$ and $8$, and any
+  five-bit separation must have threshold degree three.
 
 **Upper bounds (a function needs few heads).**
 - *Symmetric thresholds need one head.* Every $T_{n,t}(x) = \mathbf{1}[ |x| \geq t ]$ is
@@ -56,7 +72,7 @@ dependency order between them, in [`lemmas.md`](lemmas.md).
   while parity and the internal exact-count predicates $\mathrm{EXACT}_{n,k}$ need at
   least $2$.
 - *A geometric non-equivalence.* The affine cut-cell formulation is already different
-  for $\mathrm{XOR}_3$: it needs four plane cuts, while $H^{\ast}(\mathrm{XOR}_3)=3$.
+  for $\mathrm{XOR}&#95;3$: it needs four plane cuts, while $H^{\ast}(\mathrm{XOR}&#95;3)=3$.
   See [`artifacts/calculations/cut_cell_counterexample.md`](artifacts/calculations/cut_cell_counterexample.md).
 
 Taken together this is a *partial* characterization, not yet a single invariant
@@ -66,8 +82,8 @@ $I(f)$ with $H^{\ast}(f) \asymp I(f)$. Closing that gap is the main open problem
 
 - Find an invariant that pins down $H^{\ast}(f)$ on broad classes, or a family where head
   complexity behaves qualitatively unlike the classical measures.
-- Determine the smallest input dimension admitting $\deg_{\pm}(f)<H^{\ast}(f)$, and find
-  smaller or more natural strict-separation families.
+- Close the remaining gap for the smallest strict-separation dimension, currently known
+  to lie between $5$ and $8$.
 - Quantify the gap between threshold degree and head complexity beyond the first explicit
   separation.
 - Push the formalization in [`head-complexity/`](head-complexity/) to cover more of the

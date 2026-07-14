@@ -1,0 +1,118 @@
+{
+  "found": true,
+  "dimension": 8,
+  "truth_mask_hex": "0x808000000000000088000000a000c000e880",
+  "restart": 0,
+  "oriented_rounding_scale": 10,
+  "free_rounding_scale": 10,
+  "orientation": -1,
+  "one_factor_form": {
+    "oriented_factor": [
+      18,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "free_factor": [
+      2,
+      0,
+      -3,
+      0,
+      1,
+      10,
+      -1,
+      0,
+      -1
+    ],
+    "absorbed_numerators": [
+      [
+        -607,
+        -144,
+        461,
+        66,
+        377,
+        -41,
+        64,
+        -22,
+        -374
+      ],
+      [
+        -137,
+        98,
+        10,
+        58,
+        100,
+        -201,
+        -72,
+        -59,
+        -104
+      ]
+    ]
+  },
+  "admissible_shift": 11,
+  "denominators": [
+    [
+      18,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    [
+      200,
+      -11,
+      -14,
+      -11,
+      -10,
+      -1,
+      -12,
+      -11,
+      -12
+    ]
+  ],
+  "numerators": [
+    [
+      -607,
+      -144,
+      461,
+      66,
+      377,
+      -41,
+      64,
+      -22,
+      -374
+    ],
+    [
+      6540,
+      1682,
+      -5061,
+      -668,
+      -4047,
+      250,
+      -776,
+      183,
+      4010
+    ]
+  ],
+  "denominator_value_ranges": [
+    [
+      10,
+      18
+    ],
+    [
+      118,
+      200
+    ]
+  ],
+  "minimum_signed_cleared_score": 144,
+  "fixed_factor_normalized_margin": 0.005289431812094431
+}

@@ -1,0 +1,32 @@
+{
+  "found": false,
+  "dimension": 7,
+  "truth_mask_hex": "0x3351c040faff01010341cfd5efff",
+  "support_pair": [
+    0,
+    2
+  ],
+  "weight_grid": [
+    2,
+    3,
+    5,
+    10,
+    30,
+    100,
+    300,
+    1000,
+    10000
+  ],
+  "denominators_per_class": [
+    2,
+    3402
+  ],
+  "tested_pairs": 6804,
+  "orientation_pair_counts": {
+    "-1,-1": 1701,
+    "-1,1": 3402,
+    "1,1": 1701
+  },
+  "elapsed_seconds": 3.5111820697784424,
+  "warning": "A finite-grid search failure is not an H2 lower bound."
+}

@@ -1,0 +1,186 @@
+{
+  "status": "Refuted as a strict-separation candidate by an exact two-head certificate.",
+  "input_convention": "Vertex index is x1 + 2*x2 + 4*x3 + 8*x4 + 16*x5.",
+  "truth_table": {
+    "mask_hex": "0x99c105ad",
+    "positive_vertex_indices": [
+      0,
+      2,
+      3,
+      5,
+      7,
+      8,
+      10,
+      16,
+      22,
+      23,
+      24,
+      27,
+      28,
+      31
+    ]
+  },
+  "degree_two_certificate": {
+    "basis": [
+      "1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x1*x2",
+      "x1*x3",
+      "x1*x4",
+      "x1*x5",
+      "x2*x3",
+      "x2*x4",
+      "x2*x5",
+      "x3*x4",
+      "x3*x5",
+      "x4*x5"
+    ],
+    "coefficients": [
+      281,
+      -290,
+      -171,
+      -290,
+      68,
+      -273,
+      341,
+      307,
+      -68,
+      34,
+      171,
+      -171,
+      68,
+      -188,
+      222,
+      188
+    ],
+    "affine_non_ltf_gordan_dual": [
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      0,
+      0,
+      5,
+      0,
+      0,
+      1,
+      4,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "failed_search_diagnostics": {
+    "initial_valid_denominator_trials": 5000,
+    "continuous_optimization": {
+      "found": false,
+      "method": "continuous-denominator-optimization",
+      "seed": 20267713,
+      "orientation_pairs_tested": [
+        [1, 1],
+        [1, -1],
+        [-1, 1],
+        [-1, -1]
+      ],
+      "max_iterations_per_orientation_pair": 500,
+      "population_multiplier": 8,
+      "best_normalized_margin": 4.659662782254003e-08,
+      "best_log_weights": [
+        -5.5882622832654345,
+        -4.496337894562203,
+        -5.194336345824038,
+        -7.894971207684636,
+        6.417285910204308,
+        -3.032603375514144,
+        -6.291432309483787,
+        -7.115220282549139,
+        -7.747187239968532,
+        7.081181826014527
+      ],
+      "best_orientations": [1, -1],
+      "integer_rationalization_scales_tested": [
+        100,
+        1000,
+        10000,
+        100000,
+        1000000
+      ],
+      "big_integer_rationalization_scales_tested": [
+        100000000,
+        10000000000,
+        1000000000000,
+        100000000000000
+      ],
+      "exact_rationalizations_found": 0
+    }
+  },
+  "exact_two_head_certificate": {
+    "method": "orientation-cycle-random-search",
+    "seed": 77,
+    "zero_based_trial": 3172,
+    "orientations": [1, 1],
+    "denominators": [
+      [32, 14, 17, 3, 31, 21],
+      [12, 30, 23, 4, 15, 32]
+    ],
+    "cleared_score_basis": [
+      "B1*B2",
+      "B2",
+      "x1*B2",
+      "x2*B2",
+      "x3*B2",
+      "x4*B2",
+      "x5*B2",
+      "B1",
+      "x1*B1",
+      "x2*B1",
+      "x3*B1",
+      "x4*B1",
+      "x5*B1"
+    ],
+    "cleared_score_coefficients": [
+      493,
+      -51722,
+      40002,
+      47095,
+      51722,
+      10922,
+      -23381,
+      38939,
+      -50840,
+      -51722,
+      -47043,
+      -15708,
+      1860
+    ],
+    "denominator_value_ranges_on_cube": [
+      [32, 118],
+      [12, 116]
+    ],
+    "minimum_signed_cleared_score": 7267,
+    "maximum_signed_cleared_score": 1301185,
+    "floating_search_margin": 0.1459078261849207
+  }
+}

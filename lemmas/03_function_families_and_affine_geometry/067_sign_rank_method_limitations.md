@@ -1,4 +1,4 @@
-# Sign-Rank Method Limitations
+# Degree-Based Partition Sign-Rank Limitations
 
 ## Statement
 
@@ -6,7 +6,7 @@ Let
 
 $$ f:\lbrace0,1\rbrace^n\to\lbrace0,1\rbrace. $$
 
-The partition sign-rank lower-bound route from [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md) can certify
+The degree-based partition sign-rank lower-bound route from [028_restrictions_and_sign_rank.md](../02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md) can certify
 
 $$ H^{\ast}(f)\geq h+1 $$
 
@@ -20,7 +20,7 @@ $$ H^{\ast}(f)\geq3 $$
 
 for any Boolean function on at most $13$ input bits.
 
-> **Interpretation.** The sign-rank lower-bound route is asymptotic and communication-flavored. It is not strong enough to separate two heads from three heads on small input dimensions, including the four-pair endpoint functions on eight bits.
+> **Interpretation.** Treating the cleared score as an arbitrary polynomial of degree at most the head count loses substantial structure. This degree-only rank bound cannot separate two heads from three below fourteen bits. It does not limit sharper factorizations of actual cleared head scores.
 
 ## Proof
 
@@ -62,6 +62,6 @@ Thus no partition sign-rank argument of the form in [028_restrictions_and_sign_r
 
 ## Consequence
 
-The four-pair endpoint families $\mathrm{INT}&#95;4$, $\mathrm{DISJ}&#95;4$, $\mathrm{SUB}&#95;4$, $\mathrm{NCON}&#95;4$, $\mathrm{EQ}&#95;4$, and $\mathrm{NEQ}&#95;4$ live on eight input bits. Partition sign-rank cannot distinguish two heads from three heads for any eight-bit function, regardless of the partition.
+The four-pair endpoint families $\mathrm{INT}&#95;4$, $\mathrm{DISJ}&#95;4$, $\mathrm{SUB}&#95;4$, $\mathrm{NCON}&#95;4$, $\mathrm{EQ}&#95;4$, and $\mathrm{NEQ}&#95;4$ live on eight input bits. The degree-based rank bound cannot distinguish two heads from three heads for any eight-bit function, regardless of the partition.
 
-For proving that a specific eight-bit function needs at least three heads, one must use a lower-bound mechanism stronger than the current threshold-degree and partition sign-rank tools.
+This is not a limitation of partition sign-rank itself. [182_hamming_threshold_strict_separation.md](../06_strict_separations/182_hamming_threshold_strict_separation.md) uses the exact two-head cleared-score factorization to prove partition sign-rank at most $6$, then gives a twelve-bit partition matrix with sign-rank at least $7$.

@@ -1,0 +1,1958 @@
+{
+  "status": "MILP outcomes are numerical search evidence.  Exact degree-two and H2 successes are integer-verified.",
+  "n": 5,
+  "parameters": {
+    "initial_dictionary_size": 64,
+    "coefficient_bound": 10000.0,
+    "time_limit": 300.0,
+    "orientation_trials": 100000
+  },
+  "final_dictionary": [
+    [
+      [
+        26,
+        18,
+        26,
+        32,
+        11,
+        8
+      ],
+      [
+        110,
+        -23,
+        -28,
+        -1,
+        -10,
+        -26
+      ]
+    ],
+    [
+      [
+        112,
+        -26,
+        -15,
+        -15,
+        -23,
+        -7
+      ],
+      [
+        114,
+        -24,
+        -32,
+        -5,
+        -6,
+        -16
+      ]
+    ],
+    [
+      [
+        104,
+        -16,
+        -15,
+        -12,
+        -32,
+        -8
+      ],
+      [
+        109,
+        -10,
+        -28,
+        -9,
+        -15,
+        -15
+      ]
+    ],
+    [
+      [
+        32,
+        6,
+        2,
+        26,
+        13,
+        5
+      ],
+      [
+        60,
+        -2,
+        -4,
+        -8,
+        -14,
+        -11
+      ]
+    ],
+    [
+      [
+        26,
+        13,
+        13,
+        10,
+        21,
+        15
+      ],
+      [
+        113,
+        -28,
+        -20,
+        -10,
+        -16,
+        -29
+      ]
+    ],
+    [
+      [
+        9,
+        11,
+        1,
+        10,
+        15,
+        25
+      ],
+      [
+        112,
+        -10,
+        -32,
+        -13,
+        -13,
+        -19
+      ]
+    ],
+    [
+      [
+        26,
+        4,
+        22,
+        6,
+        27,
+        16
+      ],
+      [
+        101,
+        -22,
+        -9,
+        -10,
+        -31,
+        -5
+      ]
+    ],
+    [
+      [
+        103,
+        -3,
+        -27,
+        -30,
+        -16,
+        -4
+      ],
+      [
+        119,
+        -19,
+        -32,
+        -14,
+        -9,
+        -26
+      ]
+    ],
+    [
+      [
+        30,
+        15,
+        18,
+        15,
+        10,
+        31
+      ],
+      [
+        62,
+        -3,
+        -25,
+        -21,
+        -4,
+        -3
+      ]
+    ],
+    [
+      [
+        87,
+        -18,
+        -2,
+        -4,
+        -16,
+        -17
+      ],
+      [
+        94,
+        -7,
+        -6,
+        -30,
+        -26,
+        -7
+      ]
+    ],
+    [
+      [
+        92,
+        -19,
+        -15,
+        -2,
+        -14,
+        -13
+      ],
+      [
+        111,
+        -18,
+        -23,
+        -12,
+        -20,
+        -17
+      ]
+    ],
+    [
+      [
+        30,
+        23,
+        19,
+        5,
+        6,
+        12
+      ],
+      [
+        81,
+        -3,
+        -4,
+        -30,
+        -6,
+        -26
+      ]
+    ],
+    [
+      [
+        26,
+        12,
+        30,
+        8,
+        8,
+        19
+      ],
+      [
+        29,
+        12,
+        30,
+        16,
+        29,
+        17
+      ]
+    ],
+    [
+      [
+        19,
+        17,
+        30,
+        28,
+        13,
+        28
+      ],
+      [
+        102,
+        -7,
+        -21,
+        -30,
+        -2,
+        -20
+      ]
+    ],
+    [
+      [
+        23,
+        28,
+        18,
+        13,
+        8,
+        25
+      ],
+      [
+        29,
+        31,
+        20,
+        30,
+        32,
+        18
+      ]
+    ],
+    [
+      [
+        22,
+        11,
+        18,
+        9,
+        9,
+        14
+      ],
+      [
+        31,
+        15,
+        9,
+        19,
+        30,
+        15
+      ]
+    ],
+    [
+      [
+        17,
+        6,
+        17,
+        28,
+        5,
+        11
+      ],
+      [
+        26,
+        14,
+        29,
+        32,
+        3,
+        19
+      ]
+    ],
+    [
+      [
+        90,
+        -19,
+        -4,
+        -13,
+        -7,
+        -20
+      ],
+      [
+        108,
+        -14,
+        -18,
+        -20,
+        -28,
+        -5
+      ]
+    ],
+    [
+      [
+        114,
+        -16,
+        -31,
+        -10,
+        -27,
+        -8
+      ],
+      [
+        129,
+        -5,
+        -25,
+        -15,
+        -25,
+        -29
+      ]
+    ],
+    [
+      [
+        84,
+        -18,
+        -5,
+        -3,
+        -27,
+        -13
+      ],
+      [
+        97,
+        -14,
+        -10,
+        -20,
+        -10,
+        -29
+      ]
+    ],
+    [
+      [
+        10,
+        22,
+        15,
+        16,
+        28,
+        27
+      ],
+      [
+        101,
+        -32,
+        -26,
+        -14,
+        -22,
+        -3
+      ]
+    ],
+    [
+      [
+        105,
+        -27,
+        -6,
+        -32,
+        -6,
+        -9
+      ],
+      [
+        120,
+        -32,
+        -17,
+        -15,
+        -32,
+        -2
+      ]
+    ],
+    [
+      [
+        24,
+        7,
+        7,
+        13,
+        30,
+        10
+      ],
+      [
+        25,
+        21,
+        3,
+        32,
+        6,
+        21
+      ]
+    ],
+    [
+      [
+        88,
+        -17,
+        -8,
+        -11,
+        -12,
+        -20
+      ],
+      [
+        125,
+        -15,
+        -24,
+        -28,
+        -4,
+        -27
+      ]
+    ],
+    [
+      [
+        74,
+        -5,
+        -15,
+        -18,
+        -2,
+        -3
+      ],
+      [
+        90,
+        -30,
+        -3,
+        -9,
+        -17,
+        -1
+      ]
+    ],
+    [
+      [
+        28,
+        18,
+        1,
+        2,
+        16,
+        9
+      ],
+      [
+        29,
+        16,
+        21,
+        29,
+        12,
+        26
+      ]
+    ],
+    [
+      [
+        19,
+        1,
+        18,
+        4,
+        6,
+        14
+      ],
+      [
+        27,
+        13,
+        26,
+        25,
+        1,
+        16
+      ]
+    ],
+    [
+      [
+        76,
+        -19,
+        -15,
+        -23,
+        -3,
+        -2
+      ],
+      [
+        117,
+        -13,
+        -4,
+        -27,
+        -24,
+        -29
+      ]
+    ],
+    [
+      [
+        18,
+        7,
+        9,
+        27,
+        17,
+        1
+      ],
+      [
+        91,
+        -3,
+        -7,
+        -29,
+        -20,
+        -5
+      ]
+    ],
+    [
+      [
+        94,
+        -13,
+        -20,
+        -22,
+        -14,
+        -3
+      ],
+      [
+        97,
+        -25,
+        -22,
+        -8,
+        -11,
+        -7
+      ]
+    ],
+    [
+      [
+        8,
+        23,
+        2,
+        27,
+        23,
+        13
+      ],
+      [
+        9,
+        13,
+        16,
+        2,
+        4,
+        32
+      ]
+    ],
+    [
+      [
+        8,
+        8,
+        17,
+        3,
+        2,
+        6
+      ],
+      [
+        14,
+        20,
+        2,
+        15,
+        16,
+        1
+      ]
+    ],
+    [
+      [
+        122,
+        -20,
+        -4,
+        -17,
+        -27,
+        -23
+      ],
+      [
+        124,
+        -31,
+        -13,
+        -23,
+        -14,
+        -22
+      ]
+    ],
+    [
+      [
+        75,
+        -19,
+        -21,
+        -6,
+        -1,
+        -10
+      ],
+      [
+        101,
+        -12,
+        -19,
+        -30,
+        -18,
+        -5
+      ]
+    ],
+    [
+      [
+        69,
+        -13,
+        -6,
+        -8,
+        -4,
+        -10
+      ],
+      [
+        105,
+        -17,
+        -14,
+        -24,
+        -10,
+        -10
+      ]
+    ],
+    [
+      [
+        73,
+        -10,
+        -5,
+        -13,
+        -19,
+        -10
+      ],
+      [
+        79,
+        -1,
+        -8,
+        -32,
+        -7,
+        -1
+      ]
+    ],
+    [
+      [
+        108,
+        -14,
+        -29,
+        -11,
+        -8,
+        -14
+      ],
+      [
+        126,
+        -23,
+        -29,
+        -4,
+        -19,
+        -24
+      ]
+    ],
+    [
+      [
+        107,
+        -25,
+        -10,
+        -28,
+        -14,
+        -2
+      ],
+      [
+        123,
+        -17,
+        -28,
+        -23,
+        -29,
+        -16
+      ]
+    ],
+    [
+      [
+        28,
+        31,
+        22,
+        2,
+        1,
+        16
+      ],
+      [
+        109,
+        -30,
+        -24,
+        -5,
+        -28,
+        -13
+      ]
+    ],
+    [
+      [
+        28,
+        3,
+        19,
+        8,
+        29,
+        3
+      ],
+      [
+        94,
+        -12,
+        -22,
+        -4,
+        -17,
+        -26
+      ]
+    ],
+    [
+      [
+        107,
+        -2,
+        -28,
+        -15,
+        -7,
+        -31
+      ],
+      [
+        124,
+        -17,
+        -16,
+        -27,
+        -13,
+        -24
+      ]
+    ],
+    [
+      [
+        94,
+        -19,
+        -10,
+        -15,
+        -15,
+        -9
+      ],
+      [
+        130,
+        -32,
+        -23,
+        -12,
+        -31,
+        -6
+      ]
+    ],
+    [
+      [
+        25,
+        13,
+        1,
+        16,
+        17,
+        19
+      ],
+      [
+        28,
+        23,
+        24,
+        2,
+        3,
+        25
+      ]
+    ],
+    [
+      [
+        12,
+        21,
+        4,
+        20,
+        4,
+        24
+      ],
+      [
+        29,
+        11,
+        2,
+        5,
+        26,
+        2
+      ]
+    ],
+    [
+      [
+        77,
+        -22,
+        -17,
+        -9,
+        -8,
+        -3
+      ],
+      [
+        97,
+        -1,
+        -7,
+        -26,
+        -24,
+        -23
+      ]
+    ],
+    [
+      [
+        95,
+        -26,
+        -2,
+        -11,
+        -4,
+        -20
+      ],
+      [
+        102,
+        -8,
+        -21,
+        -28,
+        -10,
+        -22
+      ]
+    ],
+    [
+      [
+        101,
+        -4,
+        -24,
+        -15,
+        -16,
+        -23
+      ],
+      [
+        127,
+        -25,
+        -29,
+        -7,
+        -22,
+        -18
+      ]
+    ],
+    [
+      [
+        51,
+        -3,
+        -9,
+        -7,
+        -2,
+        -21
+      ],
+      [
+        109,
+        -12,
+        -11,
+        -27,
+        -14,
+        -13
+      ]
+    ],
+    [
+      [
+        72,
+        -26,
+        -1,
+        -18,
+        -15,
+        -2
+      ],
+      [
+        97,
+        -6,
+        -28,
+        -11,
+        -30,
+        -12
+      ]
+    ],
+    [
+      [
+        16,
+        17,
+        23,
+        29,
+        27,
+        18
+      ],
+      [
+        30,
+        8,
+        15,
+        3,
+        11,
+        23
+      ]
+    ],
+    [
+      [
+        17,
+        4,
+        15,
+        2,
+        29,
+        11
+      ],
+      [
+        22,
+        25,
+        21,
+        9,
+        19,
+        30
+      ]
+    ],
+    [
+      [
+        13,
+        20,
+        9,
+        4,
+        18,
+        12
+      ],
+      [
+        57,
+        -4,
+        -30,
+        -2,
+        -1,
+        -4
+      ]
+    ],
+    [
+      [
+        104,
+        -28,
+        -6,
+        -7,
+        -17,
+        -26
+      ],
+      [
+        125,
+        -15,
+        -19,
+        -23,
+        -28,
+        -13
+      ]
+    ],
+    [
+      [
+        49,
+        -4,
+        -12,
+        -2,
+        -17,
+        -5
+      ],
+      [
+        113,
+        -23,
+        -17,
+        -4,
+        -15,
+        -31
+      ]
+    ],
+    [
+      [
+        20,
+        28,
+        19,
+        1,
+        5,
+        16
+      ],
+      [
+        23,
+        13,
+        12,
+        23,
+        10,
+        17
+      ]
+    ],
+    [
+      [
+        100,
+        -4,
+        -27,
+        -20,
+        -17,
+        -16
+      ],
+      [
+        108,
+        -15,
+        -28,
+        -30,
+        -13,
+        -3
+      ]
+    ],
+    [
+      [
+        59,
+        -11,
+        -5,
+        -10,
+        -3,
+        -7
+      ],
+      [
+        127,
+        -30,
+        -30,
+        -20,
+        -14,
+        -9
+      ]
+    ],
+    [
+      [
+        121,
+        -14,
+        -27,
+        -4,
+        -20,
+        -29
+      ],
+      [
+        125,
+        -23,
+        -15,
+        -26,
+        -29,
+        -1
+      ]
+    ],
+    [
+      [
+        17,
+        23,
+        2,
+        22,
+        4,
+        7
+      ],
+      [
+        22,
+        15,
+        27,
+        10,
+        7,
+        22
+      ]
+    ],
+    [
+      [
+        17,
+        22,
+        6,
+        16,
+        32,
+        22
+      ],
+      [
+        19,
+        22,
+        14,
+        7,
+        1,
+        6
+      ]
+    ],
+    [
+      [
+        80,
+        -4,
+        -22,
+        -4,
+        -5,
+        -13
+      ],
+      [
+        111,
+        -26,
+        -18,
+        -18,
+        -19,
+        -19
+      ]
+    ],
+    [
+      [
+        30,
+        -8,
+        -2,
+        -6,
+        -1,
+        -8
+      ],
+      [
+        108,
+        -16,
+        -28,
+        -10,
+        -29,
+        -11
+      ]
+    ],
+    [
+      [
+        77,
+        -13,
+        -8,
+        -11,
+        -4,
+        -32
+      ],
+      [
+        99,
+        -21,
+        -9,
+        -4,
+        -29,
+        -15
+      ]
+    ],
+    [
+      [
+        82,
+        -6,
+        -16,
+        -23,
+        -4,
+        -18
+      ],
+      [
+        135,
+        -31,
+        -29,
+        -27,
+        -25,
+        -8
+      ]
+    ],
+    [
+      [
+        1,
+        7,
+        17,
+        10,
+        14,
+        40
+      ],
+      [
+        1,
+        51,
+        23,
+        51,
+        18,
+        22
+      ]
+    ],
+    [
+      [
+        1,
+        2,
+        22,
+        1,
+        21,
+        2
+      ],
+      [
+        1,
+        63,
+        34,
+        13,
+        62,
+        60
+      ]
+    ],
+    [
+      [
+        163,
+        -2,
+        -59,
+        -55,
+        -33,
+        -13
+      ],
+      [
+        182,
+        -58,
+        -50,
+        -8,
+        -2,
+        -63
+      ]
+    ],
+    [
+      [
+        139,
+        -43,
+        -42,
+        -7,
+        -20,
+        -26
+      ],
+      [
+        173,
+        -34,
+        -37,
+        -46,
+        -41,
+        -14
+      ]
+    ],
+    [
+      [
+        147,
+        -22,
+        -38,
+        -23,
+        -51,
+        -12
+      ],
+      [
+        175,
+        -20,
+        -56,
+        -55,
+        -38,
+        -5
+      ]
+    ],
+    [
+      [
+        214,
+        -35,
+        -59,
+        -64,
+        -48,
+        -7
+      ],
+      [
+        229,
+        -64,
+        -35,
+        -44,
+        -21,
+        -64
+      ]
+    ],
+    [
+      [
+        1,
+        27,
+        6,
+        60,
+        33,
+        23
+      ],
+      [
+        1,
+        59,
+        59,
+        11,
+        64,
+        39
+      ]
+    ],
+    [
+      [
+        141,
+        -33,
+        -23,
+        -18,
+        -58,
+        -8
+      ],
+      [
+        164,
+        -40,
+        -10,
+        -32,
+        -52,
+        -29
+      ]
+    ]
+  ],
+  "records": [
+    {
+      "iteration": 1,
+      "milp_status": 0,
+      "milp_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "dictionary_size": 64,
+      "model": {
+        "vertices": 32,
+        "degree_dimension": 16,
+        "truth_start": 0,
+        "coefficient_start": 32,
+        "circuit_start": 48,
+        "variables": 4144,
+        "constraints": 4896
+      },
+      "truth_mask_hex": "0x2f55fa3c",
+      "exact_degree_two": true,
+      "exact_fixed_dictionary_hits": [],
+      "exact_fixed_dictionary_hit_count": 0,
+      "degree_two_coefficients": [
+        -9,
+        0,
+        33,
+        17,
+        0,
+        84,
+        -16,
+        16,
+        119,
+        -118,
+        -50,
+        -33,
+        17,
+        50,
+        -84,
+        -67
+      ],
+      "orientation_cycle_search": {
+        "found": true,
+        "method": "orientation-cycle-random-search",
+        "trial": 52,
+        "orientations": [
+          1,
+          1
+        ],
+        "denominators": [
+          [
+            1,
+            51,
+            23,
+            51,
+            18,
+            22
+          ],
+          [
+            1,
+            7,
+            17,
+            10,
+            14,
+            40
+          ]
+        ],
+        "cleared_score_coefficients": [
+          10798,
+          -36188,
+          -526694,
+          -244441,
+          -595027,
+          -1447043,
+          1017528,
+          17237,
+          -17181,
+          -790,
+          8012,
+          855875,
+          -842079
+        ],
+        "minimum_signed_cleared_score": 8049,
+        "floating_margin": 2.36834358027585e-05
+      }
+    },
+    {
+      "iteration": 2,
+      "milp_status": 0,
+      "milp_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "dictionary_size": 65,
+      "model": {
+        "vertices": 32,
+        "degree_dimension": 16,
+        "truth_start": 0,
+        "coefficient_start": 32,
+        "circuit_start": 48,
+        "variables": 4208,
+        "constraints": 4972
+      },
+      "truth_mask_hex": "0x2f46eebe",
+      "exact_degree_two": true,
+      "exact_fixed_dictionary_hits": [],
+      "exact_fixed_dictionary_hit_count": 0,
+      "degree_two_coefficients": [
+        -60,
+        153,
+        68,
+        68,
+        51,
+        51,
+        -153,
+        17,
+        68,
+        -136,
+        -85,
+        34,
+        68,
+        -68,
+        -102,
+        -34
+      ],
+      "orientation_cycle_search": {
+        "found": true,
+        "method": "orientation-cycle-random-search",
+        "trial": 264,
+        "orientations": [
+          1,
+          1
+        ],
+        "denominators": [
+          [
+            1,
+            2,
+            22,
+            1,
+            21,
+            2
+          ],
+          [
+            1,
+            63,
+            34,
+            13,
+            62,
+            60
+          ]
+        ],
+        "cleared_score_coefficients": [
+          1782,
+          63798,
+          -5610,
+          -81162,
+          -1347,
+          -49351,
+          -72083,
+          -175743,
+          67360,
+          149495,
+          -22152,
+          18868,
+          233313
+        ],
+        "minimum_signed_cleared_score": 5121,
+        "floating_margin": 0.00013982654561373563
+      }
+    },
+    {
+      "iteration": 3,
+      "milp_status": 0,
+      "milp_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "dictionary_size": 66,
+      "model": {
+        "vertices": 32,
+        "degree_dimension": 16,
+        "truth_start": 0,
+        "coefficient_start": 32,
+        "circuit_start": 48,
+        "variables": 4272,
+        "constraints": 5048
+      },
+      "truth_mask_hex": "0x508a0413",
+      "exact_degree_two": true,
+      "exact_fixed_dictionary_hits": [],
+      "exact_fixed_dictionary_hit_count": 0,
+      "degree_two_coefficients": [
+        72,
+        -64,
+        -81,
+        -64,
+        -81,
+        -102,
+        64,
+        -38,
+        -145,
+        102,
+        -17,
+        98,
+        51,
+        64,
+        85,
+        34
+      ],
+      "orientation_cycle_search": {
+        "found": true,
+        "method": "orientation-cycle-random-search",
+        "trial": 15,
+        "orientations": [
+          -1,
+          -1
+        ],
+        "denominators": [
+          [
+            163,
+            -2,
+            -59,
+            -55,
+            -33,
+            -13
+          ],
+          [
+            182,
+            -58,
+            -50,
+            -8,
+            -2,
+            -63
+          ]
+        ],
+        "cleared_score_coefficients": [
+          9,
+          -13742,
+          -27192,
+          6510,
+          600,
+          5490,
+          9409,
+          15374,
+          15176,
+          -7479,
+          4437,
+          -5616,
+          -17982
+        ],
+        "minimum_signed_cleared_score": 6220,
+        "floating_margin": 0.0018534814074011863
+      }
+    },
+    {
+      "iteration": 4,
+      "milp_status": 0,
+      "milp_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "dictionary_size": 67,
+      "model": {
+        "vertices": 32,
+        "degree_dimension": 16,
+        "truth_start": 0,
+        "coefficient_start": 32,
+        "circuit_start": 48,
+        "variables": 4336,
+        "constraints": 5124
+      },
+      "truth_mask_hex": "0x2ffdf9bc",
+      "exact_degree_two": true,
+      "exact_fixed_dictionary_hits": [],
+      "exact_fixed_dictionary_hit_count": 0,
+      "degree_two_coefficients": [
+        -128,
+        -85,
+        136,
+        153,
+        136,
+        187,
+        85,
+        68,
+        68,
+        17,
+        -170,
+        -153,
+        34,
+        34,
+        -204,
+        -187
+      ],
+      "orientation_cycle_search": {
+        "found": true,
+        "method": "orientation-cycle-random-search",
+        "trial": 251,
+        "orientations": [
+          -1,
+          -1
+        ],
+        "denominators": [
+          [
+            139,
+            -43,
+            -42,
+            -7,
+            -20,
+            -26
+          ],
+          [
+            173,
+            -34,
+            -37,
+            -46,
+            -41,
+            -14
+          ]
+        ],
+        "cleared_score_coefficients": [
+          -1535,
+          1804250,
+          -2702995,
+          2325125,
+          -1833324,
+          -504208,
+          2739398,
+          -2218415,
+          2827993,
+          -3147021,
+          3207431,
+          979120,
+          -3704714
+        ],
+        "minimum_signed_cleared_score": 9145,
+        "floating_margin": 1.2442771594456392e-05
+      }
+    },
+    {
+      "iteration": 5,
+      "milp_status": 0,
+      "milp_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "dictionary_size": 68,
+      "model": {
+        "vertices": 32,
+        "degree_dimension": 16,
+        "truth_start": 0,
+        "coefficient_start": 32,
+        "circuit_start": 48,
+        "variables": 4400,
+        "constraints": 5200
+      },
+      "truth_mask_hex": "0x2ff59afc",
+      "exact_degree_two": true,
+      "exact_fixed_dictionary_hits": [],
+      "exact_fixed_dictionary_hit_count": 0,
+      "degree_two_coefficients": [
+        -9,
+        -85,
+        68,
+        187,
+        0,
+        34,
+        34,
+        -34,
+        102,
+        34,
+        -17,
+        -68,
+        -85,
+        -170,
+        -119,
+        68
+      ],
+      "orientation_cycle_search": {
+        "found": true,
+        "method": "orientation-cycle-random-search",
+        "trial": 35,
+        "orientations": [
+          -1,
+          -1
+        ],
+        "denominators": [
+          [
+            175,
+            -20,
+            -56,
+            -55,
+            -38,
+            -5
+          ],
+          [
+            147,
+            -22,
+            -38,
+            -23,
+            -51,
+            -12
+          ]
+        ],
+        "cleared_score_coefficients": [
+          -212,
+          94631,
+          6871,
+          -46306,
+          154652,
+          -198569,
+          -79047,
+          -48426,
+          -12024,
+          30504,
+          -118729,
+          137628,
+          64724
+        ],
+        "minimum_signed_cleared_score": 9100,
+        "floating_margin": 0.0002955507794970835
+      }
+    },
+    {
+      "iteration": 6,
+      "milp_status": 0,
+      "milp_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "dictionary_size": 69,
+      "model": {
+        "vertices": 32,
+        "degree_dimension": 16,
+        "truth_start": 0,
+        "coefficient_start": 32,
+        "circuit_start": 48,
+        "variables": 4464,
+        "constraints": 5276
+      },
+      "truth_mask_hex": "0x10b32511",
+      "exact_degree_two": true,
+      "exact_fixed_dictionary_hits": [],
+      "exact_fixed_dictionary_hit_count": 0,
+      "degree_two_coefficients": [
+        78,
+        -119,
+        -87,
+        -70,
+        -2,
+        83,
+        68,
+        102,
+        34,
+        -34,
+        -32,
+        19,
+        -83,
+        -15,
+        102,
+        -169
+      ],
+      "orientation_cycle_search": {
+        "found": true,
+        "method": "orientation-cycle-random-search",
+        "trial": 91,
+        "orientations": [
+          -1,
+          -1
+        ],
+        "denominators": [
+          [
+            214,
+            -35,
+            -59,
+            -64,
+            -48,
+            -7
+          ],
+          [
+            229,
+            -64,
+            -35,
+            -44,
+            -21,
+            -64
+          ]
+        ],
+        "cleared_score_coefficients": [
+          137,
+          -7456,
+          17412,
+          -3852,
+          -36495,
+          32800,
+          -23188,
+          -15446,
+          -17914,
+          -8906,
+          44529,
+          -33814,
+          27468
+        ],
+        "minimum_signed_cleared_score": 17712,
+        "floating_margin": 0.0016066244469435387
+      }
+    },
+    {
+      "iteration": 7,
+      "milp_status": 0,
+      "milp_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "dictionary_size": 70,
+      "model": {
+        "vertices": 32,
+        "degree_dimension": 16,
+        "truth_start": 0,
+        "coefficient_start": 32,
+        "circuit_start": 48,
+        "variables": 4528,
+        "constraints": 5352
+      },
+      "truth_mask_hex": "0x6fa73274",
+      "exact_degree_two": true,
+      "exact_fixed_dictionary_hits": [],
+      "exact_fixed_dictionary_hit_count": 0,
+      "degree_two_coefficients": [
+        -60,
+        51,
+        68,
+        68,
+        51,
+        68,
+        -255,
+        187,
+        -34,
+        34,
+        -68,
+        -68,
+        85,
+        -51,
+        -170,
+        85
+      ],
+      "orientation_cycle_search": {
+        "found": true,
+        "method": "orientation-cycle-random-search",
+        "trial": 140,
+        "orientations": [
+          1,
+          1
+        ],
+        "denominators": [
+          [
+            1,
+            27,
+            6,
+            60,
+            33,
+            23
+          ],
+          [
+            1,
+            59,
+            59,
+            11,
+            64,
+            39
+          ]
+        ],
+        "cleared_score_coefficients": [
+          -1392,
+          277055,
+          -185958,
+          -267169,
+          -495997,
+          -97569,
+          89336,
+          -557017,
+          439277,
+          558468,
+          617098,
+          303821,
+          19321
+        ],
+        "minimum_signed_cleared_score": 15566,
+        "floating_margin": 6.967799896782922e-05
+      }
+    },
+    {
+      "iteration": 8,
+      "milp_status": 0,
+      "milp_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "dictionary_size": 71,
+      "model": {
+        "vertices": 32,
+        "degree_dimension": 16,
+        "truth_start": 0,
+        "coefficient_start": 32,
+        "circuit_start": 48,
+        "variables": 4592,
+        "constraints": 5428
+      },
+      "truth_mask_hex": "0x20878153",
+      "exact_degree_two": true,
+      "exact_fixed_dictionary_hits": [],
+      "exact_fixed_dictionary_hit_count": 0,
+      "degree_two_coefficients": [
+        213,
+        -204,
+        -221,
+        -204,
+        -204,
+        51,
+        51,
+        102,
+        102,
+        102,
+        255,
+        -68,
+        -34,
+        187,
+        -68,
+        -68
+      ],
+      "orientation_cycle_search": {
+        "found": true,
+        "method": "orientation-cycle-random-search",
+        "trial": 2679,
+        "orientations": [
+          -1,
+          -1
+        ],
+        "denominators": [
+          [
+            141,
+            -33,
+            -23,
+            -18,
+            -58,
+            -8
+          ],
+          [
+            164,
+            -40,
+            -10,
+            -32,
+            -52,
+            -29
+          ]
+        ],
+        "cleared_score_coefficients": [
+          319,
+          -50579,
+          -921,
+          -36193,
+          78963,
+          14149,
+          -80080,
+          19064,
+          6863,
+          44878,
+          -91605,
+          -5549,
+          85831
+        ],
+        "minimum_signed_cleared_score": 3429,
+        "floating_margin": 0.0004474517918255927
+      }
+    }
+  ]
+}

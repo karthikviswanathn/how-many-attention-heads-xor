@@ -1,0 +1,2844 @@
+{
+  "status": "Every success is exact.  A continuous search failure is not an H2 lower bound.",
+  "dimension": 6,
+  "source": "adversarial_n6_broad_results.json",
+  "restarts_per_orientation": 100,
+  "max_iterations": 2000,
+  "records": [
+    {
+      "truth_mask_hex": "0x000008184c0cf7df",
+      "degree_two_coefficients": [
+        173,
+        -161,
+        -161,
+        244,
+        23,
+        -207,
+        -184,
+        161,
+        -267,
+        -23,
+        -32,
+        161,
+        23,
+        -23,
+        262,
+        115,
+        23,
+        -345,
+        -221,
+        0,
+        -69,
+        -345
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x8184c0cf7df",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 12,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 30,
+        "denominators": [
+          [
+            33,
+            -1,
+            -8,
+            -9,
+            -4,
+            -1,
+            -9
+          ],
+          [
+            32,
+            -15,
+            -6,
+            -1,
+            -2,
+            -1,
+            -1
+          ]
+        ],
+        "cleared_score_coefficients": [
+          -382,
+          -17106,
+          2099,
+          7692,
+          14692,
+          4021,
+          -19930,
+          -12989,
+          39587,
+          -25071,
+          -6838,
+          -8245,
+          -2792,
+          8017,
+          11011
+        ],
+        "absorbed_numerators": [
+          [
+            -29712,
+            2481,
+            10748,
+            18130,
+            5549,
+            -19548,
+            -9551
+          ],
+          [
+            39587,
+            -25071,
+            -6838,
+            -8245,
+            -2792,
+            8017,
+            11011
+          ]
+        ],
+        "minimum_signed_cleared_score": 635,
+        "fixed_denominator_normalized_margin": 0.00013963501218998767
+      }
+    },
+    {
+      "truth_mask_hex": "0x000010184c0cf7df",
+      "degree_two_coefficients": [
+        12,
+        23,
+        46,
+        19,
+        46,
+        -65,
+        -23,
+        23,
+        -65,
+        -69,
+        19,
+        -23,
+        -23,
+        -92,
+        92,
+        -46,
+        92,
+        -92,
+        4,
+        -23,
+        -92,
+        -92
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x10184c0cf7df",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 0,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 30,
+        "denominators": [
+          [
+            35,
+            -1,
+            -1,
+            -1,
+            -19,
+            -1,
+            -11
+          ],
+          [
+            34,
+            -1,
+            -13,
+            -1,
+            -1,
+            -6,
+            -1
+          ]
+        ],
+        "cleared_score_coefficients": [
+          -693,
+          -7675,
+          -4081,
+          -9061,
+          4033,
+          1532,
+          -3906,
+          72,
+          31739,
+          2932,
+          -4901,
+          -5182,
+          9464,
+          -6974,
+          1401
+        ],
+        "absorbed_numerators": [
+          [
+            -31930,
+            -3388,
+            -8368,
+            4726,
+            14699,
+            -3213,
+            7695
+          ],
+          [
+            31739,
+            2932,
+            -4901,
+            -5182,
+            9464,
+            -6974,
+            1401
+          ]
+        ],
+        "minimum_signed_cleared_score": 578,
+        "fixed_denominator_normalized_margin": 0.0003767545387699922
+      }
+    },
+    {
+      "truth_mask_hex": "0x000010184c2cffdf",
+      "degree_two_coefficients": [
+        58,
+        -29,
+        106,
+        -27,
+        71,
+        -106,
+        -69,
+        42,
+        -13,
+        -88,
+        65,
+        19,
+        -125,
+        88,
+        -46,
+        -115,
+        79,
+        63,
+        50,
+        -149,
+        -149,
+        -149
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x10184c2cffdf",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 12,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 100,
+        "denominators": [
+          [
+            104,
+            -5,
+            -44,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            104,
+            -1,
+            -1,
+            -1,
+            -3,
+            -50,
+            -47
+          ]
+        ],
+        "cleared_score_coefficients": [
+          -28748,
+          2977741,
+          -157081,
+          -1059336,
+          -357850,
+          -585,
+          57200,
+          -102512,
+          94549,
+          12562,
+          -88100,
+          260662,
+          -24882,
+          -223223,
+          -126780
+        ],
+        "absorbed_numerators": [
+          [
+            -12051,
+            -13341,
+            205576,
+            -329102,
+            28163,
+            85948,
+            -73764
+          ],
+          [
+            94549,
+            12562,
+            -88100,
+            260662,
+            -24882,
+            -223223,
+            -126780
+          ]
+        ],
+        "minimum_signed_cleared_score": 5630,
+        "fixed_denominator_normalized_margin": 3.294808269849181e-05
+      }
+    },
+    {
+      "truth_mask_hex": "0x000010186c0cffdf",
+      "degree_two_coefficients": [
+        12,
+        0,
+        184,
+        69,
+        84,
+        -161,
+        -92,
+        -46,
+        -92,
+        -23,
+        138,
+        69,
+        -115,
+        -199,
+        153,
+        -115,
+        199,
+        -153,
+        23,
+        -61,
+        -260,
+        -260
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x10186c0cffdf",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 36,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 30,
+        "denominators": [
+          [
+            35,
+            -13,
+            -17,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            34,
+            -1,
+            -1,
+            -1,
+            -1,
+            -7,
+            -5
+          ]
+        ],
+        "cleared_score_coefficients": [
+          -3250,
+          11226,
+          -18586,
+          18515,
+          -10389,
+          -689,
+          238,
+          -9370,
+          99900,
+          20469,
+          -32616,
+          10404,
+          -1167,
+          -28403,
+          -11813
+        ],
+        "absorbed_numerators": [
+          [
+            -102524,
+            23664,
+            73765,
+            -7139,
+            2561,
+            3488,
+            -6120
+          ],
+          [
+            99900,
+            20469,
+            -32616,
+            10404,
+            -1167,
+            -28403,
+            -11813
+          ]
+        ],
+        "minimum_signed_cleared_score": 642,
+        "fixed_denominator_normalized_margin": 0.00027194371851778365
+      }
+    },
+    {
+      "truth_mask_hex": "0x000018084c2cffdf",
+      "degree_two_coefficients": [
+        29,
+        -17,
+        109,
+        -6,
+        80,
+        -81,
+        -109,
+        34,
+        -17,
+        -80,
+        57,
+        86,
+        -121,
+        80,
+        -46,
+        -121,
+        75,
+        46,
+        23,
+        -155,
+        -80,
+        -155
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x18084c2cffdf",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 36,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 30,
+        "denominators": [
+          [
+            35,
+            -3,
+            -16,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            34,
+            -1,
+            -1,
+            -1,
+            -1,
+            -15,
+            -14
+          ]
+        ],
+        "cleared_score_coefficients": [
+          -4284,
+          167435,
+          -21529,
+          -23285,
+          -68184,
+          -1811,
+          21564,
+          -27052,
+          4392,
+          5606,
+          -36102,
+          46634,
+          -2041,
+          -39940,
+          -11333
+        ],
+        "absorbed_numerators": [
+          [
+            17495,
+            -8677,
+            45259,
+            -63900,
+            2473,
+            25848,
+            -22768
+          ],
+          [
+            4392,
+            5606,
+            -36102,
+            46634,
+            -2041,
+            -39940,
+            -11333
+          ]
+        ],
+        "minimum_signed_cleared_score": 595,
+        "fixed_denominator_normalized_margin": 0.00010445796522398621
+      }
+    },
+    {
+      "truth_mask_hex": "0x000018104c0cf7df",
+      "degree_two_coefficients": [
+        173,
+        -161,
+        -92,
+        244,
+        -46,
+        -207,
+        -184,
+        92,
+        -267,
+        46,
+        14,
+        115,
+        23,
+        -23,
+        193,
+        46,
+        23,
+        -345,
+        -221,
+        69,
+        46,
+        -345
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x18104c0cf7df",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 6,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 30,
+        "denominators": [
+          [
+            33,
+            -7,
+            -1,
+            -7,
+            -1,
+            -13,
+            -3
+          ],
+          [
+            33,
+            -14,
+            -10,
+            -1,
+            -2,
+            -1,
+            -1
+          ]
+        ],
+        "cleared_score_coefficients": [
+          -56,
+          -3670,
+          -3792,
+          1576,
+          1696,
+          583,
+          -2991,
+          -2073,
+          7055,
+          -424,
+          -3954,
+          -256,
+          -776,
+          4151,
+          578
+        ],
+        "absorbed_numerators": [
+          [
+            -5518,
+            -3400,
+            1632,
+            2088,
+            639,
+            -2263,
+            -1905
+          ],
+          [
+            7055,
+            -424,
+            -3954,
+            -256,
+            -776,
+            4151,
+            578
+          ]
+        ],
+        "minimum_signed_cleared_score": 611,
+        "fixed_denominator_normalized_margin": 0.0010829157549684212
+      }
+    },
+    {
+      "truth_mask_hex": "0x000018104c2cffdf",
+      "degree_two_coefficients": [
+        12,
+        0,
+        184,
+        69,
+        184,
+        -138,
+        -108,
+        92,
+        -92,
+        -138,
+        115,
+        69,
+        -253,
+        188,
+        -46,
+        -260,
+        27,
+        46,
+        39,
+        -260,
+        -211,
+        -260
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x18104c2cffdf",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 20,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 100,
+        "denominators": [
+          [
+            105,
+            -82,
+            -18,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            103,
+            -59,
+            -1,
+            -22,
+            -1,
+            -8,
+            -1
+          ]
+        ],
+        "cleared_score_coefficients": [
+          -45565,
+          -963495,
+          964094,
+          958139,
+          -1063917,
+          297095,
+          -214590,
+          -1133110,
+          5662008,
+          -3405415,
+          -546820,
+          -195895,
+          -266176,
+          -567632,
+          652245
+        ],
+        "absorbed_numerators": [
+          [
+            -5747820,
+            4700424,
+            1778309,
+            -1018352,
+            342660,
+            -169025,
+            -1087545
+          ],
+          [
+            5662008,
+            -3405415,
+            -546820,
+            -195895,
+            -266176,
+            -567632,
+            652245
+          ]
+        ],
+        "minimum_signed_cleared_score": 5508,
+        "fixed_denominator_normalized_margin": 0.0001376928051733048
+      }
+    },
+    {
+      "truth_mask_hex": "0x000018180c0cf7df",
+      "degree_two_coefficients": [
+        127,
+        -115,
+        -115,
+        179,
+        69,
+        -179,
+        -138,
+        161,
+        -202,
+        -69,
+        18,
+        115,
+        -23,
+        -69,
+        253,
+        115,
+        69,
+        -253,
+        -156,
+        -69,
+        -69,
+        -253
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x18180c0cf7df",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 17,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 10,
+        "denominators": [
+          [
+            14,
+            -3,
+            -4,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            15,
+            -1,
+            -1,
+            -4,
+            -1,
+            -6,
+            -1
+          ]
+        ],
+        "cleared_score_coefficients": [
+          278,
+          -2219,
+          1510,
+          171,
+          93,
+          -136,
+          2226,
+          637,
+          -1340,
+          -1605,
+          451,
+          752,
+          470,
+          -1399,
+          -920
+        ],
+        "absorbed_numerators": [
+          [
+            1673,
+            676,
+            -941,
+            -185,
+            -414,
+            1948,
+            359
+          ],
+          [
+            -1340,
+            -1605,
+            451,
+            752,
+            470,
+            -1399,
+            -920
+          ]
+        ],
+        "minimum_signed_cleared_score": 112,
+        "fixed_denominator_normalized_margin": 0.001179336461445367
+      }
+    },
+    {
+      "truth_mask_hex": "0x00001818440cf7df",
+      "degree_two_coefficients": [
+        127,
+        -115,
+        -115,
+        179,
+        81,
+        -168,
+        -144,
+        173,
+        -202,
+        -81,
+        -143,
+        121,
+        -35,
+        -81,
+        253,
+        121,
+        81,
+        -253,
+        -150,
+        -58,
+        -75,
+        -253
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x1818440cf7df",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 9,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 10,
+        "denominators": [
+          [
+            14,
+            -3,
+            -4,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            14,
+            -1,
+            -4,
+            -3,
+            -1,
+            -1,
+            -3
+          ]
+        ],
+        "cleared_score_coefficients": [
+          -524,
+          18530,
+          -7522,
+          -4237,
+          -12824,
+          -2827,
+          7459,
+          12822,
+          -8115,
+          2249,
+          2354,
+          12871,
+          2405,
+          -11225,
+          -12871
+        ],
+        "absorbed_numerators": [
+          [
+            11194,
+            -5950,
+            -2141,
+            -12300,
+            -2303,
+            7983,
+            13346
+          ],
+          [
+            -8115,
+            2249,
+            2354,
+            12871,
+            2405,
+            -11225,
+            -12871
+          ]
+        ],
+        "minimum_signed_cleared_score": 104,
+        "fixed_denominator_normalized_margin": 0.00025223078882682937
+      }
+    },
+    {
+      "truth_mask_hex": "0x00001818480cf7df",
+      "degree_two_coefficients": [
+        129,
+        -117,
+        -117,
+        182,
+        44,
+        -182,
+        -140,
+        138,
+        -205,
+        -44,
+        46,
+        117,
+        2,
+        -44,
+        182,
+        90,
+        46,
+        -207,
+        -159,
+        -23,
+        -44,
+        -257
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x1818480cf7df",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 19,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 1000,
+        "denominators": [
+          [
+            1003,
+            -1,
+            -56,
+            -1,
+            -3,
+            -78,
+            -1
+          ],
+          [
+            1004,
+            -366,
+            -1,
+            -1,
+            -1,
+            -421,
+            -213
+          ]
+        ],
+        "cleared_score_coefficients": [
+          -53414282,
+          53859130707,
+          -573869411,
+          -3251150912,
+          492039258,
+          -272841558,
+          -3746436987,
+          -97495707,
+          -148439378,
+          316505040,
+          167394529,
+          -365272378,
+          74684960,
+          -316503697,
+          -93103605
+        ],
+        "absorbed_numerators": [
+          [
+            284605861,
+            -520455129,
+            -259951120,
+            545453540,
+            -112598712,
+            419877009,
+            -44081425
+          ],
+          [
+            -148439378,
+            316505040,
+            167394529,
+            -365272378,
+            74684960,
+            -316503697,
+            -93103605
+          ]
+        ],
+        "minimum_signed_cleared_score": 505496,
+        "fixed_denominator_normalized_margin": 6.296851812840862e-07
+      }
+    },
+    {
+      "truth_mask_hex": "0x00001818482cffdf",
+      "degree_two_coefficients": [
+        12,
+        0,
+        184,
+        69,
+        184,
+        -138,
+        -92,
+        -23,
+        -92,
+        -23,
+        115,
+        69,
+        -138,
+        53,
+        -46,
+        -122,
+        46,
+        46,
+        23,
+        -260,
+        -230,
+        -260
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x1818482cffdf",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 43,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 300,
+        "denominators": [
+          [
+            304,
+            -1,
+            -1,
+            -1,
+            -4,
+            -151,
+            -145
+          ],
+          [
+            303,
+            -3,
+            -52,
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        ],
+        "cleared_score_coefficients": [
+          -1988885,
+          4593052,
+          287033,
+          -5666368,
+          13702759,
+          -2232265,
+          -11757911,
+          -6466262,
+          607439426,
+          -6473384,
+          -92005344,
+          -25023604,
+          1851120,
+          3284094,
+          -6289522
+        ],
+        "absorbed_numerators": [
+          [
+            -600027988,
+            2275918,
+            -3677483,
+            15691644,
+            5723275,
+            288563724,
+            281922063
+          ],
+          [
+            607439426,
+            -6473384,
+            -92005344,
+            -25023604,
+            1851120,
+            3284094,
+            -6289522
+          ]
+        ],
+        "minimum_signed_cleared_score": 45723,
+        "fixed_denominator_normalized_margin": 1.4443543989200513e-06
+      }
+    },
+    {
+      "truth_mask_hex": "0x000018184c04f7df",
+      "degree_two_coefficients": [
+        127,
+        -115,
+        -92,
+        184,
+        0,
+        -184,
+        -138,
+        92,
+        -207,
+        0,
+        -7,
+        115,
+        23,
+        -23,
+        168,
+        46,
+        23,
+        -260,
+        -161,
+        46,
+        0,
+        -260
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x18184c04f7df",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 1,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 30,
+        "denominators": [
+          [
+            33,
+            -10,
+            -1,
+            -1,
+            -1,
+            -12,
+            -7
+          ],
+          [
+            35,
+            -1,
+            -1,
+            -1,
+            -3,
+            -1,
+            -1
+          ]
+        ],
+        "cleared_score_coefficients": [
+          -3660,
+          5029,
+          -2374,
+          26797,
+          -15242,
+          1938,
+          -23267,
+          -5754,
+          136276,
+          -15405,
+          -42697,
+          18414,
+          -13558,
+          15655,
+          -11276
+        ],
+        "absorbed_numerators": [
+          [
+            -115751,
+            34226,
+            30457,
+            -11582,
+            5598,
+            20653,
+            19866
+          ],
+          [
+            136276,
+            -15405,
+            -42697,
+            18414,
+            -13558,
+            15655,
+            -11276
+          ]
+        ],
+        "minimum_signed_cleared_score": 638,
+        "fixed_denominator_normalized_margin": 0.00030905302954680673
+      }
+    },
+    {
+      "truth_mask_hex": "0x000018184c08f7df",
+      "degree_two_coefficients": [
+        127,
+        -115,
+        -115,
+        184,
+        23,
+        -184,
+        -138,
+        115,
+        -207,
+        -23,
+        23,
+        115,
+        23,
+        -23,
+        161,
+        69,
+        23,
+        -230,
+        -161,
+        23,
+        -23,
+        -260
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x18184c08f7df",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 0,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 10,
+        "denominators": [
+          [
+            14,
+            -1,
+            -1,
+            -3,
+            -1,
+            -5,
+            -1
+          ],
+          [
+            14,
+            -3,
+            -4,
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        ],
+        "cleared_score_coefficients": [
+          8,
+          -2708,
+          -3123,
+          1386,
+          1331,
+          1058,
+          -2964,
+          -1515,
+          3277,
+          1614,
+          -2203,
+          -510,
+          -912,
+          3639,
+          656
+        ],
+        "absorbed_numerators": [
+          [
+            -2596,
+            -3131,
+            1378,
+            1307,
+            1050,
+            -3004,
+            -1523
+          ],
+          [
+            3277,
+            1614,
+            -2203,
+            -510,
+            -912,
+            3639,
+            656
+          ]
+        ],
+        "minimum_signed_cleared_score": 109,
+        "fixed_denominator_normalized_margin": 0.0010698795300561287
+      }
+    },
+    {
+      "truth_mask_hex": "0x000018184c0c6fdf",
+      "degree_two_coefficients": [
+        35,
+        207,
+        207,
+        -23,
+        -23,
+        -115,
+        -161,
+        -46,
+        -230,
+        46,
+        -293,
+        -138,
+        -138,
+        -46,
+        293,
+        -92,
+        0,
+        -270,
+        161,
+        92,
+        23,
+        -293
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x18184c0c6fdf",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 134,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 10,
+        "denominators": [
+          [
+            12,
+            -2,
+            -4,
+            -1,
+            -2,
+            -1,
+            -1
+          ],
+          [
+            12,
+            -1,
+            -1,
+            -1,
+            -2,
+            -1,
+            -4
+          ]
+        ],
+        "cleared_score_coefficients": [
+          -335,
+          -13540,
+          5723,
+          6114,
+          -16357,
+          7245,
+          5277,
+          -10530,
+          17775,
+          -3521,
+          5447,
+          15888,
+          -8056,
+          -8949,
+          -2968
+        ],
+        "absorbed_numerators": [
+          [
+            -17560,
+            6393,
+            7454,
+            -16022,
+            7915,
+            5612,
+            -10195
+          ],
+          [
+            17775,
+            -3521,
+            5447,
+            15888,
+            -8056,
+            -8949,
+            -2968
+          ]
+        ],
+        "minimum_signed_cleared_score": 80,
+        "fixed_denominator_normalized_margin": 0.0002688668065271623
+      }
+    },
+    {
+      "truth_mask_hex": "0x000018184c0c77df",
+      "degree_two_coefficients": [
+        58,
+        -46,
+        21,
+        161,
+        69,
+        -161,
+        -138,
+        92,
+        -184,
+        -69,
+        -67,
+        115,
+        -90,
+        -136,
+        228,
+        46,
+        67,
+        -228,
+        -69,
+        23,
+        0,
+        -228
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x18184c0c77df",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 10,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 30,
+        "denominators": [
+          [
+            34,
+            -10,
+            -1,
+            -1,
+            -1,
+            -13,
+            -7
+          ],
+          [
+            33,
+            -1,
+            -2,
+            -2,
+            -3,
+            -1,
+            -1
+          ]
+        ],
+        "cleared_score_coefficients": [
+          -1551,
+          -13420,
+          10581,
+          15706,
+          -15706,
+          4516,
+          -13621,
+          -3363,
+          71752,
+          -17587,
+          -22989,
+          16206,
+          -10947,
+          16341,
+          -3070
+        ],
+        "absorbed_numerators": [
+          [
+            -66154,
+            26091,
+            17257,
+            -14155,
+            6067,
+            6542,
+            7494
+          ],
+          [
+            71752,
+            -17587,
+            -22989,
+            16206,
+            -10947,
+            16341,
+            -3070
+          ]
+        ],
+        "minimum_signed_cleared_score": 575,
+        "fixed_denominator_normalized_margin": 0.0005748789165441729
+      }
+    },
+    {
+      "truth_mask_hex": "0x003121212abfafab",
+      "degree_two_coefficients": [
+        1,
+        16,
+        -4,
+        -4,
+        8,
+        16,
+        0,
+        0,
+        32,
+        -2,
+        -4,
+        -32,
+        -32,
+        0,
+        8,
+        -32,
+        -8,
+        0,
+        -8,
+        -32,
+        0,
+        -2
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x3121212abfafab",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 3,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 30,
+        "denominators": [
+          [
+            33,
+            -1,
+            -1,
+            -4,
+            -17,
+            -1,
+            -1
+          ],
+          [
+            34,
+            -10,
+            -1,
+            -1,
+            -1,
+            -8,
+            -12
+          ]
+        ],
+        "cleared_score_coefficients": [
+          -82,
+          4191,
+          1639,
+          663,
+          -2053,
+          -1565,
+          -884,
+          1595,
+          -801,
+          -15,
+          -1706,
+          841,
+          -1706,
+          1496,
+          -1249
+        ],
+        "absorbed_numerators": [
+          [
+            1485,
+            1721,
+            745,
+            -1725,
+            -171,
+            -802,
+            1677
+          ],
+          [
+            -801,
+            -15,
+            -1706,
+            841,
+            -1706,
+            1496,
+            -1249
+          ]
+        ],
+        "minimum_signed_cleared_score": 570,
+        "fixed_denominator_normalized_margin": 0.002652238581863812
+      }
+    },
+    {
+      "truth_mask_hex": "0x00f900bdbbfabbbf",
+      "degree_two_coefficients": [
+        15,
+        0,
+        -4,
+        0,
+        8,
+        -16,
+        0,
+        32,
+        8,
+        0,
+        8,
+        -16,
+        -16,
+        -32,
+        0,
+        0,
+        -8,
+        32,
+        -2,
+        0,
+        -32,
+        2
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0xf900bdbbfabbbf",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 38,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 300,
+        "denominators": [
+          [
+            305,
+            -191,
+            -1,
+            -1,
+            -1,
+            -103,
+            -1
+          ],
+          [
+            305,
+            -1,
+            -1,
+            -1,
+            -231,
+            -1,
+            -69
+          ]
+        ],
+        "cleared_score_coefficients": [
+          -113731,
+          55721513,
+          -30542856,
+          11198127,
+          10680287,
+          65139140,
+          -21041096,
+          -1930616,
+          -14738304,
+          -17303326,
+          -17079880,
+          -11846556,
+          3322447,
+          -3406822,
+          10013302
+        ],
+        "absorbed_numerators": [
+          [
+            21033558,
+            -8820235,
+            11311858,
+            10794018,
+            65252871,
+            -9326803,
+            -1816885
+          ],
+          [
+            -14738304,
+            -17303326,
+            -17079880,
+            -11846556,
+            3322447,
+            -3406822,
+            10013302
+          ]
+        ],
+        "minimum_signed_cleared_score": 46809,
+        "fixed_denominator_normalized_margin": 6.83816349037426e-05
+      }
+    },
+    {
+      "truth_mask_hex": "0x01003fef51f511ff",
+      "degree_two_coefficients": [
+        19,
+        0,
+        4,
+        16,
+        8,
+        -2,
+        -4,
+        -2,
+        0,
+        -32,
+        -32,
+        32,
+        0,
+        -32,
+        0,
+        0,
+        -16,
+        2,
+        -32,
+        2,
+        16,
+        -32
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x1003fef51f511ff",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 0,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 10,
+        "denominators": [
+          [
+            15,
+            -1,
+            -1,
+            -5,
+            -1,
+            -4,
+            -2
+          ],
+          [
+            14,
+            -1,
+            -1,
+            -1,
+            -6,
+            -1,
+            -1
+          ]
+        ],
+        "cleared_score_coefficients": [
+          223,
+          -114055,
+          45539,
+          46466,
+          106553,
+          25406,
+          -54804,
+          -128652,
+          169742,
+          -61382,
+          -62255,
+          -70563,
+          -86777,
+          36829,
+          102256
+        ],
+        "absorbed_numerators": [
+          [
+            -110710,
+            45316,
+            46243,
+            105438,
+            25183,
+            -55696,
+            -129098
+          ],
+          [
+            169742,
+            -61382,
+            -62255,
+            -70563,
+            -86777,
+            36829,
+            102256
+          ]
+        ],
+        "minimum_signed_cleared_score": 122,
+        "fixed_denominator_normalized_margin": 4.862086482863978e-05
+      }
+    },
+    {
+      "truth_mask_hex": "0x02174057ef07ff77",
+      "degree_two_coefficients": [
+        23,
+        0,
+        -2,
+        0,
+        -8,
+        0,
+        0,
+        -32,
+        -16,
+        32,
+        0,
+        -16,
+        4,
+        16,
+        0,
+        -16,
+        16,
+        -32,
+        0,
+        0,
+        -32,
+        16
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x2174057ef07ff77",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 6,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 30,
+        "denominators": [
+          [
+            33,
+            -1,
+            -2,
+            -1,
+            -18,
+            -1,
+            -9
+          ],
+          [
+            34,
+            -23,
+            -1,
+            -1,
+            -1,
+            -4,
+            -1
+          ]
+        ],
+        "cleared_score_coefficients": [
+          143,
+          -7180,
+          -8479,
+          5373,
+          1573,
+          -4408,
+          701,
+          3122,
+          12065,
+          -1830,
+          -8610,
+          -6820,
+          15643,
+          -5657,
+          -481
+        ],
+        "absorbed_numerators": [
+          [
+            -2461,
+            -8622,
+            5087,
+            1430,
+            -6982,
+            558,
+            1835
+          ],
+          [
+            12065,
+            -1830,
+            -8610,
+            -6820,
+            15643,
+            -5657,
+            -481
+          ]
+        ],
+        "minimum_signed_cleared_score": 600,
+        "fixed_denominator_normalized_margin": 0.0024985746942667395
+      }
+    },
+    {
+      "truth_mask_hex": "0x0300af8e01017bff",
+      "degree_two_coefficients": [
+        29,
+        0,
+        2,
+        0,
+        0,
+        0,
+        -32,
+        0,
+        -16,
+        2,
+        -32,
+        32,
+        4,
+        -32,
+        -32,
+        16,
+        0,
+        -32,
+        -32,
+        -2,
+        32,
+        0
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x300af8e01017bff",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 43,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 10,
+        "denominators": [
+          [
+            14,
+            -2,
+            -1,
+            -1,
+            -1,
+            -1,
+            -7
+          ],
+          [
+            15,
+            -1,
+            -6,
+            -1,
+            -1,
+            -4,
+            -1
+          ]
+        ],
+        "cleared_score_coefficients": [
+          269,
+          11611,
+          -2041,
+          9686,
+          -8489,
+          4570,
+          -524,
+          -156,
+          -12179,
+          936,
+          -3516,
+          6555,
+          -3755,
+          263,
+          -14592
+        ],
+        "absorbed_numerators": [
+          [
+            15377,
+            -2579,
+            9417,
+            -8758,
+            4301,
+            -793,
+            -2039
+          ],
+          [
+            -12179,
+            936,
+            -3516,
+            6555,
+            -3755,
+            263,
+            -14592
+          ]
+        ],
+        "minimum_signed_cleared_score": 120,
+        "fixed_denominator_normalized_margin": 0.0002882399670531017
+      }
+    },
+    {
+      "truth_mask_hex": "0x035f0b1f02103b7f",
+      "degree_two_coefficients": [
+        31,
+        4,
+        -16,
+        -2,
+        0,
+        -32,
+        8,
+        -2,
+        -16,
+        32,
+        -32,
+        -8,
+        0,
+        -32,
+        8,
+        8,
+        -16,
+        4,
+        -32,
+        0,
+        -8,
+        32
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x35f0b1f02103b7f",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 0,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 10,
+        "denominators": [
+          [
+            15,
+            -1,
+            -1,
+            -5,
+            -1,
+            -1,
+            -5
+          ],
+          [
+            15,
+            -5,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        ],
+        "cleared_score_coefficients": [
+          -3,
+          -412,
+          -494,
+          44,
+          294,
+          -494,
+          460,
+          -339,
+          861,
+          362,
+          -395,
+          -267,
+          383,
+          -923,
+          940
+        ],
+        "absorbed_numerators": [
+          [
+            -457,
+            -491,
+            47,
+            309,
+            -491,
+            463,
+            -324
+          ],
+          [
+            861,
+            362,
+            -395,
+            -267,
+            383,
+            -923,
+            940
+          ]
+        ],
+        "minimum_signed_cleared_score": 120,
+        "fixed_denominator_normalized_margin": 0.005129931806814001
+      }
+    },
+    {
+      "truth_mask_hex": "0x0b8a0b08aafb038f",
+      "degree_two_coefficients": [
+        19,
+        0,
+        -8,
+        -32,
+        -2,
+        -16,
+        -32,
+        32,
+        4,
+        -16,
+        32,
+        2,
+        4,
+        -32,
+        4,
+        8,
+        -4,
+        32,
+        -32,
+        -4,
+        32,
+        8
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0xb8a0b08aafb038f",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 5,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 10,
+        "denominators": [
+          [
+            13,
+            -1,
+            -2,
+            -1,
+            -2,
+            -3,
+            -3
+          ],
+          [
+            15,
+            -3,
+            -1,
+            -7,
+            -1,
+            -1,
+            -1
+          ]
+        ],
+        "cleared_score_coefficients": [
+          4375,
+          -204057,
+          104696,
+          -27113,
+          -246460,
+          67421,
+          -84545,
+          142651,
+          190560,
+          -125697,
+          42665,
+          70359,
+          -77651,
+          189391,
+          -166105
+        ],
+        "absorbed_numerators": [
+          [
+            -147182,
+            100321,
+            -35863,
+            -250835,
+            58671,
+            -97670,
+            129526
+          ],
+          [
+            190560,
+            -125697,
+            42665,
+            70359,
+            -77651,
+            189391,
+            -166105
+          ]
+        ],
+        "minimum_signed_cleared_score": 113,
+        "fixed_denominator_normalized_margin": 5.0894585150441235e-05
+      }
+    },
+    {
+      "truth_mask_hex": "0x0d0c0f0c14dc08cc",
+      "degree_two_coefficients": [
+        -9,
+        2,
+        32,
+        2,
+        -4,
+        8,
+        0,
+        16,
+        0,
+        0,
+        -32,
+        0,
+        -16,
+        -32,
+        8,
+        0,
+        0,
+        2,
+        -32,
+        2,
+        16,
+        0
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0xd0c0f0c14dc08cc",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 4,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 30,
+        "denominators": [
+          [
+            33,
+            -2,
+            -1,
+            -1,
+            -1,
+            -10,
+            -1
+          ],
+          [
+            34,
+            -1,
+            -9,
+            -1,
+            -10,
+            -1,
+            -11
+          ]
+        ],
+        "cleared_score_coefficients": [
+          -657,
+          20448,
+          -6444,
+          7067,
+          6013,
+          657,
+          -5957,
+          -5461,
+          -599,
+          2773,
+          -2982,
+          -5325,
+          -340,
+          -1227,
+          4636
+        ],
+        "absorbed_numerators": [
+          [
+            -1233,
+            -5130,
+            7724,
+            6670,
+            1314,
+            613,
+            -4804
+          ],
+          [
+            -599,
+            2773,
+            -2982,
+            -5325,
+            -340,
+            -1227,
+            4636
+          ]
+        ],
+        "minimum_signed_cleared_score": 602,
+        "fixed_denominator_normalized_margin": 0.0014176831591150322
+      }
+    },
+    {
+      "truth_mask_hex": "0x0f040044df4e4ade",
+      "degree_two_coefficients": [
+        -3,
+        16,
+        32,
+        4,
+        -16,
+        -2,
+        0,
+        -16,
+        -32,
+        8,
+        0,
+        -32,
+        2,
+        -16,
+        0,
+        2,
+        0,
+        -8,
+        -32,
+        32,
+        0,
+        0
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0xf040044df4e4ade",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 0,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 10,
+        "denominators": [
+          [
+            14,
+            -1,
+            -1,
+            -1,
+            -4,
+            -3,
+            -1
+          ],
+          [
+            15,
+            -3,
+            -1,
+            -5,
+            -1,
+            -1,
+            -3
+          ]
+        ],
+        "cleared_score_coefficients": [
+          -13,
+          377,
+          377,
+          -29,
+          111,
+          41,
+          160,
+          154,
+          -243,
+          -265,
+          112,
+          47,
+          -291,
+          -291,
+          -157
+        ],
+        "absorbed_numerators": [
+          [
+            195,
+            390,
+            -16,
+            124,
+            93,
+            199,
+            167
+          ],
+          [
+            -243,
+            -265,
+            112,
+            47,
+            -291,
+            -291,
+            -157
+          ]
+        ],
+        "minimum_signed_cleared_score": 105,
+        "fixed_denominator_normalized_margin": 0.0056728116498447525
+      }
+    },
+    {
+      "truth_mask_hex": "0x10105d175d335d1f",
+      "degree_two_coefficients": [
+        15,
+        -4,
+        -2,
+        4,
+        0,
+        0,
+        4,
+        0,
+        -32,
+        -16,
+        4,
+        -2,
+        -32,
+        32,
+        -16,
+        -16,
+        0,
+        16,
+        0,
+        -4,
+        -2,
+        -32
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x10105d175d335d1f",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 1,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 100,
+        "denominators": [
+          [
+            103,
+            -1,
+            -1,
+            -1,
+            -1,
+            -72,
+            -26
+          ],
+          [
+            104,
+            -19,
+            -1,
+            -1,
+            -78,
+            -1,
+            -1
+          ]
+        ],
+        "cleared_score_coefficients": [
+          169,
+          -210037,
+          8340,
+          -246829,
+          32790,
+          2792,
+          159545,
+          7531,
+          414717,
+          -218036,
+          168796,
+          -180555,
+          -193229,
+          3202,
+          10369
+        ],
+        "absorbed_numerators": [
+          [
+            -192630,
+            8171,
+            -246998,
+            32621,
+            2623,
+            147377,
+            3137
+          ],
+          [
+            414717,
+            -218036,
+            168796,
+            -180555,
+            -193229,
+            3202,
+            10369
+          ]
+        ],
+        "minimum_signed_cleared_score": 5456,
+        "fixed_denominator_normalized_margin": 0.00021823620446745497
+      }
+    },
+    {
+      "truth_mask_hex": "0x3030f03c323bba2a",
+      "degree_two_coefficients": [
+        -11,
+        32,
+        2,
+        -4,
+        0,
+        16,
+        -4,
+        0,
+        0,
+        0,
+        8,
+        -32,
+        -32,
+        0,
+        -32,
+        16,
+        32,
+        0,
+        32,
+        -32,
+        -8,
+        -16
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x3030f03c323bba2a",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 0,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 10,
+        "denominators": [
+          [
+            14,
+            -1,
+            -1,
+            -1,
+            -5,
+            -3,
+            -2
+          ],
+          [
+            15,
+            -1,
+            -7,
+            -3,
+            -1,
+            -1,
+            -1
+          ]
+        ],
+        "cleared_score_coefficients": [
+          739,
+          -10342,
+          444,
+          -14019,
+          14019,
+          243,
+          3894,
+          -1947,
+          -346,
+          1621,
+          9269,
+          -12150,
+          5437,
+          -1507,
+          2863
+        ],
+        "absorbed_numerators": [
+          [
+            4,
+            -295,
+            -14758,
+            13280,
+            -3452,
+            1677,
+            -3425
+          ],
+          [
+            -346,
+            1621,
+            9269,
+            -12150,
+            5437,
+            -1507,
+            2863
+          ]
+        ],
+        "minimum_signed_cleared_score": 116,
+        "fixed_denominator_normalized_margin": 0.0009316635139019325
+      }
+    },
+    {
+      "truth_mask_hex": "0x31f300f12bb3afff",
+      "degree_two_coefficients": [
+        15,
+        0,
+        0,
+        0,
+        -2,
+        0,
+        16,
+        0,
+        32,
+        0,
+        4,
+        -32,
+        0,
+        16,
+        -32,
+        -32,
+        -32,
+        -4,
+        32,
+        0,
+        -32,
+        8
+      ],
+      "fixed_dictionary_hit_count": 0,
+      "previous_search": {
+        "found": false,
+        "method": "orientation-cycle-random-search",
+        "trials": 0,
+        "weight_max": 64
+      },
+      "continuous_search": {
+        "found": true,
+        "dimension": 6,
+        "truth_mask_hex": "0x31f300f12bb3afff",
+        "orientations": [
+          -1,
+          -1
+        ],
+        "restart": 1,
+        "orientation_index": 0,
+        "denominator_rounding_scale": 30,
+        "denominators": [
+          [
+            35,
+            -1,
+            -1,
+            -12,
+            -1,
+            -4,
+            -1
+          ],
+          [
+            34,
+            -4,
+            -1,
+            -1,
+            -17,
+            -1,
+            -9
+          ]
+        ],
+        "cleared_score_coefficients": [
+          -3623,
+          138228,
+          7381,
+          -12234,
+          -39548,
+          -67144,
+          -27557,
+          36063,
+          -585,
+          -7982,
+          -742,
+          3512,
+          31441,
+          7422,
+          -31831
+        ],
+        "absorbed_numerators": [
+          [
+            11423,
+            11004,
+            -8611,
+            3928,
+            -63521,
+            -13065,
+            39686
+          ],
+          [
+            -585,
+            -7982,
+            -742,
+            3512,
+            31441,
+            7422,
+            -31831
+          ]
+        ],
+        "minimum_signed_cleared_score": 631,
+        "fixed_denominator_normalized_margin": 0.0008549717028747961
+      }
+    }
+  ]
+}
