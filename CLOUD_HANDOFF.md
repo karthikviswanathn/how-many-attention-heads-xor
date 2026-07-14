@@ -2,17 +2,18 @@
 
 ## Stop state
 
-This handoff was prepared on 2026-07-14 after the user asked the local task to stop and transfer its state to a new Codex cloud task.
+This handoff was prepared on 2026-07-14 after the user asked the local task to stop and transfer its state to a new Codex cloud task. It was refreshed on 2026-07-15 after the research snapshot was reviewed, committed, and pushed.
 
 - Goal status: paused.
 - Git branch: `codex/sprint-1`.
-- Git commit at handoff: `20b75eeafb64bd9f744ed90699149de66aa0ba24`.
-- The worktree is heavily dirty and contains many valuable untracked certificate files. Do not run `git clean`, `git reset --hard`, or discard changes.
+- Reviewed research snapshot: `8e2f8a4f2a01edcfca138396de016033818dffc4`.
+- The cloud environment files were added after that research snapshot on the same branch. The cloud task should check out the current branch tip and record `git rev-parse HEAD` before doing work.
+- The formerly untracked certificate files are committed. Start from a clean checkout, and do not run `git clean`, `git reset --hard`, or discard later work without inspecting it.
 - All three subagents have stopped.
 - The long five-bit exact-cover process was terminated only after writing a complete iteration-624 checkpoint.
 - No research process is intentionally left running.
 
-The commit above does not contain most of the current work. The working tree is the authoritative state.
+The reviewed research snapshot contains the completed theorem files, exact certificates, exploratory records, and active five-bit checkpoint. The current branch tip is authoritative because it also contains the cloud environment manifest.
 
 ## Original goal
 
@@ -49,6 +50,58 @@ $$ p(z)=\prod_{i=0}^{5}z_i. $$
 Treat exact integer or rational verifiers as proofs. Treat floating LP, nonlinear optimization, random screens, and finite sampling as evidence only unless an accompanying exact verifier reconstructs the result.
 
 For Markdown under `lemmas/` and for `writeup.md`, follow the repository `AGENTS.md` rules. In particular, use GitHub-safe LaTeX, `\lbrace` and `\rbrace`, `H^{\ast}`, single-line display math, and no em dash characters.
+
+## Cloud Python environment
+
+The repository root contains a `uv` project for the Python research scripts:
+
+- `pyproject.toml` declares Python `3.12` and the dependency groups.
+- `.python-version` asks `uv` to use Python `3.12`.
+- `uv.lock` pins the resolved packages for reproducible cloud setup.
+- `[tool.uv] package = false` keeps this as a script environment. It does not build or install the repository as a Python package.
+
+Create the minimal handoff environment with:
+
+```bash
+uv sync --frozen
+```
+
+This default environment includes NumPy, SciPy, pycosat, and threadpoolctl. It is sufficient for the exact certificate verifiers, the active five-bit degree-three cover, and the main six-bit multiplier scripts.
+
+The broader symbolic, graph, and Z3 scripts use the optional research dependencies:
+
+```bash
+uv sync --frozen --extra research
+```
+
+PyTorch is isolated because its wheels are large and only two exploratory scripts import it. Install it only when those searches are needed:
+
+```bash
+uv sync --frozen --extra torch
+```
+
+Use both optional groups only if the cloud task needs every Python route:
+
+```bash
+uv sync --frozen --all-extras
+```
+
+After synchronization, every command below can replace `python` or `python3` with `uv run python`. For example:
+
+```bash
+uv run python artifacts/calculations/verify_eight_bit_hamming_threshold_separation.py
+uv run python artifacts/calculations/verify_f8_three_head_upper.py
+```
+
+The experimental package under `src/hstar/` is not installed by the script environment. If it is needed, invoke it explicitly with:
+
+```bash
+PYTHONPATH=src uv run python -m hstar.cli --help
+```
+
+Lean is intentionally out of scope for this cloud handoff. Do not install Lean or run `lake`. A C++17 compiler is still useful for the independent watched-literal solver in `artifacts/calculations/solve_n5_clause_cnf.cpp`.
+
+Environment preparation on the local handoff machine was metadata-only. `uv lock` resolved the dependency graph with an existing bundled Python `3.12.13`, but `uv sync` was deliberately not run, no `.venv` was created, and no package was installed. The first cloud task should perform the frozen sync and then run the two eight-bit smoke verifiers shown above before resuming a long search.
 
 ## Executive status
 
@@ -504,7 +557,7 @@ The collaboration manager reports all three subagents completed. Process inspect
 
 ## Worktree precautions
 
-The repository contains extensive uncommitted and untracked work from this investigation. Before any branch switch, rebase, cleanup, or archive operation:
+The original local investigation produced extensive uncommitted work, but the reviewed snapshot was committed and pushed before this handoff refresh. Before any branch switch, rebase, cleanup, or archive operation, confirm the actual cloud checkout state:
 
 ```bash
 git branch --show-current
