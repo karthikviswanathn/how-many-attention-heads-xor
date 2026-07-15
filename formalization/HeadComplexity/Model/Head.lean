@@ -398,15 +398,4 @@ theorem parity_restriction_exactHeadComplexity_ge_two
   · exact h0 hk.1
   · exact h1 hk.1
 
-theorem parity_restriction_HStarN_ge_two
-    {n : ℕ} (f : (Fin n → Bool) → Bool) (base : Fin n → Bool)
-    (i j : Fin n) (hij : i ≠ j)
-    (h00 : f (Head.restrictBits base i j (false, false)) = false)
-    (h11 : f (Head.restrictBits base i j (true, true)) = false)
-    (h01 : f (Head.restrictBits base i j (false, true)) = true)
-    (h10 : f (Head.restrictBits base i j (true, false)) = true)
-    (hExact : exactHeadComplexityN n f (HStarN n f)) :
-    2 ≤ HStarN n f := by
-  exact parity_restriction_exactHeadComplexity_ge_two f base i j hij h00 h11 h01 h10 hExact
-
 end HeadComplexity

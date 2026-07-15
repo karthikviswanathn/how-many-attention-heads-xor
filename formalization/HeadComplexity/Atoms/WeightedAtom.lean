@@ -7,10 +7,11 @@ import Mathlib.Algebra.BigOperators.Fin
 set_option linter.style.header false
 
 /-!
-# Theorem 9 — weighted-sum interpolation upper bound.
+# Weighted-sum interpolation construction.
 
 If `f(x) = F(t(x))` for a positive weighted sum `t(x) = ∑ λ_i x_i` with image of
-size `M`, then `H*(f) ≤ M - 1`.
+size `M`, then `f` is computable with `M - 1` heads. The `H*` corollaries live
+in `Results/WeightedUpperBound.lean`.
 
 The head construction generalizes `atomHead`: with `d = 2`, `W_Q = W_K = W_V = id`,
 score channel `0`, value channel `1`, and `s = √(log (a - Λ))` (`Λ = ∑ λ_i`):
@@ -313,19 +314,7 @@ theorem weighted_computable (lam : Fin n → ℝ) (hlam : ∀ i, 0 < lam i)
     rw [weightedAtomFamily_readout lam hn hlam av bv hav bits]
     exact hatom bits
 
-/-- **Theorem 9.** `H*(f) ≤ M - 1`, where `M = |Im(t)|` for a positive weighted sum
-`t(x) = ∑ λ_i x_i` with `f(x) = F(t(x))`. -/
-theorem HStarN_le_weighted (lam : Fin n → ℝ) (hlam : ∀ i, 0 < lam i)
-    (f : (Fin n → Bool) → Bool) (G : ℝ → Bool) (hf : ∀ bits, f bits = G (wT lam bits)) :
-    HStarN n f ≤ (Finset.univ.image (wT lam)).card - 1 := by
-  classical
-  have hc := weighted_computable lam hlam f G hf
-  have hex : ∃ k, computableWithHeadsN n k f := ⟨_, hc⟩
-  unfold HStarN
-  rw [dif_pos hex]
-  exact Nat.find_min' hex hc
-
-/-! ## Universal upper bound (Corollary 6): every function is computable -/
+/-! ## Universal computability: every function is computable -/
 
 /-- The binary weighting `λ_i = 2^i` separates all inputs. -/
 theorem wT_two_pow_injective :
@@ -349,9 +338,9 @@ theorem wT_two_pow_injective :
   have hi := congrFun h3 i
   by_cases hb : b i <;> by_cases hb' : b' i <;> simp_all
 
-/-- **Corollary 6.** Every Boolean function is computable, with at most `2^n - 1`
-heads. -/
-theorem HStarN_le_universal (f : (Fin n → Bool) → Bool) : HStarN n f ≤ 2 ^ n - 1 := by
+/-- Every Boolean function is computable with at most `2^n - 1` heads. -/
+theorem universal_computable (f : (Fin n → Bool) → Bool) :
+    computableWithHeadsN n (2 ^ n - 1) f := by
   classical
   set lam : Fin n → ℝ := fun i => (2 : ℝ) ^ (i : ℕ) with hlamdef
   have hlam : ∀ i, 0 < lam i := fun i => by rw [hlamdef]; positivity
@@ -365,9 +354,6 @@ theorem HStarN_le_universal (f : (Fin n → Bool) → Bool) : HStarN n f ≤ 2 ^
     rw [Finset.card_image_of_injective _ hinj, Finset.card_univ]
     simp
   rw [hcard] at hcomp
-  have hex : ∃ k, computableWithHeadsN n k f := ⟨_, hcomp⟩
-  unfold HStarN
-  rw [dif_pos hex]
-  exact Nat.find_min' hex hcomp
+  exact hcomp
 
 end HeadComplexity

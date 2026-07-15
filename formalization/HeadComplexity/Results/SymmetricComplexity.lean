@@ -1,6 +1,7 @@
 import HeadComplexity.Atoms.HammingAtom
 import HeadComplexity.Atoms.PartialFraction
 import HeadComplexity.Atoms.SignPolynomial
+import HeadComplexity.Polynomial.UnivariateReduction
 
 set_option linter.style.header false
 
@@ -95,6 +96,20 @@ theorem symmetricFn_computable (F : ℕ → Bool) (n : ℕ) :
     rw [atomFamily_readout hn av bv hav bits]
     simp only [symmetricFn]
     exact hatom (hammingWeight bits) (hammingWeight_le n bits)
+
+/-- **Theorem 12 (conditional form).** If the sign-change upper-bound
+construction computes `symmetricFn F`, then the head complexity is exactly the
+number of sign changes of `F`. -/
+theorem HStarN_symmetricFn_eq_signChanges {n : ℕ} {F : ℕ → Bool}
+    (hub : computableWithHeadsN n (signChanges n F) (symmetricFn F)) :
+    HStarN n (symmetricFn F) = signChanges n F := by
+  classical
+  have hExists : ∃ k, computableWithHeadsN n k (symmetricFn F) := ⟨_, hub⟩
+  unfold HStarN
+  rw [dif_pos hExists]
+  apply le_antisymm
+  · exact Nat.find_min' hExists hub
+  · exact signChanges_le_of_computableWithHeadsN (Nat.find_spec hExists)
 
 /-- **Theorem 12 (unconditional).** For a symmetric Boolean function, the head
 complexity equals the number of sign changes of its weight profile. -/

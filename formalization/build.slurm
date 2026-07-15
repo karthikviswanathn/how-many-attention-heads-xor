@@ -49,13 +49,13 @@ open HeadComplexity
 #print axioms HStarN_symmetricFn
 #print axioms HStarN_parity
 #print axioms thresholdDeg_parity
-#print axioms HStarN_le_weighted
-#print axioms HStarN_le_universal
+#print axioms HStarN_le_weighted_sum
+#print axioms HStarN_le_universal_boolean
 #print axioms HStarN_eq_zero_iff
 #print axioms HStarN_eq_one_iff
 #print axioms HStarN_eq_Lfrac
 #print axioms Head.restricted_numerator_antipode
-#print axioms parity_restriction_HStarN_ge_two
+#print axioms checkerboard_restriction_HStarN_ge_two
 #print axioms HStarN_threshold
 #print axioms HStarN_exact
 EOF

@@ -333,33 +333,4 @@ theorem signChanges_le_of_computableWithHeadsN {H : ℕ} {F : ℕ → Bool}
     signChanges n F ≤ H :=
   signChanges_le_of_ThresholdDegLE (signReprDegLe_of_computableWithHeadsN hcomp)
 
-/-- **Theorem 12 (equality), conditional form.** For a symmetric Boolean function
-`symmetricFn F`, the head complexity equals the number of sign changes `C(F)` of
-the weight profile `F`, *given* the upper-bound construction `hub` that realizes
-`symmetricFn F` with `signChanges n F` heads.
-
-Both directions are discharged here:
-* `≤` (upper bound) is `Nat.find_min'` applied to `hub`;
-* `≥` (lower bound) is `signChanges_le_of_computableWithHeadsN` applied to the
-  realizing family `Nat.find_spec` selects.
-
-`hub` is now itself proven — see `symmetricFn_computable` in `Results/SymmetricComplexity.lean`,
-which builds the `C(F)`-head softmax family explicitly via the linear-fractional
-normal form (sign polynomial → partial fractions → one head per atom). Feeding
-that into this theorem gives the *unconditional* `HStarN_symmetricFn`. This
-conditional version is kept as the clean statement of the bridge: it isolates the
-lower-bound machinery (`signChanges_le_of_computableWithHeadsN` — model →
-threshold degree → strictify → symmetrize → univariate reduction → root count),
-which is fully formalized and axiom-clean. -/
-theorem HStarN_symmetricFn_eq_signChanges {F : ℕ → Bool}
-    (hub : computableWithHeadsN n (signChanges n F) (symmetricFn F)) :
-    HStarN n (symmetricFn F) = signChanges n F := by
-  classical
-  have hExists : ∃ k, computableWithHeadsN n k (symmetricFn F) := ⟨_, hub⟩
-  unfold HStarN
-  rw [dif_pos hExists]
-  apply le_antisymm
-  · exact Nat.find_min' hExists hub
-  · exact signChanges_le_of_computableWithHeadsN (Nat.find_spec hExists)
-
 end HeadComplexity
