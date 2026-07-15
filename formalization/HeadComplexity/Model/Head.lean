@@ -1,4 +1,4 @@
-import HeadComplexity.Foundation.Vec
+import HeadComplexity.Foundation.Softmax
 import HeadComplexity.Foundation.SegmentCrossing
 
 set_option linter.style.header false
@@ -92,10 +92,7 @@ theorem sigma_pos (H : Head n d) (bits : Fin n → Bool) (p : SeqPos n) :
 theorem denominator_pos (H : Head n d) (bits : Fin n → Bool) :
     0 < H.denominator bits := by
   unfold denominator
-  apply Finset.sum_pos
-  · intro p _
-    exact H.sigma_pos bits p
-  · exact Finset.univ_nonempty
+  exact positiveNormalizer_pos (H.sigma bits) (fun p => H.sigma_pos bits p)
 
 theorem denominator_ne_zero (H : Head n d) (bits : Fin n → Bool) :
     H.denominator bits ≠ 0 :=
@@ -112,14 +109,6 @@ theorem denom_smul_attn (H : Head n d) (bits : Fin n → Bool) :
 def restrictBits (base : Fin n → Bool) (i j : Fin n) (ab : Bool × Bool) :
     Fin n → Bool :=
   fun k => if k = i then ab.1 else if k = j then ab.2 else base k
-
-private theorem combo_eq_scaled_sum {V : Type*} [AddCommGroup V] [Module ℝ V]
-    (a b : ℝ) (u v : V) :
-    (a / (a + b)) • u + (b / (a + b)) • v = (a + b)⁻¹ • (a • u + b • v) := by
-  rw [smul_add, smul_smul, smul_smul]
-  congr 1
-  · rw [div_eq_mul_inv, mul_comm]
-  · rw [div_eq_mul_inv, mul_comm]
 
 /-- The restricted attention-update map on the chosen 2-bit subcube. -/
 noncomputable def restrictedUpdate
@@ -219,7 +208,7 @@ theorem restricted_midpoint_in_diag_segment
   · unfold restrictedMidpoint restrictedUpdate
     rw [← H.denom_smul_attn (restrictBits base i j (false, false)),
         ← H.denom_smul_attn (restrictBits base i j (true, true))]
-    exact combo_eq_scaled_sum _ _ _ _
+    exact twoTermWeightedAverage_eq_inv_smul_sum _ _ _ _
 
 theorem restricted_midpoint_in_offdiag_segment
     (H : Head n d) (base : Fin n → Bool) (i j : Fin n) (hij : i ≠ j) :
@@ -238,7 +227,7 @@ theorem restricted_midpoint_in_offdiag_segment
         H.restricted_denominator_antipode base i j hij,
         ← H.denom_smul_attn (restrictBits base i j (false, true)),
         ← H.denom_smul_attn (restrictBits base i j (true, false))]
-    exact combo_eq_scaled_sum _ _ _ _
+    exact twoTermWeightedAverage_eq_inv_smul_sum _ _ _ _
 
 /-- The restricted 2-bit attention map of a single head can
     never realize the checkerboard pattern. -/

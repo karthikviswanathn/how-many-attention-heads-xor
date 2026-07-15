@@ -101,8 +101,51 @@ private theorem exp_one_add_two_pos : (0 : ℝ) < Real.exp 1 + 2 := by
   have := exp_pos'
   linarith
 
+/-- The scalar read from `head1` on mixed inputs. -/
+noncomputable def head1LowScore : ℝ :=
+  Real.exp 1 / (Real.exp 1 + 2)
+
+/-- The scalar read from `head1` on the `(true, true)` input. -/
+noncomputable def head1HighScore : ℝ :=
+  2 * Real.exp 1 / (2 * Real.exp 1 + 1)
+
+/-- The probe reading the value channel written by `head1`. -/
+noncomputable def head1Probe : Vec 3 :=
+  EuclideanSpace.single (1 : Fin 3) 1
+
+@[simp] theorem head1Probe_apply :
+    head1Probe = EuclideanSpace.single (1 : Fin 3) 1 := rfl
+
+/-- The mixed `head1` score is positive. -/
+theorem head1LowScore_pos : (0 : ℝ) < head1LowScore := by
+  unfold head1LowScore
+  exact div_pos (Real.exp_pos _) exp_one_add_two_pos
+
+/-- The mixed `head1` score is strictly below the `(true, true)` score. -/
+theorem head1LowScore_lt_head1HighScore :
+    head1LowScore < head1HighScore := by
+  unfold head1LowScore head1HighScore
+  rw [div_lt_div_iff₀ exp_one_add_two_pos two_exp_one_add_one_pos]
+  nlinarith [exp_pos']
+
+/-- The probe score on XOR-negative inputs in the two-head construction. -/
+noncomputable def twoHeadLowScore : ℝ :=
+  2 * Real.exp 1 / (2 * Real.exp 1 + 1)
+
+/-- The probe score on XOR-positive inputs in the two-head construction. -/
+noncomputable def twoHeadHighScore : ℝ :=
+  2 * Real.exp 1 / (Real.exp 1 + 2)
+
+/-- The two-head construction separates XOR-positive scores from
+XOR-negative scores. -/
+theorem twoHeadLowScore_lt_twoHeadHighScore :
+    twoHeadLowScore < twoHeadHighScore := by
+  unfold twoHeadLowScore twoHeadHighScore
+  rw [div_lt_div_iff₀ two_exp_one_add_one_pos exp_one_add_two_pos]
+  nlinarith [exp_pos', Real.one_lt_exp_iff.mpr one_pos]
+
 /-- `head0.attnUpdate (false, false) = (2e / (2e + 1)) • e_0`. -/
-theorem head0_attnUpdate_ff_ff :
+private theorem head0_attnUpdate_ff_ff :
     head0.attnUpdate (bits2 false false) =
     (2 * Real.exp 1 / (2 * Real.exp 1 + 1)) • EuclideanSpace.single (0 : Fin 3) 1 := by
   have hD : head0.denominator (bits2 false false) = 2 * Real.exp 1 + 1 := by
@@ -120,7 +163,7 @@ theorem head0_attnUpdate_ff_ff :
   rw [div_eq_mul_inv, mul_comm]
 
 /-- `head0.attnUpdate (false, true) = (e / (e + 2)) • e_0`. -/
-theorem head0_attnUpdate_ff_tt :
+private theorem head0_attnUpdate_ff_tt :
     head0.attnUpdate (bits2 false true) =
     (Real.exp 1 / (Real.exp 1 + 2)) • EuclideanSpace.single (0 : Fin 3) 1 := by
   have hD : head0.denominator (bits2 false true) = Real.exp 1 + 2 := by
@@ -137,7 +180,7 @@ theorem head0_attnUpdate_ff_tt :
   rw [div_eq_mul_inv, mul_comm]
 
 /-- `head0.attnUpdate (true, false) = (e / (e + 2)) • e_0`. -/
-theorem head0_attnUpdate_tt_ff :
+private theorem head0_attnUpdate_tt_ff :
     head0.attnUpdate (bits2 true false) =
     (Real.exp 1 / (Real.exp 1 + 2)) • EuclideanSpace.single (0 : Fin 3) 1 := by
   have hD : head0.denominator (bits2 true false) = Real.exp 1 + 2 := by
@@ -154,7 +197,7 @@ theorem head0_attnUpdate_tt_ff :
   rw [div_eq_mul_inv, mul_comm]
 
 /-- `head0.attnUpdate (true, true) = 0`. -/
-theorem head0_attnUpdate_tt_tt :
+private theorem head0_attnUpdate_tt_tt :
     head0.attnUpdate (bits2 true true) = (0 : Vec 3) := by
   have hN : head0.numerator (bits2 true true) = (0 : Vec 3) := by
     unfold Head.numerator Head.sigma Head.value
@@ -163,7 +206,7 @@ theorem head0_attnUpdate_tt_tt :
   rw [hN, smul_zero]
 
 /-- `head1.attnUpdate (false, false) = 0`. -/
-theorem head1_attnUpdate_ff_ff :
+private theorem head1_attnUpdate_ff_ff :
     head1.attnUpdate (bits2 false false) = (0 : Vec 3) := by
   have hN : head1.numerator (bits2 false false) = (0 : Vec 3) := by
     unfold Head.numerator Head.sigma Head.value
@@ -172,7 +215,7 @@ theorem head1_attnUpdate_ff_ff :
   rw [hN, smul_zero]
 
 /-- `head1.attnUpdate (false, true) = (e /(e + 2)) • e_1`. -/
-theorem head1_attnUpdate_ff_tt :
+private theorem head1_attnUpdate_ff_tt :
     head1.attnUpdate (bits2 false true) =
     (Real.exp 1 / (Real.exp 1 + 2)) • EuclideanSpace.single (1 : Fin 3) 1 := by
   have hD : head1.denominator (bits2 false true) = Real.exp 1 + 2 := by
@@ -189,7 +232,7 @@ theorem head1_attnUpdate_ff_tt :
   rw [div_eq_mul_inv, mul_comm]
 
 /-- `head1.attnUpdate (true, false) = (e /(e + 2)) • e_1`. -/
-theorem head1_attnUpdate_tt_ff :
+private theorem head1_attnUpdate_tt_ff :
     head1.attnUpdate (bits2 true false) =
     (Real.exp 1 / (Real.exp 1 + 2)) • EuclideanSpace.single (1 : Fin 3) 1 := by
   have hD : head1.denominator (bits2 true false) = Real.exp 1 + 2 := by
@@ -206,7 +249,7 @@ theorem head1_attnUpdate_tt_ff :
   rw [div_eq_mul_inv, mul_comm]
 
 /-- `head1.attnUpdate (true, true) = (2e / (2e + 1)) • e_1`. -/
-theorem head1_attnUpdate_tt_tt :
+private theorem head1_attnUpdate_tt_tt :
     head1.attnUpdate (bits2 true true) =
     (2 * Real.exp 1 / (2 * Real.exp 1 + 1)) • EuclideanSpace.single (1 : Fin 3) 1 := by
   have hD : head1.denominator (bits2 true true) = 2 * Real.exp 1 + 1 := by
@@ -223,15 +266,62 @@ theorem head1_attnUpdate_tt_tt :
   congr 1
   rw [div_eq_mul_inv, mul_comm]
 
+/-- `head1Probe` reads zero on `(false, false)`. -/
+theorem head1_score_ff_ff :
+    ⟪head1Probe, head1.attnUpdate (bits2 false false)⟫_ℝ = 0 := by
+  rw [head1_attnUpdate_ff_ff]
+  simp [head1Probe]
+
+/-- `head1Probe` reads the low score on `(false, true)`. -/
+theorem head1_score_ff_tt :
+    ⟪head1Probe, head1.attnUpdate (bits2 false true)⟫_ℝ = head1LowScore := by
+  rw [head1_attnUpdate_ff_tt]
+  rw [inner_smul_right, head1Probe_apply, inner_single_single]
+  simp [head1LowScore, div_eq_mul_inv]
+
+/-- `head1Probe` reads the low score on `(true, false)`. -/
+theorem head1_score_tt_ff :
+    ⟪head1Probe, head1.attnUpdate (bits2 true false)⟫_ℝ = head1LowScore := by
+  rw [head1_attnUpdate_tt_ff]
+  rw [inner_smul_right, head1Probe_apply, inner_single_single]
+  simp [head1LowScore, div_eq_mul_inv]
+
+/-- `head1Probe` reads the high score on `(true, true)`. -/
+theorem head1_score_tt_tt :
+    ⟪head1Probe, head1.attnUpdate (bits2 true true)⟫_ℝ = head1HighScore := by
+  rw [head1_attnUpdate_tt_tt]
+  rw [inner_smul_right, head1Probe_apply, inner_single_single]
+  simp [head1HighScore, div_eq_mul_inv]
+
+/-- The negated `head1Probe` reads zero on `(false, false)`. -/
+theorem neg_head1_score_ff_ff :
+    ⟪-head1Probe, head1.attnUpdate (bits2 false false)⟫_ℝ = 0 := by
+  simpa [inner_neg_left] using congrArg Neg.neg head1_score_ff_ff
+
+/-- The negated `head1Probe` reads the negated low score on `(false, true)`. -/
+theorem neg_head1_score_ff_tt :
+    ⟪-head1Probe, head1.attnUpdate (bits2 false true)⟫_ℝ = -head1LowScore := by
+  simpa [inner_neg_left] using congrArg Neg.neg head1_score_ff_tt
+
+/-- The negated `head1Probe` reads the negated low score on `(true, false)`. -/
+theorem neg_head1_score_tt_ff :
+    ⟪-head1Probe, head1.attnUpdate (bits2 true false)⟫_ℝ = -head1LowScore := by
+  simpa [inner_neg_left] using congrArg Neg.neg head1_score_tt_ff
+
+/-- The negated `head1Probe` reads the negated high score on `(true, true)`. -/
+theorem neg_head1_score_tt_tt :
+    ⟪-head1Probe, head1.attnUpdate (bits2 true true)⟫_ℝ = -head1HighScore := by
+  simpa [inner_neg_left] using congrArg Neg.neg head1_score_tt_tt
+
 /-- The combined update on `(false, false)`: only `head0` contributes. -/
-theorem twoHead_ff_ff :
+private theorem twoHead_ff_ff :
     twoHeadUpdate (bits2 false false) =
     (2 * Real.exp 1 / (2 * Real.exp 1 + 1)) • EuclideanSpace.single (0 : Fin 3) 1 := by
   unfold twoHeadUpdate
   rw [head0_attnUpdate_ff_ff, head1_attnUpdate_ff_ff, add_zero]
 
 /-- The combined update on `(false, true)`: both heads contribute. -/
-theorem twoHead_ff_tt :
+private theorem twoHead_ff_tt :
     twoHeadUpdate (bits2 false true) =
     (Real.exp 1 / (Real.exp 1 + 2)) •
       (EuclideanSpace.single (0 : Fin 3) 1 + EuclideanSpace.single (1 : Fin 3) 1) := by
@@ -239,7 +329,7 @@ theorem twoHead_ff_tt :
   rw [head0_attnUpdate_ff_tt, head1_attnUpdate_ff_tt, smul_add]
 
 /-- The combined update on `(true, false)`: both heads contribute. -/
-theorem twoHead_tt_ff :
+private theorem twoHead_tt_ff :
     twoHeadUpdate (bits2 true false) =
     (Real.exp 1 / (Real.exp 1 + 2)) •
       (EuclideanSpace.single (0 : Fin 3) 1 + EuclideanSpace.single (1 : Fin 3) 1) := by
@@ -247,7 +337,7 @@ theorem twoHead_tt_ff :
   rw [head0_attnUpdate_tt_ff, head1_attnUpdate_tt_ff, smul_add]
 
 /-- The combined update on `(true, true)`: only `head1` contributes. -/
-theorem twoHead_tt_tt :
+private theorem twoHead_tt_tt :
     twoHeadUpdate (bits2 true true) =
     (2 * Real.exp 1 / (2 * Real.exp 1 + 1)) • EuclideanSpace.single (1 : Fin 3) 1 := by
   unfold twoHeadUpdate
@@ -257,38 +347,34 @@ theorem twoHead_tt_tt :
 theorem probe_score (bits : Fin 2 → Bool) :
     ⟪EuclideanSpace.single (0 : Fin 3) 1 + EuclideanSpace.single (1 : Fin 3) 1,
       twoHeadUpdate bits⟫_ℝ =
-    if xorFn bits = true then 2 * Real.exp 1 / (Real.exp 1 + 2)
-                         else 2 * Real.exp 1 / (2 * Real.exp 1 + 1) := by
+    if xorFn bits = true then twoHeadHighScore else twoHeadLowScore := by
   cases h0 : bits 0 <;> cases h1 : bits 1
   · have hbits : bits = bits2 false false := by
       funext i
       fin_cases i <;> simp [bits2, h0, h1]
     rw [hbits, twoHead_ff_ff]
-    simp [xorFn, inner_add_left, inner_smul_right]
+    simp [xorFn, twoHeadLowScore, inner_add_left, inner_smul_right]
   · have hbits : bits = bits2 false true := by
       funext i
       fin_cases i <;> simp [bits2, h0, h1]
     rw [hbits, twoHead_ff_tt]
-    simp [xorFn, inner_add_left, inner_smul_right, inner_add_right]
+    simp [xorFn, twoHeadHighScore, inner_add_left, inner_smul_right, inner_add_right]
     ring
   · have hbits : bits = bits2 true false := by
       funext i
       fin_cases i <;> simp [bits2, h0, h1]
     rw [hbits, twoHead_tt_ff]
-    simp [xorFn, inner_add_left, inner_smul_right, inner_add_right]
+    simp [xorFn, twoHeadHighScore, inner_add_left, inner_smul_right, inner_add_right]
     ring
   · have hbits : bits = bits2 true true := by
       funext i
       fin_cases i <;> simp [bits2, h0, h1]
     rw [hbits, twoHead_tt_tt]
-    simp [xorFn, inner_add_left, inner_smul_right]
+    simp [xorFn, twoHeadLowScore, inner_add_left, inner_smul_right]
 
 /-- The strict gap between the two probe values. -/
-theorem xor_gap :
-    2 * Real.exp 1 / (2 * Real.exp 1 + 1) < 2 * Real.exp 1 / (Real.exp 1 + 2) := by
-  have he : (1 : ℝ) < Real.exp 1 := Real.one_lt_exp_iff.mpr one_pos
-  rw [div_lt_div_iff₀ two_exp_one_add_one_pos exp_one_add_two_pos]
-  nlinarith [exp_pos']
+theorem xor_gap : twoHeadLowScore < twoHeadHighScore :=
+  twoHeadLowScore_lt_twoHeadHighScore
 
 /-- The probe used by both the XOR and XNOR endpoint examples. -/
 noncomputable def twoProbe : Vec 3 :=
@@ -297,12 +383,11 @@ noncomputable def twoProbe : Vec 3 :=
 /-- **Theorem 2.** The two-head construction computes XOR. -/
 theorem two_heads_suffice :
     computesXor (twoHeadUpdate : (Fin 2 → Bool) → Vec 3) := by
-  set τ := (2 * Real.exp 1 / (2 * Real.exp 1 + 1)
-            + 2 * Real.exp 1 / (Real.exp 1 + 2)) / 2 with hτ_def
+  set τ := (twoHeadLowScore + twoHeadHighScore) / 2 with hτ_def
   have hgap := xor_gap
-  have h_lo : 2 * Real.exp 1 / (2 * Real.exp 1 + 1) < τ := by
+  have h_lo : twoHeadLowScore < τ := by
     rw [hτ_def]; linarith
-  have h_hi : τ < 2 * Real.exp 1 / (Real.exp 1 + 2) := by
+  have h_hi : τ < twoHeadHighScore := by
     rw [hτ_def]; linarith
   refine ⟨twoProbe, τ, fun bits => ?_⟩
   unfold twoProbe

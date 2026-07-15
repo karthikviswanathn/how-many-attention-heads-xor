@@ -1,5 +1,6 @@
 import HeadComplexity.Atoms.HammingAtom
 import HeadComplexity.Atoms.PartialFraction
+import HeadComplexity.Foundation.Softmax
 import Mathlib.LinearAlgebra.Lagrange
 import Mathlib.Algebra.BigOperators.Fin
 
@@ -106,9 +107,9 @@ variable (lam : Fin n → ℝ) (a b : ℝ) (hn : 1 ≤ n) (hlam : ∀ i, 0 < lam
 
 include hn hlam in
 private theorem wLam_pos : 0 < wLam lam := by
+  letI : Nonempty (Fin n) := Fin.pos_iff_nonempty.mp hn
   unfold wLam
-  obtain ⟨i⟩ := Fin.pos_iff_nonempty.mp hn
-  exact Finset.sum_pos (fun i _ => hlam i) ⟨i, Finset.mem_univ i⟩
+  exact positiveNormalizer_pos lam hlam
 
 include ha in
 private theorem wa_sub_pos : 0 < a - wLam lam := by linarith

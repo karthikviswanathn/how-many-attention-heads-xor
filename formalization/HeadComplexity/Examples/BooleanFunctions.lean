@@ -93,73 +93,6 @@ theorem computesBool_residual_iff_attnUpdate
     computesBool f H.residual ↔ computesBool f H.attnUpdate := by
   simpa [computesBool] using Head.computesPred_residual_iff_attnUpdate H f
 
-noncomputable def oneProbe : Vec 3 := EuclideanSpace.single (1 : Fin 3) 1
-
-private theorem exp_one_add_two_pos : (0 : ℝ) < Real.exp 1 + 2 := by
-  have : (0 : ℝ) < Real.exp 1 := Real.exp_pos _
-  linarith
-
-private theorem exp_one_div_exp_one_add_two_pos :
-    (0 : ℝ) < Real.exp 1 / (Real.exp 1 + 2) := by
-  exact div_pos (Real.exp_pos _) exp_one_add_two_pos
-
-private theorem exp_one_div_exp_one_add_two_lt_two_exp_one_div_two_exp_one_add_one :
-    Real.exp 1 / (Real.exp 1 + 2) < 2 * Real.exp 1 / (2 * Real.exp 1 + 1) := by
-  have hden1 : (0 : ℝ) < Real.exp 1 + 2 := exp_one_add_two_pos
-  have hden2 : (0 : ℝ) < 2 * Real.exp 1 + 1 := by
-    have : (0 : ℝ) < Real.exp 1 := Real.exp_pos _
-    linarith
-  rw [div_lt_div_iff₀ hden1 hden2]
-  nlinarith [Real.one_lt_exp_iff.mpr one_pos]
-
-@[simp] theorem oneProbe_apply :
-    oneProbe = EuclideanSpace.single (1 : Fin 3) 1 := rfl
-
-private theorem head1_score_ff_ff :
-    ⟪oneProbe, head1.attnUpdate (bits2 false false)⟫_ℝ = 0 := by
-  rw [head1_attnUpdate_ff_ff]
-  simp [oneProbe]
-
-private theorem head1_score_ff_tt :
-    ⟪oneProbe, head1.attnUpdate (bits2 false true)⟫_ℝ
-      = Real.exp 1 / (Real.exp 1 + 2) := by
-  rw [head1_attnUpdate_ff_tt]
-  rw [inner_smul_right, oneProbe_apply, inner_single_single]
-  simp [div_eq_mul_inv]
-
-private theorem head1_score_tt_ff :
-    ⟪oneProbe, head1.attnUpdate (bits2 true false)⟫_ℝ
-      = Real.exp 1 / (Real.exp 1 + 2) := by
-  rw [head1_attnUpdate_tt_ff]
-  rw [inner_smul_right, oneProbe_apply, inner_single_single]
-  simp [div_eq_mul_inv]
-
-private theorem head1_score_tt_tt :
-    ⟪oneProbe, head1.attnUpdate (bits2 true true)⟫_ℝ
-      = 2 * Real.exp 1 / (2 * Real.exp 1 + 1) := by
-  rw [head1_attnUpdate_tt_tt]
-  rw [inner_smul_right, oneProbe_apply, inner_single_single]
-  simp [div_eq_mul_inv]
-
-private theorem neg_head1_score_ff_ff :
-    ⟪-oneProbe, head1.attnUpdate (bits2 false false)⟫_ℝ = 0 := by
-  simpa [inner_neg_left] using congrArg Neg.neg head1_score_ff_ff
-
-private theorem neg_head1_score_ff_tt :
-    ⟪-oneProbe, head1.attnUpdate (bits2 false true)⟫_ℝ
-      = -(Real.exp 1 / (Real.exp 1 + 2)) := by
-  simpa [inner_neg_left] using congrArg Neg.neg head1_score_ff_tt
-
-private theorem neg_head1_score_tt_ff :
-    ⟪-oneProbe, head1.attnUpdate (bits2 true false)⟫_ℝ
-      = -(Real.exp 1 / (Real.exp 1 + 2)) := by
-  simpa [inner_neg_left] using congrArg Neg.neg head1_score_tt_ff
-
-private theorem neg_head1_score_tt_tt :
-    ⟪-oneProbe, head1.attnUpdate (bits2 true true)⟫_ℝ
-      = -(2 * Real.exp 1 / (2 * Real.exp 1 + 1)) := by
-  simpa [inner_neg_left] using congrArg Neg.neg head1_score_tt_tt
-
 private theorem bits_eq_bits2_of_cases
     (bits : Fin 2 → Bool) (a b : Bool) (h0 : bits 0 = a) (h1 : bits 1 = b) :
     bits = bits2 a b := by
@@ -169,39 +102,39 @@ private theorem bits_eq_bits2_of_cases
 /-- Head 1 separates `OR` on the bare attention update. -/
 theorem head1_computes_or_attnUpdate :
     computesBool orFn head1.attnUpdate := by
-  let τ : ℝ := (Real.exp 1 / (Real.exp 1 + 2)) / 2
+  let τ : ℝ := head1LowScore / 2
   have hτ_pos : 0 < τ := by
     dsimp [τ]
-    linarith [exp_one_div_exp_one_add_two_pos]
-  have hτ_lt_mid : τ < Real.exp 1 / (Real.exp 1 + 2) := by
+    linarith [head1LowScore_pos]
+  have hτ_lt_low : τ < head1LowScore := by
     dsimp [τ]
-    linarith [exp_one_div_exp_one_add_two_pos]
-  refine ⟨oneProbe, τ, ?_⟩
+    linarith [head1LowScore_pos]
+  refine ⟨head1Probe, τ, ?_⟩
   intro bits
   cases h0 : bits 0 <;> cases h1 : bits 1
   · rw [bits_eq_bits2_of_cases bits false false h0 h1, head1_score_ff_ff]
     have hnot : ¬ 0 > τ := by linarith
     simp [orFn, τ, hnot]
   · rw [bits_eq_bits2_of_cases bits false true h0 h1, head1_score_ff_tt]
-    have hgt : Real.exp 1 / (Real.exp 1 + 2) > τ := by linarith
+    have hgt : head1LowScore > τ := by linarith
     simp [orFn, τ, hgt]
   · rw [bits_eq_bits2_of_cases bits true false h0 h1, head1_score_tt_ff]
-    have hgt : Real.exp 1 / (Real.exp 1 + 2) > τ := by linarith
+    have hgt : head1LowScore > τ := by linarith
     simp [orFn, τ, hgt]
   · rw [bits_eq_bits2_of_cases bits true true h0 h1, head1_score_tt_tt]
-    have hgt : 2 * Real.exp 1 / (2 * Real.exp 1 + 1) > τ := by
-      linarith [hτ_lt_mid, exp_one_div_exp_one_add_two_lt_two_exp_one_div_two_exp_one_add_one]
+    have hgt : head1HighScore > τ := by
+      linarith [hτ_lt_low, head1LowScore_lt_head1HighScore]
     simp [orFn, τ, hgt]
 
 /-- Head 1 also separates `AND` on the bare attention update. -/
 theorem head1_computes_and_attnUpdate :
     computesBool andFn head1.attnUpdate := by
-  let lo : ℝ := Real.exp 1 / (Real.exp 1 + 2)
-  let hi : ℝ := 2 * Real.exp 1 / (2 * Real.exp 1 + 1)
+  let lo : ℝ := head1LowScore
+  let hi : ℝ := head1HighScore
   let τ : ℝ := (lo + hi) / 2
   have hgap : lo < hi := by
     dsimp [lo, hi]
-    exact exp_one_div_exp_one_add_two_lt_two_exp_one_div_two_exp_one_add_one
+    exact head1LowScore_lt_head1HighScore
   have hlo : lo < τ := by
     dsimp [τ]
     linarith
@@ -209,8 +142,8 @@ theorem head1_computes_and_attnUpdate :
     dsimp [τ]
     linarith
   have hzero : (0 : ℝ) < τ := by
-    linarith [exp_one_div_exp_one_add_two_pos, hlo]
-  refine ⟨oneProbe, τ, ?_⟩
+    linarith [head1LowScore_pos, hlo]
+  refine ⟨head1Probe, τ, ?_⟩
   intro bits
   cases h0 : bits 0 <;> cases h1 : bits 1
   · rw [bits_eq_bits2_of_cases bits false false h0 h1, head1_score_ff_ff]
@@ -229,19 +162,22 @@ theorem head1_computes_and_attnUpdate :
 /-- Negating the probe for Head 1 separates `NOR`. -/
 theorem head1_computes_nor_attnUpdate :
     computesBool norFn head1.attnUpdate := by
-  let lo : ℝ := Real.exp 1 / (Real.exp 1 + 2)
+  let lo : ℝ := head1LowScore
+  let hi : ℝ := head1HighScore
   let τ : ℝ := -(lo / 2)
-  have hlo : 0 < lo := exp_one_div_exp_one_add_two_pos
+  have hlo : 0 < lo := by
+    dsimp [lo]
+    exact head1LowScore_pos
   have hτneg : τ < 0 := by
     dsimp [τ]
     linarith
   have hlow : -lo ≤ τ := by
     dsimp [τ]
     linarith
-  have hhigh : -(2 * Real.exp 1 / (2 * Real.exp 1 + 1)) ≤ τ := by
+  have hhigh : -hi ≤ τ := by
     dsimp [τ]
-    linarith [exp_one_div_exp_one_add_two_lt_two_exp_one_div_two_exp_one_add_one]
-  refine ⟨-oneProbe, τ, ?_⟩
+    linarith [head1LowScore_lt_head1HighScore]
+  refine ⟨-head1Probe, τ, ?_⟩
   intro bits
   cases h0 : bits 0 <;> cases h1 : bits 1
   · rw [bits_eq_bits2_of_cases bits false false h0 h1, neg_head1_score_ff_ff]
@@ -254,26 +190,28 @@ theorem head1_computes_nor_attnUpdate :
     have hnot : ¬ -lo > τ := by linarith
     simp [norFn, orFn, lo, τ, hnot]
   · rw [bits_eq_bits2_of_cases bits true true h0 h1, neg_head1_score_tt_tt]
-    have hnot : ¬ -(2 * Real.exp 1 / (2 * Real.exp 1 + 1)) > τ := by linarith
-    simp [norFn, orFn, τ, hnot]
+    have hnot : ¬ -hi > τ := by linarith
+    simp [norFn, orFn, hi, τ, hnot]
 
 /-- Negating the probe for Head 1 separates `NAND`. -/
 theorem head1_computes_nand_attnUpdate :
     computesBool nandFn head1.attnUpdate := by
-  let lo : ℝ := Real.exp 1 / (Real.exp 1 + 2)
-  let hi : ℝ := 2 * Real.exp 1 / (2 * Real.exp 1 + 1)
+  let lo : ℝ := head1LowScore
+  let hi : ℝ := head1HighScore
   let τ : ℝ := -((lo + hi) / 2)
-  have hgap : lo < hi := exp_one_div_exp_one_add_two_lt_two_exp_one_div_two_exp_one_add_one
+  have hgap : lo < hi := by
+    dsimp [lo, hi]
+    exact head1LowScore_lt_head1HighScore
   have hτ0 : τ < 0 := by
     dsimp [τ]
-    linarith [exp_one_div_exp_one_add_two_pos]
+    linarith [head1LowScore_pos]
   have hmixed : τ < -lo := by
     dsimp [τ]
     linarith
   have htt : -(hi) ≤ τ := by
     dsimp [τ]
     linarith
-  refine ⟨-oneProbe, τ, ?_⟩
+  refine ⟨-head1Probe, τ, ?_⟩
   intro bits
   cases h0 : bits 0 <;> cases h1 : bits 1
   · rw [bits_eq_bits2_of_cases bits false false h0 h1, neg_head1_score_ff_ff]
@@ -478,10 +416,12 @@ theorem xor_computable_with_two_heads :
 /-- Negating the two-head probe separates `XNOR`. -/
 theorem xnor_computable_with_two_heads :
     computesBool xnorFn (twoHeadUpdate : (Fin 2 → Bool) → Vec 3) := by
-  let lo : ℝ := 2 * Real.exp 1 / (2 * Real.exp 1 + 1)
-  let hi : ℝ := 2 * Real.exp 1 / (Real.exp 1 + 2)
+  let lo : ℝ := twoHeadLowScore
+  let hi : ℝ := twoHeadHighScore
   let τ : ℝ := -((lo + hi) / 2)
-  have hgap : lo < hi := xor_gap
+  have hgap : lo < hi := by
+    dsimp [lo, hi]
+    exact xor_gap
   refine ⟨-twoProbe, τ, ?_⟩
   intro bits
   unfold twoProbe

@@ -92,16 +92,6 @@ theorem denom_smul_attn (ab : Bool × Bool) :
     boolDenominator H ab • boolUpdate H ab = boolNumerator H ab := by
   simpa [boolDenominator, boolUpdate, boolNumerator] using Head.denom_smul_attn H (pairBits ab)
 
-/-- A two-term convex combination written with explicit divisions equals
-the inverse-scaled sum of its weighted summands. -/
-private theorem combo_eq_scaled_sum {V : Type*} [AddCommGroup V] [Module ℝ V]
-    (a b : ℝ) (u v : V) :
-    (a / (a + b)) • u + (b / (a + b)) • v = (a + b)⁻¹ • (a • u + b • v) := by
-  rw [smul_add, smul_smul, smul_smul]
-  congr 1
-  · rw [div_eq_mul_inv, mul_comm]
-  · rw [div_eq_mul_inv, mul_comm]
-
 /-- The **midpoint** `P` of the four attention outputs: `𝒟⁻¹ • 𝒩`. -/
 noncomputable def midpoint : Vec d :=
   (boolDenominator H (false, false) + boolDenominator H (true, true))⁻¹
@@ -120,7 +110,7 @@ theorem midpoint_in_diag_segment :
   · rw [← add_div, div_self hpos.ne']
   · unfold midpoint
     rw [← denom_smul_attn H (false, false), ← denom_smul_attn H (true, true)]
-    exact combo_eq_scaled_sum _ _ _ _
+    exact twoTermWeightedAverage_eq_inv_smul_sum _ _ _ _
 
 /-- The midpoint also lies on the off-diagonal segment `[z(ff,tt), z(tt,ff)]`,
 because the denominator and numerator antipode identities make both
@@ -138,7 +128,7 @@ theorem midpoint_in_offdiag_segment :
   · unfold midpoint
     rw [numerator_antipode H, denominator_antipode H,
         ← denom_smul_attn H (false, true), ← denom_smul_attn H (true, false)]
-    exact combo_eq_scaled_sum _ _ _ _
+    exact twoTermWeightedAverage_eq_inv_smul_sum _ _ _ _
 
 /-- A separate proof that no single attention head can compute XOR:
 for every `H`, the bare attention update is not linearly separable into
