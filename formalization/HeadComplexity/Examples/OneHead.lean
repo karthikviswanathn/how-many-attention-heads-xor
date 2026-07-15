@@ -74,18 +74,16 @@ over the diagonal equals summing over the off-diagonal. -/
 theorem numerator_antipode :
     boolNumerator H (false, false) + boolNumerator H (true, true)
     = boolNumerator H (false, true) + boolNumerator H (true, false) := by
-  rcases numerator_additive_split H with ⟨A, B, C, h⟩
-  rw [h false false, h true true, h false true, h true false]
-  abel
+  exact boolSquare_antipode_of_additive_split
+    (fun a b => boolNumerator H (a, b)) (numerator_additive_split H)
 
 /-- The antipode identity for the attention denominator: summing `D(a,b)`
 across the diagonal equals summing across the off-diagonal. -/
 theorem denominator_antipode :
     boolDenominator H (false, false) + boolDenominator H (true, true)
     = boolDenominator H (false, true) + boolDenominator H (true, false) := by
-  rcases denominator_additive_split H with ⟨α, β, γ, h⟩
-  rw [h false false, h true true, h false true, h true false]
-  abel
+  exact boolSquare_antipode_of_additive_split
+    (fun a b => boolDenominator H (a, b)) (denominator_additive_split H)
 
 /-- Multiplying the attention update by the denominator recovers the numerator. -/
 theorem denom_smul_attn (ab : Bool × Bool) :
