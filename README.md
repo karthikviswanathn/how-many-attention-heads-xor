@@ -67,10 +67,7 @@ $I(f)$ with $H^{*}(f) \asymp I(f)$. Closing that gap is the main open problem.
   bound.
 - Push the formalization in [`head-complexity/`](head-complexity/) to cover more of the
   theorem stack.
-- Extend the empirical search to larger $n$ and reconcile it with the proofs. The current
-  run flags four provisional $H^{*}(f) = 3$ functions at $n = 3$ (see
-  [`three_head_functions_n3.md`](three_head_functions_n3.md)); these are estimates
-  awaiting proof.
+- Extend the empirical search to larger $n$ and reconcile it with the proofs.
 
 ## Repository map
 
@@ -80,12 +77,11 @@ $I(f)$ with $H^{*}(f) \asymp I(f)$. Closing that gap is the main open problem.
 | [`model.md`](model.md) | The precise attention model and the definition of $H^{*}(f)$. |
 | [`theorems.md`](theorems.md) | Ledger of the main theorems, their status, and how they fit together. |
 | [`theorems/`](theorems/) | Full writeups: checkerboard lower bound, threshold upper bounds, the $n$-bit XOR analysis, weighted-sum upper bound. |
-| [`writeup.md`](writeup.md) | Longer narrative tying the results together. |
+| [`artifacts/intro-materials/writeup.md`](artifacts/intro-materials/writeup.md) | Original blog-post writeup of the two-bit XOR result. |
 | [`literature_survey.md`](literature_survey.md) | Related work across transformers and Boolean complexity. |
-| [`three_head_functions_n3.md`](three_head_functions_n3.md) | Provisional empirical $H^{*}=3$ functions at $n=3$. |
 | [`head-complexity/`](head-complexity/) | Lean 4 formalization of the results (depends on mathlib). |
 | [`src/hstar/`](src/hstar/) | Python package that empirically estimates $H^{*}(f)$ by training small attention models. |
-| [`proposal.pdf`](proposal.pdf) / [`proposal.tex`](proposal.tex) | Project proposal (build with `./compile_pdf.sh`). |
+| [`artifacts/intro-materials/proposal.pdf`](artifacts/intro-materials/proposal.pdf) / [`proposal.tex`](artifacts/intro-materials/proposal.tex) | Project proposal (build with `./artifacts/scripts/compile_pdf.sh`). |
 | [`AGENTS.md`](AGENTS.md) | Markdown conventions used across the writeups. |
 
 New here? Read [`problem_statement.md`](problem_statement.md), then skim
@@ -117,5 +113,5 @@ list, `--robust` for a stronger second-pass search, `--device {cpu,cuda,mps}`, a
 **Proposal PDF.**
 
 ```bash
-./compile_pdf.sh   # runs pdflatex on proposal.tex and cleans up aux files
+./artifacts/scripts/compile_pdf.sh   # runs pdflatex on proposal.tex and cleans up aux files
 ```

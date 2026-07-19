@@ -87,4 +87,5 @@ H^{*}(f) \geq 2.
 $$
 ```
 
-Apply this style to every file under `theorems/` and to `writeup.md`.
+Apply this style to every file under `theorems/` and to
+`artifacts/intro-materials/writeup.md`.

@@ -1,7 +1,10 @@
 #!/bin/bash
 set -e
 
-TEX_FILE="${1:-proposal.tex}"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+TEX_FILE="${1:-$SCRIPT_DIR/../intro-materials/proposal.tex}"
+cd "$(dirname "$TEX_FILE")"
+TEX_FILE="$(basename "$TEX_FILE")"
 BASE="${TEX_FILE%.tex}"
 
 pdflatex -interaction=nonstopmode "$TEX_FILE"
