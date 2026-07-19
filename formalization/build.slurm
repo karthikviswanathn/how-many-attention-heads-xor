@@ -28,7 +28,7 @@ lake build
 echo "BUILD_RC=$?"
 date
 
-echo "=== axiom check (new L1/L5/L12 theorems must depend only on standard axioms) ==="
+echo "=== axiom check (headline theorems must depend only on standard axioms) ==="
 cat > /tmp/AxiomCheck_$$.lean <<'EOF'
 import HeadComplexity
 open HeadComplexity
@@ -58,6 +58,8 @@ open HeadComplexity
 #print axioms checkerboard_restriction_HStarN_ge_two
 #print axioms HStarN_threshold
 #print axioms HStarN_exact
+#print axioms f10Q_ne_zero
+#print axioms theorem13_strict_separation
 EOF
 # Capture the report and FAIL if any non-standard axiom (e.g. sorryAx) appears.
 AX_OUT=$(lake env lean /tmp/AxiomCheck_$$.lean 2>&1); AX_RC=$?

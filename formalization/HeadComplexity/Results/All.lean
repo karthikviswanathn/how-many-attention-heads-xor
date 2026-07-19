@@ -5,17 +5,19 @@ import HeadComplexity.Results.WeightedUpperBound
 import HeadComplexity.Results.FractionalNormalForm
 import HeadComplexity.Results.LowComplexity
 import HeadComplexity.Results.SymmetricComplexity
+import HeadComplexity.Results.StrictSeparation
 
 set_option linter.style.header false
 
 /-!
-# Main results — the twelve foundational theorems, in one place.
+# Main results: the foundational stack and explicit separations
 
-A machine-checked table of contents.  Each `alias` below names the headline
-Lean statement for one theorem writeup in
-`theorems/01_foundations_and_normal_form/`; because the build elaborates these
-aliases, this file *verifies* that every result exists with the meaning claimed.
-All are general-`n` and axiom-clean
+A machine-checked table of contents. Each foundational `alias` below names the
+headline Lean statement for one theorem writeup in
+`theorems/01_foundations_and_normal_form/`. The separation aliases correspond to
+`theorems/02_separations_and_counterexamples/`. Because the build elaborates
+these aliases, this file *verifies* that every result exists with the meaning
+claimed. The foundational results are general-`n` and axiom-clean
 (`[propext, Classical.choice, Quot.sound]`; the build's `#print axioms` gate
 confirms it).  `H*` is `HStarN n f`, the least number of attention heads realizing
 `f`; `deg±` is `thresholdDeg`.
@@ -69,5 +71,11 @@ alias theorem11_level1 := HStarN_eq_one_iff
 /-- **Theorem 12.** Symmetric sign-change characterization:
 `H*(symmetricFn F) = signChanges n F`. -/
 alias theorem12_symmetric := HStarN_symmetricFn
+
+/-! ## Separation results -/
+
+/-- **Theorem 13.** Threshold degree can be strictly smaller than head
+complexity. -/
+alias theorem13_strict_separation := f10_strict_separation
 
 end HeadComplexity

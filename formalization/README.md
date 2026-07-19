@@ -3,12 +3,14 @@
 Lean 4 formalization of the head-complexity results for one-layer attention. The
 definitions and theorems mirror the informal proofs in the top-level `theorems/` writeups.
 
-## Status — all 12 foundational theorems formalized
+## Status: twelve foundational theorems and one separation formalized
 
 Every theorem in `theorems/01_foundations_and_normal_form/` (L1–L12) is machine-checked
 for **general `n`**, with no `sorry`/`admit`, depending only on the three standard
 Lean axioms `[propext, Classical.choice, Quot.sound]` (the full build runs a
 `#print axioms` gate). `H*` is `HStarN` (the least number of heads realizing `f`).
+The explicit counterexample in `theorems/02_separations_and_counterexamples/` is
+machine-checked as Theorem 13.
 
 | # | Theorem | Headline Lean result | File |
 |---|-------|----------------------|------|
@@ -24,6 +26,12 @@ Lean axioms `[propext, Classical.choice, Quot.sound]` (the full build runs a
 | 10 | linear-fractional normal form `H*=L_frac` | `HStarN_eq_Lfrac` | `Results/FractionalNormalForm.lean` |
 | 11 | levels 0/1: const / nonconstant LTF | `HStarN_eq_zero_iff`, `HStarN_eq_one_iff` | `Results/LowComplexity.lean` |
 | 12 | symmetric `H*=C(F)` (sign changes) | `HStarN_symmetricFn` | `Results/SymmetricComplexity.lean` |
+| 13 | explicit strict separation `deg±<H*` | `f10_strict_separation` | `Results/StrictSeparation.lean` |
+
+Theorem 13 reuses the fractional normal form, clears two positive denominators,
+and applies a five-dimensional antipodal rank obstruction. The auxiliary theorem
+`f10QInt_mod_four` proves nonvanishing analytically, without an exhaustive
+Boolean-cube computation.
 
 Depends on [mathlib](https://github.com/leanprover-community/mathlib4) (version pinned
 in `lakefile.toml`). Build with:

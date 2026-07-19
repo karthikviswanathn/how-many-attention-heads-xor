@@ -1,6 +1,7 @@
 # Proof architecture
 
-How the twelve formalized theorems fit together. See `README.md` for the
+How the twelve foundational theorems and the first formalized separation fit
+together. See `README.md` for the
 theorem→theorem→file map, `HeadComplexity/Results/All.lean` for a verified
 table of contents, and `BUILDING.md` to reproduce the build.
 
@@ -72,6 +73,25 @@ atom is realized by a head (`Atoms/FracAtomHead.lean`), so `H* = L_frac`.
   of a standard family is the number of sign changes of its profile.
 * **L10** (`Results/FractionalNormalForm.lean`), **L11** (`Results/LowComplexity.lean`): the exact normal form and
   the level-0/1 classification, both using that every `f` is computable.
+
+## Strict separation
+
+**L13** (`Results/StrictSeparation.lean`) defines an explicit ten-bit function
+with threshold degree two and head complexity at least three. Its lower-bound
+chain is:
+
+```text
+two heads
+  -> two linear-fractional atoms
+  -> clear two positive denominators
+  -> a sum of two products of affine forms
+  -> mixed antipodal matrix has rank at most four
+```
+
+Five target slices force the same matrix to be strictly column diagonally
+dominant, hence to have rank five. This contradiction rules out two heads. An
+XOR restriction proves the matching threshold-degree lower bound, while the
+displayed quadratic supplies the degree-two upper bound.
 
 The same `le_antisymm`-over-two-`Nat.find` shape recurs in L10 and L12: a per-`H`
 equivalence between two complexity predicates forces their minima to agree.

@@ -42,6 +42,15 @@ theorem exists_computable (f : (Fin n → Bool) → Bool) :
   change f bits = f (Function.invFun (wT lam) (wT lam bits))
   rw [Function.leftInverse_invFun hinj bits]
 
+/-- The minimum in `HStarN` is attained. -/
+theorem HStarN_computable (f : (Fin n → Bool) → Bool) :
+    computableWithHeadsN n (HStarN n f) f := by
+  classical
+  have hex : ∃ k, computableWithHeadsN n k f := exists_computable f
+  unfold HStarN
+  rw [dif_pos hex]
+  exact Nat.find_spec hex
+
 /-! ## Zero heads ⟺ constant -/
 
 /-- A zero-head model computes exactly the constant functions. -/
@@ -125,6 +134,14 @@ theorem eval_cubePoint_affine (P : MvPolynomial (Fin n) ℝ) (hP : P.totalDegree
       Finsupp.single_eq_same]
     simp [cubePoint]
 
+/-- Threshold degree at most one gives a linear threshold function. -/
+theorem isLTF_of_ThresholdDegLE_one {f : (Fin n → Bool) → Bool}
+    (h : ThresholdDegLE f 1) : isLTF f := by
+  obtain ⟨P, hPdeg, hPsign⟩ := h
+  refine ⟨P.coeff 0, fun i => P.coeff (Finsupp.single i 1), fun x => ?_⟩
+  rw [← eval_cubePoint_affine P hPdeg x]
+  exact hPsign x
+
 /-! ## The level-1 characterization -/
 
 /-- `H*(f) = 1` heads give a linear threshold function (via Theorem 6). -/
@@ -140,6 +157,15 @@ theorem computable_one_of_isLTF (f : (Fin n → Bool) → Bool) (h : isLTF f) :
     computableWithHeadsN n 1 f := by
   obtain ⟨c, cs, hsign⟩ := h
   exact affine_computable f c cs hsign
+
+/-- Threshold degree at most one is equivalent to being a linear threshold
+function. -/
+theorem ThresholdDegLE_one_iff_isLTF (f : (Fin n → Bool) → Bool) :
+    ThresholdDegLE f 1 ↔ isLTF f := by
+  constructor
+  · exact isLTF_of_ThresholdDegLE_one
+  · intro h
+    exact signReprDegLe_of_computableWithHeadsN (computable_one_of_isLTF f h)
 
 /-- **Theorem 11 (level 1).** `H*(f) = 1` iff `f` is a nonconstant linear threshold
 function. -/

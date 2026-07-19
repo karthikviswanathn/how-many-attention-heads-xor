@@ -56,13 +56,19 @@ dependency order between them, in [`theorems.md`](theorems.md).
   while parity and the internal exact-count predicates $\mathrm{EXACT}_{n,k}$ need at
   least $2$.
 
+**Strict separation.**
+- [Theorem 13](theorems/02_separations_and_counterexamples/013_strict_threshold_degree_separation.md)
+  gives an explicit ten-bit function $f_{10}$ with
+  $\deg_{\pm}(f_{10})=2<3\leq H^{\ast}(f_{10})$. Thus threshold degree is a genuine
+  lower bound, not an exact characterization of head complexity.
+
 Taken together this is a *partial* characterization, not yet a single invariant
 $I(f)$ with $H^{*}(f) \asymp I(f)$. Closing that gap is the main open problem.
 
 ## Open directions
 
-- Find an invariant that pins down $H^{*}(f)$ on broad classes, or a family where head
-  complexity behaves qualitatively unlike the classical measures.
+- Determine the exact value of $H^{\ast}(f_{10})$, and find scalable families with a
+  growing gap between threshold degree and head complexity.
 - Tighten the gap between the threshold-degree lower bound and the weighted-sum upper
   bound.
 - Push the formalization in [`head-complexity/`](head-complexity/) to cover more of the
@@ -76,7 +82,7 @@ $I(f)$ with $H^{*}(f) \asymp I(f)$. Closing that gap is the main open problem.
 | [`problem_statement.md`](problem_statement.md) | The question and the core open problems. |
 | [`model.md`](model.md) | The precise attention model and the definition of $H^{*}(f)$. |
 | [`theorems.md`](theorems.md) | Ledger of the main theorems, their status, and how they fit together. |
-| [`theorems/`](theorems/) | Full writeups: checkerboard lower bound, threshold upper bounds, the $n$-bit XOR analysis, weighted-sum upper bound. |
+| [`theorems/`](theorems/) | Full writeups: foundational results, normal forms, and explicit separations. |
 | [`artifacts/intro-materials/writeup.md`](artifacts/intro-materials/writeup.md) | Original blog-post writeup of the two-bit XOR result. |
 | [`literature_survey.md`](literature_survey.md) | Related work across transformers and Boolean complexity. |
 | [`head-complexity/`](head-complexity/) | Lean 4 formalization of the results (depends on mathlib). |

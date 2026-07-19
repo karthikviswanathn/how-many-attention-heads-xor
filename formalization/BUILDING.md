@@ -61,6 +61,8 @@ open HeadComplexity
 #print axioms symmetricFn_computable             -- L12 upper bound
 #print axioms signChanges_le_of_computableWithHeadsN  -- L12 lower bound
 #print axioms theorem6_degree_le                   -- L6 (model → threshold degree)
+#print axioms f10Q_ne_zero                         -- exact nonvanishing certificate
+#print axioms theorem13_strict_separation          -- explicit strict separation
 EOF
 lake env lean /tmp/AxiomCheck.lean
 ```

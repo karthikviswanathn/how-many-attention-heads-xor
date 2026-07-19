@@ -12,7 +12,7 @@ For nearby literature and context, see [literature_survey.md](literature_survey.
 
 ## Current Status
 
-The current main-branch theorem stack uses the numbered foundation files in `theorems/01_foundations_and_normal_form/`, through Theorem 12.
+The current main-branch theorem stack uses the numbered foundation files in `theorems/01_foundations_and_normal_form/`, through Theorem 12. The first explicit counterexample is Theorem 13 in `theorems/02_separations_and_counterexamples/`.
 
 These notes give:
 
@@ -22,7 +22,8 @@ These notes give:
 - the threshold-degree lower-bound route,
 - a constructive weighted-sum upper-bound route,
 - an exact linear-fractional normal form for head complexity,
-- an exact characterization of the zero-head and one-head levels.
+- an exact characterization of the zero-head and one-head levels,
+- an explicit function for which threshold degree is strictly smaller than head complexity.
 
 The stack still does **not** give an exact characterization of $H^{\ast}(f)$ for all nonsymmetric Boolean functions.
 
@@ -228,6 +229,24 @@ In particular:
 
 **Proof.** [theorems/01_foundations_and_normal_form/012_symmetric_sign_changes.md](theorems/01_foundations_and_normal_form/012_symmetric_sign_changes.md)
 
+## Separations And Counterexamples
+
+### Theorem 13. Explicit strict separation
+
+There is an explicit ten-bit Boolean function $f&#95;{10}$ satisfying
+
+$$ \deg&#95;{\pm}(f&#95;{10})=2<3\leq H^{\ast}(f&#95;{10}). $$
+
+The function is defined by splitting the input into signed blocks $x,y\in\lbrace-1,+1\rbrace^5$ and thresholding
+
+$$ Q(x,y)=\left(\sum_i x_i\right)\left(\sum_j y_j\right)-3\sum_i x_i y_i. $$
+
+The quadratic gives threshold degree at most two, and an XOR restriction gives the matching lower bound. For head complexity, clearing two positive linear-fractional denominators produces a sum of two products of affine forms. Its mixed antipodal matrix has rank at most four, while the target sign pattern forces a strictly diagonally dominant five by five matrix, hence rank five.
+
+> **Interpretation.** The general inequality $\deg&#95;{\pm}(f)\leq H^{\ast}(f)$ can be strict.
+
+**Proof.** [theorems/02_separations_and_counterexamples/013_strict_threshold_degree_separation.md](theorems/02_separations_and_counterexamples/013_strict_threshold_degree_separation.md)
+
 ## Dependency Order
 
 The current dependency structure is:
@@ -244,6 +263,7 @@ The current dependency structure is:
 10. Theorem 10 gives the exact linear-fractional normal form for $H^{\ast}$.
 11. Theorem 11 uses Theorem 10 to characterize the zero-head and one-head levels exactly.
 12. Theorem 12 uses Theorems 6 and 10 to characterize every symmetric Boolean function exactly.
+13. Theorem 13 uses Theorem 10 to clear two heads, then applies a five-dimensional antipodal rank obstruction to obtain a strict separation from threshold degree.
 
 ## What This Currently Says About The First Core Question
 
@@ -255,4 +275,5 @@ That is not yet a full invariant. It is only a partial answer:
 - threshold degree certifies $\deg_{\pm}(f) \leq H^{\ast}(f)$,
 - the linear-fractional normal form gives an exact model-native definition of $H^{\ast}$,
 - positive weighted-sum image structure certifies $H^{\ast}(f) \leq M_{+}(f) - 1$,
-- for symmetric functions, the sign-change count gives the exact value.
+- for symmetric functions, the sign-change count gives the exact value,
+- for general nonsymmetric functions, Theorem 13 shows that threshold degree alone does not determine head complexity.
