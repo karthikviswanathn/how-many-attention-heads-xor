@@ -1,0 +1,53 @@
+{
+  "basis": "walsh",
+  "certificate_type": "sparse-ptf-upper",
+  "compiler": "fourier-support-cost",
+  "compiler_lemma": "lemmas/02_complexity_measure_upper_bounds/045_fourier_support_upper_bound.md",
+  "dimension": 6,
+  "head_count": 8,
+  "maximum_absolute_value": 3,
+  "minimum_signed_value": 1,
+  "schema_version": 1,
+  "search": {
+    "actual_dp_transitions": 20,
+    "basis": "walsh",
+    "estimated_dp_transitions": 91,
+    "floating_failures_are_lower_bounds": false,
+    "head_count": 8,
+    "maximum_knapsack_cost": 12,
+    "optimal_within_absolute_tail_criterion": true,
+    "retained_item_mass": 96,
+    "status": "verified-optimal-fourier-tail-certificate",
+    "strict_tail_threshold": 64,
+    "support_size": 3,
+    "target_retained_item_mass": 65,
+    "unnormalized_omitted_mass": 32
+  },
+  "terms": [
+    {
+      "coefficient": -1,
+      "subset": [
+        1,
+        3
+      ]
+    },
+    {
+      "coefficient": -1,
+      "subset": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "coefficient": -1,
+      "subset": [
+        2,
+        4,
+        5
+      ]
+    }
+  ],
+  "truth_mask_hex": "0xb1e41b4e278d72d8",
+  "vertex_order": "integer-code-lsb-coordinate-0"
+}

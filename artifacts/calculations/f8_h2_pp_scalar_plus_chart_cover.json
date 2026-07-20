@@ -1,0 +1,90 @@
+{
+  "certificate_type": "signed-secant-cell-cover",
+  "chart": {
+    "kind": "scalar-direction",
+    "value": 1
+  },
+  "dimension": 8,
+  "head_count": 2,
+  "orientations": [
+    1,
+    1
+  ],
+  "root_cell": {
+    "direction_bounds": [
+      [
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1]
+      ],
+      [
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1],
+        [-1, 1]
+      ]
+    ],
+    "scalar_direction_bounds": [1, 1],
+    "t_bounds": [0, 1],
+    "theta_bounds": [
+      [
+        [0, 1],
+        [0, 1],
+        [0, 1],
+        [0, 1],
+        [0, 1],
+        [0, 1],
+        [0, 1],
+        [0, 1],
+        [0, 1]
+      ],
+      [
+        [0, 1],
+        [0, 1],
+        [0, 1],
+        [0, 1],
+        [0, 1],
+        [0, 1],
+        [0, 1],
+        [0, 1],
+        [0, 1]
+      ]
+    ]
+  },
+  "schema_version": 1,
+  "tree": {
+    "leaf": {
+      "dual": {
+        "claimed_upper_bound": "-1",
+        "equality_multipliers": {
+          "affine::x255_R_2": "-1/2"
+        },
+        "inequality_multipliers": {
+          "bound_lower::x255_Rleft_2": "1/2",
+          "bound_lower::x255_Rright_2": "1/2",
+          "bound_lower::x255_aC": "1/2",
+          "bound_lower::x255_aP": "1/2"
+        }
+      },
+      "lambda": [
+        {
+          "vertex": 255,
+          "weight": "1"
+        }
+      ]
+    }
+  },
+  "truth_mask_hex": "0x177f2bbf4ddf8eef71f7b2fbd4fde8fe7f17bf2bdf4def8ef771fbb2fdd4fee8",
+  "vertex_order": "integer-code-lsb-coordinate-0"
+}
