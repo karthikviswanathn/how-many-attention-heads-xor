@@ -11,8 +11,11 @@ passing verification script, or a Lean formalization. Clearly stated
 conjectures and open problems are included as hypotheses. Excluded: every file
 whose only purpose was an attempt at a statement that was never proved, in
 particular the five-bit degree-three exact-cover search and the six-bit
-parity-triple four-head-impossibility program. Nothing is lost: every excluded
-file remains on its source branch in this repository's git history.
+parity-triple four-head-impossibility program. The excluded material lived on
+the source branches until 2026-07-20, when the repository was cleaned down to
+`main` and `autoresearch` (this line, formerly `codex/sprint-1`) and the old
+branches were deleted for good; what this document keeps is the record of what
+existed and why it was excluded.
 
 ## Source map
 
@@ -157,8 +160,8 @@ only artifacts were search programs are stated here directly.
   bound, while the spine ledger (and `snellius/jul15`) state a convolution-sum
   form. Both trace to the same restriction argument, but the file and ledger
   entry should be reconciled.
-- **What was deleted from this branch's tree** (all still on their source
-  branches): the n5 degree-three exact-cover search, the n6 parity-triple
+- **What was deleted from this branch's tree** (purged with the source
+  branches in the 2026-07-20 cleanup): the n5 degree-three exact-cover search, the n6 parity-triple
   four-head program (route documents, atlases, SAT/LP searches, audit and
   screen scripts, the Gordan-route conjecture files, jul15's cell-obstruction
   lemmas, and roughly 1,800 untracked search outputs on the cluster), n7/n8
