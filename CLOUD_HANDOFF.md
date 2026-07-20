@@ -1,10 +1,14 @@
 # Cloud Task Handoff
 
+## Continuation update
+
+The user resumed the task after the original handoff. On 2026-07-17, the active branch was `codex/sprint-1` at commit `5a9ae507282ce7ad2781b879cce9f57fd297bb97`. The worktree then contained uncommitted certified-estimator code, documentation, and the new six-head certificate described below. Inspect `git status --short` before treating the earlier clean-checkout language as current. The latest concrete six-bit result is the rigorous interval $4\leq H^{\ast}(f_6)\leq6$. The active objective is now a scalable certified methodology for general $H^{\ast}(f)$, not only the six-bit candidate.
+
 ## Stop state
 
 This handoff was prepared on 2026-07-14 after the user asked the local task to stop and transfer its state to a new Codex cloud task. It was refreshed on 2026-07-15 after the research snapshot was reviewed, committed, and pushed.
 
-- Goal status: paused.
+- Historical goal status at the original handoff: paused. Current general-methodology continuation: active.
 - Git branch: `codex/sprint-1`.
 - Reviewed research snapshot: `8e2f8a4f2a01edcfca138396de016033818dffc4`.
 - The cloud environment files were added after that research snapshot on the same branch. The cloud task should check out the current branch tip and record `git rev-parse HEAD` before doing work.
@@ -286,6 +290,8 @@ The truth mask is
 0x96696bd669b69669
 ```
 
+Under the repository mask convention this is even parity with the three vertices flipped. Odd parity with the same flips has complementary mask `0x6996942996496996`. Complement invariance gives the same threshold degree and head complexity.
+
 The exact verifier gives an integer quartic sign polynomial and a positive degree-three Gordan circuit, proving
 
 $$ \deg_{\pm}(f_6)=4. $$
@@ -295,15 +301,23 @@ Files:
 - `artifacts/calculations/verify_n6_parity_midlayer_triple_candidate.py`
 - `artifacts/calculations/n6_parity_midlayer_triple_rigidity.md`
 - `artifacts/calculations/n6_parity_midlayer_triple_slice_poset.md`
+- `artifacts/calculations/n6_parity_midlayer_triple_h6_certificate.json`
+- `artifacts/calculations/verify_n6_parity_midlayer_triple_h6.py`
+
+A continuous oriented-denominator search found an exact six-head upper certificate with orientations $(-,-,-,+,+,+)$. Its minimum signed cleared score is `11861735510772`, and its maximum is `1053462090324445872`. Therefore the current unconditional interval is
+
+$$ 4\leq H^{\ast}(f_6)\leq6. $$
 
 Verification:
 
 ```bash
 python3 artifacts/calculations/verify_n6_parity_midlayer_triple_candidate.py
 python3 artifacts/calculations/verify_n6_parity_midlayer_triple_slice_poset.py
+python3 artifacts/calculations/verify_n6_parity_midlayer_triple_h6.py
+PYTHONPATH=src python3 -m hstar.certified_cli verify --dimension 6 --mask 0x96696bd669b69669 --certificate artifacts/calculations/n6_parity_midlayer_triple_h6_certificate.json
 ```
 
-No exact four-head representation has been found, and no universal four-head obstruction has been proved. Therefore this function is a candidate only. Do not call it a separation.
+No exact four-head or five-head representation has been found, and no universal obstruction excludes either count. Therefore this function is a candidate only. Do not call it a separation, and do not claim that the exact head count is six.
 
 ## Strongest surviving six-bit route
 
@@ -384,7 +398,7 @@ $$ Q(z)=2+z_5-z_4 $$
 
 is nonnegative and vanishes at the two retained exceptional points $38,41$. For every quartic $T$,
 
-$$ \sum_{z\in S_{56}}s(z)Q(z)T(z)=-\sum_{z\in K}p(z)Q(z)T(z). $$
+$$ \sum&#95;{z\in S&#95;{56}}s(z)Q(z)T(z)=-\sum&#95;{z\in K}p(z)Q(z)T(z). $$
 
 The right side is supported on only six omitted points:
 
@@ -407,7 +421,7 @@ python3 artifacts/calculations/verify_n6_parity_triple_affine_weak_dual_reductio
 
 The cleared four-head quartic tangent map
 
-$$ \Phi(B,A)=\sum_{h=0}^{3}A_h\prod_{j\neq h}B_j $$
+$$ \Phi(B,A)=\sum&#95;{h=0}^{3}A&#95;h\prod&#95;{j\neq h}B&#95;j $$
 
 has exact Zariski dimension $49$ inside the $57$-dimensional quartic coefficient space. The parameter count is $56$ with seven exact gauge directions, and a positive-orientation integer point has Jacobian rank $49$ modulo $1000003$.
 
@@ -501,7 +515,287 @@ python3 artifacts/calculations/search_continuous_one_oriented_factor.py
 
 This check is now recorded here because it was not promoted to a separate theorem or verifier. It only rules out the most direct seven-bit minors of $f_8$.
 
-## Remaining tasks in priority order
+## Current general-methodology continuation
+
+The current active objective is broader than the six-bit case: construct a scalable, certified methodology for estimating lower and upper bounds on $H^{\ast}(f)$ for an arbitrary truth table.
+
+The main new research artifact is:
+
+- `artifacts/calculations/general_hstar_scalable_research_program.md`
+
+The updated implementation architecture is:
+
+- `artifacts/calculations/scalable_hstar_bound_methodology.md`
+
+The formal slice-rank theorem is:
+
+- `lemmas/02_complexity_measure_upper_bounds/190_slice_rank_two_obstruction.md`
+
+Its exact Boolean-cube limitation is:
+
+- `lemmas/02_complexity_measure_upper_bounds/191_boolean_cube_slice_relaxation_ceiling.md`
+
+The exact multiway tensor limitation is:
+
+- `lemmas/02_complexity_measure_upper_bounds/192_multiway_sign_tensor_rank.md`
+
+The high-head and weighted-matrix designs are:
+
+- `artifacts/calculations/high_head_hstar_methodology.md`
+- `artifacts/calculations/weighted_tau_hard_core_scheduler.md`
+
+New established results and directions recorded there include:
+
+1. Every homogeneous cleared $H$-head form is a Chow tangent and lies in the second Chow secant closure.
+
+2. For $H\geq2$, every cleared form has polynomial slice rank at most two:
+
+$$ P=L_1Q_1+L_2Q_2. $$
+
+One slice generator can be chosen from an admissible denominator cone. The fixed-plane inner problem is an LP, while the outer Grassmannian has dimension $2(n-1)$, independent of $H$. Choosing a largest Plücker pivot gives a complete bounded atlas with $\binom{n+1}{2}$ boxes and chart entries in $[-1,1]$. On maximal-rank cells, the selected evaluation rows are affine in the chart variables, so exact inradius and row-motion certificates can cover whole cells.
+
+Boolean evaluation sharply limits this route. With $D&#95;d=\sum_{j=0}^{d}\binom nj$, the maximum fixed-plane evaluation rank is $\min\lbrace D&#95;H,2D&#95;{H-1}-D&#95;{H-2}\rbrace$. For $H\geq\lceil(n+1)/2\rceil$, one fixed plane containing an admissible denominator spans every degree at most $H$ cube polynomial. The slice relaxation is then exactly threshold degree. In particular, it cannot improve the four-head lower bound for the six-bit parity triple flip.
+
+3. The same tangent has a positive-secant compactification with $2Hn+1$ parameters and balanced block splits with coefficient scale $O(n^{\lceil H/2\rceil})$.
+
+4. Every cleared form satisfies $\mathrm{rank}(\mathrm{Cat}_k(P))\leq2\binom{H}{k}$, with first catalecticant rank at most $2H$. For cubic slice rank two in seven variables, a concrete $210\times196$ Jacobian Macaulay matrix has rank at most $169$.
+
+5. For candidate count $H=2$, the real second-secant relaxation strengthens rank at most four to the exact inertia conditions $n&#95;+(M&#95;P)\leq2$ and $n&#95;-(M&#95;P)\leq2$.
+
+6. The optimized Linial, Mendelson, Schechtman, and Shraibman quantity
+
+$$ \tau(S)=\min\left\lbrace\gamma_2^{\ast}(W):S\circ W\geq\mathbf1\right\rbrace $$
+
+gives a certifiable partition sign-rank backend that dominates the literal $\gamma&#95;2^{\ast}$ bound. Product average margin with nonuniform row and column weights can strengthen it further. Rational feasible PSD witnesses have the safe certificate direction.
+
+7. Cost-aware Walsh and monotone-monomial column generation prices all features in $O(n2^n)$ time. Affine-cylinder branch-and-price and direct denominator-group boosting give complementary constructive upper searches. Only exact refitting and full-cube verification change the upper endpoint.
+
+8. Full-dimensional robust Gordan obstructions have positive-spanning supports of at most $2(1+Hn)$ rows. A centered inball plus the exact telescoping row-motion bound certifies a whole denominator cell without cofactors.
+
+9. Exact infeasibility on any sampled truth-table subset is a valid global lower certificate. Feasibility on a subset is not an upper certificate.
+
+10. Positive-denominator rational sign degree is only threshold degree. The tangent shared-factor constraint is the model-specific information.
+
+11. The strengthened Fourier lemma aggregates the constant and singleton-character portion into at most one head, then charges $\lvert S\rvert$ only for each active Walsh character with $\lvert S\rvert\geq2$.
+
+12. Average sensitivity gives a cheap exact $O(n2^n)$ degree presolve from bichromatic cube edges, but it was weak on the first small benchmarks.
+
+13. For $k$ coordinate blocks, every $H$-head sign tensor has sign CP rank at most $k(k^H-(k-1)^H)$. The ambient CP-rank ceiling proves that rank size alone cannot improve the balanced matrix screen $n\geq2H+2$, regardless of the block count.
+
+14. The full tangent and positive-secant closures can remain proper above the matrix and slice midpoint ceilings. The high-head route therefore uses positive-secant pair inequalities, low-degree adjustable Gordan policies, and robust positive-basis cells rather than more flattening rank.
+
+15. The public estimator now implements optional transform-priced sparse PTF column generation. On equality of two six-bit strings it returned a verified $7$-head certificate from $80$ generated columns, using at most $712704$ restricted-master entries instead of a $16777216$-entry full matrix. Weighted $\ell_1$ remains only a support heuristic.
+
+16. The weighted $\tau$ pilot verifies exact rational Gram-plus-residual certificates on Sylvester matrices and on a hard eight-by-eight block padded to order sixteen. Zero-supported product weights preserve certified sign-rank at least three on the padded instance.
+
+17. The public estimator also exposes the exact absolute Fourier-tail knapsack behind vertex and transition budgets. On mask `0xb1e41b4e278d72d8`, it improves exhaustive positive projection from $15$ heads to $8$ using $20$ dynamic-program transitions. The exact certificate is `artifacts/calculations/six_bit_optimal_fourier_tail_h8_certificate.json`.
+
+The next general implementation priorities are:
+
+1. implement rational McCormick and RLT signed-secant cell certificates with exact probability-vector leaves;
+
+2. prototype output-normalized atomic boosting with fixed-denominator numerator pricing;
+
+3. promote the weighted $\tau$ pilot into the library, then add rational product-weight optimization and hard-core scheduling;
+
+4. implement a degree-one adjustable Gordan-policy LP on mined supports with exact coefficient and positivity checking;
+
+5. benchmark the integrated upper portfolio across parity, majority, juntas, random targets, DNF and CNF families, address functions, and sparse parity perturbations;
+
+6. run a bounded slice Grassmann atlas only on instances that pass the implemented Boolean collapse screen;
+
+7. add exact infeasible witness subsets as a shared certificate type;
+
+8. implement inradius-oriented positive-basis extraction, exact row-motion cells, and the coupled upper-feature and lower-scenario exchange loop;
+
+9. add direct denominator-group boosting with fixed-denominator exactification.
+
+Latest verification commands:
+
+```bash
+UV_CACHE_DIR=/tmp/hstar-uv-cache PYTHONPATH=src uv run --offline python artifacts/calculations/verify_sparse_ptf_prototype.py
+UV_CACHE_DIR=/tmp/hstar-uv-cache PYTHONPATH=src uv run --offline python artifacts/calculations/verify_certified_hstar_estimator.py
+UV_CACHE_DIR=/tmp/hstar-uv-cache PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 uv run --offline python artifacts/calculations/weighted_tau_partition_pilot.py
+UV_CACHE_DIR=/tmp/hstar-uv-cache PYTHONPATH=src uv run --offline python artifacts/calculations/verify_boolean_cube_slice_rank_and_n6_cubic_dominance.py
+```
+
+All four commands exited successfully on 2026-07-17.
+
+## Latest general-methodology update
+
+The general research state is now consolidated in:
+
+- [adaptive_general_hstar_estimator.md](artifacts/calculations/adaptive_general_hstar_estimator.md), the adaptive proof portfolio, mathematical gates, certificate schemas, access modes, scheduler, cost guide, and benchmark program;
+
+- [scalable_hstar_bound_methodology.md](artifacts/calculations/scalable_hstar_bound_methodology.md), the complete anytime hierarchy;
+
+- [general_hstar_scalable_research_program.md](artifacts/calculations/general_hstar_scalable_research_program.md), the analytic derivations and broader research map;
+
+- [high_head_hstar_methodology.md](artifacts/calculations/high_head_hstar_methodology.md), the model-native high-head route;
+
+- [literature_survey.md](literature_survey.md), the primary-source literature synthesis.
+
+The main conclusion is that no single surrogate should estimate $H^{\ast}$. Maintain an interval
+
+$$ L(f)\leq H^{\ast}(f)\leq U(f) $$
+
+and admit an endpoint change only after an independent exact verifier accepts its certificate. Upper and lower engines should exchange hard vertices and dual weights, while keeping all floating discovery data outside the proof graph.
+
+### Theorem 194. Signed-secant compactification
+
+[Theorem 194](lemmas/02_complexity_measure_upper_bounds/194_signed_secant_diagonal_blowup.md) retains the positive-secant mixture scalar and writes
+
+$$ \theta^{(1)}=\theta+tv,\qquad 2s-1=ta,\qquad \max\lbrace\lVert v\rVert&#95;{\infty},\lvert a\rvert\rbrace=1. $$
+
+The signed score is exactly divisible by $t$. Strict quotient feasibility on the closed compact chart domain is equivalent to strict signed-secant feasibility, including at $t=0$. The proof moves a boundary base point into the product-simplex interior before opening a short ray, so no face implication is required.
+
+The signed formulation has:
+
+- one inequality per truth-table vertex;
+
+- $2H(n+1)+2$ raw charts;
+
+- at most $4(n+1)+2$ chart types per orientation-count branch after head symmetry;
+
+- scalar degree at most $H$ and total degree at most $2H+1$;
+
+- joint head-block multidegree one.
+
+For $n=6$ and $H=3$, this is $64$ signed inequalities instead of $1024$ balanced pair gaps, with $44$ raw charts and at most $30$ symmetry types per orientation branch.
+
+The factor graph uses the exact recurrence
+
+$$ P&#95;h=P&#95;{h-1}b&#95;h,\qquad R&#95;h=R&#95;{h-1}c&#95;h+P&#95;{h-1}d&#95;h. $$
+
+The standalone verifier is [verify_signed_secant_diagonal_blowup.py](artifacts/calculations/verify_signed_secant_diagonal_blowup.py). It passed $1600$ endpoint-to-chart checks, $2400$ factor-recurrence checks, $200$ scalar-elimination checks, and exact boundary examples.
+
+Use this quotient for spatial McCormick and RLT subdivision. Use the original unblown retained-scalar system for CAD, NLSAT, or dense Positivstellensatz residual solving because its total degree is only $H+1$.
+
+### Theorem 195. Atomic-margin sparsification
+
+[Theorem 195](lemmas/02_complexity_measure_upper_bounds/195_atomic_margin_sparsification.md) normalizes genuine one-head score vectors in output space. If a convex atomic score has scale $\Lambda$ and full-cube margin $\gamma$, approximate Carathéodory gives
+
+$$ H^{\ast}(f)\leq C(n+1)\left(\frac{\Lambda}{\gamma}\right)^2. $$
+
+This provides a principled width target for denominator-group boosting. For a fixed positive denominator, normalized affine-numerator pricing is an LP. Denominator pricing remains nonlinear. A finite rational positive-margin atomic decomposition is already a direct upper certificate. Failure to find a good atomic condition number has no lower-bound meaning.
+
+### Theorem 196. Optimal Fourier-tail knapsack
+
+[Theorem 196](lemmas/02_complexity_measure_upper_bounds/196_optimal_fourier_tail_knapsack.md) computes the minimum compiler cost obtainable from the absolute Fourier-tail criterion. Retain the constant coefficient for free, bundle all singleton coefficients into one cost-one item, and give each nonsingleton Walsh coefficient value equal to its absolute unnormalized mass and cost equal to its degree.
+
+Requiring omitted mass below $2^n$ is an exact zero-one knapsack cover. Total compiler cost is at most $n2^n+1$, so dynamic programming takes
+
+$$ O(n4^n)=O(nV^2) $$
+
+integer operations, polynomial in the truth-table length $V=2^n$.
+
+The implementation is [optimal_fourier_tail_upper_bound](src/hstar/sparse_ptf.py). It groups equal-degree characters, sorts their masses, and optimizes over degree-prefix choices. The public estimator exposes it through `--optimal-fourier-tail`, `--optimal-fourier-tail-max-transitions`, and `--optimal-fourier-tail-max-vertices`. Budget misses are diagnostic skips and never lower bounds. The verifier:
+
+- checks greedy Fourier-tail certificates for all $256$ three-bit functions;
+
+- compares the exact dynamic program with brute-force item selection for all $256$ three-bit functions;
+
+- verifies every returned integer score independently;
+
+- improves the fixed six-bit mask <code>0xcc4b244f3c92d063</code> from greedy compiler cost $119$ to the optimal tail cost $117$.
+
+- verifies the archived eight-head certificate [six_bit_optimal_fourier_tail_h8_certificate.json](artifacts/calculations/six_bit_optimal_fourier_tail_h8_certificate.json) for mask <code>0xb1e41b4e278d72d8</code>. Exhaustive positive projection costs $15$ on this example, while the grouped tail program estimates $91$ transitions and executes $20$.
+
+This is optimal only within the absolute Fourier-tail sufficient condition. It does not optimize arbitrary sparse sign polynomials and does not compute $H^{\ast}$.
+
+### Exact signed-secant McCormick discovery and covers
+
+The portable parameter-cell lower stack is implemented in [signed_secant_mccormick.py](src/hstar/signed_secant_mccormick.py) and documented in [signed_secant_mccormick_leaf_format.md](artifacts/calculations/signed_secant_mccormick_leaf_format.md). The checker reconstructs base boxes, simplex-aware affine bounds, product bounds, all four McCormick inequalities per product, simplex and endpoint constraints, the shared $z&#95;{hi}=tv&#95;{hi}$ lift, $\sum&#95;i z&#95;{hi}=0$, the prefix recurrence, and $C&#95;H=P&#95;H+tR&#95;H$.
+
+It verifies nonnegative rational inequality multipliers and free rational equality multipliers against the weighted signed objective. Exact stationarity and a nonpositive exact dual value exclude strict feasibility throughout that cell. Sparse common-margin LPs can propose $\lambda$ and dual supports, but only independently verified rational reconstruction is accepted.
+
+The first archive is [signed_secant_mccormick_leaf_xor1.json](artifacts/calculations/signed_secant_mccormick_leaf_xor1.json). It is a one-cell certificate with $23$ variables, $9$ products, $86$ inequalities, $12$ equalities, and a three-term rational dual. It is not a complete chart cover and does not establish a new global head lower bound.
+
+The binary cover-tree checker verifies exact rational splits and derives every child box itself. [signed_secant_subcell_cover_xor1.json](artifacts/calculations/signed_secant_subcell_cover_xor1.json) is a two-leaf proper-subcell cover. [f8_h2_pp_scalar_plus_chart_cover.json](artifacts/calculations/f8_h2_pp_scalar_plus_chart_cover.json) covers the entire $a=1$ chart for the two-positive-orientation branch of the eight-bit separation. Its point mass at vertex $255$ and five-term rational dual give exact upper bound $-1$. This proves that chart infeasible, not that every two-head chart is infeasible.
+
+The full-cube eight-bit discovery LP used sparse matrices with $6200$ variables, $23772$ inequalities, $3590$ equalities, and $2834$ products, then reduced to an $80$-variable portable leaf. [benchmark_signed_secant_mccormick.py](artifacts/calculations/benchmark_signed_secant_mccormick.py) currently finds exact root leaves on $8$ of $16$ raw one-head XOR charts, $2$ of $6$ two-head eight-bit scalar charts, and $2$ of $10$ four-head six-bit scalar charts. Every positive relaxation is recorded as unresolved, not feasible.
+
+[Theorem 197](lemmas/02_complexity_measure_upper_bounds/197_box_sum_greedy_affine_bounds.md) isolates the tightening that made the eight-bit leaves visible. A linear form over a rational box intersected with one sum equality has exact endpoints given by ascending and descending fractional-knapsack allocation. This computes exact bounds for simplex factors, zero-sum directions, and the shared $z$ lift in $O(n\log n)$. The verifier compares the rule with every extreme point of $700$ random rational box-sum polytopes and all $512$ zero-one literal masks on a nine-coordinate simplex.
+
+### Current lower and upper scheduling policy
+
+The recommended lower frontier is:
+
+1. safe restrictions, structural theorems, sensitivity, and exact threshold degree;
+
+2. partition spectral, $\tau$, and weighted $\tau$ only when the side-size gate $n\geq2H+2$ passes;
+
+3. screened slice and coefficient methods below their Boolean midpoint collapse;
+
+4. signed-secant McCormick and RLT cells, adjustable Gordan policies, and robust positive-basis cells;
+
+5. CAD, NLSAT, Positivstellensatz, or SOS only on small residual systems.
+
+The recommended upper frontier is:
+
+1. structural constructions, positive projections, minority support, and archived exact families;
+
+2. greedy and optimal Fourier tails;
+
+3. monotone and Walsh sparse-PTF refitting and transform-priced column generation;
+
+4. output-normalized atomic boosting;
+
+5. direct denominator variable projection, rationalization, and exact full-cube checking.
+
+Important gates and negative results:
+
+- exact black-box determination has a worst-case $\Omega(2^n)$ query barrier;
+
+- a failed numerical upper search never raises the lower endpoint;
+
+- a feasible signed secant is not an upper certificate for the original head model;
+
+- partition rank cannot rule out $H$ heads when $n\leq2H+1$;
+
+- plain and positivity-aware slice rank collapse to threshold degree at the Boolean middle level;
+
+- VC and parameter-count bounds support witness mining but give no Helly theorem for a small deterministic infeasible witness;
+
+- dense SOS is a residual method, not a root solver for the full high-head system.
+
+### Latest verification
+
+These commands passed after the latest update:
+
+~~~bash
+PYTHONPATH=src:artifacts/calculations python3 artifacts/calculations/verify_positive_secant_diagonal_blowup.py
+PYTHONPATH=src:artifacts/calculations python3 artifacts/calculations/verify_signed_secant_diagonal_blowup.py
+PYTHONPATH=src python3 artifacts/calculations/verify_sparse_ptf_prototype.py
+PYTHONPATH=src python3 artifacts/calculations/verify_certified_hstar_estimator.py
+PYTHONPATH=src python3 -m hstar.certified_cli verify --dimension 6 --mask 0xb1e41b4e278d72d8 --certificate artifacts/calculations/six_bit_optimal_fourier_tail_h8_certificate.json
+PYTHONPATH=src python3 artifacts/calculations/verify_signed_secant_mccormick_leaf.py
+PYTHONPATH=src python3 artifacts/calculations/verify_signed_secant_cell_cover.py
+PYTHONPATH=src python3 artifacts/calculations/benchmark_signed_secant_mccormick.py
+PYTHONPATH=src python3 artifacts/calculations/verify_box_sum_affine_bounds.py
+PYTHONPATH=src python3 -m hstar.certified_cli verify --dimension 1 --mask 0x2 --certificate artifacts/calculations/signed_secant_mccormick_leaf_xor1.json
+PYTHONPATH=src python3 -m hstar.certified_cli verify --dimension 8 --mask 0x177f2bbf4ddf8eef71f7b2fbd4fde8fe7f17bf2bdf4def8ef771fbb2fdd4fee8 --certificate artifacts/calculations/f8_h2_pp_scalar_plus_chart_cover.json
+~~~
+
+The estimator smoke test again verified the interval $4\leq H^{\ast}(f_6)\leq6$, the exact result $H^{\ast}(f_8)=3$, and the public optimal-tail certificate and both budget-skip paths. The optional exact nonlinear-real backend was not installed.
+
+### Next general tasks
+
+1. Add signed-secant automatic split selection, active-vertex generation, chart symmetry, robust exact basis reconstruction, and a complete global cover manifest.
+
+2. Prototype output-normalized atomic boosting with fixed-denominator numerator pricing.
+
+3. Promote the weighted $\tau$ hard-core scheduler after benchmarking its rational spectral constructor.
+
+4. Add degree-one adjustable Gordan policies on mined supports.
+
+5. Benchmark interval quality, certificate size, verification time, and cross-feeding ablations on the exact small archive, parity, equality, symmetric predicates, random tables, $f_6$, and $f_8$.
+
+6. Add active-set cross-feeding so hard vertices from failed upper searches seed signed-secant lower cells.
+
+No current general-methodology result changes the exact separation claims recorded elsewhere in this handoff.
+
+## Remaining tasks in the original separation program
 
 1. Resume and finish the five-bit degree-three exact cover. Require PicoSAT UNSAT, compiled watched-literal UNSAT, and independent Python UNSAT before claiming the five-bit theorem.
 
@@ -513,7 +807,7 @@ This check is now recorded here because it was not promoted to a separate theore
 
 5. If the multiplier route stalls, test the exact augmented alternative $sR+\beta p\geq0$ directly against denominator orientation. A representation-complete quintic invariant search is a later and more expensive fallback.
 
-6. If a six-bit four-head obstruction is completed, combine it with the finished five-bit theorem. This would prove that six bits is minimal. Then determine or bound the exact value of $H^{\ast}$ for the six-bit function if the final theorem is intended to state more than strict inequality.
+6. If a six-bit four-head obstruction is completed, combine it with the finished five-bit theorem. This would prove that six bits is minimal. To determine the exact value of $H^{\ast}(f_6)$, separately decide whether five heads suffice.
 
 7. If the six-bit candidate is refuted by an exact four-head construction, preserve that certificate and return to seven-bit candidate search. Do not infer anything from numerical non-discovery alone.
 
@@ -523,6 +817,7 @@ This check is now recorded here because it was not promoted to a separate theore
 - Every Boolean function on at most four bits has equality.
 - Five-bit equality is exact outside threshold degree $3$.
 - The six-bit parity-triple candidate has exact threshold degree $4$.
+- The six-bit parity-triple candidate has a verified six-head representation, so $4\leq H^{\ast}(f_6)\leq6$.
 - The full-cube cleared $V_5$ route is the strongest surviving six-bit obstruction route, but it is not a proof.
 - Therefore the only certified minimal-dimension statement is $5\leq n_{\mathrm{sep}}\leq8$.
 

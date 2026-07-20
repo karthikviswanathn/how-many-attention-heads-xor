@@ -10,11 +10,52 @@ The resulting truth mask is
 
 $$ \mathtt{0x96696bd669b69669}. $$
 
+Under the repository convention, a positive mask bit means sign $+1$. Thus this mask starts from even parity and flips the three exceptional vertices. The version that starts from odd parity and flips the same vertices has complementary mask
+
+$$ \mathtt{0x6996942996496996}. $$
+
+Complement invariance gives the same value of $H^{\ast}$ for both conventions.
+
 The exact verifier [verify_n6_parity_midlayer_triple_candidate.py](verify_n6_parity_midlayer_triple_candidate.py) checks an integer quartic sign polynomial with minimum signed value $1$. It also checks a positive Gordan relation of support $40$ annihilating every monomial of degree at most three. Therefore
 
 $$ \deg_{\pm}(f)=4. $$
 
-The rest of this note describes constraints satisfied by every quartic sign representative. These constraints do not yet prove $H^{\ast}(f)>4$.
+## Certified head-complexity interval
+
+The positive integer projection
+
+$$ t(x)=65x_0+72x_1+96x_2+66x_3+80x_4+68x_5 $$
+
+is injective on the cube. The labels in increasing order of $t$ change exactly eight times, at ordered positions
+
+$$ 1,7,23,37,39,42,57,63. $$
+
+The positive-projection sign-change theorem therefore gives
+
+$$ H^{\ast}(f)\leq8. $$
+
+A numerical oriented-denominator search found a six-head certificate with three negative and three positive denominator orientations. Exact integer verification gives minimum signed cleared score
+
+$$ 11861735510772. $$
+
+Thus the stronger upper bound is
+
+$$ H^{\ast}(f)\leq6. $$
+
+The threshold-degree lower bound gives $H^{\ast}(f)\geq4$. Hence the current unconditional interval is
+
+$$ 4\leq H^{\ast}(f)\leq6. $$
+
+The verifier [verify_n6_parity_midlayer_triple_candidate.py](verify_n6_parity_midlayer_triple_candidate.py) checks the quartic sign polynomial, the degree-three Gordan obstruction, and the eight-change projection. The standalone verifier [verify_n6_parity_midlayer_triple_h6.py](verify_n6_parity_midlayer_triple_h6.py) checks the archived [six-head certificate](n6_parity_midlayer_triple_h6_certificate.json). Both use integer arithmetic. Run them with:
+
+```bash
+python artifacts/calculations/verify_n6_parity_midlayer_triple_candidate.py
+python artifacts/calculations/verify_n6_parity_midlayer_triple_h6.py
+```
+
+The weight vector was found by exhaustively checking all $6!$ coordinate permutations of binary perturbations of a dominant Hamming-weight statistic. The six-head certificate was found by continuous outer optimization with an exact inner linear separator. These search statements are diagnostic only. The displayed projection and archived integer head certificate are rigorous upper-bound witnesses. No exact four-head or five-head representation is known, and no universal obstruction rules out either head count.
+
+The rest of this note describes constraints satisfied by every quartic sign representative. These constraints do not yet prove $H^{\ast}(f)\gt4$.
 
 ## Parity-twist balance cone
 
