@@ -19,3 +19,4 @@ project-management/
 .env
 head_complexity_paper/
 tmp
+informal_proofs/results.jsonl

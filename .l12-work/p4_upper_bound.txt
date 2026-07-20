@@ -1,0 +1,239 @@
+=== STATEMENTS ===
+/-
+FEASIBILITY VERDICT: The FULL upper bound (general C(F)-head construction) is NOT
+feasible in one session: it needs (a) a generic readout that thresholds a SUM of
+C(F) monotone linear-fractional responses across all weights k simultaneously,
+and (b) a global monotonicity/separation argument over a sum of rational
+functions of k whose breakpoints are the sign changes. That algebra is large and
+brittle. The SIMPLEST nontrivial provable case is the MONOTONE THRESHOLD profile
+(C(F) = 1), realized by a SINGLE head whose response g(k) is monotone in k. I
+give compilable signatures + a full draft for that case below, plus the verified
+scaffolding the general case would reuse.
+-/
+
+namespace HeadComplexity
+open scoped InnerProductSpace BigOperators
+
+/-- ## Reusable model lemma: numerator/denominator on a weight-`k` input.
+
+For a head whose positional embeddings are constant on input positions
+(`posEmbed (some i) = posEmbed (some j)` for all i,j) and whose
+key/query/value depend only on the token id, σ and value group into three
+buckets: `k` token-1 positions, `n-k` token-0 positions, and the query. -/
+
+-- A head where everything depends only on the token id (posEmbed input-uniform).
+-- We package the per-token σ and value as scalars/vectors to expose the grouping.
+
+variable {n d : ℕ}
+
+/-- σ at an input position depends only on the bit, given a token-only head. -/
+lemma sigma_input_const_of_tokenOnly
+    (H : NHead n d) (bits : Fin n → Bool) (i : Fin n)
+    (huniform : ∀ p : SeqPos n, H.posEmbed p = H.posEmbed none) :
+    H.sigma bits (some i) =
+      Real.exp ⟪H.WK (H.tokenEmbed (NHead.seqTok bits (some i)) + H.posEmbed none),
+                H.WQ (H.x bits none)⟫_ℝ := sorry
+
+/-- The denominator on a weight-`k` input splits into three constant buckets. -/
+lemma denominator_weight_split
+    (H : NHead n d) (bits : Fin n → Bool)
+    (s0 s1 sq : ℝ)
+    (h0 : ∀ i, bits i = false → H.sigma bits (some i) = s0)
+    (h1 : ∀ i, bits i = true  → H.sigma bits (some i) = s1)
+    (hq : H.sigma bits none = sq) :
+    H.denominator bits
+      = (hammingWeight bits : ℝ) * s1
+        + ((n : ℝ) - hammingWeight bits) * s0 + sq := sorry
+
+/-- The numerator on a weight-`k` input, when value = v1•e on token-1 positions
+and 0 elsewhere, is `(k * s1) • (v1 • e) + sq • vq`. -/
+lemma numerator_weight_split
+    (H : NHead n d) (bits : Fin n → Bool) (val0 val1 valq : Vec d)
+    (s0 s1 sq : ℝ)
+    (h0 : ∀ i, bits i = false → H.sigma bits (some i) = s0 ∧ H.value bits (some i) = val0)
+    (h1 : ∀ i, bits i = true  → H.sigma bits (some i) = s1 ∧ H.value bits (some i) = val1)
+    (hq : H.sigma bits none = sq ∧ H.value bits none = valq) :
+    H.numerator bits
+      = ((hammingWeight bits : ℝ) * s1) • val1
+        + (((n : ℝ) - hammingWeight bits) * s0) • val0 + sq • valq := sorry
+
+/-- ## The monotone single-head response.
+
+`monoHead n β : NHead n 2`: token 0 → e_0, token 1 → e_1, token 2 → e_0 (query);
+posEmbed ≡ 0; WK = outerProduct e_1 e_1 scaled by β routed so that the key·query
+inner product is `β` exactly on token-1 positions and `0` otherwise; WV picks out
+e_1 on token-1 positions. -/
+noncomputable def monoHead (n : ℕ) (β : ℝ) : NHead n 2 := sorry
+
+/-- The readout score of `monoHead` on a weight-`k` input. -/
+lemma monoHead_score (n : ℕ) (β : ℝ) (bits : Fin n → Bool) :
+    ⟪(EuclideanSpace.single (1 : Fin 2) 1 : Vec 2),
+        (monoHead n β).attnUpdate bits⟫_ℝ
+      = (hammingWeight bits : ℝ) * Real.exp β
+          / ((hammingWeight bits : ℝ) * Real.exp β
+             + ((n : ℝ) - hammingWeight bits + 1)) := sorry
+
+/-- The key real-analytic fact: for `β > 0` (so `e^β > 1`), the response
+`g(k) = k E / (kE + (n - k + 1))` is strictly monotone in `k` on `0..n`. -/
+lemma monoResponse_strictMono (n : ℕ) (E : ℝ) (hE : 1 < E) :
+    StrictMonoOn (fun k : ℝ => k * E / (k * E + ((n : ℝ) - k + 1)))
+      (Set.Icc 0 (n : ℝ)) := sorry
+
+/-- **Upper bound, threshold case.** A monotone-threshold symmetric function
+`F k = decide (θ ≤ k)` (one sign change) is computable with one head. -/
+theorem threshold_computable_with_one_head
+    (n θ : ℕ) (hθ1 : 1 ≤ θ) (hθn : θ ≤ n) :
+    computableWithHeadsN n 1 (symmetricFn (fun k => decide (θ ≤ k))) := sorry
+
+/-- The corresponding sign-change count is exactly 1. -/
+lemma signChanges_threshold (n θ : ℕ) (hθ1 : 1 ≤ θ) (hθn : θ ≤ n) :
+    signChanges n (fun k => decide (θ ≤ k)) = 1 := sorry
+
+end HeadComplexity
+
+=== SKETCH ===
+GOAL: show H*(symmetricFn F) ≤ signChanges n F by building signChanges-many heads. I report the simplest provable slice (threshold, C=1, one head) in full, and how the general case extends it.
+
+KEY MODEL FACT (grouping on a weight-k input).
+A `NHead n d` evaluates σ and value at n+1 positions = Option (Fin n). With posEmbed input-uniform and key/query/value token-only, σ takes only 3 values:
+  - s1 = exp⟪WK(e_1), WQ(query)⟫ on the k token-1 positions,
+  - s0 = exp⟪WK(e_0), WQ(query)⟫ on the n-k token-0 positions,
+  - sq on the single query position.
+Step 1 (denominator_weight_split). Unfold `denominator = ∑ p, sigma bits p`. Apply `Fintype.sum_option` (VERIFIED) to peel the query term: `∑ p, f p = f none + ∑ i, f (some i)`. The remaining `∑ i : Fin n, sigma bits (some i)` is split by predicate `bits i = true` using `Finset.sum_filter_add_sum_filter_not` (additive of VERIFIED `prod_filter_mul_prod_filter_not`); on each filter σ is the constant s1 / s0, so `Finset.sum_const` (additive of VERIFIED `prod_const`, value `b ^ #s` → `#s • b`) gives `(#filter) • s1 + (#filter complement) • s0`. Then `#(filter (bits·=true)) = hammingWeight bits` by `def hammingWeight` (it IS that filter card), and `#(complement filter) = n - hammingWeight` by VERIFIED `Finset.card_filter_add_card_filter_not` + `Fintype.card_fin`. Cast ℕ•ℝ to ℝ-mul via `nsmul_eq_mul`.
+Step 2 (numerator_weight_split). Same grouping on `∑ p, sigma•value`; the token-0 value is 0 and query value chosen 0, so only the k token-1 terms survive: `(k*s1) • e_1`. Uses the same three VERIFIED lemmas plus `Finset.sum_smul`/`smul_const` bookkeeping.
+Step 3 (monoHead concrete σ values). With monoHead in Vec 2: tokenEmbed 0=e_0,1=e_1,2=e_0; posEmbed≡0; WQ=id so query vector = e_0; WK = outerProduct (e_1) (e_1) scaled... actually choose WK = β • outerProduct e_1 e_1 routed so ⟪WK x_p, e_0⟫... — simpler: set query token embed = e_1 (token 2 → e_1) and WK = β • outerProduct e_1 e_1, WQ = id. Then ⟪WK e_1, e_1⟫ = β (token-1 key), ⟪WK e_0, e_1⟫ = 0 (token-0 key), ⟪WK e_1(query), e_1⟫ = β (query). To keep sq clean, route query through a separate coordinate. The inner products reduce by VERIFIED `inner_single_single` (already in TwoHeads.lean) and `outerProduct_apply`/`real_inner_smul_right` (VERIFIED `real_inner_smul_right`). So s1 = exp β, s0 = exp 0 = 1, sq = exp 0 = 1.
+Step 4 (monoHead_score). attnUpdate = denominator⁻¹ • numerator (def). Probe e_1 against it: `⟪e_1, denom⁻¹ • num⟫ = denom⁻¹ * ⟪e_1, num⟫` by VERIFIED `real_inner_smul_right`; `⟪e_1, (k e^β)•e_1 + 0 + sq•e_0⟫` = k e^β by `inner_add_right` (VERIFIED), `inner_single_single` (=1 on diag, 0 off-diag), giving g(k) = k e^β / (k e^β + (n-k) + 1).
+Step 5 (monoResponse_strictMono). Write g(k) = kE/(k(E-1) + (n+1)). For k < k', show g(k) < g(k') by `div_lt_div_iff₀` (VERIFIED, `a/b < c/d ↔ a*d < c*b`, both denominators positive since E>1 ⇒ denom = k(E-1)+(n+1) > 0). Cross-multiplied inequality `kE·(k'E+(n-k'+1)) < k'E·(kE+(n-k+1))` reduces to `kE(n-k'+1) < k'E(n-k+1)` i.e. `E(n+1)(k'-k) > 0`, closed by `nlinarith [Real.exp_pos, hE]` / `positivity`. Positivity of E from VERIFIED `Real.exp_pos`; E>1 from VERIFIED `Real.one_lt_exp_iff` with β>0.
+Step 6 (threshold_computable_with_one_head). Provide `d=2`, `Hs = fun _ => monoHead n β` with β=1 (so E=e>1). The family update is the single head (VERIFIED `nHeadFamilyAttnUpdate_one`). computesPred witness: probe w = e_1, threshold τ = (g(θ-1)+g(θ))/2. For any bits with weight k = hammingWeight bits ≤ n: F(k)=decide(θ≤k). Need ⟪w, update⟫ = g(k) > τ ↔ θ ≤ k. By monoResponse_strictMono: k ≥ θ ⇒ g(k) ≥ g(θ) > τ; k < θ ⇒ k ≤ θ-1 ⇒ g(k) ≤ g(θ-1) < τ. Both via StrictMonoOn.monotoneOn / strict at the breakpoint. hammingWeight bits ≤ n from `Finset.card_filter_le` + `Fintype.card_fin`.
+Step 7 (signChanges_threshold). The filter `range n |>.filter (F t ≠ F(t+1))` for F = decide(θ≤·) is the singleton {θ-1}: F(t)≠F(t+1) iff θ≤t+1 ∧ ¬θ≤t iff t = θ-1 (with 1≤θ≤n ⇒ θ-1 ∈ range n). Card = 1 by `Finset.card_eq_one`/explicit filter_eq_singleton, mirroring VERIFIED `signChanges_parity` style.
+
+GENERAL CASE (sketch only, not attempted). For a profile with sign changes at thresholds θ_1<...<θ_C, take C copies of monoHead with shifted "biases": head j writes a monotone response g_j whose steep transition sits at θ_j (achieved by a per-head query/key offset shifting the effective denominator constant). The readout sums them (nHeadFamilyAttnUpdate = ∑ heads) and thresholds. The hard, unbuilt part is proving the SUM ∑_j ε_j g_j(k) (with signs ε_j = ±1 from F's local direction) lands on the correct side of one global threshold for ALL k — a piecewise-monotone argument over C breakpoints with no clean mathlib lemma. This is why only C=1 is in reach now.
+
+=== DRAFT ===
+/-
+DRAFT of the most self-contained sub-lemmas. The monotonicity lemma is fully
+self-contained pure real algebra (no model machinery) and is the linchpin of the
+threshold case; the denominator grouping shows the position-bucketing pattern.
+-/
+namespace HeadComplexity
+open scoped InnerProductSpace BigOperators
+
+/-- SELF-CONTAINED: strict monotonicity of the linear-fractional response.
+g(k) = kE / (kE + (n - k + 1)) with E > 1 is strictly increasing for k ≥ 0. -/
+lemma monoResponse_lt
+    (n : ℕ) (E : ℝ) (hE : 1 < E) (k k' : ℝ)
+    (hk : 0 ≤ k) (hk' : 0 ≤ k') (hn : k ≤ n) (hn' : k' ≤ n) (hlt : k < k') :
+    k * E / (k * E + ((n : ℝ) - k + 1))
+      < k' * E / (k' * E + ((n : ℝ) - k' + 1)) := by
+  have hEpos : (0 : ℝ) < E := lt_trans one_pos hE
+  -- denominators positive: kE + (n - k + 1) = k(E-1) + (n+1) > 0
+  have hden : ∀ t : ℝ, 0 ≤ t → t ≤ n →
+      0 < t * E + ((n : ℝ) - t + 1) := by
+    intro t ht htn
+    have h1 : 0 ≤ t * (E - 1) := mul_nonneg ht (by linarith)
+    have : t * E + ((n : ℝ) - t + 1) = t * (E - 1) + ((n : ℝ) + 1) := by ring
+    rw [this]; positivity
+  have hd1 := hden k hk hn
+  have hd2 := hden k' hk' hn'
+  rw [div_lt_div_iff₀ hd1 hd2]
+  -- need: (kE)(k'E + n - k' + 1) < (k'E)(kE + n - k + 1)
+  -- expands to  kE(n - k' + 1) < k'E(n - k + 1), i.e. E(n+1)(k'-k) > 0
+  nlinarith [mul_pos hEpos (sub_pos.mpr hlt), hEpos, hlt,
+             mul_nonneg hk hk'.le]
+
+/-- SELF-CONTAINED: the denominator grouping on a weight-k input, abstracted
+from any particular head: any σ that is `s0` on token-0 positions, `s1` on
+token-1 positions, `sq` on the query, sums to k·s1 + (n-k)·s0 + sq. This is the
+position-bucketing core; the per-head `sigma` lemmas feed `h0 h1 hq` to it. -/
+lemma sum_option_weight_split
+    {n : ℕ} (σ : Option (Fin n) → ℝ) (bits : Fin n → Bool) (s0 s1 sq : ℝ)
+    (h0 : ∀ i, bits i = false → σ (some i) = s0)
+    (h1 : ∀ i, bits i = true  → σ (some i) = s1)
+    (hq : σ none = sq) :
+    (∑ p, σ p)
+      = (hammingWeight bits : ℝ) * s1
+        + ((n : ℝ) - (hammingWeight bits : ℝ)) * s0 + sq := by
+  classical
+  rw [Fintype.sum_option, hq]
+  -- ∑ i : Fin n, σ (some i)  = ∑ over {true} + ∑ over {false}
+  have hsplit :
+      (∑ i : Fin n, σ (some i))
+        = (∑ i ∈ Finset.univ.filter (fun i => bits i = true), σ (some i))
+          + (∑ i ∈ Finset.univ.filter (fun i => ¬ bits i = true), σ (some i)) := by
+    rw [Finset.sum_filter_add_sum_filter_not]
+  rw [hsplit]
+  -- each filtered sum is constant
+  have ht : (∑ i ∈ Finset.univ.filter (fun i => bits i = true), σ (some i))
+      = (Finset.univ.filter (fun i => bits i = true)).card • s1 := by
+    rw [Finset.sum_congr rfl (fun i hi => h1 i (Finset.mem_filter.mp hi).2),
+        Finset.sum_const]
+  have hf : (∑ i ∈ Finset.univ.filter (fun i => ¬ bits i = true), σ (some i))
+      = (Finset.univ.filter (fun i => ¬ bits i = true)).card • s0 := by
+    have hconv : ∀ i ∈ Finset.univ.filter (fun i => ¬ bits i = true),
+        σ (some i) = s0 := by
+      intro i hi
+      have : bits i = false := by
+        have := (Finset.mem_filter.mp hi).2; cases hbi : bits i <;> simp_all
+      exact h0 i this
+    rw [Finset.sum_congr rfl hconv, Finset.sum_const]
+  rw [ht, hf]
+  -- card of token-1 = hammingWeight; card of token-0 = n - hammingWeight
+  have hk : (Finset.univ.filter (fun i => bits i = true)).card = hammingWeight bits := rfl
+  have hcompl :
+      (Finset.univ.filter (fun i => ¬ bits i = true)).card = n - hammingWeight bits := by
+    have htot := Finset.card_filter_add_card_filter_not
+      (s := (Finset.univ : Finset (Fin n))) (p := fun i => bits i = true)
+    rw [Finset.card_univ, Fintype.card_fin] at htot
+    rw [hk] at htot; omega
+  rw [hk, hcompl, nsmul_eq_mul, nsmul_eq_mul]
+  have hkle : hammingWeight bits ≤ n := by
+    have : (Finset.univ.filter (fun i => bits i = true)).card
+        ≤ (Finset.univ : Finset (Fin n)).card := Finset.card_filter_le _ _
+    rw [Finset.card_univ, Fintype.card_fin] at this; exact this
+  push_cast [Nat.cast_sub hkle]
+  ring
+
+/-- SELF-CONTAINED: signChanges of a monotone threshold profile is 1. -/
+lemma signChanges_threshold (n θ : ℕ) (hθ1 : 1 ≤ θ) (hθn : θ ≤ n) :
+    signChanges n (fun k => decide (θ ≤ k)) = 1 := by
+  classical
+  rw [signChanges]
+  have hset :
+      (Finset.range n).filter (fun t => decide (θ ≤ t) ≠ decide (θ ≤ (t + 1)))
+        = {θ - 1} := by
+    ext t
+    simp only [Finset.mem_filter, Finset.mem_range, Finset.mem_singleton,
+      ne_eq, decide_eq_decide]
+    constructor
+    · rintro ⟨htn, hne⟩
+      -- θ ≤ t ↔ θ ≤ t+1 fails only at t = θ-1
+      by_contra hcontra
+      apply hne
+      omega
+    · rintro rfl
+      refine ⟨by omega, ?_⟩
+      omega
+  rw [hset, Finset.card_singleton]
+
+end HeadComplexity
+
+=== APIS ===
+True Fintype.sum_option :: theorem Fintype.prod_option (f : Option α → M) : ∏ i, f i = f none * ∏ i, f (some i) [has @[to_additive] ⇒ Fintype.sum_option : ∑ i, f i = f none + ∑ i, f (some i)]
+True Finset.sum_filter_add_sum_filter_not :: theorem prod_filter_mul_prod_filter_not (s : Finset ι) (p : ι → Prop) [DecidablePred p] [∀ x, Decidable (¬p x)] (f : ι → M) : (∏ x ∈ s with p x, f x) * ∏ x ∈ s with ¬p x, f x = ∏ x ∈ s, f x [@[to_additive] ⇒ sum_filter_add_sum_filter_not]
+True Finset.sum_const :: theorem prod_const (b : M) : ∏ _x ∈ s, b = b ^ #s [@[to_additive] ⇒ sum_const : ∑ _x ∈ s, b = #s • b]
+True Finset.card_filter_add_card_filter_not :: theorem card_filter_add_card_filter_not (p : α → Prop) [DecidablePred p] [∀ x, Decidable (¬p x)] : #(s.filter p) + #(s.filter fun a ↦ ¬ p a) = #s
+True Real.exp_pos :: theorem exp_pos (x : ℝ) : 0 < exp x
+True Real.exp_lt_exp :: theorem exp_lt_exp {x y : ℝ} : exp x < exp y ↔ x < y
+True Real.exp_le_exp :: theorem exp_le_exp {x y : ℝ} : exp x ≤ exp y ↔ x ≤ y
+True Real.one_lt_exp_iff :: theorem one_lt_exp_iff {x : ℝ} : 1 < exp x ↔ 0 < x
+True div_lt_div_iff₀ :: lemma div_lt_div_iff₀ (hb : 0 < b) (hd : 0 < d) : a / b < c / d ↔ a * d < c * b
+True div_le_div_iff₀ :: lemma div_le_div_iff₀ (hb : 0 < b) (hd : 0 < d) : a / b ≤ c / d ↔ a * d ≤ c * b
+True real_inner_smul_right :: theorem real_inner_smul_right (x y : F) (r : ℝ) : ⟪x, r • y⟫_ℝ = r * ⟪x, y⟫_ℝ
+True inner_add_right :: theorem inner_add_right (x y z : E) : ⟪x, y + z⟫ = ⟪x, y⟫ + ⟪x, z⟫
+True EuclideanSpace.inner_single_left :: theorem EuclideanSpace.inner_single_left (i : ι) (a : 𝕜) (v : EuclideanSpace 𝕜 ι) : ⟪EuclideanSpace.single i a, v⟫ = conj a * v i
+True inner_single_single (project-local) :: @[simp] lemma inner_single_single {n} (i j : Fin n) : ⟪EuclideanSpace.single i 1, EuclideanSpace.single j 1⟫_ℝ = if i = j then 1 else 0
+True EuclideanSpace.basisFun_apply :: theorem basisFun_apply [DecidableEq ι] (i : ι) : basisFun ι 𝕜 i = EuclideanSpace.single i 1
+True Fintype.card_fin :: Fintype.card_fin (n : ℕ) : Fintype.card (Fin n) = n [used in project via SymmetricFamilies.lean:66]
+True nHeadFamilyAttnUpdate_one (project-local) :: @[simp] lemma nHeadFamilyAttnUpdate_one {n d} {Hs : NHeadFamily n d 1} (bits) : nHeadFamilyAttnUpdate Hs bits = (Hs 0).attnUpdate bits
+True outerProduct_apply (project-local) :: @[simp] lemma outerProduct_apply {n} (u v w : Vec n) : outerProduct u v w = ⟪v, w⟫_ℝ • u
+False StrictMonoOn (def) / StrictMonoOn.monotoneOn :: StrictMonoOn f s : Prop ; StrictMonoOn.monotoneOn : StrictMonoOn f s → MonotoneOn f s

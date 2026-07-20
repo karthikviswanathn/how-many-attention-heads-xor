@@ -1,0 +1,160 @@
+=== STATEMENTS ===
+import Mathlib
+open Polynomial MvPolynomial
+open scoped BigOperators
+
+namespace HeadComplexity
+
+/-- SELF-CONTAINED CORE (COMPILES, zero errors/warnings, mathlib v4.29.0).
+A real univariate polynomial that changes sign across `C` consecutive points of a
+strictly increasing sequence `x : Fin (C+1) → ℝ` has natDegree ≥ C. -/
+theorem natDegree_ge_of_sign_changes
+    (p : ℝ[X]) (C : ℕ) (x : Fin (C + 1) → ℝ) (hx : StrictMono x)
+    (hsign : ∀ i : Fin C,
+      (p.eval (x i.castSucc) < 0 ∧ 0 < p.eval (x i.succ)) ∨
+      (0 < p.eval (x i.castSucc) ∧ p.eval (x i.succ) < 0)) :
+    C ≤ p.natDegree
+
+/-- (a) SYMMETRIZATION. Sum of renames over the symmetric group is symmetric and
+has totalDegree ≤ the original. (Use the *sum* P_sym = ∑ e, rename e P, NOT an
+average — avoids division; sign-representation is preserved because every summand
+has the same sign on a fixed Boolean point.) -/
+theorem symmetrize_isSymmetric {n : ℕ} (P : MvPolynomial (Fin n) ℝ) :
+    (∑ e : Equiv.Perm (Fin n), rename (e : Fin n → Fin n) P).IsSymmetric
+
+theorem symmetrize_totalDegree_le {n : ℕ} (P : MvPolynomial (Fin n) ℝ) :
+    (∑ e : Equiv.Perm (Fin n), rename (e : Fin n → Fin n) P).totalDegree ≤ P.totalDegree
+
+/-- (a') eval of the symmetrized poly at a Boolean point b equals the sum over
+permutations of eval P at the permuted point. -/
+theorem eval_symmetrize {n : ℕ} (P : MvPolynomial (Fin n) ℝ) (b : Fin n → ℝ) :
+    MvPolynomial.eval b (∑ e : Equiv.Perm (Fin n), rename (e : Fin n → Fin n) P)
+      = ∑ e : Equiv.Perm (Fin n), MvPolynomial.eval (b ∘ (e : Fin n → Fin n)) P
+
+/-- (b) UNIVARIATE COLLAPSE. A symmetric multilinear poly evaluated on a 0/1 point
+of Hamming weight k equals ∑_m c_m * (k choose m), a degree-≤(totalDegree) univariate
+polynomial in k. Stated as: there is a real univariate q with deg q ≤ P.totalDegree
+such that for every k ≤ n and every 0/1 point z of weight k, eval z P = q.eval (k:ℝ). -/
+theorem exists_univariate_of_symmetric_multilinear {n : ℕ}
+    (P : MvPolynomial (Fin n) ℝ) (hsym : P.IsSymmetric)
+    (hml : ∀ s : Fin n →₀ ℕ, s ∈ P.support → ∀ i, s i ≤ 1) :
+    ∃ q : ℝ[X], q.natDegree ≤ P.totalDegree ∧
+      ∀ (z : Fin n → ℝ), (∀ i, z i = 0 ∨ z i = 1) →
+        MvPolynomial.eval z P = q.eval ((Finset.univ.filter (fun i => z i = 1)).card : ℝ)
+
+/-- KEY ARITHMETIC SUBLEMMA for (b): the m-th elementary symmetric polynomial,
+evaluated at a 0/1 vector with exactly k ones, equals (k choose m). -/
+theorem esymm_eval_zeroOne {n : ℕ} (m k : ℕ) (z : Fin n → ℝ)
+    (hz : ∀ i, z i = 0 ∨ z i = 1)
+    (hk : (Finset.univ.filter (fun i => z i = 1)).card = k) :
+    MvPolynomial.eval z (MvPolynomial.esymm (Fin n) ℝ m) = (Nat.choose k m : ℝ)
+
+/-- (c)+(d) FINAL LOWER BOUND on the univariate polynomial: if `q` agrees in sign
+with the profile `F` at the integer points 0..n, then deg q ≥ signChanges n F. -/
+theorem natDegree_ge_signChanges_of_sign_represents {n : ℕ} (F : ℕ → Bool) (q : ℝ[X])
+    (hpos : ∀ k ≤ n, F k = true → 0 < q.eval (k:ℝ))
+    (hneg : ∀ k ≤ n, F k = false → q.eval (k:ℝ) < 0) :
+    signChanges n F ≤ q.natDegree
+
+end HeadComplexity
+
+=== SKETCH ===
+GOAL of Phase 3: assuming a degree-≤H multilinear real polynomial P sign-represents symmetricFn F on the Boolean cube {0,1}^n, conclude H ≥ signChanges n F. (The hypothesis "P exists" is the threshold/sign-representation degree object; mathlib has no such theory, so Phase 3 ASSUMES it as input — see risks.)
+
+CORE LEMMA `natDegree_ge_of_sign_changes` (FULLY VERIFIED, draft below):
+1. C=0: goal trivial by `simp`.  C>0: P ≠ 0 because `hsign ⟨0,_⟩` would give `0<0` after `rw` if p=0.
+2. For each i : Fin C, `hx i.castSucc_lt_succ : x i.castSucc < x i.succ`. `p.continuousOn` gives ContinuousOn of eval on Icc. From the sign hypothesis, 0 lies in the open interval Ioo(eval a, eval b) (or reversed). Apply `intermediate_value_Ioo` (sig: `(hab : a ≤ b) (hf : ContinuousOn f (Icc a b)) : Ioo (f a) (f b) ⊆ f '' Icc... actually Ioo a b`) resp. `intermediate_value_Ioo'` to get y in the OPEN interval (x castSucc, x succ) with p.eval y = 0.
+3. `choose y hy1 hy2 hy3` extracts the roots. They are StrictMono in i: for i<j, y i < x i.succ ≤ x j.castSucc < y j, where the middle ≤ uses `hx.monotone` and the `Fin` inequality `i.succ ≤ j.castSucc` (`Fin.le_def` + `Fin.val_succ`/`Fin.val_castSucc` + `omega`).
+4. Build `Z := Finset.image y univ`, `Z.card = C` via `Finset.card_image_of_injective _ hymono.injective` + `Finset.card_univ` + `Fintype.card_fin`.
+5. `Z.val ⊆ p.roots`: each `y i ∈ roots` via `mem_roots hp0` + `IsRoot.def.mpr (hy3 i)`.
+6. `card_le_degree_of_subset_roots hsub : Z.card ≤ p.natDegree`. Conclude C ≤ natDegree.
+
+(a) SYMMETRIZATION: define P_sym = ∑_{e:Perm} rename e P (a SUM, not average — avoids dividing by n!).
+ - `symmetrize_isSymmetric`: each `rename e P` is symmetric? No — instead show P_sym invariant: for σ:Perm, `rename σ P_sym = ∑_e rename σ (rename e P) = ∑_e rename (σ∘e) P` (via `rename_rename`, `map_sum`), and reindexing the sum over Perm by `e ↦ σ∘e` (a bijection) gives P_sym. Use `Finset.sum_bijective`/`Equiv.Perm.mulLeft` reindex, or `Fintype.sum_bijective`. Conclude via `IsSymmetric` def (∀ e, rename e P_sym = P_sym).
+ - `symmetrize_totalDegree_le`: `totalDegree_finsetSum_le` (sig: bound each summand by d ⇒ sum totalDegree ≤ d) with each `totalDegree_rename_le e P : (rename e P).totalDegree ≤ P.totalDegree`.
+ - `eval_symmetrize`: `map_sum` of the eval ring hom, then `eval_rename` (sig: `eval g (rename k p) = eval (g ∘ k) p`) on each summand.
+ - SIGN PRESERVED: on a Boolean point b (image of a cube point), every permuted point b∘e is another cube point of the SAME Hamming weight, so symmetricFn F agrees, so eval P at each has the same sign; the sum of |Perm| equally-signed reals keeps that sign (strict: sum of positives is positive via `Finset.sum_pos`; sum of negatives negative via `Finset.sum_neg`). Thus P_sym sign-represents the same Booleans.
+
+(b) UNIVARIATE COLLAPSE `exists_univariate_of_symmetric_multilinear`:
+ - A symmetric multilinear polynomial is an ℝ-linear combination of the elementary symmetric polynomials e_0,...,e_d (d = totalDegree). On the cube, by the KEY SUBLEMMA `esymm_eval_zeroOne`, e_m evaluates to C(k,m). So eval z P = ∑_{m≤d} c_m C(k,m). Define q := ∑_{m≤d} C c_m * (descending-factorial / falling poly) — concretely q = ∑_m c_m • (Polynomial.ascPochhammer-style) with `Nat.choose k m = (∏_{j<m}(k-j))/m!`. The univariate polynomial `(X)(X-1)...(X-(m-1))/m!` has natDegree m and equals C(k,m) at integer k. natDegree q ≤ d ≤ totalDegree P.
+ - KEY SUBLEMMA `esymm_eval_zeroOne`: `MvPolynomial.esymm (Fin n) ℝ m = ∑_{t : powersetCard m univ} ∏_{i∈t} X i` (`esymm_eq_sum_subtype` / `esymm_eq_sum_monomial`). Evaluating at z (0/1): `eval z (∏_{i∈t} X i) = ∏_{i∈t} z i`, which is 1 iff t ⊆ {i : z i = 1} and 0 otherwise (some factor 0). So the sum counts m-subsets of the support S = filter (z·=1), i.e. `(powersetCard m S).card = C(|S|, m) = C(k,m)` by `Finset.card_powersetCard`.
+
+(c)+(d) `natDegree_ge_signChanges_of_sign_represents`:
+ - signChanges n F = card of T := (range n).filter (F t ≠ F(t+1)). For t ∈ T, F t ≠ F(t+1) means q changes sign between integer points t and t+1 (using hpos/hneg). These are the C := signChanges consecutive sign changes. To feed `natDegree_ge_of_sign_changes` I need a strictly-monotone x : Fin(C+1) → ℝ whose consecutive pairs straddle each flip. Enumerate T's elements in increasing order t_0<...<t_{C-1}; the flips are at intervals [t_j, t_j+1]. These integer intervals are pairwise disjoint (t_j+1 ≤ t_{j+1}), so concatenating their endpoints gives 2C points, but we only need ONE strictly-increasing sequence of C+1 points with sign change between consecutive — take x via `Finset.orderEmbOfFin` of {t_0, t_0+1 collapsed...}. Cleaner: directly produce C distinct roots, one in each open interval (t_j, t_j+1), via the same IVT argument, and bound roots ≥ C. (i.e. specialize the CORE lemma's proof: the intervals (t_j, t_j+1) are pairwise disjoint because t_j+1 ≤ t_{j+1}, giving C distinct roots, hence natDegree ≥ C.)
+ - The cleanest implementation reuses `natDegree_ge_of_sign_changes` with x built from the sorted list of T using `Finset.orderEmbOfFin (rfl : T.card = C)` mapped into ℝ, padding by +1 — OR (simplest) re-prove the disjoint-interval root count inline with `card_le_degree_of_subset_roots`.
+
+=== DRAFT ===
+import Mathlib
+
+open Polynomial
+
+/-- VERIFIED: compiled with mathlib v4.29.0 (toolchain v4.29.0), ZERO errors, ZERO warnings.
+A real polynomial that changes sign across `C` consecutive points of a strictly
+increasing sequence has at least `C` distinct roots, hence natDegree ≥ C. -/
+theorem natDegree_ge_of_sign_changes
+    (p : ℝ[X]) (C : ℕ) (x : Fin (C + 1) → ℝ) (hx : StrictMono x)
+    (hsign : ∀ i : Fin C,
+      (p.eval (x i.castSucc) < 0 ∧ 0 < p.eval (x i.succ)) ∨
+      (0 < p.eval (x i.castSucc) ∧ p.eval (x i.succ) < 0)) :
+    C ≤ p.natDegree := by
+  -- C = 0 is trivial; otherwise p ≠ 0 since it has a nonzero value somewhere
+  rcases Nat.eq_zero_or_pos C with hC0 | hCpos
+  · simp [hC0]
+  have hp0 : p ≠ 0 := by
+    intro h
+    have := hsign ⟨0, hCpos⟩
+    rw [h] at this
+    simp at this
+  -- choose a root in each open interval (x i.castSucc, x i.succ)
+  have hroot : ∀ i : Fin C, ∃ y, x i.castSucc < y ∧ y < x i.succ ∧ p.eval y = 0 := by
+    intro i
+    have hlt : x i.castSucc < x i.succ := hx i.castSucc_lt_succ
+    have hcont : ContinuousOn (fun t => p.eval t) (Set.Icc (x i.castSucc) (x i.succ)) :=
+      p.continuousOn
+    rcases hsign i with ⟨ha, hb⟩ | ⟨ha, hb⟩
+    · have : (0 : ℝ) ∈ Set.Ioo (p.eval (x i.castSucc)) (p.eval (x i.succ)) := ⟨ha, hb⟩
+      obtain ⟨y, hy, hpy⟩ := intermediate_value_Ioo hlt.le hcont this
+      exact ⟨y, hy.1, hy.2, hpy⟩
+    · have : (0 : ℝ) ∈ Set.Ioo (p.eval (x i.succ)) (p.eval (x i.castSucc)) := ⟨hb, ha⟩
+      obtain ⟨y, hy, hpy⟩ := intermediate_value_Ioo' hlt.le hcont this
+      exact ⟨y, hy.1, hy.2, hpy⟩
+  choose y hy1 hy2 hy3 using hroot
+  -- the roots are strictly increasing in i, hence distinct
+  have hymono : StrictMono y := by
+    intro i j hij
+    have h1 : y i < x i.succ := hy2 i
+    have h2 : x j.castSucc < y j := hy1 j
+    have h3 : x i.succ ≤ x j.castSucc := by
+      apply hx.monotone
+      rw [Fin.le_def]
+      simp only [Fin.val_succ, Fin.val_castSucc]
+      omega
+    linarith
+  classical
+  -- build a Finset of C distinct roots and bound the degree
+  let Z : Finset ℝ := Finset.image y Finset.univ
+  have hcard : Z.card = C := by
+    rw [Finset.card_image_of_injective _ hymono.injective, Finset.card_univ, Fintype.card_fin]
+  have hsub : Z.val ⊆ p.roots := by
+    intro a ha
+    simp only [Z, Finset.mem_val, Finset.mem_image, Finset.mem_univ, true_and] at ha
+    obtain ⟨i, rfl⟩ := ha
+    rw [mem_roots hp0]
+    exact (IsRoot.def).mpr (hy3 i)
+  calc C = Z.card := hcard.symm
+    _ ≤ p.natDegree := card_le_degree_of_subset_roots hsub
+
+/-- DRAFT (not yet compiled end-to-end): the elementary symmetric polynomial e_m
+evaluated at a 0/1 point with k ones equals C(k,m). Skeleton using
+`esymm_eq_sum_subtype` + `eval`-of-product + `Finset.card_powersetCard`. -/
+example {n : ℕ} (m k : ℕ) (z : Fin n → ℝ)
+    (hz : ∀ i, z i = 0 ∨ z i = 1)
+    (hk : (Finset.univ.filter (fun i => z i = 1)).card = k) :
+    MvPolynomial.eval z (MvPolynomial.esymm (Fin n) ℝ m) = (Nat.choose k m : ℝ) := by
+  classical
+  -- esymm = ∑ over m-subsets t of ∏_{i∈t} X i ; eval distributes:
+  --   eval z (∏_{i∈t} X i) = ∏_{i∈t} z i = if t ⊆ S then 1 else 0,  S = filter (z·=1)
+  -- so the sum = (number of m-subsets of S) = C(|S|, m) = C(k, m).
+  sorry
+
+=== APIS ===
