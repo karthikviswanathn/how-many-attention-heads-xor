@@ -132,7 +132,7 @@ $$ H^{\ast}(\mathrm{XOR}_n) = n. $$
 
 Suppose there exist positive real numbers
 
-$$ \lambda_1, \ldots, \lambda_n > 0 $$
+$$ \lambda_1, \ldots, \lambda_n \gt 0 $$
 
 and a function
 
@@ -169,7 +169,7 @@ $$ \phi(x) = \frac{ \eta + \sum_{i=1}^{n} \rho_i \alpha^{x_i}(m_i + \delta x_i) 
 
 where
 
-$$ \gamma > 0, \qquad \rho_1, \ldots, \rho_n > 0, \qquad \alpha > 0. $$
+$$ \gamma \gt 0, \qquad \rho_1, \ldots, \rho_n \gt 0, \qquad \alpha \gt 0. $$
 
 Let $L_{\mathrm{frac}}(f)$ be the least $H$ such that $f$ is computed by thresholding a constant plus a sum of $H$ such atoms. Then
 
@@ -209,7 +209,7 @@ $$ F : \lbrace0,\ldots,n\rbrace \to \lbrace0,1\rbrace. $$
 
 Define
 
-$$ \sigma_k := \begin{cases} +1 & \text{if } F(k) = 1, \\ -1 & \text{if } F(k) = 0, \end{cases} $$
+$$ \sigma_k := \begin{cases} +1 & \text{if } F(k) = 1, \cr -1 & \text{if } F(k) = 0, \end{cases} $$
 
 and let $C(F)$ be the number of indices $t \in \lbrace1,\ldots,n\rbrace$ with
 
@@ -233,9 +233,9 @@ In particular:
 
 ### Theorem 13. Explicit strict separation
 
-There is an explicit ten-bit Boolean function $f&#95;{10}$ satisfying
+There is an explicit ten-bit Boolean function $f_{10}$ satisfying
 
-$$ \deg&#95;{\pm}(f&#95;{10})=2<3\leq H^{\ast}(f&#95;{10}). $$
+$$ \deg_{\pm}(f_{10})=2 \lt 3\leq H^{\ast}(f_{10}). $$
 
 The function is defined by splitting the input into signed blocks $x,y\in\lbrace-1,+1\rbrace^5$ and thresholding
 
@@ -243,7 +243,7 @@ $$ Q(x,y)=\left(\sum_i x_i\right)\left(\sum_j y_j\right)-3\sum_i x_i y_i. $$
 
 The quadratic gives threshold degree at most two, and an XOR restriction gives the matching lower bound. For head complexity, clearing two positive linear-fractional denominators produces a sum of two products of affine forms. Its mixed antipodal matrix has rank at most four, while the target sign pattern forces a strictly diagonally dominant five by five matrix, hence rank five.
 
-> **Interpretation.** The general inequality $\deg&#95;{\pm}(f)\leq H^{\ast}(f)$ can be strict.
+> **Interpretation.** The general inequality $\deg_{\pm}(f)\leq H^{\ast}(f)$ can be strict.
 
 **Proof.** [theorems/02_separations_and_counterexamples/013_strict_threshold_degree_separation.md](theorems/02_separations_and_counterexamples/013_strict_threshold_degree_separation.md)
 

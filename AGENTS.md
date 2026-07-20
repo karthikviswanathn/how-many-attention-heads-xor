@@ -6,21 +6,26 @@ Conventions for writing theorem / writeup markdown in this repo so that it rende
 
 Use LaTeX math delimiters, not backticks.
 
-- **Inline math:** wrap in single dollar signs, e.g. `$f : \{0,1\}^n \to \{0,1\}$`.
-- **Display math:** wrap in double dollar signs on their own lines, with a blank line before and after.
+- **Inline math:** wrap in single dollar signs, e.g. `$f : \lbrace 0,1\rbrace^n \to \lbrace 0,1\rbrace$`.
+- **Display math:** wrap in double dollar signs, with a blank line before and after the block. Keep the whole `$$...$$` on one source line; multi-line `$$` blocks are fragile (GitHub can mis-parse an equation line as a heading or list item).
 
   ```markdown
   Some lead-in text.
 
-  $$
-  z(a,b) = \frac{N(a,b)}{D(a,b)}
-  $$
+  $$ z(a,b) = \frac{N(a,b)}{D(a,b)} $$
 
   Continuation text.
   ```
 
-- Use `\{`, `\}` for set braces, `\to` for arrows, `\neq`, `\geq`, `\leq`, `\in`, `\cdot`, `\top` (for transpose), `\blacksquare` for Q.E.D.
-- Multi-line derivations use `\begin{aligned} ... \end{aligned}` inside a `$$` block, with `&=` alignment.
+- Use `\lbrace`, `\rbrace` for set braces (space before a following letter, e.g. `\lbrace f\rbrace`), `\to` for arrows, `\neq`, `\geq`, `\leq`, `\in`, `\cdot`, `\top` (for transpose), `\blacksquare` for Q.E.D.
+- Use `\lt`, `\gt` for bare `<` and `>` inside math (space before a following letter/digit, e.g. `2 \lt 3`); `\leq`, `\geq`, `\neq`, `\langle`, `\rangle` are macros and already safe.
+- Use `\ast` instead of a literal `*` inside math; `*` is Markdown emphasis and corrupts the block.
+- Never use `\,`, `\;`, `\!` spacing commands inside math; delete them (a plain space or nothing is fine).
+- No math inside headings, list-item display blocks, or `*italic*`/`_italic_` (bold `**...**` is fine).
+- When an opener-shaped `_` (e.g. `}_n`) precedes a closer-shaped `_` (e.g. `T_{`) in the same paragraph, insert a space before the closer-shaped `_` (`$T _{n,1}$`) so it can't emphasis-pair.
+- Never use the `&#95;` HTML entity for underscores; it renders on GitHub but breaks KaTeX previews (VS Code, GitLab).
+- Multi-line derivations use `\begin{aligned} ... \end{aligned}` inside a `$$` block, with `&=` alignment (collapsed onto one line; `&` survives).
+- Row separators in a single-line `$$...$$` block (`aligned`, `cases`, `array`, `substack`) are `\cr`, never `\\`; GitHub eats one backslash of `\\` on a single source line and the row break silently vanishes.
 - Group short related equations with `\qquad` spacing on one display line rather than stacking many tiny blocks.
 - Never use plain ASCII like `!=`, `>=`, `^T`, `sum`, `alpha` in math; always use the LaTeX command.
 - Never wrap math in backticks. Backticks are reserved for code identifiers and file paths.
@@ -51,11 +56,9 @@ Use LaTeX math delimiters, not backticks.
 
 ## Statement
 
-Let $f : \{0,1\}^n \to \{0,1\}$. Suppose ...
+Let $f : \lbrace 0,1\rbrace^n \to \lbrace 0,1\rbrace$. Suppose ...
 
-$$
-\text{main equation}
-$$
+$$ \text{main equation} $$
 
 > **Equivalently.** Informal restatement.
 
@@ -69,12 +72,7 @@ Prose lead-in.
 
 **Proof.** Expand:
 
-$$
-\begin{aligned}
-X &= Y + Z \\
-  &= W.
-\end{aligned}
-$$
+$$ \begin{aligned} X &= Y + Z \cr &= W. \end{aligned} $$
 
 ### Conclusion
 
@@ -82,9 +80,7 @@ Wrap up. $\blacksquare$
 
 ## Consequence
 
-$$
-H^{*}(f) \geq 2.
-$$
+$$ H^{\ast}(f) \geq 2. $$
 ```
 
 Apply this style to every file under `theorems/` and to

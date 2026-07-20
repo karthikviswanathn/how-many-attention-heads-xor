@@ -26,9 +26,9 @@ $$ \phi(x) = \frac{N(x)}{D(x)} $$
 
 such that
 
-$$ f(x) = 1 \qquad \Longleftrightarrow \qquad c + \phi(x) > 0. $$
+$$ f(x) = 1 \qquad \Longleftrightarrow \qquad c + \phi(x) \gt 0. $$
 
-The denominator satisfies $D(x) > 0$ on the Boolean cube. Also both $N$ and $D$ are affine functions of $x$, because
+The denominator satisfies $D(x) \gt 0$ on the Boolean cube. Also both $N$ and $D$ are affine functions of $x$, because
 
 $$ \alpha^{x_i} = 1 + (\alpha - 1)x_i, $$
 
@@ -38,7 +38,7 @@ $$ \alpha^{x_i}(m_i + \delta x_i) = m_i + \bigl(\alpha(m_i + \delta) - m_i\bigr)
 
 Thus
 
-$$ c + \phi(x) > 0 \qquad \Longleftrightarrow \qquad cD(x) + N(x) > 0. $$
+$$ c + \phi(x) \gt 0 \qquad \Longleftrightarrow \qquad cD(x) + N(x) \gt 0. $$
 
 The right-hand side is an affine threshold. Therefore every one-head function is a linear threshold function.
 
@@ -48,7 +48,7 @@ $$ L(x) = \beta_0 + \sum_{i=1}^{n} \beta_i x_i, $$
 
 meaning
 
-$$ f(x) = 1 \qquad \Longleftrightarrow \qquad L(x) > 0. $$
+$$ f(x) = 1 \qquad \Longleftrightarrow \qquad L(x) \gt 0. $$
 
 Choose one atom with
 
@@ -64,7 +64,7 @@ $$ \eta = \beta_0 - \sum_{i=1}^{n} \beta_i. $$
 
 Its numerator is
 
-$$ \begin{aligned} \eta + \sum_{i=1}^{n} 2^{x_i} \beta_i &= \beta_0 - \sum_{i=1}^{n} \beta_i + \sum_{i=1}^{n} \beta_i(1 + x_i) \\ &= \beta_0 + \sum_{i=1}^{n} \beta_i x_i \\ &= L(x). \end{aligned} $$
+$$ \begin{aligned} \eta + \sum_{i=1}^{n} 2^{x_i} \beta_i &= \beta_0 - \sum_{i=1}^{n} \beta_i + \sum_{i=1}^{n} \beta_i(1 + x_i) \cr &= \beta_0 + \sum_{i=1}^{n} \beta_i x_i \cr &= L(x). \end{aligned} $$
 
 Its denominator is positive. Therefore the atom has the same sign as $L(x)$, and one head computes $f$.
 

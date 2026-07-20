@@ -6,7 +6,7 @@ This note gives an exact normal form for $H^{\ast}(f)$ in the model from [../../
 
 For parameters
 
-$$ \gamma > 0, \qquad \rho_1, \ldots, \rho_n > 0, \qquad \alpha > 0, $$
+$$ \gamma \gt 0, \qquad \rho_1, \ldots, \rho_n \gt 0, \qquad \alpha \gt 0, $$
 
 and
 
@@ -24,7 +24,7 @@ $$ \phi_1, \ldots, \phi_H $$
 
 and a constant $c \in \mathbb{R}$ with
 
-$$ f(x) = 1 \qquad \Longleftrightarrow \qquad c + \sum_{h=1}^{H} \phi_h(x) > 0 $$
+$$ f(x) = 1 \qquad \Longleftrightarrow \qquad c + \sum_{h=1}^{H} \phi_h(x) \gt 0 $$
 
 for every $x \in \lbrace0,1\rbrace^n$. For $H = 0$, the sum is empty.
 
@@ -50,11 +50,11 @@ This vector is constant as a function of the input $x$.
 
 For each input position $i$, define
 
-$$ \rho_{h,i} := \exp \left( \left\langle q_h, W_K^{(h)}(e_0 + p_i) \right\rangle \right) > 0, $$
+$$ \rho_{h,i} := \exp \left( \left\langle q_h, W_K^{(h)}(e_0 + p_i) \right\rangle \right) \gt 0, $$
 
 and
 
-$$ \alpha_h := \exp \left( \left\langle q_h, W_K^{(h)}(e_1 - e_0) \right\rangle \right) > 0. $$
+$$ \alpha_h := \exp \left( \left\langle q_h, W_K^{(h)}(e_1 - e_0) \right\rangle \right) \gt 0. $$
 
 Then the unnormalized attention weight assigned by head $h$ to input position $i$ is
 
@@ -74,7 +74,7 @@ $$ m_{h,i} + \delta_h x_i. $$
 
 For the query token itself, define
 
-$$ \gamma_h := \exp \left( \left\langle q_h, W_K^{(h)} u_= \right\rangle \right) > 0, $$
+$$ \gamma_h := \exp \left( \left\langle q_h, W_K^{(h)} u_= \right\rangle \right) \gt 0, $$
 
 and
 
@@ -106,7 +106,7 @@ For each head $h$, take an independent block with orthonormal basis
 
 $$ q_h, k_h, v_h, o_h. $$
 
-Use the direct sum of all these blocks as the model space, and take $d&#95;{\mathrm{head}} = d&#95;{\mathrm{model}}$.
+Use the direct sum of all these blocks as the model space, and take $d_{\mathrm{head}} = d_{\mathrm{model}}$.
 
 Define token embeddings by
 
@@ -167,6 +167,6 @@ So the model computes exactly the Boolean function represented by the atoms.
 
 ### Combining the two directions
 
-Theorem 1 shows $H^{\ast}(f) \geq L&#95;{\mathrm{frac}}(f)$ and Theorem 2 shows $H^{\ast}(f) \leq L&#95;{\mathrm{frac}}(f)$. Together,
+Theorem 1 shows $H^{\ast}(f) \geq L_{\mathrm{frac}}(f)$ and Theorem 2 shows $H^{\ast}(f) \leq L_{\mathrm{frac}}(f)$. Together,
 
 $$ H^{\ast}(f) = L_{\mathrm{frac}}(f). \qquad \blacksquare $$

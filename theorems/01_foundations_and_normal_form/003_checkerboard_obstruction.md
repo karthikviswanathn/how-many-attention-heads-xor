@@ -30,7 +30,7 @@ Fix all coordinates except $i$ and $j$, and let
 
 $$ z(a,b) = \frac{N(a,b)}{D(a,b)} $$
 
-be the projected one-head contribution to the query residual, as set up in [001_checkerboard_additive_decomposition.md](001_checkerboard_additive_decomposition.md). Recall that $D(a,b) > 0$ on the restriction.
+be the projected one-head contribution to the query residual, as set up in [001_checkerboard_additive_decomposition.md](001_checkerboard_additive_decomposition.md). Recall that $D(a,b) \gt 0$ on the restriction.
 
 **The same-class segments intersect.** Define
 

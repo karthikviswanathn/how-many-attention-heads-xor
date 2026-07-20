@@ -14,7 +14,7 @@ for every input $x$, where $\lvert x\rvert := x_1 + \cdots + x_n$.
 
 Define the sign sequence
 
-$$ \sigma_k := \begin{cases} +1 & \text{if } F(k) = 1, \\ -1 & \text{if } F(k) = 0, \end{cases} \qquad 0 \leq k \leq n. $$
+$$ \sigma_k := \begin{cases} +1 & \text{if } F(k) = 1, \cr -1 & \text{if } F(k) = 0, \end{cases} \qquad 0 \leq k \leq n. $$
 
 Let
 
@@ -100,7 +100,7 @@ $\blacksquare$
 
 ### Theorem 2. Shifted reciprocal Hamming-weight functions cost one head
 
-Fix $r > 0$ and $d \in \mathbb{R}$. The scalar function
+Fix $r \gt 0$ and $d \in \mathbb{R}$. The scalar function
 
 $$ \psi_{r,d}(x) := \frac{d}{\lvert x\rvert + r} $$
 
@@ -108,13 +108,13 @@ is a one-head atom in the sense of [010_linear_fractional_normal_form.md](010_li
 
 **Proof.** Choose
 
-$$ \alpha > 1 + \frac{n}{r} $$
+$$ \alpha \gt 1 + \frac{n}{r} $$
 
 and set
 
 $$ \gamma := (\alpha - 1)r - n. $$
 
-Then $\gamma > 0$. In the one-head atom definition, take
+Then $\gamma \gt 0$. In the one-head atom definition, take
 
 $$ \rho_i = 1 \qquad \text{for every } i, $$
 
@@ -144,13 +144,13 @@ $$ \mathrm{sgn}(P(k)) = \sigma_k \qquad \text{for } k = 0,\ldots,n. $$
 
 Choose distinct positive numbers
 
-$$ r_1,\ldots,r_C > 0 $$
+$$ r_1,\ldots,r_C \gt 0 $$
 
 and define
 
 $$ B(z) := \prod_{j=1}^{C} (z+r_j). $$
 
-Since $B(k) > 0$ for every $k \in \lbrace0,\ldots,n\rbrace$, the rational function
+Since $B(k) \gt 0$ for every $k \in \lbrace0,\ldots,n\rbrace$, the rational function
 
 $$ S(z) := \frac{P(z)}{B(z)} $$
 
@@ -196,16 +196,10 @@ $\blacksquare$
 
 ## Consequences
 
-1. Monotone symmetric thresholds have one sign change, so
+1. Monotone symmetric thresholds have one sign change, so $H^{\ast}(T_{n,t}) = 1$ for $1 \leq t \leq n$.
 
-$$ H^{\ast}(T_{n,t}) = 1 \qquad 1 \leq t \leq n. $$
+2. Parity has a sign change between every consecutive Hamming weight, so $H^{\ast}(\mathrm{XOR}_n) = n$.
 
-2. Parity has a sign change between every consecutive Hamming weight, so
-
-$$ H^{\ast}(\mathrm{XOR}_n) = n. $$
-
-3. Internal exact-count predicates have two sign changes. For $1 \leq k \leq n-1$,
-
-$$ H^{\ast}(\mathrm{EXACT}_{n,k}) = 2. $$
+3. Internal exact-count predicates have two sign changes. For $1 \leq k \leq n-1$, $H^{\ast}(\mathrm{EXACT}_{n,k}) = 2$.
 
 The last item upgrades the earlier checkerboard lower bound for exact-count predicates from merely $H^{\ast} \geq 2$ to an exact value.

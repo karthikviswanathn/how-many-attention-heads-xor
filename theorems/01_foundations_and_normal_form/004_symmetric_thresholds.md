@@ -8,15 +8,15 @@ $$ T_{n,t}(x)  =  \mathbf{1} \left[ \lvert x\rvert \geq t \right] $$
 
 where $\lvert x\rvert$ is the Hamming weight.
 
-Then $T&#95;{n,t}$ is computable with one head. Since $T&#95;{n,t}$ is nonconstant for $1 \leq t \leq n$, it follows that
+Then $T_{n,t}$ is computable with one head. Since $T_{n,t}$ is nonconstant for $1 \leq t \leq n$, it follows that
 
 $$ H^{\ast}(T_{n,t})  =  1. $$
 
 This includes:
 
-- $\mathrm{OR}&#95;n$, which is $T&#95;{n,1}$,
-- $\mathrm{AND}&#95;n$, which is $T&#95;{n,n}$,
-- $\mathrm{MAJORITY}&#95;n$, which is $T&#95;{n,\lceil n/2 \rceil}$.
+- $\mathrm{OR}_n$, which is $T _{n,1}$,
+- $\mathrm{AND}_n$, which is $T _{n,n}$,
+- $\mathrm{MAJORITY}_n$, which is $T _{n,\lceil n/2 \rceil}$.
 
 ## Construction
 
@@ -34,7 +34,7 @@ and set all positional embeddings to zero.
 
 Choose linear maps
 
-$$ W_Q  =  W_K  =  \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \qquad W_V  =  \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}, \qquad W_O  =  I_2. $$
+$$ W_Q  =  W_K  =  \begin{pmatrix} 1 & 0 \cr 0 & 0 \end{pmatrix}, \qquad W_V  =  \begin{pmatrix} 0 & 0 \cr 0 & 1 \end{pmatrix}, \qquad W_O  =  I_2. $$
 
 ## What This Does
 
@@ -71,13 +71,13 @@ So the entire head output lies on a single ray, and the only thing that matters 
 
 $$ s(k)  =  \frac{e  k}{(e-1)k + n + e}. $$
 
-For integer $0 \leq k < n$,
+For integer $0 \leq k \lt n$,
 
 $$ s(k+1) - s(k)  =  \frac{e (n+e)}{\bigl((e-1)k + n + e\bigr)\bigl((e-1)(k+1) + n + e\bigr)}, $$
 
 which is strictly positive. Hence
 
-$$ s(0)  <  s(1)  <  \cdots  <  s(n). \qquad \blacksquare $$
+$$ s(0)  \lt  s(1)  \lt  \cdots  \lt  s(n). \qquad \blacksquare $$
 
 ## Readout
 
@@ -87,9 +87,9 @@ $$ \langle w,  z(k) \rangle  =  s(k). $$
 
 Because $s(k)$ is strictly increasing, for every threshold index $t \in \lbrace1, \ldots, n\rbrace$ we can choose any $\tau$ with
 
-$$ s(t-1)  <  \tau  <  s(t). $$
+$$ s(t-1)  \lt  \tau  \lt  s(t). $$
 
-Then $\langle w, z(x) \rangle > \tau$ holds exactly when $\lvert x\rvert \geq t$. So the head computes $T_{n,t}$.
+Then $\langle w, z(x) \rangle \gt \tau$ holds exactly when $\lvert x\rvert \geq t$. So the head computes $T_{n,t}$.
 
 ## Exact Complexity
 

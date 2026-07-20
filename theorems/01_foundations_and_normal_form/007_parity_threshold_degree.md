@@ -32,19 +32,19 @@ Indeed, $\prod_i z_i = (-1)^{x_1 + \cdots + x_n}$, which is $+1$ on even parity 
 
 Now suppose, toward a contradiction, that there were a polynomial $Q(z_1, \ldots, z_n)$ of degree less than $n$ such that
 
-$$Q(z) > 0 \text{ whenever } \pi(z) = 1,$$
+$$Q(z) \gt 0 \text{ whenever } \pi(z) = 1,$$
 
-$$Q(z) < 0 \text{ whenever } \pi(z) = -1.$$
+$$Q(z) \lt 0 \text{ whenever } \pi(z) = -1.$$
 
 Equivalently,
 
-$$\pi(z)   Q(z) > 0$$
+$$\pi(z)   Q(z) \gt 0$$
 
 for every $z \in \lbrace-1,1\rbrace^n$.
 
 Since the cube is finite, averaging gives
 
-$$\mathbb{E}[\pi(z)   Q(z)] > 0.$$
+$$\mathbb{E}[\pi(z)   Q(z)] \gt 0.$$
 
 We now show that this expectation must in fact be zero.
 
@@ -82,9 +82,9 @@ Therefore
 
 $$\mathbb{E}[\pi(z)   Q(z)] = -\sum_{S \subsetneq [n]} c_S   \mathbb{E}[\chi_{[n]}(z)   \chi_S(z)] = 0.$$
 
-This contradicts the earlier inequality $\mathbb{E}[\pi(z)   Q(z)] > 0$.
+This contradicts the earlier inequality $\mathbb{E}[\pi(z)   Q(z)] \gt 0$.
 
-So no degree $(<n)$ polynomial sign-represents parity.
+So no degree $(\lt n)$ polynomial sign-represents parity.
 
 ### Upper bound: a degree-n sign representation
 

@@ -6,7 +6,7 @@ Let $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$.
 
 Suppose there exist positive real numbers
 
-$$ \lambda_1, \ldots, \lambda_n > 0 $$
+$$ \lambda_1, \ldots, \lambda_n \gt 0 $$
 
 and a function
 
@@ -42,7 +42,7 @@ $$ \Lambda := \sum_{i=1}^{n} \lambda_i. $$
 
 Because every $\lambda_i$ is positive, the image of $t$ consists of $M$ distinct nonnegative numbers. Write them in increasing order as
 
-$$ 0 = \tau_0 < \tau_1 < \cdots < \tau_{M-1}. $$
+$$ 0 = \tau_0 \lt \tau_1 \lt \cdots \lt \tau_{M-1}. $$
 
 We will build an explicit $(M-1)$-head network whose score depends only on $t(x)$, and whose head outputs form a basis of all real-valued functions on $\mathrm{Im}(t)$.
 
@@ -66,7 +66,7 @@ $$ p_i = (\log \lambda_i)   r \quad \text{for } 1 \leq i \leq n, \qquad p_= = 0.
 
 Thus an input token at position $i$ is represented by
 
-$$ u_i(x) = \begin{cases} (\log \lambda_i)   r & \text{if } x_i = 0, \\ u + (\log \lambda_i)   r & \text{if } x_i = 1. \end{cases} $$
+$$ u_i(x) = \begin{cases} (\log \lambda_i)   r & \text{if } x_i = 0, \cr u + (\log \lambda_i)   r & \text{if } x_i = 1. \end{cases} $$
 
 The query token is represented by the constant vector $q$.
 
@@ -74,7 +74,7 @@ The query token is represented by the constant vector $q$.
 
 Fix distinct real numbers
 
-$$ \alpha_1, \ldots, \alpha_{M-1} > 1. $$
+$$ \alpha_1, \ldots, \alpha_{M-1} \gt 1. $$
 
 For each $j \in \lbrace1, \ldots, M-1\rbrace$, define linear maps as follows.
 
@@ -121,7 +121,7 @@ $$ \sum_{i : x_i = 1} \alpha_j \lambda_i   e_j = \alpha_j \left( \sum_{i=1}^{n} 
 
 while the denominator is
 
-$$ \begin{aligned} 1 + \sum_{i : x_i = 0} \lambda_i + \sum_{i : x_i = 1} \alpha_j \lambda_i &= 1 + \sum_{i=1}^{n} \lambda_i + (\alpha_j - 1) \sum_{i=1}^{n} \lambda_i x_i \\ &= 1 + \Lambda + (\alpha_j - 1) t(x). \end{aligned} $$
+$$ \begin{aligned} 1 + \sum_{i : x_i = 0} \lambda_i + \sum_{i : x_i = 1} \alpha_j \lambda_i &= 1 + \sum_{i=1}^{n} \lambda_i + (\alpha_j - 1) \sum_{i=1}^{n} \lambda_i x_i \cr &= 1 + \Lambda + (\alpha_j - 1) t(x). \end{aligned} $$
 
 Hence
 
@@ -139,7 +139,7 @@ for every $\tau \in \mathrm{Im}(t)$.
 
 Evaluating at $\tau_0 = 0$ gives $c_0 = 0$, because $g_j(0) = 0$ for every $j$.
 
-Now fix $m \in \lbrace1, \ldots, M-1\rbrace$. Since $\tau_m > 0$, we may divide by $\tau_m$ and obtain
+Now fix $m \in \lbrace1, \ldots, M-1\rbrace$. Since $\tau_m \gt 0$, we may divide by $\tau_m$ and obtain
 
 $$ \sum_{j=1}^{M-1} \frac{c_j \alpha_j}{1 + \Lambda + (\alpha_j - 1) \tau_m} = 0. $$
 
@@ -187,7 +187,7 @@ Hence every $c_j = 0$, and the functions $1, g_1, \ldots, g_{M-1}$ are linearly 
 
 **Proof.** Define a target sign pattern on $\mathrm{Im}(t)$ by
 
-$$ \sigma(\tau) := \begin{cases} +1 & \text{if } F(\tau) = 1, \\ -1 & \text{if } F(\tau) = 0. \end{cases} $$
+$$ \sigma(\tau) := \begin{cases} +1 & \text{if } F(\tau) = 1, \cr -1 & \text{if } F(\tau) = 0. \end{cases} $$
 
 By Corollary 3, there exist coefficients
 
@@ -215,7 +215,7 @@ $$ \tau_{\mathrm{out}} := -\beta_0. $$
 
 Then
 
-$$ \begin{aligned} w^\top r(x) - \tau_{\mathrm{out}} &= \beta_0 + \sum_{j=1}^{M-1} \beta_j g_j(t(x)) \\ &= \sigma(t(x)). \end{aligned} $$
+$$ \begin{aligned} w^\top r(x) - \tau_{\mathrm{out}} &= \beta_0 + \sum_{j=1}^{M-1} \beta_j g_j(t(x)) \cr &= \sigma(t(x)). \end{aligned} $$
 
 So this affine score is positive exactly when $F(t(x)) = 1$, and negative exactly when $F(t(x)) = 0$. Since $f(x) = F(t(x))$, the resulting $(M-1)$-head model computes $f$ exactly.
 
@@ -231,7 +231,7 @@ This completes the proof of the theorem. $\blacksquare$
 
 Define
 
-$$ M_{+}(f) := \min \left\lbrace \lvert \mathrm{Im}\left(\sum_{i=1}^{n} \lambda_i x_i\right) \rvert : \lambda_1, \ldots, \lambda_n > 0, f(x) = F \left(\sum_{i=1}^{n} \lambda_i x_i\right) \text{ for some } F \right\rbrace. $$
+$$ M_{+}(f) := \min \left\lbrace \lvert \mathrm{Im}\left(\sum_{i=1}^{n} \lambda_i x_i\right) \rvert : \lambda_1, \ldots, \lambda_n \gt 0, f(x) = F \left(\sum_{i=1}^{n} \lambda_i x_i\right) \text{ for some } F \right\rbrace. $$
 
 The theorem implies
 

@@ -14,10 +14,10 @@ $$ D(0,0) + D(1,1) = D(0,1) + D(1,0). $$
 
 By the additive decomposition [001_checkerboard_additive_decomposition.md](001_checkerboard_additive_decomposition.md), $N(a,b) = A(a) + B(b) + C$. Expanding both diagonal sums,
 
-$$ \begin{aligned} N(0,0) + N(1,1) &= \bigl(A(0) + B(0) + C\bigr) + \bigl(A(1) + B(1) + C\bigr) \\ &= A(0) + A(1) + B(0) + B(1) + 2C, \end{aligned} $$
+$$ \begin{aligned} N(0,0) + N(1,1) &= \bigl(A(0) + B(0) + C\bigr) + \bigl(A(1) + B(1) + C\bigr) \cr &= A(0) + A(1) + B(0) + B(1) + 2C, \end{aligned} $$
 
 and
 
-$$ \begin{aligned} N(0,1) + N(1,0) &= \bigl(A(0) + B(1) + C\bigr) + \bigl(A(1) + B(0) + C\bigr) \\ &= A(0) + A(1) + B(0) + B(1) + 2C. \end{aligned} $$
+$$ \begin{aligned} N(0,1) + N(1,0) &= \bigl(A(0) + B(1) + C\bigr) + \bigl(A(1) + B(0) + C\bigr) \cr &= A(0) + A(1) + B(0) + B(1) + 2C. \end{aligned} $$
 
 The two are equal. The denominator $D(a,b) = \alpha(a) + \beta(b) + \gamma$ has the identical form, so the proof for $D$ is the same. $\blacksquare$

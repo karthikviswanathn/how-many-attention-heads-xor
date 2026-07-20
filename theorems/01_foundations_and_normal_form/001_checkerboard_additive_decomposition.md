@@ -22,7 +22,7 @@ and
 
 $$ \widehat v_t(a,b) := W_O v_t(a,b). $$
 
-So $N(a,b)$ is the vector-valued softmax numerator after the output projection, and $D(a,b) > 0$ is the scalar denominator.
+So $N(a,b)$ is the vector-valued softmax numerator after the output projection, and $D(a,b) \gt 0$ is the scalar denominator.
 
 Then on the restricted 2-cube both $N$ and $D$ decompose additively:
 

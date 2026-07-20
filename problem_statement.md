@@ -4,7 +4,7 @@
 
 We want to characterize the minimum number of attention heads required to compute a Boolean function
 
-$$f : \{0,1\}^n \to \{0,1\}$$
+$$f : \lbrace 0,1 \rbrace^n \to \lbrace 0,1 \rbrace$$
 
 in a **single-layer attention-only transformer** with a **linear readout** from a designated query token.
 
@@ -20,30 +20,28 @@ We fix the following architecture.
 - **Output:** the residual stream at the query token after the attention update.
 - **Readout:** a linear probe (equivalently, a thresholded affine functional) applied to that query residual.
 
-A Boolean function $f$ is said to be **computable with $H$ heads** if there exists a choice of embeddings, attention parameters, and linear readout such that the resulting classifier equals $f$ on all inputs in $\{0,1\}^n$.
+A Boolean function $f$ is said to be **computable with $H$ heads** if there exists a choice of embeddings, attention parameters, and linear readout such that the resulting classifier equals $f$ on all inputs in $\lbrace 0,1 \rbrace^n$.
 
 ## Main Quantity
 
 Define
 
-$$
-H^{*}(f) \;:=\; \min \left\{\, H : f \text{ is computable with } H \text{ heads in the above model} \,\right\}.
-$$
+$$H^{\ast}(f) := \min \left\lbrace H : f \text{ is computable with } H \text{ heads in the above model} \right\rbrace.$$
 
-Our central problem is to understand $H^{*}(f)$ as a function of $f$.
+Our central problem is to understand $H^{\ast}(f)$ as a function of $f$.
 
 ## Core Questions
 
-1. **Exact characterization.** Can $H^{*}(f)$ be expressed, exactly or approximately, in terms of a known invariant of $f$?
+1. **Exact characterization.** Can $H^{\ast}(f)$ be expressed, exactly or approximately, in terms of a known invariant of $f$?
 2. **Lower bounds.** What techniques prove that a function requires at least $H$ heads?
 3. **Upper bounds.** Can we constructively realize broad classes of Boolean functions with few heads?
-4. **Comparison to classical complexity measures.** How does $H^{*}(f)$ relate to:
+4. **Comparison to classical complexity measures.** How does $H^{\ast}(f)$ relate to:
    - threshold degree,
    - rational degree,
    - threshold density / sparsity,
    - circuit depth / threshold-circuit complexity,
    - Fourier or spectral complexity measures?
-5. **Natural families.** What is $H^{*}(f)$ for standard functions such as:
+5. **Natural families.** What is $H^{\ast}(f)$ for standard functions such as:
    - $\mathrm{AND}$, $\mathrm{OR}$,
    - parity / $\mathrm{XOR}$,
    - majority,
@@ -55,7 +53,7 @@ Our central problem is to understand $H^{*}(f)$ as a function of $f$.
 
 We would like to identify either:
 
-- an invariant $I(f)$ such that $H^{*}(f)$ is controlled by $I(f)$ (ideally $H^{*}(f) \asymp I(f)$ on broad classes), or
+- an invariant $I(f)$ such that $H^{\ast}(f)$ is controlled by $I(f)$ (ideally $H^{\ast}(f) \asymp I(f)$ on broad classes), or
 - explicit function families for which the head complexity exhibits qualitatively new behavior compared to classical measures.
 
 In short:
