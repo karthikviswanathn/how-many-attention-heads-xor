@@ -106,7 +106,7 @@ For each head $h$, take an independent block with orthonormal basis
 
 $$ q_h, k_h, v_h, o_h. $$
 
-Use the direct sum of all these blocks as the model space, and take $d&#95;{\mathrm{head}} = d&#95;{\mathrm{model}}$.
+Use the direct sum of all these blocks as the model space, and take $d_{\mathrm{head}} = d_{\mathrm{model}}$.
 
 Define token embeddings by
 
@@ -167,6 +167,6 @@ So the model computes exactly the Boolean function represented by the atoms.
 
 ### Combining the two directions
 
-Lemma 1 shows $H^{\ast}(f) \geq L&#95;{\mathrm{frac}}(f)$ and Lemma 2 shows $H^{\ast}(f) \leq L&#95;{\mathrm{frac}}(f)$. Together,
+Lemma 1 shows $H^{\ast}(f) \geq L_{\mathrm{frac}}(f)$ and Lemma 2 shows $H^{\ast}(f) \leq L_{\mathrm{frac}}(f)$. Together,
 
 $$ H^{\ast}(f) = L_{\mathrm{frac}}(f). \qquad \blacksquare $$
