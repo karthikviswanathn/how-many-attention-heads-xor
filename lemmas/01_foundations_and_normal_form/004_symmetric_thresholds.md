@@ -14,9 +14,9 @@ $$ H^{\ast}(T_{n,t})  =  1. $$
 
 This includes:
 
-- $\mathrm{OR}_n$, which is $T_{n,1}$,
-- $\mathrm{AND}_n$, which is $T_{n,n}$,
-- $\mathrm{MAJORITY}_n$, which is $T_{n,\lceil n/2 \rceil}$.
+- $\mathrm{OR}_n$, which is $T _{n,1}$,
+- $\mathrm{AND}_n$, which is $T _{n,n}$,
+- $\mathrm{MAJORITY}_n$, which is $T _{n,\lceil n/2 \rceil}$.
 
 ## Construction
 

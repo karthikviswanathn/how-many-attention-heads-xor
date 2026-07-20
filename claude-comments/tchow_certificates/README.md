@@ -11,9 +11,9 @@ $\mathrm{tChow}_{\pm}(f)$ is the least $H$ such that some
 
 $$ P(x) = \theta\prod_{h=1}^{H} D_h(x) + \sum_{h=1}^{H} N_h(x)\prod_{g\neq h} D_g(x) $$
 
-with arbitrary affine $N_h, D_h$ strictly sign-represents $f$ on the cube (the unrestricted
-tangential-Chow invariant of the autoresearch ledgers, sandwiched
-$\deg_{\pm}(f) \leq \mathrm{tChow}_{\pm}(f) \leq H^{\ast}(f)$). Conventions in both JSON files:
+with arbitrary affine $N_h, D_h$ strictly sign-represents $f$ on the cube. This is the
+unrestricted tangential-Chow invariant of the autoresearch ledgers, sandwiched
+$\deg_{\pm}(f) \leq \mathrm{tChow}_{\pm}(f) \leq H^{\ast}(f)$. Conventions in both JSON files:
 $x \in \lbrace 0,1\rbrace^n$, code $= \sum_i x_i 2^i$, affine coefficient vectors are
 $[c_0, c_1, \ldots, c_n]$ meaning $c_0 + \sum_i c_i x_i$, and $P(x) > 0$ iff $f(x) = 1$.
 
