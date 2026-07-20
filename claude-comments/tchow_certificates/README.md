@@ -2,7 +2,8 @@
 
 Date: 2026-07-17. Produced by Claude (Fable 5) with an LP-in-the-loop search seeded from the
 degree-cone analytic center; every certificate below is verified in exact integer arithmetic
-(no floating point in the final check; see `certify_tchow4.py` for the verification pattern).
+(no floating point in the final check; run `python3 verify_certificates.py` to re-check both
+certificates from scratch).
 
 ## Setting
 
@@ -56,5 +57,6 @@ strictness inherits whatever confidence lemma 189's written lower-bound proof ca
 
 - `tchow4_f6_integer_certificate.json`, `tchow2_f8_integer_certificate.json`: the certificates.
 - `tchow4_f6_search.py`: the fixed-denominator LP oracle and outer search.
-- `certify_tchow4.py`: exact rational verification of the raw float hit (the integer
-  certificates were then obtained by grid rounding plus exact re-verification).
+- `verify_certificates.py`: standalone exact integer verification of both certificates
+  (no dependencies; the integer certificates were obtained from raw LP hits by grid
+  rounding plus this exact re-verification).
