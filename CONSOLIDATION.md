@@ -29,21 +29,23 @@ file remains on its source branch in this repository's git history.
 | `snellius/codexwork` | 20b75ee | Ancestor of `codex/sprint-1`; nothing unique. |
 | `autoresearch-bak` | 78ff726 | **Excluded.** Its single unique lemma (L13, mixed-literal DNF upper bound) is a false overclaim; see Hypotheses below. |
 | `informal-prover`, `codex/informal-proof-2`, `codex/public-lemmas-through-012`, `codex/inverted-problem-statement` | | Ancestors of `main`; nothing unique. |
+| `main` (rebased GitLab line) | b56435d | **Merged 2026-07-20.** The GitLab `xorformer` refactor: `lemmas/` renamed to `theorems/`, `head-complexity/` renamed to `formalization/` (restructured namespaces, Lean 4.31), intro materials moved under `artifacts/`, plus the curated `theorems.md` ledger and the machine-checked ten-bit separation (`theorems/02_separations_and_counterexamples/013_strict_threshold_degree_separation.md`). Note the numbering clash: that file's "Theorem 13" is unrelated to entry 013 of the consolidated ledger; the consolidated 001-197 numbering in `lemmas.md` is unchanged. |
 
 ## Where the proved material lives
 
 - **The ledger.** [lemmas.md](lemmas.md) is the master statement list; proofs are
-  one file per lemma under [lemmas/](lemmas/) in six thematic folders, numbered
+  one file per lemma under [theorems/](theorems/) in six thematic folders, numbered
   001-197. Highlights: the exact normal form `H* = L_frac` (010), the exact
   symmetric characterization (012), universal upper bounds through twelve bits
   (017-020 and successors), the strict separations folder
-  [lemmas/06_strict_separations/](lemmas/06_strict_separations/) with the
+  [theorems/06_strict_separations/](theorems/06_strict_separations/) with the
   twelve-bit separation (182), exact classification through four bits (183),
   the five-bit degree-two and degree-four exact classifications (187, 186), and
   the eight-bit strict separation `deg_pm(f_8) = 2 < 3 = H*(f_8)` (189).
-- **Machine-checked foundations.** [head-complexity/](head-complexity/) is the
-  Lean 4 formalization of Lemmas 1-12 plus the threshold-degree sandwich
-  (`Sandwich.lean`), axiom-clean per its build gate.
+- **Machine-checked foundations.** [formalization/](formalization/) is the
+  Lean 4 formalization of Lemmas 1-12 plus the f10 strict separation
+  (`f10_strict_separation`) and the threshold-degree sandwich
+  (`Results/Sandwich.lean`), axiom-clean per its build gate.
 - **Exact tChow certificates.**
   [claude-comments/tchow_certificates/](claude-comments/tchow_certificates/)
   holds exact integer certificates for `tChow_pm(f_6) = 4` and

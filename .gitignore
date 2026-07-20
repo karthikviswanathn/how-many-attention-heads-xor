@@ -17,6 +17,9 @@ artifacts/intro-presentation/qa/
 project-management/
 .gitignore
 .env
-head_complexity_paper/
-tmp
 informal_proofs/results.jsonl
+head_complexity_paper/
+
+# Stale pre-rename Lean build cache and local scratch outputs
+head-complexity/
+tmp/

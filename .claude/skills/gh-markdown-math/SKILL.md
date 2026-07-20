@@ -26,6 +26,17 @@ error in VS Code. Prefer the dual-safe fixes.
 - `*` → `\ast` — a literal `*` is Markdown emphasis. Two `*` on a line/block (e.g. `H^{*}` twice) pair into `<em>` and corrupt the math ("missing open brace"). `\ast` renders identically and isn't a Markdown char.
 - `\operatorname{X}` → `\mathrm{X}` — `\operatorname` is unreliable on GitHub.
 - `\#` (literal hash, e.g. `\#\{set\}`) → cardinality bars `\lvert\lbrace…\rbrace\rvert`. `\#` unescapes to `#`, a TeX error.
+- `<` `>` (bare comparison signs) → `\lt` `\gt` : when the math is embedded in a
+  paragraph (any `$…$`, or a `$$…$$` sharing a line with prose), GitHub double-escapes
+  angle brackets and KaTeX receives a literal `&lt;`/`&gt;` (parse error on `&`).
+  Standalone `$$` lines escape correctly, but use `\lt`/`\gt` uniformly; they render
+  identically and are KaTeX-safe. (`\leq \geq \neq \langle \rangle` are macros and
+  already safe.)
+- `\\` (row separator in `aligned`/`cases`/`array`/`substack`) → `\cr` : on a
+  single-line `$$…$$` the Markdown layer eats one backslash, so KaTeX receives `\ `
+  (an escaped space) and the row break vanishes. `\cr` survives and renders identically
+  on GitHub, KaTeX, and MathJax. This supersedes the earlier claim below that `\\`
+  survives (re-verified broken via the render API, July 2026).
 - After substituting a **letter-command** (`\lbrace`, `\rbrace`, …) that is immediately followed by a letter, insert a space: `\{f` → `\lbrace f`, never `\lbracef` (one undefined token).
 
 ### Underscores (subscripts)
@@ -53,8 +64,8 @@ error in VS Code. Prefer the dual-safe fixes.
 `\lbrace \rbrace \lvert \rvert \lVert \rVert`, `\mathrm \mathbf \mathbb \mathcal \mathfrak`,
 `\bigl \bigr \left \right`, `\frac \sum \prod \binom \sqrt`, `\langle \rangle`,
 `\widehat \widetilde \overline`, `\ldots \cdots`, `\leq \geq \neq \pm \in \to \subseteq`,
-`\begin{aligned}` / `\begin{cases}` / `\begin{array}` (as single-line `$$`, with `\\` and `&`),
-`\substack{a\\b}`, `\blacksquare \varnothing \subsetneq`, `\qquad \quad`. `\\` row breaks survive.
+`\begin{aligned}` / `\begin{cases}` / `\begin{array}` (as single-line `$$`, with `\cr` and `&`),
+`\substack{a\cr b}`, `\blacksquare \varnothing \subsetneq`, `\qquad \quad`. `&` alignment survives; use `\cr` for row breaks (see the rule above).
 
 ## Auditing (do this, don't guess)
 
@@ -77,7 +88,11 @@ the exact LaTeX fed to the engine. Two checks:
 1. **Residual `$`** — strip `<math-renderer>…</math-renderer>`, `<code>`, `<pre>`, then
    look for a literal `$`. Any leftover `$` = a delimiter GitHub did **not** recognize =
    broken math. This single check catches almost every failure above.
-2. **Leak into structure** — a `<h1-6>` or `<li>` whose text contains raw `\sum`/`\frac`/
+2. **Double-escape inside math** — scan each `<math-renderer>` payload for `&amp;`:
+   any hit means KaTeX will receive a literal entity (e.g. `&gt;`) instead of the
+   character — broken math the residual-`$` check cannot see. Also scan payloads for a
+   lone `\` where a row break was intended (an eaten `\\`).
+3. **Leak into structure** — a `<h1-6>` or `<li>` whose text contains raw `\sum`/`\frac`/
    `\begin`/`<em>` where math should be = the block was mis-parsed.
 
 The render API also makes candidate fixes cheap to test: put the variants in a small
@@ -94,7 +109,7 @@ fix in this skill is KaTeX-safe.
 ## Quick fix recipe (mechanical, in order)
 
 1. Collapse every `$$…$$` to one line.
-2. In all math: `\{`→`\lbrace`, `\}`→`\rbrace`, `*`→`\ast`, `\operatorname`→`\mathrm`; delete `\,` `\;` `\!`; add a space where a letter-command abuts a letter.
+2. In all math: `\{`→`\lbrace`, `\}`→`\rbrace`, `*`→`\ast`, `<`→`\lt`, `>`→`\gt`, `\\` (row separator)→`\cr`, `\operatorname`→`\mathrm`; delete `\,` `\;` `\!`; add a space where a letter-command abuts a letter.
 3. In each paragraph where an opener-shaped `_` (`}_n`) precedes a closer-shaped `_` (`T_{`), insert a space before each closer-shaped `_`: `$T _{n,1}$`, `$\deg _{\pm}$`. (Do NOT use `&#95;` — it breaks KaTeX previews.)
 4. Fix delimiter placement: `word-$x$`→`word $x$`; `$x$y`→`$x$-y`; reword `)$)`; join wrapped inline spans.
 5. Move math out of headings, list-item display blocks, and `*italic*`/`_italic_` (bold `**…**` is fine).
