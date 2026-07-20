@@ -1,0 +1,64 @@
+{
+  "cell": {
+    "direction_bounds": [
+      [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ]
+      ]
+    ],
+    "scalar_direction_bounds": [
+      "1",
+      "1"
+    ],
+    "t_bounds": [
+      "0",
+      "1"
+    ],
+    "theta_bounds": [
+      [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ]
+    ]
+  },
+  "certificate_type": "signed-secant-mccormick-leaf",
+  "chart": {
+    "kind": "scalar-direction",
+    "value": 1
+  },
+  "dimension": 1,
+  "dual": {
+    "claimed_upper_bound": "0",
+    "equality_multipliers": {},
+    "inequality_multipliers": {
+      "bound_lower::x0_R_1": "1/2",
+      "bound_lower::x0_aC": "1/2",
+      "bound_lower::x0_aP": "1/2"
+    }
+  },
+  "head_count": 1,
+  "lambda": [
+    {
+      "vertex": 0,
+      "weight": "1"
+    }
+  ],
+  "orientations": [
+    1
+  ],
+  "schema_version": 1,
+  "truth_mask_hex": "0x2",
+  "vertex_order": "integer-code-lsb-coordinate-0"
+}

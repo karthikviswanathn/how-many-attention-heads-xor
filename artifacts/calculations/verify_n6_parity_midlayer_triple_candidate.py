@@ -9,6 +9,8 @@ import itertools
 N = 6
 EXCEPTIONAL = (21, 38, 41)
 EXPECTED_MASK = 0x96696BD669B69669
+POSITIVE_PROJECTION_WEIGHTS = (65, 72, 96, 66, 80, 68)
+EXPECTED_PROJECTION_TRANSITIONS = (1, 7, 23, 37, 39, 42, 57, 63)
 
 # Monomial order: all subsets of sizes zero through four, lexicographically
 # within each size.
@@ -226,6 +228,26 @@ def verify_threshold_degree() -> None:
         assert moment == 0
 
 
+def verify_eight_head_projection_upper_bound() -> None:
+    assert all(weight > 0 for weight in POSITIVE_PROJECTION_WEIGHTS)
+    levels = {
+        sum(
+            POSITIVE_PROJECTION_WEIGHTS[coordinate]
+            * ((code >> coordinate) & 1)
+            for coordinate in range(N)
+        ): target_sign(code)
+        for code in range(64)
+    }
+    assert len(levels) == 64
+    profile = [levels[level] for level in sorted(levels)]
+    transitions = tuple(
+        index
+        for index, (left, right) in enumerate(zip(profile, profile[1:]), start=1)
+        if left != right
+    )
+    assert transitions == EXPECTED_PROJECTION_TRANSITIONS
+
+
 def cosets(subspace: set[int]) -> tuple[frozenset[int], ...]:
     unseen = set(range(64))
     answer = []
@@ -321,10 +343,13 @@ def verify_fourier_rigidity_identities() -> None:
 
 def main() -> None:
     verify_threshold_degree()
+    verify_eight_head_projection_upper_bound()
     verify_fourier_rigidity_identities()
     print(f"truth mask: {EXPECTED_MASK:#018x}")
     print("threshold degree: 4")
     print(f"degree-three Gordan support: {len(DEGREE_THREE_GORDAN_SUPPORT)}")
+    print(f"positive-projection sign changes: {len(EXPECTED_PROJECTION_TRANSITIONS)}")
+    print("threshold-plus-projection interval: [4, 8]")
     print("Fourier cut-cone identities: verified")
 
 

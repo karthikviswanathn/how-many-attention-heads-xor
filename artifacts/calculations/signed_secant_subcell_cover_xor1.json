@@ -1,0 +1,105 @@
+{
+  "certificate_type": "signed-secant-cell-cover",
+  "chart": {
+    "kind": "scalar-direction",
+    "value": 1
+  },
+  "dimension": 1,
+  "head_count": 1,
+  "orientations": [
+    1
+  ],
+  "root_cell": {
+    "direction_bounds": [
+      [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ]
+      ]
+    ],
+    "scalar_direction_bounds": [
+      "1",
+      "1"
+    ],
+    "t_bounds": [
+      "0",
+      "1"
+    ],
+    "theta_bounds": [
+      [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ]
+    ]
+  },
+  "schema_version": 1,
+  "tree": {
+    "left": {
+      "leaf": {
+        "dual": {
+          "claimed_upper_bound": "0",
+          "equality_multipliers": {},
+          "inequality_multipliers": {
+            "bound_lower::x0_R_1": "1/2",
+            "bound_lower::x0_aC": "1/2",
+            "bound_lower::x0_aP": "1/2"
+          }
+        },
+        "lambda": [
+          {
+            "vertex": 0,
+            "weight": "1"
+          }
+        ]
+      }
+    },
+    "right": {
+      "leaf": {
+        "dual": {
+          "claimed_upper_bound": "-1/4",
+          "equality_multipliers": {
+            "affine::x0_P_0": "-1/4",
+            "affine::x0_R_1": "-1/2"
+          },
+          "inequality_multipliers": {
+            "bound_lower::a": "1/2",
+            "bound_lower::x0_Rleft_1": "1/2",
+            "bound_lower::x0_aC": "1/2",
+            "bound_lower::x0_b_0": "1/2",
+            "bound_lower::x0_d_0": "1/2",
+            "mccormick_ll::x0_P_1": "1/2",
+            "mccormick_ll::x0_Rright_1": "1/2",
+            "mccormick_uu::x0_aP": "1/2"
+          }
+        },
+        "lambda": [
+          {
+            "vertex": 0,
+            "weight": "1"
+          }
+        ]
+      }
+    },
+    "split": {
+      "coordinate": {
+        "head": 0,
+        "kind": "direction",
+        "literal": 0
+      },
+      "value": "1/2"
+    }
+  },
+  "truth_mask_hex": "0x2",
+  "vertex_order": "integer-code-lsb-coordinate-0"
+}

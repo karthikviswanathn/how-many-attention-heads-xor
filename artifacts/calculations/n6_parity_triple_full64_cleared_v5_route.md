@@ -204,14 +204,40 @@ $$ 0=p^{\top}q=\sum_zs(z)r(z)=2\sum_{e\in E}r(e)<0, $$
 
 where the middle equality uses orthogonality of parity to every cubic. Thus this 42-variable subcone is structurally empty.
 
+## Weak Multipliers And Generic Closure
+
+For the four-head lower bound, a weak Gordan multiplier is enough:
+
+$$ q\geq0,\qquad q\neq0,\qquad G^{\top}q=0,\qquad p^{\top}q=0. $$
+
+Strict positivity of all 64 coordinates is a stronger convenience, not a requirement. Normalize a weak multiplier by $\mathbf1^{\top}q=1$. For a denominator parameter $\theta$, define
+
+$$ K(\theta)=\lbrace q\in\Delta_{63}:[G(\theta),p]^{\top}q=0\rbrace. $$
+
+The set of parameters for which $K(\theta)$ is nonempty is closed. Indeed, if $\theta_j\to\theta$ and $q_j\in K(\theta_j)$, compactness of $\Delta_{63}$ gives a convergent subsequence $q_{j_k}\to q$. Continuity gives $q\in K(\theta)$.
+
+The script [verify_n6_parity_triple_full64_augmented_generic_rank.py](verify_n6_parity_triple_full64_augmented_generic_rank.py) constructs one strictly interior integer denominator tuple in each orientation-count branch and proves rank $26$ modulo $1000003$. Since the augmented matrix has 26 columns, this proves rational rank $26$. The rank-$26$ locus is therefore Zariski open and dense in every branch.
+
+Consequently, it is enough to prove $K(\theta)\neq\varnothing$ on the rank-$26$ locus. Closedness then supplies every rank-deficient and boundary tuple automatically. Carathéodory reduces each pointwise multiplier on this locus to at most 27 cube vertices.
+
+For an ordered 27-vertex support $S=\lbrace x_0,\ldots,x_{26}\rbrace$, define
+
+$$ q_j^S(\theta)=(-1)^j\det [G(\theta),p]_{S\setminus\lbrace x_j\rbrace}. $$
+
+The cofactor identity gives $[G(\theta),p]^{\top}q^S(\theta)=0$ identically. Wherever these 27 cofactors have one weak sign and are not all zero, the support supplies a weak Gordan multiplier. Each cofactor has denominator-block multidegree $(19,19,19,19)$ and total degree $76$.
+
+Thus the best finite reduction is an exact atlas of positive oriented-matroid circuits covering the rank-$26$ parameter locus. This route permits the multiplier to vary with the denominators and avoids separate facial reduction once dense-locus coverage is proved.
+
 ## Status
 
-The full-cube cleared degree-five cone is the strongest surviving multiplier route for the six-bit parity-triple candidate. The exact alternative, pair reduction, common-kernel description, and moment constraints are rigorous. The corner, edge, hard-tuple, and adversarial results are numerical audits.
+The full-cube cleared degree-five cone is the strongest surviving multiplier route for the six-bit parity-triple candidate. The exact alternative, pair reduction, common-kernel description, moment constraints, generic rank, and closure reduction are rigorous. The corner, edge, hard-tuple, and adversarial results are numerical audits.
 
 A proof still needs one of the following:
 
-- an exact simplex-face induction with facial reduction on the boundary-only classes;
+- an exact positive-circuit atlas covering the rank-$26$ denominator locus;
 
 - an argument that the exact augmented alternative $A=sR+\beta p\geq0$ contradicts denominator orientation;
 
 - an exact positive multiplier formula depending on the four denominator coefficient vectors.
+
+A fixed multiplier on a full-dimensional parameter cell cannot work. Polynomial identity would extend it to every denominator tuple, contradicting the exact common-kernel obstruction. Any full-dimensional atlas must therefore use varying circuit or polynomial multiplier formulas.

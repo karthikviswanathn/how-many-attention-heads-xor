@@ -30,19 +30,15 @@ Third, $H^{\ast}$ controls sign-rank under every input partition. Let $I\sqcup J
 
 $$ \Sigma_f^{I,J}(u,v) := \begin{cases} +1 & \text{if } f(u,v)=1, \\ -1 & \text{if } f(u,v)=0. \end{cases} $$
 
-Let $\mathrm{srank}_{I,J}(f)$ be its sign-rank, namely the minimum rank of a real matrix with the same strict sign pattern as $\Sigma_f^{I,J}$. If $H=H^{\ast}(f)$, then
+Let $\mathrm{srank}_{I,J}(f)$ be its sign-rank, namely the minimum rank of a real matrix with the same strict sign pattern as $\Sigma_f^{I,J}$. If $f$ is nonconstant and $H=H^{\ast}(f)$, then
 
-$$ \mathrm{srank}_{I,J}(f) \leq \sum_{r=0}^{H} \sum_{i=0}^{r} \binom{\lvert I\rvert}{i} \binom{\lvert J\rvert}{r-i}, $$
+$$ \mathrm{srank}_{I,J}(f) \leq \min\left\lbrace 2^{H+1}-2,\ \sum _{i=0}^{\min(H,\lvert I\rvert)}\binom{\lvert I\rvert}{i},\ \sum _{j=0}^{\min(H,\lvert J\rvert)}\binom{\lvert J\rvert}{j}\right\rbrace. $$
 
-where binomial coefficients outside their natural range are interpreted as $0$. Equivalently,
+In particular,
 
-$$ H^{\ast}(f) \geq \min\left\lbrace H : \mathrm{srank}_{I,J}(f) \leq \sum_{r=0}^{H} \sum_{i=0}^{r} \binom{\lvert I\rvert}{i} \binom{\lvert J\rvert}{r-i} \right\rbrace. $$
+$$ H^{\ast}(f) \geq \left\lceil\log_2\left(\mathrm{srank}_{I,J}(f)+2\right)\right\rceil-1. $$
 
-By Vandermonde's identity, the double sum is also
-
-$$ \sum_{r=0}^{H}\binom{n}{r}. $$
-
-> **Interpretation.** Threshold degree is not the only systematic lower-bound route. Any partition on which $f$ has large sign-rank forces enough heads to supply a polynomial sign matrix of sufficient rank.
+> **Interpretation.** Threshold degree is not the only systematic lower-bound route. The cleared score has the special tangent form of a product of affine denominators. Across any partition, this tangent structure has rank at most $2^{H+1}-2$, even when the space of all degree-at-most $H$ polynomials has much larger partition rank.
 
 ## Proof
 
@@ -150,33 +146,59 @@ $\blacksquare$
 
 ### Lemma 4. Low heads imply low partition sign-rank
 
-Suppose $f$ is computed with $H$ heads. By the threshold-degree lower-bound proof in [006_threshold_degree_head_complexity_bound.md](../01_foundations_and_normal_form/006_threshold_degree_head_complexity_bound.md), there is a multilinear polynomial $P$ of degree at most $H$ such that
+Suppose the nonconstant function $f$ is computed with $H$ heads. Write its linear-fractional score as
 
-$$ P(x)>0 \qquad\Longleftrightarrow\qquad f(x)=1 $$
+$$ S(x)=c+\sum_{h=1}^{H}\frac{N_h(x)}{D_h(x)}, $$
 
-on the Boolean cube.
+where every $N_h,D_h$ is affine and every $D_h$ is positive on the cube. The finite set of positive inputs has a positive minimum score. Choose $\varepsilon>0$ smaller than that minimum and replace $c$ by $c-\varepsilon$. The shifted score is strictly positive on $f^{-1}(1)$ and strictly negative on $f^{-1}(0)$.
 
-Split the variables as $(u,v)$ across $I\sqcup J$. Expand
+Clearing the positive denominators gives
 
-$$ P(u,v) = \sum_{\substack{A\subseteq I,\ B\subseteq J\\ \lvert A\rvert+\lvert B\rvert\leq H}} c_{A,B} \left(\prod_{i\in A}u_i\right) \left(\prod_{j\in B}v_j\right). $$
+$$ P(x)=(c-\varepsilon)\prod_{h=1}^{H}D_h(x)+\sum_{h=1}^{H}N_h(x)\prod_{g\neq h}D_g(x). $$
 
-For fixed $A,B$, the matrix
+Thus the evaluation matrix of $P$ has exactly the strict sign pattern $\Sigma_f^{I,J}$.
 
-$$ \left[ \left(\prod_{i\in A}u_i\right) \left(\prod_{j\in B}v_j\right) \right]_{u,v} $$
+First use only the degree bound. The polynomial $P$ has degree at most $H$. Split the variables as $(u,v)$ across $I\sqcup J$ and write
 
-has rank at most $1$, because it is an outer product of a function of $u$ and a function of $v$. Therefore the real matrix
+$$ P(u,v)=\sum_{\substack{A\subseteq I,\ B\subseteq J\\ \lvert A\rvert+\lvert B\rvert\leq H}}c_{A,B}u_Av_B. $$
 
-$$ M_P(u,v):=P(u,v) $$
+This is a matrix factorization through the coefficient matrix $(c_{A,B})$. Therefore
 
-has rank at most the number of monomials appearing in the displayed degree bound:
+$$ \mathrm{rank}(M_P)\leq\min\left\lbrace\sum_{i=0}^{\min(H,\lvert I\rvert)}\binom{\lvert I\rvert}{i},\ \sum_{j=0}^{\min(H,\lvert J\rvert)}\binom{\lvert J\rvert}{j}\right\rbrace. $$
 
-$$ \mathrm{rank}(M_P) \leq \sum_{r=0}^{H} \sum_{i=0}^{r} \binom{\lvert I\rvert}{i} \binom{\lvert J\rvert}{r-i}. $$
+The tangent form gives a second bound. Decompose each affine form across the partition:
 
-Since $M_P$ has the same strict sign pattern as $\Sigma_f^{I,J}$, the definition of sign-rank gives
+$$ D_h(u,v)=a_h(u)+b_h(v),\qquad N_h(u,v)=r_h(u)+s_h(v). $$
 
-$$ \mathrm{srank}_{I,J}(f) \leq \mathrm{rank}(M_P) \leq \sum_{r=0}^{H} \sum_{i=0}^{r} \binom{\lvert I\rvert}{i} \binom{\lvert J\rvert}{r-i}. $$
+For $T\subseteq\lbrace1,\ldots,H\rbrace$, put
 
-Taking $H=H^{\ast}(f)$ and rearranging gives the claimed lower bound. $\blacksquare$
+$$ A_T(u)=\prod_{h\in T}a_h(u),\qquad B_{\overline{T}}(v)=\prod_{h\notin T}b_h(v), $$
+
+and
+
+$$ R_T(u)=\sum_{h\in T}r_h(u)\prod_{g\in T\setminus\lbrace h\rbrace}a_g(u),\qquad Q_{\overline{T}}(v)=\sum_{h\notin T}s_h(v)\prod_{g\notin T\cup\lbrace h\rbrace}b_g(v). $$
+
+Empty products equal one and empty sums equal zero. Expanding the cleared tangent form and grouping terms by $T$ gives
+
+$$ P(u,v)=\sum_{T\subseteq\lbrace1,\ldots,H\rbrace}\left(\left((c-\varepsilon)A_T(u)+R_T(u)\right)B_{\overline{T}}(v)+A_T(u)Q_{\overline{T}}(v)\right). $$
+
+For every nonempty proper $T$, the summand is a sum of two outer products and has matrix rank at most two. When $T=\varnothing$, the whole summand depends only on $v$, so its matrix rank is at most one. When $T=\lbrace1,\ldots,H\rbrace$, it depends only on $u$, so its matrix rank is also at most one. Rank subadditivity now gives
+
+$$ \mathrm{rank}(M_P)\leq1+2(2^H-2)+1=2^{H+1}-2. $$
+
+Since $M_P$ has the same strict sign pattern as $\Sigma_f^{I,J}$,
+
+$$ \mathrm{srank}_{I,J}(f)\leq\mathrm{rank}(M_P). $$
+
+Combining the two rank bounds proves the statement. Finally,
+
+$$ \mathrm{srank}_{I,J}(f)+2\leq2^{H+1} $$
+
+implies
+
+$$ H\geq\left\lceil\log_2\left(\mathrm{srank}_{I,J}(f)+2\right)\right\rceil-1. $$
+
+$\blacksquare$
 
 ## Consequence
 
@@ -192,6 +214,20 @@ Thus every exact classification or universal upper bound for $k$ input variables
 
 The sign-rank part gives a communication-complexity lower-bound route. For any partition $I\sqcup J$,
 
-$$ H^{\ast}(f) \geq \min\left\lbrace H : \mathrm{srank}_{I,J}(f) \leq \sum_{r=0}^{H}\binom{n}{r} \right\rbrace. $$
+$$ H^{\ast}(f) \geq \left\lceil\log_2\left(\mathrm{srank}_{I,J}(f)+2\right)\right\rceil-1. $$
 
-This is weaker than the counting lower bound for a random function, but it is constructive: a single explicit high-sign-rank partition matrix certifies a concrete lower bound for that function.
+The rank cap specializes to $6$ for two heads, recovering the structural bound used in the strict-separation lemmas. This route is weaker than the counting lower bound for a random function, but it is constructive: a single explicit high-sign-rank partition matrix certifies a concrete lower bound for that function.
+
+There is a sharp size screen before attempting this route. To prove $H^{\ast}(f)>h$, the displayed inversion needs a partition sign-rank of at least
+
+$$ 2^{h+1}-1. $$
+
+But every $2^{\lvert I\rvert}\times2^{\lvert J\rvert}$ matrix has sign-rank at most $2^{\min(\lvert I\rvert,\lvert J\rvert)}$. Therefore a necessary condition is
+
+$$ \min(\lvert I\rvert,\lvert J\rvert)\geq h+1, $$
+
+and some usable partition can exist only if
+
+$$ n\geq2h+2. $$
+
+Thus partition sign-rank is inherently a low-head lower-bound method. When $n<2h+2$, it cannot rule out $h$ heads, regardless of how accurately sign-rank is estimated.
