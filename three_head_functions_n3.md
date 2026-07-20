@@ -1,79 +1,39 @@
-# Provisional Three-Head Functions For n=3
+# Corrected Three-Bit Head Complexity
 
-This file records the current **provisional** 3-bit representatives that were assigned estimated head complexity
+This file supersedes the earlier provisional list of three-bit functions estimated by training to have
 
-$$ H^{\ast}(f) = 3 $$
+$$ H^{\ast}(f) = 3. $$
 
-by the latest experimental run with
+That estimate was too pessimistic for three of the four listed functions. The theoretical pattern is recorded in `research/head_hierarchy_pattern.md`.
 
-$$ d_{\mathrm{model}} = d_{\mathrm{head}} = 32. $$
+## Correct Three-Bit Hierarchy
 
-These are experimental estimates, not formal proofs.
+For Boolean functions on three inputs:
 
-## Function 1
+$$ H^{\ast}(f) = 0 \quad \Longleftrightarrow \quad f \text{ is constant}. $$
 
-Bitstring in lexicographic order $000,001,010,011,100,101,110,111$:
+$$ H^{\ast}(f) = 1 \quad \Longleftrightarrow \quad f \text{ is a nonconstant linear threshold function}. $$
 
-$$ 00010110 $$
+$$ H^{\ast}(f) = 3 \quad \Longleftrightarrow \quad f \text{ is parity or its complement}. $$
 
-| $x_1$ | $x_2$ | $x_3$ | $f(x_1,x_2,x_3)$ |
-|---|---|---|---|
-| 0 | 0 | 0 | 0 |
-| 0 | 0 | 1 | 0 |
-| 0 | 1 | 0 | 0 |
-| 0 | 1 | 1 | 1 |
-| 1 | 0 | 0 | 0 |
-| 1 | 0 | 1 | 1 |
-| 1 | 1 | 0 | 1 |
-| 1 | 1 | 1 | 0 |
+All remaining three-bit functions have
 
-## Function 2
+$$ H^{\ast}(f) = 2. $$
 
-Bitstring in lexicographic order $000,001,010,011,100,101,110,111$:
+## Former Provisional Examples
 
-$$ 00011000 $$
+Bitstrings are in lexicographic order $000,001,010,011,100,101,110,111$.
 
-| $x_1$ | $x_2$ | $x_3$ | $f(x_1,x_2,x_3)$ |
-|---|---|---|---|
-| 0 | 0 | 0 | 0 |
-| 0 | 0 | 1 | 0 |
-| 0 | 1 | 0 | 0 |
-| 0 | 1 | 1 | 1 |
-| 1 | 0 | 0 | 1 |
-| 1 | 0 | 1 | 0 |
-| 1 | 1 | 0 | 0 |
-| 1 | 1 | 1 | 0 |
+| Bitstring | Threshold degree | Corrected $H^{\ast}(f)$ | Reason |
+|---|---:|---:|---|
+| $00010110$ | $2$ | $2$ | quadratic threshold function |
+| $00011000$ | $2$ | $2$ | quadratic threshold function |
+| $00101001$ | $2$ | $2$ | quadratic threshold function |
+| $01101001$ | $3$ | $3$ | three-bit parity |
 
-## Function 3
+The complement of parity,
 
-Bitstring in lexicographic order $000,001,010,011,100,101,110,111$:
+$$ 10010110, $$
 
-$$ 00101001 $$
+is the other three-bit function with head complexity $3$.
 
-| $x_1$ | $x_2$ | $x_3$ | $f(x_1,x_2,x_3)$ |
-|---|---|---|---|
-| 0 | 0 | 0 | 0 |
-| 0 | 0 | 1 | 0 |
-| 0 | 1 | 0 | 1 |
-| 0 | 1 | 1 | 0 |
-| 1 | 0 | 0 | 1 |
-| 1 | 0 | 1 | 0 |
-| 1 | 1 | 0 | 0 |
-| 1 | 1 | 1 | 1 |
-
-## Function 4
-
-Bitstring in lexicographic order $000,001,010,011,100,101,110,111$:
-
-$$ 01101001 $$
-
-| $x_1$ | $x_2$ | $x_3$ | $f(x_1,x_2,x_3)$ |
-|---|---|---|---|
-| 0 | 0 | 0 | 0 |
-| 0 | 0 | 1 | 1 |
-| 0 | 1 | 0 | 1 |
-| 0 | 1 | 1 | 0 |
-| 1 | 0 | 0 | 1 |
-| 1 | 0 | 1 | 0 |
-| 1 | 1 | 0 | 0 |
-| 1 | 1 | 1 | 1 |

@@ -189,7 +189,7 @@ $$ N(a,b) = A(a) + B(b) + C, \qquad D(a,b) = \alpha(a) + \beta(b) + \gamma $$
 
 for suitable functions $A, B, \alpha, \beta$ and constants $C, \gamma$.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/001_checkerboard_additive_decomposition.md](lemmas/01_foundations_and_normal_form/001_checkerboard_additive_decomposition.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/001_checkerboard_additive_decomposition.md](theorems/01_foundations_and_normal_form/001_checkerboard_additive_decomposition.md)
 
 ### Lemma 2. Antipode identities on a restricted 2-cube
 
@@ -201,7 +201,7 @@ and
 
 $$ D(0,0) + D(1,1) = D(0,1) + D(1,0). $$
 
-**Proof.** [lemmas/01_foundations_and_normal_form/002_antipode_identities.md](lemmas/01_foundations_and_normal_form/002_antipode_identities.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/002_antipode_identities.md](theorems/01_foundations_and_normal_form/002_antipode_identities.md)
 
 ### Lemma 3. Checkerboard obstruction for one head
 
@@ -211,7 +211,7 @@ $$ H^{\ast}(f) \geq 2. $$
 
 > **Equivalently.** One head cannot separate one diagonal of a restricted 2-cube from the other diagonal.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/003_checkerboard_obstruction.md](lemmas/01_foundations_and_normal_form/003_checkerboard_obstruction.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/003_checkerboard_obstruction.md](theorems/01_foundations_and_normal_form/003_checkerboard_obstruction.md)
 
 ### Lemma 4. One head computes every symmetric threshold
 
@@ -229,7 +229,7 @@ In particular,
 
 $$ H^{\ast}(\mathrm{OR}_n) = H^{\ast}(\mathrm{AND}_n) = H^{\ast}(\mathrm{MAJORITY}_n) = 1. $$
 
-**Proof.** [lemmas/01_foundations_and_normal_form/004_symmetric_thresholds.md](lemmas/01_foundations_and_normal_form/004_symmetric_thresholds.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/004_symmetric_thresholds.md](theorems/01_foundations_and_normal_form/004_symmetric_thresholds.md)
 
 ### Lemma 5. Family consequences from the checkerboard obstruction
 
@@ -246,7 +246,7 @@ Together with Lemma 4, this gives a first split inside symmetric functions:
 - monotone symmetric thresholds have head complexity $1$,
 - parity and internal exact-count predicates need at least $2$ heads.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/005_family_consequences.md](lemmas/01_foundations_and_normal_form/005_family_consequences.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/005_family_consequences.md](theorems/01_foundations_and_normal_form/005_family_consequences.md)
 
 ### Lemma 6. Threshold degree is bounded by head complexity
 
@@ -256,7 +256,7 @@ $$ \deg_{\pm}(f) \leq H^{\ast}(f). $$
 
 Here $\deg_{\pm}(f)$ denotes the threshold degree of $f$, namely the minimum degree of a real polynomial that sign-represents $f$ on the Boolean cube.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/006_threshold_degree_head_complexity_bound.md](lemmas/01_foundations_and_normal_form/006_threshold_degree_head_complexity_bound.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/006_threshold_degree_head_complexity_bound.md](theorems/01_foundations_and_normal_form/006_threshold_degree_head_complexity_bound.md)
 
 ### Lemma 7. Parity has threshold degree exactly n
 
@@ -268,7 +268,7 @@ we have
 
 $$ \deg_{\pm}(\mathrm{PARITY}_n) = n. $$
 
-**Proof.** [lemmas/01_foundations_and_normal_form/007_parity_threshold_degree.md](lemmas/01_foundations_and_normal_form/007_parity_threshold_degree.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/007_parity_threshold_degree.md](theorems/01_foundations_and_normal_form/007_parity_threshold_degree.md)
 
 ### Lemma 8. Exact parity complexity
 
@@ -278,7 +278,7 @@ $$ H^{\ast}(\mathrm{XOR}_n) = n. $$
 
 > **Equivalently.** In this one-layer attention model, parity needs exactly one head per input bit.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/008_exact_parity_complexity.md](lemmas/01_foundations_and_normal_form/008_exact_parity_complexity.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/008_exact_parity_complexity.md](theorems/01_foundations_and_normal_form/008_exact_parity_complexity.md)
 
 ### Lemma 9. Weighted-sum interpolation upper bound
 
@@ -315,7 +315,7 @@ In particular:
 >
 > $H^{\ast}(f) \leq M_{+}(f) - 1$.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/009_weighted_sum_upper_bound.md](lemmas/01_foundations_and_normal_form/009_weighted_sum_upper_bound.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/009_weighted_sum_upper_bound.md](theorems/01_foundations_and_normal_form/009_weighted_sum_upper_bound.md)
 
 ### Lemma 10. Exact linear-fractional normal form
 
@@ -333,7 +333,7 @@ $$ H^{\ast}(f) = L_{\mathrm{frac}}(f). $$
 
 > **Interpretation.** The exact model-native invariant is the minimum number of one-head linear-fractional atoms needed before the final threshold.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/010_linear_fractional_normal_form.md](lemmas/01_foundations_and_normal_form/010_linear_fractional_normal_form.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/010_linear_fractional_normal_form.md](theorems/01_foundations_and_normal_form/010_linear_fractional_normal_form.md)
 
 ### Lemma 11. Exact one-head characterization
 
@@ -351,7 +351,7 @@ $$ H^{\ast}(f) \geq 2. $$
 
 This strictly strengthens the checkerboard obstruction as a one-head lower bound.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/011_one_head_characterization.md](lemmas/01_foundations_and_normal_form/011_one_head_characterization.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/011_one_head_characterization.md](theorems/01_foundations_and_normal_form/011_one_head_characterization.md)
 
 ### Lemma 12. Exact symmetric sign-change characterization
 
@@ -383,7 +383,7 @@ In particular:
 - parity has $H^{\ast}(\mathrm{XOR}_n) = n$,
 - internal exact-count predicates have $H^{\ast}(\mathrm{EXACT} _{n,k}) = 2$ for $1 \leq k \leq n - 1$.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/012_symmetric_sign_changes.md](lemmas/01_foundations_and_normal_form/012_symmetric_sign_changes.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/012_symmetric_sign_changes.md](theorems/01_foundations_and_normal_form/012_symmetric_sign_changes.md)
 
 ### Lemma 13. Positive-projection sign-change upper bound
 
@@ -413,7 +413,7 @@ $$ H^{\ast}(f) \leq C_{+}(f) \leq M_{+}(f) - 1. $$
 
 > **Interpretation.** The weighted-sum upper bound depends on label changes along the projection, not on the total number of projection levels.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/013_positive_projection_sign_changes.md](lemmas/01_foundations_and_normal_form/013_positive_projection_sign_changes.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/013_positive_projection_sign_changes.md](theorems/01_foundations_and_normal_form/013_positive_projection_sign_changes.md)
 
 ### Lemma 14. Three-bit projection cases
 
@@ -439,7 +439,7 @@ $$ L(a)+L(b)=L(a\wedge b)+L(a\vee b), $$
 
 which rules out one head via the linear-threshold characterization. The upper bounds use the positive-projection sign-change theorem.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/014_three_bit_projection_cases.md](lemmas/01_foundations_and_normal_form/014_three_bit_projection_cases.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/014_three_bit_projection_cases.md](theorems/01_foundations_and_normal_form/014_three_bit_projection_cases.md)
 
 ### Lemma 15. Three-bit quadratic thresholds use at most two heads
 
@@ -461,7 +461,7 @@ $$ H^{\ast}(00101001) = 2. $$
 
 > **Interpretation.** On three bits, the threshold-degree lower bound is tight for every function of threshold degree at most $2$.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/015_three_bit_quadratic_upper_bound.md](lemmas/01_foundations_and_normal_form/015_three_bit_quadratic_upper_bound.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/015_three_bit_quadratic_upper_bound.md](theorems/01_foundations_and_normal_form/015_three_bit_quadratic_upper_bound.md)
 
 ### Lemma 16. Exact classification of all three-bit functions
 
@@ -479,7 +479,7 @@ $$ H^{\ast}(f) \leq 3. $$
 
 > **Interpretation.** The $n=3$ empirical surprises are now fully classified in prose. The three non-parity rows were optimization overestimates; the only three-head behavior at $n=3$ is threshold-degree $3$ behavior.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/016_three_bit_exact_classification.md](lemmas/01_foundations_and_normal_form/016_three_bit_exact_classification.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/016_three_bit_exact_classification.md](theorems/01_foundations_and_normal_form/016_three_bit_exact_classification.md)
 
 ### Lemma 17. Four heads suffice for every four-bit function
 
@@ -493,7 +493,7 @@ $$ H^{\ast}(f) \leq 4. $$
 
 > **Interpretation.** The generic weighted-sum bound gives $H^{\ast}(f) \leq 15$ at $n=4$. A determinant decomposition of all four-bit sign polynomials into four affine-over-positive-affine ratios improves this to $4$.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/017_four_bit_universal_upper_bound.md](lemmas/01_foundations_and_normal_form/017_four_bit_universal_upper_bound.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/017_four_bit_universal_upper_bound.md](theorems/01_foundations_and_normal_form/017_four_bit_universal_upper_bound.md)
 
 ### Lemma 18. Seven heads suffice for every five-bit function
 
@@ -507,7 +507,7 @@ $$ H^{\ast}(f) \leq 7. $$
 
 > **Interpretation.** The generic weighted-sum bound gives $H^{\ast}(f) \leq 31$ at $n=5$. A modular determinant certificate for seven affine-over-positive-affine ratios improves this to $7$.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/018_five_bit_universal_upper_bound.md](lemmas/01_foundations_and_normal_form/018_five_bit_universal_upper_bound.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/018_five_bit_universal_upper_bound.md](theorems/01_foundations_and_normal_form/018_five_bit_universal_upper_bound.md)
 
 ### Lemma 19. Eleven heads suffice for every six-bit function
 
@@ -521,7 +521,7 @@ $$ H^{\ast}(f) \leq 11. $$
 
 > **Interpretation.** The generic weighted-sum bound gives $H^{\ast}(f) \leq 63$ at $n=6$. A modular determinant certificate for eleven affine-over-positive-affine ratios improves this to $11$.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/019_six_bit_universal_upper_bound.md](lemmas/01_foundations_and_normal_form/019_six_bit_universal_upper_bound.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/019_six_bit_universal_upper_bound.md](theorems/01_foundations_and_normal_form/019_six_bit_universal_upper_bound.md)
 
 ### Lemma 20. Nineteen heads suffice for every seven-bit function
 
@@ -535,7 +535,7 @@ $$ H^{\ast}(f) \leq 19. $$
 
 > **Interpretation.** The generic weighted-sum bound gives $H^{\ast}(f) \leq 127$ at $n=7$. A modular determinant certificate for nineteen affine-over-positive-affine ratios improves this to $19$. Within this fixed-denominator full-span method, nineteen is the first possible seven-bit head count, since the span dimension is at most $1 + 7H$.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/020_seven_bit_universal_upper_bound.md](lemmas/01_foundations_and_normal_form/020_seven_bit_universal_upper_bound.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/020_seven_bit_universal_upper_bound.md](theorems/01_foundations_and_normal_form/020_seven_bit_universal_upper_bound.md)
 
 ### Lemma 21. Determinant-span upper-bound schema
 
@@ -561,7 +561,7 @@ $$ H \geq \left\lceil \frac{2^n - 1}{n} \right\rceil. $$
 
 > **Interpretation.** The determinant certificates are a reusable upper-bound method, not isolated coincidences. The known certificates meet this method's dimension lower bound for $3 \leq n \leq 12$.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/021_determinant_span_schema.md](lemmas/01_foundations_and_normal_form/021_determinant_span_schema.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/021_determinant_span_schema.md](theorems/01_foundations_and_normal_form/021_determinant_span_schema.md)
 
 ### Lemma 22. Thirty-two heads suffice for every eight-bit function
 
@@ -575,7 +575,7 @@ $$ H^{\ast}(f) \leq 32. $$
 
 > **Interpretation.** The generic weighted-sum bound gives $H^{\ast}(f) \leq 255$ at $n=8$. A modular determinant certificate for thirty-two affine-over-positive-affine ratios improves this to $32$. This reaches the first head count where the fixed-denominator full-span method can work at $n=8$.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/022_eight_bit_universal_upper_bound.md](lemmas/01_foundations_and_normal_form/022_eight_bit_universal_upper_bound.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/022_eight_bit_universal_upper_bound.md](theorems/01_foundations_and_normal_form/022_eight_bit_universal_upper_bound.md)
 
 ### Lemma 23. Fifty-seven heads suffice for every nine-bit function
 
@@ -589,7 +589,7 @@ $$ H^{\ast}(f) \leq 57. $$
 
 > **Interpretation.** The generic weighted-sum bound gives $H^{\ast}(f) \leq 511$ at $n=9$. A modular determinant certificate for fifty-seven affine-over-positive-affine ratios improves this to $57$. This reaches the first head count where the fixed-denominator full-span method can work at $n=9$.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/023_nine_bit_universal_upper_bound.md](lemmas/01_foundations_and_normal_form/023_nine_bit_universal_upper_bound.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/023_nine_bit_universal_upper_bound.md](theorems/01_foundations_and_normal_form/023_nine_bit_universal_upper_bound.md)
 
 ### Lemma 24. 103 heads suffice for every ten-bit function
 
@@ -603,7 +603,7 @@ $$ H^{\ast}(f) \leq 103. $$
 
 > **Interpretation.** The generic weighted-sum bound gives $H^{\ast}(f) \leq 1023$ at $n=10$. A modular determinant certificate for $103$ affine-over-positive-affine ratios improves this to $103$. This reaches the first head count where the fixed-denominator full-span method can work at $n=10$.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/024_ten_bit_universal_upper_bound.md](lemmas/01_foundations_and_normal_form/024_ten_bit_universal_upper_bound.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/024_ten_bit_universal_upper_bound.md](theorems/01_foundations_and_normal_form/024_ten_bit_universal_upper_bound.md)
 
 ### Lemma 25. Compact determinant-threshold certificates through twelve bits
 
@@ -625,7 +625,7 @@ $$ \begin{array}{c|rrrrrrrrrr} n & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\ \
 
 > **Interpretation.** A single compact denominator formula gives modular determinant certificates meeting the determinant-span dimension lower bound through twelve input bits.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/025_compact_threshold_certificates.md](lemmas/01_foundations_and_normal_form/025_compact_threshold_certificates.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/025_compact_threshold_certificates.md](theorems/01_foundations_and_normal_form/025_compact_threshold_certificates.md)
 
 ### Lemma 26. Counting lower bound for worst-case head complexity
 
@@ -649,7 +649,7 @@ is at most $2^{-\Omega(2^n)}$.
 
 > **Interpretation.** Almost all Boolean functions require exponentially many heads, up to polynomial slack. Thus no polynomial universal head bound can hold.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/026_counting_lower_bound.md](lemmas/01_foundations_and_normal_form/026_counting_lower_bound.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/026_counting_lower_bound.md](theorems/01_foundations_and_normal_form/026_counting_lower_bound.md)
 
 ### Lemma 27. Top threshold degree is only parity
 
@@ -665,7 +665,7 @@ if and only if $f$ is parity or the complement of parity.
 
 > **Interpretation.** The threshold-degree lower bound reaches $n$ heads only on parity and anti-parity. Any lower bound beyond $n$ must use information not captured by threshold degree.
 
-**Proof.** [lemmas/01_foundations_and_normal_form/027_top_threshold_degree.md](lemmas/01_foundations_and_normal_form/027_top_threshold_degree.md)
+**Proof.** [lemmas/01_foundations_and_normal_form/027_top_threshold_degree.md](theorems/01_foundations_and_normal_form/027_top_threshold_degree.md)
 
 ### Lemma 28. Restrictions, juntas, and sign-rank lower bounds
 
@@ -693,7 +693,7 @@ $$ H^{\ast}(f) \geq \min\left\lbrace H : \mathrm{srank}_{I,J}(f) \leq \sum _{r=0
 
 > **Interpretation.** Restrictions let known exact hard functions certify larger functions. Dummy variables do not change the answer, so exact small-junta classifications automatically lift. Sign-rank gives a constructive lower-bound route that can use communication-complexity witnesses, not only threshold degree.
 
-**Proof.** [lemmas/02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md](lemmas/02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md)
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md](theorems/02_complexity_measure_upper_bounds/028_restrictions_and_sign_rank.md)
 
 ### Lemma 29. Monotone DNF and CNF upper bounds
 
@@ -719,7 +719,7 @@ $$ H^{\ast}(f) \leq \min\lbrace\mathrm{mDNF}(f),\mathrm{mCNF}(f)\rbrace. $$
 
 > **Interpretation.** A head can be tuned so a conjunction contributes a fixed positive margin when satisfied and only a tiny negative amount otherwise. Summing one such atom per DNF term computes the monotone OR of the terms. Complement and global bit-flip symmetry give the dual CNF bound.
 
-**Proof.** [lemmas/02_complexity_measure_upper_bounds/029_monotone_dnf_upper_bound.md](lemmas/02_complexity_measure_upper_bounds/029_monotone_dnf_upper_bound.md)
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/029_monotone_dnf_upper_bound.md](theorems/02_complexity_measure_upper_bounds/029_monotone_dnf_upper_bound.md)
 
 ### Lemma 30. Threshold-degree span upper-bound schema
 
@@ -745,7 +745,7 @@ $$ H\geq\left\lceil\frac{D(n,d)-1}{n}\right\rceil. $$
 
 > **Interpretation.** The full determinant-span schema is the case $d=n$. This version targets exact classification by threshold degree: if degree $d$ sign polynomials have an $H=d$ span certificate, then threshold degree $d$ is exact for that class.
 
-**Proof.** [lemmas/02_complexity_measure_upper_bounds/030_threshold_degree_span_schema.md](lemmas/02_complexity_measure_upper_bounds/030_threshold_degree_span_schema.md)
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/030_threshold_degree_span_schema.md](theorems/02_complexity_measure_upper_bounds/030_threshold_degree_span_schema.md)
 
 ### Lemma 31. Fourier tail threshold-degree criterion
 
@@ -771,7 +771,7 @@ $$ \sum_{\substack{S\subseteq[n]\\ \lvert S\rvert>d}} \lvert \widehat q(S)\rvert
 
 > **Interpretation.** Low Fourier tail gives a low-degree sign representation by truncating the sign function. This is an upper-bound pipeline when combined with the threshold-degree span schema.
 
-**Proof.** [lemmas/02_complexity_measure_upper_bounds/031_fourier_tail_threshold_degree.md](lemmas/02_complexity_measure_upper_bounds/031_fourier_tail_threshold_degree.md)
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/031_fourier_tail_threshold_degree.md](theorems/02_complexity_measure_upper_bounds/031_fourier_tail_threshold_degree.md)
 
 ### Lemma 32. Denominator orientation for one-head atoms
 
@@ -779,7 +779,7 @@ Every nonconstant one-head atom denominator has all variable coefficients with t
 
 > **Interpretation.** One head has one global denominator orientation. It can make every bit increase the denominator or every bit decrease it, but one head cannot make some variables increase and others decrease the denominator.
 
-**Proof.** [lemmas/02_complexity_measure_upper_bounds/032_denominator_orientation.md](lemmas/02_complexity_measure_upper_bounds/032_denominator_orientation.md)
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/032_denominator_orientation.md](theorems/02_complexity_measure_upper_bounds/032_denominator_orientation.md)
 
 ### Lemma 33. Shared projection Boolean closure
 
@@ -801,7 +801,7 @@ $$ H^{\ast}(g)\leq M-1. $$
 
 > **Interpretation.** Boolean combinations of functions sharing one statistic stay one-dimensional. They should be bounded by label changes along that statistic, not by separately paying for each input function.
 
-**Proof.** [lemmas/02_complexity_measure_upper_bounds/033_shared_projection_closure.md](lemmas/02_complexity_measure_upper_bounds/033_shared_projection_closure.md)
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/033_shared_projection_closure.md](theorems/02_complexity_measure_upper_bounds/033_shared_projection_closure.md)
 
 ### Lemma 34. DNF and CNF width give threshold-degree upper bounds
 
@@ -819,7 +819,7 @@ $$ H^{\ast}(f)\leq H. $$
 
 > **Interpretation.** Mixed-literal DNF is not handled by the monotone one-head-per-term construction, but bounded width still gives a low-degree sign polynomial. The head bound then follows from degree-restricted denominator spans.
 
-**Proof.** [lemmas/02_complexity_measure_upper_bounds/034_dnf_cnf_width_threshold_degree.md](lemmas/02_complexity_measure_upper_bounds/034_dnf_cnf_width_threshold_degree.md)
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/034_dnf_cnf_width_threshold_degree.md](theorems/02_complexity_measure_upper_bounds/034_dnf_cnf_width_threshold_degree.md)
 
 ### Lemma 35. Monotone antichain upper bound
 
@@ -833,7 +833,7 @@ $$ H^{\ast}(f) \leq \binom{n}{\lfloor n/2\rfloor}. $$
 
 > **Interpretation.** For monotone functions, head complexity is bounded by the size of the monotone boundary, not by the total number of true inputs.
 
-**Proof.** [lemmas/02_complexity_measure_upper_bounds/035_monotone_antichain_upper_bound.md](lemmas/02_complexity_measure_upper_bounds/035_monotone_antichain_upper_bound.md)
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/035_monotone_antichain_upper_bound.md](theorems/02_complexity_measure_upper_bounds/035_monotone_antichain_upper_bound.md)
 
 ### Lemma 36. Monotone counting lower bound
 
@@ -853,7 +853,7 @@ heads, up to the absolute constant hidden by the Warren-counting argument.
 
 > **Interpretation.** Monotone functions already have exponential worst-case and typical head complexity. The antichain upper bound is therefore near-optimal for the monotone class, modulo polynomial factors.
 
-**Proof.** [lemmas/02_complexity_measure_upper_bounds/036_monotone_counting_lower_bound.md](lemmas/02_complexity_measure_upper_bounds/036_monotone_counting_lower_bound.md)
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/036_monotone_counting_lower_bound.md](theorems/02_complexity_measure_upper_bounds/036_monotone_counting_lower_bound.md)
 
 ### Lemma 37. Sparse support upper bound
 
@@ -875,7 +875,7 @@ $$ H^{\ast}(f)\leq1. $$
 
 > **Interpretation.** Sparse and co-sparse functions have low head complexity regardless of whether their exceptional inputs have monotone, symmetric, or formula structure.
 
-**Proof.** [lemmas/02_complexity_measure_upper_bounds/037_sparse_support_upper_bound.md](lemmas/02_complexity_measure_upper_bounds/037_sparse_support_upper_bound.md)
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/037_sparse_support_upper_bound.md](theorems/02_complexity_measure_upper_bounds/037_sparse_support_upper_bound.md)
 
 ### Lemma 38. DNF and CNF volume upper bounds
 
@@ -893,7 +893,7 @@ $$ H^{\ast}(f) \leq 2\sum_{a=1}^{s}2^{n-w_a}. $$
 
 > **Interpretation.** Mixed-literal formulas get a support-volume route to head upper bounds. This is weaker than the monotone one-head-per-term theorem, but it applies with arbitrary literal signs.
 
-**Proof.** [lemmas/02_complexity_measure_upper_bounds/038_dnf_cnf_volume_upper_bound.md](lemmas/02_complexity_measure_upper_bounds/038_dnf_cnf_volume_upper_bound.md)
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/038_dnf_cnf_volume_upper_bound.md](theorems/02_complexity_measure_upper_bounds/038_dnf_cnf_volume_upper_bound.md)
 
 ### Lemma 39. Junta reduction and small-junta upper bounds
 
@@ -911,7 +911,7 @@ $$ \begin{array}{c|rrrrrrrrrrrrr} k & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10
 
 > **Interpretation.** Small-junta head bounds depend on the number of essential variables, not on the ambient input dimension.
 
-**Proof.** [lemmas/02_complexity_measure_upper_bounds/039_junta_upper_bounds.md](lemmas/02_complexity_measure_upper_bounds/039_junta_upper_bounds.md)
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/039_junta_upper_bounds.md](theorems/02_complexity_measure_upper_bounds/039_junta_upper_bounds.md)
 
 ### Lemma 40. Certificate-cover upper bound
 
@@ -929,7 +929,7 @@ $$ H^{\ast}(f) \leq 2\min\lbrace\mathrm{certvol}_0(f),\mathrm{certvol}_1(f)\rbra
 
 > **Interpretation.** Sparse support, DNF volume, and CNF volume are all instances of one-sided certificate covers.
 
-**Proof.** [lemmas/02_complexity_measure_upper_bounds/040_certificate_cover_upper_bound.md](lemmas/02_complexity_measure_upper_bounds/040_certificate_cover_upper_bound.md)
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/040_certificate_cover_upper_bound.md](theorems/02_complexity_measure_upper_bounds/040_certificate_cover_upper_bound.md)
 
 ### Lemma 41. Polynomial-threshold sparsity upper bound
 
@@ -943,7 +943,7 @@ $$ H^{\ast}(f) \leq \sum_{r=1}^{d}\binom{n}{r}. $$
 
 > **Interpretation.** Sparse sign polynomials give sparse head representations, one approximating head per nonconstant monomial.
 
-**Proof.** [lemmas/02_complexity_measure_upper_bounds/041_ptf_sparsity_upper_bound.md](lemmas/02_complexity_measure_upper_bounds/041_ptf_sparsity_upper_bound.md)
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/041_ptf_sparsity_upper_bound.md](theorems/02_complexity_measure_upper_bounds/041_ptf_sparsity_upper_bound.md)
 
 ### Lemma 42. DNF and CNF literal-expansion upper bound
 
@@ -959,7 +959,7 @@ The same bound holds for a mixed-literal CNF with clause positive-literal sets $
 
 > **Interpretation.** Mixed-literal formulas close to monotone have small head complexity. Lemma 44 sharpens this by choosing the cheaper literal orientation separately for each term or clause.
 
-**Proof.** [lemmas/02_complexity_measure_upper_bounds/042_dnf_cnf_literal_expansion_upper_bound.md](lemmas/02_complexity_measure_upper_bounds/042_dnf_cnf_literal_expansion_upper_bound.md)
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/042_dnf_cnf_literal_expansion_upper_bound.md](theorems/02_complexity_measure_upper_bounds/042_dnf_cnf_literal_expansion_upper_bound.md)
 
 ### Lemma 43. Decision-tree leaf-profile upper bound
 
@@ -973,7 +973,7 @@ $$ H^{\ast}(f)\leq2^{2d-1}. $$
 
 > **Interpretation.** Adaptive decision structure gives head upper bounds from the signed leaf profile, not from the ambient input dimension.
 
-**Proof.** [lemmas/02_complexity_measure_upper_bounds/043_decision_tree_upper_bound.md](lemmas/02_complexity_measure_upper_bounds/043_decision_tree_upper_bound.md)
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/043_decision_tree_upper_bound.md](theorems/02_complexity_measure_upper_bounds/043_decision_tree_upper_bound.md)
 
 ### Lemma 44. Local certificate-expansion upper bound
 
@@ -993,7 +993,7 @@ $$ H^{\ast}(f)\leq2^{D(f)+\lfloor D(f)/2\rfloor-1} $$
 
 for every nonconstant $f$.
 
-**Proof.** [lemmas/02_complexity_measure_upper_bounds/044_oriented_certificate_expansion_upper_bound.md](lemmas/02_complexity_measure_upper_bounds/044_oriented_certificate_expansion_upper_bound.md)
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/044_oriented_certificate_expansion_upper_bound.md](theorems/02_complexity_measure_upper_bounds/044_oriented_certificate_expansion_upper_bound.md)
 
 ### Lemma 45. Fourier support-cost upper bound
 
@@ -1015,7 +1015,7 @@ If a Fourier truncation over $\mathcal{A}$ approximates $q$ uniformly within $1$
 
 > **Interpretation.** Sparse Walsh sign approximants give head upper bounds. The affine portion costs at most one head, and each retained higher character is realized as parity on its active variables.
 
-**Proof.** [lemmas/02_complexity_measure_upper_bounds/045_fourier_support_upper_bound.md](lemmas/02_complexity_measure_upper_bounds/045_fourier_support_upper_bound.md)
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/045_fourier_support_upper_bound.md](theorems/02_complexity_measure_upper_bounds/045_fourier_support_upper_bound.md)
 
 ### Lemma 46. Affine parity exact complexity
 
@@ -1033,7 +1033,7 @@ $$ H^{\ast}(f)\geq k. $$
 
 > **Interpretation.** Affine-parity subcubes are explicit lower-bound witnesses, and affine parities themselves are exactly one head per essential bit.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/046_affine_parity_exact.md](lemmas/03_function_families_and_affine_geometry/046_affine_parity_exact.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/046_affine_parity_exact.md](theorems/03_function_families_and_affine_geometry/046_affine_parity_exact.md)
 
 ### Lemma 47. Inner-product mod two bounds
 
@@ -1051,7 +1051,7 @@ $$ m\leq H^{\ast}(\mathrm{IP}_m)\leq2^m-1. $$
 
 > **Interpretation.** Inner product mod $2$ is a nonsymmetric test family whose threshold degree is exactly the number of pairs. It contains $m$-bit parity as a restriction and has a sparse sign polynomial with $2^m-1$ nonconstant monomials.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/047_inner_product_bounds.md](lemmas/03_function_families_and_affine_geometry/047_inner_product_bounds.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/047_inner_product_bounds.md](theorems/03_function_families_and_affine_geometry/047_inner_product_bounds.md)
 
 ### Lemma 48. Affine-free polynomial-threshold sparsity upper bound
 
@@ -1069,7 +1069,7 @@ In particular, the affine-free route gives the preliminary equality bound
 
 $$ H^{\ast}(\mathrm{EQ}_m)\leq m+1. $$
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/048_affine_free_sparsity_upper_bound.md](lemmas/03_function_families_and_affine_geometry/048_affine_free_sparsity_upper_bound.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/048_affine_free_sparsity_upper_bound.md](theorems/03_function_families_and_affine_geometry/048_affine_free_sparsity_upper_bound.md)
 
 ### Lemma 49. Equality bounds
 
@@ -1087,7 +1087,7 @@ $$ H^{\ast}(\mathrm{EQ}_m)=2. $$
 
 > **Interpretation.** Equality has constant threshold degree and exact head complexity two. The older affine-free sparsity route gives the weaker constructive bound $m+1$.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/049_equality_bounds.md](lemmas/03_function_families_and_affine_geometry/049_equality_bounds.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/049_equality_bounds.md](theorems/03_function_families_and_affine_geometry/049_equality_bounds.md)
 
 ### Lemma 50. Intersection-profile bounds
 
@@ -1113,7 +1113,7 @@ $$ H^{\ast}(\mathrm{INT}_2)=H^{\ast}(\mathrm{DISJ}_2)=2. $$
 
 > **Interpretation.** Intersection-profile predicates inherit symmetric sign-change lower bounds from the restriction $y=1^m$, and get sparse-polynomial upper bounds by expanding in the pair monomials $x_i y_i$.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/050_intersection_profile_bounds.md](lemmas/03_function_families_and_affine_geometry/050_intersection_profile_bounds.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/050_intersection_profile_bounds.md](theorems/03_function_families_and_affine_geometry/050_intersection_profile_bounds.md)
 
 ### Lemma 51. Hamming-distance profile bounds
 
@@ -1147,7 +1147,7 @@ $$ 2\leq H^{\ast}(\mathrm{HDTH}_{m,t})\leq m+1. $$
 
 > **Interpretation.** Hamming-distance profiles inherit symmetric sign-change lower bounds from the restriction $y=0^m$. The upper bound expands each distance bit $x_i\oplus y_i$ into three monomials, while bundling all linear terms into one affine head.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/051_hamming_distance_profile_bounds.md](lemmas/03_function_families_and_affine_geometry/051_hamming_distance_profile_bounds.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/051_hamming_distance_profile_bounds.md](theorems/03_function_families_and_affine_geometry/051_hamming_distance_profile_bounds.md)
 
 ### Lemma 52. Directed-defect profile bounds
 
@@ -1177,7 +1177,7 @@ $$ 2\leq H^{\ast}(\mathrm{SUB}_m)\leq m+1, \qquad 2\leq H^{\ast}(\mathrm{NCON}_m
 
 > **Interpretation.** Directed-defect profiles count violations of $x_i\leq y_i$. Their expansion cost sits between intersection and Hamming distance: each defect bit is $x_i-x_i y_i$.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/052_directed_defect_profile_bounds.md](lemmas/03_function_families_and_affine_geometry/052_directed_defect_profile_bounds.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/052_directed_defect_profile_bounds.md](theorems/03_function_families_and_affine_geometry/052_directed_defect_profile_bounds.md)
 
 ### Lemma 53. Local-pattern count profile schema
 
@@ -1201,7 +1201,7 @@ $$ C(F) \leq H^{\ast}(f_{p,F}) \leq \Lambda_{p,m}(C(F)). $$
 
 > **Interpretation.** This packages the common mechanism behind the intersection, Hamming-distance, and directed-defect profile bounds. A one-bit slice gives the symmetric lower bound, and local polynomial expansion gives the affine-free sparsity upper bound.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/053_local_pattern_count_profile_schema.md](lemmas/03_function_families_and_affine_geometry/053_local_pattern_count_profile_schema.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/053_local_pattern_count_profile_schema.md](theorems/03_function_families_and_affine_geometry/053_local_pattern_count_profile_schema.md)
 
 ### Lemma 54. Three-bit threshold-vote match
 
@@ -1225,7 +1225,7 @@ $$ s_{\mathrm{LTF}}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1
 
 > **Interpretation.** Threshold-vote size agrees exactly with $H^{\ast}$ on all three-bit functions, even though it is not a global invariant. The proof uses a finite enumeration showing that two threshold votes cover $254$ of the $256$ truth tables, missing only parity and anti-parity.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/054_three_bit_threshold_vote_invariant.md](lemmas/03_function_families_and_affine_geometry/054_three_bit_threshold_vote_invariant.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/054_three_bit_threshold_vote_invariant.md](theorems/03_function_families_and_affine_geometry/054_three_bit_threshold_vote_invariant.md)
 
 ### Lemma 55. Equality has threshold-vote size two
 
@@ -1241,7 +1241,7 @@ for every $m\geq1$.
 
 > **Interpretation.** Equality is a useful family where threshold-vote size still matches head complexity. At this point in the ledger, the head-complexity bracket is $2\leq H^{\ast}(\mathrm{EQ}_m)\leq m+1$, while the threshold-vote calculation predicts the exact value $2$.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/055_equality_threshold_vote_size.md](lemmas/03_function_families_and_affine_geometry/055_equality_threshold_vote_size.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/055_equality_threshold_vote_size.md](theorems/03_function_families_and_affine_geometry/055_equality_threshold_vote_size.md)
 
 ### Lemma 56. Two-pair equality is exact
 
@@ -1255,7 +1255,7 @@ $$ H^{\ast}(\mathrm{EQ}_2)=2. $$
 
 > **Interpretation.** The first nontrivial equality instance achieves the threshold-vote prediction. The proof gives an explicit two-atom rational certificate with same-orientation positive affine denominators.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/056_two_pair_equality_exact.md](lemmas/03_function_families_and_affine_geometry/056_two_pair_equality_exact.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/056_two_pair_equality_exact.md](theorems/03_function_families_and_affine_geometry/056_two_pair_equality_exact.md)
 
 ### Lemma 57. Two-pair containment is exact
 
@@ -1269,7 +1269,7 @@ $$ H^{\ast}(\mathrm{SUB}_2)=H^{\ast}(\mathrm{NCON}_2)=2. $$
 
 > **Interpretation.** The first nontrivial directed-defect endpoint achieves the two-head lower bound. The proof gives an explicit two-atom rational certificate for $\mathrm{SUB}_2$, and complementing the readout gives $\mathrm{NCON}_2$.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/057_two_pair_containment_exact.md](lemmas/03_function_families_and_affine_geometry/057_two_pair_containment_exact.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/057_two_pair_containment_exact.md](theorems/03_function_families_and_affine_geometry/057_two_pair_containment_exact.md)
 
 ### Lemma 58. Two-pair local-count thresholds use at most two heads
 
@@ -1287,7 +1287,7 @@ $$ H^{\ast}(f_{p,F}) = \begin{cases} 0 & \text{if } f_{p,F} \text{ is constant},
 
 > **Interpretation.** Every threshold-like count of two identical local two-bit patterns is exactly classified. The finite certificate enumeration covers $64$ presentations, $30$ unique truth tables, and $12$ non-LTF two-atom certificates.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/058_two_pair_local_count_thresholds.md](lemmas/03_function_families_and_affine_geometry/058_two_pair_local_count_thresholds.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/058_two_pair_local_count_thresholds.md](theorems/03_function_families_and_affine_geometry/058_two_pair_local_count_thresholds.md)
 
 ### Lemma 59. Three-pair endpoint families are exact
 
@@ -1297,7 +1297,7 @@ $$ H^{\ast}(\mathrm{INT}_3) = H^{\ast}(\mathrm{DISJ}_3) = H^{\ast}(\mathrm{SUB}_
 
 > **Interpretation.** The standard one-change profile endpoints remain two-head functions at three pairs. The proof gives exact integer two-atom certificates for $\mathrm{INT}_3$, $\mathrm{SUB}_3$, and $\mathrm{EQ}_3$, then uses complement invariance.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/059_three_pair_endpoint_exact.md](lemmas/03_function_families_and_affine_geometry/059_three_pair_endpoint_exact.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/059_three_pair_endpoint_exact.md](theorems/03_function_families_and_affine_geometry/059_three_pair_endpoint_exact.md)
 
 ### Lemma 60. Equality has exact head complexity two
 
@@ -1311,7 +1311,7 @@ $$ H^{\ast}(\mathrm{NEQ}_m)=2. $$
 
 > **Interpretation.** Equality is fully solved. The two-head construction compares the binary encodings $X=\sum_i2^{i-1}x_i$ and $Y=\sum_i2^{i-1}y_i$ with a rational score whose cleared numerator is $1-(X-Y)^2$.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/060_equality_exact_two_heads.md](lemmas/03_function_families_and_affine_geometry/060_equality_exact_two_heads.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/060_equality_exact_two_heads.md](theorems/03_function_families_and_affine_geometry/060_equality_exact_two_heads.md)
 
 ### Lemma 61. Affine level sets use at most two heads
 
@@ -1333,7 +1333,7 @@ $$ H^{\ast}(E_L) = \begin{cases} 0 & \text{if } E_L \text{ is constant},\\ 1 & \
 
 > **Interpretation.** Equality to any affine statistic is cheap. This includes internal exact-count predicates and equality of two binary-encoded strings.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/061_affine_level_set_upper_bound.md](lemmas/03_function_families_and_affine_geometry/061_affine_level_set_upper_bound.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/061_affine_level_set_upper_bound.md](theorems/03_function_families_and_affine_geometry/061_affine_level_set_upper_bound.md)
 
 ### Lemma 62. Affine slabs use at most two heads
 
@@ -1355,7 +1355,7 @@ $$ H^{\ast}(S_{L,\alpha,\beta}) = \begin{cases} 0 & \text{if } S_{L,\alpha,\beta
 
 > **Interpretation.** Any finite Boolean-cube slice between two parallel affine hyperplanes is a two-head predicate unless it collapses to a constant or one-head LTF. Affine level sets are the zero-width case.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/062_affine_slab_upper_bound.md](lemmas/03_function_families_and_affine_geometry/062_affine_slab_upper_bound.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/062_affine_slab_upper_bound.md](theorems/03_function_families_and_affine_geometry/062_affine_slab_upper_bound.md)
 
 ### Lemma 63. Affine statistic sign-change upper bound
 
@@ -1379,7 +1379,7 @@ Then:
 
 > **Interpretation.** Positive-projection sign changes give the sharper $C$-head bound when the statistic has positive weights. This lemma is the orientation-free fallback for a single affine statistic with mixed signs.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/063_affine_statistic_sign_changes.md](lemmas/03_function_families_and_affine_geometry/063_affine_statistic_sign_changes.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/063_affine_statistic_sign_changes.md](theorems/03_function_families_and_affine_geometry/063_affine_statistic_sign_changes.md)
 
 ### Lemma 64. Two-point supports use at most two heads
 
@@ -1401,7 +1401,7 @@ $$ H^{\ast}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text
 
 > **Interpretation.** The general sparse-support theorem gives $H^{\ast}(f)\leq2s(f)$. This lemma sharpens the first nontrivial sparse case: a one-point or two-point exceptional label class always costs at most two heads.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/064_two_point_support_exact.md](lemmas/03_function_families_and_affine_geometry/064_two_point_support_exact.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/064_two_point_support_exact.md](theorems/03_function_families_and_affine_geometry/064_two_point_support_exact.md)
 
 ### Lemma 65. Affine hull clean supports use at most two heads
 
@@ -1423,7 +1423,7 @@ $$ H^{\ast}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text
 
 > **Interpretation.** A label class is two-head easy whenever it is exactly the cube slice cut out by its own proper affine hull. This strictly generalizes the two-point support theorem.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/065_affine_hull_clean_supports.md](lemmas/03_function_families_and_affine_geometry/065_affine_hull_clean_supports.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/065_affine_hull_clean_supports.md](theorems/03_function_families_and_affine_geometry/065_affine_hull_clean_supports.md)
 
 ### Lemma 66. Positive run-count upper bound
 
@@ -1441,7 +1441,7 @@ $$ H^{\ast}(f)\leq2R_{+}(f). $$
 
 > **Interpretation.** Sparse support pays by the number of minority points. The sharper positive-order invariant pays by the number of minority runs in the best positive ordering.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/066_positive_run_upper_bound.md](lemmas/03_function_families_and_affine_geometry/066_positive_run_upper_bound.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/066_positive_run_upper_bound.md](theorems/03_function_families_and_affine_geometry/066_positive_run_upper_bound.md)
 
 ### Lemma 67. Degree-based partition sign-rank limitations
 
@@ -1461,7 +1461,7 @@ for any Boolean function on at most $13$ input bits.
 
 > **Interpretation.** The rank bound obtained by treating a cleared score as an arbitrary low-degree polynomial is dimension-limited. Sharper factorizations of actual head scores can surpass this ceiling, as Theorem 182 does on twelve bits.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/067_sign_rank_method_limitations.md](lemmas/03_function_families_and_affine_geometry/067_sign_rank_method_limitations.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/067_sign_rank_method_limitations.md](theorems/03_function_families_and_affine_geometry/067_sign_rank_method_limitations.md)
 
 ### Lemma 68. Positive one-run classes are exact
 
@@ -1477,7 +1477,7 @@ In particular, if $R_{+}(f)=1$, then the same exact split holds.
 
 > **Interpretation.** The first nontrivial positive-run case is fully controlled. A single run in a positive ordering is exactly an affine slab after choosing two cutpoints around the run.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/068_positive_one_run_exact.md](lemmas/03_function_families_and_affine_geometry/068_positive_one_run_exact.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/068_positive_one_run_exact.md](theorems/03_function_families_and_affine_geometry/068_positive_one_run_exact.md)
 
 ### Lemma 69. Positive-projection degree-tight exactness
 
@@ -1505,7 +1505,7 @@ Finally, if $C_{+}(f)\leq2$, then $H^{\ast}(f)$ has the exact constant, nonconst
 
 > **Interpretation.** Positive-projection upper bounds become exact as soon as threshold degree meets them. The low-alternation regime $C_{+}(f)\leq2$ is fully classified.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/069_positive_projection_degree_tight_exact.md](lemmas/03_function_families_and_affine_geometry/069_positive_projection_degree_tight_exact.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/069_positive_projection_degree_tight_exact.md](theorems/03_function_families_and_affine_geometry/069_positive_projection_degree_tight_exact.md)
 
 ### Lemma 70. Low affine-free support is exact
 
@@ -1525,7 +1525,7 @@ In particular, this applies to every function sign-represented by an affine poly
 
 > **Interpretation.** The first nontrivial affine-free sparsity regime is exact. A single nonlinear monomial perturbing an affine threshold either collapses to an LTF or genuinely needs exactly two heads.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/070_low_affine_free_support_exact.md](lemmas/03_function_families_and_affine_geometry/070_low_affine_free_support_exact.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/070_low_affine_free_support_exact.md](theorems/03_function_families_and_affine_geometry/070_low_affine_free_support_exact.md)
 
 ### Lemma 71. Depth-two decision trees are exact
 
@@ -1539,7 +1539,7 @@ $$ H^{\ast}(f) = \begin{cases} 0 & \text{if } f \text{ is constant},\\ 1 & \text
 
 > **Interpretation.** The first adaptive decision-tree case is exact. A depth-two tree can mix different variables on different branches, but it still stays in the two-head regime.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/071_depth_two_decision_trees_exact.md](lemmas/03_function_families_and_affine_geometry/071_depth_two_decision_trees_exact.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/071_depth_two_decision_trees_exact.md](theorems/03_function_families_and_affine_geometry/071_depth_two_decision_trees_exact.md)
 
 ### Lemma 72. Decision-tree hybrid upper bound
 
@@ -1553,7 +1553,7 @@ $$ H^{\ast}(f) \leq \min\left\lbrace \Lambda(\mathcal{T}), 2^v-1, 1+\sum_{r=2}^{
 
 > **Interpretation.** Decision trees give three complementary upper-bound certificates: local leaf expansion, junta reduction to the queried variables, and a low-degree sign polynomial from bounded path length.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/072_decision_tree_hybrid_upper_bound.md](lemmas/03_function_families_and_affine_geometry/072_decision_tree_hybrid_upper_bound.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/072_decision_tree_hybrid_upper_bound.md](theorems/03_function_families_and_affine_geometry/072_decision_tree_hybrid_upper_bound.md)
 
 ### Lemma 73. DNF and CNF hybrid upper bound
 
@@ -1563,7 +1563,7 @@ $$ H^{\ast}(f) \leq \min\left\lbrace 2\sum_a2^{v-w_a}, \sum_a\min\lbrace2^{\lver
 
 > **Interpretation.** Mixed-literal formulas have a four-way upper-bound menu: support volume inside the used-variable cube, local literal expansion, junta interpolation, and a width-degree sparse-polynomial bound.
 
-**Proof.** [lemmas/03_function_families_and_affine_geometry/073_dnf_cnf_hybrid_upper_bound.md](lemmas/03_function_families_and_affine_geometry/073_dnf_cnf_hybrid_upper_bound.md)
+**Proof.** [lemmas/03_function_families_and_affine_geometry/073_dnf_cnf_hybrid_upper_bound.md](theorems/03_function_families_and_affine_geometry/073_dnf_cnf_hybrid_upper_bound.md)
 
 ### Lemma 74. Cofactor sparse-polynomial recursion
 
@@ -1597,7 +1597,7 @@ $$ H^{\ast}(f) \leq 1+\sum_{r=2}^{\min\lbrace d+1,n\rbrace}\binom{n}{r}. $$
 
 > **Interpretation.** A direct one-head Shannon recursion is still open, but sparse sign polynomials compose cleanly across cofactors.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/074_cofactor_sparse_polynomial_recursion.md](lemmas/04_recursions_and_cost_invariants/074_cofactor_sparse_polynomial_recursion.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/074_cofactor_sparse_polynomial_recursion.md](theorems/04_recursions_and_cost_invariants/074_cofactor_sparse_polynomial_recursion.md)
 
 ### Lemma 75. Affine-free cofactor recursion
 
@@ -1621,7 +1621,7 @@ If the two affine cofactor separators can be chosen so their linear coefficient 
 
 > **Interpretation.** Affine-free sparsity sharpens the cofactor recursion by bundling all affine terms into one head and only paying for nonlinear cofactor monomials and changed slopes across the split.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/075_affine_free_cofactor_recursion.md](lemmas/04_recursions_and_cost_invariants/075_affine_free_cofactor_recursion.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/075_affine_free_cofactor_recursion.md](theorems/04_recursions_and_cost_invariants/075_affine_free_cofactor_recursion.md)
 
 ### Lemma 76. LTF cofactor slope distance
 
@@ -1641,7 +1641,7 @@ In particular, if both cofactors are constants or LTFs, then $H^{\ast}(f)\leq n$
 
 > **Interpretation.** For two LTF slices, the useful quantity is not just that both slices are affine threshold functions. It is how many affine slopes must change when crossing the split bit.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/076_ltf_cofactor_slope_distance.md](lemmas/04_recursions_and_cost_invariants/076_ltf_cofactor_slope_distance.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/076_ltf_cofactor_slope_distance.md](theorems/04_recursions_and_cost_invariants/076_ltf_cofactor_slope_distance.md)
 
 ### Lemma 77. Split LTF slope invariant
 
@@ -1659,7 +1659,7 @@ In particular, every function with an LTF split satisfies $H^{\ast}(f)\leq n$. I
 
 > **Interpretation.** For functions that become LTFs after fixing one coordinate, the relevant bound is the best slope-change count over all split coordinates and all affine separator choices.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/077_split_ltf_slope_invariant.md](lemmas/04_recursions_and_cost_invariants/077_split_ltf_slope_invariant.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/077_split_ltf_slope_invariant.md](theorems/04_recursions_and_cost_invariants/077_split_ltf_slope_invariant.md)
 
 ### Lemma 78. Split affine-free support invariant
 
@@ -1682,7 +1682,7 @@ If $\mathrm{scafs}_{\pm}(f)\leq2$, then $H^{\ast}(f)$ has the exact constant, no
 
 > **Interpretation.** This is the cofactor invariant that pays for what is shared in one base slice and for what changes across the split. It can be much smaller than the union-support cofactor bound.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/078_split_affine_free_support_invariant.md](lemmas/04_recursions_and_cost_invariants/078_split_affine_free_support_invariant.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/078_split_affine_free_support_invariant.md](theorems/04_recursions_and_cost_invariants/078_split_affine_free_support_invariant.md)
 
 ### Lemma 79. One-bit LTF branching
 
@@ -1706,7 +1706,7 @@ If $\lvert S\rvert\leq1$, then $H^{\ast}(f)$ has the exact constant, nonconstant
 
 > **Interpretation.** Any two-input Boolean gate applied to one raw bit and one LTF feature has head complexity at most one plus the support size of the LTF separator.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/079_one_bit_ltf_branching.md](lemmas/04_recursions_and_cost_invariants/079_one_bit_ltf_branching.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/079_one_bit_ltf_branching.md](theorems/04_recursions_and_cost_invariants/079_one_bit_ltf_branching.md)
 
 ### Lemma 80. One-bit sparse-PTF branching
 
@@ -1730,7 +1730,7 @@ If the refined displayed bound is at most $2$, then $H^{\ast}(f)$ has the exact 
 
 > **Interpretation.** The one-bit LTF branching theorem extends to sparse PTF features, paying for the feature's linear support and nonlinear support, with a smaller cost when the two branches are the same function of the feature.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/080_one_bit_sparse_ptf_branching.md](lemmas/04_recursions_and_cost_invariants/080_one_bit_sparse_ptf_branching.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/080_one_bit_sparse_ptf_branching.md](theorems/04_recursions_and_cost_invariants/080_one_bit_sparse_ptf_branching.md)
 
 ### Lemma 81. Fresh-bit XOR raises threshold degree
 
@@ -1756,7 +1756,7 @@ $$ \deg_{\pm}(f)+1 \leq H^{\ast}(z\oplus f(y)) \leq 1+\ell(P)+2q(P). $$
 
 > **Interpretation.** XOR with a fresh raw bit is a lower-bound amplifier. It raises threshold degree by exactly one, so any head-level recursion for $z\oplus f$ must pay at least one new head whenever $H^{\ast}$ is already threshold-degree tight.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/081_fresh_bit_xor_threshold_degree.md](lemmas/04_recursions_and_cost_invariants/081_fresh_bit_xor_threshold_degree.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/081_fresh_bit_xor_threshold_degree.md](theorems/04_recursions_and_cost_invariants/081_fresh_bit_xor_threshold_degree.md)
 
 ### Lemma 82. One-bit gate threshold-degree trichotomy
 
@@ -1780,7 +1780,7 @@ $$ \deg_{\pm}(F)=d+1. $$
 
 > **Interpretation.** Fresh-bit XOR and XNOR are the only one-bit gates that force threshold degree to rise. Fresh-bit AND, OR, implication, and their complements preserve threshold degree when the feature branch is nonconstant.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/082_one_bit_gate_threshold_degree_trichotomy.md](lemmas/04_recursions_and_cost_invariants/082_one_bit_gate_threshold_degree_trichotomy.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/082_one_bit_gate_threshold_degree_trichotomy.md](theorems/04_recursions_and_cost_invariants/082_one_bit_gate_threshold_degree_trichotomy.md)
 
 ### Lemma 83. Parity-block threshold-degree amplifier
 
@@ -1802,7 +1802,7 @@ $$ H^{\ast}(F)\leq2^{k}\bigl(m(P)+1\bigr)-1. $$
 
 > **Interpretation.** A block of fresh parity bits is an additive threshold-degree amplifier. It preserves the exact lower-bound increment under iteration, even though the generic sparse-PTF upper bound may be loose.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/083_parity_block_threshold_degree_amplifier.md](lemmas/04_recursions_and_cost_invariants/083_parity_block_threshold_degree_amplifier.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/083_parity_block_threshold_degree_amplifier.md](theorems/04_recursions_and_cost_invariants/083_parity_block_threshold_degree_amplifier.md)
 
 ### Lemma 84. Parity-block restriction lower bound
 
@@ -1822,7 +1822,7 @@ The same conclusion holds for the complement of the displayed parity-block form.
 
 > **Interpretation.** Pure parity restrictions are not the only additive lower-bound certificates. A parity block modulating any residual hard subfunction contributes its own parity size plus the residual threshold degree.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/084_parity_block_restriction_lower_bound.md](lemmas/04_recursions_and_cost_invariants/084_parity_block_restriction_lower_bound.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/084_parity_block_restriction_lower_bound.md](theorems/04_recursions_and_cost_invariants/084_parity_block_restriction_lower_bound.md)
 
 ### Lemma 85. Calibrated threshold-vote upper bound
 
@@ -1848,7 +1848,7 @@ $$ H^{\ast}(f)\leq s. $$
 
 > **Interpretation.** The false threshold-vote upper bound becomes true once the raw one-head atoms approximate the inner gate indicators within the outer vote margin.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/085_calibrated_threshold_vote_upper_bound.md](lemmas/04_recursions_and_cost_invariants/085_calibrated_threshold_vote_upper_bound.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/085_calibrated_threshold_vote_upper_bound.md](theorems/04_recursions_and_cost_invariants/085_calibrated_threshold_vote_upper_bound.md)
 
 ### Lemma 86. Endpoint affine-threshold vote upper bound
 
@@ -1874,7 +1874,7 @@ $$ H^{\ast}(f)\leq s. $$
 
 > **Interpretation.** Calibrated threshold votes are automatically valid for endpoint positive affine thresholds. Thus weighted votes over positive OR-type clauses and positive AND-type terms cost at most one head per voted feature.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/086_endpoint_affine_threshold_vote_upper_bound.md](lemmas/04_recursions_and_cost_invariants/086_endpoint_affine_threshold_vote_upper_bound.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/086_endpoint_affine_threshold_vote_upper_bound.md](theorems/04_recursions_and_cost_invariants/086_endpoint_affine_threshold_vote_upper_bound.md)
 
 ### Lemma 87. One-bit non-XOR gate recursion
 
@@ -1898,7 +1898,7 @@ and the same bound holds after complementing either input literal or the output.
 
 > **Interpretation.** One fresh raw bit can be combined with an arbitrary already-computed feature through any non-XOR two-input gate at the cost of one additional head. XOR and XNOR remain the exceptional recursive cases.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/087_one_bit_non_xor_gate_recursion.md](lemmas/04_recursions_and_cost_invariants/087_one_bit_non_xor_gate_recursion.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/087_one_bit_non_xor_gate_recursion.md](theorems/04_recursions_and_cost_invariants/087_one_bit_non_xor_gate_recursion.md)
 
 ### Lemma 88. Literal decision-list upper bound
 
@@ -1912,7 +1912,7 @@ $$ H^{\ast}(f)\leq L. $$
 
 > **Interpretation.** Literal decision lists are a proved head-level recursion class. Each tested literal costs at most one head, while the harder linear-threshold decision-list case remains open.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/088_literal_decision_list_upper_bound.md](lemmas/04_recursions_and_cost_invariants/088_literal_decision_list_upper_bound.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/088_literal_decision_list_upper_bound.md](theorems/04_recursions_and_cost_invariants/088_literal_decision_list_upper_bound.md)
 
 ### Lemma 89. Endpoint decision-list upper bound
 
@@ -1926,7 +1926,7 @@ $$ H^{\ast}(f)\leq L. $$
 
 > **Interpretation.** Endpoint OR-type and AND-type tests can be used in decision lists at one head per test. This strictly extends the literal decision-list theorem while still avoiding arbitrary LTF tests.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/089_endpoint_decision_list_upper_bound.md](lemmas/04_recursions_and_cost_invariants/089_endpoint_decision_list_upper_bound.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/089_endpoint_decision_list_upper_bound.md](theorems/04_recursions_and_cost_invariants/089_endpoint_decision_list_upper_bound.md)
 
 ### Lemma 90. Calibrated decision-list upper bound
 
@@ -1946,7 +1946,7 @@ In particular, if every test indicator is arbitrarily one-head approximable, the
 
 > **Interpretation.** Decision-list priority can always be converted into a strict weighted vote. The remaining cost question is whether the test indicators are available as calibrated raw one-head atoms.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/090_calibrated_decision_list_upper_bound.md](lemmas/04_recursions_and_cost_invariants/090_calibrated_decision_list_upper_bound.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/090_calibrated_decision_list_upper_bound.md](theorems/04_recursions_and_cost_invariants/090_calibrated_decision_list_upper_bound.md)
 
 ### Lemma 91. Internal LTF indicator obstruction
 
@@ -1964,7 +1964,7 @@ $$ \max_{x\in\lbrace0,1\rbrace^3}\lvert \phi(x)-T(x)\rvert \geq \frac{1}{4}. $$
 
 > **Interpretation.** One head can compute every LTF after a final threshold, but the raw atom need not approximate the LTF indicator. This is a genuine obstruction to extending calibrated decision-list and threshold-vote theorems to arbitrary LTF gates one gate at a time.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/091_internal_ltf_indicator_obstruction.md](lemmas/04_recursions_and_cost_invariants/091_internal_ltf_indicator_obstruction.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/091_internal_ltf_indicator_obstruction.md](theorems/04_recursions_and_cost_invariants/091_internal_ltf_indicator_obstruction.md)
 
 ### Lemma 92. Internal LTF indicator infimum
 
@@ -1978,7 +1978,7 @@ $$ \inf_{\phi} \max_{x\in\lbrace0,1\rbrace^3}\lvert \phi(x)-T(x)\rvert = \frac{1
 
 > **Interpretation.** The $1/4$ obstruction in Lemma 91 is sharp. One-head atoms can approach this error, but cannot cross it.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/092_internal_ltf_indicator_infimum.md](lemmas/04_recursions_and_cost_invariants/092_internal_ltf_indicator_infimum.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/092_internal_ltf_indicator_infimum.md](theorems/04_recursions_and_cost_invariants/092_internal_ltf_indicator_infimum.md)
 
 ### Lemma 93. Raw-calibrated vote support bound
 
@@ -2000,7 +2000,7 @@ $$ H^{\ast}(f) \leq \sum_{j:c_j\neq0}\mathrm{eafs}(T_j). $$
 
 > **Interpretation.** Calibrated votes can spend more than one atom on a feature. Exact multilinear sparsity gives a concrete fallback raw-calibration cost.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/093_raw_calibrated_vote_support_bound.md](lemmas/04_recursions_and_cost_invariants/093_raw_calibrated_vote_support_bound.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/093_raw_calibrated_vote_support_bound.md](theorems/04_recursions_and_cost_invariants/093_raw_calibrated_vote_support_bound.md)
 
 ### Lemma 94. Raw-calibrated decision-list support bound
 
@@ -2014,7 +2014,7 @@ $$ H^{\ast}(f) \leq \sum_{j=1}^{L}\mathrm{eafs}(T_j). $$
 
 > **Interpretation.** Arbitrary-test decision lists can be upper-bounded by raw calibration cost per test. The one-head-per-test theorem is the special case $\rho(T_j)\leq1$ for every tested feature.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/094_raw_calibrated_decision_list_support_bound.md](lemmas/04_recursions_and_cost_invariants/094_raw_calibrated_decision_list_support_bound.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/094_raw_calibrated_decision_list_support_bound.md](theorems/04_recursions_and_cost_invariants/094_raw_calibrated_decision_list_support_bound.md)
 
 ### Lemma 95. Raw calibration threshold-degree lower bound
 
@@ -2032,7 +2032,7 @@ $$ \rho(T_1)+\rho(T_2)\geq\deg_{\pm}(f), \qquad \max\lbrace\rho(T_1),\rho(T_2)\r
 
 > **Interpretation.** Threshold-degree lower bounds for a strict vote force high raw calibration cost in at least one inner feature.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/095_raw_calibration_threshold_degree_lower_bound.md](lemmas/04_recursions_and_cost_invariants/095_raw_calibration_threshold_degree_lower_bound.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/095_raw_calibration_threshold_degree_lower_bound.md](theorems/04_recursions_and_cost_invariants/095_raw_calibration_threshold_degree_lower_bound.md)
 
 ### Lemma 96. Subcube raw calibration cost
 
@@ -2048,7 +2048,7 @@ Consequently, strict weighted votes and decision lists over subcube indicators i
 
 > **Interpretation.** Local certificate expansion is not only a one-sided cover theorem. Each cylinder indicator has a concrete raw calibration cost that can be reused inside arbitrary strict votes and decision lists.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/096_subcube_raw_calibration_cost.md](lemmas/04_recursions_and_cost_invariants/096_subcube_raw_calibration_cost.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/096_subcube_raw_calibration_cost.md](theorems/04_recursions_and_cost_invariants/096_subcube_raw_calibration_cost.md)
 
 ### Lemma 97. Raw calibration invariances
 
@@ -2058,7 +2058,7 @@ $$ \rho(R)\leq\rho(T). $$
 
 > **Interpretation.** Raw calibration cost can be treated as a robust invariant. Lower-bound searches may pass to canonical representatives and restricted witnesses.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/097_raw_calibration_invariances.md](lemmas/04_recursions_and_cost_invariants/097_raw_calibration_invariances.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/097_raw_calibration_invariances.md](theorems/04_recursions_and_cost_invariants/097_raw_calibration_invariances.md)
 
 ### Lemma 98. Subcube-threshold vote upper bound
 
@@ -2080,7 +2080,7 @@ $$ H^{\ast}(f) \leq \sum_{a:c_a\neq0}\kappa(P_a,N_a). $$
 
 > **Interpretation.** Strict real threshold votes over subcube indicators have head cost bounded by the summed local literal-orientation cost. The cylinders need not be a one-sided cover.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/098_subcube_threshold_vote_upper_bound.md](lemmas/04_recursions_and_cost_invariants/098_subcube_threshold_vote_upper_bound.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/098_subcube_threshold_vote_upper_bound.md](theorems/04_recursions_and_cost_invariants/098_subcube_threshold_vote_upper_bound.md)
 
 ### Lemma 99. Cylinder-threshold cost invariant
 
@@ -2100,7 +2100,7 @@ Moreover, $\mathrm{ctc}(f)<\infty$ for every Boolean function.
 
 > **Interpretation.** The best strict threshold vote over cylinders is itself a head upper-bound invariant. This optimizes the local cylinder cost directly rather than first choosing a normal form such as DNF, CNF, or a certificate cover.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/099_cylinder_threshold_cost_invariant.md](lemmas/04_recursions_and_cost_invariants/099_cylinder_threshold_cost_invariant.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/099_cylinder_threshold_cost_invariant.md](theorems/04_recursions_and_cost_invariants/099_cylinder_threshold_cost_invariant.md)
 
 ### Lemma 100. Cylinder-threshold cost invariances
 
@@ -2110,7 +2110,7 @@ $$ \mathrm{ctc}(g)\leq\mathrm{ctc}(f). $$
 
 > **Interpretation.** The optimized cylinder-threshold upper-bound invariant can be searched on canonical representatives, and lower-bound attempts may use hard restrictions.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/100_cylinder_threshold_cost_invariances.md](lemmas/04_recursions_and_cost_invariants/100_cylinder_threshold_cost_invariances.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/100_cylinder_threshold_cost_invariances.md](theorems/04_recursions_and_cost_invariants/100_cylinder_threshold_cost_invariances.md)
 
 ### Lemma 101. Cylinder-threshold cost subsumes local certificates
 
@@ -2128,7 +2128,7 @@ $$ \mathrm{ctc}(f) \leq \min\left\lbrace \sum_{\ell\in\mathcal{L}_1}\kappa(P _\e
 
 > **Interpretation.** The $\mathrm{ctc}$ invariant strictly packages the local certificate-expansion route. One-sided covers and formula normal forms are feasible cylinder-threshold representations, but $\mathrm{ctc}$ can also optimize over signed overlapping cylinder votes.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/101_cylinder_threshold_cost_subsumes_local_certificates.md](lemmas/04_recursions_and_cost_invariants/101_cylinder_threshold_cost_subsumes_local_certificates.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/101_cylinder_threshold_cost_subsumes_local_certificates.md](theorems/04_recursions_and_cost_invariants/101_cylinder_threshold_cost_subsumes_local_certificates.md)
 
 ### Lemma 102. Cylinder-threshold cost and PTF sparsity
 
@@ -2146,7 +2146,7 @@ $$ H^{\ast}(f) \leq \mathrm{ctc}(f) \leq \mathrm{ptfsp}(f). $$
 
 > **Interpretation.** Sparse polynomial thresholds are a special case of cylinder-threshold representations: each positive monomial is a cylinder with local cost $1$.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/102_cylinder_threshold_cost_ptf_sparsity.md](lemmas/04_recursions_and_cost_invariants/102_cylinder_threshold_cost_ptf_sparsity.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/102_cylinder_threshold_cost_ptf_sparsity.md](theorems/04_recursions_and_cost_invariants/102_cylinder_threshold_cost_ptf_sparsity.md)
 
 ### Lemma 103. Affine-cylinder threshold cost
 
@@ -2168,7 +2168,7 @@ $$ \mathrm{actc}(f)\leq\mathrm{ctc}(f). $$
 
 > **Interpretation.** The best signed cylinder vote may first pull out one dense affine component at cost one. This keeps the local-cylinder optimization but fixes the dense-linear weakness of ordinary $\mathrm{ctc}$.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/103_affine_cylinder_threshold_cost.md](lemmas/04_recursions_and_cost_invariants/103_affine_cylinder_threshold_cost.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/103_affine_cylinder_threshold_cost.md](theorems/04_recursions_and_cost_invariants/103_affine_cylinder_threshold_cost.md)
 
 ### Lemma 104. Affine-cylinder cost hierarchy
 
@@ -2186,7 +2186,7 @@ $$ H^{\ast}(f) \leq \mathrm{actc}(f) \leq 1+\sum_{r=2}^{d}\binom{n}{r}. $$
 
 > **Interpretation.** The affine-cylinder cost is a common refinement of signed local cylinder votes and affine-free sparse polynomial thresholds.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/104_affine_cylinder_cost_hierarchy.md](lemmas/04_recursions_and_cost_invariants/104_affine_cylinder_cost_hierarchy.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/104_affine_cylinder_cost_hierarchy.md](theorems/04_recursions_and_cost_invariants/104_affine_cylinder_cost_hierarchy.md)
 
 ### Lemma 105. Halfspace intersections force many heads
 
@@ -2204,7 +2204,7 @@ $$ H^{\ast}(F_n)\geq c n. $$
 
 > **Interpretation.** Even the intersection of two halfspaces can require linearly many heads. This is the direct head-complexity translation of Sherstov's optimal threshold-degree lower bound.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/105_halfspace_intersection_head_lower_bound.md](lemmas/04_recursions_and_cost_invariants/105_halfspace_intersection_head_lower_bound.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/105_halfspace_intersection_head_lower_bound.md](theorems/04_recursions_and_cost_invariants/105_halfspace_intersection_head_lower_bound.md)
 
 ### Lemma 106. Threshold-vote and LTF decision-list separation
 
@@ -2218,7 +2218,7 @@ Thus neither threshold-vote size nor LTF decision-list length is a constant-fact
 
 > **Interpretation.** Thresholded LTF outputs are not raw attention-head features. A small outer vote of LTF gates gives a head upper bound only with an additional calibration hypothesis.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/106_threshold_vote_and_ltf_decision_list_separation.md](lemmas/04_recursions_and_cost_invariants/106_threshold_vote_and_ltf_decision_list_separation.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/106_threshold_vote_and_ltf_decision_list_separation.md](theorems/04_recursions_and_cost_invariants/106_threshold_vote_and_ltf_decision_list_separation.md)
 
 ### Lemma 107. LTF raw calibration has linear worst case
 
@@ -2236,7 +2236,7 @@ $$ H^{\ast}(V_n)=1 \qquad \text{and} \qquad \rho(V_n)\geq c n. $$
 
 > **Interpretation.** One-head computability after thresholding does not imply cheap raw access to the feature indicator. The gap is linear for some LTFs.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/107_ltf_raw_calibration_linear_lower_bound.md](lemmas/04_recursions_and_cost_invariants/107_ltf_raw_calibration_linear_lower_bound.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/107_ltf_raw_calibration_linear_lower_bound.md](theorems/04_recursions_and_cost_invariants/107_ltf_raw_calibration_linear_lower_bound.md)
 
 ### Lemma 108. Affine-cylinder threshold cost invariances
 
@@ -2246,7 +2246,7 @@ $$ \mathrm{actc}(g)\leq\mathrm{actc}(f). $$
 
 > **Interpretation.** The stronger optimized upper-bound invariant keeps the same canonical-search behavior as $\mathrm{ctc}$.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/108_affine_cylinder_threshold_cost_invariances.md](lemmas/04_recursions_and_cost_invariants/108_affine_cylinder_threshold_cost_invariances.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/108_affine_cylinder_threshold_cost_invariances.md](theorems/04_recursions_and_cost_invariants/108_affine_cylinder_threshold_cost_invariances.md)
 
 ### Lemma 109. Low affine-cylinder cost is exact
 
@@ -2260,7 +2260,7 @@ $$ H^{\ast}(f) = \begin{cases} 0, & \text{if } f \text{ is constant},\\ 1, & \te
 
 > **Interpretation.** A two-head affine-cylinder certificate is automatically exact unless the function collapses to the universal zero-head or one-head classes.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/109_low_affine_cylinder_cost_exactness.md](lemmas/04_recursions_and_cost_invariants/109_low_affine_cylinder_cost_exactness.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/109_low_affine_cylinder_cost_exactness.md](theorems/04_recursions_and_cost_invariants/109_low_affine_cylinder_cost_exactness.md)
 
 ### Lemma 110. Affine-cylinder threshold-degree sandwich
 
@@ -2278,7 +2278,7 @@ $$ \deg_{\pm}(f) \leq \mathrm{afs}_{\pm}(f) \leq \mathrm{ptfsp}(f). $$
 
 > **Interpretation.** The optimized affine-cylinder invariant is now bracketed by a classical lower bound and two certificate upper bounds.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/110_affine_cylinder_threshold_degree_sandwich.md](lemmas/04_recursions_and_cost_invariants/110_affine_cylinder_threshold_degree_sandwich.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/110_affine_cylinder_threshold_degree_sandwich.md](theorems/04_recursions_and_cost_invariants/110_affine_cylinder_threshold_degree_sandwich.md)
 
 ### Lemma 111. Affine-cylinder cofactor interpolation
 
@@ -2300,7 +2300,7 @@ $$ \eta(A_0,A_1) := \mathbf{1} \left[ a_1\neq a_0 \text{ or } \exists i,\ \alpha
 
 > **Interpretation.** Cofactor interpolation for $\mathrm{actc}$ pays for a base affine-cylinder certificate and only for the affine slopes and cylinder coefficients that change across the split.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/111_affine_cylinder_cofactor_interpolation.md](lemmas/04_recursions_and_cost_invariants/111_affine_cylinder_cofactor_interpolation.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/111_affine_cylinder_cofactor_interpolation.md](theorems/04_recursions_and_cost_invariants/111_affine_cylinder_cofactor_interpolation.md)
 
 ### Lemma 112. Split affine-cylinder cost
 
@@ -2316,7 +2316,7 @@ If $\mathrm{sactc}(f)\leq2$, then $H^{\ast}(f)$ has the exact constant, nonconst
 
 > **Interpretation.** The split affine-cylinder cost packages cofactor interpolation as a recursive certificate invariant.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/112_split_affine_cylinder_cost.md](lemmas/04_recursions_and_cost_invariants/112_split_affine_cylinder_cost.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/112_split_affine_cylinder_cost.md](theorems/04_recursions_and_cost_invariants/112_split_affine_cylinder_cost.md)
 
 ### Lemma 113. Shared-cylinder split exactness
 
@@ -2336,7 +2336,7 @@ In particular, if the right-hand side is at most $2$, then $H^{\ast}(f)$ has the
 
 > **Interpretation.** Shared cylinder corrections are paid once. The split pays only for the shared local cost plus affine changes.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/113_shared_cylinder_split_exactness.md](lemmas/04_recursions_and_cost_invariants/113_shared_cylinder_split_exactness.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/113_shared_cylinder_split_exactness.md](theorems/04_recursions_and_cost_invariants/113_shared_cylinder_split_exactness.md)
 
 ### Lemma 114. Split affine-cylinder refines split affine-free support
 
@@ -2348,7 +2348,7 @@ where $\mathrm{scafs}_{\pm}$ is the split affine-free support invariant from Lem
 
 > **Interpretation.** The split affine-cylinder invariant keeps every split sparse-PTF certificate and can only improve it when mixed-literal cylinders are cheaper than their monomial expansions.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/114_split_affine_cylinder_refines_split_affine_free.md](lemmas/04_recursions_and_cost_invariants/114_split_affine_cylinder_refines_split_affine_free.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/114_split_affine_cylinder_refines_split_affine_free.md](theorems/04_recursions_and_cost_invariants/114_split_affine_cylinder_refines_split_affine_free.md)
 
 ### Lemma 115. Affine-cylinder first levels are exact
 
@@ -2364,7 +2364,7 @@ Equivalently, $\mathrm{actc}(f)\geq2$ exactly when $f$ is neither constant nor a
 
 > **Interpretation.** The affine-cylinder cost has the same constant and one-head levels as $H^{\ast}$.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/115_affine_cylinder_first_levels_exact.md](lemmas/04_recursions_and_cost_invariants/115_affine_cylinder_first_levels_exact.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/115_affine_cylinder_first_levels_exact.md](theorems/04_recursions_and_cost_invariants/115_affine_cylinder_first_levels_exact.md)
 
 ### Lemma 116. Split affine-cylinder first levels are exact
 
@@ -2380,7 +2380,7 @@ Equivalently, $\mathrm{sactc}(f)\geq2$ exactly when $f$ is neither constant nor 
 
 > **Interpretation.** Optimizing over split affine-cylinder interpolations does not create any spurious zero-cost or one-cost functions.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/116_split_affine_cylinder_first_levels_exact.md](lemmas/04_recursions_and_cost_invariants/116_split_affine_cylinder_first_levels_exact.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/116_split_affine_cylinder_first_levels_exact.md](theorems/04_recursions_and_cost_invariants/116_split_affine_cylinder_first_levels_exact.md)
 
 ### Lemma 117. Pure-cylinder affine perturbations are exact
 
@@ -2396,7 +2396,7 @@ Consequently, $H^{\ast}(f)$ is exactly $0$, $1$, or $2$ according as $f$ is cons
 
 > **Interpretation.** One pure positive or pure negative cylinder can perturb an arbitrary affine score at exact two-head cost.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/117_pure_cylinder_affine_perturbation_exact.md](lemmas/04_recursions_and_cost_invariants/117_pure_cylinder_affine_perturbation_exact.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/117_pure_cylinder_affine_perturbation_exact.md](theorems/04_recursions_and_cost_invariants/117_pure_cylinder_affine_perturbation_exact.md)
 
 ### Lemma 118. One-bit affine-cylinder branching
 
@@ -2424,7 +2424,7 @@ If this upper bound is at most $2$, then $H^{\ast}(F)$ has the exact constant, n
 
 > **Interpretation.** One-bit gates over affine-cylinder features inherit local cylinder costs, rather than paying for a full monomial expansion.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/118_one_bit_affine_cylinder_branching.md](lemmas/04_recursions_and_cost_invariants/118_one_bit_affine_cylinder_branching.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/118_one_bit_affine_cylinder_branching.md](theorems/04_recursions_and_cost_invariants/118_one_bit_affine_cylinder_branching.md)
 
 ### Lemma 119. Fresh-bit XOR affine-cylinder bound
 
@@ -2454,7 +2454,7 @@ The same bounds hold for XNOR. If the final upper bound equals $\deg_{\pm}(T)+1$
 
 > **Interpretation.** Fresh-bit XOR has a matching target: threshold degree forces the lower bound, and affine-cylinder branching gives the upper-bound cost to try to match.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/119_fresh_bit_xor_affine_cylinder_bound.md](lemmas/04_recursions_and_cost_invariants/119_fresh_bit_xor_affine_cylinder_bound.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/119_fresh_bit_xor_affine_cylinder_bound.md](theorems/04_recursions_and_cost_invariants/119_fresh_bit_xor_affine_cylinder_bound.md)
 
 ### Lemma 120. Affine-cylinder cofactor recursion
 
@@ -2472,7 +2472,7 @@ $$ \mathrm{sactc}(f) \leq 1+m+3r_b+2r_{1-b}. $$
 
 > **Interpretation.** Even when the cofactor certificates do not align, affine-cylinder cost gives a safe Shannon recursion with linear switching overhead and lifted-cylinder costs.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/120_affine_cylinder_cofactor_recursion.md](lemmas/04_recursions_and_cost_invariants/120_affine_cylinder_cofactor_recursion.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/120_affine_cylinder_cofactor_recursion.md](theorems/04_recursions_and_cost_invariants/120_affine_cylinder_cofactor_recursion.md)
 
 ### Lemma 121. Literal-gated affine-cylinder features
 
@@ -2494,7 +2494,7 @@ If either displayed upper bound is at most $2$, then the corresponding gated fun
 
 > **Interpretation.** Literal conjunctions and disjunctions over affine-cylinder features only pay for changed slopes and one direction of lifted cylinder costs.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/121_literal_gated_affine_cylinder_feature.md](lemmas/04_recursions_and_cost_invariants/121_literal_gated_affine_cylinder_feature.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/121_literal_gated_affine_cylinder_feature.md](theorems/04_recursions_and_cost_invariants/121_literal_gated_affine_cylinder_feature.md)
 
 ### Lemma 122. Lifted literal-gating cost
 
@@ -2526,7 +2526,7 @@ If $\mathrm{lgactc}(T)\leq1$, then every literal-gated function here that is nei
 
 > **Interpretation.** Literal gating is controlled by an optimized lifted cost: the affine slopes of the feature plus the cheaper lifted orientation of its cylinder correction.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/122_lifted_literal_gating_cost.md](lemmas/04_recursions_and_cost_invariants/122_lifted_literal_gating_cost.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/122_lifted_literal_gating_cost.md](theorems/04_recursions_and_cost_invariants/122_lifted_literal_gating_cost.md)
 
 ### Lemma 123. Non-XOR gates through lifted cost
 
@@ -2552,7 +2552,7 @@ with the sharper case split above whenever the gate form is known.
 
 > **Interpretation.** Among non-XOR gates, the only real fresh-bit interaction cost is literal gating. It is governed by $\mathrm{lgactc}$, not by a full head representation of $T$.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/123_non_xor_gate_lifted_cost.md](lemmas/04_recursions_and_cost_invariants/123_non_xor_gate_lifted_cost.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/123_non_xor_gate_lifted_cost.md](theorems/04_recursions_and_cost_invariants/123_non_xor_gate_lifted_cost.md)
 
 ### Lemma 124. Fresh-bit XOR target cost
 
@@ -2586,7 +2586,7 @@ $$ \mathrm{xactc}(T) \leq 1+m+3\mathrm{actc}(T). $$
 
 > **Interpretation.** The exact fresh-bit XOR problem is now the equality problem $\mathrm{xactc}(T)=\deg_{\pm}(T)+1$.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/124_fresh_bit_xor_target_cost.md](lemmas/04_recursions_and_cost_invariants/124_fresh_bit_xor_target_cost.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/124_fresh_bit_xor_target_cost.md](theorems/04_recursions_and_cost_invariants/124_fresh_bit_xor_target_cost.md)
 
 ### Lemma 125. Optimized one-bit cost invariances
 
@@ -2614,7 +2614,7 @@ whenever $R$ is a restriction of $T$.
 
 > **Interpretation.** The optimized literal-gating and fresh-XOR targets can be minimized on canonical feature representatives, and hard feature restrictions remain valid witnesses for lower-bound attempts on these costs.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/125_optimized_one_bit_cost_invariances.md](lemmas/04_recursions_and_cost_invariants/125_optimized_one_bit_cost_invariances.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/125_optimized_one_bit_cost_invariances.md](theorems/04_recursions_and_cost_invariants/125_optimized_one_bit_cost_invariances.md)
 
 ### Lemma 126. Endpoint feature fresh-XOR exactness
 
@@ -2640,7 +2640,7 @@ $$ H^{\ast}(z\oplus A_L(y)) = H^{\ast}(1-(z\oplus A_L(y))) = 2. $$
 
 > **Interpretation.** Positive endpoint OR-type and AND-type features have exact two-head fresh-bit XOR, even though the generic one-bit LTF branching bound grows with the support size.
 
-**Proof.** [lemmas/04_recursions_and_cost_invariants/126_endpoint_feature_fresh_xor_exact.md](lemmas/04_recursions_and_cost_invariants/126_endpoint_feature_fresh_xor_exact.md)
+**Proof.** [lemmas/04_recursions_and_cost_invariants/126_endpoint_feature_fresh_xor_exact.md](theorems/04_recursions_and_cost_invariants/126_endpoint_feature_fresh_xor_exact.md)
 
 ### Lemma 127. Affine endpoint fresh-XOR exactness
 
@@ -2666,7 +2666,7 @@ $$ H^{\ast}(z\oplus E_{\max}(y)) = H^{\ast}(1-(z\oplus E_{\max}(y))) = 2. $$
 
 > **Interpretation.** Endpoint fresh-XOR exactness is an affine-image endpoint phenomenon, not a positive-coefficient artifact.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/127_affine_endpoint_fresh_xor_exact.md](lemmas/05_positive_statistic_gates_and_grids/127_affine_endpoint_fresh_xor_exact.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/127_affine_endpoint_fresh_xor_exact.md](theorems/05_positive_statistic_gates_and_grids/127_affine_endpoint_fresh_xor_exact.md)
 
 ### Lemma 128. Affine endpoint one-bit gate classification
 
@@ -2684,7 +2684,7 @@ $$ H^{\ast}(F)= \begin{cases} 0 & \text{if } G \text{ is constant},\\ 2 & \text{
 
 > **Interpretation.** Affine endpoint features have no hidden one-bit gate complexity: all non-XOR gates are LTFs, and XOR or XNOR are exactly two-head.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/128_affine_endpoint_one_bit_gate_classification.md](lemmas/05_positive_statistic_gates_and_grids/128_affine_endpoint_one_bit_gate_classification.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/128_affine_endpoint_one_bit_gate_classification.md](theorems/05_positive_statistic_gates_and_grids/128_affine_endpoint_one_bit_gate_classification.md)
 
 ### Lemma 129. LTF one-bit gate classification
 
@@ -2702,7 +2702,7 @@ $$ H^{\ast}(F)= \begin{cases} 0 & \text{if } G \text{ is constant},\\ 2 & \text{
 
 > **Interpretation.** A raw bit and one LTF feature have a complete exact gate table. Fresh XOR and XNOR are exactly two-head; every other nonconstant gate is one-head.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/129_ltf_one_bit_gate_classification.md](lemmas/05_positive_statistic_gates_and_grids/129_ltf_one_bit_gate_classification.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/129_ltf_one_bit_gate_classification.md](theorems/05_positive_statistic_gates_and_grids/129_ltf_one_bit_gate_classification.md)
 
 ### Lemma 130. Fresh-XOR affine-statistic sign-change bound
 
@@ -2722,7 +2722,7 @@ where $k$ is the number of nonzero variable coefficients of $L$, and the same up
 
 > **Interpretation.** Separating the two fresh-bit slices turns the label sequence into $G$ followed by its complement, so the sign-change count doubles with one possible boundary change.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/130_fresh_xor_affine_statistic_sign_change_bound.md](lemmas/05_positive_statistic_gates_and_grids/130_fresh_xor_affine_statistic_sign_change_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/130_fresh_xor_affine_statistic_sign_change_bound.md](theorems/05_positive_statistic_gates_and_grids/130_fresh_xor_affine_statistic_sign_change_bound.md)
 
 ### Lemma 131. Positive-projection fresh-XOR sign-change bound
 
@@ -2742,7 +2742,7 @@ and the same upper bound holds for XNOR. If $\deg_{\pm}(T)+1=D_{\oplus}(C)$, the
 
 > **Interpretation.** Positive projections avoid the affine-free support penalty in Lemma 130: fresh XOR costs at most the sign changes of the separated sequence $G,1-G$.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/131_positive_projection_fresh_xor_sign_change_bound.md](lemmas/05_positive_statistic_gates_and_grids/131_positive_projection_fresh_xor_sign_change_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/131_positive_projection_fresh_xor_sign_change_bound.md](theorems/05_positive_statistic_gates_and_grids/131_positive_projection_fresh_xor_sign_change_bound.md)
 
 ### Lemma 132. Positive-projection one-bit gate bound
 
@@ -2766,7 +2766,7 @@ The cases $C_{G,t}=0,1,2$ have the exact constant, nonconstant LTF, or two-head 
 
 > **Interpretation.** Every one-bit gate over a positive-projection feature remains controlled by a one-dimensional sign-change count after separating the two raw-bit slices.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/132_positive_projection_one_bit_gate_bound.md](lemmas/05_positive_statistic_gates_and_grids/132_positive_projection_one_bit_gate_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/132_positive_projection_one_bit_gate_bound.md](theorems/05_positive_statistic_gates_and_grids/132_positive_projection_one_bit_gate_bound.md)
 
 ### Lemma 133. Internal positive slab literal-gate exactness
 
@@ -2784,7 +2784,7 @@ $$ H^{\ast}(r(z)\wedge S(y)) = H^{\ast}(1-(r(z)\wedge S(y))) = 2. $$
 
 > **Interpretation.** Literal-gating an internal positive slab through the slab itself is exactly two-head.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/133_internal_positive_slab_literal_gate_exact.md](lemmas/05_positive_statistic_gates_and_grids/133_internal_positive_slab_literal_gate_exact.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/133_internal_positive_slab_literal_gate_exact.md](theorems/05_positive_statistic_gates_and_grids/133_internal_positive_slab_literal_gate_exact.md)
 
 ### Lemma 134. Internal positive slab one-bit gate table
 
@@ -2801,7 +2801,7 @@ These cases exhaust all two-input gates.
 
 > **Interpretation.** Internal positive slabs now have a finite gate table. Only complement-slab literal gates and XOR/XNOR remain unresolved.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/134_internal_positive_slab_gate_table.md](lemmas/05_positive_statistic_gates_and_grids/134_internal_positive_slab_gate_table.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/134_internal_positive_slab_gate_table.md](theorems/05_positive_statistic_gates_and_grids/134_internal_positive_slab_gate_table.md)
 
 ### Lemma 135. Positive-statistic raw-bit quadratic span
 
@@ -2819,7 +2819,7 @@ $$ H^{\ast}(f)\leq2. $$
 
 > **Interpretation.** Any strict quadratic threshold in one positive statistic and one raw bit has a two-head certificate.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/135_positive_statistic_raw_bit_quadratic_span.md](lemmas/05_positive_statistic_gates_and_grids/135_positive_statistic_raw_bit_quadratic_span.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/135_positive_statistic_raw_bit_quadratic_span.md](theorems/05_positive_statistic_gates_and_grids/135_positive_statistic_raw_bit_quadratic_span.md)
 
 ### Lemma 136. Positive-statistic raw-bit cubic span
 
@@ -2837,7 +2837,7 @@ $$ H^{\ast}(f)\leq3. $$
 
 > **Interpretation.** Any strict cubic threshold in one positive statistic and one raw bit has a three-head certificate.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/136_positive_statistic_raw_bit_cubic_span.md](lemmas/05_positive_statistic_gates_and_grids/136_positive_statistic_raw_bit_cubic_span.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/136_positive_statistic_raw_bit_cubic_span.md](theorems/05_positive_statistic_gates_and_grids/136_positive_statistic_raw_bit_cubic_span.md)
 
 ### Lemma 137. Internal positive slab exact gate table
 
@@ -2847,7 +2847,7 @@ $$ H^{\ast}(F_G)= \begin{cases} 0 & \text{if }G\text{ is constant},\\ 1 & \text{
 
 > **Interpretation.** The remaining internal positive-slab brackets from Lemma 134 collapse to exact values.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/137_internal_positive_slab_exact_gate_table.md](lemmas/05_positive_statistic_gates_and_grids/137_internal_positive_slab_exact_gate_table.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/137_internal_positive_slab_exact_gate_table.md](theorems/05_positive_statistic_gates_and_grids/137_internal_positive_slab_exact_gate_table.md)
 
 ### Lemma 138. Positive-statistic raw-bit degree span
 
@@ -2865,7 +2865,7 @@ $$ H^{\ast}(f)\leq d. $$
 
 > **Interpretation.** A one-dimensional positive statistic remains head-efficient after adjoining one raw bit: degree $d$ in $(t,z)$ costs at most $d$ heads.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/138_positive_statistic_raw_bit_degree_span.md](lemmas/05_positive_statistic_gates_and_grids/138_positive_statistic_raw_bit_degree_span.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/138_positive_statistic_raw_bit_degree_span.md](theorems/05_positive_statistic_gates_and_grids/138_positive_statistic_raw_bit_degree_span.md)
 
 ### Lemma 139. Positive-statistic fresh-XOR sign-change bound
 
@@ -2881,7 +2881,7 @@ and the same bounds hold for XNOR. If $\deg_{\pm}(T)=C$, then both values are ex
 
 > **Interpretation.** For positive-statistic features, fresh XOR costs at most one more than the original one-dimensional sign-change count.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/139_positive_statistic_fresh_xor_sign_change_bound.md](lemmas/05_positive_statistic_gates_and_grids/139_positive_statistic_fresh_xor_sign_change_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/139_positive_statistic_fresh_xor_sign_change_bound.md](theorems/05_positive_statistic_gates_and_grids/139_positive_statistic_fresh_xor_sign_change_bound.md)
 
 ### Lemma 140. Positive-statistic non-XOR gate sign-change bound
 
@@ -2897,7 +2897,7 @@ If $\deg_{\pm}(T)=C$, then every nonconstant feature-dependent non-XOR and non-X
 
 > **Interpretation.** Non-XOR one-bit branching over a positive-statistic feature preserves the original sign-change cost.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/140_positive_statistic_non_xor_gate_sign_change_bound.md](lemmas/05_positive_statistic_gates_and_grids/140_positive_statistic_non_xor_gate_sign_change_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/140_positive_statistic_non_xor_gate_sign_change_bound.md](theorems/05_positive_statistic_gates_and_grids/140_positive_statistic_non_xor_gate_sign_change_bound.md)
 
 ### Lemma 141. Degree-tight positive-statistic gate classification
 
@@ -2911,7 +2911,7 @@ $$ H^{\ast}(H_G)= \begin{cases} 0 & \text{if }G\text{ is constant},\\ 1 & \text{
 
 > **Interpretation.** Whenever the positive-statistic sign-change upper bound is threshold-degree tight for the feature, the complete one-bit gate table is exact.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/141_degree_tight_positive_statistic_gate_classification.md](lemmas/05_positive_statistic_gates_and_grids/141_degree_tight_positive_statistic_gate_classification.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/141_degree_tight_positive_statistic_gate_classification.md](theorems/05_positive_statistic_gates_and_grids/141_degree_tight_positive_statistic_gate_classification.md)
 
 ### Lemma 142. Symmetric-feature one-bit gate exactness
 
@@ -2921,7 +2921,7 @@ $$ H^{\ast}(H_G)= \begin{cases} 0 & \text{if }G\text{ is constant},\\ 1 & \text{
 
 > **Interpretation.** The exact symmetric classification is stable under adjoining one raw bit and applying any two-input gate.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/142_symmetric_feature_one_bit_gate_exact.md](lemmas/05_positive_statistic_gates_and_grids/142_symmetric_feature_one_bit_gate_exact.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/142_symmetric_feature_one_bit_gate_exact.md](theorems/05_positive_statistic_gates_and_grids/142_symmetric_feature_one_bit_gate_exact.md)
 
 ### Lemma 143. Positive-statistic one-bit gate sandwich
 
@@ -2935,7 +2935,7 @@ $$ d \leq H^{\ast}(H_G) \leq C. $$
 
 > **Interpretation.** For one-bit gates over a positive-statistic feature, the only possible gap is the original gap between threshold degree and sign-change count.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/143_positive_statistic_one_bit_gate_sandwich.md](lemmas/05_positive_statistic_gates_and_grids/143_positive_statistic_one_bit_gate_sandwich.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/143_positive_statistic_one_bit_gate_sandwich.md](theorems/05_positive_statistic_gates_and_grids/143_positive_statistic_one_bit_gate_sandwich.md)
 
 ### Lemma 144. Positive-order one-bit gate sandwich
 
@@ -2949,7 +2949,7 @@ $$ \deg_{\pm}(f) \leq H^{\ast}(H_G) \leq C_{+}(f). $$
 
 > **Interpretation.** The positive-order sign-change invariant is stable under one-bit gates, with exactly one extra unit for XOR and XNOR.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/144_positive_order_one_bit_gate_sandwich.md](lemmas/05_positive_statistic_gates_and_grids/144_positive_order_one_bit_gate_sandwich.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/144_positive_order_one_bit_gate_sandwich.md](theorems/05_positive_statistic_gates_and_grids/144_positive_order_one_bit_gate_sandwich.md)
 
 ### Lemma 145. Common positive-statistic multi-slice bound
 
@@ -2963,7 +2963,7 @@ $$ H^{\ast}(f) \leq \sum_{a\in\lbrace0,1\rbrace^{k}} C_a + 2^{k}-1. $$
 
 > **Interpretation.** If all raw-bit slices share one positive statistic, the full function is controlled by the total within-slice variation plus at most one jump between adjacent raw slices.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/145_common_positive_statistic_multi_slice_bound.md](lemmas/05_positive_statistic_gates_and_grids/145_common_positive_statistic_multi_slice_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/145_common_positive_statistic_multi_slice_bound.md](theorems/05_positive_statistic_gates_and_grids/145_common_positive_statistic_multi_slice_bound.md)
 
 ### Lemma 146. Multi-raw positive-statistic degree bound
 
@@ -2977,7 +2977,7 @@ $$ H^{\ast}(f)\leq2^{k}(d+1)-1. $$
 
 > **Interpretation.** A bounded-degree threshold in one positive statistic and $k$ raw bits has a head bound exponential only in $k$, not in the number of feature variables.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/146_multi_raw_positive_statistic_degree_bound.md](lemmas/05_positive_statistic_gates_and_grids/146_multi_raw_positive_statistic_degree_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/146_multi_raw_positive_statistic_degree_bound.md](theorems/05_positive_statistic_gates_and_grids/146_multi_raw_positive_statistic_degree_bound.md)
 
 ### Lemma 147. Ordered common positive-statistic slice bound
 
@@ -2987,7 +2987,7 @@ $$ H^{\ast}(f) \leq \sum_{a\in\lbrace0,1\rbrace^{k}}C_a+J_{\rho}. $$
 
 > **Interpretation.** The multi-slice construction pays only for boundary label changes that actually occur in the chosen raw-slice order.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/147_ordered_common_positive_statistic_slice_bound.md](lemmas/05_positive_statistic_gates_and_grids/147_ordered_common_positive_statistic_slice_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/147_ordered_common_positive_statistic_slice_bound.md](theorems/05_positive_statistic_gates_and_grids/147_ordered_common_positive_statistic_slice_bound.md)
 
 ### Lemma 148. Multi-raw gate over positive-statistic feature bound
 
@@ -3001,7 +3001,7 @@ $$ H^{\ast}(H_G)\leq N_GC+J_{\rho,G}. $$
 
 > **Interpretation.** A multi-raw gate over one positive-statistic feature pays one copy of the feature variation for each raw slice that actually depends on the feature, plus actual boundary jumps.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/148_multi_raw_gate_positive_statistic_feature_bound.md](lemmas/05_positive_statistic_gates_and_grids/148_multi_raw_gate_positive_statistic_feature_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/148_multi_raw_gate_positive_statistic_feature_bound.md](theorems/05_positive_statistic_gates_and_grids/148_multi_raw_gate_positive_statistic_feature_bound.md)
 
 ### Lemma 149. Optimized ordered positive-statistic slice cost
 
@@ -3015,7 +3015,7 @@ $$ H^{\ast}(f)\leq \mathrm{osc}_{+}^{z\mid y}(f). $$
 
 > **Interpretation.** The ordered multi-slice construction becomes an optimized invariant once the common statistic and raw order are minimized.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/149_optimized_ordered_positive_statistic_slice_cost.md](lemmas/05_positive_statistic_gates_and_grids/149_optimized_ordered_positive_statistic_slice_cost.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/149_optimized_ordered_positive_statistic_slice_cost.md](theorems/05_positive_statistic_gates_and_grids/149_optimized_ordered_positive_statistic_slice_cost.md)
 
 ### Lemma 150. Ordered slice degree bound
 
@@ -3033,7 +3033,7 @@ $$ H^{\ast}(f) \leq 2^k d+\min_{\rho}J_{\rho}(f). $$
 
 > **Interpretation.** Polynomial degree pays for within-slice variation, while the ordered construction keeps the exact boundary price.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/150_ordered_slice_degree_bound.md](lemmas/05_positive_statistic_gates_and_grids/150_ordered_slice_degree_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/150_ordered_slice_degree_bound.md](theorems/05_positive_statistic_gates_and_grids/150_ordered_slice_degree_bound.md)
 
 ### Lemma 151. Positive mixed boundary gate bound
 
@@ -3049,7 +3049,7 @@ $$ H^{\ast}\bigl(G(z,T(y))\bigr) \leq N_G C+B_{+}(g_{e_{\max}},g_{e_{\min}}). $$
 
 > **Interpretation.** The boundary term for a multi-raw gate depends only on the two raw endpoint functions.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/151_positive_mixed_boundary_gate_bound.md](lemmas/05_positive_statistic_gates_and_grids/151_positive_mixed_boundary_gate_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/151_positive_mixed_boundary_gate_bound.md](theorems/05_positive_statistic_gates_and_grids/151_positive_mixed_boundary_gate_bound.md)
 
 ### Lemma 152. Equal-endpoint multi-raw gate bound
 
@@ -3063,7 +3063,7 @@ $$ H^{\ast}\bigl(G(z,T(y))\bigr) \leq N_G C+C_{+}(g_e). $$
 
 > **Interpretation.** If the feature starts and ends at the same label, the boundary price is the positive-order variation of a raw endpoint function.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/152_equal_endpoint_multi_raw_gate_bound.md](lemmas/05_positive_statistic_gates_and_grids/152_equal_endpoint_multi_raw_gate_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/152_equal_endpoint_multi_raw_gate_bound.md](theorems/05_positive_statistic_gates_and_grids/152_equal_endpoint_multi_raw_gate_bound.md)
 
 ### Lemma 153. Mixed boundary inequality
 
@@ -3081,7 +3081,7 @@ $$ H^{\ast}\bigl(G(z,T(y))\bigr) \leq N_GC+\min\lbrace C_{+}(g_0),C_{+}(g_1)\rbr
 
 > **Interpretation.** Opposite feature endpoints cost ordinary raw variation plus one unit for each raw slice where the gate depends on the feature.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/153_mixed_boundary_inequality.md](lemmas/05_positive_statistic_gates_and_grids/153_mixed_boundary_inequality.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/153_mixed_boundary_inequality.md](theorems/05_positive_statistic_gates_and_grids/153_mixed_boundary_inequality.md)
 
 ### Lemma 154. Raw-mask gate endpoint bounds
 
@@ -3103,7 +3103,7 @@ $$ H^{\ast}(X)\leq \begin{cases} 2^kC+C_R, & e_0=e_1,\\ 2^k(C+1)+C_R, & e_0\neq 
 
 > **Interpretation.** For common raw-mask gates, the ordered-slice boundary cost collapses to raw support size or raw positive-order variation.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/154_raw_mask_gate_endpoint_bounds.md](lemmas/05_positive_statistic_gates_and_grids/154_raw_mask_gate_endpoint_bounds.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/154_raw_mask_gate_endpoint_bounds.md](theorems/05_positive_statistic_gates_and_grids/154_raw_mask_gate_endpoint_bounds.md)
 
 ### Theorem 155. Multi-raw gate sandwich and single-slice exactness
 
@@ -3117,7 +3117,7 @@ $$ H^{\ast}(H_G)=C. $$
 
 > **Interpretation.** The mixed-boundary upper bound becomes exact as soon as exactly one raw slice depends on an already solved feature and the endpoint boundary is silent.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/155_multi_raw_gate_sandwich_exactness.md](lemmas/05_positive_statistic_gates_and_grids/155_multi_raw_gate_sandwich_exactness.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/155_multi_raw_gate_sandwich_exactness.md](theorems/05_positive_statistic_gates_and_grids/155_multi_raw_gate_sandwich_exactness.md)
 
 ### Theorem 156. Address localization exactness
 
@@ -3139,7 +3139,7 @@ $$ d \leq H^{\ast}\bigl(R(z)\vee T(y)\bigr) \leq r_0C. $$
 
 > **Interpretation.** A solved feature can be localized to one raw address at no extra head cost when the inactive background matches both feature endpoints.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/156_address_localization_exactness.md](lemmas/05_positive_statistic_gates_and_grids/156_address_localization_exactness.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/156_address_localization_exactness.md](theorems/05_positive_statistic_gates_and_grids/156_address_localization_exactness.md)
 
 ### Theorem 157. Few-run raw-mask gate theorem
 
@@ -3159,7 +3159,7 @@ with analogous conjunction and disjunction bounds from the theorem file.
 
 > **Interpretation.** Raw masks with few positive-order runs have small endpoint boundary cost; endpoint masks have $K_R\leq1$ and one-interval masks have $K_R\leq2$.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/157_few_run_raw_mask_gate_theorem.md](lemmas/05_positive_statistic_gates_and_grids/157_few_run_raw_mask_gate_theorem.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/157_few_run_raw_mask_gate_theorem.md](theorems/05_positive_statistic_gates_and_grids/157_few_run_raw_mask_gate_theorem.md)
 
 ### Theorem 158. Shared-statistic slice sandwich
 
@@ -3179,7 +3179,7 @@ If exactly one raw slice is nonconstant and that slice is exact with value $C_a$
 
 > **Interpretation.** The optimized mixed endpoint cost is the only coupling term for arbitrary raw slices sharing one positive statistic.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/158_shared_statistic_slice_sandwich.md](lemmas/05_positive_statistic_gates_and_grids/158_shared_statistic_slice_sandwich.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/158_shared_statistic_slice_sandwich.md](theorems/05_positive_statistic_gates_and_grids/158_shared_statistic_slice_sandwich.md)
 
 ### Theorem 159. Shared-statistic degree sandwich
 
@@ -3199,7 +3199,7 @@ If all endpoints are common, the $B_{+}(p,q)$ term vanishes.
 
 > **Interpretation.** Slice threshold degree lower-bounds the whole function, and slice sign-polynomial degree upper-bounds it up to endpoint coupling.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/159_shared_statistic_degree_sandwich.md](lemmas/05_positive_statistic_gates_and_grids/159_shared_statistic_degree_sandwich.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/159_shared_statistic_degree_sandwich.md](theorems/05_positive_statistic_gates_and_grids/159_shared_statistic_degree_sandwich.md)
 
 ### Theorem 160. Addressed common-endpoint direct sum
 
@@ -3221,7 +3221,7 @@ $$ \max_{a\in A}\deg_{\pm}(T_a) \leq H^{\ast}(f_A) \leq \sum_{a\in A}d_a. $$
 
 > **Interpretation.** Features with the same endpoint background can be placed at raw addresses additively, with no boundary penalty.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/160_addressed_common_endpoint_direct_sum.md](lemmas/05_positive_statistic_gates_and_grids/160_addressed_common_endpoint_direct_sum.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/160_addressed_common_endpoint_direct_sum.md](theorems/05_positive_statistic_gates_and_grids/160_addressed_common_endpoint_direct_sum.md)
 
 ### Theorem 161. Endpoint variation shared-statistic bound
 
@@ -3239,7 +3239,7 @@ $$ H^{\ast}(f) \leq \sum_a C_a+\min\lbrace K_p,K_q\rbrace+D(p,q). $$
 
 > **Interpretation.** Endpoint coupling can be bounded by ordinary raw endpoint variation plus endpoint disagreement.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/161_endpoint_variation_shared_statistic_bound.md](lemmas/05_positive_statistic_gates_and_grids/161_endpoint_variation_shared_statistic_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/161_endpoint_variation_shared_statistic_bound.md](theorems/05_positive_statistic_gates_and_grids/161_endpoint_variation_shared_statistic_bound.md)
 
 ### Theorem 162. Positive concatenation exactness criterion
 
@@ -3259,7 +3259,7 @@ The same exactness criterion holds with $L_{\rho}(f)$ replaced by the optimized 
 
 > **Interpretation.** Positive concatenation gives exact values whenever threshold degree meets the constructed sign-change cost.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/162_positive_concatenation_exactness_criterion.md](lemmas/05_positive_statistic_gates_and_grids/162_positive_concatenation_exactness_criterion.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/162_positive_concatenation_exactness_criterion.md](theorems/05_positive_statistic_gates_and_grids/162_positive_concatenation_exactness_criterion.md)
 
 ### Theorem 163. Endpoint-coupled slice cost invariant
 
@@ -3275,7 +3275,7 @@ The cost is invariant under output complement, raw-coordinate permutation, and f
 
 > **Interpretation.** The endpoint-coupled cost is a sharper split invariant than ordered-slice cost because the endpoint boundary is optimized separately.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/163_endpoint_coupled_slice_cost_invariant.md](lemmas/05_positive_statistic_gates_and_grids/163_endpoint_coupled_slice_cost_invariant.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/163_endpoint_coupled_slice_cost_invariant.md](theorems/05_positive_statistic_gates_and_grids/163_endpoint_coupled_slice_cost_invariant.md)
 
 ### Theorem 164. Sparse-slice endpoint-coupled bound
 
@@ -3295,7 +3295,7 @@ If all slices share one endpoint background label, the $B_{+}$ term vanishes. Th
 
 > **Interpretation.** Only nonconstant raw slices contribute to the within-slice cost; the rest of the raw cube appears only through endpoint coupling.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/164_sparse_slice_endpoint_coupled_bound.md](lemmas/05_positive_statistic_gates_and_grids/164_sparse_slice_endpoint_coupled_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/164_sparse_slice_endpoint_coupled_bound.md](theorems/05_positive_statistic_gates_and_grids/164_sparse_slice_endpoint_coupled_bound.md)
 
 ### Theorem 165. Positive grid slice sandwich
 
@@ -3313,7 +3313,7 @@ $$ \max_{0\leq r<R}H^{\ast}\bigl(F(\nu_r,t(y))\bigr) \leq H^{\ast}(f) \leq \sum_
 
 > **Interpretation.** If the raw block factors through a positive statistic, the construction pays per raw level rather than per raw assignment.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/165_positive_grid_slice_sandwich.md](lemmas/05_positive_statistic_gates_and_grids/165_positive_grid_slice_sandwich.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/165_positive_grid_slice_sandwich.md](theorems/05_positive_statistic_gates_and_grids/165_positive_grid_slice_sandwich.md)
 
 ### Theorem 166. Positive grid degree and exactness
 
@@ -3333,7 +3333,7 @@ If $\deg_{\pm}(f)=\sum_r C_r+J_{\mathrm{grid}}$, then $H^{\ast}(f)=\deg_{\pm}(f)
 
 > **Interpretation.** Positive-grid bounds are exact whenever threshold degree reaches the grid concatenation cost.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/166_positive_grid_degree_exactness.md](lemmas/05_positive_statistic_gates_and_grids/166_positive_grid_degree_exactness.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/166_positive_grid_degree_exactness.md](theorems/05_positive_statistic_gates_and_grids/166_positive_grid_degree_exactness.md)
 
 ### Theorem 167. Hamming-layer positive grid bound
 
@@ -3351,7 +3351,7 @@ $$ H^{\ast}(f)\leq(k+1)d+J_{\mathrm{Ham}}. $$
 
 > **Interpretation.** Raw Hamming-weight structure costs $k+1$ raw layers, not $2^k$ raw assignments.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/167_hamming_layer_positive_grid_bound.md](lemmas/05_positive_statistic_gates_and_grids/167_hamming_layer_positive_grid_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/167_hamming_layer_positive_grid_bound.md](theorems/05_positive_statistic_gates_and_grids/167_hamming_layer_positive_grid_bound.md)
 
 ### Theorem 168. Sparse raw-level positive grid bound
 
@@ -3371,7 +3371,7 @@ If all raw-level slices have one common endpoint background, then $J_{\mathrm{gr
 
 > **Interpretation.** Sparse active raw levels can be exponentially cheaper than sparse active raw assignments.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/168_sparse_raw_level_positive_grid_bound.md](lemmas/05_positive_statistic_gates_and_grids/168_sparse_raw_level_positive_grid_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/168_sparse_raw_level_positive_grid_bound.md](theorems/05_positive_statistic_gates_and_grids/168_sparse_raw_level_positive_grid_bound.md)
 
 ### Theorem 169. Positive grid cost invariant
 
@@ -3387,7 +3387,7 @@ The cost is invariant under output complement, raw-coordinate permutation, and f
 
 > **Interpretation.** Positive-grid cost is an optimized split invariant that can be much smaller than raw-assignment slice cost.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/169_positive_grid_cost_invariant.md](lemmas/05_positive_statistic_gates_and_grids/169_positive_grid_cost_invariant.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/169_positive_grid_cost_invariant.md](theorems/05_positive_statistic_gates_and_grids/169_positive_grid_cost_invariant.md)
 
 ### Theorem 170. Positive lexicographic multigrid bound
 
@@ -3405,7 +3405,7 @@ $$ H^{\ast}(f)=\deg_{\pm}(f)=L_{\mathrm{lex}}(F). $$
 
 > **Interpretation.** A function of several positive statistics can be traversed by one positive projection after choosing sufficiently separated scales.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/170_positive_lexicographic_multigrid_bound.md](lemmas/05_positive_statistic_gates_and_grids/170_positive_lexicographic_multigrid_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/170_positive_lexicographic_multigrid_bound.md](theorems/05_positive_statistic_gates_and_grids/170_positive_lexicographic_multigrid_bound.md)
 
 ### Theorem 171. Multi-Hamming profile bound
 
@@ -3421,7 +3421,7 @@ The one-block symmetric fibers give restriction lower bounds, and equality holds
 
 > **Interpretation.** Multiblock profile predicates have a direct grid-path upper bound.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/171_multi_hamming_profile_bound.md](lemmas/05_positive_statistic_gates_and_grids/171_multi_hamming_profile_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/171_multi_hamming_profile_bound.md](theorems/05_positive_statistic_gates_and_grids/171_multi_hamming_profile_bound.md)
 
 ### Theorem 172. Multigrid run bound
 
@@ -3437,7 +3437,7 @@ If this sharper run count equals $\deg_{\pm}(f)$, the value is exact.
 
 > **Interpretation.** Sparse or interval-like behavior on a profile grid can yield head bounds far below support size in the full cube.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/172_multigrid_run_bound.md](lemmas/05_positive_statistic_gates_and_grids/172_multigrid_run_bound.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/172_multigrid_run_bound.md](theorems/05_positive_statistic_gates_and_grids/172_multigrid_run_bound.md)
 
 ### Theorem 173. Positive multigrid cost invariant
 
@@ -3449,7 +3449,7 @@ The invariant is unchanged by output complement and by coordinate permutations p
 
 > **Interpretation.** Multigrid cost is the partition-level positive-projection invariant behind the lexicographic grid construction.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/173_positive_multigrid_cost_invariant.md](lemmas/05_positive_statistic_gates_and_grids/173_positive_multigrid_cost_invariant.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/173_positive_multigrid_cost_invariant.md](theorems/05_positive_statistic_gates_and_grids/173_positive_multigrid_cost_invariant.md)
 
 ### Theorem 174. Block-order Hamming profile cost
 
@@ -3469,7 +3469,7 @@ with the sharper endpoint-adjusted run bound from the theorem file.
 
 > **Interpretation.** For multiblock profile predicates, choosing the block order is part of the head upper-bound certificate.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/174_block_order_hamming_profile_cost.md](lemmas/05_positive_statistic_gates_and_grids/174_block_order_hamming_profile_cost.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/174_block_order_hamming_profile_cost.md](theorems/05_positive_statistic_gates_and_grids/174_block_order_hamming_profile_cost.md)
 
 ### Theorem 175. Positive profile projection collapse
 
@@ -3489,7 +3489,7 @@ If $\deg_{\pm}(f)=C_a(G)$, the value is exact. In the total Hamming-weight case 
 
 > **Interpretation.** Collapse the profile grid first when it factors through a positive weighted sum. The lexicographic multigrid path is not always the sharpest certificate.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/175_positive_profile_projection_collapse.md](lemmas/05_positive_statistic_gates_and_grids/175_positive_profile_projection_collapse.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/175_positive_profile_projection_collapse.md](theorems/05_positive_statistic_gates_and_grids/175_positive_profile_projection_collapse.md)
 
 ### Theorem 176. Singleton parity multigrid separation
 
@@ -3511,7 +3511,7 @@ $$ H^{\ast}(\mathrm{XOR}_n)=n. $$
 
 > **Interpretation.** The singleton multigrid certificate follows a binary odometer path and is exponentially looser than the total Hamming-weight projection for parity.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/176_singleton_parity_multigrid_separation.md](lemmas/05_positive_statistic_gates_and_grids/176_singleton_parity_multigrid_separation.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/176_singleton_parity_multigrid_separation.md](theorems/05_positive_statistic_gates_and_grids/176_singleton_parity_multigrid_separation.md)
 
 ### Theorem 177. Two-block singleton grid points are two-head
 
@@ -3533,7 +3533,7 @@ $$ H^{\ast}(f_{r,q})=\delta(G_{r,q}). $$
 
 > **Interpretation.** A two-block Hamming-grid disk whose positive set is one grid point is not a counterexample to the two-block collapse conjecture. A nonresonant linear recombination of the two Hamming weights turns the grid point into an affine level set.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/177_two_block_singleton_grid_point_exact.md](lemmas/05_positive_statistic_gates_and_grids/177_two_block_singleton_grid_point_exact.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/177_two_block_singleton_grid_point_exact.md](theorems/05_positive_statistic_gates_and_grids/177_two_block_singleton_grid_point_exact.md)
 
 ### Theorem 178. Two-block affine grid lines are two-head
 
@@ -3555,7 +3555,7 @@ $$ H^{\ast}(f_{a,b,c})=\delta(G_{a,b,c}). $$
 
 > **Interpretation.** A two-block Hamming profile supported on one affine grid line is just an affine level-set predicate after lifting to the cube.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/178_two_block_affine_grid_line_exact.md](lemmas/05_positive_statistic_gates_and_grids/178_two_block_affine_grid_line_exact.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/178_two_block_affine_grid_line_exact.md](theorems/05_positive_statistic_gates_and_grids/178_two_block_affine_grid_line_exact.md)
 
 ### Theorem 179. Two-block affine grid strips are two-head
 
@@ -3577,7 +3577,7 @@ $$ H^{\ast}(f_{a,b,c,\alpha,\beta})=\delta(G_{a,b,c,\alpha,\beta}). $$
 
 > **Interpretation.** A two-block Hamming profile supported between two parallel affine grid lines is exactly an affine slab after lifting to the cube.
 
-**Proof.** [lemmas/05_positive_statistic_gates_and_grids/179_two_block_affine_grid_strips_exact.md](lemmas/05_positive_statistic_gates_and_grids/179_two_block_affine_grid_strips_exact.md)
+**Proof.** [lemmas/05_positive_statistic_gates_and_grids/179_two_block_affine_grid_strips_exact.md](theorems/05_positive_statistic_gates_and_grids/179_two_block_affine_grid_strips_exact.md)
 
 ### Theorem 180. A quadratic hypercube-path threshold needs at least three heads
 
@@ -3595,7 +3595,7 @@ $$ \deg_{\pm}(f_{\mathrm{HC}})<H^{\ast}(f_{\mathrm{HC}}). $$
 
 > **Interpretation.** The threshold-degree lower bound is not universally exact. The strict gap is certified by a two-block singleton slice whose hypercube-path sign matrix has sign-rank at least seven, while every two-head score has singleton-slice sign-rank at most six.
 
-**Proof.** [lemmas/06_strict_separations/180_hypercube_path_strict_separation.md](lemmas/06_strict_separations/180_hypercube_path_strict_separation.md)
+**Proof.** [lemmas/06_strict_separations/180_hypercube_path_strict_separation.md](theorems/06_strict_separations/180_hypercube_path_strict_separation.md)
 
 ### Theorem 181. A compact 43-bit hypercube-path threshold needs at least three heads
 
@@ -3618,7 +3618,7 @@ $$ \deg_{\pm}(f_{35})<H^{\ast}(f_{35}). $$
 
 > **Interpretation.** A deterministic exhaustive certificate compresses the structured construction from $56$ bits to $43$ bits while preserving the sign-rank-seven singleton-slice obstruction.
 
-**Proof.** [lemmas/06_strict_separations/181_compact_hypercube_path_strict_separation.md](lemmas/06_strict_separations/181_compact_hypercube_path_strict_separation.md)
+**Proof.** [lemmas/06_strict_separations/181_compact_hypercube_path_strict_separation.md](theorems/06_strict_separations/181_compact_hypercube_path_strict_separation.md)
 
 ### Theorem 182. A twelve-bit Hamming threshold needs at least three heads
 
@@ -3636,7 +3636,7 @@ $$ \deg_{\pm}(f_{\mathrm{Ham}})<H^{\ast}(f_{\mathrm{Ham}}). $$
 
 > **Interpretation.** A natural Hamming-distance threshold gives a strict separation on twelve bits. An explicit eight-column restriction has sign-rank at least seven, while every two-head partition sign matrix has sign-rank at most six.
 
-**Proof.** [lemmas/06_strict_separations/182_hamming_threshold_strict_separation.md](lemmas/06_strict_separations/182_hamming_threshold_strict_separation.md)
+**Proof.** [lemmas/06_strict_separations/182_hamming_threshold_strict_separation.md](theorems/06_strict_separations/182_hamming_threshold_strict_separation.md)
 
 ### Theorem 183. Head complexity equals threshold degree through four bits
 
@@ -3646,7 +3646,7 @@ $$ H^{\ast}(f)=\deg_{\pm}(f). $$
 
 > **Interpretation.** An exact integer certificate classifies all $65536$ four-bit truth tables. It verifies two-head scores for every function of threshold degree at most two, three-head scores for every degree-three function, and leaves only parity and its complement at degree and head complexity four.
 
-**Proof.** [lemmas/06_strict_separations/183_small_dimension_exact_classification.md](lemmas/06_strict_separations/183_small_dimension_exact_classification.md)
+**Proof.** [lemmas/06_strict_separations/183_small_dimension_exact_classification.md](theorems/06_strict_separations/183_small_dimension_exact_classification.md)
 
 ### Theorem 184. An eleven-bit quadratic threshold needs at least three heads
 
@@ -3660,7 +3660,7 @@ $$ \deg_{\pm}(f_{11})=2<3\leq H^{\ast}(f_{11}). $$
 
 > **Interpretation.** This six-bit by five-bit quadratic embeds the compact hypercube-path obstruction as an exact $35\times8$ submatrix. Its certificate is deterministic and uses only integer arithmetic.
 
-**Proof.** [lemmas/06_strict_separations/184_eleven_bit_quadratic_strict_separation.md](lemmas/06_strict_separations/184_eleven_bit_quadratic_strict_separation.md)
+**Proof.** [lemmas/06_strict_separations/184_eleven_bit_quadratic_strict_separation.md](theorems/06_strict_separations/184_eleven_bit_quadratic_strict_separation.md)
 
 ### Theorem 185. A nine-bit antipodal-slice threshold needs at least three heads
 
@@ -3674,7 +3674,7 @@ $$ \deg_{\pm}(f_9)=2<3\leq H^{\ast}(f_9). $$
 
 > **Interpretation.** Five antipodal pairs force a nonsingular $5\times5$ cross-coefficient block in every quadratic sign representation. Clearing two heads gives a sum of two affine products, whose corresponding block has rank at most four.
 
-**Proof.** [lemmas/06_strict_separations/185_nine_bit_antipodal_slice_strict_separation.md](lemmas/06_strict_separations/185_nine_bit_antipodal_slice_strict_separation.md)
+**Proof.** [lemmas/06_strict_separations/185_nine_bit_antipodal_slice_strict_separation.md](theorems/06_strict_separations/185_nine_bit_antipodal_slice_strict_separation.md)
 
 ### Theorem 186. Five-bit degree-four functions need exactly four heads
 
@@ -3684,7 +3684,7 @@ $$ \deg_{\pm}(f)=4 \qquad\Longrightarrow\qquad H^{\ast}(f)=4. $$
 
 > **Interpretation.** An exact affine-cocircuit reduction gives $65$ normal orbits. Uniform four-head shattering certificates cover $60$ orbits, and exact finite archives cover every target in the five residual orbits.
 
-**Proof.** [lemmas/06_strict_separations/186_five_bit_degree_four_exact.md](lemmas/06_strict_separations/186_five_bit_degree_four_exact.md)
+**Proof.** [lemmas/06_strict_separations/186_five_bit_degree_four_exact.md](theorems/06_strict_separations/186_five_bit_degree_four_exact.md)
 
 ### Theorem 187. Five-bit degree-two functions need exactly two heads
 
@@ -3694,7 +3694,7 @@ $$ \deg_{\pm}(f)=2 \qquad\Longrightarrow\qquad H^{\ast}(f)=2. $$
 
 > **Interpretation.** An analytic matrix-completion reduction leaves only fully locked complementary-five-cycle sign cells. An exhaustive exact cocircuit and tangent-tope certificate reduces every such cell to $380$ archived symmetry classes, all of which have exact rational two-head certificates.
 
-**Proof.** [lemmas/06_strict_separations/187_five_bit_degree_two_exact.md](lemmas/06_strict_separations/187_five_bit_degree_two_exact.md)
+**Proof.** [lemmas/06_strict_separations/187_five_bit_degree_two_exact.md](theorems/06_strict_separations/187_five_bit_degree_two_exact.md)
 
 ### Theorem 189. An eight-bit Hamming threshold has head complexity three
 
@@ -3708,7 +3708,131 @@ $$ \deg_{\pm}(f_8)=2<3=H^{\ast}(f_8). $$
 
 > **Interpretation.** The radius-one Hamming-ball threshold is an explicit eight-bit strict separation. Checkerboard curvature and shell transitions rule out two heads, while an exact integer linear-fractional certificate gives three heads.
 
-**Proof.** [lemmas/06_strict_separations/189_eight_bit_hamming_threshold_strict_separation.md](lemmas/06_strict_separations/189_eight_bit_hamming_threshold_strict_separation.md)
+**Proof.** [lemmas/06_strict_separations/189_eight_bit_hamming_threshold_strict_separation.md](theorems/06_strict_separations/189_eight_bit_hamming_threshold_strict_separation.md)
+
+### Theorem 190. Cleared head scores have slice rank at most two
+
+Let $H\geq2$. Every homogeneous cleared numerator of an $H$-head score has real polynomial slice rank at most two:
+
+$$ P=L_1Q_1+L_2Q_2. $$
+
+The linear generator $L_2$ can be chosen as an actual admissible denominator. Thus $V(P)$ contains a real linear space of codimension at most two. For a fixed two-plane $U$, the degree $H$ coefficient space has dimension
+
+$$ 2\binom{n+H-1}{H-1}-\binom{n+H-2}{H-2}, $$
+
+and the outer search is over a Grassmannian of dimension $2(n-1)$.
+
+> **Interpretation.** Slice rank gives a general algebraic lower layer that retains more structure than degree alone. A largest-Plücker-pivot atlas reduces its nonlinear search to bounded charts whose fixed-rank feature rows are affine in the chart variables.
+
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/190_slice_rank_two_obstruction.md](theorems/02_complexity_measure_upper_bounds/190_slice_rank_two_obstruction.md)
+
+### Theorem 191. Boolean-cube ceiling for the slice relaxation
+
+Let
+
+$$ D_d=\sum_{j=0}^{d}\binom{n}{j}. $$
+
+For degree $H$, the maximum dimension of a fixed two-plane slice space after evaluation on $\lbrace0,1\rbrace^n$ is
+
+$$ \min\left\lbrace D_H,2D_{H-1}-D_{H-2}\right\rbrace. $$
+
+It is attained by the plane $\mathrm{span}(1,x_1+\cdots+x_n)$. Therefore, when $H\geq\lceil(n+1)/2\rceil$, both the plain and positivity-aware slice-rank-two sign relaxations are exactly threshold degree at most $H$.
+
+> **Interpretation.** Formal slice rank is a useful truth-table lower layer only below the Boolean middle-level collapse. A dimension screen must precede any Grassmann atlas computation.
+
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/191_boolean_cube_slice_relaxation_ceiling.md](theorems/02_complexity_measure_upper_bounds/191_boolean_cube_slice_relaxation_ceiling.md)
+
+### Theorem 192. Multiway sign tensor rank and its input-count ceiling
+
+For every partition of the input coordinates into $k\geq2$ nonempty blocks, an $H$-head function satisfies
+
+$$ \mathrm{srank}_{\mathrm{CP}}\left(\Sigma_f^{I_1,\ldots,I_k}\right)\leq k\left(k^H-(k-1)^H\right). $$
+
+If $H\geq2$ and $n\leq2H+1$, the ambient CP-rank ceiling is already no larger than this tangent cap for every $k$. Thus multiway sign CP rank alone cannot improve the balanced matrix input-count screen.
+
+> **Interpretation.** Higher-order tensors can contribute only through compatibility equations, positivity, or other structure beyond rank size. Adding more coordinate blocks cannot move the universal rank-method frontier below $2H+2$ bits.
+
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/192_multiway_sign_tensor_rank.md](theorems/02_complexity_measure_upper_bounds/192_multiway_sign_tensor_rank.md)
+
+### Theorem 193. Exact positive-secant diagonal blow-up
+
+For paired orientation-compatible denominator products $Q_{\theta^{(0)}}$ and $Q_{\theta^{(1)}}$, positive-secant ranking is equivalent to strict positivity of all positive-negative pair gaps
+
+$$ G_{p,q}\left(\theta^{(0)},\theta^{(1)}\right)=Q_{\theta^{(0)}}(q)Q_{\theta^{(1)}}(p)-Q_{\theta^{(0)}}(p)Q_{\theta^{(1)}}(q). $$
+
+Write $\theta^{(1)}=\theta+tv$, normalize $\lVert v\rVert_{\infty}=1$, and impose the one-sided simplex tangent-cone conditions on $v$. Every pair gap is divisible by $t$:
+
+$$ G_{p,q}(\theta,\theta+tv)=t\widetilde G_{p,q}(\theta,v,t). $$
+
+Allowing $t=0$ in the divided system introduces no spurious strict solution. A strict point at $t=0$ opens into a genuine strict secant for sufficiently small $t>0$. The normalization is covered by $2H(n+1)$ bounded maximal-coordinate charts, and the divided gap has scalar degree at most $H-1$.
+
+> **Interpretation.** The positive-secant relaxation no longer has an identically zero endpoint diagonal. Its exact compactification records normalized tangent directions, including one-sided directions on denominator-simplex faces.
+
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/193_positive_secant_diagonal_blowup.md](theorems/02_complexity_measure_upper_bounds/193_positive_secant_diagonal_blowup.md)
+
+### Theorem 194. Exact signed-secant diagonal blow-up
+
+Retain the positive-secant mixture scalar and write
+
+$$ \theta^{(1)}=\theta+tv,\qquad 2s-1=ta,qquad \max\lbrace\lVert v\rVert_{\infty},\lvert a\rvert\rbrace=1. $$
+
+The signed score at vertex $x$ is divisible by $t$. Its quotient is
+
+$$ \widetilde{\mathcal S}_x=\frac12\left(\frac{Q _{\theta+tv}(x)-Q _\theta(x)}{t}+a\left(Q _{\theta+tv}(x)+Q _\theta(x)\right)\right). $$
+
+Strict feasibility of the quotient system for $t\in[0,1]$ is equivalent to strict signed-secant feasibility. At $t=0$, an arbitrary zero-block-sum direction introduces no spurious strict solution: perturb the base tuple into the simplex interior, then open a sufficiently short secant. The chart domains are closed and compact.
+
+The signed system has $2^n$ inequalities, rather than one inequality per oppositely labeled pair. It has $2H(n+1)+2$ raw charts, at most $4(n+1)+2$ chart types per orientation-count branch after head symmetry, scalar degree at most $H$, total degree at most $2H+1$, and block multidegree one.
+
+> **Interpretation.** The signed compactification is the preferred target for spatial branch-and-bound. The original unblown signed system has lower degree and remains preferable for CAD, NLSAT, or direct Positivstellensatz refutation.
+
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/194_signed_secant_diagonal_blowup.md](theorems/02_complexity_measure_upper_bounds/194_signed_secant_diagonal_blowup.md)
+
+### Theorem 195. Output-normalized atomic-margin sparsification
+
+Let $\mathcal A_n$ be the symmetric set of valid one-head score vectors normalized by $\lVert a\rVert_{\infty}\leq1$. If
+
+$$ y_x(c+\Lambda u_x)\geq\gamma>0\qquad\text{for every }x,\qquad u\in\mathrm{conv}(\mathcal A_n), $$
+
+then approximate Carathéodory in $\ell_p$, with $p=\Theta(n)$, sparsifies $u$ without losing its signs. For an absolute constant $C$,
+
+$$ H^{\ast}(f)\leq C(n+1)\left(\frac{\Lambda}{\gamma}\right)^2. $$
+
+Consequently the output-normalized atomic condition number $\kappa_{\mathrm{atom}}(f)$ satisfies
+
+$$ H^{\ast}(f)\leq C(n+1)\kappa_{\mathrm{atom}}(f)^2. $$
+
+> **Interpretation.** Denominator-group boosting has a principled width target when its margin is measured in actual score space. A finite rational atomic decomposition with positive exact margin is already a direct upper certificate.
+
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/195_atomic_margin_sparsification.md](theorems/02_complexity_measure_upper_bounds/195_atomic_margin_sparsification.md)
+
+### Theorem 196. Optimal Fourier-tail knapsack
+
+Let $c_S$ be the unnormalized Walsh coefficients of the sign table $q$, so
+
+$$ q(x)=2^{-n}\sum_S c_S\chi_S(x). $$
+
+Retain the constant coefficient for free. Bundle all singleton coefficients into one item of cost one and value $\sum_{\lvert S\rvert=1}\lvert c_S\rvert$. Give every nonzero nonsingleton coefficient one item of cost $\lvert S\rvert$ and value $\lvert c_S\rvert$. Any retained item set whose omitted value is below $2^n$ gives a strict Fourier sign certificate and therefore a head upper bound equal to its total item cost.
+
+The minimum cost obtainable from this absolute Fourier-tail criterion is an exact zero-one knapsack problem. Since there are at most $2^n$ items and total compiler cost at most $n2^n+1$, dynamic programming takes
+
+$$ O\left(n4^n\right) $$
+
+integer-arithmetic operations, polynomial in the truth-table length.
+
+> **Interpretation.** The greedy Fourier-tail seed has an exact escalation path. The dynamic program optimizes this sufficient tail criterion, not arbitrary sparse sign polynomials and not $H^{\ast}$ itself.
+
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/196_optimal_fourier_tail_knapsack.md](theorems/02_complexity_measure_upper_bounds/196_optimal_fourier_tail_knapsack.md)
+
+### Theorem 197. Greedy affine bounds on a box with one sum constraint
+
+Let $\ell_i\leq x_i\leq u_i$ and $\sum_ix_i=T$. To minimize $c^{\top}x$, start at the lower bounds and allocate the remaining mass $T-\sum_i\ell_i$ greedily in nondecreasing order of $c_i$, subject to capacities $u_i-\ell_i$. Reversing the coefficient order gives the maximum.
+
+Both endpoints are exact rational values and require $O(m\log m)$ comparisons. Applied to simplex factors and zero-sum direction blocks, this gives exact affine intervals before McCormick product envelopes are formed. In particular, every base and endpoint denominator factor remains in $[0,1]$.
+
+> **Interpretation.** Sum equations should be used before generic interval multiplication. This elementary tightening changes some full-cube signed-secant charts from spuriously positive relaxations into short exact dual leaves.
+
+**Proof.** [lemmas/02_complexity_measure_upper_bounds/197_box_sum_greedy_affine_bounds.md](theorems/02_complexity_measure_upper_bounds/197_box_sum_greedy_affine_bounds.md)
 
 ### Theorem 190. Cleared head scores have slice rank at most two
 

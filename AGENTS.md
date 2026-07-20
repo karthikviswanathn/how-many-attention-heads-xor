@@ -1,15 +1,13 @@
 # AGENTS.md
 
-Conventions for writing lemma / writeup markdown in this repo so that it renders cleanly in GitHub, VS Code preview, and Obsidian.
-
-GitHub's markdown layer mangles math before MathJax sees it, so a KaTeX-valid expression is not always enough. The full ruleset and a faithful audit method live in the [`gh-markdown-math`](.claude/skills/gh-markdown-math/SKILL.md) skill; the essentials are below.
+Conventions for writing theorem / writeup markdown in this repo so that it renders cleanly in GitHub, VS Code preview, and Obsidian.
 
 ## Math
 
 Use LaTeX math delimiters, not backticks.
 
-- **Inline math:** wrap in single dollar signs, e.g. `$f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$`. Keep each inline span on one source line.
-- **Display math:** wrap in double dollar signs. Keep the whole expression on a single line, e.g. `$$ z(a,b) = \frac{N(a,b)}{D(a,b)} $$`, with a blank line before and after.
+- **Inline math:** wrap in single dollar signs, e.g. `$f : \lbrace 0,1\rbrace^n \to \lbrace 0,1\rbrace$`.
+- **Display math:** wrap in double dollar signs, with a blank line before and after the block. Keep the whole `$$...$$` on one source line; multi-line `$$` blocks are fragile (GitHub can mis-parse an equation line as a heading or list item).
 
   ```markdown
   Some lead-in text.
@@ -19,26 +17,23 @@ Use LaTeX math delimiters, not backticks.
   Continuation text.
   ```
 
-- Use `\lbrace`, `\rbrace` for set braces (not `\{`, `\}`, which GitHub unescapes and breaks). Use `\to` for arrows, `\neq`, `\geq`, `\leq`, `\in`, `\cdot`, `\top` (for transpose), `\blacksquare` for Q.E.D.
-- Use `\ast` for an asterisk/superscript-star (e.g. `H^{\ast}`), never a literal `*` inside math (a literal `*` is markdown emphasis and corrupts the span).
-- Use `\mathrm{...}` for operator names, not `\operatorname{...}`.
-- Do not use the spacing macros `\,` `\;` `\!` (GitHub unescapes them to literal punctuation); use a normal space or `\quad` / `\qquad`.
-- Multi-line derivations use `\begin{aligned} ... \end{aligned}` inside a single-line `$$` block, with `&=` alignment and `\\` row breaks.
+- Use `\lbrace`, `\rbrace` for set braces (space before a following letter, e.g. `\lbrace f\rbrace`), `\to` for arrows, `\neq`, `\geq`, `\leq`, `\in`, `\cdot`, `\top` (for transpose), `\blacksquare` for Q.E.D.
+- Use `\lt`, `\gt` for bare `<` and `>` inside math (space before a following letter/digit, e.g. `2 \lt 3`); `\leq`, `\geq`, `\neq`, `\langle`, `\rangle` are macros and already safe.
+- Use `\ast` instead of a literal `*` inside math; `*` is Markdown emphasis and corrupts the block.
+- Never use `\,`, `\;`, `\!` spacing commands inside math; delete them (a plain space or nothing is fine).
+- No math inside headings, list-item display blocks, or `*italic*`/`_italic_` (bold `**...**` is fine).
+- When an opener-shaped `_` (e.g. `}_n`) precedes a closer-shaped `_` (e.g. `T_{`) in the same paragraph, insert a space before the closer-shaped `_` (`$T _{n,1}$`) so it can't emphasis-pair.
+- Never use the `&#95;` HTML entity for underscores; it renders on GitHub but breaks KaTeX previews (VS Code, GitLab).
+- Multi-line derivations use `\begin{aligned} ... \end{aligned}` inside a `$$` block, with `&=` alignment (collapsed onto one line; `&` survives).
+- Row separators in a single-line `$$...$$` block (`aligned`, `cases`, `array`, `substack`) are `\cr`, never `\\`; GitHub eats one backslash of `\\` on a single source line and the row break silently vanishes.
 - Group short related equations with `\qquad` spacing on one display line rather than stacking many tiny blocks.
 - Never use plain ASCII like `!=`, `>=`, `^T`, `sum`, `alpha` in math; always use the LaTeX command.
 - Never wrap math in backticks. Backticks are reserved for code identifiers and file paths.
 
-### Placement gotchas (GitHub)
-
-- No math in headings (`# ... $n$` is unreliable); use plain text or Unicode.
-- Math inside `*italic*` / `_italic_` does not render; keep the `$...$` outside the italics. Math inside `**bold**` is fine.
-- Display `$$` does not render inside a list item; use inline `$...$` on the continuation line instead.
-- An opening `$` must follow whitespace (`degree $d$`, not `degree-$d$`); a closing `$` must not be immediately followed by a letter (`$b$-th`, not `$b$th`).
-
 ## Structure
 
-- `#` for the lemma title, `##` for top-level sections (`Statement`, `Proof`, `Consequence`, etc.).
-- Sub-lemmas inside a proof use `###` with a period-separated title like `### Lemma 2. Antipode identities`. Never put an em dash in a heading.
+- `#` for the theorem title, `##` for top-level sections (`Statement`, `Proof`, `Consequence`, etc.).
+- Sub-theorems inside a proof use `###` with a period-separated title like `### Theorem 2. Antipode identities`. Never put an em dash in a heading.
 - Inline mini-proofs use **bold run-in headers**: `**Proof.**`, `**Reason.**`, `**Claim.**`.
 - Use blockquotes (`>`) for informal restatements or remarks that sit alongside the formal statement.
 - Use ordered lists (`1.`, `2.`, ...) for enumerated cases and unordered lists (`-`) for bullet points.
@@ -57,11 +52,11 @@ Use LaTeX math delimiters, not backticks.
 ## Example skeleton
 
 ```markdown
-# Lemma Title
+# Theorem Title
 
 ## Statement
 
-Let $f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$. Suppose ...
+Let $f : \lbrace 0,1\rbrace^n \to \lbrace 0,1\rbrace$. Suppose ...
 
 $$ \text{main equation} $$
 
@@ -71,13 +66,13 @@ $$ \text{main equation} $$
 
 Prose lead-in.
 
-### Lemma 1. Short name
+### Theorem 1. Short name
 
 **Claim.** Something.
 
 **Proof.** Expand:
 
-$$ \begin{aligned} X &= Y + Z \\ &= W. \end{aligned} $$
+$$ \begin{aligned} X &= Y + Z \cr &= W. \end{aligned} $$
 
 ### Conclusion
 
@@ -88,4 +83,5 @@ Wrap up. $\blacksquare$
 $$ H^{\ast}(f) \geq 2. $$
 ```
 
-Apply this style to every file under `lemmas/` and to `writeup.md`.
+Apply this style to every file under `theorems/` and to
+`artifacts/intro-materials/writeup.md`.

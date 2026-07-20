@@ -16,7 +16,7 @@ Weiss, Goldberg, and Yahav introduce RASP as a programming language for transfor
 - make attention compute that statistic or a basis of functions of that statistic,
 - finish by interpolation in the readout.
 
-That is exactly the shape of the weighted-sum interpolation proof in [lemmas/01_foundations_and_normal_form/009_weighted_sum_upper_bound.md](lemmas/01_foundations_and_normal_form/009_weighted_sum_upper_bound.md).
+That is exactly the shape of the weighted-sum interpolation proof in [theorems/01_foundations_and_normal_form/009_weighted_sum_upper_bound.md](theorems/01_foundations_and_normal_form/009_weighted_sum_upper_bound.md).
 
 ### 2. Yang and Chiang 2024. Counting Like Transformers: Compiling Temporal Counting Logic Into Softmax Transformers
 
@@ -58,17 +58,17 @@ Nisan and Szegedy show that exact degree, approximate degree, and decision-tree 
 
 **Why it matters here.** This gives a map of the classical landscape. If head complexity eventually turns out to be controlled by degree-like quantities, then decision trees and related combinatorial measures automatically become relevant comparison points.
 
-### 7. Klivans and Servedio 2004. Learning DNF in Time 2^Õ(n¹ᐟ³)
+### 7. Klivans and Servedio 2004. Learning DNF in Time 2^Õ(n^(1/3))
 
 Source: [journal page](https://www.sciencedirect.com/science/article/pii/S0022000003001363), [author page](https://www.cs.columbia.edu/~rocco/papers/stoc01.html)
 
 Klivans and Servedio show that every $s$-term DNF has a polynomial threshold representation of degree
 
-$$ O(n^{1/3} \log s). $$
+$$O(n^{1/3} \log s).$$
 
 **Why it matters here.** This is exactly the kind of structural upper bound one would like to import into head complexity. Right now we only know
 
-$$ \deg_{\pm}(f) \leq H^{\ast}(f), $$
+$$\deg_{\pm}(f) \leq H^{\ast}(f),$$
 
 not the reverse implication. But if some partial converse is ever proved for the attention model, this paper would immediately turn sparse DNF formulas into strong head upper bounds.
 
@@ -78,7 +78,7 @@ Source: [ECCC](https://eccc.weizmann.ac.il/report/2018/010/)
 
 Sherstov gives explicit constructive approximate polynomials for several Boolean families, including $k$-DNF and $k$-CNF, with degree
 
-$$ O \left(n^{1-\frac{1}{k+1}}\right). $$
+$$O\left(n^{1-\frac{1}{k+1}}\right).$$
 
 **Why it matters here.** The main attraction is constructive form. If we want upper bounds rather than just existential comparisons, explicit approximants are much more usable than generic existence theorems. The limitation is that the paper is about approximation, whereas our model computes Boolean functions exactly.
 
@@ -94,16 +94,16 @@ Iyer, Jain, Kothari, Kovacs-Deak, Kumar, Schaeffer, Wang, and Whitmeyer study ex
 
 The literature currently points to four plausible upper-bound routes.
 
-1. **Low-cardinality statistic route.** Make the network depend only on a statistic with small image, then interpolate. This is the route currently realized in [lemmas/01_foundations_and_normal_form/009_weighted_sum_upper_bound.md](lemmas/01_foundations_and_normal_form/009_weighted_sum_upper_bound.md).
-2. **Tangent-factor route.** Clearing the positive denominators produces a tangent to a product of affine forms. Slice rank, balanced product splits, and positive secants retain information that ordinary rational degree discards.
-3. **Sparse-PTF import route.** A sign polynomial gives a direct head upper bound when charged by the repo's compiler: one shared affine head, one head per nonlinear monotone monomial, or the active-set size for a Walsh parity term. Degree alone remains too coarse.
+1. **Low-cardinality statistic route.** Make the network depend only on a statistic with small image, then interpolate. This is the route currently realized in [theorems/01_foundations_and_normal_form/009_weighted_sum_upper_bound.md](theorems/01_foundations_and_normal_form/009_weighted_sum_upper_bound.md).
+2. **Rational-function route.** Because each head contributes a ratio of affine functions after scalar readout, rational degree looks like a more natural target invariant than polynomial degree.
+3. **PTF import route.** Structural upper bounds for polynomial threshold functions of DNF, CNF, and formula classes are potentially relevant, but only if we can show a converse from low-degree sign representations to few-head constructions on some class.
 4. **Exactification route.** Approximate-degree results are inspirational, especially for symmetric and formula families, but they do not by themselves answer exact computation in the model from [model.md](model.md).
 
 ## Scope
 
 This note records papers that are closest to the project question:
 
-$$ f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace $$
+$$f : \lbrace 0,1\rbrace^n \to \lbrace 0,1\rbrace$$
 
 computed exactly by a one-layer attention-only model with a linear readout from a designated query token.
 
@@ -143,7 +143,7 @@ Source: [ACL Anthology](https://aclanthology.org/2020.tacl-1.11/)
 
 Hahn proves strong limitations for fixed-depth self-attention on formal languages. In particular, periodic finite-state languages and hierarchical structure are out of reach unless the number of heads or layers grows with input length.
 
-**Relevance.** This is strong evidence that parity-like behavior is genuinely constrained in shallow attention. But the paper studies asymptotic language recognition with input length growing, not exact computation on a fixed cube $\lbrace0,1\rbrace^n$.
+**Relevance.** This is strong evidence that parity-like behavior is genuinely constrained in shallow attention. But the paper studies asymptotic language recognition with input length growing, not exact computation on a fixed cube $\lbrace 0,1\rbrace^n$.
 
 ### Bhattamishra et al. 2020. On the Computational Power of Transformers and Its Implications in Sequence Modeling
 
@@ -359,17 +359,11 @@ when $q>0$. The model-specific content is not rationality by itself. It is the t
 
 The survey suggests four gaps.
 
-1. I did not find a prior paper that directly studies the exact minimum head count
-
-$$ H^{\ast}(f) $$
-
-for the one-layer attention-only model from [model.md](model.md).
+1. I did not find a prior paper that directly studies the exact minimum head count $H^{\ast}(f)$ for the one-layer attention-only model from [model.md](model.md).
 
 2. Existing upper bounds are usually too coarse for our purpose. They are about universality, Turing-completeness, or logical definability, not exact head complexity on a fixed cube.
 
-3. Existing lower bounds are often asymptotic in input length. They do not automatically convert into finite $n$ exact statements like
-
-$$ H^{\ast}(\mathrm{XOR}_n) = n. $$
+3. Existing lower bounds are often asymptotic in input length. They do not automatically convert into finite $n$ exact statements like $H^{\ast}(\mathrm{XOR}_n) = n$.
 
 4. The adjacent methods are individually incomplete. Product average margin can miss large sign-rank, algebraic secant equations forget denominator orientation, and sparse construction is one-sided. The missing object is therefore a certificate-compatible portfolio, not merely a new heuristic optimizer.
 
@@ -379,32 +373,12 @@ Constructive counting remains the cleanest closed-form upper theorem, but the sc
 
 For the current project, the cleanest version is to make heads produce a basis of rational functions of a single positive weighted sum
 
-$$ t(x) = \sum_{i=1}^{n} \lambda_i x_i, $$
+$$t(x) = \sum_{i=1}^{n} \lambda_i x_i,$$
 
 then interpolate arbitrary target labels on the finite image of $t$.
 
-That is the route taken in [lemmas/01_foundations_and_normal_form/009_weighted_sum_upper_bound.md](lemmas/01_foundations_and_normal_form/009_weighted_sum_upper_bound.md). It gives:
+That is the route taken in [theorems/01_foundations_and_normal_form/009_weighted_sum_upper_bound.md](theorems/01_foundations_and_normal_form/009_weighted_sum_upper_bound.md). It gives:
 
 - a general upper bound when $f$ factors through a positive weighted sum,
 - a clean $n$-head upper bound for all symmetric Boolean functions,
-- a universal bound
-
-$$ H^{\ast}(f) \leq 2^n - 1 $$
-
-by taking binary weights.
-
-For a general truth table, the proposed upper pipeline is now:
-
-1. run structural and weighted-sum constructions;
-
-2. search cost-aware Walsh and monotone-monomial supports by column generation;
-
-3. search affine cylinders by branch-and-price;
-
-4. boost over admissible denominator groups;
-
-5. rationalize every successful representation and verify every cube vertex exactly.
-
-The proposed lower pipeline combines exact threshold degree, optimized product-margin matrix certificates, slice-rank-two Grassmann incidence, coefficient equations, small witness subsets, and exact parameter-space certificates. No one paper contains this full pipeline. It is a synthesis of adjacent results specialized to the shared-factor attention normal form.
-
-The resulting adaptive scheduler, certificate schemas, mathematical gates, and benchmark plan are consolidated in [adaptive_general_hstar_estimator.md](artifacts/calculations/adaptive_general_hstar_estimator.md).
+- a universal bound $H^{\ast}(f) \leq 2^n - 1$ by taking binary weights.

@@ -4,7 +4,7 @@
 
 We want to characterize the minimum number of attention heads required to compute a Boolean function
 
-$$f : \lbrace0,1\rbrace^n \to \lbrace0,1\rbrace$$
+$$f : \lbrace 0,1 \rbrace^n \to \lbrace 0,1 \rbrace$$
 
 in a **single-layer attention-only transformer** with a **linear readout** from a designated query token.
 
@@ -20,13 +20,13 @@ We fix the following architecture.
 - **Output:** the residual stream at the query token after the attention update.
 - **Readout:** a linear probe (equivalently, a thresholded affine functional) applied to that query residual.
 
-A Boolean function $f$ is said to be **computable with $H$ heads** if there exists a choice of embeddings, attention parameters, and linear readout such that the resulting classifier equals $f$ on all inputs in $\lbrace0,1\rbrace^n$.
+A Boolean function $f$ is said to be **computable with $H$ heads** if there exists a choice of embeddings, attention parameters, and linear readout such that the resulting classifier equals $f$ on all inputs in $\lbrace 0,1 \rbrace^n$.
 
 ## Main Quantity
 
 Define
 
-$$ H^{\ast}(f)  :=  \min \left\lbrace  H : f \text{ is computable with } H \text{ heads in the above model}  \right\rbrace. $$
+$$H^{\ast}(f) := \min \left\lbrace H : f \text{ is computable with } H \text{ heads in the above model} \right\rbrace.$$
 
 Our central problem is to understand $H^{\ast}(f)$ as a function of $f$.
 

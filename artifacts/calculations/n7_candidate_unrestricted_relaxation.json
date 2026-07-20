@@ -1,8 +1,0 @@
-{
-  "found": false,
-  "dimension": 7,
-  "truth_mask_hex": "0x3351c040faff01010341cfd5efff",
-  "relaxation": "unrestricted",
-  "trials": 50000,
-  "warning": "A random search failure is not an impossibility certificate."
-}

@@ -2,7 +2,8 @@
 
 Date: 2026-07-17. Produced by Claude (Fable 5) with an LP-in-the-loop search seeded from the
 degree-cone analytic center; every certificate below is verified in exact integer arithmetic
-(no floating point in the final check; see `certify_tchow4.py` for the verification pattern).
+(no floating point in the final check; run `python3 verify_certificates.py` to re-check both
+certificates from scratch).
 
 ## Setting
 
@@ -10,9 +11,9 @@ $\mathrm{tChow}_{\pm}(f)$ is the least $H$ such that some
 
 $$ P(x) = \theta\prod_{h=1}^{H} D_h(x) + \sum_{h=1}^{H} N_h(x)\prod_{g\neq h} D_g(x) $$
 
-with arbitrary affine $N_h, D_h$ strictly sign-represents $f$ on the cube (the unrestricted
-tangential-Chow invariant of the autoresearch ledgers, sandwiched
-$\deg_{\pm}(f) \leq \mathrm{tChow}_{\pm}(f) \leq H^{\ast}(f)$). Conventions in both JSON files:
+with arbitrary affine $N_h, D_h$ strictly sign-represents $f$ on the cube. This is the
+unrestricted tangential-Chow invariant of the autoresearch ledgers, sandwiched
+$\deg_{\pm}(f) \leq \mathrm{tChow}_{\pm}(f) \leq H^{\ast}(f)$. Conventions in both JSON files:
 $x \in \lbrace 0,1\rbrace^n$, code $= \sum_i x_i 2^i$, affine coefficient vectors are
 $[c_0, c_1, \ldots, c_n]$ meaning $c_0 + \sum_i c_i x_i$, and $P(x) > 0$ iff $f(x) = 1$.
 
@@ -56,5 +57,6 @@ strictness inherits whatever confidence lemma 189's written lower-bound proof ca
 
 - `tchow4_f6_integer_certificate.json`, `tchow2_f8_integer_certificate.json`: the certificates.
 - `tchow4_f6_search.py`: the fixed-denominator LP oracle and outer search.
-- `certify_tchow4.py`: exact rational verification of the raw float hit (the integer
-  certificates were then obtained by grid rounding plus exact re-verification).
+- `verify_certificates.py`: standalone exact integer verification of both certificates
+  (no dependencies; the integer certificates were obtained from raw LP hits by grid
+  rounding plus this exact re-verification).
