@@ -127,6 +127,7 @@ $I(f)$ with $H^{\ast}(f) \asymp I(f)$. Closing that gap is the main open problem
 | Path | What it is |
 | --- | --- |
 | [`problem_statement.md`](problem_statement.md) | The question and the core open problems. |
+| [`CONSOLIDATION.md`](CONSOLIDATION.md) | The all-branches consolidation: source map, proved-material index, consolidated hypotheses. |
 | [`model.md`](model.md) | The precise attention model and the definition of $H^{\ast}(f)$. |
 | [`lemmas.md`](lemmas.md) | Ledger of the main lemmas, their status, and how they fit together. |
 | [`lemmas/`](lemmas/) | Full writeups: checkerboard lower bound, threshold upper bounds, the $n$-bit XOR analysis, weighted-sum upper bound. |
