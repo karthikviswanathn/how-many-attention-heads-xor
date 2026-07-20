@@ -134,7 +134,7 @@ $I(f)$ with $H^{\ast}(f) \asymp I(f)$. Closing that gap is the main open problem
 | [`writeup.md`](writeup.md) | Longer narrative tying the results together. |
 | [`literature_survey.md`](literature_survey.md) | Related work across transformers and Boolean complexity. |
 | [`artifacts/calculations/cut_cell_counterexample.md`](artifacts/calculations/cut_cell_counterexample.md) | Short counterexample showing that affine cut cells do not characterize $H^{\ast}$. |
-| [`three_head_functions_n3.md`](three_head_functions_n3.md) | Provisional empirical $H^{\ast}=3$ functions at $n=3$. |
+| [`three_head_functions_n3.md`](three_head_functions_n3.md) | The corrected exact three-bit head-complexity hierarchy. |
 | [`head-complexity/`](head-complexity/) | Lean 4 formalization of the results (depends on mathlib). |
 | [`src/hstar/`](src/hstar/) | Python package with both empirical training searches and certified interval estimation for $H^{\ast}(f)$. |
 | [`artifacts/calculations/certified_hstar_estimation.md`](artifacts/calculations/certified_hstar_estimation.md) | Guaranteed interval estimator using exact lower bounds, verified upper certificates, and optional real-algebraic decisions. |
